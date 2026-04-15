@@ -3,7 +3,9 @@ const API_BASE = "https://api.scrapecreators.com";
 // 50 MB — generous for JSON API responses, prevents memory exhaustion
 const MAX_RESPONSE_BYTES = 50 * 1024 * 1024;
 
-async function readBodyWithLimit(res) {
+export { MAX_RESPONSE_BYTES };
+
+export async function readBodyWithLimit(res) {
   const contentLength = parseInt(res.headers.get("content-length"), 10);
   if (contentLength > MAX_RESPONSE_BYTES) {
     throw new Error(`Response Content-Length (${contentLength}) exceeds ${MAX_RESPONSE_BYTES} byte limit`);

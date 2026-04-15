@@ -1,4 +1,5 @@
 import {
+  appendFileSync,
   chmodSync,
   closeSync,
   constants,
@@ -12,7 +13,7 @@ import {
   unlinkSync,
   writeFileSync,
 } from "fs";
-import { dirname, isAbsolute, relative, resolve } from "path";
+import { dirname, isAbsolute, join, relative, resolve } from "path";
 import { homedir } from "os";
 import chalk from "chalk";
 import * as prompts from "@clack/prompts";
@@ -169,6 +170,48 @@ function ensureOwnerOnly(pathToFile) {
   }
 }
 
+export function ensureGitignore(configPath) {
+  let dir = dirname(configPath);
+  let gitRoot = null;
+  while (dir !== dirname(dir)) {
+    if (existsSync(join(dir, ".git"))) {
+      gitRoot = dir;
+      break;
+    }
+    dir = dirname(dir);
+  }
+  if (!gitRoot) return null;
+
+  const rel = relative(gitRoot, configPath).replace(/\\/g, "/");
+  const gitignorePath = join(gitRoot, ".gitignore");
+
+  if (existsSync(gitignorePath)) {
+    let content;
+    try {
+      content = readFileSync(gitignorePath, "utf-8");
+    } catch {
+      return null;
+    }
+    const lines = content.split(/\r?\n/);
+    // already covered by an exact match or parent-dir glob
+    const configDir = dirname(rel) + "/";
+    if (lines.some((l) => {
+      const trimmed = l.trim();
+      return trimmed === rel || trimmed === `/${rel}` || trimmed === configDir || trimmed === `/${configDir}`;
+    })) {
+      return null;
+    }
+  }
+
+  try {
+    const prefix = existsSync(gitignorePath) && readFileSync(gitignorePath, "utf-8").endsWith("\n") ? "" : "\n";
+    appendFileSync(gitignorePath, `${prefix}${rel}\n`, "utf-8");
+    return rel;
+  } catch {
+    return null;
+  }
+}
+
 export async function agentAddCommand(target, globalOpts) {
   const targetLower = target?.toLowerCase();
   const targetDef = TARGETS[targetLower];
@@ -208,17 +251,6 @@ export async function agentAddCommand(target, globalOpts) {
   const configPath = resolveConfigPath(targetDef.configPath(), targetDef.basePath(), targetDef.name);
   if (!configPath) return;
   const newConfig = targetDef.buildConfig(apiKey);
-
-  // warn if config lands inside a git repo (key could be committed)
-  let dir = dirname(configPath);
-  while (dir !== dirname(dir)) {
-    if (existsSync(resolve(dir, ".git"))) {
-      console.error(chalk.yellow(`Warning: ${configPath} is inside a git repo.`));
-      console.error(chalk.yellow("Make sure this file is gitignored to avoid committing your API key."));
-      break;
-    }
-    dir = dirname(dir);
-  }
 
   let existing = {};
   if (existsSync(configPath)) {
@@ -270,6 +302,10 @@ export async function agentAddCommand(target, globalOpts) {
   }
   ensureOwnerOnly(configPath);
 
+  const addedEntry = ensureGitignore(configPath);
   console.log(chalk.green(`\n${targetDef.name} MCP config written to ${configPath}`));
+  if (addedEntry) {
+    console.log(chalk.green(`Added ${addedEntry} to .gitignore to keep your API key out of version control.`));
+  }
   console.log(chalk.dim("Make sure the scrapecreators MCP server is enabled in your editor settings."));
 }

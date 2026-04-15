@@ -52,6 +52,9 @@ jobs:
       - name: lockfile sync check
         run: npm run check:lockfile
 
+      - name: audit dependencies
+        run: npm audit --audit-level=high
+
       - name: run tests
         run: npm test
 

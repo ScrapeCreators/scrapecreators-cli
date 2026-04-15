@@ -5,6 +5,24 @@ import { basename, dirname, isAbsolute, relative, resolve } from "path";
 
 const isTTY = process.stdout.isTTY;
 
+// strips CSI, OSC, and single-character C1 escape sequences
+const ANSI_RE = /[\x1b\x9b](?:\[[0-9;]*[A-Za-z]|\][^\x07\x1b]*(?:\x07|\x1b\\)?|[A-Z@[\\\]^_])/g;
+
+export function stripAnsi(str) {
+  return typeof str === "string" ? str.replace(ANSI_RE, "") : str;
+}
+
+export function sanitizeData(obj) {
+  if (typeof obj === "string") return stripAnsi(obj);
+  if (Array.isArray(obj)) return obj.map(sanitizeData);
+  if (typeof obj === "object" && obj !== null) {
+    const out = {};
+    for (const [k, v] of Object.entries(obj)) out[k] = sanitizeData(v);
+    return out;
+  }
+  return obj;
+}
+
 export function safePath(outputPath) {
   if (!outputPath || !outputPath.trim()) {
     throw new Error("--output path cannot be empty");
@@ -115,7 +133,7 @@ export function printResult(result, opts = {}) {
     return;
   }
 
-  const output = formatOutput(result.data, format, opts);
+  const output = formatOutput(sanitizeData(result.data), format, opts);
 
   if (opts.output) {
     const dest = safePath(opts.output);
@@ -133,18 +151,19 @@ export function printResult(result, opts = {}) {
 
 export function printError(result, opts = {}) {
   const format = resolveFormat(opts);
+  const data = sanitizeData(result.data);
 
   if (format === "json" || format === "pretty" || !isTTY) {
     const structured = {
       error: true,
       code: `HTTP_${result.status}`,
-      message: typeof result.data === "object" ? result.data.message || result.data.error || JSON.stringify(result.data) : String(result.data),
+      message: typeof data === "object" ? data.message || data.error || JSON.stringify(data) : String(data),
       status: result.status,
       suggestion: getSuggestion(result.status),
     };
     console.error(JSON.stringify(structured, null, format === "pretty" ? 2 : 0));
   } else {
-    console.error(chalk.red(`\nError ${result.status}: ${formatErrorMessage(result.data)}`));
+    console.error(chalk.red(`\nError ${result.status}: ${formatErrorMessage(data)}`));
     const suggestion = getSuggestion(result.status);
     if (suggestion) console.error(chalk.yellow(`Suggestion: ${suggestion}`));
   }
