@@ -1,0 +1,10 @@
+node_modules/
+NOTES.md
+.env
+.env.*
+.cursor/
+*.log
+npm-debug.log*
+.DS_Store
+data.json
+api-config/withIcons.js
