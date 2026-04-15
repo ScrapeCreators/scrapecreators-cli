@@ -1,5 +1,26 @@
 const API_BASE = "https://api.scrapecreators.com";
 
+// 50 MB — generous for JSON API responses, prevents memory exhaustion
+const MAX_RESPONSE_BYTES = 50 * 1024 * 1024;
+
+async function readBodyWithLimit(res) {
+  const contentLength = parseInt(res.headers.get("content-length"), 10);
+  if (contentLength > MAX_RESPONSE_BYTES) {
+    throw new Error(`Response Content-Length (${contentLength}) exceeds ${MAX_RESPONSE_BYTES} byte limit`);
+  }
+
+  const chunks = [];
+  let total = 0;
+  for await (const chunk of res.body) {
+    total += chunk.length;
+    if (total > MAX_RESPONSE_BYTES) {
+      throw new Error(`Response body exceeded ${MAX_RESPONSE_BYTES} byte limit`);
+    }
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks).toString("utf-8");
+}
+
 export async function callApi(apiKey, method, path, params = {}) {
   const url = new URL(`${API_BASE}${path}`);
 
@@ -29,7 +50,7 @@ export async function callApi(apiKey, method, path, params = {}) {
   const start = Date.now();
   const res = await fetch(url.toString(), options);
   const elapsed = Date.now() - start;
-  const text = await res.text();
+  const text = await readBodyWithLimit(res);
 
   let data;
   try {

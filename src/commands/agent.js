@@ -82,7 +82,7 @@ function isWithinBase(basePath, candidatePath) {
   return rel === "" || (!isAbsolute(rel) && !rel.startsWith(".."));
 }
 
-function resolveConfigPath(rawPath, rawBasePath, targetName) {
+export function resolveConfigPath(rawPath, rawBasePath, targetName) {
   if (!rawPath || !rawBasePath) {
     console.error(chalk.red(`Could not resolve ${targetName} config path on this system.`));
     process.exitCode = 1;
@@ -120,7 +120,7 @@ function resolveConfigPath(rawPath, rawBasePath, targetName) {
   return resolvedPath;
 }
 
-function secureWriteJson(configPath, contents) {
+export function secureWriteJson(configPath, contents) {
   const noFollow = typeof constants.O_NOFOLLOW === "number" ? constants.O_NOFOLLOW : 0;
   const flags = constants.O_WRONLY | constants.O_CREAT | constants.O_TRUNC | noFollow;
   let fd;

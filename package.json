@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node bin/scrapecreators.js",
+    "test": "vitest run",
     "check:lockfile": "node bin/check-lockfile-sync.js"
   },
   "dependencies": {
@@ -35,5 +36,9 @@
     "youtube",
     "cli"
   ],
-  "license": "MIT"
+  "homepage": "https://scrapecreators.com/",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^4.1.4"
+  }
 }

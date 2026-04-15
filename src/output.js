@@ -5,7 +5,7 @@ import { basename, dirname, isAbsolute, relative, resolve } from "path";
 
 const isTTY = process.stdout.isTTY;
 
-function safePath(outputPath) {
+export function safePath(outputPath) {
   if (!outputPath || !outputPath.trim()) {
     throw new Error("--output path cannot be empty");
   }
@@ -32,7 +32,7 @@ function safePath(outputPath) {
   return dest;
 }
 
-function writeOutputFile(dest, output) {
+export function writeOutputFile(dest, output) {
   const noFollow = typeof constants.O_NOFOLLOW === "number" ? constants.O_NOFOLLOW : 0;
   const flags = constants.O_WRONLY | constants.O_CREAT | constants.O_TRUNC | noFollow;
   let fd;
@@ -368,7 +368,7 @@ function formatMarkdown(data) {
   return "```json\n" + JSON.stringify(data, null, 2) + "\n```";
 }
 
-function csvEscape(str) {
+export function csvEscape(str) {
   const cell = /^[=+\-@\t\r]/.test(str) ? `'${str}` : str;
   if (cell.includes(",") || cell.includes('"') || cell.includes("\n")) {
     return `"${cell.replace(/"/g, '""')}"`;
