@@ -36,6 +36,10 @@
     "youtube",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScrapeCreators/scrapecreators-cli"
+  },
   "homepage": "https://scrapecreators.com/",
   "license": "MIT",
   "devDependencies": {
