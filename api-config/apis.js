@@ -1,6 +1,7 @@
 import { tiktokBaseApis } from "./tiktok-apis.js";
 import { tiktokShopApis } from "./tiktok-shop-apis.js";
 import { instagramBaseApis } from "./instagram-apis.js";
+import { githubApis } from "./github-apis.js";
 
 export const apis = [
   tiktokBaseApis,
@@ -167,7 +168,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. This will slow down the response slightly.",
+              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. Honestly, if you use this param, the error rate is higher. We might deprecate this param in the future.",
             placeholder: "false",
           },
         ],
@@ -182,58 +183,106 @@ export const apis = [
         path: "/v1/youtube/channel/shorts",
         paginationField: "continuationToken",
         sampleResponse: {
-          success: true,
-          credits_remaining: 9998708,
-          videos: [],
-          channels: [],
-          playlists: [],
-          shorts: [
+          "success": true,
+          "credits_remaining": 49998970118,
+          "videos": [],
+          "channels": [],
+          "playlists": [],
+          "shorts": [
             {
-              type: "short",
-              id: "Rdr8357wIRA",
-              url: "https://www.youtube.com/watch?v=Rdr8357wIRA",
-              title: "My app failed, then I changed one thing, and made $80K",
-              viewCountText: "8,035",
-              viewCountInt: 8035,
-              description:
-                "Praneeth quit his $250K/year job to build an app that failed. Then, he changed one thing and made $80K",
-              commentCountText: "12",
-              commentCountInt: 12,
-              likeCountInt: 253,
-              likeCountText: "253",
+              "type": "short",
+              "id": "VREVC0wXPfs",
+              "url": "https://www.youtube.com/watch?v=VREVC0wXPfs",
+              "title": "This idea validation formula has made him $500K from iOS apps",
+              "thumbnail": "https://img.youtube.com/vi/VREVC0wXPfs/maxresdefault.jpg",
+              "viewCountText": "17,066",
+              "viewCountInt": 17066,
+              "description": "Most founders think their app isn’t selling because of market conditions.\n\nIt’s not.\n\nThis founder sold multiple apps and noticed the same pattern every time: Great products but broken deals.\n\nNot because the app was bad but because founders overcomplicate operations and chase the highest price instead of the fastest close.",
+              "commentCountText": "2",
+              "commentCountInt": 2,
+              "likeCountInt": 495,
+              "likeCountText": "495",
+              "publishDate": "2026-04-22T10:44:35-07:00",
+              "genre": "People & Blogs",
+              "durationMs": 37000,
+              "durationFormatted": "00:00:37"
             },
             {
-              type: "short",
-              id: "PJVxHvPPiOg",
-              url: "https://www.youtube.com/watch?v=PJVxHvPPiOg",
-              title: "I Built a $1M SaaS Using YouTube",
-              viewCountText: "9,952",
-              viewCountInt: 9952,
-              description:
-                "He went from 0 to $79K/month using this one strategy",
-              commentCountText: "11",
-              commentCountInt: 11,
-              likeCountInt: 459,
-              likeCountText: "459",
+              "type": "short",
+              "id": "LUTxdXW4TUI",
+              "url": "https://www.youtube.com/watch?v=LUTxdXW4TUI",
+              "title": "$30M founder reveals the ideas he’d bet on again if he had to start over",
+              "thumbnail": "https://img.youtube.com/vi/LUTxdXW4TUI/maxresdefault.jpg",
+              "viewCountText": "18,917",
+              "viewCountInt": 18917,
+              "description": "$30M SaaS founder reveals 3 business ideas with massive potential.\n\nHe doesn’t chase “new ideas.”\n\nHe studies what’s already working… then adds a unique twist no one else thought of.\n\nIt’s all about:\n\nSpotting gaps competitors ignore\nMaking it ridiculously easy for customers to say yes\nExecuting better and faster than anyone else\n\nMost people overcomplicate. He keeps it simple… and profitable.",
+              "commentCountText": "11",
+              "commentCountInt": 11,
+              "likeCountInt": 712,
+              "likeCountText": "712",
+              "publishDate": "2026-03-28T11:25:20-07:00",
+              "genre": "People & Blogs",
+              "durationMs": 50000,
+              "durationFormatted": "00:00:50"
             },
             {
-              type: "short",
-              id: "lhfku00d9SE",
-              url: "https://www.youtube.com/watch?v=lhfku00d9SE",
-              title: "they built a $10k/month app thanks to this strategy",
-              viewCountText: "13,330",
-              viewCountInt: 13330,
-              description:
-                "These two guys met at a coworking space and now run an app making $10K/month",
-              commentCountText: "3",
-              commentCountInt: 3,
-              likeCountInt: 490,
-              likeCountText: "490",
+              "type": "short",
+              "id": "1YGz9bkG7z0",
+              "url": "https://www.youtube.com/watch?v=1YGz9bkG7z0",
+              "title": "Founder of 2 profitable SaaS products shares his entire tech stack",
+              "thumbnail": "https://img.youtube.com/vi/1YGz9bkG7z0/maxresdefault.jpg",
+              "viewCountText": "16,393",
+              "viewCountInt": 16393,
+              "description": "He got nearly 1 million website visitors** without spending a single dollar on ads.\n\nMost builders think marketing means ads, cold emails, or posting on social media every day.\n\nBut this developer grew a SaaS to $13K MRR and another one to $6K/month before selling without these things.",
+              "commentCountText": "4",
+              "commentCountInt": 4,
+              "likeCountInt": 516,
+              "likeCountText": "516",
+              "publishDate": "2026-03-24T09:18:13-07:00",
+              "genre": "People & Blogs",
+              "durationMs": 51000,
+              "durationFormatted": "00:00:51"
+            },
+            {
+              "type": "short",
+              "id": "19ZP3japTsE",
+              "url": "https://www.youtube.com/watch?v=19ZP3japTsE",
+              "title": "Founder breaks down his 5 apps making $700K/month 🤯",
+              "thumbnail": "https://img.youtube.com/vi/19ZP3japTsE/maxresdefault.jpg",
+              "viewCountText": "11,923",
+              "viewCountInt": 11923,
+              "description": "Most founders dream about one successful app.\nThis guy built five.\n\nNot viral luck.\nNot overnight success.\nJust systems, playbooks, and ruthless execution.",
+              "commentCountText": "12",
+              "commentCountInt": 12,
+              "likeCountInt": 498,
+              "likeCountText": "498",
+              "publishDate": "2026-03-23T12:35:18-07:00",
+              "genre": "People & Blogs",
+              "durationMs": 75000,
+              "durationFormatted": "00:01:15"
+            },
+            {
+              "type": "short",
+              "id": "8PW-9Zr_W5g",
+              "url": "https://www.youtube.com/watch?v=8PW-9Zr_W5g",
+              "title": "He built 28 apps. They make $10K/month. Same tech stack every time.",
+              "thumbnail": "https://img.youtube.com/vi/8PW-9Zr_W5g/maxresdefault.jpg",
+              "viewCountText": "67,291",
+              "viewCountInt": 67291,
+              "description": "I asked this dev making $10K/month from 28 apps… here’s his tech stack 😳\n\nHe went from $200/month → $10K/month in 8 months.",
+              "commentCountText": "11",
+              "commentCountInt": 11,
+              "likeCountInt": 1733,
+              "likeCountText": "1733",
+              "publishDate": "2026-03-14T17:03:28-07:00",
+              "genre": "People & Blogs",
+              "durationMs": 35000,
+              "durationFormatted": "00:00:35"
             },
           ],
-          shelves: [],
-          lives: [],
-          continuationToken: "4qmFsgK9DBIYVUNoaHc2RGxLS1.....",
+          "shelves": [],
+          "lives": [],
+          "continuationToken": "4qmFsgK7DBIY....."
         },
         params: [
           {
@@ -334,7 +383,7 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get complete information about a video or short including the transcript! There is a 'transcript' field and a 'transcript_only_text' field.",
+          "Get complete information about a video or short.",
         fullDescription:
           "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader.",
         path: "/v1/youtube/video",
@@ -439,6 +488,13 @@ export const apis = [
             description: "YouTube video or short URL",
             placeholder: "https://www.youtube.com/watch?v=Y2Ah_DFr8cw",
           },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description: "Preferred response language (mapped to Accept-Language header; not guaranteed due to YouTube localization behavior). 2 letter language code, ie 'en', 'es', 'fr' etc.",
+            placeholder: "en",
+          }
         ],
       },
       {
@@ -820,13 +876,27 @@ export const apis = [
             placeholder: "relevance",
           },
           {
-            name: "filter",
+            name: "type",
             type: "select",
             required: false,
-            description:
-              "Filter by these options. Note this doesn't work when you use either 'uploadDate' or 'sortBy'. It basically only works when you have a query.",
-            options: ["shorts"],
-            placeholder: "all",
+            description: "Type of content to search for",
+            options: ["videos", "shorts", "channels", "playlists"],
+            placeholder: "videos",
+          },
+          {
+            name: "duration",
+            type: "select",
+            required: false,
+            description: "Duration of the video. Only applies to videos (not shorts).",
+            options: ["under_3_min", "between_3_and_20_min", "over_20_min"],
+            placeholder: "under_3_min",
+          },
+          {
+            name: "region",
+            type: "string",
+            required: false,
+            description: "2 letter country code of the country to put the proxy in.",
+            placeholder: "US",
           },
           {
             name: "continuationToken",
@@ -937,6 +1007,7 @@ export const apis = [
                 channelUrl: "https://youtube.com/@SimonT80",
               },
               engagement: { likes: 110, replies: 5 },
+              repliesContinuationToken: "Eg0SC2RRdzR3OVdnWGNRGAYy1AEK..."
             },
           ],
           continuationToken: "Eg0SCzVFV2F4bVd....",
@@ -964,6 +1035,48 @@ export const apis = [
             description: "Order of comments",
             options: ["top", "newest"],
             placeholder: "top",
+          },
+        ],
+      },
+      {
+        name: "Comment Replies",
+        method: "GET",
+        description:
+          "Get replies to a specific comment on a YouTube video.",
+        fullDescription:
+          "Fetches replies to a specific comment on a YouTube video, including each reply's text content, author details (name, channel ID, avatar, verified/creator status), like count, and publish date. Requires a continuationToken obtained from the 'repliesContinuationToken' field on comments returned by the Comments endpoint. Supports paginating through additional replies with the continuationToken returned in each response.",
+        path: "/v1/youtube/video/comment/replies",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          comments: [
+            {
+              id: "UgyfayX-QqgkPGkcKbt4AaABAg.AV5O1akOhw9AV5RdnpN-SY",
+              content: "Me",
+              publishedTimeText: "20 hours ago",
+              publishedTime: "2026-04-03T05:52:36.883Z",
+              replyLevel: 1,
+              author: {
+                name: "@pepisakkout2522",
+                channelId: "UCjEBcO_VQ32GUzUZGwlxy1w",
+                isVerified: false,
+                isCreator: false,
+                avatarUrl:
+                  "https://yt3.ggpht.com/ytc/AIdro_lYQDmh7-5JOb_QcEsPJIp4vmKm5a0uyzAXT-JC0rY=s88-c-k-c0x00ffffff-no-rj",
+                channelUrl: "https://youtube.com/@pepisakkout2522",
+              },
+              engagement: { likes: 2, replies: 0 },
+            },
+          ],
+          continuationToken: "Eg0SC2RRdzR3OVdnWGNRGAYy1AEK...",
+        },
+        params: [
+          {
+            name: "continuationToken",
+            type: "string",
+            required: true,
+            description:
+              "Continuation token for the comment replies. Use 'repliesContinuationToken' from the Comments endpoint, or 'continuationToken' from a previous replies response to paginate.",
+            placeholder: "Eg0SC2RRdzR3OVdnWGNRGAYygwEaUBIa...",
           },
         ],
       },
@@ -1203,6 +1316,675 @@ export const apis = [
           publishedTimeText: "5 days ago",
           publishedTime: "2025-11-07T18:49:57.492Z",
           video: null,
+        },
+      },
+    ],
+  },
+  {
+    id: "rumble",
+    name: "Rumble",
+    description: "Scrape Rumble search, videos, transcripts, and channel videos",
+    endpoints: [
+      {
+        name: "Search",
+        method: "GET",
+        description: "Searches Rumble videos by keyword.",
+        fullDescription:
+          "Searches Rumble videos by keyword. Returns matching videos and shorts with title, URL, thumbnail, channel, published date, viewCountText, viewCountInt, and a numeric cursor for the next page.",
+        path: "/v1/rumble/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Search query.",
+            placeholder: "funny cats",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor from the previous response. This is the next page number, like 2 or 3.",
+            placeholder: "2",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997730850,
+          "query": "funny cats",
+          "videos": [
+            {
+              "id": "v6w80h0",
+              "url": "https://rumble.com/v6w80h0-democrats-pretend-to-care-about-epstein-nightly-scroll-w-hayley-caronia-ep..html",
+              "title": "Democrats Pretend To Care About Epstein - Nightly Scroll w/ Hayley Caronia (Ep.90) - 07/15/2025",
+              "thumbnail": "https://hugh.cdn.rumble.cloud/video/fww1/e9/s8/1/K/X/A/2/KXA2y.oq1b.2-small-Democrats-Pretend-To-Care-A.jpg",
+              "duration": "10 months ago Democrats Pretend To Care About Epstein - Nightly Scroll w/ Hayley Caronia (Ep.90) - 07/15/2025 BonginoReport Verified",
+              "publishedAt": "2025-07-15T16:29:49-04:00",
+              "publishedText": "10 months ago",
+              "viewCountText": "185,000 views",
+              "viewCountInt": 185000,
+              "channel": {
+                "name": "BonginoReport Verified",
+                "url": "https://rumble.com/user/BonginoReport",
+                "handle": "BonginoReport"
+              },
+              "type": "video"
+            },
+            {
+              "id": "v79yv40",
+              "url": "https://rumble.com/v79yv40-pets-dog-and-cat-insanely-funny-fails-compilation-viral-memes-epic-pranks-a.html",
+              "title": "PETS - DOG & CAT 🤣 INSANELY FUNNY FAILS COMPILATION! Viral Memes, Epic Pranks & Unhinged Chaos 😂🔥",
+              "thumbnail": "https://hugh.cdn.rumble.cloud/video/fwe2/8f/s8/1/a/C/F/o/aCFoA.oq1b-small-PETS-DOG-and-CAT-INSANELY-F..jpg",
+              "duration": "2 days ago PETS - DOG & CAT 🤣 INSANELY FUNNY FAILS COMPILATION! Viral Memes, Epic Pranks & Unhinged Chaos 😂🔥 Funny Pet Cat",
+              "publishedAt": "2026-05-17T03:01:42-04:00",
+              "publishedText": "2 days ago",
+              "viewCountText": "320 views",
+              "viewCountInt": 320,
+              "channel": {
+                "name": "Funny Pet Cat",
+                "url": "https://rumble.com/c/c-7841728",
+                "handle": "c-7841728"
+              },
+              "type": "video"
+            },
+            {
+              "id": "valm19",
+              "url": "https://rumble.com/valm19-funny-cat-funny-cat.html",
+              "title": "Funny cat funny cat",
+              "thumbnail": "https://hugh.cdn.rumble.cloud/video/s8/6/n/Z/6/d/nZ6db.oq1b.1.jpg",
+              "duration": "5 years ago Funny cat funny cat Cute Cats",
+              "publishedAt": "2020-10-04T13:50:36-04:00",
+              "publishedText": "5 years ago",
+              "viewCountText": "539 views",
+              "viewCountInt": 539,
+              "channel": {
+                "name": "Cute Cats",
+                "url": "https://rumble.com/c/CuteCats223",
+                "handle": "CuteCats223"
+              },
+              "type": "video"
+            },
+          ],
+          "channels": [],
+          "playlists": [],
+          "shorts": [
+            {
+              "id": "v79mu94",
+              "url": "https://rumble.com/shorts/v79mu94",
+              "title": "FUNNY🤣 CATS",
+              "thumbnail": "https://hugh.cdn.rumble.cloud/video/fww1/86/s8/6/O/E/w/m/OEwmA.oq1b.jpg",
+              "duration": null,
+              "publishedAt": "2026-05-09T19:22:41-04:00",
+              "publishedText": "9 days ago",
+              "viewCountText": "327 views",
+              "viewCountInt": 327,
+              "channel": {
+                "name": "SusieQ4u",
+                "url": "https://rumble.com/user/SusieQ4u",
+                "handle": "SusieQ4u"
+              },
+              "type": "short"
+            },
+            {
+              "id": "v792a76",
+              "url": "https://rumble.com/shorts/v792a76",
+              "title": "Too Much Love… Cat Identity Crisis!",
+              "thumbnail": "https://hugh.cdn.rumble.cloud/video/fwe2/45/s8/1/I/u/S/i/IuSiA.oq1b-small-Too-Much-Love-Cat-Identity-..jpg",
+              "duration": null,
+              "publishedAt": "2026-04-27T06:27:02-04:00",
+              "publishedText": "22 days ago",
+              "viewCountText": "5,050 views",
+              "viewCountInt": 5050,
+              "channel": {
+                "name": "Animal Madness TV",
+                "url": "https://rumble.com/c/AniMadTV",
+                "handle": "AniMadTV"
+              },
+              "type": "short"
+            },
+          ],
+          "lives": [],
+          "cursor": 2
+        },
+      },
+      {
+        name: "Channel Videos",
+        method: "GET",
+        description: "Gets videos from a Rumble channel by handle or URL.",
+        fullDescription:
+          "Gets videos from a Rumble channel by handle or URL. Returns channel metadata, videos, shorts, and a numeric cursor for the next page.",
+        path: "/v1/rumble/channel/videos",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "Rumble channel handle. If you'd prefer to use the URL instead, use the url parameter.",
+            placeholder: "CuteCats223",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Rumble channel URL. If you'd prefer to use the handle instead, use the handle parameter.",
+            placeholder: "https://rumble.com/c/CuteCats223",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor from the previous response. This is the next page number, like 2 or 3.",
+            placeholder: "2",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49999,
+          channel: {
+            name: "Cute Cats",
+            url: "https://rumble.com/c/CuteCats223",
+            handle: "CuteCats223",
+          },
+          videos: [
+            {
+              id: "v6uyinv",
+              url: "https://rumble.com/v6uyinv-try-not-to-laughfunniest-dogs-and-cats-clips-2025.html",
+              title: "Try Not To LaughFunniest Dogs and Cats Clips 2025",
+              thumbnail: "https://hugh.cdn.rumble.cloud/video/fww1/7e/s8/1/7/J/u/U/7JuUy.oq1b.2-small-Try-Not-To-LaughFunniest-Do.jpg",
+              duration: "20:55",
+              publishedAt: "2025-06-18T05:04:11-04:00",
+              publishedText: "10 months ago",
+              viewCountText: "1,150 views",
+              viewCountInt: 1150,
+              type: "video",
+            },
+          ],
+          shorts: [],
+          cursor: 2,
+        },
+      },
+      {
+        name: "Video",
+        method: "GET",
+        description: "Gets Rumble video details by URL.",
+        fullDescription:
+          "Gets Rumble video details by URL. Returns title, description, thumbnail, channel, publish date, view count, likes, dislikes, captions, and media metadata when available.",
+        path: "/v1/rumble/video",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Rumble video URL.",
+            placeholder: "https://rumble.com/v79xhhm-discovery-why-glenn-wants-israel-to-sue-the-new-york-times.html",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997726017,
+          "id": "v79xhhm",
+          "numericId": 436271810,
+          "embedId": "v77qthe",
+          "url": "https://rumble.com/v79xhhm-discovery-why-glenn-wants-israel-to-sue-the-new-york-times.html",
+          "embedUrl": "https://rumble.com/embed/v77qthe/",
+          "title": "DISCOVERY: Why Glenn WANTS Israel to Sue The New York Times",
+          "description": "Follow Glenn Greenwald's writing and other journalism at Substack, where you can become a member: https://greenwald.substack.com/ All videos now available as a podcast! Find full episodes here: https:",
+          "thumbnail": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/1/k/V/p/o/kVpoA.qR4e-small-DISCOVERY-Why-Glenn-WANTS-I..jpg",
+          "duration": 1678,
+          "publishedAt": "2026-05-16T11:31:27+00:00",
+          "viewCountText": "17,279 views",
+          "viewCountInt": 17279,
+          "likeCount": 145,
+          "dislikeCount": 3,
+          "width": 1920,
+          "height": 1080,
+          "channel": {
+            "name": "Glenn Greenwald",
+            "url": "https://rumble.com/c/GGreenwald",
+            "handle": "GGreenwald"
+          },
+          "captions": {
+            "en-auto": {
+              "language": "English (auto)",
+              "path": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/11/k/V/p/o/kVpoA.fn8Si.vtt"
+            }
+          },
+          "media": {
+            "tar": {
+              "240": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.oaa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=46677504-46694057",
+                "meta": {
+                  "bitrate": 222,
+                  "size": 46704640,
+                  "w": 640,
+                  "h": 360
+                }
+              },
+              "360": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.baa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=142485504-142502129",
+                "meta": {
+                  "bitrate": 679,
+                  "size": 142510080,
+                  "w": 640,
+                  "h": 360
+                }
+              },
+              "480": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.caa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=222280704-222297420",
+                "meta": {
+                  "bitrate": 1059,
+                  "size": 222300160,
+                  "w": 854,
+                  "h": 480
+                }
+              },
+              "720": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.gaa.tar?r_file=chunklist.m3u8&r_type=application%2Fvnd.apple.mpegurl&r_range=449539072-449555872",
+                "meta": {
+                  "bitrate": 2142,
+                  "size": 449566720,
+                  "w": 1280,
+                  "h": 720
+                }
+              }
+            },
+            "timeline": {
+              "180": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.Faa.mp4",
+                "meta": {
+                  "bitrate": 11,
+                  "size": 2508015,
+                  "w": 320,
+                  "h": 180
+                }
+              }
+            },
+            "audio": {
+              "192": {
+                "url": "https://hugh.cdn.rumble.cloud/video/fwe2/2f/s8/2/k/V/p/o/kVpoA.Gaa.aac",
+                "meta": {
+                  "bitrate": 195,
+                  "size": 40281235,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            },
+            "hls": {
+              "auto": {
+                "url": "https://rumble.com/hls-vod/77qthe/playlist.m3u8"
+              }
+            }
+          },
+          "shareUrl": "https://rumble.com/share/v79xhhm?src=VoG0dqZG5JZ6uoPQ0mmpV91Vkao2i8JCNcVBpMIgYffXfccYYhMCQA",
+          "isLive": false
+        }
+      },
+      {
+        name: "Transcript",
+        method: "GET",
+        description: "Gets a Rumble video's transcript when captions are available.",
+        fullDescription:
+          "Gets a Rumble video's transcript when captions are available. If Rumble does not expose captions for the video, transcript will be null and you will not be charged.",
+        path: "/v1/rumble/video/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Rumble video URL.",
+            placeholder: "https://rumble.com/valm19-funny-cat-funny-cat.html",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997725994,
+          "id": "v79xhhm",
+          "url": "https://rumble.com/v79xhhm-discovery-why-glenn-wants-israel-to-sue-the-new-york-times.html",
+          "language": "English (auto)",
+          "transcript": "WEBVTT\r\n\r\n00:00:06.890 --> 00:00:11.050\r\nLet's get into these questions, and we'll try and get through as many as we can.\r\n\r\n00:00:11.190 --> 00:00:15.650\r\nThe first one is from Christi Marbet, who says there were a few questions about this.\r\n\r\n00:00:15.930 --> 00:00:17.730\r\nThey want you to comment on the following"
+        }
+      },
+      {
+        name: "Comments",
+        method: "GET",
+        description: "Gets all top level comments for a Rumble video by URL.",
+        fullDescription:
+          "Gets all top level comments for a Rumble video by URL. Returns comment text, author, createdAt, createdAtText, likeCount, dislikeCount, and replyCount when comment bodies are public.",
+        path: "/v1/rumble/video/comments",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Rumble video URL.",
+            placeholder: "https://rumble.com/v792vns-the-splc-is-a-deceitful-and-poisonous-group.-but-was-their-behavior-crimina.html?e9s=rel_v2_ep",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997725224,
+          "id": "v792vns",
+          "numericId": 434843840,
+          "embedId": "v76w7nk",
+          "url": "https://rumble.com/v792vns-the-splc-is-a-deceitful-and-poisonous-group.-but-was-their-behavior-crimina.html",
+          "comments": [
+            {
+              "id": "609604348",
+              "text": "This is just like Jussie Smollett but on a huger scale -- if we can't find \"white supremacy,\" well, we'll just make that sh*t up. LOLLL",
+              "createdAt": "2026-04-27T22:20:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 15,
+              "dislikeCount": 0,
+              "replyCount": 2,
+              "author": {
+                "name": "robland",
+                "url": "https://rumble.com/user/robland",
+                "handle": "robland",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609597158",
+              "text": "The SPLC is part of the Zionist/globalist plan. Divide the white goyim and conquer them. After all they are just subhuman animals like the Palestinians they are slaughtering or the Ukrainians who they are sending to the slaughter in their attempt to get Russia out of the way of their world rule. 80% of the occupiers of Palestine believe its perfectly legit to do away with anyone who is in the way. \"THEN ENDS JUSTIFY THE MEANS\"",
+              "createdAt": "2026-04-27T20:22:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 15,
+              "dislikeCount": 2,
+              "replyCount": 2,
+              "author": {
+                "name": "DDRIVERDD",
+                "url": "https://rumble.com/user/DDRIVERDD",
+                "handle": "DDRIVERDD",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609592288",
+              "text": "Come on. It was about money.",
+              "createdAt": "2026-04-27T18:49:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 8,
+              "dislikeCount": 0,
+              "replyCount": 1,
+              "author": {
+                "name": "Lauraok",
+                "url": "https://rumble.com/user/Lauraok",
+                "handle": "Lauraok",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609596016",
+              "text": "Glenn i think you are lying to yourself if you think the SPLC wasnt directly fomenting violence to prop up their own orgs. they knew exactly what they were doing without the money from the splc the klan would have just enough money to buy breakfast and thats about it plus All these \"rightwing\" groups seed to disappear and why were the cops so johnny on the spot defending and protecting them",
+              "createdAt": "2026-04-27T20:00:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 11,
+              "dislikeCount": 3,
+              "replyCount": 2,
+              "author": {
+                "name": "jwink80",
+                "url": "https://rumble.com/user/jwink80",
+                "handle": "jwink80",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609603386",
+              "text": "Yeah, you wouldn't asking such a stupid question if it was White people getting in trouble for fomenting fake anti-white crimes. Fuck yourself on this one, Glenn.",
+              "createdAt": "2026-04-27T22:03:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 9,
+              "dislikeCount": 4,
+              "replyCount": 1,
+              "author": {
+                "name": "itzallbs",
+                "url": "https://rumble.com/user/itzallbs",
+                "handle": "itzallbs",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609607226",
+              "text": "I don't rightly care if the prosecution ends up successfully proving that a crime took place so long as all the facts are publicly presented and there is no doubt what they did. The jury may decide that SPLC was not defrauding donors. At first glance, it certainly looks like they explicitly did so because they were able to rake in $millions. DOJ may not find any \"smoking gun\" during their investigation proving that the SPLC executives intended to make these abhorrent groups stronger so that their donations would soar. Okay. But that will not exonerate SPLC from the charge that they cooperated with the very organizations they claimed they were attempting to dismantle.",
+              "createdAt": "2026-04-27T23:10:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 5,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "milkchaser",
+                "url": "https://rumble.com/user/milkchaser",
+                "handle": "milkchaser",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609629486",
+              "text": "The SPLC is just doing what the US government does. The US funds all of the terrorist groups they pretend to oppose.",
+              "createdAt": "2026-04-28T08:52:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 6,
+              "dislikeCount": 1,
+              "replyCount": 2,
+              "author": {
+                "name": "greghume121",
+                "url": "https://rumble.com/user/greghume121",
+                "handle": "greghume121",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609648444",
+              "text": "concurrence https://x.com/amuse/status/2049141154977910963",
+              "createdAt": "2026-04-28T15:22:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "OrsemusBentley",
+                "url": "https://rumble.com/user/OrsemusBentley",
+                "handle": "OrsemusBentley",
+                "avatar": null
+              }
+            },
+            {
+              "id": "610179594",
+              "text": "In light of the recent instability, things changing so fast. It’s normal to feel a bit uncertain with how the economy is going. With everything shifting, it just makes sense to be more intentional about how you manage and protect your money. This is the time to stay informed, ask questions, and seek guidance from credible, transparent verified sources. Dr Scott is someone I trust, who understands the Quantum Financial System (QFS), XRPL, NESARA/GESARA, the Humanitarian Project and Med beds better than most. He can explain it in simple terms and guide you step by step so you’re ready before the big switch happens. Don’t wait until it’s too late. Get ahead, protect what you have, and know exactly what to do when the change comes. For those seeking direct and reliable information, I recommend contacting him through his official Telegram account to ensure you are communicating with the authentic source. For full guidance, you may reach him directly on Telegram: https://t.me/sidneymbrewerORG",
+              "createdAt": "2026-05-07T15:48:00.000Z",
+              "createdAtText": "1 week ago",
+              "likeCount": 6,
+              "dislikeCount": 1,
+              "replyCount": null,
+              "author": {
+                "name": "GlennGreenwaldGroup",
+                "url": "https://rumble.com/user/GlennGreenwaldGroup",
+                "handle": "GlennGreenwaldGroup",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609661566",
+              "text": "SPLC- \"WE ARE THE HATE\"",
+              "createdAt": "2026-04-28T18:56:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 3,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "jimmy2knives",
+                "url": "https://rumble.com/user/jimmy2knives",
+                "handle": "jimmy2knives",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609596084",
+              "text": "But as always you skeptical nature is always a good idea when dealing with the Gov..",
+              "createdAt": "2026-04-27T20:01:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 3,
+              "dislikeCount": 1,
+              "replyCount": null,
+              "author": {
+                "name": "jwink80",
+                "url": "https://rumble.com/user/jwink80",
+                "handle": "jwink80",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609607140",
+              "text": "Appreciate your take on this, Glenn. I'm glad you're posting videos on Rumble again",
+              "createdAt": "2026-04-27T23:09:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 2,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "BigZVideogames",
+                "url": "https://rumble.com/user/BigZVideogames",
+                "handle": "BigZVideogames",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609610394",
+              "text": "I flew through Charlottesville the week of the incident and I was coming from a Bi conference at the White House. HRC was becoming active at the HRC and the trans controversy gained ground about that same time. I ALWAYS SMELLED A RAT!",
+              "createdAt": "2026-04-28T00:03:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 2,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "DeeDeeTiger",
+                "url": "https://rumble.com/user/DeeDeeTiger",
+                "handle": "DeeDeeTiger",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609628400",
+              "text": "The SPLC is a version of the ADL that is less explicit in its Jewishness.",
+              "createdAt": "2026-04-28T08:03:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 2,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "SweetSmellyStinkyStuff",
+                "url": "https://rumble.com/user/SweetSmellyStinkyStuff",
+                "handle": "SweetSmellyStinkyStuff",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609613968",
+              "text": "I agree with you on this one, Glenn, because the court case hasn't happened yet. As you say, this is what the prosecutor is saying.",
+              "createdAt": "2026-04-28T01:13:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 1,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "RedBaron616",
+                "url": "https://rumble.com/user/RedBaron616",
+                "handle": "RedBaron616",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609633250",
+              "text": "Just more bigots trying to silence/punish anyone saying what they don't like. Typical of brats expecting to never be \"offended.\"",
+              "createdAt": "2026-04-28T11:00:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 1,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "georgewsr",
+                "url": "https://rumble.com/user/georgewsr",
+                "handle": "georgewsr",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609625710",
+              "text": "With Ticketmaster the problem is 'vertical integration'.",
+              "createdAt": "2026-04-28T06:26:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": 1,
+              "author": {
+                "name": "ChamberPotte",
+                "url": "https://rumble.com/user/ChamberPotte",
+                "handle": "ChamberPotte",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609629252",
+              "text": "POSIWID = The Purpose Of a System Is What It Does. (See James Corbett)",
+              "createdAt": "2026-04-28T08:43:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "Phabala",
+                "url": "https://rumble.com/user/Phabala",
+                "handle": "Phabala",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609632202",
+              "text": "In the UK Stonewall Ltd offer to police the sexual politics of companies in exchange for money and institutional power. If the deal is made, Stonewall is prepared to produce a clean bill of health for a given firm, NGO, etc. If rejected, they will target that group with accusations in the media until they prevail. In effect, they operate as a protection racket with deep ties to the state. Glenn's analysis and review of the contention surrounding the Trans issue is well reasoned and accurate. The campaign emerged overnight just as full legal rights were secured for gay and lesbian people in the United States. What were these established advocacy groups to do- simply fold their tents and compliment themselves on a job well done? Jobs, pensions, access to power, donations on a colossal scale- all hinged on finding a new focus. This was first and foremost a business decision- create/identify a need, then come forward with the solution. And in the process, ride roughshod over the rights of critics.",
+              "createdAt": "2026-04-28T10:32:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "Budhudnut",
+                "url": "https://rumble.com/user/Budhudnut",
+                "handle": "Budhudnut",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609645988",
+              "text": "So Glen, how do you feel about the SPLC? I agree, and it's been blatantly obvious every time I heard a spokesperson that the narrative was scripted for escalation, not elimination of hate groups.",
+              "createdAt": "2026-04-28T14:39:00.000Z",
+              "createdAtText": "3 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "Dazmile",
+                "url": "https://rumble.com/user/Dazmile",
+                "handle": "Dazmile",
+                "avatar": null
+              }
+            },
+            {
+              "id": "609859064",
+              "text": "I supported the SPLC back in the late 1970s as a college kid. It is sad how the money game ruins a mission for self preservation over principle. This pattern seems to be the default now as America falls into oblivion.",
+              "createdAt": "2026-05-01T22:04:00.000Z",
+              "createdAtText": "2 weeks ago",
+              "likeCount": 0,
+              "dislikeCount": 0,
+              "replyCount": null,
+              "author": {
+                "name": "rikory",
+                "url": "https://rumble.com/user/rikory",
+                "handle": "rikory",
+                "avatar": null
+              }
+            }
+          ]
         },
       },
     ],
@@ -2212,201 +2994,137 @@ export const apis = [
         },
       },
       {
-        name: "Facebook Group Posts",
+        name: "Profile Events",
         method: "GET",
-        description:
-          "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
-        fullDescription:
-          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Supports sorting by TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, or CHRONOLOGICAL_LISTINGS, with cursor-based pagination.",
-        path: "/v1/facebook/group/posts",
+        description: "Get the events of a public Facebook page",
+        fullDescription: "Get the events of a public Facebook page",
+        path: "/v1/facebook/profile/events",
         params: [
           {
             name: "url",
             type: "string",
-            description: "The URL of the group",
-            required: false,
-            placeholder: "https://www.facebook.com/groups/1270525996445602/",
-          },
-          {
-            name: "group_id",
-            type: "string",
-            description: "The ID of the group",
-            required: false,
-            placeholder: "742354120555345",
-          },
-          {
-            name: "sort_by",
-            type: "select",
-            description: "How to sort the posts",
-            required: false,
-            placeholder: "TOP_POSTS",
-            options: [
-              "TOP_POSTS",
-              "RECENT_ACTIVITY",
-              "CHRONOLOGICAL",
-              "CHRONOLOGICAL_LISTINGS",
-            ],
+            required: true,
+            description: "The URL of the public Facebook page",
+            placeholder: "https://www.facebook.com/brickyardoldtown",
           },
           {
             name: "cursor",
             type: "string",
-            description: "The cursor to paginate to the next page",
             required: false,
-            placeholder: "AQHRBjJCelNvdGRjH8s2j-6...",
-          },
+            description: "The cursor to paginate to get more events",
+            placeholder: "eyJpZCI6IllYQndYMk52Ykd......",
+          }
         ],
         sampleResponse: {
-          success: true,
-          posts: [
+          "success": true,
+          "credits_remaining": 49998108820,
+          "events": [
             {
-              id: "1286289372828481",
-              text: null,
-              url: "https://www.facebook.com/groups/742354120555345/permalink/1286289372828481/",
-              permalink:
-                "https://www.facebook.com/sofiyati.942655/videos/996458202287759/?idorvanity=742354120555345",
-              author: {
-                __typename: "User",
-                name: "Sofiyati",
-                short_name: "Sofiyati",
-                id: "61552766652796",
+              "id": "1596643298218453",
+              "__typename": "Event",
+              "name": "Harrison Steele at Brickyard",
+              "is_canceled": false,
+              "event_creator": {
+                "__typename": "User",
+                "__isEntity": "User",
+                "url": "https://www.facebook.com/brickyardoldtown",
+                "name": "Brickyard",
+                "id": "100066639371774"
               },
-              reactionCount: 198,
-              commentCount: 100,
-              videoViewCount: null,
-              publishTime: 1748639389,
-              videoDetails: {
-                sdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQO0_B24bEmILx4bmOfr_cQA5BgXwF9DMHJYAkUfQJAmuMGLV9PAc9-TrNen27lHJjr45pVm0ufFCcTJBCeFIr_s.mp4?strext=1&_nc_cat=111&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=paW12HBCn0EQ7kNvwFwJnXg&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjY0MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjkzNDUwMjg0MTg4MjYsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfJNS34mvDAkIbtvP8o2nMuYrJ66ZeyCB1zQRlsD8sajow&oe=684150C7",
-                hdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM3UoTI5n6N2jVgKeUXSMPnqwAEQFHNGM9dejk3EV-MyBXNUcHlWtvYgUU2cD672EkWw5UAYZ3jJLXQiFdOvQh7.mp4?strext=1&_nc_cat=102&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kSrgWXZVr9IQ7kNvwE16oSK&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjEyODAuZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcCIsInhwdl9hc3NldF9pZCI6MTA2OTM0NTAyODQxODgyNiwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjE1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=67dd4c5fe90b11c5&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRUlZOHgwUVZ4azVjSHdIQUNGeU9XTzlQTzlXYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ1V3OFIySHNmZWZhbUVFQUNZbmdLUlBMSzU4YnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmlLT9qImk5gMVAigDQzNlLBdALkQYk3S8ahgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJKQedBwUVhnjLuJgGuJ7E1TXLk0vib17T3YkAmJUPb8w&oe=68414B6C",
-                thumbnailUrl:
-                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502130835_1399930867890626_4491393707187246303_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=50ce42&_nc_ohc=l5JdWBSutswQ7kNvwFHAOSM&_nc_oc=Adm5GttPwjsWvVb_d8d7buJHGnqW6FNHHuRyi2n0UmFWsS7KDF2bg4bo_0uXYI8Uxh0&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfKO58NMsMKO_OXEVSw8A1BNbt0xSVognLfCBKxypc5etw&oe=684150FC",
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "Brickyard",
+                "location": {
+                  "reverse_geocode": {
+                    "city": "Wichita"
+                  }
+                },
+                "__isNode": "FreeformPlace",
+                "id": "1594193222711146"
               },
-              topComments: [
-                {
-                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODY1MTY1MjYxMzkwOTk=",
-                  text: "I can find thousands of videos with the same exact trend. And we all know what I’m referring to 🤭",
-                  publishTime: 1748666375,
-                  author: {
-                    id: "pfbid0haqAQZCvs4cTVyfGwxCGPidvLYRNhFiboXkCH45LmPLAF1oQ7kJxaVig19KT8nZvl",
-                    name: "Trent Slushy",
-                    gender: "MALE",
-                    url: null,
-                  },
-                },
-                {
-                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODYzMTY4NDYxNTkwNjc=",
-                  text: "Nothing new when the brother gets knocked down another brother jumps in from behind.. very disrespectful",
-                  publishTime: 1748642672,
-                  author: {
-                    id: "pfbid02fRnV4WmvHpX7sx48W2dmfetXpZHCLF5NhE3G4odMC8BniyRA3p4cQ3QYa4fzo57Sl",
-                    name: "Paul Demeo",
-                    gender: "MALE",
-                    url: null,
-                  },
-                },
-              ],
+              "day_time_sentence": "Thu, May 7 at 6:00 PM CDT",
+              "url": "https://www.facebook.com/events/1596643298218453/",
+              "gif_cover_photo": null,
+              "cover_video": null,
+              "__isEntity": "Event",
+              "event_kind": "PUBLIC_TYPE",
+              "is_happening_now": false,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "start_timestamp": 1778194800
             },
             {
-              id: "1280901910033894",
-              text: null,
-              url: "https://www.facebook.com/groups/742354120555345/permalink/1280901910033894/",
-              permalink:
-                "https://www.facebook.com/Eat.tohato/videos/1241112417643324/?idorvanity=742354120555345",
-              author: {
-                __typename: "User",
-                name: "Eat Tohato",
-                short_name: "Tohato",
-                id: "100023215682191",
+              "id": "26678639021771578",
+              "__typename": "Event",
+              "name": "Jeremy & Nick at Brickyard",
+              "is_canceled": false,
+              "event_creator": {
+                "__typename": "User",
+                "__isEntity": "User",
+                "url": "https://www.facebook.com/brickyardoldtown",
+                "name": "Brickyard",
+                "id": "100066639371774"
               },
-              reactionCount: 1671,
-              commentCount: 214,
-              videoViewCount: null,
-              publishTime: 1748056476,
-              videoDetails: {
-                sdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMaX1dJhB4b1CM618GRKCI2JX0hcLhvoAzXy0L1g3Clmfk9WwFpsHBoYzVohilg9hArNQm5TnGKKphyJIgnVPlY.mp4?strext=1&_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=LkrGcvJpPFoQ7kNvwFc9J3f&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjcyNjk2NzI2Mjk5NTIyNSwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjQwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_zt=28&oh=00_AfLXJziRWwLTk7rhEEcA2FTnVPILkvjZ66O3oJcZvltnqw&oe=68415A81",
-                hdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPvvRXTfaIhu1IVF1-FaQtfZ_y6ZR7R998HF_Jg9m0OPHWROV0gVezcwfj2Sr9m_RkdNiKg53gt2LIqY3yR3yrO.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=K6sAwYQ8h7gQ7kNvwE2q_jX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo3MjY5NjcyNjI5OTUyMjUsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjo0MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=7f3ac1ad59381aa7&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HTTQxelIxcS0wZjBQb2dDQU9qOXVDODN4aGwyYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSkxWMWgyOHJBaTRZd29DQUZTMWM2Yjd1Z2hSYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmsozLl4jLygIVAigDQzNlLBdAQ8bpeNT99BgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJtKdCa7YflP7aWfCKIoLjvqelDtuzQR6ocEtzi-7bttQ&oe=684146E9",
-                thumbnailUrl:
-                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/500892329_1215071943593619_2690255710088955217_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=50ce42&_nc_ohc=QoHadvziHEEQ7kNvwE-PAX_&_nc_oc=Adn7q7inFPwItHI0N5_EwBcWRd7qi74ZyHC41ilu2xHNMujaVON5uWwStyC7yAGiEJU&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJx4boMwltKuEqfKWHotxJIBcehG40n3TdIHSVj0JAwjg&oe=68412D7B",
+              "event_place": {
+                "__typename": "Page",
+                "contextual_name": "Brickyard",
+                "location": {
+                  "reverse_geocode": {
+                    "city": "Wichita"
+                  }
+                },
+                "__isNode": "Page",
+                "id": "274995392617693"
               },
-              topComments: [
-                {
-                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MDg1ODY2OTk4OTM=",
-                  text: "Did a powerbomb... stole a bat and he coulda ended that dude great self control",
-                  publishTime: 1748057315,
-                  author: {
-                    id: "pfbid0DheZGgjMQgRTz5MPPHnkxaEDerz1v7Eq6mNgac85wAShJdU6oHPXQ9feQSSLytiEl",
-                    name: "Marcos Mendoza",
-                    gender: "MALE",
-                    url: "https://www.facebook.com/marcos.mendoza.560854",
-                  },
-                },
-                {
-                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MjI2MzY2OTg0ODg=",
-                  text: "The ice cream truck jingle made this an instant classic.",
-                  publishTime: 1748058655,
-                  author: {
-                    id: "pfbid02woauK7hrKXtXwq7BCnj6hiCKfaNMUYu7TueHA6DhZS4EYYaKRMTTX5FgH4y1gYn3l",
-                    name: "Lewis Santana",
-                    gender: "MALE",
-                    url: "https://www.facebook.com/luissantana27",
-                  },
-                },
-              ],
+              "day_time_sentence": "Fri, May 8 at 5:30 PM CDT",
+              "url": "https://www.facebook.com/events/26678639021771578/",
+              "gif_cover_photo": null,
+              "cover_video": null,
+              "__isEntity": "Event",
+              "event_kind": "PUBLIC_TYPE",
+              "is_happening_now": false,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "start_timestamp": 1778279400
             },
             {
-              id: "1286064029517682",
-              text: null,
-              url: "https://www.facebook.com/groups/742354120555345/permalink/1286064029517682/",
-              permalink:
-                "https://www.facebook.com/sofiyati.942655/videos/1390174998770652/?idorvanity=742354120555345",
-              author: {
-                __typename: "User",
-                name: "Sofiyati",
-                short_name: "Sofiyati",
-                id: "61552766652796",
+              "id": "25926295053738863",
+              "__typename": "Event",
+              "name": "AJ Harvey at Brickyard",
+              "is_canceled": false,
+              "event_creator": {
+                "__typename": "User",
+                "__isEntity": "User",
+                "url": "https://www.facebook.com/brickyardoldtown",
+                "name": "Brickyard",
+                "id": "100066639371774"
               },
-              reactionCount: 2064,
-              commentCount: 413,
-              videoViewCount: null,
-              publishTime: 1748615813,
-              videoDetails: {
-                sdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPNp462YmKD9gM-CvGhQ1-_eLCyuIW2VjmEwBwPB8tUPQsa_U4BUvJaBc349BjbepGeUvf_7cCVZ_vlJew3hpJe.mp4?strext=1&_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=ae0VsnoLQtAQ7kNvwHqh95e&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjUwNzY5ODIxOTkzNzgsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoyMSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfIAHBuToUCT7sMnHhi0E_Jg1kXRmYGXvadcWq1fxD_agg&oe=684155D9",
-                hdUrl:
-                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM9JaJSrDs7LdwNhv0V3RX-rqeSQMAcEKZHxK8r7fJCSfBfjeoicAq5LzZc3MjdpGX3U53iRWH5g9IAl-uyIEWW.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kF7D9uVefoUQ7kNvwFzu9xR&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxMDY1MDc2OTgyMTk5Mzc4LCJ2aV91c2VjYXNlX2lkIjoxMDEyMSwiZHVyYXRpb25fcyI6MjEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=31e1f90330ba51e1&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ2JpNGgyZEFQdDFTeFFGQUZXWUJwS0RTQlZnYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRE90OVIwejA2T0Z2eU1HQUN2R1lfWlJLZjFpYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmpNH18tGr5AMVAigDQzNlLBdANTul41P3zxgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfLW0M3B3nGgopfnkM6OonAjdBwGrIgmwroV3H9P3hg8sA&oe=68415E79",
-                thumbnailUrl:
-                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502754732_2110163772821086_4373511123704867007_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ce42&_nc_ohc=3jok6WCUqMcQ7kNvwFXeHG7&_nc_oc=Adkc4JwXklseK8HvROcz5T8GntPXCVjwA7GuYjtdu8nLY9wak-bHzCOqlQyDaY7aOng&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJpq9CcAaqsZizy2ECTar1NdvELlq3LJ-WgXPgAZ8lmcw&oe=68413302",
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "Brickyard",
+                "location": {
+                  "reverse_geocode": {
+                    "city": "Wichita"
+                  }
+                },
+                "__isNode": "FreeformPlace",
+                "id": "1303443241886976"
               },
-              topComments: [
-                {
-                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODYwOTMwMDI4NDgxMTg=",
-                  text: "No fight to see here, just a chump",
-                  publishTime: 1748618582,
-                  author: {
-                    id: "pfbid06cUKaQWnFynREjde2E8RDsiiwAN7aZxfNAzmM58wkyCGApd8wSaxRyPT7iBXrodal",
-                    name: "Sky Parker",
-                    gender: "MALE",
-                    url: "https://www.facebook.com/OfficerWubWub",
-                  },
-                },
-                {
-                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODY1MTYwNTk0NzI0Nzk=",
-                  text: "Idk how yall say that’s a sucker punch. Don’t get in another man’s face n not expect a punch",
-                  publishTime: 1748666313,
-                  author: {
-                    id: "pfbid0mu2nQsJbm7YPPmXvaDY7HXVZHzgEY7V8w5GcxJMrh7EkwTFcLzYRufSp8c2GzBVvl",
-                    name: "Joshua Griffith",
-                    gender: "MALE",
-                    url: "https://www.facebook.com/katakeepsit100",
-                  },
-                },
-              ],
+              "day_time_sentence": "Fri, May 8 at 9:00 PM CDT",
+              "url": "https://www.facebook.com/events/25926295053738863/",
+              "gif_cover_photo": null,
+              "cover_video": null,
+              "__isEntity": "Event",
+              "event_kind": "PUBLIC_TYPE",
+              "is_happening_now": false,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "start_timestamp": 1778292000
             },
           ],
-          cursor: "AQHRBjJCelNvdGRjH8s2j-....",
+          "cursor": "eyJpZCI6IllYQ.....",
+          "has_next_page": true,
+          "total_count": 22
         },
       },
       // {
@@ -2873,9 +3591,9 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a public Facebook post or reel by url.",
+        description: "Get a public Facebook post or reel by url. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
+          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
         path: "/v1/facebook/post",
         params: [
           {
@@ -2884,21 +3602,6 @@ export const apis = [
             required: true,
             description: "The URL of the post to get",
             placeholder: "https://www.facebook.com/reel/1535656380759655",
-          },
-          {
-            name: "get_comments",
-            type: "boolean",
-            required: false,
-            description:
-              "Whether you want to get the first several comments of the post",
-            placeholder: "false",
-          },
-          {
-            name: "get_transcript",
-            type: "boolean",
-            required: false,
-            description: "Whether you want to get the transcript of the post",
-            placeholder: "false",
           },
         ],
         sampleResponse: {
@@ -3001,163 +3704,1511 @@ export const apis = [
           },
         ],
         sampleResponse: {
-          success: true,
-          comments: [
+          "success": true,
+          "credits_remaining": 49999299370,
+          "comments": [
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc4NzQ2NjY0NzI2NTk4Mw==",
-              text: "How are you not 300lbs?",
-              created_at: "2025-09-01T00:38:58.000Z",
-              reply_count: 16,
-              reaction_count: 76,
-              author: {
-                id: "pfbid0Ay28K5Lc7QpQLD8wZEHrq4ertocvWcZApjZjDoRqfkYQSzSxaPBS7qFt53v95rERl",
-                name: "George Bergerac",
-                gender: "MALE",
-                profile_picture:
-                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/505842751_10236156984095460_2868572328330516064_n.jpg?stp=cp0_dst-jpg_p64x64_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=g-I4H6KKM6MQ7kNvwFuygDF&_nc_oc=AdnwxxAwIfIChiaCwfglGjg0KQPGmQ1OGj63ApE0s61cGAfuYk3N_GRergiUg3NRJdE&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZaDkoSLpJpbQieLDeGB_yykXQsr1Nv8hM_VfkUA1BcdA&oe=68C11D0D",
-                short_name: "George",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc3OTIzNDI4MTE0NjkzNQ==",
+              "text": "Do 1/2 mini Oreos and 1/2 peanut butter ritz Bitz, otherwise the same recipe. It’s the BEST",
+              "created_at": "2025-09-01T01:10:40.000Z",
+              "reply_count": 1,
+              "reaction_count": 95,
+              "reactions": {
+                "thankful": 0,
+                "like": 79,
+                "love": 4,
+                "care": 0,
+                "haha": 1,
+                "wow": 11,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid02SdzVLPYTHY2eGMdrwFrLw54sVZdguAGnLUj4RPL3HxFtG2D4PBBjptiMEwpB21Ehl",
+                "name": "Robin Bergsagel",
+                "gender": "FEMALE",
+                "short_name": "Robin"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzMjc3MzczMjIyMDEyOTg=",
-              text: "Do these bits have cheese in the middle?",
-              created_at: "2025-09-01T00:52:22.000Z",
-              reply_count: 21,
-              reaction_count: 32,
-              author: {
-                id: "1527964450",
-                name: "Jill Carney Strother",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-1/69940743_10220991568328747_1326971802987003904_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=Ex_xJaIlN60Q7kNvwH3XZuy&_nc_oc=AdlV8aBJ-0JD1br2NBT6_F6TEKnp3IEP2FivOZws94atyClBXTkQ1MLRzdcxwDvAwi0&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfaNoY1bJKBk5dSVEY5L8n65TthSPqdoQSa7aq3oKvYlTg&oe=68E2BBBF",
-                short_name: "Jill",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEyODEyNTE3NjM3NTEwODM=",
+              "text": "Sabrina Cox Jasmin Cox okay but hear me out, dark chocolate chips 👀",
+              "created_at": "2025-09-01T01:31:04.000Z",
+              "reply_count": 3,
+              "reaction_count": 45,
+              "reactions": {
+                "thankful": 0,
+                "like": 37,
+                "love": 6,
+                "care": 0,
+                "haha": 0,
+                "wow": 1,
+                "sad": 0,
+                "anger": 1,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid02616R2TFi1idG4Ek5teDkCRbr2ikn3gyXnyAZreGVsyiNPPCeWuk12xmQuaczZoRl",
+                "name": "Brittani Crosby",
+                "gender": "FEMALE",
+                "short_name": "Brittani"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE0ODE0MTIwNTYzNTA1NDk=",
-              text: "I can’t even with some of you…this is not meant for dogs🤦🏻‍♀️",
-              created_at: "2025-09-01T01:46:44.000Z",
-              reply_count: 3,
-              reaction_count: 57,
-              author: {
-                id: "pfbid0R6rs2W8jPF2sCcAKvZZJmGxsi3yvf49YpXdfxumjuwapfuAYgEEHaW2A9NQDcvMvl",
-                name: "September Martinez",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/538790834_4189629641268107_6434583406373058543_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=Y3De0imXXHsQ7kNvwGizq6K&_nc_oc=AdmIxgyhswYXE3xoo3QLGrnLv7ekWDjT_LHvn4PWMehDk5Mf4xuilzaxZW6rOZ8jY_4&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZLhxZ_XTPsABN6RzTw88FBfMHEQzO5tuLBD8MIlti2Uw&oe=68C12E18",
-                short_name: "September",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzMjc3MzczMjIyMDEyOTg=",
+              "text": "Do these bits have cheese in the middle?",
+              "created_at": "2025-09-01T00:52:22.000Z",
+              "reply_count": 30,
+              "reaction_count": 51,
+              "reactions": {
+                "thankful": 0,
+                "like": 34,
+                "love": 2,
+                "care": 0,
+                "haha": 12,
+                "wow": 2,
+                "sad": 0,
+                "anger": 1,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "1527964450",
+                "name": "Jill Carney Strother",
+                "gender": "FEMALE",
+                "short_name": "Jill"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzgwNjQwOTc4NTE0OTc4OQ==",
-              text: "I thought dogs weren’t supposed to have chocolate.",
-              created_at: "2025-08-31T23:54:14.000Z",
-              reply_count: 17,
-              reaction_count: 65,
-              author: {
-                id: "pfbid02s73v688AjeBDBkE9fZhHueosTBQcbBeVnXaCsdZkbtC3q6ZYUyutsjer8bWsR9P7l",
-                name: "Jerry Mickel",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/406419031_217990624668899_9106419728628593815_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_ohc=o67dVhsiim0Q7kNvwEwaMOr&_nc_oc=Adm03sBUKi96OlsCVJgbAIYqsHY-5Ck2uJ_nNYbftqE9jdRx8A1KVEN0P43mcGcZETk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfaRwhQ-hMmtEviACASXHbBEybQVpeGL-8u-IKx9I5PwKQ&oe=68C13D27",
-                short_name: "Jerry",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzI1MDM5OTI2NjMzMTMxNzU=",
+              "text": "Don’t call it puppy chow!",
+              "created_at": "2025-09-01T17:23:19.000Z",
+              "reply_count": 2,
+              "reaction_count": 7,
+              "reactions": {
+                "thankful": 0,
+                "like": 3,
+                "love": 0,
+                "care": 0,
+                "haha": 4,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid036F2VtdiRuxfxyVQ975mETPVPMpCQXjgmCmxqy9ERMjU3mxqEL4BZLrd2PweDe2YZl",
+                "name": "Susan Chapluk",
+                "gender": "FEMALE",
+                "short_name": "Susan"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzNTU1Mjc1NjI2MDYwNzk=",
-              text: "Peanut butter Ritz bitz?",
-              created_at: "2025-09-01T00:27:01.000Z",
-              reply_count: 10,
-              reaction_count: 35,
-              author: {
-                id: "pfbid0yr2MztyVjE36n2T2MSC1dxZNFN7kKHa2hQs8wrNAP81u2WdhRLFrzcGGbwuUALJzl",
-                name: "Julie Henry",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/539869738_25395292103393389_6583639586888007033_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_ohc=glF31K6uPakQ7kNvwHIFd7E&_nc_oc=AdmyA6pevUHcAPtFd3RYSoxYvi6_XO_UtM4lLVIV5MyKpymcfRcAd0cBd6LOmOcYPmw&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfbrSLnkULZeUo3oSOx_MMMzL4Hcs1d_940O2iR_cbnTXg&oe=68C11822",
-                short_name: "Julie",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEzNTU1Mjc1NjI2MDYwNzk=",
+              "text": "Peanut butter Ritz bitz?",
+              "created_at": "2025-09-01T00:27:01.000Z",
+              "reply_count": 11,
+              "reaction_count": 44,
+              "reactions": {
+                "thankful": 0,
+                "like": 41,
+                "love": 3,
+                "care": 0,
+                "haha": 0,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid0yWpY2xax8651xUYKXPH8K9EubVfohvyoiUYEf9bRWquFaWipGbnUcqjiheVx3BpCl",
+                "name": "Julie Henry",
+                "gender": "FEMALE",
+                "short_name": "Julie"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzEyODEyNTE3NjM3NTEwODM=",
-              text: "Sabrina Cox Jasmin Cox okay but hear me out, dark chocolate chips 👀",
-              created_at: "2025-09-01T01:31:04.000Z",
-              reply_count: 2,
-              reaction_count: 28,
-              author: {
-                id: "pfbid02RCvNxqoKAfwwveRr4TbntoTP5wAcMXNCR3PAtnmPsiW67ZwtVuRyA4KMLDc4xUrl",
-                name: "Brittani Crosby",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/542759259_10163010487289709_8829316704747256796_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tA57sz8ZmxoQ7kNvwEZLb1t&_nc_oc=AdnXhSmRCT-KZRj_ssbz9tGzvkSJ2CGogkQGE17MMsYzLqt6RNSrSTCOts6pWdLx3J8&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZSI9nuRBpgI4u6jA5bTYE_lAMBQLKn8CPk8hvk4JxAJA&oe=68C11144",
-                short_name: "Brittani",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc4NzQ2NjY0NzI2NTk4Mw==",
+              "text": "How are you not 300lbs?",
+              "created_at": "2025-09-01T00:38:58.000Z",
+              "reply_count": 20,
+              "reaction_count": 97,
+              "reactions": {
+                "thankful": 0,
+                "like": 59,
+                "love": 6,
+                "care": 0,
+                "haha": 30,
+                "wow": 1,
+                "sad": 0,
+                "anger": 1,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid0B7mpunXGKrQ7FmnoPLK2hBP2uTziU6ZuH7CfobQjToANo2Wcp3hVPoZXmqcpTPr2l",
+                "name": "George Bergerac",
+                "gender": "MALE",
+                "short_name": "George"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzI1MDM5OTI2NjMzMTMxNzU=",
-              text: "Don’t call it puppy chow!",
-              created_at: "2025-09-01T17:23:19.000Z",
-              reply_count: 2,
-              reaction_count: 6,
-              author: {
-                id: "pfbid0366GoHvXmhVpW1Pmn1FqREnMdwM7drTzZDmKfBBJ4h9ZCwbqAayPWSwd9R3xsi68ql",
-                name: "Susan Chapluk",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/465816038_10230475387701068_4549914005394301143_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=WX1tylQLsXwQ7kNvwGPxsoF&_nc_oc=Adm5wgy1WCzd3Py2OAhE2cKbMNvfk5GJKsZ8QHi6lyXR3RUWjaB29IvKu8lNtGalm44&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZPQaGi3i9CaaY6h6LhvHNaq2lFwmEJvI2TTnohLWbBgw&oe=68C13F88",
-                short_name: "Susan",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc3MjEyOTE4NTQ0OTQ4Mw==",
+              "text": "OMG can you say diabetes? 😂 ￼",
+              "created_at": "2025-09-01T04:36:19.000Z",
+              "reply_count": 16,
+              "reaction_count": 9,
+              "reactions": {
+                "thankful": 0,
+                "like": 5,
+                "love": 0,
+                "care": 0,
+                "haha": 1,
+                "wow": 2,
+                "sad": 0,
+                "anger": 1,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "100010033157652",
+                "name": "Gwen Davis Styers",
+                "gender": "FEMALE",
+                "short_name": "Gwen"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc3OTIzNDI4MTE0NjkzNQ==",
-              text: "Do 1/2 mini Oreos and 1/2 peanut butter ritz Bitz, otherwise the same recipe. It’s the BEST",
-              created_at: "2025-09-01T01:10:40.000Z",
-              reply_count: 0,
-              reaction_count: 65,
-              author: {
-                id: "pfbid02SVEnjgMo57xpqySrw7QsVRC7TAoYQTzMQ4XJtssQPqvEW9w1hhxAtDWVmsMfWjHbl",
-                name: "Robin Bergsagel",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/541010933_10106323684125112_9066040164311826134_n.jpg?stp=cp6_dst-jpg_s64x64_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=3o6GoniJWEAQ7kNvwGDVvdr&_nc_oc=AdlY9HcfH2Zs3q7F6uvcQNNVuhaxsYnuVcICeJxcTAMGaoUXeSxcC0eOFS20I3DV0v0&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_AfZGcCUwIeJdH-TI6OaMILaUvssicIXMsiOMZCHPMAS3_A&oe=68C13C44",
-                short_name: "Robin",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE4NTYxMDU2MDg2NjcxNDI=",
+              "text": "Better chilled after made!",
+              "created_at": "2025-09-01T00:04:49.000Z",
+              "reply_count": 0,
+              "reaction_count": 3,
+              "reactions": {
+                "thankful": 0,
+                "like": 3,
+                "love": 0,
+                "care": 0,
+                "haha": 0,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "100003087576087",
+                "name": "Diane Critcheloe",
+                "gender": "FEMALE",
+                "short_name": "Diane"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE2OTIxMjYzNzgxNjQyMjc=",
-              text: "Can you swap the butter w coconut oil 🤔",
-              created_at: "2025-09-01T05:56:59.000Z",
-              reply_count: 1,
-              reaction_count: 9,
-              author: {
-                id: "pfbid0djswr3Z8SToef7Wj9Fzupd8rGYUe1xsx13erS8yhQFuJfBz8F6eEQCGCCyHcvuhvl",
-                name: "Brittany Roberts",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/484048746_1481399372776555_7033620469332753416_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=tQZJudJs3sUQ7kNvwEI-yN7&_nc_oc=AdkQQvnVMQPRscT0MkO3Z-qG7X2RtIUFS0a6PPmh6b81fM1eUMHyRrrZyE5vYmXVW0Y&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_Afa8xGdV8OgCo8_fZe8_9hp1R5gjtX7rBdIKy-QPxULvHQ&oe=68C12BA7",
-                short_name: "Brittany",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE1Mjg1MjE1NTE2NTU1OTg=",
+              "text": "This looks like an interesting variant, but I’d be concerned that the Ritz crackers would quickly become slightly soggy-ish, more so than the Crispix cereal does.",
+              "created_at": "2025-09-01T14:43:22.000Z",
+              "reply_count": 0,
+              "reaction_count": 4,
+              "reactions": {
+                "thankful": 0,
+                "like": 4,
+                "love": 0,
+                "care": 0,
+                "haha": 0,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
+              "author": {
+                "id": "pfbid0SqgHL4ZQDP1xSFv4ATenAL4Qh1hSidWTC4C97dkAwYWv6pLZ7srfv4Gt8vHPNXTTl",
+                "name": "Laurie J Strobel",
+                "gender": "FEMALE",
+                "short_name": "Laurie"
+              }
             },
             {
-              id: "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzc4NTg0MjQxMDQ3NDE5OQ==",
-              text: "That's some expensive puppy chow",
-              created_at: "2025-09-01T00:31:02.000Z",
-              reply_count: 8,
-              reaction_count: 11,
-              author: {
-                id: "552156286",
-                name: "Megan Schmid",
-                gender: "FEMALE",
-                profile_picture:
-                  "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/541491024_10163240473996287_3428775103018790013_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=mvOBkfCxKYYQ7kNvwFaA8lw&_nc_oc=AdmdDWenldlwcV1MQrdBrzrzcrVATtsMEBuuCeOLNWHOpSy_3WGOI1BKOo8JU_uGIl8&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=bSL3vZeoZ5ZB38ahoYqBtg&oh=00_Afa-20XWiaBHWN07x04cxx6eA3k3FNUuB8GBsNmZBFvbqw&oe=68C13C4E",
-                short_name: "Megan",
+              "id": "Y29tbWVudDoxMjA2OTAzNjAxNDgzOTYwXzE1Mzc4NDQwOTA1MjAzODg=",
+              "text": "Girl I wonder how many got the cheese ritz..",
+              "created_at": "2025-09-01T23:54:48.000Z",
+              "reply_count": 2,
+              "reaction_count": 5,
+              "reactions": {
+                "thankful": 0,
+                "like": 1,
+                "love": 0,
+                "care": 0,
+                "haha": 4,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
               },
-            },
+              "author": {
+                "id": "pfbid0vn8xpUxRCfS3ZRZSsu9iAVtkHQveKuTFQWbj7h3QVmc7EDQAoPSz32WvX3LUqgP4l",
+                "name": "Maegan Nicole Bogue",
+                "gender": "FEMALE",
+                "short_name": "Maegan"
+              }
+            }
           ],
-          cursor: "MToxNzU3MTA2NzYyOg....",
-          has_next_page: true,
+          "cursor": "MToxNzc2NDYxMjMwOgF......",
+          "has_next_page": true
         },
       },
+      {
+        name: "Comment Replies",
+        method: "GET",
+        description: "Get the replies to a comment.",
+        fullDescription: "Get the replies to a comment.",
+        path: "/v1/facebook/video/comment/replies",
+        params: [
+          {
+            name: "feedback_id",
+            type: "string",
+            description: "The *feedback_id* of the comment. Be careful, this is not the comment id. You can get the feedback_id from the /v1/facebook/post/comments endpoint.",
+            required: true,
+            placeholder: "ZmVlZGJhY2s6MzM3MzYxMzI5OTQ4Nzc1NV8xOTI5NTk0OTE3Njg3MTcz",
+          },
+          {
+            name: "expansion_token",
+            type: "string",
+            description: "The expansion_token of the comment. You can get the expansion_token from the /v1/facebook/post/comments endpoint.",
+            required: true,
+            placeholder: "MjoxNzc4NjM1MDM3OgF_JaMa3kMP9RIWC....",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            description: "The cursor to paginate to the next page",
+            required: false,
+            placeholder: "MToxNzc4NjM1MTIyOgF_w6rc3oH0HrKM2dLjla6A...",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997915007,
+          "replies": [
+            {
+              "id": "Y29tbWVudDozMzczNjEzMjk5NDg3NzU1XzEyNzc0OTgwMjczODU4MzQ=",
+              "text": "Terry Quillan you must never had my famous sea turtle stew before",
+              "created_at": "2026-05-11T01:07:09.000Z",
+              "reply_count": 17,
+              "reaction_count": 95,
+              "reactions": {
+                "thankful": 0,
+                "like": 55,
+                "love": 3,
+                "care": 0,
+                "haha": 35,
+                "wow": 0,
+                "sad": 1,
+                "anger": 1,
+                "pride": 0,
+                "confused": 0
+              },
+              "author": {
+                "id": "pfbid0urrhNfcV4eymBCwKXEk6tiCcCqEMFwkb9djy8EhnN9kipDcuhUzKLkN8qB8pt2gQl",
+                "name": "Raymond Hall",
+                "gender": "MALE",
+                "profile_picture": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-1/519542238_10229874106618644_5856796376173922928_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=NefHIXixvx4Q7kNvwHwl86J&_nc_oc=AdpROYopTKN75AL2mS_fiNyuXMA06F4RtyJbAJ8IVHwblJLpohfgxmZzkpO0y9z9cao&_nc_zt=24&_nc_ht=scontent-lax3-1.xx&_nc_gid=AIhHwdKlills_JoMczNbFQ&_nc_ss=7e289&oh=00_Af42yzOuNuXUZkDbwr_SsT6_6RluDyX1td_x-Xq3_z0lBA&oe=6A09B2F3"
+              },
+              "feedback_id": "ZmVlZGJhY2s6MzM3MzYxMzI5OTQ4Nzc1NV8xMjc3NDk4MDI3Mzg1ODM0",
+              "expansion_token": "MjoxNzc4NjM1MTIyOgF_1OrfwDkyxtMMlHVBMm_TzxlQ3yIAasPCWiOEh3uS5u2PAKQRSyqegVe-MsCSe1vnidBZ956FCNcsZjt-j0A69PCfGlR9brDaJDC-5J8nzZ7KF82vHzG3pFWQ5_1NzSXSkt9iwXJdr83oy-kbVXws_S1783yuDKbDZtA47mptn3WGGlDmkBKD4quDdh0QUd2bKjf8jyJz0YzKh7rCkGaAsq4eh4nZ6qsXeeUHAfN1NBtuM2_lp7Djg5eyTDAPN-W3jlICf1XwEj0h6LNnfEgZsjbSPTmVVJv5Q7_XjIkLAzFIGaX2xO89-KLJ3Ou32ZmX2wsiLBrhxkBCdW9ajr0vneAKmMDIpjHdjH3ll2B2s22xiMbtBG0Hz0dJwjFHnyVSbLDmYGzAWiLMpgQICCBWkS0rp7pNE6RodwXL9F5RVk4CwVPLtofERvLLFqvAvJ2291hFLxTTIXxveEZHhM8lD69YIE2cJrjNR5fOWyecvS4tYS_tB8aoy8Il-I3fAtsT0dlBgBuGgwO2RcFaQJc1"
+            },
+            {
+              "id": "Y29tbWVudDozMzczNjEzMjk5NDg3NzU1XzM2Mzg1NTU4OTcxMDM0OTIz",
+              "text": "Terry Quillan weird",
+              "created_at": "2026-05-11T04:20:42.000Z",
+              "reply_count": 0,
+              "reaction_count": 0,
+              "reactions": {
+                "thankful": 0,
+                "like": 0,
+                "love": 0,
+                "care": 0,
+                "haha": 0,
+                "wow": 0,
+                "sad": 0,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
+              },
+              "author": {
+                "id": "1073504073",
+                "name": "Paul Goecke",
+                "gender": "MALE",
+                "profile_picture": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-1/517304027_10233898495778718_6032779152414295646_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=109&ccb=1-7&_nc_sid=1d2534&_nc_ohc=T6sqF2w8dKUQ7kNvwHsX5Ct&_nc_oc=AdrvQQAWNurQX-1v2bgV2-XrOAvtoykLmqr6KTXHXzGOYvq_394uKBu9CkjvkUVzybk&_nc_zt=24&_nc_ht=scontent-lax3-1.xx&_nc_gid=AIhHwdKlills_JoMczNbFQ&_nc_ss=7e289&oh=00_Af7lIEq_1alS7HcFgpREhExGUghulVE2Sz2ZciUcFTRDyQ&oe=6A09BA33"
+              },
+              "feedback_id": "ZmVlZGJhY2s6MzM3MzYxMzI5OTQ4Nzc1NV8zNjM4NTU1ODk3MTAzNDkyMw==",
+              "expansion_token": "MjoxNzc4NjM1MTIyOgF_DZpoq7sAeZTk7XYll_uavt9nkcpr-nChUcPT9zmzX2PvU39H3oKfK96HL1YSMw9-VtgPWQV0JT-vKn0G-aHgblsCwElXUPzAvK0yVr77YgzqM_n8tHqHPIyg8N2T-RvFOAV-BtOJmPLPXERSMuy5Rtqp9zTOhPkUejqTG4javkwUvHicq65ZKGU_rgIc1PCl4rTWdSaj3xUaOKtXPzZDXwo2jOA-E9FDQz5_ezqVBiNqd2kuS50lscchLEFmw8NXPwXisP8lga2vN5AxJIe7nmpJAtjKqcLxobHJAtqlQXtbixGKatzwglzzOTwZ7LGCow9Nt9YGR7hO8UYzpyw2SsJD74dMkS3kJy7DP9s2mTvLA_BU73wVl5n2nAPuzSBmTsEOxGmpPuWVWns9UFW40l7w0BsB3179KoV-4AbmlniQ3LAcBHD2RPGgRpTQ_qbMg1heQKfZleznJTFhmHpVQ0KhKkGJiCvHF_jzL3FF_jbEnqTcjCBHikzDm4LWJZ4hQ7urcwH_SpQP5IeTZyVSRCI"
+            },
+            {
+              "id": "Y29tbWVudDozMzczNjEzMjk5NDg3NzU1XzExNTMwOTYxMDY5NTc3Nzk=",
+              "text": "Raymond Hall turtles? 🤢",
+              "created_at": "2026-05-11T08:05:04.000Z",
+              "reply_count": 0,
+              "reaction_count": 3,
+              "reactions": {
+                "thankful": 0,
+                "like": 2,
+                "love": 0,
+                "care": 0,
+                "haha": 0,
+                "wow": 0,
+                "sad": 1,
+                "anger": 0,
+                "pride": 0,
+                "confused": 0
+              },
+              "author": {
+                "id": "pfbid02jws9SQ2umVAWns6zj6JdmS565XwAyHiFWK9QCPNvgfvzVteuXFrNSvWidErAGfHDl",
+                "name": "Sunli",
+                "gender": "MALE",
+                "profile_picture": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-1/665746687_4205462249668682_555485279688618543_n.jpg?stp=cp0_dst-jpg_s64x64_tt6&_nc_cat=100&ccb=1-7&_nc_sid=e99d92&_nc_ohc=zxacdJWTdgEQ7kNvwH1MS46&_nc_oc=AdqhN5KoJNo0RzSPvsURlTLWqnh7NrYw5-2uDJitCIx8V6bJOtpF10Yn8cSJLqIXWJk&_nc_zt=24&_nc_ht=scontent-lax3-2.xx&_nc_gid=AIhHwdKlills_JoMczNbFQ&_nc_ss=7e289&oh=00_Af6qklYaGw3MBGNno5hbz4uoPQmepJrI2DoxpX_hjkyyyw&oe=6A0997E1"
+              },
+              "feedback_id": "ZmVlZGJhY2s6MzM3MzYxMzI5OTQ4Nzc1NV8xMTUzMDk2MTA2OTU3Nzc5",
+              "expansion_token": "MjoxNzc4NjM1MTIyOgF_uyvHEC8S6nQcncGJITVqDT_QzS-TrOzLa0HOoZQOsgKAjsYDVvXbYlv2dQ0LWmN990XiKeR3hzDBiO0l6UhaqRacPX-tiK4iLbDGFifVQF9vOY5_kGbv5THIT1FN0glIkUmJY3w7a_Pjxe8Q9PB5NYfBJUSk41b7xmIJloT79iPvIAkG1bjGu-eHWk4QrICLIa4v4S-ke72RxCrYPKiMeOh4mHeaJZe6xdko5UMqmDYrbowzrQGSxbwuEmZqW2DRTZjnxtv-SkZKykyBtKKvaEMeuLMe6hNTB4yByO9rH9pw_lpOsSi021LEl1GWx9LTksniNoHi_FjyaKI6_S6vZDP2iO1nVaH9aI7i8R1e46kfGXOnnf_fwTPNMAVkPEwlLmF3cM0pHYvZeiwjHdwHFEpJJBfSfPXlsIwhub-q9uQp0TtOv9t-PpivXDW5_IfKMMN4WJ6F7NrQh9wQAkczLCK6t3SXvmtZDxFMZhQd27R4zetVbVVzTlawRZjLmxDfPuBVZ1Kg2JrR0D2iHUEu"
+            },
+          ],
+          "cursor": "MToxNzc4NjM1MTIyOgF_w6rc3oH0....",
+          "has_next_page": true
+        },
+      },
+      {
+        name: "Facebook Group Posts",
+        method: "GET",
+        description:
+          "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
+        fullDescription:
+          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Supports sorting by TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, or CHRONOLOGICAL_LISTINGS, with cursor-based pagination.",
+        path: "/v1/facebook/group/posts",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the group",
+            required: false,
+            placeholder: "https://www.facebook.com/groups/1270525996445602/",
+          },
+          {
+            name: "group_id",
+            type: "string",
+            description: "The ID of the group",
+            required: false,
+            placeholder: "742354120555345",
+          },
+          {
+            name: "sort_by",
+            type: "select",
+            description: "How to sort the posts",
+            required: false,
+            placeholder: "TOP_POSTS",
+            options: [
+              "TOP_POSTS",
+              "RECENT_ACTIVITY",
+              "CHRONOLOGICAL",
+              "CHRONOLOGICAL_LISTINGS",
+            ],
+          },
+          {
+            name: "cursor",
+            type: "string",
+            description: "The cursor to paginate to the next page",
+            required: false,
+            placeholder: "AQHRBjJCelNvdGRjH8s2j-6...",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          posts: [
+            {
+              id: "1286289372828481",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1286289372828481/",
+              permalink:
+                "https://www.facebook.com/sofiyati.942655/videos/996458202287759/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Sofiyati",
+                short_name: "Sofiyati",
+                id: "61552766652796",
+              },
+              reactionCount: 198,
+              commentCount: 100,
+              videoViewCount: null,
+              publishTime: 1748639389,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQO0_B24bEmILx4bmOfr_cQA5BgXwF9DMHJYAkUfQJAmuMGLV9PAc9-TrNen27lHJjr45pVm0ufFCcTJBCeFIr_s.mp4?strext=1&_nc_cat=111&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=paW12HBCn0EQ7kNvwFwJnXg&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjY0MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjkzNDUwMjg0MTg4MjYsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoxNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfJNS34mvDAkIbtvP8o2nMuYrJ66ZeyCB1zQRlsD8sajow&oe=684150C7",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM3UoTI5n6N2jVgKeUXSMPnqwAEQFHNGM9dejk3EV-MyBXNUcHlWtvYgUU2cD672EkWw5UAYZ3jJLXQiFdOvQh7.mp4?strext=1&_nc_cat=102&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kSrgWXZVr9IQ7kNvwE16oSK&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjEyODAuZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcCIsInhwdl9hc3NldF9pZCI6MTA2OTM0NTAyODQxODgyNiwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjE1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=67dd4c5fe90b11c5&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRUlZOHgwUVZ4azVjSHdIQUNGeU9XTzlQTzlXYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ1V3OFIySHNmZWZhbUVFQUNZbmdLUlBMSzU4YnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmlLT9qImk5gMVAigDQzNlLBdALkQYk3S8ahgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJKQedBwUVhnjLuJgGuJ7E1TXLk0vib17T3YkAmJUPb8w&oe=68414B6C",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502130835_1399930867890626_4491393707187246303_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=50ce42&_nc_ohc=l5JdWBSutswQ7kNvwFHAOSM&_nc_oc=Adm5GttPwjsWvVb_d8d7buJHGnqW6FNHHuRyi2n0UmFWsS7KDF2bg4bo_0uXYI8Uxh0&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfKO58NMsMKO_OXEVSw8A1BNbt0xSVognLfCBKxypc5etw&oe=684150FC",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODY1MTY1MjYxMzkwOTk=",
+                  text: "I can find thousands of videos with the same exact trend. And we all know what I’m referring to 🤭",
+                  publishTime: 1748666375,
+                  author: {
+                    id: "pfbid0haqAQZCvs4cTVyfGwxCGPidvLYRNhFiboXkCH45LmPLAF1oQ7kJxaVig19KT8nZvl",
+                    name: "Trent Slushy",
+                    gender: "MALE",
+                    url: null,
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjg2Mjg5MzcyODI4NDgxXzEyODYzMTY4NDYxNTkwNjc=",
+                  text: "Nothing new when the brother gets knocked down another brother jumps in from behind.. very disrespectful",
+                  publishTime: 1748642672,
+                  author: {
+                    id: "pfbid02fRnV4WmvHpX7sx48W2dmfetXpZHCLF5NhE3G4odMC8BniyRA3p4cQ3QYa4fzo57Sl",
+                    name: "Paul Demeo",
+                    gender: "MALE",
+                    url: null,
+                  },
+                },
+              ],
+            },
+            {
+              id: "1280901910033894",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1280901910033894/",
+              permalink:
+                "https://www.facebook.com/Eat.tohato/videos/1241112417643324/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Eat Tohato",
+                short_name: "Tohato",
+                id: "100023215682191",
+              },
+              reactionCount: 1671,
+              commentCount: 214,
+              videoViewCount: null,
+              publishTime: 1748056476,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMaX1dJhB4b1CM618GRKCI2JX0hcLhvoAzXy0L1g3Clmfk9WwFpsHBoYzVohilg9hArNQm5TnGKKphyJIgnVPlY.mp4?strext=1&_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=LkrGcvJpPFoQ7kNvwFc9J3f&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjcyNjk2NzI2Mjk5NTIyNSwidmlfdXNlY2FzZV9pZCI6MTAxMjEsImR1cmF0aW9uX3MiOjQwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_zt=28&oh=00_AfLXJziRWwLTk7rhEEcA2FTnVPILkvjZ66O3oJcZvltnqw&oe=68415A81",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPvvRXTfaIhu1IVF1-FaQtfZ_y6ZR7R998HF_Jg9m0OPHWROV0gVezcwfj2Sr9m_RkdNiKg53gt2LIqY3yR3yrO.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=K6sAwYQ8h7gQ7kNvwE2q_jX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo3MjY5NjcyNjI5OTUyMjUsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjo0MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=7f3ac1ad59381aa7&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HTTQxelIxcS0wZjBQb2dDQU9qOXVDODN4aGwyYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSkxWMWgyOHJBaTRZd29DQUZTMWM2Yjd1Z2hSYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmsozLl4jLygIVAigDQzNlLBdAQ8bpeNT99BgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfJtKdCa7YflP7aWfCKIoLjvqelDtuzQR6ocEtzi-7bttQ&oe=684146E9",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/500892329_1215071943593619_2690255710088955217_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=104&ccb=1-7&_nc_sid=50ce42&_nc_ohc=QoHadvziHEEQ7kNvwE-PAX_&_nc_oc=Adn7q7inFPwItHI0N5_EwBcWRd7qi74ZyHC41ilu2xHNMujaVON5uWwStyC7yAGiEJU&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJx4boMwltKuEqfKWHotxJIBcehG40n3TdIHSVj0JAwjg&oe=68412D7B",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MDg1ODY2OTk4OTM=",
+                  text: "Did a powerbomb... stole a bat and he coulda ended that dude great self control",
+                  publishTime: 1748057315,
+                  author: {
+                    id: "pfbid0DheZGgjMQgRTz5MPPHnkxaEDerz1v7Eq6mNgac85wAShJdU6oHPXQ9feQSSLytiEl",
+                    name: "Marcos Mendoza",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/marcos.mendoza.560854",
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjgwOTAxOTEwMDMzODk0XzEyODA5MjI2MzY2OTg0ODg=",
+                  text: "The ice cream truck jingle made this an instant classic.",
+                  publishTime: 1748058655,
+                  author: {
+                    id: "pfbid02woauK7hrKXtXwq7BCnj6hiCKfaNMUYu7TueHA6DhZS4EYYaKRMTTX5FgH4y1gYn3l",
+                    name: "Lewis Santana",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/luissantana27",
+                  },
+                },
+              ],
+            },
+            {
+              id: "1286064029517682",
+              text: null,
+              url: "https://www.facebook.com/groups/742354120555345/permalink/1286064029517682/",
+              permalink:
+                "https://www.facebook.com/sofiyati.942655/videos/1390174998770652/?idorvanity=742354120555345",
+              author: {
+                __typename: "User",
+                name: "Sofiyati",
+                short_name: "Sofiyati",
+                id: "61552766652796",
+              },
+              reactionCount: 2064,
+              commentCount: 413,
+              videoViewCount: null,
+              publishTime: 1748615813,
+              videoDetails: {
+                sdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPNp462YmKD9gM-CvGhQ1-_eLCyuIW2VjmEwBwPB8tUPQsa_U4BUvJaBc349BjbepGeUvf_7cCVZ_vlJew3hpJe.mp4?strext=1&_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=ae0VsnoLQtAQ7kNvwHqh95e&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjM2MC5zdmVfc2QiLCJ4cHZfYXNzZXRfaWQiOjEwNjUwNzY5ODIxOTkzNzgsInZpX3VzZWNhc2VfaWQiOjEwMTIxLCJkdXJhdGlvbl9zIjoyMSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_zt=28&oh=00_AfIAHBuToUCT7sMnHhi0E_Jg1kXRmYGXvadcWq1fxD_agg&oe=684155D9",
+                hdUrl:
+                  "https://video-sea1-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQM9JaJSrDs7LdwNhv0V3RX-rqeSQMAcEKZHxK8r7fJCSfBfjeoicAq5LzZc3MjdpGX3U53iRWH5g9IAl-uyIEWW.mp4?strext=1&_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-sea1-1.xx.fbcdn.net&_nc_ohc=kF7D9uVefoUQ7kNvwFzu9xR&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzNlLjcyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxMDY1MDc2OTgyMTk5Mzc4LCJ2aV91c2VjYXNlX2lkIjoxMDEyMSwiZHVyYXRpb25fcyI6MjEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=31e1f90330ba51e1&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ2JpNGgyZEFQdDFTeFFGQUZXWUJwS0RTQlZnYm1kakFBQUYVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRE90OVIwejA2T0Z2eU1HQUN2R1lfWlJLZjFpYnJGcUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmpNH18tGr5AMVAigDQzNlLBdANTul41P3zxgZZGFzaF9oMjY0LWJhc2ljLWdlbjJfNzIwcBEAdQJlkp4BAA&_nc_zt=28&oh=00_AfLW0M3B3nGgopfnkM6OonAjdBwGrIgmwroV3H9P3hg8sA&oe=68415E79",
+                thumbnailUrl:
+                  "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/502754732_2110163772821086_4373511123704867007_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ce42&_nc_ohc=3jok6WCUqMcQ7kNvwFXeHG7&_nc_oc=Adkc4JwXklseK8HvROcz5T8GntPXCVjwA7GuYjtdu8nLY9wak-bHzCOqlQyDaY7aOng&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=BIqW4GLH6GWa7rMa2JiKFA&oh=00_AfJpq9CcAaqsZizy2ECTar1NdvELlq3LJ-WgXPgAZ8lmcw&oe=68413302",
+              },
+              topComments: [
+                {
+                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODYwOTMwMDI4NDgxMTg=",
+                  text: "No fight to see here, just a chump",
+                  publishTime: 1748618582,
+                  author: {
+                    id: "pfbid06cUKaQWnFynREjde2E8RDsiiwAN7aZxfNAzmM58wkyCGApd8wSaxRyPT7iBXrodal",
+                    name: "Sky Parker",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/OfficerWubWub",
+                  },
+                },
+                {
+                  id: "Y29tbWVudDoxMjg2MDY0MDI5NTE3NjgyXzEyODY1MTYwNTk0NzI0Nzk=",
+                  text: "Idk how yall say that’s a sucker punch. Don’t get in another man’s face n not expect a punch",
+                  publishTime: 1748666313,
+                  author: {
+                    id: "pfbid0mu2nQsJbm7YPPmXvaDY7HXVZHzgEY7V8w5GcxJMrh7EkwTFcLzYRufSp8c2GzBVvl",
+                    name: "Joshua Griffith",
+                    gender: "MALE",
+                    url: "https://www.facebook.com/katakeepsit100",
+                  },
+                },
+              ],
+            },
+          ],
+          cursor: "AQHRBjJCelNvdGRjH8s2j-....",
+        },
+      },
+    ],
+  },
+  githubApis,
+  {
+    id: "facebookMarketplace",
+    name: "Facebook Marketplace",
+    description: "Scrape Facebook Marketplace",
+    endpoints: [
+      {
+        name: "Marketplace Location Search",
+        method: "GET",
+        description: "Searches Facebook Marketplace locations/cities and returns coordinates you can use with the Marketplace Search endpoint.",
+        fullDescription:
+          "Searches Facebook Marketplace locations/cities and returns coordinates you can use with the Marketplace Search endpoint.",
+        path: "/v1/facebook/marketplace/location/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            description: "Location search query",
+            required: true,
+            placeholder: "Austin",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 999,
+          "locations": [
+            {
+              "name": "Austin",
+              "subtitle": "Austin, IL · 22,116 people checked in here",
+              "multi_line_address": [],
+              "page_id": "108120015875983",
+              "latitude": 41.894086,
+              "longitude": -87.763202,
+              "city": "Chicago",
+              "postal_code": "60644-1112"
+            },
+            {
+              "name": "Austin",
+              "subtitle": "Austin, GA · 6 people checked in here",
+              "multi_line_address": [],
+              "page_id": "312180006098697",
+              "latitude": 33.955058,
+              "longitude": -84.529634,
+              "city": "Marietta",
+              "postal_code": "30060-1862"
+            },
+            {
+              "name": "Austin, Texas",
+              "subtitle": "City",
+              "multi_line_address": [],
+              "page_id": "106224666074625",
+              "latitude": 30.2677,
+              "longitude": -97.7475,
+              "city": "Austin",
+              "postal_code": "78701"
+            },
+          ],
+        },
+      },
+      {
+        name: "Marketplace Search",
+        method: "GET",
+        description: "Search Facebook Marketplace listings",
+        fullDescription:
+          "Searches Facebook Marketplace listings by keyword and lat/lng. Supports pagination with the returned cursor. Pass the cursor value back as-is. When sort_by is creation_time_descend, Facebook can still return slightly different ordering between identical requests. For alerting/new-item workflows, scrape multiple pages and dedupe by listing id instead of relying on page 1 item order being identical every run.",
+        path: "/v1/facebook/marketplace/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            description: "Search keyword",
+            required: true,
+            placeholder: "bike",
+          },
+          {
+            name: "lat",
+            type: "number",
+            description: "Latitude for the search location",
+            required: true,
+            placeholder: "30.2677",
+          },
+          {
+            name: "lng",
+            type: "number",
+            description: "Longitude for the search location",
+            required: true,
+            placeholder: "-97.7475",
+          },
+          {
+            name: "radius_km",
+            type: "number",
+            description: "Search radius in kilometers",
+            required: false,
+            placeholder: "65",
+          },
+          {
+            name: "min_price",
+            type: "number",
+            description: "Minimum listing price",
+            required: false,
+            placeholder: "100",
+          },
+          {
+            name: "max_price",
+            type: "number",
+            description: "Maximum listing price",
+            required: false,
+            placeholder: "500",
+          },
+          {
+            name: "count",
+            type: "number",
+            description: "Number of listings to return",
+            required: false,
+            placeholder: "24",
+          },
+          {
+            name: "sort_by",
+            type: "select",
+            description:
+              "Sort order",
+            required: false,
+            placeholder: "creation_time_descend",
+            options: [
+              "suggested",
+              "distance_ascend",
+              "creation_time_descend",
+              "price_ascend",
+              "price_descend",
+            ],
+          },
+          {
+            name: "delivery_method",
+            type: "select",
+            description: "Delivery filter",
+            required: false,
+            placeholder: "local_pickup",
+            options: [
+              "all",
+              "local_pickup",
+              "shipping",
+            ],
+          },
+          {
+            name: "condition",
+            type: "select",
+            description: "Condition filter",
+            required: false,
+            placeholder: "used_good",
+            options: [
+              "new",
+              "used_like_new",
+              "used_good",
+              "used_fair",
+            ],
+          },
+          {
+            name: "date_listed",
+            type: "select",
+            description: "Date listed filter",
+            required: false,
+            placeholder: "7",
+            options: [
+              "all",
+              "1",
+              "7",
+              "30",
+              "last_24_hours",
+              "last_7_days",
+              "last_30_days",
+            ],
+          },
+          {
+            name: "availability",
+            type: "select",
+            description: "Availability filter",
+            required: false,
+            placeholder: "available",
+            options: [
+              "available",
+              "sold",
+              "all",
+            ],
+          },
+          {
+            name: "cursor",
+            type: "string",
+            description: "Opaque pagination cursor returned from the previous response. Pass it back as-is.",
+            required: false,
+            placeholder: "eyJwZyI6MCwiYjJjIjp7...",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997831258,
+          "listings": [
+            {
+              "id": "1880804689276480",
+              "url": "https://www.facebook.com/marketplace/item/1880804689276480/",
+              "title": "ANCHEER E Bike",
+              "price": {
+                "formatted_amount": "$300",
+                "amount_with_offset_in_currency": 30000,
+                "amount": 300
+              },
+              "strikethrough_price": null,
+              "location": {
+                "city": "Austin",
+                "state": "TX",
+                "display_name": "Austin, Texas",
+                "city_page_id": "106224666074625"
+              },
+              "primary_photo": {
+                "id": "742022888999863",
+                "url": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.84726-6/696326464_742022902333195_6718077421452400338_n.jpg?stp=c43.0.260.260a_dst-jpg_p261x260_tt6&_nc_cat=106&ccb=1-7&_nc_sid=92e707&_nc_ohc=dzY2b4-6EowQ7kNvwFDgohs&_nc_oc=AdomRHPRV49gouEOWqxlFxuEeLcoc5cBjRhXhi91oslqlUNdZ9EV-te1C_pvL-eyVzs&_nc_zt=14&_nc_ht=scontent-bos5-1.xx&_nc_gid=GvS1066o3EBgpWuqL6BQZA&_nc_ss=7e289&oh=00_Af6M2kbWMsKLjEHmSUv6oiPJt3skIfetxG3oB2YOIiDuTg&oe=6A0D6E08"
+              },
+              "category_id": "1658310421102081",
+              "is_hidden": false,
+              "is_live": true,
+              "is_pending": false,
+              "is_sold": false,
+              "is_viewer_seller": false,
+              "delivery_types": [
+                "IN_PERSON",
+                "PUBLIC_MEETUP",
+                "DOOR_PICKUP",
+                "DOOR_DROPOFF"
+              ],
+              "story_type": "POST",
+              "story_key": "26881002338175809",
+            },
+            {
+              "id": "950860437561765",
+              "url": "https://www.facebook.com/marketplace/item/950860437561765/",
+              "title": "Mountain Bike",
+              "price": {
+                "formatted_amount": "$60",
+                "amount_with_offset_in_currency": 6000,
+                "amount": 60
+              },
+              "strikethrough_price": null,
+              "location": {
+                "city": "San Antonio",
+                "state": "TX",
+                "display_name": "Lackland Air Force Base, Texas",
+                "city_page_id": "114176668596309"
+              },
+              "primary_photo": {
+                "id": "916476894743958",
+                "url": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.84726-6/691721405_916476901410624_3028002815259594366_n.jpg?stp=c0.0.261.261a_dst-jpg_p261x260_tt6&_nc_cat=106&ccb=1-7&_nc_sid=92e707&_nc_ohc=TfPaau7XFP0Q7kNvwEK8N_Q&_nc_oc=AdpR4yQav1U7gbYR9HnvVxKYtFLimvw6kYIhvOQJk8knqZCfuxb1MFiGHbckDI8_Jaw&_nc_zt=14&_nc_ht=scontent-bos5-1.xx&_nc_gid=GvS1066o3EBgpWuqL6BQZA&_nc_ss=7e289&oh=00_Af6fFQ1qcqTOTanOUI4cY2B8u6Uhuyl8owgyQKcz3P6TiQ&oe=6A0D44E6"
+              },
+              "category_id": "1658310421102081",
+              "is_hidden": false,
+              "is_live": true,
+              "is_pending": false,
+              "is_sold": false,
+              "is_viewer_seller": false,
+              "delivery_types": [
+                "IN_PERSON"
+              ],
+              "story_type": "POST",
+              "story_key": "27123216687304592",
+            },
+            {
+              "id": "727510149974761",
+              "url": "https://www.facebook.com/marketplace/item/727510149974761/",
+              "title": "Like New Ozone 500 Boys’ Blaze 12-Inch Bike – Ridden Less Than 10 Times",
+              "price": {
+                "formatted_amount": "$40",
+                "amount_with_offset_in_currency": 4000,
+                "amount": 40
+              },
+              "strikethrough_price": null,
+              "location": {
+                "city": "Austin",
+                "state": "TX",
+                "display_name": "Austin, Texas",
+                "city_page_id": "106224666074625"
+              },
+              "primary_photo": {
+                "id": "735803309595330",
+                "url": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.84726-6/605226151_735803329595328_1386149983139267508_n.jpg?stp=c0.0.261.261a_dst-jpg_p261x260_tt6&_nc_cat=110&ccb=1-7&_nc_sid=92e707&_nc_ohc=X9CeUbTefJ8Q7kNvwGQA1xK&_nc_oc=AdrROVW00wzIDti0wdKukd-MIU43VqLwHnqWwclxqki7C-kvzuqEjfquMRANljbmwno&_nc_zt=14&_nc_ht=scontent-bos5-1.xx&_nc_gid=GvS1066o3EBgpWuqL6BQZA&_nc_ss=7e289&oh=00_Af4bteQsGq-7ncgAMm5XQOQh6T28wCH7XfeG7QEq1oA8jQ&oe=6A0D6ACA"
+              },
+              "category_id": "1658310421102081",
+              "is_hidden": false,
+              "is_live": true,
+              "is_pending": false,
+              "is_sold": false,
+              "is_viewer_seller": false,
+              "delivery_types": [
+                "IN_PERSON"
+              ],
+              "story_type": "POST",
+              "story_key": "25785888574376930",
+            },
+          ],
+          "cursor": "eyJwZyI6MCwiYjJj....",
+          "has_next_page": true
+        },
+      },
+      {
+        name: "Marketplace Item",
+        method: "GET",
+        description: "Get a Facebook Marketplace item",
+        fullDescription:
+          "Fetches details for a Facebook Marketplace item by item id or Marketplace item URL, including title, description, price, location, condition, photos, seller, and availability flags.",
+        path: "/v1/facebook/marketplace/item",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            description: "Facebook Marketplace item id",
+            required: false,
+            placeholder: "1656586118821988",
+          },
+          {
+            name: "url",
+            type: "string",
+            description: "Facebook Marketplace item URL",
+            required: false,
+            placeholder: "https://www.facebook.com/marketplace/item/1656586118821988/",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997831215,
+          "id": "1656586118821988",
+          "url": "https://www.facebook.com/marketplace/item/1656586118821988/",
+          "title": "Specialized Hardrock GSX - Super Clean Vintage Restomod - INCLUDES FREE TUNE UP",
+          "description": "Was going to hang on to this one bc I absolutely love how it looks, but the 20” frame is just bit too large for me. Riders over 6’ would be comfy on this one. Currently in a 3x7 set up with an XT derailleur at the rear. Looks great in person. Come ride it!  These never last long. \n\nCASH ONLY, PLEASE. NEAR 183/BRAKER.  \n\n$380 OBO. \n\nKey points:\n\n- Maxxis DTH tires (26”)\n- Shimano Deore XT rear derailleur \n- Shimano front derailleur\n- vintage Specialized steel frame (20”)\n- vintage Sakae triple crankset (170mm)\n- vintage Sakae SR Custom handlebar\n- vintage Suntour stem shifter\n- vintage Shimano brakes\n- Specialized Avatar 143 saddle\n- new chain\n- fresh cables\n- fresh housing\n- fresh grease and lube\n- fresh lube in cable housings\n- fresh handlebar tape\n- drive train cleaned and lubed\n- derailluers adjusted and fine tuned\n- brakes adjusted and fine tuned\n- deep cleaning/detail\n- frame polished\n- frame waxed\n- INCLUDES ONE FREE TUNE UP\n",
+          "creation_time": "2026-05-15T16:57:39.000Z",
+          "location_text": "Austin, TX",
+          "location": {
+            "latitude": 30.401916503906,
+            "longitude": -97.761840820312
+          },
+          "price": {
+            "formatted_amount_zeros_stripped": "$380",
+            "amount_with_offset_in_currency": 38000,
+            "amount": 380,
+            "currency": "USD"
+          },
+          "strikethrough_price": null,
+          "category_id": "1658310421102081",
+          "attributes": [
+            {
+              "attribute_name": "Condition",
+              "value": "used_good",
+              "label": "Used - Good"
+            },
+            {
+              "attribute_name": "Bicycle Type",
+              "value": "Mountain Bike",
+              "label": "Mountain Bike"
+            },
+            {
+              "attribute_name": "Material",
+              "value": "Steel",
+              "label": "Steel"
+            }
+          ],
+          "photos": [
+            {
+              "id": "2810586442651711",
+              "url": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.84726-6/701290950_2810586459318376_3780262866029042186_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=92e707&_nc_ohc=ROKufyRtfXsQ7kNvwGcXi_k&_nc_oc=Adr-1I--Ur89Efziu4LbR01Gx7vv7Ky2iQDaspacjs93wQf7O21Zucf8Bqk7JnAV9us&_nc_zt=14&_nc_ht=scontent-bos5-1.xx&_nc_gid=I5XX4xnX65bx3IZ1QXZ0oQ&_nc_ss=7e289&oh=00_Af4qBsmM1VtSMQvu_Uq9lP5B3sZDkmH3d7tcnkb4qJrfvQ&oe=6A0D43D6",
+              "width": 960,
+              "height": 720,
+              "accessibility_caption": "No photo description available."
+            },
+          ],
+          "is_hidden": false,
+          "is_live": true,
+          "is_pending": false,
+          "is_sold": false,
+          "is_viewer_seller": false,
+          "is_shipping_offered": false,
+          "is_buy_now_enabled": false,
+          "messaging_enabled": true,
+          "delivery_types": [
+            "IN_PERSON"
+          ],
+          "share_uri": "https://www.facebook.com/marketplace/item/1656586118821988/",
+          "seller": null
+        }
+      },
+    ],
+  },
+  {
+    id: "facebookEvents",
+    name: "Facebook Events",
+    description: "Scrape Facebook Events",
+    endpoints: [
+      {
+        name: "Search Events",
+        method: "GET",
+        description: "Search for events by name. You can take a look at the page from Facebook we are getting the data from [here](https://www.facebook.com/events/search/?q=dogs)",
+        fullDescription: "Search for events by name. You can take a look at the page from Facebook we are getting the data from [here](https://www.facebook.com/events/search/?q=dogs)",
+        path: "/v1/facebook/events/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "The query to search for",
+            placeholder: "Event name or description",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "The cursor to paginate to the next page",
+            placeholder: "Abr1gHMU6H....",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998305228,
+          "events": [
+            {
+              "id": "24659081027102562",
+              "name": "DockDogs® at Frankenmuth Dog Bowl",
+              "type": "Event",
+              "url": "https://www.facebook.com/events/24659081027102562/",
+              "day_time_sentence": "Fri, May 22 - May 24",
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "Frankenmuth River Place Shops",
+                "__isNode": "FreeformPlace",
+                "id": "1455187729296539"
+              },
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "is_online": false,
+              "is_past": false,
+              "event_url": "https://www.facebook.com/events/24659081027102562/",
+              "event_kind": "PUBLIC_TYPE",
+              "start_timestamp": 1779480000,
+              "cover_photo": {
+                "accessibility_caption": "No photo description available.",
+                "eventImage": {
+                  "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/593531570_1415564506592195_6877452715877012878_n.jpg?stp=dst-jpg_p75x225_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=lfZDvDmA5TgQ7kNvwGAJ9kC&_nc_oc=AdpiWd2PvIAUMK-DqCWA4v5iUaC2q5pKzs1BCjIS2OfxuyITVAF4rXXCFbes2A7jTTI&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=Bc1EYqxenHsF96t4Z7ZTbQ&_nc_ss=7e289&oh=00_Af7QI7ClZW5fpMopR2xSaj3wB0Md9w9Hw1dVS5jLWhSbTw&oe=69FCA6B5"
+                },
+                "id": "1415564503258862"
+              },
+              "social_context": {
+                "text": "21 interested · 10 going",
+                "interested_count": 21,
+                "going_count": 10,
+                "went_count": null
+              }
+            },
+            {
+              "id": "924544853531294",
+              "name": "Dogs Day Out",
+              "type": "Event",
+              "url": "https://www.facebook.com/events/924544853531294/",
+              "day_time_sentence": "Sun, May 31 at 9:00 AM NZST",
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "145 Camp Road, Dunedin, New Zealand 9077",
+                "__isNode": "FreeformPlace",
+                "id": "1570954941704165"
+              },
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "is_online": false,
+              "is_past": false,
+              "event_url": "https://www.facebook.com/events/924544853531294/",
+              "event_kind": "PUBLIC_TYPE",
+              "start_timestamp": 1780174800,
+              "cover_photo": {
+                "accessibility_caption": "May be an image of dog and text that says '民糖 Maa Mogs Day Out Larnach Castle Gardens Sun 31 May, 9am to 5pm Proudly Hosting CLARNACH LARNACH) Castle SPCA'",
+                "eventImage": {
+                  "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/657562874_1570954975037495_4650516423712207703_n.jpg?stp=c206.0.1508.1005a_dst-jpg_s350x350_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=L4xUJnsmyFoQ7kNvwGllSlT&_nc_oc=Adr2GvU9xf551Yq51BNMnIGws5iSKj9EU4Znc1bgSM253TiDWvzMw2E2kb1lTVvej_M&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=Bc1EYqxenHsF96t4Z7ZTbQ&_nc_ss=7e289&oh=00_Af65QVkVW0Qe5bLkg70EeTFhCnL10l4_jiQp1VZj_Kvweg&oe=69FC95D4"
+                },
+                "id": "1570954971704162"
+              },
+              "social_context": {
+                "text": "17 interested · 3 going",
+                "interested_count": 17,
+                "going_count": 3,
+                "went_count": null
+              }
+            },
+          ],
+          "cursor": "Abr1gHMU6H...."
+        },
+      },
+      {
+        name: "Events",
+        method: "GET",
+        description: "Get the events of a city. Check out this [link](https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547) for an example of where we are getting the data from.",
+        fullDescription: "Get the events of a city. Check out this [link](https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547) for an example of where we are getting the data from.",
+        path: "/v1/facebook/events",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "The URL of the city's Facebook Events page",
+            placeholder: "https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547",
+          },
+          {
+            name: "time",
+            type: "select",
+            required: false,
+            description: "The time frame to search for. Defaults to all time",
+            placeholder: null,
+            options: ["today", "this_week", "next_week"],
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "The cursor to paginate to the next page",
+            placeholder: "eyJzdGFydF...",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998305425,
+          "events": [
+            {
+              "id": "2255360061870188",
+              "schema_context": null,
+              "cover_photo": {
+                "photo": {
+                  "accessibility_caption": "May be an image of crowd",
+                  "image": {
+                    "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/651106377_950305721046361_5055393414866459656_n.jpg?stp=c0.128.2048.977a_dst-jpg_s640x640_tt6&_nc_cat=102&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=uoUS18WdA8AQ7kNvwFst0pe&_nc_oc=AdrKSULesf0R7do30SFyq0RoMV3ZxJYTz5leueITbRx88Cbg1yRFOKo-d1-yMT01j68&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=qD91MpaVYDRFp7bLWxiBHg&_nc_ss=7e289&oh=00_Af5VIYxAG3h_o7zT5ilskEWnNSJsEIbKRSi0j0G8xTorjA&oe=69FC8B8B"
+                  },
+                  "id": "950305717713028"
+                }
+              },
+              "cover_video": null,
+              "gif_cover_photo": null,
+              "online_event_setup": null,
+              "is_happening_now": false,
+              "day_time_sentence": "Sun, May 3 at 12:00 PM EDT",
+              "name": "May St. Pete Flea ",
+              "is_online": false,
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "event_place": {
+                "__typename": "Page",
+                "contextual_name": "Mirror Lake Park, Downtown St Pete",
+                "__isNode": "Page",
+                "id": "521768081246129"
+              },
+              "eventUrl": "https://www.facebook.com/events/2255360061870188/",
+              "can_page_viewer_invite_as_user": false,
+              "can_viewer_invite": false,
+              "can_viewer_rsvp": false,
+              "can_viewer_share": false,
+              "event_kind": "PUBLIC_TYPE",
+              "if_viewer_can_duplicate_event": null,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "is_viewer_host": false,
+              "start_timestamp": 1777824000,
+              "rsvp_button_renderer": {
+                "__typename": "PublicRsvpStyleRenderer",
+                "event": {
+                  "id": "2255360061870188",
+                  "connection_style": "INTERESTED",
+                  "can_viewer_join": false,
+                  "can_viewer_watch": false,
+                  "can_viewer_unwatch": false,
+                  "viewer_watch_status": "UNWATCHED",
+                  "if_viewer_can_see_going_button": null,
+                  "event_connection_data_privacy_scope": null,
+                  "privacy_scope_for_toast": null,
+                  "can_join_group_chat": false,
+                  "created_for_group": null,
+                  "chat": null
+                },
+                "__module_operation_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+                },
+                "__module_component_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer.react"
+                }
+              },
+              "parent_if_exists_or_self": {
+                "online_event_setup": null,
+                "id": "2255360061870188"
+              },
+              "live_virtual_event_info": null,
+              "__typename": "Event",
+              "social_context": {
+                "text": "7.3K interested · 195 going",
+                "ranges": [],
+                "interested_count": 7300,
+                "going_count": 195,
+                "went_count": null
+              }
+            },
+            {
+              "id": "1229583739357586",
+              "schema_context": null,
+              "cover_photo": {
+                "photo": {
+                  "accessibility_caption": "May be an image of text",
+                  "image": {
+                    "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/633731236_1301193352039682_978668970026957385_n.jpg?stp=c0.329.1261.602a_dst-jpg_s640x640_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=AJMvcncdYNgQ7kNvwFEdEse&_nc_oc=AdryBQFeB5_YCMDkwx05LL3Cc3TPNkLzStARDrUdcieSIIIVnd2lH13jujDcJBBmGUE&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=qD91MpaVYDRFp7bLWxiBHg&_nc_ss=7e289&oh=00_Af63bYgWhWOyGG_8OxTtEHwc0OmXYgWDuCnXEcSpPBJ7IA&oe=69FC8981"
+                  },
+                  "id": "1301193348706349"
+                }
+              },
+              "cover_video": null,
+              "gif_cover_photo": null,
+              "online_event_setup": null,
+              "is_happening_now": false,
+              "day_time_sentence": "Sun, May 3 at 12:00 AM EDT",
+              "name": "Tampa Bay Rays vs Giants",
+              "is_online": false,
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "event_place": {
+                "__typename": "Page",
+                "contextual_name": "Tropicana Field",
+                "__isNode": "Page",
+                "id": "121345094583106"
+              },
+              "eventUrl": "https://www.facebook.com/events/1229583739357586/",
+              "can_page_viewer_invite_as_user": false,
+              "can_viewer_invite": false,
+              "can_viewer_rsvp": false,
+              "can_viewer_share": false,
+              "event_kind": "PUBLIC_TYPE",
+              "if_viewer_can_duplicate_event": null,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "is_viewer_host": false,
+              "start_timestamp": 1777780800,
+              "rsvp_button_renderer": {
+                "__typename": "PublicRsvpStyleRenderer",
+                "event": {
+                  "id": "1229583739357586",
+                  "connection_style": "INTERESTED",
+                  "can_viewer_join": false,
+                  "can_viewer_watch": false,
+                  "can_viewer_unwatch": false,
+                  "viewer_watch_status": "UNWATCHED",
+                  "if_viewer_can_see_going_button": null,
+                  "event_connection_data_privacy_scope": null,
+                  "privacy_scope_for_toast": null,
+                  "can_join_group_chat": false,
+                  "created_for_group": null,
+                  "chat": null
+                },
+                "__module_operation_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+                },
+                "__module_component_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer.react"
+                }
+              },
+              "parent_if_exists_or_self": {
+                "online_event_setup": null,
+                "id": "1229583739357586"
+              },
+              "live_virtual_event_info": null,
+              "__typename": "Event",
+              "social_context": {
+                "text": "182 interested · 9 going",
+                "ranges": [],
+                "interested_count": 182,
+                "going_count": 9,
+                "went_count": null
+              }
+            },
+            {
+              "id": "1019753867045902",
+              "schema_context": null,
+              "cover_photo": {
+                "photo": {
+                  "accessibility_caption": "May be an image of pool and text that says 'ST. PETERSBURG ELKS LODGE #1224 POOL OPENING FOR SUMMER! Sunday, May 3rd LIVE MUSIC 1-5PM 1- Yummy Food on the grill by Happy Patti's Kitchen, open Saturday and Sunday from Noon till 4pm ICE CREAM PARLOR open Saturday and Sunday from 1pm-4pm -4pm 1pm'",
+                  "image": {
+                    "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/675963888_1399229422007531_6042011160027296567_n.jpg?stp=c0.283.960.458a_cp6_dst-jpg_s640x640_tt6&_nc_cat=103&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=sllIrWy6dyYQ7kNvwFpnsSB&_nc_oc=AdqEDr26KnA6tB77wab-XrNdzJ0mZPLxAVUIu54Cvcn2zMnNiSSmx3ZfVsucgAqfZSg&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=qD91MpaVYDRFp7bLWxiBHg&_nc_ss=7e289&oh=00_Af4VPXs5DpmYZaBeE2MRjqPj2mesfIMz_E6YlPFqV-2zLg&oe=69FC7D00"
+                  },
+                  "id": "1399229418674198"
+                }
+              },
+              "cover_video": null,
+              "gif_cover_photo": null,
+              "online_event_setup": null,
+              "is_happening_now": false,
+              "day_time_sentence": "Sun, May 3 at 1:00 PM EDT",
+              "name": "Opening Day Pool Party",
+              "is_online": false,
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "2675 66th St N, Saint Petersburg, FL",
+                "__isNode": "FreeformPlace",
+                "id": "1399229295340877"
+              },
+              "eventUrl": "https://www.facebook.com/events/1019753867045902/",
+              "can_page_viewer_invite_as_user": false,
+              "can_viewer_invite": false,
+              "can_viewer_rsvp": false,
+              "can_viewer_share": false,
+              "event_kind": "PUBLIC_TYPE",
+              "if_viewer_can_duplicate_event": null,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "is_viewer_host": false,
+              "start_timestamp": 1777827600,
+              "rsvp_button_renderer": {
+                "__typename": "PublicRsvpStyleRenderer",
+                "event": {
+                  "id": "1019753867045902",
+                  "connection_style": "INTERESTED",
+                  "can_viewer_join": false,
+                  "can_viewer_watch": false,
+                  "can_viewer_unwatch": false,
+                  "viewer_watch_status": "UNWATCHED",
+                  "if_viewer_can_see_going_button": null,
+                  "event_connection_data_privacy_scope": null,
+                  "privacy_scope_for_toast": null,
+                  "can_join_group_chat": false,
+                  "created_for_group": null,
+                  "chat": null
+                },
+                "__module_operation_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+                },
+                "__module_component_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer.react"
+                }
+              },
+              "parent_if_exists_or_self": {
+                "online_event_setup": null,
+                "id": "1019753867045902"
+              },
+              "live_virtual_event_info": null,
+              "__typename": "Event",
+              "social_context": {
+                "text": "66 interested · 7 going",
+                "ranges": [],
+                "interested_count": 66,
+                "going_count": 7,
+                "went_count": null
+              }
+            },
+            {
+              "id": "1350069186953894",
+              "schema_context": null,
+              "cover_photo": {
+                "photo": {
+                  "accessibility_caption": "May be an image of ‎drink and ‎text that says '‎27.69\" N. 82.72\" 27.69N,-82.72W w ISLAND GRILLE CRUILE THE 2ND LAUNCH PARTY أ む DRINKS·D DRINKS Ba-OECONAIS Maah 中 の SUNDAYS MAY 17, 2026 Proceeds benefit the... ግግራ Rotary club •Pool Party $25 for pool access Bottomless mimosas 50/50 Raffle‎'‎‎",
+                  "image": {
+                    "uri": "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/686965922_1537239168209246_461191858570474676_n.jpg?stp=c0.58.2048.977a_dst-jpg_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=7i4nkAtzy2AQ7kNvwG0T8yl&_nc_oc=AdoXhZNNY-aio2kEPB52IU0O9R5CJHtU4LnMa57GCkOWRPOclZNIY23RThSnuG1WP_I&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=qD91MpaVYDRFp7bLWxiBHg&_nc_ss=7e289&oh=00_Af7ew0SImKDuo-Ryi3zatOu7YVSy8p6u4wDlYhOhav3F0A&oe=69FC78AD"
+                  },
+                  "id": "1537239164875913"
+                }
+              },
+              "cover_video": null,
+              "gif_cover_photo": null,
+              "online_event_setup": null,
+              "is_happening_now": false,
+              "day_time_sentence": "Sun, May 17 at 9:00 AM EDT",
+              "name": "Summer Sundays Kickoff Party ",
+              "is_online": false,
+              "ticketing_context_row": {
+                "price_range_text": null
+              },
+              "event_place": {
+                "__typename": "FreeformPlace",
+                "contextual_name": "210 Madonna Blvd, Tierra Verde, FL, United States, Florida 33715",
+                "__isNode": "FreeformPlace",
+                "id": "1536152998317863"
+              },
+              "eventUrl": "https://www.facebook.com/events/1350069186953894/",
+              "can_page_viewer_invite_as_user": false,
+              "can_viewer_invite": false,
+              "can_viewer_rsvp": false,
+              "can_viewer_share": false,
+              "event_kind": "PUBLIC_TYPE",
+              "if_viewer_can_duplicate_event": null,
+              "is_online_or_detected_online": false,
+              "is_past": false,
+              "is_viewer_host": false,
+              "start_timestamp": 1779022800,
+              "rsvp_button_renderer": {
+                "__typename": "PublicRsvpStyleRenderer",
+                "event": {
+                  "id": "1350069186953894",
+                  "connection_style": "INTERESTED",
+                  "can_viewer_join": false,
+                  "can_viewer_watch": false,
+                  "can_viewer_unwatch": false,
+                  "viewer_watch_status": "UNWATCHED",
+                  "if_viewer_can_see_going_button": null,
+                  "event_connection_data_privacy_scope": null,
+                  "privacy_scope_for_toast": null,
+                  "can_join_group_chat": false,
+                  "created_for_group": null,
+                  "chat": null
+                },
+                "__module_operation_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+                },
+                "__module_component_EventCometUniversalRSVPButton_event": {
+                  "__dr": "PublicEventCometRSVPButtonRenderer.react"
+                }
+              },
+              "parent_if_exists_or_self": {
+                "online_event_setup": null,
+                "id": "1350069186953894"
+              },
+              "live_virtual_event_info": null,
+              "__typename": "Event",
+              "social_context": {
+                "text": "96 interested · 3 going",
+                "ranges": [],
+                "interested_count": 96,
+                "going_count": 3,
+                "went_count": null
+              }
+            },
+          ],
+          "cursor": "eyJzdGFydF...."
+        },
+      },
+      {
+        name: "Event Details",
+        method: "GET",
+        description: "Get a specific event by its URL or id",
+        fullDescription: "Get a specific event by its URL or id",
+        path: "/v1/facebook/event/details",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "The ID of the event",
+            placeholder: "2255360061870188",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "The URL of the event",
+            placeholder: "https://www.facebook.com/events/2255360061870188/",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998229823,
+          "id": "2255360061870188",
+          "url": "https://www.facebook.com/events/2255360061870188/",
+          "name": "May St. Pete Flea ",
+          "description": "SPRING IS HERE AND WE CAN’T WAIT TO SEE YOU AT THE MARKET! \nMeet us downtown at Mirror Lalke as we host some of the best makers, artists and small businesses in the Tampa Bay area. \n\nWe have three great dates this spring to shop with us as we bring you best Tampa Bay has to offer in locally made and curated hand-crafted goods, vintage housewares, decor, Mid-century furniture, vintage clothing, antiques, plants, collectables, food, music, art and so much more.  \n\nSunday, March 8th, 2026\nSunday, April 12th, 2026\nSunday, May 3rd, 2026\n********\n12:00 p.m. - 4:00 p.m.�Free to the Public * Family Friendly *\n\n* LOCATION *\nThe market will be held out in Downtown St. Petersburg, in front of our beautiful City Hall and Courthouse, right next to Mirror Lake.",
+          "category": null,
+          "categories": [],
+          "is_online": false,
+          "is_past": true,
+          "event_kind": "PUBLIC_TYPE",
+          "privacy": "public",
+          "start_time": null,
+          "end_time": null,
+          "time_text": null,
+          "duration": "4 hr",
+          "price": null,
+          "ticket_url": null,
+          "ticket_source": null,
+          "ticket_provider": null,
+          "location_name": "Mirror Lake Park, Downtown St Pete",
+          "address": "Saint Petersburg, FL",
+          "city": "Saint Petersburg, Florida",
+          "city_id": "111326725552547",
+          "latitude": 27.776053761243,
+          "longitude": -82.639546684316,
+          "attendance_count": 7654,
+          "attendance_facepile_count": 0,
+          "can_view_members": true,
+          "host_context_text": "Event by The Indie Flea",
+          "hosts": [
+            {
+              "id": "100082008263628",
+              "name": "The Indie Flea",
+              "type": "User",
+              "url": "https://www.facebook.com/theindieflea",
+              "is_verified": false,
+              "profile_picture_url": "https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-1/464183650_549071584503112_3055385531133902634_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=5rQ_jTw3GmkQ7kNvwG062e2&_nc_oc=Adr0ZXLJg--_9LY1GPBvQABFqOzL6wTn_aMOdCu9Zr2BLpmWroH4DZsu0X8vbozAD3E&_nc_zt=24&_nc_ht=scontent-lga3-3.xx&_nc_gid=WDxpm-eBdx7_ruGu2J3r9g&_nc_ss=7e289&oh=00_Af56igLhRkYx3GHjB0h01m3pF--mGdMzoxFg0euvJmK5DA&oe=69FEB26B"
+            }
+          ],
+          "host_names": [
+            "The Indie Flea"
+          ],
+          "creator": {
+            "id": "100082008263628",
+            "name": "The Indie Flea",
+            "type": "User",
+            "url": null,
+            "is_verified": null,
+            "profile_picture_url": null
+          },
+          "description_links": [],
+          "can_viewer_message": false,
+          "is_viewer_host": false,
+          "is_canceled": false,
+          "cover_photo_url": "https://scontent.fbra1-1.fna.fbcdn.net/v/t39.30808-6/651106377_950305721046361_5055393414866459656_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7e0d18&_nc_ohc=uoUS18WdA8AQ7kNvwFUcvhb&_nc_oc=AdqWorZuBJd3sf4yoI3PeFWcGVbKk8NCCM5lLn8K1d2x_sWSVx3EPXl8AEd0DXCsij8&_nc_zt=23&_nc_ht=scontent.fbra1-1.fna&_nc_gid=DdGE8ikSxarHGscPQzyAkw&_nc_ss=7e289&oh=00_Af6T6mHBTX5yD6aHFEpp4NGazbYeFuY5uzDOXpWqwROLSQ&oe=69FEBE0B",
+          "day_time_sentence": "Sunday, May 3, 2026 at 12:00 PM – 4:00 PM EDT",
+          "rsvp_style": "PUBLIC_RSVP_STYLE",
+          "event_place": {
+            "__typename": "Page",
+            "name": "Mirror Lake Park, Downtown St Pete",
+            "contextual_name": "Mirror Lake Park, Downtown St Pete",
+            "__isNode": "Page",
+            "id": "521768081246129"
+          },
+          "price_info": null,
+          "current_start_timestamp": 1777824000,
+          "start_timestamp": 1777824000,
+          "start_time_formatted": "Sun, May 3",
+          "interested_count": 7448,
+          "going_count": 207
+        },
+      }
     ],
   },
   {
@@ -4314,72 +6365,162 @@ export const apis = [
           },
         ],
         sampleResponse: {
-          success: true,
-          credits_remaining: 9926561,
-          ads: [
+          "success": true,
+          "credits_remaining": 49998226428,
+          "ads": [
             {
-              advertiserId: "AR09628680369637163009",
-              creativeId: "CR15036700036807262209",
-              format: "text",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR15036700036807262209",
-              advertiserName: "Foreplay Ventures Inc",
-              domain: "foreplay.co",
-              imageUrl: null,
-              firstShown: "2024-08-02T12:33:35.000Z",
-              lastShown: "2025-11-10T19:31:13.000Z",
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR08567627846124568577",
+              "format": "image",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR08567627846124568577",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": null,
+              "firstShown": "2026-03-11T17:08:22.000Z",
+              "lastShown": "2026-05-04T17:59:12.000Z"
             },
             {
-              advertiserId: "AR09628680369637163009",
-              creativeId: "CR04077090219323555841",
-              format: "video",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR04077090219323555841",
-              advertiserName: "Foreplay Ventures Inc",
-              domain: "foreplay.co",
-              imageUrl: null,
-              firstShown: "2024-06-22T06:45:18.000Z",
-              lastShown: "2025-11-10T17:56:32.000Z",
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR02637147045441306625",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR02637147045441306625",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/7468813441689462696",
+              "firstShown": "2024-11-01T01:34:54.000Z",
+              "lastShown": "2026-05-04T17:58:57.000Z"
             },
             {
-              advertiserId: "AR09628680369637163009",
-              creativeId: "CR09593715710895325185",
-              format: "video",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR09593715710895325185",
-              advertiserName: "Foreplay Ventures Inc",
-              domain: "foreplay.co",
-              imageUrl: null,
-              firstShown: "2025-08-27T14:17:12.000Z",
-              lastShown: "2025-11-10T17:17:46.000Z",
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR08098532145120673793",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR08098532145120673793",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/766417217461683779",
+              "firstShown": "2024-08-27T12:51:22.000Z",
+              "lastShown": "2026-05-04T17:54:24.000Z"
             },
             {
-              advertiserId: "AR09628680369637163009",
-              creativeId: "CR10027703979854528513",
-              format: "text",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR10027703979854528513",
-              advertiserName: "Foreplay Ventures Inc",
-              domain: "foreplay.co",
-              imageUrl: null,
-              firstShown: "2025-01-12T03:38:24.000Z",
-              lastShown: "2025-11-10T16:36:38.000Z",
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR04864897919897042945",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR04864897919897042945",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": null,
+              "firstShown": "2026-03-17T13:10:08.000Z",
+              "lastShown": "2026-05-04T17:54:21.000Z"
             },
             {
-              advertiserId: "AR09628680369637163009",
-              creativeId: "CR15742167484830056449",
-              format: "image",
-              adUrl:
-                "https://adstransparency.google.com/advertiser/AR09628680369637163009/creative/CR15742167484830056449",
-              advertiserName: "Foreplay Ventures Inc",
-              domain: "foreplay.co",
-              imageUrl: null,
-              firstShown: "2025-08-09T14:24:28.000Z",
-              lastShown: "2025-11-10T06:47:43.000Z",
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR12592137366413508609",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR12592137366413508609",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/3081390492094130235",
+              "firstShown": "2024-05-07T10:41:57.000Z",
+              "lastShown": "2026-05-04T17:51:00.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR05939968563828752385",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR05939968563828752385",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/6834179606872602922",
+              "firstShown": "2023-05-19T23:27:29.000Z",
+              "lastShown": "2026-05-04T17:50:07.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR17970554950748471297",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR17970554950748471297",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/16211925358676711394",
+              "firstShown": "2024-10-02T18:09:28.000Z",
+              "lastShown": "2026-05-04T17:48:57.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR12213525725709336577",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR12213525725709336577",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/146125619079881058",
+              "firstShown": "2023-05-19T22:27:14.000Z",
+              "lastShown": "2026-05-04T17:47:53.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR18446650898689032193",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR18446650898689032193",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/11117565455095683804",
+              "firstShown": "2025-08-21T23:16:58.000Z",
+              "lastShown": "2026-05-04T17:47:23.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR01495008090590806017",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR01495008090590806017",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/9248226952724393849",
+              "firstShown": "2023-06-14T07:08:49.000Z",
+              "lastShown": "2026-05-04T17:42:16.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR05242608124275195905",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR05242608124275195905",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/13173570315543239209",
+              "firstShown": "2022-10-22T19:09:17.000Z",
+              "lastShown": "2026-05-04T17:42:02.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR03664498721518780417",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR03664498721518780417",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": null,
+              "firstShown": "2025-05-07T19:20:43.000Z",
+              "lastShown": "2026-05-04T17:39:44.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR11629681142940041217",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR11629681142940041217",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/7795391910101500990",
+              "firstShown": "2026-03-23T12:56:23.000Z",
+              "lastShown": "2026-05-04T17:35:58.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR15856314761936371713",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR15856314761936371713",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/9220948714393782339",
+              "firstShown": "2024-11-01T00:13:00.000Z",
+              "lastShown": "2026-05-04T17:34:38.000Z"
+            },
+            {
+              "advertiserId": "AR01614014350098432001",
+              "creativeId": "CR00295771342291075073",
+              "format": "text",
+              "adUrl": "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR00295771342291075073",
+              "advertiserName": "lululemon athletica canada inc.",
+              "imageUrl": "https://tpc.googlesyndication.com/archive/simgad/2311233975026499608",
+              "firstShown": "2024-07-08T08:06:45.000Z",
+              "lastShown": "2026-05-04T17:33:09.000Z"
             },
           ],
-          cursor:
-            "CgoAP7zm82Y5sMRjEhBwPifBwIMxRttsqvUAAAAAGgn8%2BIdd%2BDICr8g%3D",
+          "cursor": "CgoAP7zmu%2FzKj6ijEhBBAgiPtk1y16J9lpkAAAAAGgn8%2BHbW%2BJylE6g%3D",
+          "number_of_ads_estimate": 20000
         },
       },
       {
@@ -4461,96 +6602,64 @@ export const apis = [
             type: "string",
             required: true,
             description: "The query to search for",
-            placeholder: "nike",
+            placeholder: "lululemon",
           },
         ],
         sampleResponse: {
-          success: true,
-          credits_remaining: 9994695,
-          advertisers: [
+          "success": true,
+          "credits_remaining": 49998226090,
+          "advertisers": [
             {
-              name: "Nike Lee",
-              advertiser_id: "AR18100938063227125761",
-              region: "US",
+              "name": "lululemon HK Limited",
+              "advertiser_id": "AR01382517811867287553",
+              "region": "HK",
+              "number_of_ads_estimate": 5
             },
             {
-              name: "NIKE SRL",
-              advertiser_id: "AR17365672681860497409",
-              region: "IT",
+              "name": "lululemon athletica canada inc.",
+              "advertiser_id": "AR01614014350098432001",
+              "region": "CA",
+              "number_of_ads_estimate": 7000
             },
             {
-              name: "Nike Kola",
-              advertiser_id: "AR05316777725531258881",
-              region: "US",
+              "name": "Lululemon Athletica Australia Pty Ltd",
+              "advertiser_id": "AR12317441102226391041",
+              "region": "AU",
+              "number_of_ads_estimate": 4
             },
             {
-              name: "Nike, Inc.",
-              advertiser_id: "AR16735076323512287233",
-              region: "US",
-            },
-            {
-              name: "Nike Klara",
-              advertiser_id: "AR17567291692413878273",
-              region: "US",
-            },
-            {
-              name: "NIKE, Inc.",
-              advertiser_id: "AR00269480696421023745",
-              region: "US",
-            },
-            {
-              name: "Nikel Kola",
-              advertiser_id: "AR04767743191271079937",
-              region: "US",
-            },
-            {
-              name: "Nikeson AB",
-              advertiser_id: "AR00386048032979812353",
-              region: "SE",
-            },
-            {
-              name: "VIXEN NIKE",
-              advertiser_id: "AR10253711652960600065",
-              region: "TN",
-            },
-            {
-              name: "VIXEN NIKE",
-              advertiser_id: "AR04171037406243323905",
-              region: "TN",
-            },
+              "name": "lululemon athletica JP Limited Liability Company",
+              "advertiser_id": "AR12957738211148300289",
+              "region": "JP",
+              "number_of_ads_estimate": 5
+            }
           ],
-          websites: [
+          "websites": [
             {
-              domain: "nike.ae",
+              "domain": "lululemon.de"
             },
             {
-              domain: "nike.cl",
+              "domain": "lululemon.com"
             },
             {
-              domain: "nike.sa",
+              "domain": "lululemon.co.uk"
             },
             {
-              domain: "nike.com",
+              "domain": "lululemon.co.kr"
             },
             {
-              domain: "kannike.eu",
+              "domain": "lululemon.co.jp"
             },
             {
-              domain: "uniker.com",
+              "domain": "lululemonss.com"
             },
             {
-              domain: "nike.com.ar",
+              "domain": "lululemon.com.hk"
             },
             {
-              domain: "nike.com.br",
-            },
-            {
-              domain: "nike.com.kw",
-            },
-            {
-              domain: "nike.com.co",
-            },
-          ],
+              "domain": "lululemon.com.au"
+            }
+          ]
         },
       },
     ],
@@ -4630,6 +6739,7 @@ export const apis = [
           ],
           paginationToken: "756412693-1754569518292",
           isLastPage: false,
+          totalAds: 8699,
         },
         params: [
           {
@@ -7682,185 +9792,6 @@ export const apis = [
             },
           ],
           after: "t3_1izmcgx",
-        },
-      },
-      {
-        name: "Search Ads",
-        method: "GET",
-        description:
-          "Search the Reddit Ad Library. Can only get a max of 30 ads.",
-        fullDescription:
-          "Searches the Reddit Ad Library for ads matching a query, returning a maximum of 30 results. Each ad includes id, budget_category, industry, placements, objective, and a creative object with headline, body, thumbnail_url, type, created_at, and post_url. Also includes profile_info with the advertiser's name. Supports filtering by industries, budgets, formats, placements, and objectives.",
-        path: "/v1/reddit/ads/search",
-        params: [
-          {
-            name: "query",
-            type: "string",
-            required: true,
-            description: "Search query",
-            placeholder: "Scraping",
-          },
-          {
-            name: "industries",
-            type: "select",
-            required: false,
-            description: "Industries to filter by",
-            options: [
-              "RETAIL_AND_ECOMMERCE",
-              "TECH_B2B",
-              "TECH_B2C",
-              "EDUCATION",
-              "ENTERTAINMENT",
-              "GAMING",
-              "FINANCIAL_SERVICES",
-              "HEALTH_AND_BEAUTY",
-              "CONSUMER_PACKAGED_GOODS",
-              "EMPLOYMENT",
-              "AUTO",
-              "TRAVEL",
-              "REAL_ESTATE",
-              "GAMBLING_AND_FANTASY_SPORTS",
-              "POLITICS_AND_GOVERNMENT",
-              "OTHER",
-            ],
-          },
-          {
-            name: "budgets",
-            type: "select",
-            required: false,
-            description: "Budgets to filter by",
-            options: ["LOW", "MEDIUM", "HIGH"],
-          },
-          {
-            name: "formats",
-            type: "select",
-            required: false,
-            description: "Formats to filter by",
-            options: ["IMAGE", "VIDEO", "CAROUSEL", "FREE_FORM"],
-          },
-          {
-            name: "placements",
-            type: "select",
-            required: false,
-            description: "Placements to filter by",
-            options: ["FEED", "COMMENTS_PAGE"],
-          },
-          {
-            name: "objectives",
-            type: "select",
-            required: false,
-            description: "Objectives to filter by",
-            options: [
-              "IMPRESSIONS",
-              "CLICKS",
-              "CONVERSIONS",
-              "VIDEO_VIEWABLE_IMPRESSIONS",
-              "APP_INSTALLS",
-            ],
-          },
-        ],
-        sampleResponse: {
-          success: true,
-          ads: [
-            {
-              id: "79e005f1e09ec72245e904d87d2a0869",
-              budget_category: "HIGH",
-              industry: "OTHER",
-              placements: ["FEED", "COMMENTS_PAGE"],
-              objective: "CONVERSIONS",
-              creative: {
-                id: "t3_1cdt7o6",
-                type: "TEXT",
-                content: [
-                  {
-                    destination_url: null,
-                    display_url: "self.thepennyhoarder",
-                    call_to_action: null,
-                    media_url: null,
-                  },
-                ],
-                headline:
-                  "What is a rich person’s money tip you wish you knew sooner?",
-                body: "Life would be a whole lot easier if someone would just Venmo us $1 million, but unfortunately the chance of that happening is, well, probably zero. (Venmo doesn’t allow transactions that large anyway.)\n\nBut even though our chances of becoming a millionaire are slim, we can still manage our money like one. No, we’re not going to tell you how to buy hundreds of shares of Apple stock. Or how to pick out the perfect yacht.\n\nThese are simple money moves any normal, non-millionaire person can make *today*. Each tip can get you closer to achieving your big goals.\n\nTake a look:\n\n# 1. Cancel Your Car Insurance\n\nYou might not even realize it, but your car insurance company is probably overcharging you. In fact, they’re kind of counting on you not noticing. Luckily, this problem is easy to fix. \n\nDon’t waste your time browsing insurance sites for a better deal. A company called[ **Insurify**](https://t.thepennyhoarder.com/aff_ad?campaign_id=319&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) shows you all your options at once — people who do this save up to $996 per year. \n\nIf you tell them a bit about yourself and your vehicle, they’ll send you personalized quotes so you can compare them and find the best one for you.\n\nTired of overpaying for car insurance? It takes just five minutes to compare your options with Insurify and[ **see how much you could save on car insurance.**](https://t.thepennyhoarder.com/aff_ad?campaign_id=319&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit)\n\n# 2. Stop Paying Your Credit Card Company\n\nIf you have credit card debt, *you know*. The anxiety, the interest rates, the fear you’re never going to escape…\n\nAnd the truth is, your credit card company doesn’t really care. It’s just getting rich by ripping you off with high interest rates — some up to 36%. But a website called[ **AmOne**](https://t.thepennyhoarder.com/aff_c?offer_id=6370&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) wants to help.\n\nIf you owe your credit card companies $100,000 or less, AmOne will match you with a low-interest loan you can use to pay off every single one of your balances.\n\nThe benefit? You’ll be left with one bill to pay each month. And because personal loans have lower interest rates (AmOne rates start at 6.40% APR), you’ll get out of debt *that* much faster. Plus: No credit card payment this month.\n\nYou don’t need a perfect credit score to get a loan — and comparing your options won’t affect your score at all. Plus, AmOne keeps your information confidential and secure, which is probably why after 20 years in business, it still has an A+ rating with the Better Business Bureau.\n\nIt takes less than a minute and just 10 questions to[ **see what loans you qualify for**](https://t.thepennyhoarder.com/aff_c?offer_id=6370&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) — you don’t even need to enter your Social Security number. You do need to give AmOne a real phone number in order to qualify, but don’t worry — they won’t spam you with phone calls.\n\n# 3. You Can Become a Real Estate Investor for as Little as $10\n\nTake a look at some of the world’s wealthiest people. What do they have in common? Many invest in large private real estate deals. And here’s the thing: There’s no reason you can’t, too — for as little as $10. \n\n[**An investment called the Fundrise Flagship Fund**](https://t.thepennyhoarder.com/aff_c?offer_id=7384&aff_id=152&source=millionaires-sdyn-prt&aff_sub3=money-secrets-reddit) lets you get started in the world of real estate by giving you access to a low-cost, diversified portfolio of private real estate. The best part? You don’t have to be the landlord. The Flagship Fund does all the heavy lifting.\n\nWith an initial investment as low as $10, your money will be invested in the Fund, which already owns more than $1 billion worth of real estate around the country, from apartment complexes to the thriving housing rental market to larger last-mile e-commerce logistics centers.\n\nWant to invest more? Many investors choose to invest $1,000 or more. This is a Fund that can fit any type of investor’s needs. Once invested, you can track your performance from your phone and watch as properties are acquired, improved, and operated. As properties generate cash flow, you could earn money through quarterly dividend payments. And over time, you could earn money off the potential appreciation of the properties. \n\nSo if you want to get started in the world of real-estate investing, it takes just a few minutes to [**sign up and create an account with the Fundrise Flagship Fund**](http://t.thepennyhoarder.com/aff_c?offer_id=7384&aff_id=152&source=millionaires-sdyn-prt&aff_sub3=money-secrets-reddit).\n\n# 4. Get One Month of Free High-Speed Internet (and Pay as Little as $40/Month After That)\n\nThere are some bills you just can’t avoid. For most of us, that includes our internet bill. Your provider knows it’s pretty hard to go without it these days — that’s why so many of us are overpaying. \n\nBut with[ Metro by T-Mobile](https://t.thepennyhoarder.com/aff_c?offer_id=7522&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit), you can get high-speed, 5G home internet for as little as \\*$40 a month. No credit check, no deposit, and they won’t lock you into a contract that hikes up your price after your first year, either. \n\nYou’re probably thinking there’s some catch, but they’ll let you try it out for 14 days to see if you like it. If not, you’ll get your money back. You don’t even have to worry about breaking up with your current provider — T-Mobile will pay up to $750 in termination fees.\n\nEven better? When you switch now, get one month free after the rebate and purchase your equipment for just $24.99 (usually $49.99).\n\nSwitch to Metro by T-Mobile and get 5G Home Internet from Metro for $40/mo with AutoPay. Just[ enter your address and phone number here](https://t.thepennyhoarder.com/aff_c?offer_id=7522&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) to see if you qualify.\n\n# 5. Get Paid $225/Month While Watching Movie Previews\n\n# If we told you that you could get paid while watching videos on your computer, you’d probably laugh.\n\nIt’s too good to be true, right?\n\nBut we’re serious. By signing up for a free account with[ **InboxDollars**](https://t.thepennyhoarder.com/aff_c?offer_id=3421&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit), you could add up to $225 a month to your pocket. They’ll send you short surveys every day, which you can fill out while you watch someone bake brownies or catch up on the latest Kardashian drama.\n\nNo, InboxDollars won’t replace your full-time job, but it’s something easy you can do while you’re already on the couch tonight, wasting time on your phone.\n\nUnlike other sites, InboxDollars pays you in cash — no points or gift cards. It’s already paid its users more than $56 million.\n\nSigning up takes about one minute, and you’ll immediately receive[ **a $5 bonus**](https://t.thepennyhoarder.com/aff_c?offer_id=3421&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) to get you started.\n\n# 6. Killing Time? Earn up to $107 Per Win Playing Solitaire on Your Phone\n\nThere’s nothing wrong with killing a little free time on your phone. A lot of us pull up a mobile game on our break, on the couch or on long drives. But we found a game that will actually pay you to do it.\n\n[**A free iPhone app called Solitaire Smash**](https://t.thepennyhoarder.com/aff_ad?campaign_id=304&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit) will pay you up to $107 per win just for playing Solitaire online. Right now, when you add $10 to your account, Solitaire Smash will give you a $5 bonus to use in cash tournaments plus 1,000 gems.\n\nIt works just like the card game you already know, but it adds a timer to mix, and you’ll play against other players at your same skill level. The top three players win a prize. You can play casually for gems or compete for real money prize pools — up to $107 per win. Plus, they have a 4.9 star rating on the App Store.\n\nWant to see if you can turn $10 to $107 in your free time? Just download Solitaire Smash to get [**start playing and see how much money you can win**](https://t.thepennyhoarder.com/aff_ad?campaign_id=304&aff_id=152&source=money-secrets-prt-reddit&aff_sub3=money-secrets-reddit).",
-                thumbnail_url:
-                  "https://b.thumbs.redditmedia.com/9gzdjvf9fDu1vN2zxxVrvGqOJizhLf80W701zzkml2k.jpg",
-                allow_comments: false,
-                created_at: "2024-04-26T18:47:57+00:00",
-                profile_id: "t2_3usby",
-                post_url:
-                  "https://www.reddit.com/r/u_thepennyhoarder/comments/1cdt7o6/what_is_a_rich_persons_money_tip_you_wish_you/",
-              },
-              profile_info: {
-                name: "u_thepennyhoarder",
-                snoovatar_icon_url:
-                  "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png",
-              },
-            },
-          ],
-        },
-      },
-      {
-        name: "Get Ad",
-        method: "GET",
-        description: "Get a specific ad by id",
-        fullDescription:
-          "Retrieves detailed information about a specific Reddit ad by its id. Returns an analysis_summary with headline and media insights, plus the full inspiration_creative object containing id, budget_category, industry, placements, objective, and creative details (headline, body, type, thumbnail_url, created_at, post_url). Also includes profile_info with the advertiser's name.",
-        path: "/v1/reddit/ad",
-        params: [
-          {
-            name: "id",
-            type: "string",
-            required: true,
-            description: "Ad id",
-            placeholder: "79e005f1e09ec72245e904d87d2a0869",
-          },
-        ],
-        sampleResponse: {
-          success: true,
-          data: {
-            analysis_summary: {
-              headline: [
-                "Direct Question/Engagement: The headline poses a direct question to the reader. This is highly effective on Reddit as it immediately invites user participation and sparks curiosity. It encourages users to think about the topic and potentially share their own experiences or insights in the comments, aligning with Reddit's interactive and discussion-focused nature. This direct engagement fosters a sense of community and encourages users to click to find out more or participate in the conversation.",
-                'Intrigue/Curiosity Gap: The headline uses the phrase "rich person’s money tip" creating a sense of mystery. This builds intrigue and taps into the user\'s desire to gain insider knowledge or learn something valuable. This resonates with Redditors who are often interested in learning new things, self-improvement, and financial literacy. The "wish you knew sooner" component further amplifies this curiosity, implying that the answer could save time or money.',
-                'Relatability/Aspiration: The headline addresses a common desire: financial success. The phrase "rich person’s money tip" is aspirational, appealing to the audience\'s aspirations and goals. This creates a relatable hook that makes the ad relevant to a broad range of users, especially in subreddits related to finance, personal development, or career advice. It speaks to a universal desire for financial security and knowledge, positioning the ad as potentially offering valuable information.',
-              ],
-              media: [],
-            },
-            inspiration_creative: {
-              id: "79e005f1e09ec72245e904d87d2a0869",
-              budget_category: "HIGH",
-              industry: "OTHER",
-              placements: ["FEED", "COMMENTS_PAGE"],
-              objective: "CONVERSIONS",
-              creative: {
-                id: "t3_1cdt7o6",
-                type: "TEXT",
-                content: [
-                  {
-                    destination_url: null,
-                    display_url: "self.thepennyhoarder",
-                    call_to_action: null,
-                    media_url: null,
-                  },
-                ],
-                headline:
-                  "What is a rich person’s money tip you wish you knew sooner?",
-                body: "Life would be a whole lot easier if someone would just Venmo us $1 million, but unfortunately the chance of that happening is, well, probably zero.",
-                thumbnail_url:
-                  "https://b.thumbs.redditmedia.com/9gzdjvf9fDu1vN2zxxVrvGqOJizhLf80W701zzkml2k.jpg",
-                allow_comments: false,
-                created_at: "2024-04-26T18:47:57+00:00",
-                profile_id: "t2_3usby",
-                post_url:
-                  "https://www.reddit.com/r/u_thepennyhoarder/comments/1cdt7o6/what_is_a_rich_persons_money_tip_you_wish_you/",
-              },
-              profile_info: {
-                name: "u_thepennyhoarder",
-                snoovatar_icon_url:
-                  "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png",
-              },
-            },
-          },
         },
       },
     ],
@@ -11464,6 +13395,21 @@ export const apis = [
               "2 letter country code, ie US, UK, CA, etc This will show results from that country",
             placeholder: "US",
           },
+          {
+            name: "date_posted",
+            type: "select",
+            required: false,
+            description: "Date posted",
+            options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
+            placeholder: "last-hour",
+          },
+          {
+            name: "page",
+            type: "number",
+            required: false,
+            description: "Page number to retrieve",
+            placeholder: "1",
+          }
         ],
         sampleResponse: {
           success: true,
@@ -11499,358 +13445,6 @@ export const apis = [
               description:
                 "Austen Allred is the founder and CEO of the Bloom Institute of Technology (formerly known as Lambda School), a coding bootcamp that's helped thousands of students get a job in tech.",
             },
-            {
-              url: "https://www.sandofsky.com/lambda-school/",
-              title: "Fast Crimes at Lambda School - Sandofsky",
-              description:
-                "Jun 18, 2024   �   The Fall of Austen Allred. The journalist who exposed Lambda School wasn't a journalist by trade. Vincent Woo was a successful entrepreneur best�...",
-            },
-            {
-              url: "https://www.austenallred.com/",
-              title: "Austen Allred",
-              description:
-                "Feb 9, 2023   �   I'm the co-founder and CEO of Bloom Institute of Technology. I'm @austen on Twitter. I read a lot. I invest in early-stage tech startups out of�...",
-            },
-            {
-              url: "https://www.instagram.com/austenall/",
-              title: "Austen Allred (@austenall) • Instagram photos and videos",
-              description:
-                '30K Followers, 1828 Following, 60 Posts - Austen Allred (@austenall) on Instagram: "Co-founder and CEO of Bloom Institute of Technology"',
-            },
-            {
-              url: "https://venture.angellist.com/v/back/austen-access-fund",
-              title: "Austen Access Fund - AngelList",
-              description:
-                "I'm Austen Allred - the CEO of BloomTech (formerly Lambda School), a company backed by Y Combinator, Stripe, and other top-tier Silicon Valley venture firms�...",
-            },
-            {
-              url: "https://www.bloomtech.com/blog-topic/austen-allred",
-              title: "Austen Allred - Bloom Institute of Technology",
-              description:
-                "Graduates will be prepared with the skills necessary to land an entry-level software engineering role at companies of all sizes.",
-            },
-            {
-              url: "https://news.ycombinator.com/item",
-              title:
-                "CFPB Takes Action Against Coding Boot Camp BloomTech and ...",
-              description:
-                "Apr 17, 2024   �   Austen Allred quote-tweeted me to his gazillion followers and caused a big pile-on about how awful and wrong and anti-progress I was. Couldn�...",
-            },
-            {
-              url: "https://www.founderspledge.com/members/765",
-              title: "Co-Founder and CEO of LambdaSchool | Founders Pledge",
-              description:
-                "Austen Allred is the Co-Founder and CEO of Lambda School. A native of Springville, Utah, Austen's start-up journey began in 2017.",
-            },
-            {
-              url: "https://www.linkedin.com/today/author/austenallred",
-              title: "Austen Allred - LinkedIn",
-              description:
-                "Austen Allred. Founder @ Gauntlet AI. View articles by Austen Allred. Being a Father Has Made me a Better Leader, and Vice Versa. Being a Father�...",
-            },
-            {
-              url: "https://perell.com/podcast/austen-allred/",
-              title: "Austen Allred: The Future of Education - David Perell",
-              description:
-                "David Perell interviews Austen Allred, the founder of Lambda School. Listen now.",
-            },
-            {
-              url: "https://www.youtube.com/watch",
-              title:
-                "Austen Allred's SHOCKING Solution to Fix Higher Education Forever ...",
-              description:
-                "Sep 11, 2024   �   Austin Allred, founder of BloomTech, discusses the concept of income share agreements and how his company is revolutionizing education.",
-            },
-            {
-              url: "https://podcasts.apple.com/us/podcast/the-austen-allred-podcast/id1694396684",
-              title: "The Austen Allred Podcast",
-              description:
-                "#1: Sahil Lavingia of Gumroad (with Austen Allred). Sahil. Lavingia is the CEO of Gumroad. We talked about dividends at VC-backed startups, fractional hiring�...",
-            },
-            {
-              url: "https://www.austenallred.com/about/",
-              title: "About - Austen Allred",
-              description:
-                "I'm the co-founder and CEO of Bloom Institute of Technology. Email: austen@bloomtech.com. Twitter: @austen. Subscribe to Austen Allred.",
-            },
-            {
-              url: "https://thefutur.com/content/austen-allred",
-              title: "A New School - The Futur",
-              description:
-                "Our guest on the podcast today is Austen Allred, the man with a plan to make computer science education even more accessible. A software engineer himself,�...",
-            },
-            {
-              url: "https://www.businessinsider.com/bloomtech-lambda-school-austen-allred-deceived-students-cfbp-says-2024-4",
-              title:
-                "BloomTech and CEO Austen Allred Deceived Students, US Agency ...",
-              description:
-                "Apr 17, 2024   �   Coding bootcamp BloomTech and CEO Austen Allred misrepresented income-share agreements and inflated job placement statistics, CFPB says.",
-            },
-            {
-              url: "https://www.thetwentyminutevc.com/austenallred",
-              title: "Lambda School Founder, Austen Allred on Why ... - 20VC",
-              description:
-                "Austen Allred is the Founder & CEO @ Lambda School, a 9 month, immersive program that gives you the tools and training you need to launch your new career�...",
-            },
-            {
-              url: "https://www.crunchbase.com/person/austen-allred",
-              title:
-                "Austen Allred - Co-Founder & CEO @ Lambda School - Crunchbase",
-              description:
-                "Austen Allred has 2 current jobs as Co-Founder & CEO at BloomTech and Co-Founder & CEO at Lambda School . Additionally, Austen Allred has had 2 past jobs�...",
-            },
-            {
-              url: "https://www.workspaces.xyz/p/148-austen-allred",
-              title: "148 - Austen Allred - Workspaces.xyz",
-              description:
-                "Austen Allred is the co-founder and CEO of BloomTech (Bloom Institute of Technology), formerly known as Lambda School. BloomTech is an online coding school�...",
-            },
-            {
-              url: "https://bigthink.com/people/austen-allred/",
-              title: "Austen Allred - Big Think",
-              description:
-                "Austen Allred is the Co-Founder and CEO of Lambda School (now known as Bloom Institute of Technology). A native of Springville, Utah, Austen's start-up�...",
-            },
-            {
-              url: "https://foundercontent.com/founders/all/austen-allred",
-              title: "Austen Allred CEO @ Lambda School - Founder Content",
-              description:
-                "Austen Allred. Austen is CEO @ Lambda School. 2 resources from Austen. Companies founded: Lambda School. Austen's Founder Content.",
-            },
-            {
-              url: "https://theorg.com/org/bloomtech/org-chart/austen-allred",
-              title: "Austen Allred - Co-Founder & CEO at BloomTech - The Org",
-              description:
-                "Austen Allred is the co-founder and CEO of BloomTech. A native of Springville, Utah, Austen's start-up journey began in 2017.",
-            },
-            {
-              url: "https://www.sfgate.com/tech/article/bloomtech-coding-school-fined-cfpb-19410802.php",
-              title:
-                "SF school, founder fined $164,000 for allegedly tricking students",
-              description:
-                "Apr 18, 2024   �   Federal agency fines SF school, founder $164,000, alleging they tricked students. BloomTech CEO Austen Allred agreed to the order but admitted�...",
-            },
-            {
-              url: "https://mentorstudents.org/q/austenallred",
-              title: "Austen Allred's interview - Mentor Students",
-              description:
-                "Co-Founder & CEO, Lambda School. Career story & Training institute inspiration. Courses offered & duration. Course Creation & Updation.",
-            },
-            {
-              url: "https://homebase.ai/podcasts/pioneering-new-paths-for-higher-education-with-austen-allred/",
-              title:
-                "Pioneering New Paths for Higher Education with Austen Allred",
-              description:
-                "Allred is a prolific author, speaker, and YCombinator S17 alum. Prior to co-founding Lambda School he oversaw growth at LendUp, co-founded Grasswire, and lead�...",
-            },
-            {
-              url: "https://medium.com/@austenallred/about",
-              title: "About – Austen Allred - Medium",
-              description:
-                "Read writing from Austen Allred on Medium. Co-founder of Lambda School — a CS education that's free until you're hired https://lambdaschool.com.",
-            },
-            {
-              url: "https://soundcloud.com/vwoo/interview-with-austen-allred",
-              title: "Interview with Austen Allred - Vincent Woo - SoundCloud",
-              description:
-                "Feb 14, 2020   �   My interview with Austen Allred of Lambda School, which took place on January 22nd, 2020. Music by @listentoapril,",
-            },
-            {
-              url: "https://www.vitalize.vc/podcast/austen-allred-podcast/",
-              title:
-                "Austen Allred, Co-Founder & CEO at Lambda School | Episode #010",
-              description:
-                "Jul 8, 2021   �   Austen Allred is the Co-Founder & CEO of the Lambda School, an online coding school that invests in the students by offering free tuition.",
-            },
-            {
-              url: "https://www.tweet-rewind.com/AustenAllred.html",
-              title: "Austen Allred - Tweet Rewind (18)",
-              description:
-                "Austen Allred's top 50 tweets in 2018. I find it hard to believe people are using Siri and are still convinced AI will take away all of our jobs.",
-            },
-            {
-              url: "https://www.zayzoon.com/blog/the-iceberg-principle-4-blooming-in-tech-with-austen-allred",
-              title:
-                "The Iceberg Principle #4: Blooming in tech with Austen Allred",
-              description:
-                "Feb 16, 2024   �   From missionary work in the middle of the 2008 financial crisis to CEO of a thriving tech company, Austen was a perfect subject for our Iceberg Principle�...",
-            },
-            {
-              url: "https://jessli.medium.com/a-conversation-with-austen-allred-co-founder-and-ceo-of-lambda-school-ea91e5146163",
-              title:
-                "A conversation with Austen Allred, co-founder and CEO of Lambda ...",
-              description:
-                "Aug 31, 2020   �   Prior to founding Lambda School, Austen was a senior manager of growth at LendUp, co-founder of Grasswire, and social team lead at Stryde. At�...",
-            },
-            {
-              url: "https://breakingintostartups.com/austen-allred-lambda-school/",
-              title: "Austen Allred - CEO and Co-Founder of Lambda School",
-              description:
-                "Oct 10, 2018   �   Austen Allred is the CEO and Co-Founder of Lambda School. Recently coming out of Y Combinator, Lambda now has thousands of students.",
-            },
-            {
-              url: "https://www.zayzoon.com/the-iceberg-principle-austen-allred",
-              title: "The Iceberg Principle - Austen Allred - ZayZoon",
-              description:
-                "Austen Allred is the Co-founder and CEO of BloomTech, the company who is disrupting the future of the educational system. This all started from Austen moving to�...",
-            },
-            {
-              url: "https://www.instagram.com/reel/C8IvqebP_af/",
-              title:
-                "Austin Allred | Sharing our Family's #regenerativefarming story with ...",
-              description:
-                "Jun 12, 2024   �   154 likes, 4 comments - royalfamilyfarming on June 12, 2024: \"Sharing our Family's #regenerativefarming story with the @seahawks #royalranch�...",
-            },
-            {
-              url: "https://podcasts.apple.com/kh/podcast/e2-austen-allred-on-bloomtechs-saga-and/id1691530886",
-              title:
-                'E2: Austen Allred on BloomTech…–"In The Arena" - Apple Podcasts',
-              description:
-                "Jun 28, 2023   �   Austen is the CEO and founder of BloomTech, an education platform famous for pioneering income sharing agreements instead of charging�...",
-            },
-            {
-              url: "https://www.sothisismywhy.com/austen-allred-lambda-school-coding-developer-y-combinator-isa/",
-              title: "Ep 61: Austen Allred (Co-Founder & CEO, Lambda School)",
-              description:
-                "Oct 25, 2021   �   Austen grew up in Utah in a closeknit, Mormon family that greatly valued education. He shares how this experience shaped him as well as the�...",
-            },
-            {
-              url: "https://www.ycombinator.com/blog/a-cs-education-thats-free-until-you-get-a-job-austen-allred-of-lambda-school/",
-              title:
-                "A CS Education That's Free Until You Get a Job - Austen Allred of ...",
-              description:
-                "Apr 2, 2019   �   Austen Allred is the CEO and cofounder of Lambda School. Lambda School provides a CS education that's free until you get a job.",
-            },
-            {
-              url: "https://neo.com/investor/austen-allred",
-              title: "Austen Allred | endorsed at Neo",
-              description:
-                "Jan 18, 2024   �   Neo community members endorse Austen Allred as a startup investor.",
-            },
-            {
-              url: "https://alejandrocremades.com/austen-allred/",
-              title:
-                "Austen Allred On Raising $100 Million To Create A Proven Path To ...",
-              description:
-                "Austen Allred is the co-founder and CEO of BloomTech. A native of Springville, Utah, Austen's start-up journey began in 2017 with him living in his two-door�...",
-            },
-            {
-              url: "https://www.portfoliocareerpodcast.com/austen-allred",
-              title: "Austen Allred - Portfolio Career Podcast",
-              description:
-                "Sep 21, 2018   �   Austen Allred. Teaching Students to Code and Grow�...",
-            },
-            {
-              url: "https://www.instagram.com/reel/C-vC1jvCtiJ/",
-              title:
-                "Meet Austin Allred, the owner of Royal Family Dairy and a leader in ...",
-              description:
-                "Aug 16, 2024   �   We're excited to introduce our grass-fed beef tallow, made from our very own, raised 100% carbon neutral cattle. Get yours today.",
-            },
-            {
-              url: "http://www.modus73.com/learn/austen-allred-scalping-tickets-lambda-school/",
-              title:
-                "A crazy story of scalping tickets to keep his startup dream alive ...",
-              description:
-                "Jun 3, 2020   �   You may have heard of Austen Allred, the founder of Lambda School. But have you heard his story about scalping tickets so he could fix his�...",
-            },
-            {
-              url: "https://www.applieddivinitystudies.com/lambda-lies/",
-              title:
-                "Austen Allred is Consistently Deceptive | Applied Divinity Studies",
-              description:
-                "Nov 18, 2020   �   Founder/CEO Austen Allred frequently takes to Twitter, defending his bootcamp against allegations of fraud, and rebutting critics with case after case of�...",
-            },
-            {
-              url: "https://www.outskill.com/",
-              title: "Outskill: AI Upskilling for Modern Careers",
-              description:
-                "Austen Allred. Founder at Gauntlet AI. Shaan Puri. Sold his company to Twitch. Varun Mayya. Founder at Aeos of Largest AI�...",
-            },
-            {
-              url: "https://www.theinformation.com/briefings/coding-bootcamp-ceo-austen-allred-fined-by-federal-watchdog",
-              title:
-                "Coding Bootcamp CEO Austen Allred Fined by Federal Watchdog",
-              description:
-                "Apr 18, 2024   �   Coding Bootcamp CEO Austen Allred Fined by Federal Watchdog ... A federal agency that oversees consumer finance activities said Thursday it had�...",
-            },
-            {
-              url: "https://www.instagram.com/reel/DAcOrAgyKlx/",
-              title:
-                "Instagram video by Austin Allred • Sep 27, 2024 at 5:41 PM",
-              description:
-                "Sep 27, 2024   �   Farmers, Ranchers, & Dairy Farmers are environmentally friendly! more. View all 18 comments. April 21, 2021.",
-            },
-            {
-              url: "https://www.finra.org/rules-guidance/oversight-enforcement/individuals-barred-finra",
-              title: "Individuals Barred by FINRA | FINRA.org",
-              description:
-                "EMILY MAUREEN ALLRED. 5092387, BRANDON C ALLSUP. 3141791, LAURIE SUE ALMACK ... David Austin. 5803618, PHILLIP K AUSTIN. 5262341, TODD AUSTIN. 2089448, OPIE�...",
-            },
-            {
-              url: "https://www.ibtimes.com/profile/austen-allred",
-              title: "Austen Allred - International Business Times",
-              description:
-                "Austen Allred is the co-founder and CEO of Bloom Institute of Technology (BloomTech), formerly Lambda School. A native of Springville, Utah,�...",
-            },
-            {
-              url: "https://www.instagram.com/reel/DGXBCKTpL2P/",
-              title:
-                "Austin Allred | The American food system is broken. It's a ... - Instagram",
-              description:
-                "Feb 22, 2025   �   The American food system is broken. It's a system that favors large corporations over farmers, that prioritizes profit over people and the�...",
-            },
-            {
-              url: "https://blog.producthunt.com/product-hunt-radio-the-future-of-education-with-lambda-schools-austen-allred-832bd2faa1c4",
-              title:
-                "The future of education with Lambda School's Austen Allred",
-              description:
-                "Mar 13, 2019   �   In this episode, Abadesi talks to Austen Allred, co-founder and CEO of Lambda School. Lambda School is a pioneer in the income-sharing�...",
-            },
-            {
-              url: "https://www.2centdad.com/austen-allred/",
-              title:
-                "Higher Education Disruption with Austen Allred - 2 Cent Dad",
-              description:
-                "Aug 11, 2020   �   Austen Allred joins the podcast to talk about why school isn't a one size fits all and how you can be a dad in the ever changing education�...",
-            },
-            {
-              url: "https://www.uhsaa.org/btrack/BoysStateRecords.pdf",
-              title: "[PDF] UHSAA Track & Field State Records",
-              description:
-                "5 days ago   �   Lorin Allred. Sorenson. Landen Stice. Mark Higbee. Riley Stringham ... Austen Jorgensen. Bo Hickman. Austin Kafentzis. Ethan Ecker. Green River.",
-            },
-            {
-              url: "https://www.ibtimes.com/austen-allred-will-pay-you-hire-his-graduates-3184124",
-              title:
-                "Austen Allred Will Pay You To Hire His Graduates! | IBTimes",
-              description:
-                "Apr 22, 2021   �   The visionary founder and CEO of Lambda School wants to blow up conventional, restrictive hiring practices that he says just plain don't�...",
-            },
-            {
-              url: "https://www.tiktok.com/discover/little-mermaid-show-passholder-preview",
-              title: "Little Mermaid Show Passholder Preview | TikTok",
-              description:
-                "6 days ago   �   There are still a few weeks until Jane Austen's EMMA opens - but in the meanwhile... ... I must say    @Zack Allred",
-            },
-            {
-              url: "https://www.netizen.page/search",
-              title: "Wednesday, May 14, 2025 - Netizen",
-              description:
-                "... Austin connect robotics and software to construction equipment you get Terrafirma pic.twitter.com/dKuzLPg5nr. — Austen Allred (@Austen) May 13, 2025. And of�...",
-            },
-            {
-              url: "https://www.theguardian.com/index/contributors/a",
-              title: "A | Contributors | The Guardian",
-              description:
-                "Kat Austen � Daryl Austin � Ian Austin � Rod Austin � Sissy Eileen Austin � Bryan ... Ammon Allred � Amos Guiora � Amos Harel � Amos Oz � Amos Roberts � Amos Toh�...",
-            },
-            {
-              url: "https://www.tiktok.com/discover/landon-anderson-coach-utah",
-              title: "Landon Anderson Coach Utah | TikTok",
-              description:
-                "May 5, 2025   �   KSL NewsRadio's Aimee Cobabe has more. Listen more at KSLPodcasts.com Spenser Heaps, Jeffret D. Allred ... original sound - Austen Alexander.",
-            },
           ],
         },
       },
@@ -11874,147 +13468,1734 @@ export const apis = [
             type: "string",
             description: "Twitch handle",
             required: true,
-            placeholder: "ninja",
+            placeholder: "ishowspeed",
           },
         ],
         sampleResponse: {
-          success: true,
-          id: "19571641",
-          handle: "ninja",
-          displayName: "Ninja",
-          description:
-            "Just want to make people happy. Co-Founder @DrinkNutcase. ",
-          followers: 19235206,
-          instagram: "https://www.instagram.com/ninja",
-          x: "https://x.com/ninja",
-          tiktok: "https://www.tiktok.com/@ninja",
-          bit: "http://bit.ly/SubscribeNinja",
-          allVideos: [
+          "success": true,
+          "credits_remaining": 49998398635,
+          "id": "220476955",
+          "isLive": true,
+          "currentViewersCount": 6293,
+          "handle": "ishowspeed",
+          "stream": {},
+          "displayName": "IShowSpeed",
+          "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-150x150.png",
+          "bannerImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/983dc814-a78c-4e5a-9d22-e6e7595c76e1-profile_banner-480.png",
+          "description": "YouTube:IShowSpeed Instagram:IShowSpeed: Snapchat:wishowspeed Twitter: ishowspeedsui I luv y’all🐐💕",
+          "followers": 3830874,
+          "isPartner": true,
+          "recentBroadcasts": [
             {
-              animatedPreviewURL:
-                "https://d1m7jfoe9zdc1j.cloudfront.net/98b2604eb65520876fc3_ninja_331071920125_1754658335/storyboards/2534457664-strip-0.jpg",
-              game: {
-                boxArtURL:
-                  "https://static-cdn.jtvnw.net/ttv-boxart/33214-40x56.jpg",
-                id: "33214",
-                slug: "fortnite",
-                displayName: "Fortnite",
-                name: "Fortnite",
-                __typename: "Game",
+              "id": "2761014301",
+              "title": "BALLER LEAGUE WEEK 7 ⚽️ SPEED UTD VS FOR THE WIN FC 🔥",
+              "previewThumbnailURL": "https://vod-secure.twitch.tv/_404/404_processing_320x180.png",
+              "publishedAt": "2026-04-30T21:38:06Z",
+              "viewCount": 702,
+              "lengthSeconds": 13895,
+              "animatedPreviewURL": "https://d2vi6trrdongqn.cloudfront.net/1dfa1f8c049eaa77fe54_ishowspeed_318481977952_1777585080/storyboards/2761014301-strip-0.jpg",
+              "resourceRestriction": null,
+              "contentTags": [],
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
               },
-              id: "2534457664",
-              lengthSeconds: 35910,
-              owner: {
-                displayName: "Ninja",
-                id: "19571641",
-                login: "ninja",
-                profileImageURL:
-                  "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-50x50.png",
-                primaryColorHex: "1F69FF",
-                roles: {
-                  isPartner: true,
-                  __typename: "UserRoles",
-                },
-                __typename: "User",
+              "game": {
+                "id": "423594505",
+                "slug": "baller-league",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/423594505-40x56.jpg",
+                "displayName": "Baller League",
+                "name": "Baller League",
+                "__typename": "Game"
               },
-              previewThumbnailURL:
-                "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/98b2604eb65520876fc3_ninja_331071920125_1754658335//thumb/thumb0-320x180.jpg",
-              publishedAt: "2025-08-08T13:05:39Z",
-              self: {
-                isRestricted: false,
-                viewingHistory: null,
-                __typename: "VideoSelfEdge",
+              "owner": {
+                "id": "220476955",
+                "displayName": "IShowSpeed",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "__typename": "User"
               },
-              title:
-                "USE CODE NINJA #EPICPARTNER | DAY 2 OF NEW SEASON AND ITS A BLAST | God is good! | Marvel rivals later and SPORTS SHOW AT 2 CENTRAL AFC WEST",
-              viewCount: 278659,
-              resourceRestriction: null,
-              contentTags: [],
-              __typename: "Video",
+              "__typename": "Video"
+            },
+            {
+              "id": "2759862239",
+              "title": "irl stream in Dominica 🇩🇲 & Guadeloupe 🇬🇵 & St. Kitts and Nevis 🇰🇳 & St. Maarten 🇸🇽",
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/8f45ed099081fd8dbef6_ishowspeed_317008959704_1777466471//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-29T12:41:16Z",
+              "viewCount": 3146045,
+              "lengthSeconds": 52391,
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/8f45ed099081fd8dbef6_ishowspeed_317008959704_1777466471/storyboards/2759862239-strip-0.jpg",
+              "resourceRestriction": null,
+              "contentTags": [],
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "game": {
+                "id": "509672",
+                "slug": "irl",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "owner": {
+                "id": "220476955",
+                "displayName": "IShowSpeed",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "__typename": "User"
+              },
+              "__typename": "Video"
             },
           ],
-          featuredClips: [
+          "allVideos": [
             {
-              id: "3724988753",
-              slug: "AthleticKindJayEleGiggle-BcNDJkcggMoP5HCa",
-              clipTitle: "andre the bus driver",
-              clipViewCount: 1799,
-              curator: {
-                id: "407947222",
-                login: "grumbaelive",
-                displayName: "GrumbaeLIVE",
-                __typename: "User",
+              "animatedPreviewURL": "https://d2vi6trrdongqn.cloudfront.net/1dfa1f8c049eaa77fe54_ishowspeed_318481977952_1777585080/storyboards/2761014301-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/423594505-40x56.jpg",
+                "id": "423594505",
+                "slug": "baller-league",
+                "displayName": "Baller League",
+                "name": "Baller League",
+                "__typename": "Game"
               },
-              clipGame: {
-                id: "33214",
-                slug: "fortnite",
-                name: "Fortnite",
-                displayName: "Fortnite",
-                boxArtURL:
-                  "https://static-cdn.jtvnw.net/ttv-boxart/33214-52x72.jpg",
-                __typename: "Game",
-              },
-              broadcaster: {
-                id: "19571641",
-                login: "ninja",
-                displayName: "Ninja",
-                profileImageURL:
-                  "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-50x50.png",
-                primaryColorHex: "1F69FF",
-                roles: {
-                  isPartner: true,
-                  __typename: "UserRoles",
+              "id": "2761014301",
+              "lengthSeconds": 13895,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
                 },
-                __typename: "User",
+                "__typename": "User"
               },
-              thumbnailURL:
-                "https://static-cdn.jtvnw.net/twitch-clips-thumbnails-prod/AthleticKindJayEleGiggle-BcNDJkcggMoP5HCa/7eb7fa38-6e54-4aa1-a6d4-d65f46870161/preview.jpg",
-              createdAt: "2025-08-08T16:08:23Z",
-              durationSeconds: 30,
-              isFeatured: true,
-              guestStarParticipants: {
-                host: {
-                  id: "19571641",
-                  login: "ninja",
-                  displayName: "Ninja",
-                  profileImageURL:
-                    "https://static-cdn.jtvnw.net/jtv_user_pictures/90d40495-f467-4911-9035-72d8d10a49c5-profile_image-300x300.png",
-                  primaryColorHex: "1F69FF",
-                  description:
-                    "Just want to make people happy. Co-Founder @DrinkNutcase. ",
-                  __typename: "User",
+              "previewThumbnailURL": "https://vod-secure.twitch.tv/_404/404_processing_320x180.png",
+              "publishedAt": "2026-04-30T21:38:06Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "BALLER LEAGUE WEEK 7 ⚽️ SPEED UTD VS FOR THE WIN FC 🔥",
+              "viewCount": 702,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/52fa03cdaa5b22b86aa9_ishowspeed_73311365015_5423787132/storyboards/2760448102-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2760448102",
+              "lengthSeconds": 2117,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
                 },
-                guests: [
-                  {
-                    id: "100462683",
-                    login: "beardedblevins",
-                    displayName: "BeardedBlevins",
-                    profileImageURL:
-                      "https://static-cdn.jtvnw.net/jtv_user_pictures/bb440d87-e3eb-4fc3-adb4-ad5b8500ee85-profile_image-300x300.png",
-                    primaryColorHex: "00C7FB",
-                    description:
-                      "Husband. Father. Catholic. Detroit Sports fan. Bearded. ",
-                    __typename: "User",
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/52fa03cdaa5b22b86aa9_ishowspeed_73311365015_5423787132//thumb/thumb2760448102-320x180.jpg",
+              "publishedAt": "2026-04-30T03:21:09Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: irl stream in Dominica 🇩🇲 & Guadeloupe 🇬🇵 & St. Kitts and Nevis 🇰🇳 & St. Maarten 🇸🇽",
+              "viewCount": 2172,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/6bd93fa61cd405af4541_ishowspeed_51816012763_7084758791/storyboards/2760293700-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2760293700",
+              "lengthSeconds": 2977,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/6bd93fa61cd405af4541_ishowspeed_51816012763_7084758791//thumb/thumb2760293700-320x180.jpg",
+              "publishedAt": "2026-04-29T23:39:07Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: irl stream in Dominica 🇩🇲 & Guadeloupe 🇬🇵 & St. Kitts and Nevis 🇰🇳 & St. Maarten 🇸🇽",
+              "viewCount": 160,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/e6a073983bedd88ecd75_ishowspeed_28404087090_3431866966/storyboards/2760289143-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2760289143",
+              "lengthSeconds": 8623,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/e6a073983bedd88ecd75_ishowspeed_28404087090_3431866966//thumb/thumb2760289143-320x180.jpg",
+              "publishedAt": "2026-04-29T23:32:34Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: irl stream in Dominica 🇩🇲 & Guadeloupe 🇬🇵 & St. Kitts and Nevis 🇰🇳 & St. Maarten 🇸🇽",
+              "viewCount": 62,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/8f45ed099081fd8dbef6_ishowspeed_317008959704_1777466471/storyboards/2759862239-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2759862239",
+              "lengthSeconds": 52391,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/8f45ed099081fd8dbef6_ishowspeed_317008959704_1777466471//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-29T12:41:16Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "irl stream in Dominica 🇩🇲 & Guadeloupe 🇬🇵 & St. Kitts and Nevis 🇰🇳 & St. Maarten 🇸🇽",
+              "viewCount": 3146045,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/c59a23643cf552a4c373_ishowspeed_84054169066_1805586481/storyboards/2759315321-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2759315321",
+              "lengthSeconds": 14212,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/c59a23643cf552a4c373_ishowspeed_84054169066_1805586481//thumb/thumb2759315321-320x180.jpg",
+              "publishedAt": "2026-04-28T19:12:28Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: irl stream in Saint Lucia 🇱🇨 & St Vincent and Grenadines🇻🇨",
+              "viewCount": 3036,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/adfe8d0b458bfede8a56_ishowspeed_317584269783_1777389322/storyboards/2759145587-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2759145587",
+              "lengthSeconds": 30844,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/adfe8d0b458bfede8a56_ishowspeed_317584269783_1777389322//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-28T15:15:27Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "irl stream in Saint Lucia 🇱🇨 & St Vincent and Grenadines🇻🇨",
+              "viewCount": 2497312,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/c5e61be9c9dfa69c9c43_ishowspeed_316994860120_1777310094/storyboards/2758446753-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2758446753",
+              "lengthSeconds": 14566,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/c5e61be9c9dfa69c9c43_ishowspeed_316994860120_1777310094//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-27T17:14:59Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "irl stream in Barbados 🇧🇧",
+              "viewCount": 1522328,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/7286355da58d1f602e04_ishowspeed_68728499820_9058132939/storyboards/2757722018-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2757722018",
+              "lengthSeconds": 5874,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/7286355da58d1f602e04_ishowspeed_68728499820_9058132939//thumb/thumb2757722018-320x180.jpg",
+              "publishedAt": "2026-04-26T17:52:44Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: irl stream in Grenada 🇬🇩 + Scuba Diving 🤿",
+              "viewCount": 3423,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/2eedd9d06eaec77953ce_ishowspeed_319086897499_1777220044/storyboards/2757648695-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2757648695",
+              "lengthSeconds": 19735,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/2eedd9d06eaec77953ce_ishowspeed_319086897499_1777220044//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-26T16:14:09Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "irl stream in Grenada 🇬🇩 + Scuba Diving 🤿",
+              "viewCount": 1646709,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2nvs31859zcd8.cloudfront.net/cf659eb32c38c2f38b1b_ishowspeed_316440213367_1777132818/storyboards/2756795692-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2756795692",
+              "lengthSeconds": 20822,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/cf659eb32c38c2f38b1b_ishowspeed_316440213367_1777132818//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-25T16:00:23Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "irl stream in Trinidad & Tobago 🇹🇹",
+              "viewCount": 1933330,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2vi6trrdongqn.cloudfront.net/81f945d1b49d5160b050_ishowspeed_30981305171_3395650693/storyboards/2755452601-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509672-40x56.jpg",
+                "id": "509672",
+                "slug": "irl",
+                "displayName": "IRL",
+                "name": "IRL",
+                "__typename": "Game"
+              },
+              "id": "2755452601",
+              "lengthSeconds": 782,
+              "owner": {
+                "displayName": "IShowSpeed",
+                "id": "220476955",
+                "login": "ishowspeed",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/46a38d3a-a39c-4c43-ac12-c331b1c469c2-profile_image-50x50.png",
+                "primaryColorHex": "FF4747",
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2vi6trrdongqn/81f945d1b49d5160b050_ishowspeed_30981305171_3395650693//thumb/thumb2755452601-320x180.jpg",
+              "publishedAt": "2026-04-23T22:50:46Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Highlight: SPEED UNITED VS MARLON 3FC⚽GAME TIME⚽ BALLER LEAGUE WEEK 6⚽",
+              "viewCount": 2154,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            }
+          ],
+          "similarStreamers": []
+        },
+      },
+      {
+        name: "User Videos",
+        method: "GET",
+        description: "Get Twitch user videos",
+        fullDescription:
+          "Fetches a list of videos (100 max) for a Twitch user, returning each video's id, slug, url, embedURL, title, viewCount, language, durationSeconds, game info, broadcaster details with follower count, thumbnailURL, and videoQualities at multiple resolutions with a signed videoURL for playback. Supports pagination via cursor and a trim option for lighter responses.",
+        path: "/v1/twitch/user/videos",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            description: "Twitch handle",
+            required: true,
+            placeholder: "ishowspeed",
+          },
+          {
+            name: "filter_by",
+            type: "select",
+            description: "Filter by",
+            options: ["HIGHLIGHT", "ARCHIVE", "UPLOAD"],
+          },
+          {
+            name: "sort_by",
+            type: "select",
+            description: "Sort by",
+            options: ["TIME", "VIEWS"],
+          }
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998363426,
+          "id": "51496027",
+          "isLive": true,
+          "currentViewersCount": 2740,
+          "stream": {
+            "id": "319166855259",
+            "createdAt": "2026-05-01T16:44:37Z",
+            "game": {
+              "id": "21779",
+              "displayName": "League of Legends",
+              "__typename": "Game"
+            },
+            "type": "live",
+            "viewersCount": 2740,
+            "__typename": "Stream",
+            "tags": [
+              {
+                "id": "fft:CHANNEL:51496027:0",
+                "name": "English",
+                "__typename": "FreeformTag"
+              },
+              {
+                "id": "fft:CHANNEL:51496027:1",
+                "name": "loltyler1",
+                "__typename": "FreeformTag"
+              },
+              {
+                "id": "fft:CHANNEL:51496027:2",
+                "name": "tyler1",
+                "__typename": "FreeformTag"
+              }
+            ]
+          },
+          "handle": "loltyler1",
+          "displayName": "loltyler1",
+          "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-150x150.png",
+          "bannerImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/303b0767-0fb4-4a9f-b8a1-2d8b99f24630-profile_banner-480.png",
+          "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+          "followers": 5469372,
+          "x": "https://x.com/loltyler1?mx=2",
+          "instagram": "https://www.instagram.com/tyler1_alpha/#",
+          "youtube": "https://www.youtube.com/channel/UCwV_0HmQkRrTcrReaMxPeDw",
+          "tiktok": "https://www.tiktok.com/@loltyler1",
+          "isPartner": true,
+          "allVideos": [
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/f2ca91ee909630bdb3df_loltyler1_319166855259_1777653877/storyboards/2761630321-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2761630321",
+              "lengthSeconds": 931,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://vod-secure.twitch.tv/_404/404_processing_320x180.png",
+              "publishedAt": "2026-05-01T16:44:42Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "TRY MIGHT ! give NEVER ! BACKS NOT DOWN !! held high for MOMENT WAIT !!! tick ticks ticks ... CLOCK BY PATIENT THIN WAITER !! tick ... NOW !",
+              "viewCount": 0,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/1f14cd10a4a4ed168c39_loltyler1_319156969051_1777592967/storyboards/2761107582-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509658-40x56.jpg",
+                "id": "509658",
+                "slug": "just-chatting",
+                "displayName": "Just Chatting",
+                "name": "Just Chatting",
+                "__typename": "Game"
+              },
+              "id": "2761107582",
+              "lengthSeconds": 10880,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/1f14cd10a4a4ed168c39_loltyler1_319156969051_1777592967//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-30T23:49:32Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "AT&T Annihilator Cup DRAFT !! 270K PRIZE POOL !!! PICKING MY TEAM ! WILL DOMINATE !",
+              "viewCount": 63633,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d2vi6trrdongqn.cloudfront.net/5d5e1e108e49dbfa2f1d_loltyler1_318378430300_1777589112/storyboards/2761061656-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509658-40x56.jpg",
+                "id": "509658",
+                "slug": "just-chatting",
+                "displayName": "Just Chatting",
+                "name": "Just Chatting",
+                "__typename": "Game"
+              },
+              "id": "2761061656",
+              "lengthSeconds": 3734,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2vi6trrdongqn/5d5e1e108e49dbfa2f1d_loltyler1_318378430300_1777589112//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-30T22:45:16Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "AT&T Annihilator Cup DRAFT !! 270K PRIZE POOL !!! PICKING MY TEAM ! WILL DOMINATE !",
+              "viewCount": 41156,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/b138062491d7a3e95bac_loltyler1_318982936921_1777565515/storyboards/2760767137-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2760767137",
+              "lengthSeconds": 21410,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/b138062491d7a3e95bac_loltyler1_318982936921_1777565515//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-30T16:12:00Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "DESTINE GREATER BEYOND ! stars tree sky bird PLANE AIR WIND !! FREAK NATURE !! NOT EQUALED ME EVER BE BUD !!! better makes mind matter ME !!",
+              "viewCount": 127671,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/12d3067f4cc9350a86d8_loltyler1_319027750618_1777473066/storyboards/2759919128-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2759919128",
+              "lengthSeconds": 53470,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/12d3067f4cc9350a86d8_loltyler1_319027750618_1777473066//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-29T14:31:11Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "FINAL ! FRESHNESS !  EQUALED SWAGGER STYLE HANDSOMER ! TALKS NOT THAT BUT GAME RESET BACK TIME BEFORE THAN DINO STORM BRIDGE GOOOOOO ! peak",
+              "viewCount": 304043,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/c7cd1a2f37c7a60a1591_loltyler1_318959926233_1777423137/storyboards/2759541264-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/12924-40x56.jpg",
+                "id": "12924",
+                "slug": "warcraft-iii",
+                "displayName": "Warcraft III",
+                "name": "Warcraft III",
+                "__typename": "Game"
+              },
+              "id": "2759541264",
+              "lengthSeconds": 10760,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/c7cd1a2f37c7a60a1591_loltyler1_318959926233_1777423137//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-29T00:39:02Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "GRIND GRIND GRIDNER GRIND HAHASAHHA NEVER NOT STOPS WANT GIVENS WORLD LUCKY MAKE OWNED !! way ONLY KNOW ! go T1 GOOOOOOOOO !! am calm he be",
+              "viewCount": 60444,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d3fi1amfgojobc.cloudfront.net/6d3d5927c9a5d9ca6122_loltyler1_317112336997_1777391301/storyboards/2759165151-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2759165151",
+              "lengthSeconds": 17292,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d3fi1amfgojobc/6d3d5927c9a5d9ca6122_loltyler1_317112336997_1777391301//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-28T15:48:27Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "Tyler1 All-Stars presented by Opera GX | Week 7 | !opera",
+              "viewCount": 248019,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/d9f428a1148d2b66284e_loltyler1_318938623449_1777318644/storyboards/2758551115-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2758551115",
+              "lengthSeconds": 31950,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/d9f428a1148d2b66284e_loltyler1_318938623449_1777318644//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-27T19:37:29Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "oh golly gee willikers ! BIG T ANGER RAGE RED FARM MAD ! takes cover path destruct INBOUND ... BEEP BEEEEEP . booooooooom ! flood ! NOT WALK",
+              "viewCount": 230755,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/b1daf9e56b1f6688b7ae_loltyler1_318980373082_1777218466/storyboards/2757629396-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2757629396",
+              "lengthSeconds": 27760,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/b1daf9e56b1f6688b7ae_loltyler1_318980373082_1777218466//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-26T15:47:51Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "AH yes so REFRESHER AND NEW BE HEALTH WISE HERE STAY FOR ROAD THE CLAIM NUMBER 1 !!!!!!!!! inspire .. intelligent . ATHLETIC ! GOTS ALL !!",
+              "viewCount": 306116,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/d961772dff81cebda17b_loltyler1_319047137243_1777048187/storyboards/2755970771-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2755970771",
+              "lengthSeconds": 44720,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/d961772dff81cebda17b_loltyler1_319047137243_1777048187//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-24T16:29:52Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "LOCK LOAD GOOOO ! NO STOP FREIGHT TRAIN PAIN DELIVER POWER HERE ! WAY ONE DIRECTION TRAVELED STORMER !!! UNLEASH !! boom boom POW ! winner",
+              "viewCount": 214828,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/16ceba5ec34a17f14025_loltyler1_318927479642_1776972007/storyboards/2755316272-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/55453844_IGDB-40x56.jpg",
+                "id": "55453844",
+                "slug": "street-fighter-6",
+                "displayName": "Street Fighter 6",
+                "name": "Street Fighter 6",
+                "__typename": "Game"
+              },
+              "id": "2755316272",
+              "lengthSeconds": 24070,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/16ceba5ec34a17f14025_loltyler1_318927479642_1776972007//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-23T19:20:12Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "SICKNESS ! STYLE ! SWAGGY ! BIG T SO ALL MORE PLUS BEYOND LIMIT THINK BRAIN IMAGINE SPEED QUICKS TALL HANDSOME COOL BETTER ! insaned",
+              "viewCount": 114616,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            },
+            {
+              "animatedPreviewURL": "https://d1m7jfoe9zdc1j.cloudfront.net/2ba525c1c8e166810ed2_loltyler1_318910193498_1776874059/storyboards/2754386411-strip-0.jpg",
+              "game": {
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-40x56.jpg",
+                "id": "21779",
+                "slug": "league-of-legends",
+                "displayName": "League of Legends",
+                "name": "League of Legends",
+                "__typename": "Game"
+              },
+              "id": "2754386411",
+              "lengthSeconds": 27420,
+              "owner": {
+                "displayName": "loltyler1",
+                "id": "51496027",
+                "login": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/2ba525c1c8e166810ed2_loltyler1_318910193498_1776874059//thumb/thumb0-320x180.jpg",
+              "publishedAt": "2026-04-22T16:07:44Z",
+              "self": {
+                "isRestricted": false,
+                "viewingHistory": null,
+                "__typename": "VideoSelfEdge"
+              },
+              "title": "RAINY EQUALS DAYS HAPPY SKY LIFE WORLD EARTH COLLIDE !!! be OUTCOME ? WELL KNOW MUST NOW PROBLEM SOLVED CAUSED . ELEMNTARY ! woot SMARTS !",
+              "viewCount": 122255,
+              "resourceRestriction": null,
+              "contentTags": [],
+              "__typename": "Video"
+            }
+          ],
+          "featuredClips": [
+            {
+              "id": "2907296184",
+              "slug": "CogentSpeedyWallabyDxCat-nm23_xWWFTxoPI0C",
+              "clipTitle": "ewc",
+              "clipViewCount": 19427,
+              "curator": {
+                "id": "24179021",
+                "login": "testrox",
+                "displayName": "Testrox",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "55453844",
+                "slug": "street-fighter-6",
+                "name": "Street Fighter 6",
+                "displayName": "Street Fighter 6",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/55453844_IGDB-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/53f846ec-21aa-49e4-92e0-3e93b61726f7/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2025-07-05T08:09:03Z",
+              "durationSeconds": 25,
+              "isFeatured": true,
+              "guestStarParticipants": {
+                "host": {
+                  "id": "51496027",
+                  "login": "loltyler1",
+                  "displayName": "loltyler1",
+                  "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-300x300.png",
+                  "primaryColorHex": null,
+                  "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+                  "__typename": "User"
+                },
+                "guests": [],
+                "sessionIdentifier": "2xmd2itvLAiTeLZsWCYYpifxYv1",
+                "__typename": "GuestStarParticipants"
+              },
+              "__typename": "Clip"
+            },
+            {
+              "id": "1506129014",
+              "slug": "EncouragingIcyAppleTF2John-tecpVfRhclwr732O",
+              "clipTitle": "wc3 old",
+              "clipViewCount": 17750,
+              "curator": {
+                "id": "24179021",
+                "login": "testrox",
+                "displayName": "Testrox",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "12924",
+                "slug": "warcraft-iii",
+                "name": "Warcraft III",
+                "displayName": "Warcraft III",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/12924-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/abc35e9a-6221-48e9-a89e-66f145745d73/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2025-04-16T15:42:16Z",
+              "durationSeconds": 26,
+              "isFeatured": true,
+              "guestStarParticipants": {
+                "host": {
+                  "id": "51496027",
+                  "login": "loltyler1",
+                  "displayName": "loltyler1",
+                  "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-300x300.png",
+                  "primaryColorHex": null,
+                  "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+                  "__typename": "User"
+                },
+                "guests": [],
+                "sessionIdentifier": "2r8TZ1KN83eelpMAsED4TSkC4tr",
+                "__typename": "GuestStarParticipants"
+              },
+              "__typename": "Clip"
+            },
+            {
+              "id": "745859129",
+              "slug": "TemperedWimpyEchidnaPeteZaroll-0p2Iv91m00Gv4jKj",
+              "clipTitle": "T1 Wins The Duel And Becomes Guild Master",
+              "clipViewCount": 448790,
+              "curator": {
+                "id": "87717523",
+                "login": "raapid",
+                "displayName": "Raapid",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "18122",
+                "slug": "world-of-warcraft",
+                "name": "World of Warcraft",
+                "displayName": "World of Warcraft",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/18122-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/a8936fca-673e-4b96-8255-8b6178f52036/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2025-01-15T21:56:49Z",
+              "durationSeconds": 29,
+              "isFeatured": true,
+              "guestStarParticipants": {
+                "host": {
+                  "id": "51496027",
+                  "login": "loltyler1",
+                  "displayName": "loltyler1",
+                  "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-300x300.png",
+                  "primaryColorHex": null,
+                  "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+                  "__typename": "User"
+                },
+                "guests": [],
+                "sessionIdentifier": "2r8TZ1KN83eelpMAsED4TSkC4tr",
+                "__typename": "GuestStarParticipants"
+              },
+              "__typename": "Clip"
+            },
+            {
+              "id": "2406267421",
+              "slug": "CreativeRelievedTofuImGlitch-MSoUxgpoBBVg0Qen",
+              "clipTitle": "tyler1s baby leaks stream key",
+              "clipViewCount": 329073,
+              "curator": {
+                "id": "19574673",
+                "login": "wilbo007",
+                "displayName": "Wilbo007",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "18122",
+                "slug": "world-of-warcraft",
+                "name": "World of Warcraft",
+                "displayName": "World of Warcraft",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/18122-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/4a4fa56d-4641-4375-beba-ba340d629c8e/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2024-12-08T01:28:30Z",
+              "durationSeconds": 52,
+              "isFeatured": true,
+              "guestStarParticipants": {
+                "host": {
+                  "id": "51496027",
+                  "login": "loltyler1",
+                  "displayName": "loltyler1",
+                  "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-300x300.png",
+                  "primaryColorHex": null,
+                  "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+                  "__typename": "User"
+                },
+                "guests": [],
+                "sessionIdentifier": "2kuZWTHm1UB15dw4ti9zsLsYVPt",
+                "__typename": "GuestStarParticipants"
+              },
+              "__typename": "Clip"
+            },
+            {
+              "id": "1336110669",
+              "slug": "YawningSpinelessKimchiCorgiDerp-3di77UVcNC_ZeIlU",
+              "clipTitle": "Tyler being wholesome with Saiyler",
+              "clipViewCount": 398698,
+              "curator": {
+                "id": "73305896",
+                "login": "palitish",
+                "displayName": "Palitish",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "21779",
+                "slug": "league-of-legends",
+                "name": "League of Legends",
+                "displayName": "League of Legends",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/83ef3700-43cf-4dae-ba1f-8a84542a2194/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2024-08-09T00:27:39Z",
+              "durationSeconds": 27,
+              "isFeatured": true,
+              "guestStarParticipants": {
+                "host": {
+                  "id": "51496027",
+                  "login": "loltyler1",
+                  "displayName": "loltyler1",
+                  "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-300x300.png",
+                  "primaryColorHex": null,
+                  "description": "Season 6 Challenger | Most REFORMED Player NA | #1 Draven World ",
+                  "__typename": "User"
+                },
+                "guests": [],
+                "sessionIdentifier": "",
+                "__typename": "GuestStarParticipants"
+              },
+              "__typename": "Clip"
+            },
+            {
+              "id": "4206648915",
+              "slug": "AbnegatePleasantEyeballKreygasm-NjRnNg8J8XrOfk3t",
+              "clipTitle": "LeMon",
+              "clipViewCount": 207778,
+              "curator": {
+                "id": "130907662",
+                "login": "amski993",
+                "displayName": "amski993",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "21779",
+                "slug": "league-of-legends",
+                "name": "League of Legends",
+                "displayName": "League of Legends",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/f0fee579-8a90-47dd-be17-462f70e7e428/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2023-10-21T01:56:07Z",
+              "durationSeconds": 17,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            },
+            {
+              "id": "4116152252",
+              "slug": "ComfortableCourageousCheddarLeeroyJenkins-ey0FIl9EZfWwpUaR",
+              "clipTitle": "pool",
+              "clipViewCount": 219221,
+              "curator": {
+                "id": "27484739",
+                "login": "xaghant",
+                "displayName": "Xaghant",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "116747788",
+                "slug": "pools-hot-tubs-and-beaches",
+                "name": "Pools, Hot Tubs, and Beaches",
+                "displayName": "Pools, Hot Tubs, and Beaches",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/116747788-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/9870e83b-5e1e-4b8e-bef0-528a8f2f9f2f/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2023-07-23T23:03:51Z",
+              "durationSeconds": 29,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            },
+            {
+              "id": "2674898197",
+              "slug": "ArborealRockyBunnyPMSTwin-mFJhIPaYAcf17Gi-",
+              "clipTitle": "KRATOS",
+              "clipViewCount": 226907,
+              "curator": {
+                "id": "140944412",
+                "login": "paragrips",
+                "displayName": "paragrips",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "102007682",
+                "slug": "god-of-war-ragnarok",
+                "name": "God of War Ragnarök",
+                "displayName": "God of War Ragnarök",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/102007682_IGDB-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/c22d6815-5de4-4857-9780-0b868400fb35/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2022-11-09T21:16:51Z",
+              "durationSeconds": 39,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            },
+            {
+              "id": "216525791",
+              "slug": "AntsySavoryWrenchSSSsss-OAsn_OhSqFZN2z7d",
+              "clipTitle": "OMEGALUL",
+              "clipViewCount": 356265,
+              "curator": {
+                "id": "93954400",
+                "login": "question4ble_",
+                "displayName": "question4ble_",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "509658",
+                "slug": "just-chatting",
+                "name": "Just Chatting",
+                "displayName": "Just Chatting",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509658-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/af51d093-4ec7-4c62-bb65-c87439163451/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2022-07-05T01:45:16Z",
+              "durationSeconds": 27,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            },
+            {
+              "id": "2663525569",
+              "slug": "FreezingTrustworthyMosquitoMrDestructoid-Wf9k_4iPUfe1jbdf",
+              "clipTitle": "Thanks RIOT",
+              "clipViewCount": 119973,
+              "curator": {
+                "id": "91138930",
+                "login": "miketightclock",
+                "displayName": "MikeTightClock",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "21779",
+                "slug": "league-of-legends",
+                "name": "League of Legends",
+                "displayName": "League of Legends",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/21779-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/a5137ba2-e46d-4b81-95e4-550287ac1c08/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2022-02-22T21:23:56Z",
+              "durationSeconds": 11,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            },
+            {
+              "id": "3963898829",
+              "slug": "ResoluteAmazingPterodactylPanicVis-_LuvrxNtKLawk8JT",
+              "clipTitle": "Tyler1 Gets His Deadlift PB at 550 lbs",
+              "clipViewCount": 171296,
+              "curator": {
+                "id": "162036167",
+                "login": "highroii",
+                "displayName": "HighRoII",
+                "__typename": "User"
+              },
+              "clipGame": {
+                "id": "509671",
+                "slug": "fitness-and-health",
+                "name": "Fitness & Health",
+                "displayName": "Fitness & Health",
+                "boxArtURL": "https://static-cdn.jtvnw.net/ttv-boxart/509671-52x72.jpg",
+                "__typename": "Game"
+              },
+              "broadcaster": {
+                "id": "51496027",
+                "login": "loltyler1",
+                "displayName": "loltyler1",
+                "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/f3591dbe4ee3d94b-profile_image-50x50.png",
+                "primaryColorHex": null,
+                "roles": {
+                  "isPartner": true,
+                  "__typename": "UserRoles"
+                },
+                "__typename": "User"
+              },
+              "thumbnailURL": "https://static-cdn.jtvnw.net/twitch-video-assets/twitch-vap-video-assets-prod-us-west-2/80276a84-b2dc-4732-b05e-9680999084ca/landscape/thumb/thumb-0000000000-1920x1080.jpg",
+              "createdAt": "2021-04-19T22:18:32Z",
+              "durationSeconds": 33,
+              "isFeatured": true,
+              "guestStarParticipants": null,
+              "__typename": "Clip"
+            }
+          ],
+          "similarStreamers": [
+            {
+              "id": "459567713",
+              "displayName": "SpectateTyler1",
+              "login": "spectatetyler1",
+              "primaryColorHex": "1F69FF",
+              "profileImageURL": "https://static-cdn.jtvnw.net/jtv_user_pictures/184aa4fd-1fd7-42ab-8170-5b98bd2fb37f-profile_image-300x300.png",
+              "stream": null,
+              "__typename": "User"
+            }
+          ]
+        },
+      },
+      {
+        name: "User Schedule",
+        method: "GET",
+        description: "Get Twitch user schedule",
+        fullDescription:
+          "Fetches a user's schedule by handle, returning a list of scheduled events with start time, end time, title, description, and thumbnail URL. Supports pagination via cursor and a trim option for lighter responses.",
+        path: "/v1/twitch/user/schedule",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            description: "Twitch handle",
+            required: true,
+            placeholder: "emongg",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998307788,
+          "id": "23220337",
+          "primaryColorHex": null,
+          "lastBroadcast": {
+            "id": "318502443360",
+            "startedAt": "2026-05-02T08:26:08.899139Z",
+            "__typename": "Broadcast"
+          },
+          "broadcastSettings": {
+            "id": "23220337",
+            "title": "Checking out Diablo IV: Lord of Hatred! !diablo #DiabloPartner #ad",
+            "__typename": "BroadcastSettings"
+          },
+          "stream": {
+            "id": "318502443360",
+            "createdAt": "2026-05-02T08:26:00Z",
+            "viewersCount": 2994,
+            "previewImageURL": "https://static-cdn.jtvnw.net/previews-ttv/live_user_emongg-320x180.jpg",
+            "verticalPreviewImageURL": "https://static-cdn.jtvnw.net/previews-ttv/live_user_emongg-180x320.jpg",
+            "height": 900,
+            "width": 1600,
+            "isDualFormat": false,
+            "game": {
+              "id": "515024",
+              "slug": "diablo-iv",
+              "name": "Diablo IV",
+              "__typename": "Game"
+            },
+            "__typename": "Stream"
+          },
+          "videos": {
+            "edges": [
+              {
+                "node": {
+                  "id": "2762226372",
+                  "title": "[!DROPS ENABLED + WINTON BADGE] watching owcs, gaming",
+                  "createdAt": "2026-05-02T08:26:09Z",
+                  "lengthSeconds": 41352,
+                  "viewCount": 196,
+                  "previewThumbnailURL": "https://vod-secure.twitch.tv/_404/404_processing_320x180.png",
+                  "game": {
+                    "id": "515025",
+                    "slug": "overwatch-2",
+                    "name": "Overwatch",
+                    "__typename": "Game"
                   },
-                ],
-                sessionIdentifier: "310dXNdDIbjlo9gQiPXJtZ6cdir",
-                __typename: "GuestStarParticipants",
+                  "__typename": "Video"
+                },
+                "__typename": "VideoEdge"
               },
-              __typename: "Clip",
+              {
+                "node": {
+                  "id": "2761390234",
+                  "title": "[!DROPS ENABLED + WINTON BADGE] RANKED GAMING",
+                  "createdAt": "2026-05-01T08:54:18Z",
+                  "lengthSeconds": 35996,
+                  "viewCount": 94855,
+                  "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2vi6trrdongqn/0d4ce3a8abbcc34d1443_emongg_318489190624_1777625648//thumb/thumb0-320x180.jpg",
+                  "game": {
+                    "id": "515025",
+                    "slug": "overwatch-2",
+                    "name": "Overwatch",
+                    "__typename": "Game"
+                  },
+                  "__typename": "Video"
+                },
+                "__typename": "VideoEdge"
+              },
+              {
+                "node": {
+                  "id": "2760586761",
+                  "title": "[!DROPS ENABLED + WINTON BADGE] owcs drops soon, then gaming",
+                  "createdAt": "2026-04-30T09:53:02Z",
+                  "lengthSeconds": 36255,
+                  "viewCount": 95709,
+                  "previewThumbnailURL": "https://static-cdn.jtvnw.net/cf_vods/d2vi6trrdongqn/8ddfa4132f2e4e45af30_emongg_318371957596_1777542772//thumb/thumb0-320x180.jpg",
+                  "game": {
+                    "id": "515025",
+                    "slug": "overwatch-2",
+                    "name": "Overwatch",
+                    "__typename": "Game"
+                  },
+                  "__typename": "Video"
+                },
+                "__typename": "VideoEdge"
+              },
+            ],
+            "__typename": "VideoConnection"
+          },
+          "channel": {
+            "id": "23220337",
+            "schedule": {
+              "id": "schedule-23220337",
+              "nextSegment": {
+                "id": "eyJzZWdtZW50SUQiOiI4ZThhMTczMS1hYjU0LTQxZDMtOTEzMy02N2JjZTM0NTRiMzUiLCJpc29ZZWFyIjoyMDI2LCJpc29XZWVrIjoxOH0=",
+                "startAt": "2026-05-03T11:00:00Z",
+                "__typename": "ScheduleSegment"
+              },
+              "interruption": null,
+              "segments": [
+                {
+                  "id": "eyJzZWdtZW50SUQiOiI5NjU1NWMwMC03OGZkLTQ4NTQtYTIyZS1kYWNjOGU3ZWZlYzkiLCJpc29ZZWFyIjoyMDI2LCJpc29XZWVrIjoxOH0=",
+                  "baseSegmentID": "96555c00-78fd-4854-a22e-dacc8e7efec9",
+                  "title": "",
+                  "startAt": "2026-04-27T11:00:00Z",
+                  "endAt": "2026-04-27T21:00:00Z",
+                  "isCancelled": false,
+                  "cancelledUntil": null,
+                  "hasReminder": false,
+                  "repeatEndsAfterCount": null,
+                  "categories": [],
+                  "__typename": "ScheduleSegment"
+                },
+                {
+                  "id": "eyJzZWdtZW50SUQiOiJiYmE3Nzk1Yi1jZWQzLTQyYzQtODNkMC02NDEyNmNjYzk5NzciLCJpc29ZZWFyIjoyMDI2LCJpc29XZWVrIjoxOH0=",
+                  "baseSegmentID": "bba7795b-ced3-42c4-83d0-64126ccc9977",
+                  "title": "",
+                  "startAt": "2026-04-28T11:00:00Z",
+                  "endAt": "2026-04-28T21:00:00Z",
+                  "isCancelled": false,
+                  "cancelledUntil": null,
+                  "hasReminder": false,
+                  "repeatEndsAfterCount": null,
+                  "categories": [],
+                  "__typename": "ScheduleSegment"
+                },
+                {
+                  "id": "eyJzZWdtZW50SUQiOiJhMDVmNDE2Zi1iZjZiLTQ4YTktYWY1Mi04N2RiYjQ2NjNlODUiLCJpc29ZZWFyIjoyMDI2LCJpc29XZWVrIjoxOH0=",
+                  "baseSegmentID": "a05f416f-bf6b-48a9-af52-87dbb4663e85",
+                  "title": "",
+                  "startAt": "2026-04-29T11:00:00Z",
+                  "endAt": "2026-04-29T21:00:00Z",
+                  "isCancelled": false,
+                  "cancelledUntil": null,
+                  "hasReminder": false,
+                  "repeatEndsAfterCount": null,
+                  "categories": [],
+                  "__typename": "ScheduleSegment"
+                },
+                {
+                  "id": "eyJzZWdtZW50SUQiOiI1N2RmZjYxYy1lYTU1LTRjOTgtOWRhMC0yZTQxNmRkNzE0MDQiLCJpc29ZZWFyIjoyMDI2LCJpc29XZWVrIjoxOH0=",
+                  "baseSegmentID": "57dff61c-ea55-4c98-9da0-2e416dd71404",
+                  "title": "",
+                  "startAt": "2026-04-30T11:00:00Z",
+                  "endAt": "2026-04-30T21:00:00Z",
+                  "isCancelled": false,
+                  "cancelledUntil": null,
+                  "hasReminder": false,
+                  "repeatEndsAfterCount": null,
+                  "categories": [],
+                  "__typename": "ScheduleSegment"
+                },
+              ],
+              "__typename": "Schedule"
             },
-          ],
-          similarStreamers: [
-            {
-              id: "964426424",
-              displayName: "ninjasologames",
-              login: "ninjasologames",
-              primaryColorHex: "1F69FF",
-              profileImageURL:
-                "https://static-cdn.jtvnw.net/jtv_user_pictures/020b2022-5276-4f1b-af73-6eaa6f9d847c-profile_image-300x300.png",
-              stream: null,
-              __typename: "User",
-            },
-          ],
+            "__typename": "Channel"
+          },
+          "__typename": "User"
         },
       },
       {
@@ -13214,6 +16395,12810 @@ export const apis = [
     ],
   },
   {
+    id: "spotify",
+    name: "Spotify",
+    description: "Scrape Spotify artists, songs, and albums",
+    endpoints: [
+      {
+        name: "Artist",
+        method: "GET",
+        description: "Get Spotify artist",
+        fullDescription:
+          "Retrieves detailed information about a Spotify artist by their handle, including name, followers count, genres, and related artists. Accepts a handle as input and returns artist metadata such as id, name, followers, genres, and related artists.",
+        path: "/v1/spotify/artist",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "0cGUm45nv7Z6M6qdXYQGTX",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/artist/0cGUm45nv7Z6M6qdXYQGTX",
+          }
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998219840,
+          "__typename": "Artist",
+          "discography": {
+            "albums": [
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02a958d093e94944dd0e7258b2",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851a958d093e94944dd0e7258b2",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273a958d093e94944dd0e7258b2",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 5,
+                  "month": 9,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "2KrREEyHxkdFGYAd1DmMdS",
+                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
+                "name": "SWAG II",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "qFHryKZOR8WHlZqyx0JtIQ",
+                  "shareUrl": "https://open.spotify.com/album/2KrREEyHxkdFGYAd1DmMdS?si=qFHryKZOR8WHlZqyx0JtIQ"
+                },
+                "tracks": {
+                  "totalCount": 44
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2KrREEyHxkdFGYAd1DmMdS"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 11,
+                  "month": 7,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "5vD5M5VW62LL78Ko8x0CVZ",
+                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
+                "name": "SWAG",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "YCy74K5fTcyN-dPYAviwiw",
+                  "shareUrl": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ?si=YCy74K5fTcyN-dPYAviwiw"
+                },
+                "tracks": {
+                  "totalCount": 21
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e020cad1d28e91209690bdfb907",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048510cad1d28e91209690bdfb907",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2730cad1d28e91209690bdfb907",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 8,
+                  "month": 10,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "3uPnO1aZBwMgWK1DI5zve9",
+                "label": "RBMG/Def Jam",
+                "name": "Justice (The Complete Edition)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "faoqqiq6SYuGTtzRDgMKgg",
+                  "shareUrl": "https://open.spotify.com/album/3uPnO1aZBwMgWK1DI5zve9?si=faoqqiq6SYuGTtzRDgMKgg"
+                },
+                "tracks": {
+                  "totalCount": 25
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3uPnO1aZBwMgWK1DI5zve9"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02a01fed49fe3a84a9919cef29",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851a01fed49fe3a84a9919cef29",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273a01fed49fe3a84a9919cef29",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 26,
+                  "month": 3,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "6mzpIm84OXCBxw6Tuhp1OA",
+                "label": "RBMG/Def Jam",
+                "name": "Justice (Triple Chucks Deluxe)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "6EgEpOxwRD-_Z6nB8NLbCg",
+                  "shareUrl": "https://open.spotify.com/album/6mzpIm84OXCBxw6Tuhp1OA?si=6EgEpOxwRD-_Z6nB8NLbCg"
+                },
+                "tracks": {
+                  "totalCount": 22
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6mzpIm84OXCBxw6Tuhp1OA"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 19,
+                  "month": 3,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "5dGWwsZ9iB2Xc3UKR0gif2",
+                "label": "RBMG/Def Jam",
+                "name": "Justice",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "nEiKnceATWyDuqMsBNL0Tw",
+                  "shareUrl": "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2?si=nEiKnceATWyDuqMsBNL0Tw"
+                },
+                "tracks": {
+                  "totalCount": 16
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027fe4a82a08c4f0decbeddbc6",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517fe4a82a08c4f0decbeddbc6",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737fe4a82a08c4f0decbeddbc6",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 14,
+                  "month": 2,
+                  "precision": "DAY",
+                  "year": 2020
+                },
+                "id": "63iWSELt9V1kV6RSMxN7Ii",
+                "label": "RBMG/Def Jam",
+                "name": "Changes",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "vHiLtwaZSg-ybKBg5dKqwQ",
+                  "shareUrl": "https://open.spotify.com/album/63iWSELt9V1kV6RSMxN7Ii?si=vHiLtwaZSg-ybKBg5dKqwQ"
+                },
+                "tracks": {
+                  "totalCount": 17
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:63iWSELt9V1kV6RSMxN7Ii"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 13,
+                  "month": 11,
+                  "precision": "DAY",
+                  "year": 2015
+                },
+                "id": "6Fr2rQkZ383FcMqFyT7yPr",
+                "label": "RBMG/Def Jam",
+                "name": "Purpose (Deluxe)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "JRDkApy6QCyl4myZ8gzrbw",
+                  "shareUrl": "https://open.spotify.com/album/6Fr2rQkZ383FcMqFyT7yPr?si=JRDkApy6QCyl4myZ8gzrbw"
+                },
+                "tracks": {
+                  "totalCount": 19
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 13,
+                  "month": 5,
+                  "precision": "DAY",
+                  "year": 2014
+                },
+                "id": "1rknZw4cyL9NInAqSwc8AA",
+                "label": "RBMG/Def Jam",
+                "name": "Journals",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "01SJEZcoRs-CGtnZDwy_XA",
+                  "shareUrl": "https://open.spotify.com/album/1rknZw4cyL9NInAqSwc8AA?si=01SJEZcoRs-CGtnZDwy_XA"
+                },
+                "tracks": {
+                  "totalCount": 16
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2013 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2013 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0247a09610fbdadcba48b8fa9e",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485147a09610fbdadcba48b8fa9e",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27347a09610fbdadcba48b8fa9e",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 1,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2013
+                },
+                "id": "1RMfz6rbIyrQYChfcCoiJ4",
+                "label": "RBMG/Def Jam",
+                "name": "Believe Acoustic",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "bNXL7GjGTIaOAbv-EAEjCw",
+                  "shareUrl": "https://open.spotify.com/album/1RMfz6rbIyrQYChfcCoiJ4?si=bNXL7GjGTIaOAbv-EAEjCw"
+                },
+                "tracks": {
+                  "totalCount": 11
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1RMfz6rbIyrQYChfcCoiJ4"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2012 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2012 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e026c20c4638a558132ba95bc39",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048516c20c4638a558132ba95bc39",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2736c20c4638a558132ba95bc39",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 15,
+                  "month": 6,
+                  "precision": "DAY",
+                  "year": 2012
+                },
+                "id": "70f70xLCpH7wHaVvB2oZT9",
+                "label": "RBMG/Def Jam",
+                "name": "Believe (Deluxe Edition)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "X0pc2NXISrqOCEx6Yrwhfg",
+                  "shareUrl": "https://open.spotify.com/album/70f70xLCpH7wHaVvB2oZT9?si=X0pc2NXISrqOCEx6Yrwhfg"
+                },
+                "tracks": {
+                  "totalCount": 17
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:70f70xLCpH7wHaVvB2oZT9"
+              }
+            ],
+            "compilations": [],
+            "latest": null,
+            "popularReleasesAlbums": [
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 11,
+                  "month": 7,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "5vD5M5VW62LL78Ko8x0CVZ",
+                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
+                "name": "SWAG",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "6RjT1v-oQYubnPs8d_n1hQ",
+                  "shareUrl": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ?si=6RjT1v-oQYubnPs8d_n1hQ"
+                },
+                "tracks": {
+                  "totalCount": 21
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 13,
+                  "month": 11,
+                  "precision": "DAY",
+                  "year": 2015
+                },
+                "id": "6Fr2rQkZ383FcMqFyT7yPr",
+                "label": "RBMG/Def Jam",
+                "name": "Purpose (Deluxe)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "Fm5lMLsKQpq05nsvqBNSIQ",
+                  "shareUrl": "https://open.spotify.com/album/6Fr2rQkZ383FcMqFyT7yPr?si=Fm5lMLsKQpq05nsvqBNSIQ"
+                },
+                "tracks": {
+                  "totalCount": 19
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2012 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2012 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f1d02a6cec967f8b6b78f76e",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f1d02a6cec967f8b6b78f76e",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 1,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2012
+                },
+                "id": "5cxMa6oLINJzmZ8lF7wWQN",
+                "label": "RBMG/Def Jam",
+                "name": "Believe",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "x0M5cPR9TA68q1bWu245hw",
+                  "shareUrl": "https://open.spotify.com/album/5cxMa6oLINJzmZ8lF7wWQN?si=x0M5cPR9TA68q1bWu245hw"
+                },
+                "tracks": {
+                  "totalCount": 13
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5cxMa6oLINJzmZ8lF7wWQN"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2010 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2010 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02629dc9e2e3bc20bbd7d92e4a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851629dc9e2e3bc20bbd7d92e4a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 1,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2010
+                },
+                "id": "3BmcYMh0KYsimWL6p2gPa9",
+                "label": "RBMG/Def Jam",
+                "name": "My World 2.0",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "yCyUfzfUQt6jrT8Bt8X0NQ",
+                  "shareUrl": "https://open.spotify.com/album/3BmcYMh0KYsimWL6p2gPa9?si=yCyUfzfUQt6jrT8Bt8X0NQ"
+                },
+                "tracks": {
+                  "totalCount": 10
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3BmcYMh0KYsimWL6p2gPa9"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02a958d093e94944dd0e7258b2",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851a958d093e94944dd0e7258b2",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273a958d093e94944dd0e7258b2",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 5,
+                  "month": 9,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "2KrREEyHxkdFGYAd1DmMdS",
+                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
+                "name": "SWAG II",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "qD62_RFBQTS8fzkvvgfa6Q",
+                  "shareUrl": "https://open.spotify.com/album/2KrREEyHxkdFGYAd1DmMdS?si=qD62_RFBQTS8fzkvvgfa6Q"
+                },
+                "tracks": {
+                  "totalCount": 44
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2KrREEyHxkdFGYAd1DmMdS"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 13,
+                  "month": 5,
+                  "precision": "DAY",
+                  "year": 2014
+                },
+                "id": "1rknZw4cyL9NInAqSwc8AA",
+                "label": "RBMG/Def Jam",
+                "name": "Journals",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "bhLXChFkQNKjwaRzcdNOoQ",
+                  "shareUrl": "https://open.spotify.com/album/1rknZw4cyL9NInAqSwc8AA?si=bhLXChFkQNKjwaRzcdNOoQ"
+                },
+                "tracks": {
+                  "totalCount": 16
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 19,
+                  "month": 3,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "5dGWwsZ9iB2Xc3UKR0gif2",
+                "label": "RBMG/Def Jam",
+                "name": "Justice",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "iILDhENDSMGWPC_6V7b8sg",
+                  "shareUrl": "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2?si=iILDhENDSMGWPC_6V7b8sg"
+                },
+                "tracks": {
+                  "totalCount": 16
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2012 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2012 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e026c20c4638a558132ba95bc39",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048516c20c4638a558132ba95bc39",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2736c20c4638a558132ba95bc39",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 15,
+                  "month": 6,
+                  "precision": "DAY",
+                  "year": 2012
+                },
+                "id": "70f70xLCpH7wHaVvB2oZT9",
+                "label": "RBMG/Def Jam",
+                "name": "Believe (Deluxe Edition)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "5iR9Q-METXGB4-vyM-HhlA",
+                  "shareUrl": "https://open.spotify.com/album/70f70xLCpH7wHaVvB2oZT9?si=5iR9Q-METXGB4-vyM-HhlA"
+                },
+                "tracks": {
+                  "totalCount": 17
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:70f70xLCpH7wHaVvB2oZT9"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2009 The Island Def Jam Music Group",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2009 The Island Def Jam Music Group",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027c3bb9f74a98f60bdda6c9a7",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517c3bb9f74a98f60bdda6c9a7",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737c3bb9f74a98f60bdda6c9a7",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 1,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2009
+                },
+                "id": "1rG5TDs3jYh6OU753I54CI",
+                "label": "RBMG/Def Jam",
+                "name": "My World",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "f1CQwb7NQZCkvyYSx_z_XA",
+                  "shareUrl": "https://open.spotify.com/album/1rG5TDs3jYh6OU753I54CI?si=f1CQwb7NQZCkvyYSx_z_XA"
+                },
+                "tracks": {
+                  "totalCount": 7
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1rG5TDs3jYh6OU753I54CI"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027fe4a82a08c4f0decbeddbc6",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517fe4a82a08c4f0decbeddbc6",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737fe4a82a08c4f0decbeddbc6",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 14,
+                  "month": 2,
+                  "precision": "DAY",
+                  "year": 2020
+                },
+                "id": "63iWSELt9V1kV6RSMxN7Ii",
+                "label": "RBMG/Def Jam",
+                "name": "Changes",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "wuVOYOA4Rfi0DgGbvSrfdw",
+                  "shareUrl": "https://open.spotify.com/album/63iWSELt9V1kV6RSMxN7Ii?si=wuVOYOA4Rfi0DgGbvSrfdw"
+                },
+                "tracks": {
+                  "totalCount": 17
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:63iWSELt9V1kV6RSMxN7Ii"
+              }
+            ],
+            "singles": [
+              {
+                "copyright": [
+                  {
+                    "text": "(P) 2023 Top Dawg Entertainment, under exclusive license to RCA Records",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e028ac04014f5db1daf4eb3731f",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048518ac04014f5db1daf4eb3731f",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2738ac04014f5db1daf4eb3731f",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 15,
+                  "month": 9,
+                  "precision": "DAY",
+                  "year": 2023
+                },
+                "id": "0bQ8NyqdTKKQpZHYhZqCUU",
+                "label": "Top Dawg Entertainment/RCA Records",
+                "name": "Snooze (Acoustic) (feat. Justin Bieber)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "EG0uHMctSBORqQ9TRaSP7w",
+                  "shareUrl": "https://open.spotify.com/album/0bQ8NyqdTKKQpZHYhZqCUU?si=EG0uHMctSBORqQ9TRaSP7w"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:0bQ8NyqdTKKQpZHYhZqCUU"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "Cactus Jack, © 2023 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "Cactus Jack, ℗ 2023 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e1d245c283dcb2d94a42e323",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851e1d245c283dcb2d94a42e323",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e1d245c283dcb2d94a42e323",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 2,
+                  "precision": "DAY",
+                  "year": 2023
+                },
+                "id": "3UeapbH1wFSnDjCjraZMQ2",
+                "label": "Cactus Jack / Atlantic",
+                "name": "Private Landing (feat. Justin Bieber & Future)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "09pUw8DJSOSUhY9_LYxGcA",
+                  "shareUrl": "https://open.spotify.com/album/3UeapbH1wFSnDjCjraZMQ2?si=09pUw8DJSOSUhY9_LYxGcA"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:3UeapbH1wFSnDjCjraZMQ2"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e022344fbe49cc161ab95c2ab3c",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048512344fbe49cc161ab95c2ab3c",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2732344fbe49cc161ab95c2ab3c",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 30,
+                  "month": 8,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "3Dukyn15RlALh1JDtQRqO0",
+                "label": "Justin Bieber 2021 PS/ Def Jam",
+                "name": "Beautiful Love (Free Fire)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "XBSmUdOpSBSoAhX727R1pw",
+                  "shareUrl": "https://open.spotify.com/album/3Dukyn15RlALh1JDtQRqO0?si=XBSmUdOpSBSoAhX727R1pw"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:3Dukyn15RlALh1JDtQRqO0"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0277f7f8553ace10f4d9347872",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485177f7f8553ace10f4d9347872",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27377f7f8553ace10f4d9347872",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 29,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "2luYA3MBCKI7SfK3K0U3xf",
+                "label": "Justin Bieber 2021 PS/ Def Jam",
+                "name": "Honest",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "CTTePWuRSluBXEOyaw6ulQ",
+                  "shareUrl": "https://open.spotify.com/album/2luYA3MBCKI7SfK3K0U3xf?si=CTTePWuRSluBXEOyaw6ulQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:2luYA3MBCKI7SfK3K0U3xf"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02afcb0119a3b9f9f7fcb6fecc",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851afcb0119a3b9f9f7fcb6fecc",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273afcb0119a3b9f9f7fcb6fecc",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 27,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "06aEQhiev6dMRsPbSQ2cFC",
+                "label": "Justin Bieber 2021 PS/ Def Jam",
+                "name": "I Feel Funny",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "Vn1Bi12zQTeNvWHFo-kkKQ",
+                  "shareUrl": "https://open.spotify.com/album/06aEQhiev6dMRsPbSQ2cFC?si=Vn1Bi12zQTeNvWHFo-kkKQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:06aEQhiev6dMRsPbSQ2cFC"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "TSNMI/Atlantic, © 2021 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "TSNMI/Atlantic, ℗ 2021 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0259eeddf546a5298dd24b6ab2",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485159eeddf546a5298dd24b6ab2",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27359eeddf546a5298dd24b6ab2",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 30,
+                  "month": 3,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "3vnJxSrVldmInhRwtcUG89",
+                "label": "TSNMI / Atlantic",
+                "name": "up at night (feat. justin bieber)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "ULjENfn7TVCtS16eLoi9sA",
+                  "shareUrl": "https://open.spotify.com/album/3vnJxSrVldmInhRwtcUG89?si=ULjENfn7TVCtS16eLoi9sA"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:3vnJxSrVldmInhRwtcUG89"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2022 KeyQaad / Sire Records",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2022 KeyQaad / Sire Records",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e0e5c444b9713f8622d74e2f",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851e0e5c444b9713f8622d74e2f",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e0e5c444b9713f8622d74e2f",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 3,
+                  "month": 3,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "0fGPQwybhz88QkKXZpfkwj",
+                "label": "KeyQaad/Sire Records",
+                "name": "attention (with Justin Bieber)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "Yj0CU-JJSO20ujaUXRDrYQ",
+                  "shareUrl": "https://open.spotify.com/album/0fGPQwybhz88QkKXZpfkwj?si=Yj0CU-JJSO20ujaUXRDrYQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:0fGPQwybhz88QkKXZpfkwj"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "(P) 2021 RCA Records, a division of Sony Music Entertainment",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02b47a1986745eae746c0d8bb6",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851b47a1986745eae746c0d8bb6",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273b47a1986745eae746c0d8bb6",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 18,
+                  "month": 11,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "5a7wDuklvlrH9LOZmt8zpy",
+                "label": "TrapSoul/RCA Records",
+                "name": "lonely christmas (feat. Justin Bieber & Poo Bear)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "tUj7qKLdQh2JQJn-IBRBew",
+                  "shareUrl": "https://open.spotify.com/album/5a7wDuklvlrH9LOZmt8zpy?si=tUj7qKLdQh2JQJn-IBRBew"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:5a7wDuklvlrH9LOZmt8zpy"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2021 OWSLA/Atlantic Recording Corporation",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2021 OWSLA/Atlantic Recording Corporation",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e021593c4b938926dce4250d71d",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048511593c4b938926dce4250d71d",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2731593c4b938926dce4250d71d",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 20,
+                  "month": 8,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "76HLs4wSTOuCNwcGl4dycr",
+                "label": "OWSLA/Atlantic",
+                "name": "Don’t Go (with Justin Bieber & Don Toliver)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "k496Z7_iRxCiE0zE7AX4rg",
+                  "shareUrl": "https://open.spotify.com/album/76HLs4wSTOuCNwcGl4dycr?si=k496Z7_iRxCiE0zE7AX4rg"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:76HLs4wSTOuCNwcGl4dycr"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "(P) 2021 Starboy Entertainment Ltd., under exclusive license to RCA Records",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02b8193a73e58b9e483ca3834b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851b8193a73e58b9e483ca3834b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273b8193a73e58b9e483ca3834b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 13,
+                  "month": 8,
+                  "precision": "DAY",
+                  "year": 2021
+                },
+                "id": "0Rn8NAh8NnoaCOt8r8Tc3e",
+                "label": "Starboy/RCA Records",
+                "name": "Essence (feat. Justin Bieber & Tems)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "t8e2_-guR5C-5F8Sdif5mQ",
+                  "shareUrl": "https://open.spotify.com/album/0Rn8NAh8NnoaCOt8r8Tc3e?si=t8e2_-guR5C-5F8Sdif5mQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:0Rn8NAh8NnoaCOt8r8Tc3e"
+              }
+            ],
+            "topTracks": [
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f1d02a6cec967f8b6b78f76e"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851f1d02a6cec967f8b6b78f76e"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f1d02a6cec967f8b6b78f76e"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5cxMa6oLINJzmZ8lF7wWQN"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    },
+                    {
+                      "profile": {
+                        "name": "Nicki Minaj"
+                      },
+                      "uri": "spotify:artist:0hCNtLu0JehylgoiP8L4Gh"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 227986
+                  },
+                  "id": "6QFCMUUq1T2Vf5sFUXcuQ7",
+                  "name": "Beauty And A Beat",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 1697221016,
+                  "uri": "spotify:track:6QFCMUUq1T2Vf5sFUXcuQ7"
+                },
+                "uid": "cba4fecbb5d3e62feedb"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 176453
+                  },
+                  "id": "5BZsQlgw21vDOAjoqkNgKb",
+                  "name": "DAISIES",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 742205089,
+                  "uri": "spotify:track:5BZsQlgw21vDOAjoqkNgKb"
+                },
+                "uid": "38074ac621c87c3c48a0"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    },
+                    {
+                      "profile": {
+                        "name": "Chance the Rapper"
+                      },
+                      "uri": "spotify:artist:1anyVhU62p31KFi8MEzkbf"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 248133
+                  },
+                  "id": "3JsydWaf2Ev4ehaLUjj3SY",
+                  "name": "Confident",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 1187946292,
+                  "uri": "spotify:track:3JsydWaf2Ev4ehaLUjj3SY"
+                },
+                "uid": "f7c45e2ca935ba7ed6c3"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02629dc9e2e3bc20bbd7d92e4a"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851629dc9e2e3bc20bbd7d92e4a"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:3BmcYMh0KYsimWL6p2gPa9"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    },
+                    {
+                      "profile": {
+                        "name": "Ludacris"
+                      },
+                      "uri": "spotify:artist:3ipn9JLAPI5GUEo4y4jcoi"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 214240
+                  },
+                  "id": "6epn3r7S14KUqlReYr77hA",
+                  "name": "Baby",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 1568960415,
+                  "uri": "spotify:track:6epn3r7S14KUqlReYr77hA"
+                },
+                "uid": "36c3214a4388f9ec86ee"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 200786
+                  },
+                  "id": "09CtPGIpYB4BrO8qb1RGsF",
+                  "name": "Sorry",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 2895856420,
+                  "uri": "spotify:track:09CtPGIpYB4BrO8qb1RGsF"
+                },
+                "uid": "e5b52a3da00f8c729148"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 233720
+                  },
+                  "id": "50kpGaPAhYJ3sGmk6vplg0",
+                  "name": "Love Yourself",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 3192991036,
+                  "uri": "spotify:track:50kpGaPAhYJ3sGmk6vplg0"
+                },
+                "uid": "5b2b3c27909e781340cf"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02ca8d656fa57db4cce117f53b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851ca8d656fa57db4cce117f53b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273ca8d656fa57db4cce117f53b"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:6DOZI2LfBRYHRhZV21LrOu"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Sean Kingston"
+                      },
+                      "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr"
+                    },
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 201973
+                  },
+                  "id": "4Yaw2PmyOETOnEM3TCf98I",
+                  "name": "Eenie Meenie - Radio Version",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 1079181671,
+                  "uri": "spotify:track:4Yaw2PmyOETOnEM3TCf98I"
+                },
+                "uid": "01543377bcf81f3d0761"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02b4d59e6fa7e5e7cbc57ac33a"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851b4d59e6fa7e5e7cbc57ac33a"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273b4d59e6fa7e5e7cbc57ac33a"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:576UTio7xgY7YUxrHMzxeI"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "The Kid LAROI"
+                      },
+                      "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+                    },
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "EXPLICIT"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 141805
+                  },
+                  "id": "567e29TDzLwZwfDuEpGTwo",
+                  "name": "STAY (with Justin Bieber)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 3904947519,
+                  "uri": "spotify:track:567e29TDzLwZwfDuEpGTwo"
+                },
+                "uid": "98717d1b14bf26cf1a4b"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 163866
+                  },
+                  "id": "29iva9idM6rFCPUlu7Rhxl",
+                  "name": "YUKON",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 365730927,
+                  "uri": "spotify:track:29iva9idM6rFCPUlu7Rhxl"
+                },
+                "uid": "6fa5ce996a2c7247b56d"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Justin Bieber"
+                      },
+                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 153190
+                  },
+                  "id": "6I3mqTwhRpn34SLVafSH7G",
+                  "name": "Ghost",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 2260573976,
+                  "uri": "spotify:track:6I3mqTwhRpn34SLVafSH7G"
+                },
+                "uid": "f211bbd5840e78cee105"
+              }
+            ]
+          },
+          "goods": {
+            "concerts": [],
+            "merch": []
+          },
+          "headerImage": null,
+          "id": "1uNFoZAHBGtllmzznpCI3s",
+          "onPlatformReputationTrait": {
+            "verification": {
+              "isRegistered": true,
+              "isVerified": true
+            }
+          },
+          "preRelease": null,
+          "profile": {
+            "biography": {
+              "text": "Since his emergence in 2008, Justin Bieber has quietly worked towards delivering a career-defining artistic statement with his 2025 seventh full-length album, SWAG via Def Jam Recordings. Beyond writing songs and performing, he co-produced the LP which is a 21-track opus evocative of his evolution, yet indicative of the signature spirit millions of fans first fell in love with. \n\nUp to this point, he has smashed countless records, captivated crowds globally and led 21st century pop music and culture as both the preeminent entertainer of his generation and a peerless boundary-pushing creative force. From humble beginnings in Ontario, Canada, the Los Angeles-based singer, songwriter, and producer has elevated to one of the best-selling artists in history, moving over 150 million albums worldwide, generating nearly 200 billion streams, and scoring an astonishing 5 RIAA Diamond certifications. Speaking to his versatility, he has also delivered cross-generational hits in genres as diverse as pop, electronic, hip-hop, R&amp;B, Latin, and more. With SWAG, he continues an unbelievable journey as an era-defining superstar whose influence is unstoppable and unparalleled.",
+              "type": "AUTOBIOGRAPHY"
+            },
+            "externalLinks": [
+              {
+                "name": "FACEBOOK",
+                "url": "https://facebook.com/JustinBieber"
+              },
+              {
+                "name": "INSTAGRAM",
+                "url": "https://instagram.com/lilbieber"
+              },
+              {
+                "name": "TWITTER",
+                "url": "https://twitter.com/justinbieber"
+              },
+              {
+                "name": "WIKIPEDIA",
+                "url": "https://en.wikipedia.org/wiki/Justin_Bieber"
+              }
+            ],
+            "name": "Justin Bieber",
+            "pinnedItem": null,
+            "playlistsV2": [
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8401cf9723007f75a5a3981fd2",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "HOLD ON, It’s almost tour time",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Def Jam Recordings"
+                },
+                "uri": "spotify:playlist:3vMOKpI3RkxWAJhgbZ9zTa"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "stay motivated and healthy. work out to these ones. ",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72cf8195e779e5ea9488e78ffa3",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Workout with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:1eMxaLfIyAU41IVGQJdh9l"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "the songs you guys are listening to the most this week. ",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c352577874f33ab0afa03e0e6",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Hottest This Week",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:4vYuFrlJ76NiVN0817taWY"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "let's hang, chill vibes only.",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca82d47bb2fbcbd041bc94f2a",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Chill with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:072rNWumoHrWsPKjJrtKNM"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "take it easy. ",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c76382576321f678061bb9c79",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Relax with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:4kMs4OpwtS0Pk4Zvbd0j7z"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "This one's for you. major feels. ",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8420cdb4ebd58c1f0a21cf74d7",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Major Feels with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:7HxdpF1tOKEAMHN6VrDbQU"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "the soundtrack to your morning walk.",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c6c93efb886d77fb76b027d58",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Morning Walk with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:6hyrXQfDpm7ufIA3JMuHIA"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "stay focused and stay home everyone. ",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72cf3cc1bfc7304b87bb7ea41de",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "At Home with Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:6WKQdo3KO03cYanX0hTsa4"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84ff1016e806a51c7540f5298e",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Best Of: Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Def Jam Recordings"
+                },
+                "uri": "spotify:playlist:2z2Qiy21PhjYWGBP2FVZBI"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "made a playlist for a dance party.",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da841c03ac2140abd8ab78a9327d",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Dance with Justin Bieber ",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Justin Bieber"
+                },
+                "uri": "spotify:playlist:32sIremAO5gTpGy4JjLzB0"
+              }
+            ]
+          },
+          "relatedContent": {
+            "appearsOn": [
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "USHER"
+                    },
+                    "uri": "spotify:artist:23zg3TcAtWQy7J6upgbUnj"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0286b0c9728ad3ed338eaeea79",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485186b0c9728ad3ed338eaeea79",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27386b0c9728ad3ed338eaeea79",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2010
+                },
+                "id": "6A1F3Fkq5dYeYYNkXflcTX",
+                "name": "Raymond v Raymond (Expanded Edition)",
+                "sharingInfo": {
+                  "shareId": "ts7JGA91SfS-gAxRJpgtyw",
+                  "shareUrl": "https://open.spotify.com/album/6A1F3Fkq5dYeYYNkXflcTX?si=ts7JGA91SfS-gAxRJpgtyw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6A1F3Fkq5dYeYYNkXflcTX"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Post Malone"
+                    },
+                    "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0255404f712deb84d0650a4b41",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485155404f712deb84d0650a4b41",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2016
+                },
+                "id": "5s0rmjP8XOPhP6HhqOhuyC",
+                "name": "Stoney (Deluxe)",
+                "sharingInfo": {
+                  "shareId": "7Evzja36SSyzjJNRxKv13w",
+                  "shareUrl": "https://open.spotify.com/album/5s0rmjP8XOPhP6HhqOhuyC?si=7Evzja36SSyzjJNRxKv13w"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5s0rmjP8XOPhP6HhqOhuyC"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Post Malone"
+                    },
+                    "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02894a761abf954838a84c8db9",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851894a761abf954838a84c8db9",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273894a761abf954838a84c8db9",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2016
+                },
+                "id": "2TbtBmA00IP0P1GpUqIaXS",
+                "name": "Stoney (Deluxe)",
+                "sharingInfo": {
+                  "shareId": "5sMpMZxkTD6p5A97MhO8-g",
+                  "shareUrl": "https://open.spotify.com/album/2TbtBmA00IP0P1GpUqIaXS?si=5sMpMZxkTD6p5A97MhO8-g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2TbtBmA00IP0P1GpUqIaXS"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "The Kid LAROI"
+                    },
+                    "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02b4d59e6fa7e5e7cbc57ac33a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851b4d59e6fa7e5e7cbc57ac33a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273b4d59e6fa7e5e7cbc57ac33a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "576UTio7xgY7YUxrHMzxeI",
+                "name": "F*CK LOVE 3+: OVER YOU",
+                "sharingInfo": {
+                  "shareId": "2UhnWikvT5S-XqVAuAhAmA",
+                  "shareUrl": "https://open.spotify.com/album/576UTio7xgY7YUxrHMzxeI?si=2UhnWikvT5S-XqVAuAhAmA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:576UTio7xgY7YUxrHMzxeI"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "The Kid LAROI"
+                    },
+                    "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027cf3e7a4688e521d8948b9f0",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517cf3e7a4688e521d8948b9f0",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737cf3e7a4688e521d8948b9f0",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "4NYDjLwVArqXrxnFWnRITq",
+                "name": "F*CK LOVE 3+: OVER YOU",
+                "sharingInfo": {
+                  "shareId": "yu0WE3dSRQaD-HfrTTz15A",
+                  "shareUrl": "https://open.spotify.com/album/4NYDjLwVArqXrxnFWnRITq?si=yu0WE3dSRQaD-HfrTTz15A"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:4NYDjLwVArqXrxnFWnRITq"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Don Toliver"
+                    },
+                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02307323fa550564b0201b1d76",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851307323fa550564b0201b1d76",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273307323fa550564b0201b1d76",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2023
+                },
+                "id": "2Q2TRdT994vTzGE3Grmmht",
+                "name": "Love Sick (Deluxe)",
+                "sharingInfo": {
+                  "shareId": "iHCutcIYSlms9Vw_cQvAVA",
+                  "shareUrl": "https://open.spotify.com/album/2Q2TRdT994vTzGE3Grmmht?si=iHCutcIYSlms9Vw_cQvAVA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2Q2TRdT994vTzGE3Grmmht"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Travis Scott"
+                    },
+                    "uri": "spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d3b5affd8824b4ed301b7137",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d3b5affd8824b4ed301b7137",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d3b5affd8824b4ed301b7137",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2015
+                },
+                "id": "4PWBTB6NYSKQwfo79I3prg",
+                "name": "Rodeo",
+                "sharingInfo": {
+                  "shareId": "YOf__DojRweVRx5G9vr6eg",
+                  "shareUrl": "https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg?si=YOf__DojRweVRx5G9vr6eg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:4PWBTB6NYSKQwfo79I3prg"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Travis Scott"
+                    },
+                    "uri": "spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02c35028b71cb08aa7af4cc095",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851c35028b71cb08aa7af4cc095",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273c35028b71cb08aa7af4cc095",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2015
+                },
+                "id": "7EGY16IWSHpPdoWazUyL9R",
+                "name": "Rodeo",
+                "sharingInfo": {
+                  "shareId": "J4XKfA-QSBemdWKlZDjBJQ",
+                  "shareUrl": "https://open.spotify.com/album/7EGY16IWSHpPdoWazUyL9R?si=J4XKfA-QSBemdWKlZDjBJQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:7EGY16IWSHpPdoWazUyL9R"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e020a1d20ec09cab4bb17a36aab",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048510a1d20ec09cab4bb17a36aab",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2730a1d20ec09cab4bb17a36aab",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2011
+                },
+                "id": "6df0qvkMXoyHGt9J8cujZb",
+                "name": "F.A.M.E. (Expanded Edition)",
+                "sharingInfo": {
+                  "shareId": "3W8B9em_Qt-opiL-rTur0g",
+                  "shareUrl": "https://open.spotify.com/album/6df0qvkMXoyHGt9J8cujZb?si=3W8B9em_Qt-opiL-rTur0g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6df0qvkMXoyHGt9J8cujZb"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Luis Fonsi"
+                    },
+                    "uri": "spotify:artist:4V8Sr092TqfHkfAA5fXXqG"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ef0d4234e1a645740f77d59c",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851ef0d4234e1a645740f77d59c",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ef0d4234e1a645740f77d59c",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "5C0YLr4OoRGFDaqdMQmkeH",
+                "name": "VIDA",
+                "sharingInfo": {
+                  "shareId": "AEhW9KeIQ0eroqcci-thxA",
+                  "shareUrl": "https://open.spotify.com/album/5C0YLr4OoRGFDaqdMQmkeH?si=AEhW9KeIQ0eroqcci-thxA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5C0YLr4OoRGFDaqdMQmkeH"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Jack Ü"
+                    },
+                    "uri": "spotify:artist:1HxJeLhIuegM3KgvPn8sTa"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0257fc4730e06c9ab20c1e073b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485157fc4730e06c9ab20c1e073b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27357fc4730e06c9ab20c1e073b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2015
+                },
+                "id": "6bfkwBrGYKJFk6Z4QVyjxd",
+                "name": "Skrillex and Diplo present Jack Ü",
+                "sharingInfo": {
+                  "shareId": "LO175zicQCG3kVhG80ekfQ",
+                  "shareUrl": "https://open.spotify.com/album/6bfkwBrGYKJFk6Z4QVyjxd?si=LO175zicQCG3kVhG80ekfQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6bfkwBrGYKJFk6Z4QVyjxd"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Juice WRLD"
+                    },
+                    "uri": "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027459992b444de38842b9bee7",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517459992b444de38842b9bee7",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737459992b444de38842b9bee7",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "1typPCwqyXMfFpvDZAyKew",
+                "name": "Fighting Demons (Deluxe)",
+                "sharingInfo": {
+                  "shareId": "kDa76mB1QEGvWlL6iIPCmA",
+                  "shareUrl": "https://open.spotify.com/album/1typPCwqyXMfFpvDZAyKew?si=kDa76mB1QEGvWlL6iIPCmA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1typPCwqyXMfFpvDZAyKew"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Juice WRLD"
+                    },
+                    "uri": "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02592ac7d5d3cdc03c3987722c",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851592ac7d5d3cdc03c3987722c",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273592ac7d5d3cdc03c3987722c",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "7hDMgGXdy0x8hDbtOHIS5j",
+                "name": "Fighting Demons (Deluxe)",
+                "sharingInfo": {
+                  "shareId": "jCiWMhBRQUOqYaoNhI1gqw",
+                  "shareUrl": "https://open.spotify.com/album/7hDMgGXdy0x8hDbtOHIS5j?si=jCiWMhBRQUOqYaoNhI1gqw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:7hDMgGXdy0x8hDbtOHIS5j"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0248f69a441c575fa5926a0831",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485148f69a441c575fa5926a0831",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27348f69a441c575fa5926a0831",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "3okhA6w5uau6ZNhnVpwVww",
+                "name": "Indigo (Extended)",
+                "sharingInfo": {
+                  "shareId": "uIadry1vSW6QIgyymi7tZg",
+                  "shareUrl": "https://open.spotify.com/album/3okhA6w5uau6ZNhnVpwVww?si=uIadry1vSW6QIgyymi7tZg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3okhA6w5uau6ZNhnVpwVww"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e022e2fbbe59117bb0005eb3c2e",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048512e2fbbe59117bb0005eb3c2e",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2732e2fbbe59117bb0005eb3c2e",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "2rICHwivbZlmMnzEDmGNXX",
+                "name": "Indigo (Extended)",
+                "sharingInfo": {
+                  "shareId": "xPWn-sdETE69n-A8sPBX2g",
+                  "shareUrl": "https://open.spotify.com/album/2rICHwivbZlmMnzEDmGNXX?si=xPWn-sdETE69n-A8sPBX2g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2rICHwivbZlmMnzEDmGNXX"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e020bf1b932009c0bff47b8cb86",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048510bf1b932009c0bff47b8cb86",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2730bf1b932009c0bff47b8cb86",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "1BfLzaTFI5qKsAAk0Ae6aV",
+                "name": "Indigo",
+                "sharingInfo": {
+                  "shareId": "Yc4eDlu7RfipnKIv7SilYQ",
+                  "shareUrl": "https://open.spotify.com/album/1BfLzaTFI5qKsAAk0Ae6aV?si=Yc4eDlu7RfipnKIv7SilYQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1BfLzaTFI5qKsAAk0Ae6aV"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02190ffb1d9b91e447e111fad5",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851190ffb1d9b91e447e111fad5",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273190ffb1d9b91e447e111fad5",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "1BI2aGRYFZgQGmSWuh9jpO",
+                "name": "Indigo",
+                "sharingInfo": {
+                  "shareId": "MWQ9YiK7TtqDMlN82J5Oyg",
+                  "shareUrl": "https://open.spotify.com/album/1BI2aGRYFZgQGmSWuh9jpO?si=MWQ9YiK7TtqDMlN82J5Oyg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1BI2aGRYFZgQGmSWuh9jpO"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Ed Sheeran"
+                    },
+                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f528fc2d5d8b26e4e3413715",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f528fc2d5d8b26e4e3413715",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f528fc2d5d8b26e4e3413715",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "3oIFxDIo2fwuk4lwCmFZCx",
+                "name": "No.6 Collaborations Project",
+                "sharingInfo": {
+                  "shareId": "1DgGm-f3R762_cofPE3eFw",
+                  "shareUrl": "https://open.spotify.com/album/3oIFxDIo2fwuk4lwCmFZCx?si=1DgGm-f3R762_cofPE3eFw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3oIFxDIo2fwuk4lwCmFZCx"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Ed Sheeran"
+                    },
+                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02816b328df5fbcebe53cf6c6f",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851816b328df5fbcebe53cf6c6f",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273816b328df5fbcebe53cf6c6f",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "5oUZ9TEZR3wOdvqzowuNwl",
+                "name": "No.6 Collaborations Project",
+                "sharingInfo": {
+                  "shareId": "FfSn9kmWQwmEbgzUSuWrEw",
+                  "shareUrl": "https://open.spotify.com/album/5oUZ9TEZR3wOdvqzowuNwl?si=FfSn9kmWQwmEbgzUSuWrEw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5oUZ9TEZR3wOdvqzowuNwl"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Don Toliver"
+                    },
+                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e026d5a148417ab9b8a43041c1f",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048516d5a148417ab9b8a43041c1f",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2736d5a148417ab9b8a43041c1f",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2023
+                },
+                "id": "26z5llzd194mcCZHADWd6k",
+                "name": "Love Sick",
+                "sharingInfo": {
+                  "shareId": "rb_BlA65S2aejycGEXmnyA",
+                  "shareUrl": "https://open.spotify.com/album/26z5llzd194mcCZHADWd6k?si=rb_BlA65S2aejycGEXmnyA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:26z5llzd194mcCZHADWd6k"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Don Toliver"
+                    },
+                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0205e2f064852fb0febd17225f",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485105e2f064852fb0febd17225f",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27305e2f064852fb0febd17225f",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2023
+                },
+                "id": "6Xnrf8JvckhoADFcePUNyq",
+                "name": "Love Sick",
+                "sharingInfo": {
+                  "shareId": "3jFNWkFTSRKU66vlFyc2TA",
+                  "shareUrl": "https://open.spotify.com/album/6Xnrf8JvckhoADFcePUNyq?si=3jFNWkFTSRKU66vlFyc2TA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6Xnrf8JvckhoADFcePUNyq"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Migos"
+                    },
+                    "uri": "spotify:artist:6oMuImdp5ZcFhWP0ESe6mG"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f89d00155b6a066650e5460d",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f89d00155b6a066650e5460d",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f89d00155b6a066650e5460d",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "3uyOwJu4r3yroAkFywNFM3",
+                "name": "Culture III",
+                "sharingInfo": {
+                  "shareId": "RpM6mmuHRA-HV0gm8hIUOQ",
+                  "shareUrl": "https://open.spotify.com/album/3uyOwJu4r3yroAkFywNFM3?si=RpM6mmuHRA-HV0gm8hIUOQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3uyOwJu4r3yroAkFywNFM3"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Migos"
+                    },
+                    "uri": "spotify:artist:6oMuImdp5ZcFhWP0ESe6mG"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0217dd1257a14cb98d6ae491be",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485117dd1257a14cb98d6ae491be",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27317dd1257a14cb98d6ae491be",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "1lteSAPdfkjYq3lc494VXG",
+                "name": "Culture III",
+                "sharingInfo": {
+                  "shareId": "CSEy0xM7Rh67uxjpzZ-J9Q",
+                  "shareUrl": "https://open.spotify.com/album/1lteSAPdfkjYq3lc494VXG?si=CSEy0xM7Rh67uxjpzZ-J9Q"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1lteSAPdfkjYq3lc494VXG"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "OMAH LAY"
+                    },
+                    "uri": "spotify:artist:5yOvAmpIR7hVxiS6Ls5DPO"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0215ceaa196b94c1f61db08d7b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485115ceaa196b94c1f61db08d7b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27315ceaa196b94c1f61db08d7b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "5NLjxx8nRy9ooUmgpOvfem",
+                "name": "Boy Alone",
+                "sharingInfo": {
+                  "shareId": "91sC31oNRA-hFNz-Dl-pCA",
+                  "shareUrl": "https://open.spotify.com/album/5NLjxx8nRy9ooUmgpOvfem?si=91sC31oNRA-hFNz-Dl-pCA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5NLjxx8nRy9ooUmgpOvfem"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "OMAH LAY"
+                    },
+                    "uri": "spotify:artist:5yOvAmpIR7hVxiS6Ls5DPO"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d247511725a4363a6b10b5f7",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d247511725a4363a6b10b5f7",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d247511725a4363a6b10b5f7",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "673wWns8iuEBeBLRAQU68A",
+                "name": "Boy Alone",
+                "sharingInfo": {
+                  "shareId": "wDamx9wSSZSvFjHRZY8mMw",
+                  "shareUrl": "https://open.spotify.com/album/673wWns8iuEBeBLRAQU68A?si=wDamx9wSSZSvFjHRZY8mMw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:673wWns8iuEBeBLRAQU68A"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "DJ Khaled"
+                    },
+                    "uri": "spotify:artist:0QHgL1lAIqAw0HtD7YldmP"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02dcd4d70294f17175991ba1bb",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851dcd4d70294f17175991ba1bb",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273dcd4d70294f17175991ba1bb",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "5kE2OAuUYGBqqzscqgBXXf",
+                "name": "KHALED KHALED",
+                "sharingInfo": {
+                  "shareId": "YIVR8nswSQi7lOVOMJFnlg",
+                  "shareUrl": "https://open.spotify.com/album/5kE2OAuUYGBqqzscqgBXXf?si=YIVR8nswSQi7lOVOMJFnlg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5kE2OAuUYGBqqzscqgBXXf"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "DJ Khaled"
+                    },
+                    "uri": "spotify:artist:0QHgL1lAIqAw0HtD7YldmP"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e025d3a6961133df697e744ac36",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048515d3a6961133df697e744ac36",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2735d3a6961133df697e744ac36",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "7nJ9oJt1X7kZXmFa7lgkgf",
+                "name": "KHALED KHALED",
+                "sharingInfo": {
+                  "shareId": "8ro4N3wlRMmg5QJNa-3pgA",
+                  "shareUrl": "https://open.spotify.com/album/7nJ9oJt1X7kZXmFa7lgkgf?si=8ro4N3wlRMmg5QJNa-3pgA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:7nJ9oJt1X7kZXmFa7lgkgf"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Sean Kingston"
+                    },
+                    "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ca8d656fa57db4cce117f53b",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851ca8d656fa57db4cce117f53b",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ca8d656fa57db4cce117f53b",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2020
+                },
+                "id": "6DOZI2LfBRYHRhZV21LrOu",
+                "name": "Eenie Meenie EP",
+                "sharingInfo": {
+                  "shareId": "ERmp24b0QGyVwA87ZweXyg",
+                  "shareUrl": "https://open.spotify.com/album/6DOZI2LfBRYHRhZV21LrOu?si=ERmp24b0QGyVwA87ZweXyg"
+                },
+                "type": "EP",
+                "uri": "spotify:album:6DOZI2LfBRYHRhZV21LrOu"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "David Guetta"
+                    },
+                    "uri": "spotify:artist:1Cs0zKBU1kc0i8ypK3B9ai"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0278970ae7a1d564a7ba00fe39",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485178970ae7a1d564a7ba00fe39",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27378970ae7a1d564a7ba00fe39",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2018
+                },
+                "id": "0GJU424RiEyYQTLbZcHVA7",
+                "name": "7: Anniversary Edition",
+                "sharingInfo": {
+                  "shareId": "G63t-kIgS8GJ6caAvNR4Xg",
+                  "shareUrl": "https://open.spotify.com/album/0GJU424RiEyYQTLbZcHVA7?si=G63t-kIgS8GJ6caAvNR4Xg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:0GJU424RiEyYQTLbZcHVA7"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Ed Sheeran"
+                    },
+                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0262407726ee053c7d89aeff9a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485162407726ee053c7d89aeff9a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27362407726ee053c7d89aeff9a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2024
+                },
+                "id": "5xD1PSd5c5APDM0SdkkqnH",
+                "name": "+-=÷× (Tour Collection)",
+                "sharingInfo": {
+                  "shareId": "2KzQ__IsQTKi3ie2_bZevw",
+                  "shareUrl": "https://open.spotify.com/album/5xD1PSd5c5APDM0SdkkqnH?si=2KzQ__IsQTKi3ie2_bZevw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5xD1PSd5c5APDM0SdkkqnH"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Shawn Mendes"
+                    },
+                    "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0237a5a19e52f8260b3b158e55",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485137a5a19e52f8260b3b158e55",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27337a5a19e52f8260b3b158e55",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2020
+                },
+                "id": "3Lp4JKk2ZgNkybMRS3eZR5",
+                "name": "Wonder",
+                "sharingInfo": {
+                  "shareId": "JHkqh0C5SBKmeIFveAaQtg",
+                  "shareUrl": "https://open.spotify.com/album/3Lp4JKk2ZgNkybMRS3eZR5?si=JHkqh0C5SBKmeIFveAaQtg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3Lp4JKk2ZgNkybMRS3eZR5"
+              }
+            ],
+            "discoveredOnV2": [
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "37i9dQZF1DXc2aPBXGmXrt",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000021da8a6c4b1647a5c33e8a5b3",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "This Is Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXc2aPBXGmXrt"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Setlist coachella 2026",
+                "id": "0p1rufOAkl56vCKAswiQI2",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84b8b4aafe4028ef3e6ae55e8b",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "JUSTIN BIEBER COACHELLA 2026 (SETLIST)",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "fasbmusic"
+                },
+                "uri": "spotify:playlist:0p1rufOAkl56vCKAswiQI2"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "4zqz1Qqgtvn28RswuS7zMT",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca3883d453c915416ae5eb2dd",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "best old jb songs",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "court:)"
+                },
+                "uri": "spotify:playlist:4zqz1Qqgtvn28RswuS7zMT"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "all justin bieber songs, including colaborations, in choronological order - big belieber here",
+                "id": "2ZISS32D1Ry8Aev9YPiJM4",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72ca99a8d81d59b8acd85abb03e",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "justin bieber - all songs",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "mireiaamartii"
+                },
+                "uri": "spotify:playlist:2ZISS32D1Ry8Aev9YPiJM4"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "6inBX31Rb6E8jxsHNoecSP",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://mosaic.scdn.co/640/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 640
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://mosaic.scdn.co/300/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 300
+                      },
+                      {
+                        "height": 60,
+                        "url": "https://mosaic.scdn.co/60/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 60
+                      }
+                    ]
+                  }
+                ],
+                "name": "Justin Bieber oldies🥺‼️",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "farah🧚🏻‍♀️"
+                },
+                "uri": "spotify:playlist:6inBX31Rb6E8jxsHNoecSP"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Your daily update of the most played tracks right now - Global.",
+                "id": "37i9dQZEVXbMDoHDwVN2tF",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Top 50 - Global",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZEVXbMDoHDwVN2tF"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "4Vzcb4Ma0C7lVh8BPe82c0",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://mosaic.scdn.co/640/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 640
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://mosaic.scdn.co/300/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 300
+                      },
+                      {
+                        "height": 60,
+                        "url": "https://mosaic.scdn.co/60/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
+                        "width": 60
+                      }
+                    ]
+                  }
+                ],
+                "name": "Bieberchella",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "S1thlorddd"
+                },
+                "uri": "spotify:playlist:4Vzcb4Ma0C7lVh8BPe82c0"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "A mega mix of 75 favorites from the last few years! ",
+                "id": "37i9dQZF1DXbYM3nMM0oPk",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002ce3e4d2cf82be0252be48478",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Mega Hit Mix",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXbYM3nMM0oPk"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "it's not clocking to you that he's standing on business, is it? (Cover: Justin Bieber)",
+                "id": "3FxqCKNmp8J6so3EQW4RMt",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca55a1209f00a06efac0f4f6b",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Justin Bieber: Best Of The Best",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Best Of The Best"
+                },
+                "uri": "spotify:playlist:3FxqCKNmp8J6so3EQW4RMt"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "epoca que o mundo era um lugar melhor",
+                "id": "7Cm8ks6mZfUDOj2PHVgPDc",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca0702f130fed1278c6d99803",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "só as antigas do justin bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "justinaaa"
+                },
+                "uri": "spotify:playlist:7Cm8ks6mZfUDOj2PHVgPDc"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "1yHliym9EvW5ItgECTmDUv",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://mosaic.scdn.co/640/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
+                        "width": 640
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://mosaic.scdn.co/300/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
+                        "width": 300
+                      },
+                      {
+                        "height": 60,
+                        "url": "https://mosaic.scdn.co/60/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
+                        "width": 60
+                      }
+                    ]
+                  }
+                ],
+                "name": "Justine Bieber Playlist",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "paw"
+                },
+                "uri": "spotify:playlist:1yHliym9EvW5ItgECTmDUv"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The hottest 50. Cover: Tame Impala & JENNIE",
+                "id": "37i9dQZF1DXcBWIGoYBM5M",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002b96a3bfea7beae76bb9c4195",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Today’s Top Hits",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Your daily update of the most played tracks right now - Philippines.",
+                "id": "37i9dQZEVXbNBz9cRCSFkY",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_ph_default.jpg",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Top 50 - Philippines",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZEVXbNBz9cRCSFkY"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "0Q6tQ2xlSIWL1WuoT8Yfmm",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c5329caacaf6bf03a55248fa7",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "justin bieber prime ",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "melxna.lk"
+                },
+                "uri": "spotify:playlist:0Q6tQ2xlSIWL1WuoT8Yfmm"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "42O61YLcFLpWpD1VVKdjQS",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://mosaic.scdn.co/640/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "width": 640
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://mosaic.scdn.co/300/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "width": 300
+                      },
+                      {
+                        "height": 60,
+                        "url": "https://mosaic.scdn.co/60/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "width": 60
+                      }
+                    ]
+                  }
+                ],
+                "name": "TEMAZOS JUSTIN BIEBER",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Sara.Rangel"
+                },
+                "uri": "spotify:playlist:42O61YLcFLpWpD1VVKdjQS"
+              }
+            ],
+            "featuringV2": [
+              {
+                "__typename": "Playlist",
+                "description": "",
+                "id": "37i9dQZF1DXc2aPBXGmXrt",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000021da8a6c4b1647a5c33e8a5b3",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "This Is Justin Bieber",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXc2aPBXGmXrt"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "With One Direction, Maroon 5, Bruno Mars and more",
+                "id": "37i9dQZF1E4umBm15jdpM7",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/1uNFoZAHBGtllmzznpCI3s/en",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Justin Bieber Radio",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1E4umBm15jdpM7"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The hottest 50. Cover: Tame Impala & JENNIE",
+                "id": "37i9dQZF1DXcBWIGoYBM5M",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002b96a3bfea7beae76bb9c4195",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Today’s Top Hits",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "A mega mix of 75 favorites from the last few years! ",
+                "id": "37i9dQZF1DXbYM3nMM0oPk",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002ce3e4d2cf82be0252be48478",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Mega Hit Mix",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXbYM3nMM0oPk"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The hottest tracks in the United States. Cover: Noah Kahan",
+                "id": "37i9dQZF1DX0kbJZpiYdZl",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000027ac1293c127259d858d2c190",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Hot Hits USA",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DX0kbJZpiYdZl"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Get your beast mode on!",
+                "id": "37i9dQZF1DX76Wlfdnj7AP",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002f367481f06b565250cc7b139",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Beast Mode",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DX76Wlfdnj7AP"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Get happy with today's dose of feel-good songs!",
+                "id": "37i9dQZF1DX3rxVfibe1L0",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000028191cc41d8585df6170b3e5e",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Mood Booster",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DX3rxVfibe1L0"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The biggest songs of the 2010s. Cover: Justin Bieber",
+                "id": "37i9dQZF1DX5Ejj0EkURtP",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002ddeb90231491c14812b062ff",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "All Out 2010s",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DX5Ejj0EkURtP"
+              }
+            ],
+            "relatedArtists": [
+              {
+                "id": "0du5cEVh5yTK9QJze8zA0C",
+                "profile": {
+                  "name": "Bruno Mars"
+                },
+                "uri": "spotify:artist:0du5cEVh5yTK9QJze8zA0C",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebc7688aad1bf03986934d7e26",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178c7688aad1bf03986934d7e26",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174c7688aad1bf03986934d7e26",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "66CXWjxzNUsdJxJ2JdwvnR",
+                "profile": {
+                  "name": "Ariana Grande"
+                },
+                "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb766397ec42a573a53eb5fb87",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178766397ec42a573a53eb5fb87",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174766397ec42a573a53eb5fb87",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "5pKCCKE2ajJHZ9KAiaK11H",
+                "profile": {
+                  "name": "Rihanna"
+                },
+                "uri": "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebcb565a8e684e3be458d329ac",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178cb565a8e684e3be458d329ac",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174cb565a8e684e3be458d329ac",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "6S0dmVVn4udvppDhZIWxCr",
+                "profile": {
+                  "name": "Sean Kingston"
+                },
+                "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebee205e5029a04bd0460e16e4",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178ee205e5029a04bd0460e16e4",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174ee205e5029a04bd0460e16e4",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "04gDigrS5kc9YWfZHwBETP",
+                "profile": {
+                  "name": "Maroon 5"
+                },
+                "uri": "spotify:artist:04gDigrS5kc9YWfZHwBETP",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebf8349dfb619a7f842242de77",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178f8349dfb619a7f842242de77",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174f8349dfb619a7f842242de77",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "2tIP7SsRs7vjIcLrU85W8J",
+                "profile": {
+                  "name": "The Kid LAROI"
+                },
+                "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb8ae6a1046094624d95b115cb",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1788ae6a1046094624d95b115cb",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051748ae6a1046094624d95b115cb",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+                "profile": {
+                  "name": "The Weeknd"
+                },
+                "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebc1719ac9e6a75c1c25835018",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178c1719ac9e6a75c1c25835018",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174c1719ac9e6a75c1c25835018",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "6VuMaDnrHyPL1p4EHjYLi7",
+                "profile": {
+                  "name": "Charlie Puth"
+                },
+                "uri": "spotify:artist:6VuMaDnrHyPL1p4EHjYLi7",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb6721f541fb123145d4cb3ace",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1786721f541fb123145d4cb3ace",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051746721f541fb123145d4cb3ace",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "6jJ0s89eD6GaHleKKya26X",
+                "profile": {
+                  "name": "Katy Perry"
+                },
+                "uri": "spotify:artist:6jJ0s89eD6GaHleKKya26X",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb4be5330bd48527f9dd620663",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1784be5330bd48527f9dd620663",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051744be5330bd48527f9dd620663",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "1Xylc3o4UrD53lo9CvFvVg",
+                "profile": {
+                  "name": "Zara Larsson"
+                },
+                "uri": "spotify:artist:1Xylc3o4UrD53lo9CvFvVg",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebd519a7e349541cba8f85e965",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178d519a7e349541cba8f85e965",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174d519a7e349541cba8f85e965",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "5CiGnKThu5ctn9pBxv7DGa",
+                "profile": {
+                  "name": "benny blanco"
+                },
+                "uri": "spotify:artist:5CiGnKThu5ctn9pBxv7DGa",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb9e339e423b680759b0006a63",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1789e339e423b680759b0006a63",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051749e339e423b680759b0006a63",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "5ZsFI1h6hIdQRw2ti0hz81",
+                "profile": {
+                  "name": "ZAYN"
+                },
+                "uri": "spotify:artist:5ZsFI1h6hIdQRw2ti0hz81",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb830845d2fa6c5c7874176951",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178830845d2fa6c5c7874176951",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174830845d2fa6c5c7874176951",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "540vIaP2JwjQb9dm3aArA4",
+                "profile": {
+                  "name": "DJ Snake"
+                },
+                "uri": "spotify:artist:540vIaP2JwjQb9dm3aArA4",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb175df1a8848d8ff67c6d5600",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178175df1a8848d8ff67c6d5600",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174175df1a8848d8ff67c6d5600",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "7n2wHs1TKAczGzO7Dd2rGr",
+                "profile": {
+                  "name": "Shawn Mendes"
+                },
+                "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb58b4b9419486550f6fda0535",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f17858b4b9419486550f6fda0535",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab6761610000517458b4b9419486550f6fda0535",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "31TPClRtHm23RisEBtV3X7",
+                "profile": {
+                  "name": "Justin Timberlake"
+                },
+                "uri": "spotify:artist:31TPClRtHm23RisEBtV3X7",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb7a5cfe2597665a3d160e805e",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1787a5cfe2597665a3d160e805e",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051747a5cfe2597665a3d160e805e",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "0C8ZW7ezQVs4URX5aX7Kqx",
+                "profile": {
+                  "name": "Selena Gomez"
+                },
+                "uri": "spotify:artist:0C8ZW7ezQVs4URX5aX7Kqx",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb815e520e3ce7fe210046ba66",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178815e520e3ce7fe210046ba66",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174815e520e3ce7fe210046ba66",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "6eUKZXaKkcviH0Ku9w2n3V",
+                "profile": {
+                  "name": "Ed Sheeran"
+                },
+                "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebd55c95ad400aed87da52daec",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178d55c95ad400aed87da52daec",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174d55c95ad400aed87da52daec",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "21E3waRsmPlU7jZsS13rcj",
+                "profile": {
+                  "name": "Ne-Yo"
+                },
+                "uri": "spotify:artist:21E3waRsmPlU7jZsS13rcj",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebca118e3822061f7b7f6bc537",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178ca118e3822061f7b7f6bc537",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174ca118e3822061f7b7f6bc537",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "5ndkK3dpZLKtBklKjxNQwT",
+                "profile": {
+                  "name": "B.o.B"
+                },
+                "uri": "spotify:artist:5ndkK3dpZLKtBklKjxNQwT",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebc9a97fba42e640d955fedf46",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178c9a97fba42e640d955fedf46",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174c9a97fba42e640d955fedf46",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "06HL4z0CvFAxyc27GXpf02",
+                "profile": {
+                  "name": "Taylor Swift"
+                },
+                "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02",
+                "visuals": {
+                  "avatarImage": {
+                    "sources": [
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebe2e8e7ff002a4afda1c7147e",
+                        "width": 640
+                      },
+                      {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178e2e8e7ff002a4afda1c7147e",
+                        "width": 160
+                      },
+                      {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174e2e8e7ff002a4afda1c7147e",
+                        "width": 320
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "relatedMusicVideos": [],
+          "saved": false,
+          "sharingInfo": {
+            "shareId": "-KWAMHoLQA2Rwc3vmQCaBA",
+            "shareUrl": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s?si=-KWAMHoLQA2Rwc3vmQCaBA"
+          },
+          "stats": {
+            "followers": 89982015,
+            "monthlyListeners": 140381301,
+            "topCities": [
+              {
+                "city": "London",
+                "country": "GB",
+                "numberOfListeners": 2181813,
+                "region": "ENG"
+              },
+              {
+                "city": "São Paulo",
+                "country": "BR",
+                "numberOfListeners": 1918165,
+                "region": "SP"
+              },
+              {
+                "city": "Jakarta",
+                "country": "ID",
+                "numberOfListeners": 1629882,
+                "region": "JK"
+              },
+              {
+                "city": "Mexico City",
+                "country": "MX",
+                "numberOfListeners": 1497826,
+                "region": "CMX"
+              },
+              {
+                "city": "Quezon City",
+                "country": "PH",
+                "numberOfListeners": 1427546,
+                "region": "00"
+              }
+            ],
+            "worldRank": 1
+          },
+          "unmappedMusicVideos": [],
+          "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s",
+          "watchFeedEntrypoint": null
+        },
+      },
+      {
+        name: "Track",
+        method: "GET",
+        description: "Get Spotify track",
+        fullDescription:
+          "Retrieves detailed information about a Spotify track by its id or URL, including track metadata, artists, album info, duration, playability, and sharing details.",
+        path: "/v1/spotify/track",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify track id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "1ITJflybJsfarsUtiBvkfK",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify song URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/track/1ITJflybJsfarsUtiBvkfK",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997935404,
+          "__typename": "Track",
+          "associationsV3": {
+            "audioAssociations": [],
+            "videoAssociations": {
+              "totalCount": 0
+            }
+          },
+          "contentRating": {
+            "label": "EXPLICIT"
+          },
+          "duration": {
+            "totalMilliseconds": 186112
+          },
+          "id": "1ITJflybJsfarsUtiBvkfK",
+          "mediaType": "AUDIO",
+          "name": "Shoulda Never (feat. USHER)",
+          "playability": {
+            "playable": true,
+            "reason": "PLAYABLE"
+          },
+          "playcount": 7190090,
+          "saved": false,
+          "sharingInfo": {
+            "shareId": "uSMzDZBBRDOHdFcn87thNw",
+            "shareUrl": "https://open.spotify.com/track/1ITJflybJsfarsUtiBvkfK?si=uSMzDZBBRDOHdFcn87thNw"
+          },
+          "trackNumber": 8,
+          "uri": "spotify:track:1ITJflybJsfarsUtiBvkfK",
+          "albumOfTrack": {
+            "copyright": [
+              {
+                "text": "© 2026 Atlantic Records Group LLC",
+                "type": "C"
+              },
+              {
+                "text": "℗ 2026 Atlantic Records Group LLC",
+                "type": "P"
+              }
+            ],
+            "courtesyLine": "",
+            "id": "2xkYTmqjear3lSGydIn7wh",
+            "date": {
+              "isoString": "2026-04-24T00:00:00Z",
+              "precision": "DAY",
+              "year": 2026
+            },
+            "name": "Kehlani",
+            "playability": {
+              "playable": true
+            },
+            "sharingInfo": {
+              "shareId": "tgjmwiVTRmaaQGK0sKdcJg",
+              "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=tgjmwiVTRmaaQGK0sKdcJg"
+            },
+            "tracks": [
+              {
+                "track": {
+                  "trackNumber": 1,
+                  "uri": "spotify:track:4PDLyPnlDeu7PRzAUyyUO3"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 2,
+                  "uri": "spotify:track:1LCiGi699HYk4nznLRQovN"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 3,
+                  "uri": "spotify:track:4juXNV2tlVXBmqlDjraYcm"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 4,
+                  "uri": "spotify:track:5cdA1RgRhQtETGtPBYSe5x"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 5,
+                  "uri": "spotify:track:1RNcORpluixtdsa5CBFjBH"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 6,
+                  "uri": "spotify:track:2NJmAuEidDfT3r7nSqVDmD"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 7,
+                  "uri": "spotify:track:6Ia05odJX7EOVCNM6txaKO"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 8,
+                  "uri": "spotify:track:1ITJflybJsfarsUtiBvkfK"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 9,
+                  "uri": "spotify:track:0gOqiYjyMS4zhYCHVTz57I"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 10,
+                  "uri": "spotify:track:3PWcsbzCtIU55qGOTLPBcN"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 11,
+                  "uri": "spotify:track:0Ntgg91du8iTGOobonADUu"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 12,
+                  "uri": "spotify:track:0n3LWQalDEi00YXrswsoGq"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 13,
+                  "uri": "spotify:track:61WdhGJZSILRG11rRJP1gm"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 14,
+                  "uri": "spotify:track:3o38qU7kCsjKaxBQMVAhj8"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 15,
+                  "uri": "spotify:track:6Q1biSMDWjVrtpcZNeAd5A"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 16,
+                  "uri": "spotify:track:4xG7G5EzswBoe0P1hXns1C"
+                }
+              },
+              {
+                "track": {
+                  "trackNumber": 17,
+                  "uri": "spotify:track:3UTn3yBXjZCAkGOSxCQwwl"
+                }
+              }
+            ],
+            "type": "ALBUM",
+            "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+            "coverArt": {
+              "extractedColors": {
+                "colorRaw": {
+                  "hex": "#502020"
+                }
+              },
+              "sources": [
+                {
+                  "height": 300,
+                  "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                  "width": 300
+                },
+                {
+                  "height": 64,
+                  "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                  "width": 64
+                },
+                {
+                  "height": 640,
+                  "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                  "width": 640
+                }
+              ]
+            }
+          },
+          "firstArtist": [
+            {
+              "discography": {
+                "albums": [
+                  {
+                    "date": {
+                      "isoString": "2026-04-24T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Kehlani",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "o2YeInVoTnSojn2WeDO3JQ",
+                      "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=o2YeInVoTnSojn2WeDO3JQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4PDLyPnlDeu7PRzAUyyUO3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:1LCiGi699HYk4nznLRQovN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:4juXNV2tlVXBmqlDjraYcm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5cdA1RgRhQtETGtPBYSe5x"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:1RNcORpluixtdsa5CBFjBH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:2NJmAuEidDfT3r7nSqVDmD"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:6Ia05odJX7EOVCNM6txaKO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:1ITJflybJsfarsUtiBvkfK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0gOqiYjyMS4zhYCHVTz57I"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:3PWcsbzCtIU55qGOTLPBcN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:0Ntgg91du8iTGOobonADUu"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:0n3LWQalDEi00YXrswsoGq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:61WdhGJZSILRG11rRJP1gm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:3o38qU7kCsjKaxBQMVAhj8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:6Q1biSMDWjVrtpcZNeAd5A"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:4xG7G5EzswBoe0P1hXns1C"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:3UTn3yBXjZCAkGOSxCQwwl"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Kehlani",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "9nd5c5FITyeIalJdpcGYIw",
+                      "shareUrl": "https://open.spotify.com/album/5KS0QmxwUmSPsolg9VaSAU?si=9nd5c5FITyeIalJdpcGYIw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6DIOkaK1FGPQifOw48eVKS"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:40MEb5ut91mIFD5bsOIiWM"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:14Zj4WEhYjINkDqgHHBdx8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:6sTlzpJaFGkFQ4BNccmbW9"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:1U587tPvxadzUSiFUynUiV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:0GDxSwDdegrU6pPhWnWzrC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:2g2PzkrsP8UAn5GTINIMFV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:7vZK5QMKDqTkpmkRNjzoem"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:6QqL1LEQh78bddfsbV5bv4"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:10o1vqgBU1LCHTNwwEHbBc"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:073Jq32Hgv7IQMpuFLtg9v"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:40JuPz24kBg6shFDkrquBl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:0eP8hvO7q3KbtGG9wSh7xs"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:76ez0HsTdjg0YXC8EMY6uZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:1mwWTCmOKSlAaHJWj0or4N"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:6hLvyeDosZUdvsJxGwwWwX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:6ix7b6ilnJF0nRerRlLGwb"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:5KS0QmxwUmSPsolg9VaSAU",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d9233d03f5434d9dd46c9fd6",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851d9233d03f5434d9dd46c9fd6",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d9233d03f5434d9dd46c9fd6",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2024-08-28T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "While We Wait 2",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "KiyczawVTzCTXCy5Kmd6QA",
+                      "shareUrl": "https://open.spotify.com/album/6BtMJG0J0QnXIiGRCMgkxA?si=KiyczawVTzCTXCy5Kmd6QA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:0EzGo7e1iSzk8GurP7pn15"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0uYBQGchK3LIkNpxnrA6k7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1sNYvKAc4xMIb7FURYo04r"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0rNDm3uRDxLCnBlpU83Lkt"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:6u7nuBZnO53vy8Kmpc6kEU"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:1CNRS3JIAMyCKdO6uLuhuh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:5HHQseqhsxImBCNNi7nLVM"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:6WGfYz5f6ym3TmVuR2ptjp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:5WFO2awMKfM4ODh94sj3qe"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:0CeEBH3lA4l8Uq4VPB5Etv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:58y8IFGLZMskPTDpO0XbnI"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5FnBE6KJdwoaZISb1jiNpR"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:5DLsTmQFQ3yCPowg1nreoh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:0j6jTxxvxwKok391JlaRVD"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6BtMJG0J0QnXIiGRCMgkxA",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#382020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028b47a06f31b5b694c4759fc3",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518b47a06f31b5b694c4759fc3",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738b47a06f31b5b694c4759fc3",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2024-08-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "While We Wait 2",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "S7Rlrt94TwusIVwpjRtYnA",
+                      "shareUrl": "https://open.spotify.com/album/0tmZqPHODtZmBHr3cozsOa?si=S7Rlrt94TwusIVwpjRtYnA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4DolCFcinzYqHaeUUG9n23"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:7nBH9p1JeLmvkxW17JRprs"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:6weyVLHtrJV5BTFex0ebYn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5ld0A5XfAxtffwMNuFlGgN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:0Wk1DLRMZxzlRXOUYUkEhp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:4gOx54tn5bPWxIVkNyLyY3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:3ygPOFRb3mc8xNfFRMdrfx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:3blkTnAo6nFyYS3ieQMhWy"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:2PxT5B5GSPVaxOgmglBHK7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:4c8wrU8EdNMtSAJxEW5n0b"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:00FZPES3Rcw2Yu4p1MrwKC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5HNAky05G2LvAmXvJYqcgz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4T9f5Btf2PvDm5DT25VHTO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:5rTldLtZ2OIrLThAK8rQrC"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:0tmZqPHODtZmBHr3cozsOa",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#382020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02466dde2bd130cb8ee5f6b856",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851466dde2bd130cb8ee5f6b856",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273466dde2bd130cb8ee5f6b856",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2024-06-21T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "CRASH",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "8W7fbhe0QlCW6YGWPWXwZQ",
+                      "shareUrl": "https://open.spotify.com/album/6GF5uzX2s0GsS4eGlM4h3m?si=8W7fbhe0QlCW6YGWPWXwZQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5oxUDQOmmC7hAzv9wWvvDA"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0EMZZT09D55PCjK6oxIthV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:2nUm1FJaMqdSp0ODkadQn4"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:04yttrHDC9OtG9WOfBHbsX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:3O3qQvEttagauEZruP1gtB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:17fMdv2JY435A1naCGTtby"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:6DaOjQgLWflvPeEbL0incg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:0cyve5xREyEbmnsZaMRW7V"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0A0MTURTbuUgZNvS9tbh1g"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:2en7hnmRZpVWwCrKtD0KBK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:5HTKh2OhsOTan44KFA4VOM"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:3KyWmz5o78jzRerTA2AMQR"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:41YmnVKC2fu5g9Iru0q4Ju"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6GF5uzX2s0GsS4eGlM4h3m",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#385890"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e020346bdd9ed84ff9fd226e8b4",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048510346bdd9ed84ff9fd226e8b4",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2730346bdd9ed84ff9fd226e8b4",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2024-06-20T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "CRASH",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "a-_b3Gv1TJCi4RCmy3KJQQ",
+                      "shareUrl": "https://open.spotify.com/album/2MRNLEYm9SB0HBrJEU8L32?si=a-_b3Gv1TJCi4RCmy3KJQQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:0afn4WHw9aQDn4lxARlXKS"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:5CAHJWqpZvYwl2NUj1NDkx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:4ChomJf8z16E6Zw4EoioYY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0NrnJeX44kXKcENXtpzHKt"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4z53BcOppuOdRIEgRITrQS"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6Y6ZCgKWHTtfMhKRRwjJ4a"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:5VsgmkwxbOO0J4u9WGzKDP"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:4Ur6cmXbkFJLEYwl3UYspg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:3PTKJqdK3OfK16kS56HuPb"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:2c2Q0qjA0m9me6Z043z9xd"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4plIzMZ86esEJJbc5FBze9"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:69tjVeRKb1PMP90MqmHr7R"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:3Y9vDBMYjpp3hQlRcaRJRG"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2MRNLEYm9SB0HBrJEU8L32",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#385890"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02133dc7b29a0209a3c12eaa2b",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851133dc7b29a0209a3c12eaa2b",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273133dc7b29a0209a3c12eaa2b",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2022-04-29T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2022
+                    },
+                    "name": "blue water road",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "NvP7FW5DSN-jL4RyxIpMSQ",
+                      "shareUrl": "https://open.spotify.com/album/2WfV3cpI2BUuIxMISh9nqF?si=NvP7FW5DSN-jL4RyxIpMSQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5tDyUiXPUZDIx8nnZvRTMl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:2OqS1qDeZpXDL7VsTq4Fci"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5NZMLV6AWI3O32RMu4dUg7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5v8oHydXFHM1je05EFyIdw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:0B3hRuQLvogv6InPAtI31H"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:0jeCoIGrGhw8lnkd5YF0qB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:3WnGLAKOeutk6CPmWQ0G2i"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:20jLHaXVhMFjwHs1JPjL4S"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:1GaMFbWeBZeSwgyAEr1s4m"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:5HpMZmGVA7YJiRg8SNVFH4"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4Js74DCY9nFlGR9JWqfNVg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:6pyM30WDpG70VTfwoQg4m2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4dIVFjnAzAYjJEdWiUGFwu"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2WfV3cpI2BUuIxMISh9nqF",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#F0E8E8"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02cd318840ba8784421377b5a0",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851cd318840ba8784421377b5a0",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273cd318840ba8784421377b5a0",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2022-04-28T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2022
+                    },
+                    "name": "blue water road",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "wF0O93KnRnW0fpsO2U0QHg",
+                      "shareUrl": "https://open.spotify.com/album/1fZRXWVJVe07UcD4GowJ8j?si=wF0O93KnRnW0fpsO2U0QHg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6qfM5ce5suSQUneucdljHl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:4gnrIW6VqlCxVbOSVE50zi"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:0AsNSgcRvG7eNSiWj9HV5Y"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:6szTu0TuV6gEVzM5oAk2Ly"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4WCAb7rGU70hyx3m9joKCx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6LNcP2sslo7fERR7j4pGah"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:0yce2RnFdx2OhL2v89EfkE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:4zgAsAAAgr0cQ7MZPcZhw3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:1DVgSm1FpFBT8usWhnC5vF"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:1pCbBNRglGwlMLeUTOnqrO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:29UH4IWs5HAe8pqhdFj8H3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5KYPQ0lgRX8rB9sApPdwIZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:1Y33jUKrQwWHjI0UWqiYtc"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:1fZRXWVJVe07UcD4GowJ8j",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#F0E8E8"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e021195944be897770537547f51",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048511195944be897770537547f51",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2731195944be897770537547f51",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2020-05-08T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2020
+                    },
+                    "name": "It Was Good Until It Wasn't",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "ZgNDPGTwQ6mKNF-jf7Trjg",
+                      "shareUrl": "https://open.spotify.com/album/6ROLwnmW9pOioLned0DaP3?si=ZgNDPGTwQ6mKNF-jf7Trjg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5nexAvWNhwg51EavnDgViy"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0uDdI4fAXCuNhQbmxENdsO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1Fraz3CzCuOULnToogIwWW"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4sxVrSzqPGv18mDbZnytLn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4ot7u8Ij91aHKohSV2QYZi"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:1YqXXJDSlDHrp66g9as4uo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:1wBcy2jyslYSO7nczt8TJE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:6TrdeNEgbKuBqIToRfdWMY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0QUbiLQySWPq5Lh3f7A9bN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:5ftR963YlX88OeCAPnXG2Z"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:24QjawKdGJmsAIVe3EhzGH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:12xVuIohhHSklxvi1ItKGA"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4bzd4evyqXabRtesx4emPn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:4J4yA7A68PmgSbjAn425eY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:0SQW4Z8PYiNn1TUwoXMY4l"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6ROLwnmW9pOioLned0DaP3",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#506880"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02ae10ed5541f3fd9fd339b711",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851ae10ed5541f3fd9fd339b711",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273ae10ed5541f3fd9fd339b711",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2020-05-07T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2020
+                    },
+                    "name": "It Was Good Until It Wasn't",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "BtuMJUM1RkCcVUWj1CaxOg",
+                      "shareUrl": "https://open.spotify.com/album/5aDILeQNfZHqDBDyu0deCG?si=BtuMJUM1RkCcVUWj1CaxOg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6mpP17LJUtn8W5tNMnjmMC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:5za3gDk5z9B4RyrX58imRV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:6L57fGlqRm1Bnf7OQeqc7p"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:1mE7ki8ieEF99cpuesp55b"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:1xpRPk0iihLZyfvpIRvFiH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:4AFMibWKIelCbIh0ViOsWA"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:2KvQhQr5nCZDibAbfRzy9b"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:3QR2Xe9BMdemMRPRgSQBoO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:3XM9ic6bKnvskw9zT1zQ9p"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:6JlloeI5QfkD0tsDXjdsHq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:5GmhBvvnqieVoq858h5izt"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:7gcwS42T8bb25Cj55aL16e"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:0oNGr0utY95zBv245kL09E"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:5V9NwNMpVAB0XphgsVaZmk"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:3kEWnzeEHh0LgiNKetVHi4"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:5aDILeQNfZHqDBDyu0deCG",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#506880"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e024e027024f888268fdb14fd7b",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048514e027024f888268fdb14fd7b",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2734e027024f888268fdb14fd7b",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2019-02-22T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2019
+                    },
+                    "name": "While We Wait",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "4H1IUMIRSlaNejKib9KAhg",
+                      "shareUrl": "https://open.spotify.com/album/73ZvpuYhKDr2FW4vlPsTpW?si=4H1IUMIRSlaNejKib9KAhg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4k6hX9RKD096K1NCjjJZLc"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0aSW5EMeNnQSMJQ8QN3zIW"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:0tkmYNfaEaH9HpR59ApRtE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0kas95RruYRVqrOb07rgkh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4BOikd4oZjOYMde9AXfrTo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6ZRuF2n1CQxyxxAAWsKJOy"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:1EGrDTfEuAiRzRdxlblpET"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:32s2Dn9EVvO2f85MrpRoBV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:4jM3c9KLTO9iZPm9A7neiL"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#083850"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2019-02-21T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2019
+                    },
+                    "name": "While We Wait",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "qXWQ-xShSSKK1O-kxNSHpg",
+                      "shareUrl": "https://open.spotify.com/album/1YwO0apo9Oy6QTI4D8qWUf?si=qXWQ-xShSSKK1O-kxNSHpg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:40ux5ovsNq0r4sJ6lNC1Uk"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:1KxTNmgakNh3PFzGTLwNYr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:7BfM4g42namPlH0cngFFiZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:3N2R4nohR76f3adk0CicEU"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:3pBqlJeFRCDWP6AK19Y6NO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:7pDnzwe6GeOmVcNoGnWi0a"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:4t5JiO53qENJi0KqnaBtfU"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:11aPoQJ6CwjWqHplsV54oC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:5TosDksjYICHKwyWDVKtwE"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:1YwO0apo9Oy6QTI4D8qWUf",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#083850"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e025a0e6683a1e2834fe78d157a",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048515a0e6683a1e2834fe78d157a",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2735a0e6683a1e2834fe78d157a",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2017-01-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2017
+                    },
+                    "name": "SweetSexySavage (Deluxe)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "A4TC5UEgSJiV386pDruxFQ",
+                      "shareUrl": "https://open.spotify.com/album/32jei6omhyLZDCg8Ijvoym?si=A4TC5UEgSJiV386pDruxFQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5cw9s2zGrbny2M2p3WRmGm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:3YaMX9Cf68dxiG6RKo0pSY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1cAL4sFzXXRMbpZnTPa7Zi"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4w5BVeKJFCj2rrrEy31s0n"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4ta2AWru6ldjg1aHzww0aK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:45DJ0PbKPdbslnyrcM80HN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:7yNu82yd6dYmGQ0H1q0jKo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:4v4HwTfMPslhWAnJxIXchn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:6XptjfnUvLfejptpjPRhCT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:1y2SK8EjL3WSnJvJEMWOoq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4UMp46x46Zmu9OEr8m3Gl2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:7nb50hgKYhnHJLHKZ7qiKO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:5y5OzukBTl0yTRMEdNmApJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:3Hdl3BEFb1IEbL0Jq53enx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:0lsC0OkBgiLYbSsoHOzMnr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:0Pm1BZp4MpoMKkNxIXCfAu"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:2droOB3xlZkhgfUM0owDTq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:2Nd2HLWrIq1DcNMiYPTQUC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:4j644tViOFAf4i0BYT12R8"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#D06870"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2017-01-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2017
+                    },
+                    "name": "SweetSexySavage (Deluxe)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "Snqk40LvSRaj-Zz064J-4g",
+                      "shareUrl": "https://open.spotify.com/album/4B4in9QlrlYWSHlYSRebdC?si=Snqk40LvSRaj-Zz064J-4g"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4vyx1VpPUpYEEWx60MWQPr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:4MV4wa3Dke1GMBtk06GMR0"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:2wSQyp6VzUopSFBinRo1iD"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0bBgXH6mybXjdngxKF5zBE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:6krNSTegkvGMmdIUOUEQH1"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6Dwtha2FtZFoMEBh5GR2sq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:39jPNpyS33FFAw6xsFvvmG"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:6z9FEwAodaaP237VvgZ8QL"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0wrEpbtamvQTLIjDFkVQSl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:2CsSaYUPI57QaeB90gwzGT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:6piGXG0H9AybPDVnwwIMao"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5clYhUpqYzy0Fdz3TdtZ3j"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:7EJnwLAomcpc265mbt1maV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:466nTkRePUO44ptVwsvGYJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:4cA6e3U7mtJfAOq3dWNAUZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:57J6Q5l6AFeZZYiU2UGPRq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:1lgIfLiB4abFQR90h7gRcC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:32rbXXATG6keHt8tcVieuX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:3xu9SmOgRdYxs0QTo3L4vl"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:4B4in9QlrlYWSHlYSRebdC",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#D06870"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0243515daa8b28e0978efe9543",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485143515daa8b28e0978efe9543",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27343515daa8b28e0978efe9543",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2017-01-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2017
+                    },
+                    "name": "SweetSexySavage (Deluxe)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "sKoE_BsbSh2eW418UVu4og",
+                      "shareUrl": "https://open.spotify.com/album/5opgjunFWCKTMaKhsLnS2e?si=sKoE_BsbSh2eW418UVu4og"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6EfJ7RArXWvhBQREJysP88"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:2cLe4jlYplQtEhFDmeaRlz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:2veb4qbYhmsEBSncX7Er3o"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4W6vliznRlX2I1SGlqXg1O"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:0xlPLup1zlCZptquA43N2D"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:0RCy61mHkFSXbzYXOfxTz8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:4ojDpeDqrxboudNDhpSz1H"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:5JqTzLBnzlAeMsWue8Gxyw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:76GtEvLUt3xfvaNu9qMbGH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:1RHQQngY12KXHzVELD8AsB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:6nmAc5fCL77c4fnktTzrIY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:0NJD2DEiMG9UvIFWjnNhFQ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:3D0WHCOIWzk5xAMZ3dtAZv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:1gBVTX0bDw6Qb9402mK26j"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:13AHq86lKNvE0QoFIKAiAf"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:34Vac5OuWsmZM0G91BRvGm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:6u6Fa38EVQh3lgvoZp4IkW"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:3wU9ERB1iFLB4L806NvTQY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:46BfCsYS7VrPasdPMu0lct"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:5opgjunFWCKTMaKhsLnS2e",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#D06870"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0251b6a24b4509f7134b32ced9",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485151b6a24b4509f7134b32ced9",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27351b6a24b4509f7134b32ced9",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2015-04-28T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2015
+                    },
+                    "name": "You Should Be Here",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "wezHlLRiS8yaUS6Y1j4-fg",
+                      "shareUrl": "https://open.spotify.com/album/3JFEZqTae3svhW8226cnNL?si=wezHlLRiS8yaUS6Y1j4-fg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:3G9GZsgNp2RQwzkzsYWfnK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:7s8uqVo8PbFO63eqBoxrsT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:2A0uPTOfA94mhYDJTWmT9m"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0wqgbpLaOTjnxoxL1WV5Fr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:2LIhj8VB3lMKrUdNC6er19"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:0Kz9XqLxIeMQveGISrWvz3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:4ZxfumRtgQcPdNNvFw4cXx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:3kZFVgDo38sLyNM2TujLPT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:6mPTMg3DKv58M5JLbUm5lf"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:4O2qERMtZ0EcFt9aRdVUs0"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:65J9QaJDC99OcBBUb4FdlY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5QbBe0MC6ZU0xfZZgAqO7j"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4QQKkikjJtaoeHKn3TwYHH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:1VjZKeNqOn8gXvF1X0pI6G"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:3JFEZqTae3svhW8226cnNL",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#A02830"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0210e3ed6f6ee10390058f681a",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485110e3ed6f6ee10390058f681a",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27310e3ed6f6ee10390058f681a",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2015-04-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2015
+                    },
+                    "name": "You Should Be Here",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "wi217afMQi-OoI0Z8tn6oA",
+                      "shareUrl": "https://open.spotify.com/album/4vYOFw045EArDK0PFNrbD8?si=wi217afMQi-OoI0Z8tn6oA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7E4BmYr1eFGgCAGayLy6Xj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0RPxTSb6B13DfU689w7G3Q"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5Iy0gdy9yjZGMnDlDlIvzY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:6NPkHrbIR5Kv38tR16xjJn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:6Vwivxkq8lwHTFNTcx7Ccg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6ESjv0DXCPlC7Sp81QtNDD"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:4cvYz7caZrt8fDYG0OH2lX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:3TYqM1Hn7RN5HgMveCHCDL"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0msM8C81kL4rXNSalCTqBq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:5Kzge8sfZdbOzdLlpRpBtD"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:7DpEQ7kF92ZDWTokH00Wyl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:7jcruvWk1mXoTdhUrJfwim"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:1ts4OpMLDo7wzXMekpcsGa"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:2wWLpQkZ3DthzK1JBkP70B"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:4vYOFw045EArDK0PFNrbD8",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#A02830"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0258cbcb680f964211ddceb185",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485158cbcb680f964211ddceb185",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27358cbcb680f964211ddceb185",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2014-08-26T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2014
+                    },
+                    "name": "Cloud 19",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "ZyOdoVULSs-ceryrtpCfVQ",
+                      "shareUrl": "https://open.spotify.com/album/0Z4zmV6ITJ6PUjCmAsHxdE?si=ZyOdoVULSs-ceryrtpCfVQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:01QarjS3RWHEXJMWYZeyJG"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0qXB712p0kz9oBUnyYFlr9"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:7fSZkkgU1i71pCO2zapzhd"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:7Cpp66vzI22cTUyElanxKB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:10sP6mykiMbeyA8jx2kUF0"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6VZLsH7QWE4ZXuhWyVaEmB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:71TOz4UB8wA3X0KaLFIfWI"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:0Z4zmV6ITJ6PUjCmAsHxdE",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#E0B8B8"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d86aeb6beeac5c0bbc25691e",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851d86aeb6beeac5c0bbc25691e",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d86aeb6beeac5c0bbc25691e",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "popularReleasesAlbums": [
+                  {
+                    "date": {
+                      "isoString": "2026-04-24T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Kehlani",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "kDxxO1hmRp2Bpu66R81Ujw",
+                      "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=kDxxO1hmRp2Bpu66R81Ujw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4PDLyPnlDeu7PRzAUyyUO3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:1LCiGi699HYk4nznLRQovN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:4juXNV2tlVXBmqlDjraYcm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5cdA1RgRhQtETGtPBYSe5x"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:1RNcORpluixtdsa5CBFjBH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:2NJmAuEidDfT3r7nSqVDmD"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:6Ia05odJX7EOVCNM6txaKO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:1ITJflybJsfarsUtiBvkfK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0gOqiYjyMS4zhYCHVTz57I"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:3PWcsbzCtIU55qGOTLPBcN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:0Ntgg91du8iTGOobonADUu"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:0n3LWQalDEi00YXrswsoGq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:61WdhGJZSILRG11rRJP1gm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:3o38qU7kCsjKaxBQMVAhj8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:6Q1biSMDWjVrtpcZNeAd5A"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:4xG7G5EzswBoe0P1hXns1C"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:3UTn3yBXjZCAkGOSxCQwwl"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2020-05-08T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2020
+                    },
+                    "name": "It Was Good Until It Wasn't",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "8XWDosB6Ta6XY9hYNXRfwQ",
+                      "shareUrl": "https://open.spotify.com/album/6ROLwnmW9pOioLned0DaP3?si=8XWDosB6Ta6XY9hYNXRfwQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5nexAvWNhwg51EavnDgViy"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0uDdI4fAXCuNhQbmxENdsO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1Fraz3CzCuOULnToogIwWW"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4sxVrSzqPGv18mDbZnytLn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4ot7u8Ij91aHKohSV2QYZi"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:1YqXXJDSlDHrp66g9as4uo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:1wBcy2jyslYSO7nczt8TJE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:6TrdeNEgbKuBqIToRfdWMY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0QUbiLQySWPq5Lh3f7A9bN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:5ftR963YlX88OeCAPnXG2Z"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:24QjawKdGJmsAIVe3EhzGH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:12xVuIohhHSklxvi1ItKGA"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4bzd4evyqXabRtesx4emPn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:4J4yA7A68PmgSbjAn425eY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:0SQW4Z8PYiNn1TUwoXMY4l"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6ROLwnmW9pOioLned0DaP3",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#506880"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02ae10ed5541f3fd9fd339b711",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851ae10ed5541f3fd9fd339b711",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273ae10ed5541f3fd9fd339b711",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2019-02-22T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2019
+                    },
+                    "name": "While We Wait",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "lDTprKw_R2K_SILbt5d9Rw",
+                      "shareUrl": "https://open.spotify.com/album/73ZvpuYhKDr2FW4vlPsTpW?si=lDTprKw_R2K_SILbt5d9Rw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:4k6hX9RKD096K1NCjjJZLc"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:0aSW5EMeNnQSMJQ8QN3zIW"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:0tkmYNfaEaH9HpR59ApRtE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0kas95RruYRVqrOb07rgkh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4BOikd4oZjOYMde9AXfrTo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:6ZRuF2n1CQxyxxAAWsKJOy"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:1EGrDTfEuAiRzRdxlblpET"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:32s2Dn9EVvO2f85MrpRoBV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:4jM3c9KLTO9iZPm9A7neiL"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#083850"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2022-04-29T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2022
+                    },
+                    "name": "blue water road",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "NNUX3K4rTU6lVgYgg7HzlQ",
+                      "shareUrl": "https://open.spotify.com/album/2WfV3cpI2BUuIxMISh9nqF?si=NNUX3K4rTU6lVgYgg7HzlQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5tDyUiXPUZDIx8nnZvRTMl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:2OqS1qDeZpXDL7VsTq4Fci"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5NZMLV6AWI3O32RMu4dUg7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5v8oHydXFHM1je05EFyIdw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:0B3hRuQLvogv6InPAtI31H"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:0jeCoIGrGhw8lnkd5YF0qB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:3WnGLAKOeutk6CPmWQ0G2i"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:20jLHaXVhMFjwHs1JPjL4S"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:1GaMFbWeBZeSwgyAEr1s4m"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:5HpMZmGVA7YJiRg8SNVFH4"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4Js74DCY9nFlGR9JWqfNVg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:6pyM30WDpG70VTfwoQg4m2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4dIVFjnAzAYjJEdWiUGFwu"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2WfV3cpI2BUuIxMISh9nqF",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#F0E8E8"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02cd318840ba8784421377b5a0",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851cd318840ba8784421377b5a0",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273cd318840ba8784421377b5a0",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-10T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Back and Forth (feat. Missy Elliott)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "V5hsMg5xRnakNe2VDZa7dA",
+                      "shareUrl": "https://open.spotify.com/album/3yb1H4Mf6annZTGWpmAoCW?si=V5hsMg5xRnakNe2VDZa7dA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6t263UZVjI9nnHfr7eeLW4"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:3yb1H4Mf6annZTGWpmAoCW",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#685050"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028b7e552f354fff5d90bb55dd",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518b7e552f354fff5d90bb55dd",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738b7e552f354fff5d90bb55dd",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2025-12-22T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2025
+                    },
+                    "name": "Folded - A COLORS SHOW",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "izmSX6SFR46gPiVEwoKIUw",
+                      "shareUrl": "https://open.spotify.com/album/7a3yNq3BIyDEYPguafVKDf?si=izmSX6SFR46gPiVEwoKIUw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:0dZG4yK5yPxGBbViV97mky"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:7a3yNq3BIyDEYPguafVKDf",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#381018"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0259ac898bca5c93f5f21bf7b5",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485159ac898bca5c93f5f21bf7b5",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27359ac898bca5c93f5f21bf7b5",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2025-11-07T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2025
+                    },
+                    "name": "Out The Window",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "6adBHwF4Rg25QdiUDDc7jA",
+                      "shareUrl": "https://open.spotify.com/album/4FdvzXXXWgv3YxkUuW2307?si=6adBHwF4Rg25QdiUDDc7jA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5MqzNAzRgVj2dfp30LJ6s1"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:4FdvzXXXWgv3YxkUuW2307",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#884038"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02e1de233e335f2c8d8d1d4299",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851e1de233e335f2c8d8d1d4299",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273e1de233e335f2c8d8d1d4299",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2025-05-02T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2025
+                    },
+                    "name": "Think Of Me",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "4Swg2ThRS-OlEURVWVD-Dg",
+                      "shareUrl": "https://open.spotify.com/album/6CjFvd1Oj0cljGm226jCvH?si=4Swg2ThRS-OlEURVWVD-Dg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:3RvkuiK2x5BlSQWYqTYjIS"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:6CjFvd1Oj0cljGm226jCvH",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#C02010"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028a11d115df8366eff0d0f126",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518a11d115df8366eff0d0f126",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738a11d115df8366eff0d0f126",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2024-04-04T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "After Hours",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "u1W7CkOdSqqVOZGbF33Brw",
+                      "shareUrl": "https://open.spotify.com/album/062urW4KS66GPlEHIueefz?si=u1W7CkOdSqqVOZGbF33Brw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:2x03XLsTZ0o86h0cfHrkKF"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:062urW4KS66GPlEHIueefz",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#3028B0"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0211931c4d211ac9a27b6747e0",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485111931c4d211ac9a27b6747e0",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27311931c4d211ac9a27b6747e0",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2017-01-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2017
+                    },
+                    "name": "SweetSexySavage (Deluxe)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "_wa9zsq_SnyGevfAZSA-1w",
+                      "shareUrl": "https://open.spotify.com/album/32jei6omhyLZDCg8Ijvoym?si=_wa9zsq_SnyGevfAZSA-1w"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5cw9s2zGrbny2M2p3WRmGm"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:3YaMX9Cf68dxiG6RKo0pSY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1cAL4sFzXXRMbpZnTPa7Zi"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4w5BVeKJFCj2rrrEy31s0n"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:4ta2AWru6ldjg1aHzww0aK"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:45DJ0PbKPdbslnyrcM80HN"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:7yNu82yd6dYmGQ0H1q0jKo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:4v4HwTfMPslhWAnJxIXchn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:6XptjfnUvLfejptpjPRhCT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:1y2SK8EjL3WSnJvJEMWOoq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4UMp46x46Zmu9OEr8m3Gl2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:7nb50hgKYhnHJLHKZ7qiKO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:5y5OzukBTl0yTRMEdNmApJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:3Hdl3BEFb1IEbL0Jq53enx"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:0lsC0OkBgiLYbSsoHOzMnr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:0Pm1BZp4MpoMKkNxIXCfAu"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:2droOB3xlZkhgfUM0owDTq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:2Nd2HLWrIq1DcNMiYPTQUC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:4j644tViOFAf4i0BYT12R8"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#D06870"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "singles": [
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Sweet Nuthins (feat. Leon Thomas)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "YbH9FRW_RCKl62VAEMgVhA",
+                      "shareUrl": "https://open.spotify.com/album/4OIEqxUAhJ3fxEVqf5L9GB?si=YbH9FRW_RCKl62VAEMgVhA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7qa1DytPRohFzfOarz6orJ"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:4OIEqxUAhJ3fxEVqf5L9GB",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02b12f0dbd960ab2e252b64a95",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851b12f0dbd960ab2e252b64a95",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273b12f0dbd960ab2e252b64a95",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Shoulda Never (feat. USHER)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "34UducXqREyWyFdcteWsJw",
+                      "shareUrl": "https://open.spotify.com/album/0OvlUHck9j75lQlCMuihBA?si=34UducXqREyWyFdcteWsJw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:00QdINTjHSOICY23ckj4NB"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:0OvlUHck9j75lQlCMuihBA",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02e141aeb817014aa694b26d37",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851e141aeb817014aa694b26d37",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273e141aeb817014aa694b26d37",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Pocket (feat. Cardi B)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "zkgfBLesQPChkA1SUQ_DcQ",
+                      "shareUrl": "https://open.spotify.com/album/4xGIbSnqkqLeYKvMCSX8QG?si=zkgfBLesQPChkA1SUQ_DcQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:5VkDZinzGIyhahRIzS84hQ"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:4xGIbSnqkqLeYKvMCSX8QG",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0287713080274236a0f1e4b30c",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485187713080274236a0f1e4b30c",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27387713080274236a0f1e4b30c",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "No Such Thing (feat. Clipse)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "XvbKQyORQOWlQybrLiPaag",
+                      "shareUrl": "https://open.spotify.com/album/7KiE06K1XOFkiyZLGuFaQV?si=XvbKQyORQOWlQybrLiPaag"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:2r0eJ9oWy3H4W5xWZpjfjP"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:7KiE06K1XOFkiyZLGuFaQV",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02029190c4de0256b493b933cc",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851029190c4de0256b493b933cc",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273029190c4de0256b493b933cc",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Lights On (feat. Big Sean)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "j0wKeYq_SUi6j8StfcHpQw",
+                      "shareUrl": "https://open.spotify.com/album/6KX8HwnLauq6zMyiSd2Z8m?si=j0wKeYq_SUi6j8StfcHpQw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:2y04St1F16bb9tTB2afdoY"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:6KX8HwnLauq6zMyiSd2Z8m",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0217d0677ce58675002ceba866",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485117d0677ce58675002ceba866",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27317d0677ce58675002ceba866",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "I Need You (feat. Brandy)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "9zqnaBkiS-2du4AL6I3IEw",
+                      "shareUrl": "https://open.spotify.com/album/5Rp34zZ3GYa6zALFJYxapH?si=9zqnaBkiS-2du4AL6I3IEw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:0DqT7bOrnJmXItq5i3OxFP"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:5Rp34zZ3GYa6zALFJYxapH",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e027bc9c2d7e09f577ee6301a22",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048517bc9c2d7e09f577ee6301a22",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737bc9c2d7e09f577ee6301a22",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Call Me Back (feat. T-Pain & Lil Jon)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "1HJ83uLURRKbZNXDW6hxGQ",
+                      "shareUrl": "https://open.spotify.com/album/396mEYcPHwOlbizdf9Jlhv?si=1HJ83uLURRKbZNXDW6hxGQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:572aANtrDwigGXZFD4SPwr"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:396mEYcPHwOlbizdf9Jlhv",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e027cac3975cb963c6579a07370",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048517cac3975cb963c6579a07370",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737cac3975cb963c6579a07370",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Anotha Luva (feat. Lil Wayne)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "ExnZ3edgSOGwJw2S-oGkWA",
+                      "shareUrl": "https://open.spotify.com/album/3uRyegM0lXJwIR14dhkdNa?si=ExnZ3edgSOGwJw2S-oGkWA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:04DZdVgl9DReGnTz4HADMw"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:3uRyegM0lXJwIR14dhkdNa",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#502020"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028a2bc577e479255396db12a1",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518a2bc577e479255396db12a1",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738a2bc577e479255396db12a1",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-04-10T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Back and Forth (feat. Missy Elliott)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "8DCaAHMDT6ucCZ9WnRh-ww",
+                      "shareUrl": "https://open.spotify.com/album/3yb1H4Mf6annZTGWpmAoCW?si=8DCaAHMDT6ucCZ9WnRh-ww"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:6t263UZVjI9nnHfr7eeLW4"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:3yb1H4Mf6annZTGWpmAoCW",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#685050"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028b7e552f354fff5d90bb55dd",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518b7e552f354fff5d90bb55dd",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738b7e552f354fff5d90bb55dd",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "date": {
+                      "isoString": "2026-01-07T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2026
+                    },
+                    "name": "Folded (Live) - Spotify Live Room",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "hyu2MvZhQ1ql7-cLzi8Jeg",
+                      "shareUrl": "https://open.spotify.com/album/64AUAPx8kVRTuBO16NDUWN?si=hyu2MvZhQ1ql7-cLzi8Jeg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7wokbzrXvMh3dJvSjkuW73"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:64AUAPx8kVRTuBO16NDUWN",
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#602808"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0207691d4d5bea3dd5b9b6338e",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485107691d4d5bea3dd5b9b6338e",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27307691d4d5bea3dd5b9b6338e",
+                          "width": 640
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "topTracks": [
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:5KS0QmxwUmSPsolg9VaSAU",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d9233d03f5434d9dd46c9fd6",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d9233d03f5434d9dd46c9fd6",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d9233d03f5434d9dd46c9fd6",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 1
+                        }
+                      },
+                      "contentRating": {
+                        "label": "NONE"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 237928
+                      },
+                      "id": "6sTlzpJaFGkFQ4BNccmbW9",
+                      "name": "Folded",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 469410555,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/ece91419129fc9d92ae8f7729a92693b7802d7ca"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:6sTlzpJaFGkFQ4BNccmbW9"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "SweetSexySavage (Deluxe)",
+                        "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#D06870"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 1
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 177773
+                      },
+                      "id": "5cw9s2zGrbny2M2p3WRmGm",
+                      "name": "Gangsta",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 638200367,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/7fecbfc20ca0ae941fdaf8dffb41e9ede4547e95"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:5cw9s2zGrbny2M2p3WRmGm"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        },
+                        {
+                          "profile": {
+                            "name": "USHER"
+                          },
+                          "uri": "spotify:artist:23zg3TcAtWQy7J6upgbUnj"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 0
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 186112
+                      },
+                      "id": "1ITJflybJsfarsUtiBvkfK",
+                      "name": "Shoulda Never (feat. USHER)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 7190090,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/b265f83de5e3c8a4054ceca9675bd3bfa1598512"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:1ITJflybJsfarsUtiBvkfK"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "CRASH",
+                        "uri": "spotify:album:2MRNLEYm9SB0HBrJEU8L32",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#385890"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02133dc7b29a0209a3c12eaa2b",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851133dc7b29a0209a3c12eaa2b",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273133dc7b29a0209a3c12eaa2b",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 1
+                        }
+                      },
+                      "contentRating": {
+                        "label": "NONE"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 202414
+                      },
+                      "id": "4ChomJf8z16E6Zw4EoioYY",
+                      "name": "After Hours",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 245756574,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/af5777ee1e627f4b546eb103c897211274d2c6dc"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:4ChomJf8z16E6Zw4EoioYY"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "While We Wait",
+                        "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#083850"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        },
+                        {
+                          "profile": {
+                            "name": "Ty Dolla $ign"
+                          },
+                          "uri": "spotify:artist:7c0XG5cIJTrrAgEC3ULPiq"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 1
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 201787
+                      },
+                      "id": "6ZRuF2n1CQxyxxAAWsKJOy",
+                      "name": "Nights Like This (feat. Ty Dolla $ign)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 739153112,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/fabd109249d0a2863e94ef99071b517d55ad8411"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:6ZRuF2n1CQxyxxAAWsKJOy"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        },
+                        {
+                          "profile": {
+                            "name": "Lil Wayne"
+                          },
+                          "uri": "spotify:artist:55Aa2cqylxrFIXC767Z865"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 0
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 241927
+                      },
+                      "id": "1LCiGi699HYk4nznLRQovN",
+                      "name": "Anotha Luva (feat. Lil Wayne)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 4514436,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/d68228e5ee80a21bb3f94636a9d50a7251064c18"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:1LCiGi699HYk4nznLRQovN"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 1
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 256615
+                      },
+                      "id": "3PWcsbzCtIU55qGOTLPBcN",
+                      "name": "Out The Window",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 37254960,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/b13ef817708501ac93ca7c9cb48a71c8ac3ed35c"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:3PWcsbzCtIU55qGOTLPBcN"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Good Life (with G-Eazy & Kehlani)",
+                        "uri": "spotify:album:5PO2cqkBjAUOSHdxSDJOL4",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#B0C0D8"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02fcc36f9c0515e6e7faa2030b",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851fcc36f9c0515e6e7faa2030b",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273fcc36f9c0515e6e7faa2030b",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "G-Eazy"
+                          },
+                          "uri": "spotify:artist:02kJSzxNuaWGqwubyUba0Z"
+                        },
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 0
+                        }
+                      },
+                      "contentRating": {
+                        "label": "NONE"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 225525
+                      },
+                      "id": "1Eck97uRMlprKOOJN9oO1E",
+                      "name": "Good Life (with G-Eazy & Kehlani)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 470670548,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/875a492b2ac38341d4b7482fd1be5b019e9136db"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:1Eck97uRMlprKOOJN9oO1E"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        },
+                        {
+                          "profile": {
+                            "name": "Missy Elliott"
+                          },
+                          "uri": "spotify:artist:2wIVse2owClT7go1WT98tk"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 0
+                        }
+                      },
+                      "contentRating": {
+                        "label": "EXPLICIT"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 214757
+                      },
+                      "id": "6Ia05odJX7EOVCNM6txaKO",
+                      "name": "Back and Forth (feat. Missy Elliott)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 5848125,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/e218c90116a4e96e0b44e63a344b7b011cf56993"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:6Ia05odJX7EOVCNM6txaKO"
+                    }
+                  },
+                  {
+                    "track": {
+                      "albumOfTrack": {
+                        "name": "Kehlani",
+                        "uri": "spotify:album:5KS0QmxwUmSPsolg9VaSAU",
+                        "coverArt": {
+                          "extractedColors": {
+                            "colorRaw": {
+                              "hex": "#502020"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "height": 300,
+                              "url": "https://i.scdn.co/image/ab67616d00001e02d9233d03f5434d9dd46c9fd6",
+                              "width": 300
+                            },
+                            {
+                              "height": 64,
+                              "url": "https://i.scdn.co/image/ab67616d00004851d9233d03f5434d9dd46c9fd6",
+                              "width": 64
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273d9233d03f5434d9dd46c9fd6",
+                              "width": 640
+                            }
+                          ]
+                        }
+                      },
+                      "artists": [
+                        {
+                          "profile": {
+                            "name": "Kehlani"
+                          },
+                          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                        },
+                        {
+                          "profile": {
+                            "name": "Brandy"
+                          },
+                          "uri": "spotify:artist:05oH07COxkXKIMt6mIPRee"
+                        }
+                      ],
+                      "associationsV3": {
+                        "audioAssociations": [],
+                        "videoAssociations": {
+                          "totalCount": 0
+                        }
+                      },
+                      "contentRating": {
+                        "label": "NONE"
+                      },
+                      "duration": {
+                        "totalMilliseconds": 243586
+                      },
+                      "id": "1U587tPvxadzUSiFUynUiV",
+                      "name": "I Need You (feat. Brandy)",
+                      "playability": {
+                        "playable": true
+                      },
+                      "playcount": 3729766,
+                      "previews": {
+                        "audioPreviews": [
+                          {
+                            "url": "https://p.scdn.co/mp3-preview/bb5021a64966d1bd228808cdf185bb29ab3c80c9"
+                          }
+                        ]
+                      },
+                      "uri": "spotify:track:1U587tPvxadzUSiFUynUiV"
+                    }
+                  }
+                ]
+              },
+              "id": "0cGUm45nv7Z6M6qdXYQGTX",
+              "profile": {
+                "name": "Kehlani"
+              },
+              "relatedContent": {
+                "relatedArtists": [
+                  {
+                    "id": "7HkdQ0gt53LP4zmHsL0nap",
+                    "profile": {
+                      "name": "Ella Mai"
+                    },
+                    "uri": "spotify:artist:7HkdQ0gt53LP4zmHsL0nap",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb5d6ed813fc2c93765152ff7e",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f1785d6ed813fc2c93765152ff7e",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab676161000051745d6ed813fc2c93765152ff7e",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "7bXgB6jMjp9ATFy66eO08Z",
+                    "profile": {
+                      "name": "Chris Brown"
+                    },
+                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb913ab85302df0ddfb77131e9",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178913ab85302df0ddfb77131e9",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174913ab85302df0ddfb77131e9",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "0nnBZ8FXWjG9wZgM2cpfeb",
+                    "profile": {
+                      "name": "Leon Thomas"
+                    },
+                    "uri": "spotify:artist:0nnBZ8FXWjG9wZgM2cpfeb",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5ebc6c4f4aaf40ebee92b8a8228",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178c6c4f4aaf40ebee92b8a8228",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174c6c4f4aaf40ebee92b8a8228",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "7tjVFCxJdwT4NdrTmjyjQ6",
+                    "profile": {
+                      "name": "Muni Long"
+                    },
+                    "uri": "spotify:artist:7tjVFCxJdwT4NdrTmjyjQ6",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb37c11c7e11e87dd22bdc65a4",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17837c11c7e11e87dd22bdc65a4",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517437c11c7e11e87dd22bdc65a4",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "4DHLoiIqFYYFjH09WduvFd",
+                    "profile": {
+                      "name": "Coco Jones"
+                    },
+                    "uri": "spotify:artist:4DHLoiIqFYYFjH09WduvFd",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb555c76ee52786dccb288e3f9",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178555c76ee52786dccb288e3f9",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174555c76ee52786dccb288e3f9",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "4fxd5Ee7UefO4CUXgwJ7IP",
+                    "profile": {
+                      "name": "GIVĒON"
+                    },
+                    "uri": "spotify:artist:4fxd5Ee7UefO4CUXgwJ7IP",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb48769fa9ef3b5f24af90a09d",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17848769fa9ef3b5f24af90a09d",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517448769fa9ef3b5f24af90a09d",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "67nwj3Y5sZQLl72VNUHEYE",
+                    "profile": {
+                      "name": "Wale"
+                    },
+                    "uri": "spotify:artist:67nwj3Y5sZQLl72VNUHEYE",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb273bdadffd7138dcbd7b79c3",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178273bdadffd7138dcbd7b79c3",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174273bdadffd7138dcbd7b79c3",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "57LYzLEk2LcFghVwuWbcuS",
+                    "profile": {
+                      "name": "Summer Walker"
+                    },
+                    "uri": "spotify:artist:57LYzLEk2LcFghVwuWbcuS",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb7dccb6280ed3402110d43ce3",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f1787dccb6280ed3402110d43ce3",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab676161000051747dccb6280ed3402110d43ce3",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "687cZJR45JO7jhk1LHIbgq",
+                    "profile": {
+                      "name": "Tems"
+                    },
+                    "uri": "spotify:artist:687cZJR45JO7jhk1LHIbgq",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb22d7d6f8981c7a27bf68a382",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17822d7d6f8981c7a27bf68a382",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517422d7d6f8981c7a27bf68a382",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "7HO5fOXE4gh3lzZn64tX2E",
+                    "profile": {
+                      "name": "Mariah the Scientist"
+                    },
+                    "uri": "spotify:artist:7HO5fOXE4gh3lzZn64tX2E",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb6e0ad52899974a169ab69c88",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f1786e0ad52899974a169ab69c88",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab676161000051746e0ad52899974a169ab69c88",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "7tYKF4w9nC0nq9CsPZTHyP",
+                    "profile": {
+                      "name": "SZA"
+                    },
+                    "uri": "spotify:artist:7tYKF4w9nC0nq9CsPZTHyP",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5ebfd0a9fb6c252a3ba44079acf",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178fd0a9fb6c252a3ba44079acf",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174fd0a9fb6c252a3ba44079acf",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "3SozjO3Lat463tQICI9LcE",
+                    "profile": {
+                      "name": "Tyla"
+                    },
+                    "uri": "spotify:artist:3SozjO3Lat463tQICI9LcE",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb69719e4164b893213a525d25",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17869719e4164b893213a525d25",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517469719e4164b893213a525d25",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "0s4kXsjYeH0S1xRyVGN4NO",
+                    "profile": {
+                      "name": "FLO"
+                    },
+                    "uri": "spotify:artist:0s4kXsjYeH0S1xRyVGN4NO",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb85729f18eb0edf40d80dc18a",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17885729f18eb0edf40d80dc18a",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517485729f18eb0edf40d80dc18a",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "6ucHomyCWjxmvbyqAAbSci",
+                    "profile": {
+                      "name": "SAILORR"
+                    },
+                    "uri": "spotify:artist:6ucHomyCWjxmvbyqAAbSci",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb7225fa0852ab119726d088dd",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f1787225fa0852ab119726d088dd",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab676161000051747225fa0852ab119726d088dd",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "360IAlyVv4PCEVjgyMZrxK",
+                    "profile": {
+                      "name": "Miguel"
+                    },
+                    "uri": "spotify:artist:360IAlyVv4PCEVjgyMZrxK",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb35e36c368fdcd26aba296bd1",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17835e36c368fdcd26aba296bd1",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517435e36c368fdcd26aba296bd1",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "3Y7RZ31TRPVadSFVy1o8os",
+                    "profile": {
+                      "name": "H.E.R."
+                    },
+                    "uri": "spotify:artist:3Y7RZ31TRPVadSFVy1o8os",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb417db49cde3ed1c5a65e3514",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178417db49cde3ed1c5a65e3514",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174417db49cde3ed1c5a65e3514",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "05oH07COxkXKIMt6mIPRee",
+                    "profile": {
+                      "name": "Brandy"
+                    },
+                    "uri": "spotify:artist:05oH07COxkXKIMt6mIPRee",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb80f1892455aa69437185ab0d",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f17880f1892455aa69437185ab0d",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab6761610000517480f1892455aa69437185ab0d",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "2wrxoZjEVKfJZhxCiqK0ju",
+                    "profile": {
+                      "name": "JayDon"
+                    },
+                    "uri": "spotify:artist:2wrxoZjEVKfJZhxCiqK0ju",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb434390637be142925be488a2",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178434390637be142925be488a2",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174434390637be142925be488a2",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "7c0XG5cIJTrrAgEC3ULPiq",
+                    "profile": {
+                      "name": "Ty Dolla $ign"
+                    },
+                    "uri": "spotify:artist:7c0XG5cIJTrrAgEC3ULPiq",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5eb4ef6e245168c33922bc6df1a",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f1784ef6e245168c33922bc6df1a",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab676161000051744ef6e245168c33922bc6df1a",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "2EMAnMvWE2eb56ToJVfCWs",
+                    "profile": {
+                      "name": "Bryson Tiller"
+                    },
+                    "uri": "spotify:artist:2EMAnMvWE2eb56ToJVfCWs",
+                    "visuals": {
+                      "avatarImage": {
+                        "sources": [
+                          {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab6761610000e5ebb0ff28b9d4bed74c66901b2b",
+                            "width": 640
+                          },
+                          {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/ab6761610000f178b0ff28b9d4bed74c66901b2b",
+                            "width": 160
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/ab67616100005174b0ff28b9d4bed74c66901b2b",
+                            "width": 320
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX",
+              "visuals": {
+                "avatarImage": {
+                  "sources": [
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab6761610000e5ebcf865d7d399a41e1bd036149",
+                      "width": 640
+                    },
+                    {
+                      "height": 160,
+                      "url": "https://i.scdn.co/image/ab6761610000f178cf865d7d399a41e1bd036149",
+                      "width": 160
+                    },
+                    {
+                      "height": 320,
+                      "url": "https://i.scdn.co/image/ab67616100005174cf865d7d399a41e1bd036149",
+                      "width": 320
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "otherArtists": [
+            {
+              "discography": {
+                "popularReleasesAlbums": [
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#404030"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02365b3fb800c19f7ff72602da",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851365b3fb800c19f7ff72602da",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2004-03-23T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2004
+                    },
+                    "name": "Confessions (Expanded Edition)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "pCyjyjRLTMCCoMKOe1QAHg",
+                      "shareUrl": "https://open.spotify.com/album/1RM6MGv6bcl6NrAG8PGoZk?si=pCyjyjRLTMCCoMKOe1QAHg"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:1tV1G9juUCSNEDdVhCaWKh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:5rb9QrpfcKFHM1EUbSIurX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1bPbiotvwSAYHG3ycVC2CV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:4719foL6R25RSHSJ1shNaj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:7wBThXx7BGZHJJ3aN3OPvv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:7z3N2W7Xz1t2G2sAO8wFVH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:5zdUc1JRCImBYcDWgvFNpE"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:22IVvpKhaLiYGzu3FdqBwB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:18JosZY3HzD3lMy6iOOSAY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:0HyCm2IYlKEhImmdP9lgG7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:4rO5VOxTbRSRuuwCQ5D1Bl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:5rPzPAaOUceS8HiAculegz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:0D3HhtkWfHXuyU3sVm89hF"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:6gRGMnzrsAY5Fl2byZf2jd"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:6gfxE8DH93iLsNDoloANDG"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:5ivOsplYSO0erChGQcnANS"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:1CTVk3GInRIYtWjC0BFPEv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:68vgtRHr7iZHpzGpon6Jlo"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:7Jaey6t7JjD3R1lmJABBa4"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 20,
+                          "uri": "spotify:track:2qVqxcTXGugY41u8Sr8xfp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 21,
+                          "uri": "spotify:track:6xcz5MXwY36hItZg5PZj78"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:1RM6MGv6bcl6NrAG8PGoZk"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#383070"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0286b0c9728ad3ed338eaeea79",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485186b0c9728ad3ed338eaeea79",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27386b0c9728ad3ed338eaeea79",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2010-03-30T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2010
+                    },
+                    "name": "Raymond v Raymond (Expanded Edition)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "RbmzCXspRk-NFE1uT8L-IA",
+                      "shareUrl": "https://open.spotify.com/album/6A1F3Fkq5dYeYYNkXflcTX?si=RbmzCXspRk-NFE1uT8L-IA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:3IfytpNFSJwGXrSJOVhKLV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:030OCtLMrljNhp8OWHBWW3"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:6IUiqtI8tE49sqGbmtrNd8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:2sdarYql1R0GAdFsdb4LDM"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:34PFCxQHHROuFl2OsDCvxH"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:1bM50INir8voAkVoKuvEUI"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:4qPmUf6dsy4AyfbxliqGSM"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:7140BL0vb51Y52HZ77VgZ5"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:0ZZ4nTGGQrNlTDbr0iPS3k"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:77fP7UixHMYEIFT8NS92Ul"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:6I87amCgXe8XOFfQJZWGPP"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:7ERcLgXeNSWG3ktsgaH56i"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:0G6SfvXZcPxKe931dS0LwB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:4XmQMFVOdI7dstMgmhThyJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:3xWoPclLuCoGpt9sg9RfAh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:4356Typ82hUiFAynbLYbPn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:1Vot6YSxInL52SGTN0XN9n"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:469v2YvryJ3zKe7IdzYOlj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:2LvCnYNqj2nzP6VQAB1uZV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 20,
+                          "uri": "spotify:track:4ImEeJ5Fsdg4ULiBCOKEPG"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 21,
+                          "uri": "spotify:track:6tnrFU8iLQ6orFXjCA3flL"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 22,
+                          "uri": "spotify:track:3PxTsBlC26KCv3pbsgeZsb"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6A1F3Fkq5dYeYYNkXflcTX"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#581010"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e027750146aac26aade0a867913",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048517750146aac26aade0a867913",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737750146aac26aade0a867913",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2001-08-07T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2001
+                    },
+                    "name": "8701",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "GoJ33_WbT8m2ZiuVHACGnw",
+                      "shareUrl": "https://open.spotify.com/album/6k16WXh4rKyusIoN00rmpi?si=GoJ33_WbT8m2ZiuVHACGnw"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7xViZs9g3vi1ITx1RjRr0a"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:2QsZVnbWVSjKMXK6K3uRBL"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:1NCSa6QvClPVe7KqsqjnMn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:3rYil4c9oKuTVUBquB1izZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:7J41dYQolQJEtj3UmKLu5r"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:2PSIKR8QBagtU9yVdGqbY9"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:0CBh4pQtYpm6vzqnUZKDsg"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:5PCJldueshnwqQVjS16543"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:7i18nLcndculH8hpc7PnZ7"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:2pvpgsrLLPrADZpbngZbt6"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:1JQJxZ8qnkltxt7rU60Wa6"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:2gfpyDt6g0OQNWJqFm3bHB"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:0UaTXy2I8q2BxRPGmFwAoY"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:3KkxYjVDCdiLkJ2ETnrhr2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:1JWd374FLuXj4ajrrwbkES"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:6k16WXh4rKyusIoN00rmpi"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#B82028"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e028be38d9324cc1ccb94ccafd9",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048518be38d9324cc1ccb94ccafd9",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738be38d9324cc1ccb94ccafd9",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2008-05-27T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2008
+                    },
+                    "name": "Here I Stand",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "gULHWhtPRBeWOT5qyK14nA",
+                      "shareUrl": "https://open.spotify.com/album/2peB0xKYHSlIWc5boFA6PW?si=gULHWhtPRBeWOT5qyK14nA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7rkYW5GYvJIK4OdJigdsl8"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:5j0McHPthKpOXRr3fBq8M0"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:6DVBysMGcFQ3dGTxjvDhSz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5yC7WplXvhIHsp8NBYV5dT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:0Z4DAkZzXkupqCtT7BGU5F"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:3JAiho4Z6tZ7G9RuSxpwxV"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:6Psjnlv7LWT3vOBIdmQgPG"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:2MmFydaQFS4QeR8xJ2aEhj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:6kc6aWYAiHwRBloyIhBpcO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:4QCMnKAZBUKCWdIHQnC3Np"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:7CMq7iYOWyTut4SbxtKSfC"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:6sVVOCLGg2gyUSBZArNnoO"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:7gWAEVw34siFiQdkTZLcxS"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:5aWlIXGEDzqQdIDRNxDQVA"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:4w3hJAy5ftDgsOQZ7EpaqQ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:2bppvcuQhuMcJZHtM9So7r"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:1oFEgr3Ujpwuiu4bn53B25"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:0vRIDBeoVMtyEBU7UZAIes"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:2peB0xKYHSlIWc5boFA6PW"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#686080"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e020540e183356055dfb31b747e",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048510540e183356055dfb31b747e",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2730540e183356055dfb31b747e",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "1997-09-16T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 1997
+                    },
+                    "name": "My Way",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "HkRVukqySa2R3b18QHX8zA",
+                      "shareUrl": "https://open.spotify.com/album/0fQdoem8dnrl80YcZzQ8f0?si=HkRVukqySa2R3b18QHX8zA"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:47TqCCnEliDp8NRDyIQoQq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:4qFbw0LTlaLfV2M6ZeXCfI"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5L0KDoZklMgs9GPoonneEl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:0VdSyCb1n7F5G0XkePzAlf"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:5PIveStlGgjVL54GpVcqxr"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:2uVQybBotoLu2gGy2C40kn"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:5fs0LHUu38cIGAGIYouP7L"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:1WpppMTGlhmg2eQfZWIWq1"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:64ujSykVY35bgU74PTmCsJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:2jCOtQRabNRKV9MxJGrBuy"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:0fQdoem8dnrl80YcZzQ8f0"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#4888A8"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0298109dd76ee302735ba256d4",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485198109dd76ee302735ba256d4",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27398109dd76ee302735ba256d4",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2012-06-12T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2012
+                    },
+                    "name": "Looking 4 Myself (Expanded Edition)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "4i5esgrkQECNEtNKq2-W5Q",
+                      "shareUrl": "https://open.spotify.com/album/7eyuQZCLG5tdjWpKZbDE8g?si=4i5esgrkQECNEtNKq2-W5Q"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:3SuYBr6fF1dxNdnPEG6Nrq"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:12eMQUn2GzfsfsQLH53M19"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5pyVqlqThcxI7tPDjHIzPh"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:49HpSwfC9vUtqXXiVyJytQ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:6nOXmmEaUNS2M3FGyqOGbI"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:4MevEW6tsWrpmzPKaqK0Uw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:65czTBQkqPJwK1JAyND9Rb"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:3U95Hs5XOsHD6G08ysGK6Q"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:1uiXs9hVwwpOqkvIsiPo9E"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:3pkJ28zhq2wKElcAPtpZjP"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:0IGqnANwfZgUFpoPRXQxFj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:01JcvslxLX2BBbqK0hYTMp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:4CQTbx92oyjYheHpInzoa0"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:4Ir9AFLOMPgb8IJ38WbEIp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:1cI5MKYbSDZIc0LIXfqDtT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:7Bg0IhQwtP06zmG6bB9cjz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:2R3psbsyvdSONzCHAnLO4x"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:3JxDy5oyoxfjDZQBcuQErB"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:7eyuQZCLG5tdjWpKZbDE8g"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#102850"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0298bf79b7ca17c9612f0470ac",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485198bf79b7ca17c9612f0470ac",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27398bf79b7ca17c9612f0470ac",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2010-11-22T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2010
+                    },
+                    "name": "More",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "eoUyWZMTTIqYXIICbQVkVQ",
+                      "shareUrl": "https://open.spotify.com/album/5GNPZT1Bxq0EP7PQDQmK3U?si=eoUyWZMTTIqYXIICbQVkVQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:0aBKFfdyOD1Ttvgv0cfjjJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:36zPkcOZWpt8cRZmTEWYPv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:5mn2SwRG1e9utnIMmU65dw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:5NmvPpGViytipEbi0XsYBr"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:5GNPZT1Bxq0EP7PQDQmK3U"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#401008"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02b1275388ad40a8ebd1b31939",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851b1275388ad40a8ebd1b31939",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273b1275388ad40a8ebd1b31939",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2024-02-09T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2024
+                    },
+                    "name": "COMING HOME",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "tOLAzFZmS9W3CSgbP8xt-Q",
+                      "shareUrl": "https://open.spotify.com/album/7Ic1aiLXMmyyi0cVkk04aS?si=tOLAzFZmS9W3CSgbP8xt-Q"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:2cJq3u0BRlsGFOYqP9KidJ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 2,
+                          "uri": "spotify:track:3jK1QRugwuAKAKOrtac7a2"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 3,
+                          "uri": "spotify:track:2FPn9y8gvvrp9gydZmGpvT"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 4,
+                          "uri": "spotify:track:1XY0fx2ZCNPrWYC3GNavRp"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 5,
+                          "uri": "spotify:track:5brMixqQiQN4D60xmvrSts"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 6,
+                          "uri": "spotify:track:52djc9NgBuA53Okyud2CfZ"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 7,
+                          "uri": "spotify:track:6hKIFYVyCIy9A5Zb3005wX"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 8,
+                          "uri": "spotify:track:0V0aCHGKkF4DYLUN9qVKKj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 9,
+                          "uri": "spotify:track:5W17fw8CYexMj4XvpM512f"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 10,
+                          "uri": "spotify:track:6qltYwOOeBPILmT9qYuAYd"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 11,
+                          "uri": "spotify:track:7N19KSnHQ0WedIsU38aUsw"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 12,
+                          "uri": "spotify:track:0vlKJXqCvW05Hb2efMix80"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 13,
+                          "uri": "spotify:track:1V4M6wZyVXdxbVDFncQRSj"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 14,
+                          "uri": "spotify:track:7keq4jvb3VhJPWUzQtK2nl"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 15,
+                          "uri": "spotify:track:0SMkyHDWI9vNOCuSAeplj5"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 16,
+                          "uri": "spotify:track:2GhDxI6ZVYt4cohYbTnyzc"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 17,
+                          "uri": "spotify:track:01BaeOXz0uIKFV4eMFYEdv"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 18,
+                          "uri": "spotify:track:3CyKIKowUMXikHnY0X9Xnz"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 19,
+                          "uri": "spotify:track:0RhVfLzcIHZHjMA1KVDiPb"
+                        }
+                      },
+                      {
+                        "track": {
+                          "trackNumber": 20,
+                          "uri": "spotify:track:0VdJH5Y7LioqkkYoyUI2XX"
+                        }
+                      }
+                    ],
+                    "type": "ALBUM",
+                    "uri": "spotify:album:7Ic1aiLXMmyyi0cVkk04aS"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#A00810"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02049d70defd1c58ffb1165cde",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851049d70defd1c58ffb1165cde",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273049d70defd1c58ffb1165cde",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2009-12-08T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2009
+                    },
+                    "name": "Hey Daddy (Daddy's Home) (feat. Plies)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "wKck7yjJTRWNYb05W3qW8Q",
+                      "shareUrl": "https://open.spotify.com/album/5yc5YwQjqcNvGiFsTM0aAT?si=wKck7yjJTRWNYb05W3qW8Q"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:1kLYMOFEzQX9PgdKB7VkSL"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:5yc5YwQjqcNvGiFsTM0aAT"
+                  },
+                  {
+                    "coverArt": {
+                      "extractedColors": {
+                        "colorRaw": {
+                          "hex": "#385048"
+                        }
+                      },
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e026e62a873c96524a3788a2edf",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048516e62a873c96524a3788a2edf",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2736e62a873c96524a3788a2edf",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "isoString": "2014-11-21T00:00:00Z",
+                      "precision": "DAY",
+                      "year": 2014
+                    },
+                    "name": "I Don't Mind (feat. Juicy J)",
+                    "playability": {
+                      "playable": true
+                    },
+                    "sharingInfo": {
+                      "shareId": "ig-Fg5OORrm9dLpeKi8SvQ",
+                      "shareUrl": "https://open.spotify.com/album/5BAqg5IJQ7XFKfdoCiOlJw?si=ig-Fg5OORrm9dLpeKi8SvQ"
+                    },
+                    "tracks": [
+                      {
+                        "track": {
+                          "trackNumber": 1,
+                          "uri": "spotify:track:7aXuop4Qambx5Oi3ynsKQr"
+                        }
+                      }
+                    ],
+                    "type": "SINGLE",
+                    "uri": "spotify:album:5BAqg5IJQ7XFKfdoCiOlJw"
+                  }
+                ]
+              },
+              "id": "23zg3TcAtWQy7J6upgbUnj",
+              "profile": {
+                "name": "USHER"
+              },
+              "uri": "spotify:artist:23zg3TcAtWQy7J6upgbUnj",
+              "visuals": {
+                "avatarImage": {
+                  "sources": [
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab6761610000e5ebb13684907cd609d10d41f0b8",
+                      "width": 640
+                    },
+                    {
+                      "height": 160,
+                      "url": "https://i.scdn.co/image/ab6761610000f178b13684907cd609d10d41f0b8",
+                      "width": 160
+                    },
+                    {
+                      "height": 320,
+                      "url": "https://i.scdn.co/image/ab67616100005174b13684907cd609d10d41f0b8",
+                      "width": 320
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+      },
+      {
+        name: "Album",
+        method: "GET",
+        description: "Get Spotify album",
+        fullDescription:
+          "Retrieves detailed information about a Spotify album by its id or URL, including album metadata, artists, release date, cover art, copyright info, tracks, and sharing details.",
+        path: "/v1/spotify/album",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "0pgrg7phBbnwGJ2HBEl9EG",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/album/0pgrg7phBbnwGJ2HBEl9EG",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997935402,
+          "id": "0pgrg7phBbnwGJ2HBEl9EG",
+          "uri": "spotify:album:0pgrg7phBbnwGJ2HBEl9EG",
+          "__typename": "Album",
+          "copyright": [
+            {
+              "text": "2025 IRL Angel",
+              "type": "C"
+            },
+            {
+              "text": "2025 IRL Angel",
+              "type": "P"
+            }
+          ],
+          "courtesyLine": "",
+          "date": {
+            "isoString": "2025-03-16T00:00:00Z",
+            "precision": "DAY"
+          },
+          "isPreRelease": false,
+          "label": "IRL Angel",
+          "name": "BEFORE THE SUN RISES & WINTERR ENDS",
+          "playability": {
+            "playable": true,
+            "reason": "PLAYABLE"
+          },
+          "preReleaseEndDateTime": null,
+          "saved": false,
+          "sharingInfo": {
+            "shareId": "mULFEWCzRY2MmJMhNahQMA",
+            "shareUrl": "https://open.spotify.com/album/0pgrg7phBbnwGJ2HBEl9EG?si=mULFEWCzRY2MmJMhNahQMA"
+          },
+          "tracksV2": [
+            {
+              "track": {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Miguel Angeles"
+                    },
+                    "uri": "spotify:artist:14xRX3JR8H4RWh8R7V3fvZ"
+                  }
+                ],
+                "associationsV3": {
+                  "videoAssociations": {
+                    "totalCount": 0
+                  }
+                },
+                "contentRating": {
+                  "label": "NONE"
+                },
+                "discNumber": 1,
+                "duration": {
+                  "totalMilliseconds": 184109
+                },
+                "name": "AN IMPERRFECT BODY",
+                "playability": {
+                  "playable": true
+                },
+                "playcount": 130437,
+                "relinkingInformation": null,
+                "saved": false,
+                "trackNumber": 1,
+                "uri": "spotify:track:0LfCnR4s7l6T4TyCNNsHBs"
+              },
+              "uid": "0c86f1002074d296d295"
+            },
+            {
+              "track": {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Miguel Angeles"
+                    },
+                    "uri": "spotify:artist:14xRX3JR8H4RWh8R7V3fvZ"
+                  }
+                ],
+                "associationsV3": {
+                  "videoAssociations": {
+                    "totalCount": 0
+                  }
+                },
+                "contentRating": {
+                  "label": "EXPLICIT"
+                },
+                "discNumber": 1,
+                "duration": {
+                  "totalMilliseconds": 170666
+                },
+                "name": "NOVEMBERR",
+                "playability": {
+                  "playable": true
+                },
+                "playcount": 266358,
+                "relinkingInformation": null,
+                "saved": false,
+                "trackNumber": 2,
+                "uri": "spotify:track:0QTlqcwzdieh3MNe8vvMsn"
+              },
+              "uid": "4bf176ac2335c1506370"
+            },
+            {
+              "track": {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Miguel Angeles"
+                    },
+                    "uri": "spotify:artist:14xRX3JR8H4RWh8R7V3fvZ"
+                  },
+                  {
+                    "profile": {
+                      "name": "F3lix"
+                    },
+                    "uri": "spotify:artist:6MOR8WtiHGBvFm3DmjXzga"
+                  }
+                ],
+                "associationsV3": {
+                  "videoAssociations": {
+                    "totalCount": 0
+                  }
+                },
+                "contentRating": {
+                  "label": "NONE"
+                },
+                "discNumber": 1,
+                "duration": {
+                  "totalMilliseconds": 104347
+                },
+                "name": "2GETHERR",
+                "playability": {
+                  "playable": true
+                },
+                "playcount": 29688,
+                "relinkingInformation": null,
+                "saved": false,
+                "trackNumber": 3,
+                "uri": "spotify:track:3bJBq2NNe7C2b118sDVvAL"
+              },
+              "uid": "d21f716764701403e435"
+            }
+          ],
+          "type": "SINGLE",
+          "visualIdentity": {
+            "squareCoverImage": {
+              "__typename": "VisualIdentityImage",
+              "extractedColorSet": {
+                "encoreBaseSetTextColor": {
+                  "alpha": 255,
+                  "blue": 224,
+                  "green": 224,
+                  "red": 224
+                },
+                "highContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 83,
+                    "green": 83,
+                    "red": 83
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 51,
+                    "green": 51,
+                    "red": 51
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 205,
+                    "green": 205,
+                    "red": 205
+                  }
+                },
+                "higherContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 53,
+                    "green": 53,
+                    "red": 53
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 86,
+                    "green": 86,
+                    "red": 86
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 96,
+                    "green": 215,
+                    "red": 30
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 205,
+                    "green": 205,
+                    "red": 205
+                  }
+                },
+                "minContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 153,
+                    "green": 153,
+                    "red": 153
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 128,
+                    "green": 128,
+                    "red": 128
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  }
+                }
+              }
+            }
+          },
+          "watchFeedEntrypoint": null,
+          "artists": [
+            {
+              "id": "14xRX3JR8H4RWh8R7V3fvZ",
+              "profile": {
+                "name": "Miguel Angeles"
+              },
+              "sharingInfo": {
+                "shareUrl": "https://open.spotify.com/artist/14xRX3JR8H4RWh8R7V3fvZ?si=LfcPfGMFQB-_Gpvc-_mIXA"
+              },
+              "uri": "spotify:artist:14xRX3JR8H4RWh8R7V3fvZ",
+              "visuals": {
+                "avatarImage": {
+                  "sources": [
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab6761610000e5eb9784901e4c2fb5e2e59bf7b2",
+                      "width": 640
+                    },
+                    {
+                      "height": 160,
+                      "url": "https://i.scdn.co/image/ab6761610000f1789784901e4c2fb5e2e59bf7b2",
+                      "width": 160
+                    },
+                    {
+                      "height": 320,
+                      "url": "https://i.scdn.co/image/ab676161000051749784901e4c2fb5e2e59bf7b2",
+                      "width": 320
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "coverArt": {
+            "extractedColors": {
+              "colorDark": {
+                "hex": "#777777"
+              },
+              "colorLight": {
+                "hex": "#E0E0E0"
+              },
+              "colorRaw": {
+                "hex": "#E0E0E0"
+              }
+            },
+            "sources": [
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e029bd93cc6e406b820dfff691f",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d000048519bd93cc6e406b820dfff691f",
+                "width": 64
+              },
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b2739bd93cc6e406b820dfff691f",
+                "width": 640
+              }
+            ]
+          },
+          "discs": [
+            {
+              "number": 1,
+              "tracks": {
+                "totalCount": 3
+              }
+            }
+          ],
+          "releases": [],
+          "moreAlbumsByArtist": [
+            {
+              "discography": {
+                "popularReleasesAlbums": [
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02e1b81322a76efedc9296226b",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851e1b81322a76efedc9296226b",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273e1b81322a76efedc9296226b",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2023
+                    },
+                    "id": "73WPr90gWBdNLg1KHkgpc0",
+                    "name": "PROTECTION CHARM (SLOW & HARD VERSION)",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "0oYuiIkGSle7UN5bTeILnw",
+                      "shareUrl": "https://open.spotify.com/album/73WPr90gWBdNLg1KHkgpc0?si=0oYuiIkGSle7UN5bTeILnw"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:73WPr90gWBdNLg1KHkgpc0"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0264ff8ae3b65b06be8a5a36e4",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485164ff8ae3b65b06be8a5a36e4",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27364ff8ae3b65b06be8a5a36e4",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2024
+                    },
+                    "id": "26b6Pr7QnQ6uhl6JfWZGBP",
+                    "name": "DEATH RATTLE (SLOW VERSION)",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "lMmwIOY2Ti2EbYKTR-IW7Q",
+                      "shareUrl": "https://open.spotify.com/album/26b6Pr7QnQ6uhl6JfWZGBP?si=lMmwIOY2Ti2EbYKTR-IW7Q"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:26b6Pr7QnQ6uhl6JfWZGBP"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02106ff40d3027edcf547e6dc8",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851106ff40d3027edcf547e6dc8",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273106ff40d3027edcf547e6dc8",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2023
+                    },
+                    "id": "69OsAA3T1WpNrbVqkLFRZ2",
+                    "name": "PROTECTION CHARM",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "bRG7rG0NTP2luySnokLn0w",
+                      "shareUrl": "https://open.spotify.com/album/69OsAA3T1WpNrbVqkLFRZ2?si=bRG7rG0NTP2luySnokLn0w"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:69OsAA3T1WpNrbVqkLFRZ2"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0257bf5ef6985c1dadc4656c21",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485157bf5ef6985c1dadc4656c21",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27357bf5ef6985c1dadc4656c21",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2024
+                    },
+                    "id": "4Gx8NtJNGlO1lowk9V0IHk",
+                    "name": "FORGOTTEN CHILD (SLOW VERSION)",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "BJJi-atLRAWX7uz_y6rxKg",
+                      "shareUrl": "https://open.spotify.com/album/4Gx8NtJNGlO1lowk9V0IHk?si=BJJi-atLRAWX7uz_y6rxKg"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:4Gx8NtJNGlO1lowk9V0IHk"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02c52f03aa42b273276c39f480",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851c52f03aa42b273276c39f480",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273c52f03aa42b273276c39f480",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2023
+                    },
+                    "id": "6WfuVkLytByChrJYrVMn3x",
+                    "name": "PROTECTION CHARM (FAST & HARD VERSION)",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "9tLt0NQxSPieNtQ4xJuiNQ",
+                      "shareUrl": "https://open.spotify.com/album/6WfuVkLytByChrJYrVMn3x?si=9tLt0NQxSPieNtQ4xJuiNQ"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:6WfuVkLytByChrJYrVMn3x"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02541e25067f513405c42e5fc8",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851541e25067f513405c42e5fc8",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273541e25067f513405c42e5fc8",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2024
+                    },
+                    "id": "189IFXJK0O6orcVrUDwU7d",
+                    "name": "DEATH RATTLE",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "eU61uekER6CwRqYGL1ZiDA",
+                      "shareUrl": "https://open.spotify.com/album/189IFXJK0O6orcVrUDwU7d?si=eU61uekER6CwRqYGL1ZiDA"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:189IFXJK0O6orcVrUDwU7d"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e027b61f66a17d93d2a6a167de0",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048517b61f66a17d93d2a6a167de0",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737b61f66a17d93d2a6a167de0",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2024
+                    },
+                    "id": "3Ld8gpo1G56L56RYcPoY3Y",
+                    "name": "EMBRACE CHAOS",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "dTwD-mcJSq-b5J3s6itXbQ",
+                      "shareUrl": "https://open.spotify.com/album/3Ld8gpo1G56L56RYcPoY3Y?si=dTwD-mcJSq-b5J3s6itXbQ"
+                    },
+                    "type": "ALBUM",
+                    "uri": "spotify:album:3Ld8gpo1G56L56RYcPoY3Y"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e0220e76417cda546d5dfcab157",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d0000485120e76417cda546d5dfcab157",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b27320e76417cda546d5dfcab157",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2023
+                    },
+                    "id": "79s3QnXZV4mDlaZUA28shN",
+                    "name": "PROTECTION CHARM (INSTRUMENTAL)",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "b4nnBhalTFikgRY2MdpXhw",
+                      "shareUrl": "https://open.spotify.com/album/79s3QnXZV4mDlaZUA28shN?si=b4nnBhalTFikgRY2MdpXhw"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:79s3QnXZV4mDlaZUA28shN"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f844cc9215c92368783ebb2c",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d00004851f844cc9215c92368783ebb2c",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f844cc9215c92368783ebb2c",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2021
+                    },
+                    "id": "2ZK8XDWbcdyJj3JtiVlLVn",
+                    "name": "lil horn's theme",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "De9LU5tjQh2p_TsNHcoUoA",
+                      "shareUrl": "https://open.spotify.com/album/2ZK8XDWbcdyJj3JtiVlLVn?si=De9LU5tjQh2p_TsNHcoUoA"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:2ZK8XDWbcdyJj3JtiVlLVn"
+                  },
+                  {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "height": 300,
+                          "url": "https://i.scdn.co/image/ab67616d00001e023043273dcb244848b222f935",
+                          "width": 300
+                        },
+                        {
+                          "height": 64,
+                          "url": "https://i.scdn.co/image/ab67616d000048513043273dcb244848b222f935",
+                          "width": 64
+                        },
+                        {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b2733043273dcb244848b222f935",
+                          "width": 640
+                        }
+                      ]
+                    },
+                    "date": {
+                      "year": 2023
+                    },
+                    "id": "32ABovTNDlXJFQtg7shHxp",
+                    "name": "FORGOTTEN CHILD",
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "vGmI3CN5Rr6vu7m2zDCOFw",
+                      "shareUrl": "https://open.spotify.com/album/32ABovTNDlXJFQtg7shHxp?si=vGmI3CN5Rr6vu7m2zDCOFw"
+                    },
+                    "type": "SINGLE",
+                    "uri": "spotify:album:32ABovTNDlXJFQtg7shHxp"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+      },
+    ],
+  },
+  {
+    id: "soundcloud",
+    name: "SoundCloud",
+    description: "Scrape SoundCloud playlists and tracks",
+    endpoints: [
+      {
+        name: "Artist",
+        method: "GET",
+        description: "Gets detailed information about a SoundCloud artist by its handle or URL. Returns artist metadata including id, name, followers, etc",
+        fullDescription:
+          "Fetches detailed information about a SoundCloud artist by its handle or URL. Returns artist metadata including id, name, followers, etc",
+        path: "/v1/soundcloud/artist",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "kehlanimusic",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "SoundCloud artist URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
+            placeholder: "https://soundcloud.com/kehlanimusic",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49998217490,
+          "avatar_url": "https://i1.sndcdn.com/avatars-4pU1zic9ZyyDdF4G-dF6LHA-large.jpg",
+          "city": "Oakland, CA",
+          "comments_count": 0,
+          "country_code": "US",
+          "created_at": null,
+          "creator_subscriptions": [
+            {
+              "product": {
+                "id": "creator-pro-unlimited"
+              }
+            }
+          ],
+          "creator_subscription": {
+            "product": {
+              "id": "creator-pro-unlimited"
+            }
+          },
+          "description": "\"Folded\" out now!\n\nSinger/Songwriter \nOakland to Los Angeles\n\nMGMT:\ndavid@abvgrnd.com\ninfo@thetsunamimob.com\n\nBOOKING:\nCaroline Yim\ncaroline.yim@caa.com",
+          "followers_count": 841535,
+          "followings_count": 0,
+          "first_name": "",
+          "full_name": "",
+          "groups_count": 0,
+          "id": 51562330,
+          "kind": "user",
+          "last_modified": "2025-06-12T20:52:01Z",
+          "last_name": "",
+          "likes_count": 11,
+          "playlist_likes_count": 2,
+          "permalink": "kehlanimusic",
+          "permalink_url": "https://soundcloud.com/kehlanimusic",
+          "playlist_count": 26,
+          "reposts_count": null,
+          "track_count": 331,
+          "uri": "https://api.soundcloud.com/users/soundcloud%3Ausers%3A51562330",
+          "urn": "soundcloud:users:51562330",
+          "username": "Kehlani",
+          "verified": true,
+          "visuals": {
+            "urn": "soundcloud:users:51562330",
+            "enabled": true,
+            "visuals": [
+              {
+                "urn": "soundcloud:visuals:243626019",
+                "entry_time": 0,
+                "visual_url": "https://i1.sndcdn.com/visuals-000051562330-BFF9AP-original.jpg"
+              }
+            ],
+            "tracking": null
+          },
+          "badges": {
+            "pro": false,
+            "creator_mid_tier": false,
+            "pro_unlimited": true,
+            "verified": true
+          },
+          "station_urn": "soundcloud:system-playlists:artist-stations:51562330",
+          "station_permalink": "artist-stations:51562330",
+          "date_of_birth": null
+        },
+      },
+      {
+        name: "Artist Tracks",
+        method: "GET",
+        description: "Gets tracks/songs for a SoundCloud artist by handle or URL.",
+        fullDescription:
+          "Fetches tracks/songs for a SoundCloud artist by handle or URL. Returns the artist profile, track list, and pagination info from SoundCloud.",
+        path: "/v1/soundcloud/artist/tracks",
+        params: [
+          {
+            name: "handle",
+            type: "string",
+            required: false,
+            description: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "kehlanimusic",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "SoundCloud artist tracks URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
+            placeholder: "https://soundcloud.com/kehlanimusic",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor to get more tracks. Get 'cursor' from previous response.",
+            placeholder: "2026-04-23T00:00:00.000Z,tracks,00000000002319251642",
+          }
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997863267,
+          "tracks": [
+            {
+              "artwork_url": "https://i1.sndcdn.com/artworks-RCKR3Fvp7iD1-0-large.jpg",
+              "caption": null,
+              "commentable": true,
+              "comment_count": 19,
+              "created_at": "2026-04-22T00:39:25Z",
+              "description": null,
+              "downloadable": false,
+              "download_count": 0,
+              "duration": 179351,
+              "full_duration": 179305,
+              "embeddable_by": "all",
+              "genre": "R&B",
+              "has_downloads_left": false,
+              "id": 2306956232,
+              "kind": "track",
+              "label_name": "TSNMI / Atlantic",
+              "last_modified": "2026-05-12T16:04:50Z",
+              "license": "all-rights-reserved",
+              "likes_count": 1365,
+              "permalink": "lights-on-feat-big-sean",
+              "permalink_url": "https://soundcloud.com/kehlanimusic/lights-on-feat-big-sean",
+              "playback_count": 28691,
+              "public": true,
+              "publisher_metadata": {
+                "id": 2306956232,
+                "urn": "soundcloud:tracks:2306956232",
+                "artist": "Kehlani",
+                "album_title": "Kehlani",
+                "contains_music": true,
+                "upc_or_ean": "075679576071",
+                "isrc": "USAT22601414",
+                "explicit": true,
+                "p_line": "℗ 2026 Atlantic Records Group LLC",
+                "p_line_for_display": "℗ 2026 Atlantic Records Group LLC",
+                "c_line": "© 2026 Atlantic Records Group LLC",
+                "c_line_for_display": "© 2026 Atlantic Records Group LLC",
+                "release_title": "Lights On (feat. Big Sean)"
+              },
+              "purchase_title": null,
+              "purchase_url": null,
+              "release_date": "2026-04-23T00:00:00Z",
+              "reposts_count": 26,
+              "secret_token": null,
+              "sharing": "public",
+              "state": "finished",
+              "streamable": true,
+              "tag_list": "",
+              "title": "Lights On (feat. Big Sean)",
+              "uri": "https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306956232",
+              "urn": "soundcloud:tracks:2306956232",
+              "user_id": 51562330,
+              "visuals": null,
+              "waveform_url": "https://wave.sndcdn.com/Ht1YwfedlhaJ_m.json",
+              "display_date": "2026-04-24T04:00:00Z",
+              "media": {
+                "transcodings": [
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/647fe3ae-d331-425e-86fa-7c72b98e56f7/stream/cbc-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/647fe3ae-d331-425e-86fa-7c72b98e56f7/stream/ctr-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/cf476ffb-c58f-4bc4-90d4-a1e8cfafc2a9/stream/cbc-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/cf476ffb-c58f-4bc4-90d4-a1e8cfafc2a9/stream/ctr-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/d20311a5-fd17-4723-ba4e-9d0ed3a2cbe9/stream/cbc-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/d20311a5-fd17-4723-ba4e-9d0ed3a2cbe9/stream/ctr-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 179351,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/9695f577-c498-4345-86a8-cfc6cc1af087/stream/hls",
+                    "preset": "mp3_1_0",
+                    "duration": 179305,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "hls",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/9695f577-c498-4345-86a8-cfc6cc1af087/stream/progressive",
+                    "preset": "mp3_1_0",
+                    "duration": 179305,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "progressive",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  }
+                ]
+              },
+              "station_urn": "soundcloud:system-playlists:track-stations:2306956232",
+              "station_permalink": "track-stations:2306956232",
+              "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJVUyIsInN1YiI6IiIsInJpZCI6Ijg1MDA3ODQyLTNiZjAtNGZhMC05MTI2LTU2MWRhNDQ0NjM2OCIsImlhdCI6MTc3ODc4NTE1OH0.VDV2Qb0vlomiA2QWvXyPpDKE5JsfNYpmcwkfn47kTcc",
+              "monetization_model": "AD_SUPPORTED",
+              "policy": "MONETIZE",
+              "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-4pU1zic9ZyyDdF4G-dF6LHA-large.jpg",
+                "first_name": "",
+                "followers_count": 842155,
+                "full_name": "",
+                "id": 51562330,
+                "kind": "user",
+                "last_modified": "2025-06-12T20:52:01Z",
+                "last_name": "",
+                "permalink": "kehlanimusic",
+                "permalink_url": "https://soundcloud.com/kehlanimusic",
+                "uri": "https://api.soundcloud.com/users/soundcloud%3Ausers%3A51562330",
+                "urn": "soundcloud:users:51562330",
+                "username": "Kehlani",
+                "verified": true,
+                "city": "Oakland, CA",
+                "country_code": "US",
+                "badges": {
+                  "pro": false,
+                  "creator_mid_tier": false,
+                  "pro_unlimited": true,
+                  "verified": true
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:51562330",
+                "station_permalink": "artist-stations:51562330"
+              }
+            },
+            {
+              "artwork_url": "https://i1.sndcdn.com/artworks-o12iUWvpM4fy-0-large.jpg",
+              "caption": null,
+              "commentable": true,
+              "comment_count": 21,
+              "created_at": "2026-04-22T00:38:16Z",
+              "description": null,
+              "downloadable": false,
+              "download_count": 0,
+              "duration": 199833,
+              "full_duration": 199786,
+              "embeddable_by": "all",
+              "genre": "R&B",
+              "has_downloads_left": false,
+              "id": 2306955953,
+              "kind": "track",
+              "label_name": "TSNMI / Atlantic",
+              "last_modified": "2026-05-12T15:56:25Z",
+              "license": "all-rights-reserved",
+              "likes_count": 1359,
+              "permalink": "call-me-back-feat-t-pain-lil",
+              "permalink_url": "https://soundcloud.com/kehlanimusic/call-me-back-feat-t-pain-lil",
+              "playback_count": 30631,
+              "public": true,
+              "publisher_metadata": {
+                "id": 2306955953,
+                "urn": "soundcloud:tracks:2306955953",
+                "artist": "Kehlani",
+                "album_title": "Kehlani",
+                "contains_music": true,
+                "upc_or_ean": "075679576071",
+                "isrc": "USAT22601412",
+                "explicit": true,
+                "p_line": "℗ 2026 Atlantic Records Group LLC",
+                "p_line_for_display": "℗ 2026 Atlantic Records Group LLC",
+                "c_line": "© 2026 Atlantic Records Group LLC",
+                "c_line_for_display": "© 2026 Atlantic Records Group LLC",
+                "release_title": "Call Me Back (feat. T-Pain & Lil Jon)"
+              },
+              "purchase_title": null,
+              "purchase_url": null,
+              "release_date": "2026-04-23T00:00:00Z",
+              "reposts_count": 18,
+              "secret_token": null,
+              "sharing": "public",
+              "state": "finished",
+              "streamable": true,
+              "tag_list": "",
+              "title": "Call Me Back (feat. T-Pain & Lil Jon)",
+              "uri": "https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306955953",
+              "urn": "soundcloud:tracks:2306955953",
+              "user_id": 51562330,
+              "visuals": null,
+              "waveform_url": "https://wave.sndcdn.com/weq109IJB5RA_m.json",
+              "display_date": "2026-04-24T04:00:00Z",
+              "media": {
+                "transcodings": [
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/2d45f646-87ec-47fb-8de5-a99a167b461f/stream/cbc-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/2d45f646-87ec-47fb-8de5-a99a167b461f/stream/ctr-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/8f3eaa09-0557-462f-8c92-324687469cfe/stream/cbc-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/8f3eaa09-0557-462f-8c92-324687469cfe/stream/ctr-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/e6fe4c43-0e00-4fcb-b540-f08ab5ba3262/stream/cbc-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/e6fe4c43-0e00-4fcb-b540-f08ab5ba3262/stream/ctr-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 199833,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/d7c98da1-29cb-4691-a125-38789ecd12a3/stream/hls",
+                    "preset": "mp3_1_0",
+                    "duration": 199786,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "hls",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306955953/d7c98da1-29cb-4691-a125-38789ecd12a3/stream/progressive",
+                    "preset": "mp3_1_0",
+                    "duration": 199786,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "progressive",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  }
+                ]
+              },
+              "station_urn": "soundcloud:system-playlists:track-stations:2306955953",
+              "station_permalink": "track-stations:2306955953",
+              "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJVUyIsInN1YiI6IiIsInJpZCI6Ijg2ZTJhZmNmLWVmODEtNGY4YS1hNzUwLWJlMmIwNzhkZTM3NiIsImlhdCI6MTc3ODc4NTE1OH0.REarxv0aPhsxF49AnBxuMRY1AQCQJUhSf29gpleezQs",
+              "monetization_model": "AD_SUPPORTED",
+              "policy": "MONETIZE",
+              "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-4pU1zic9ZyyDdF4G-dF6LHA-large.jpg",
+                "first_name": "",
+                "followers_count": 842155,
+                "full_name": "",
+                "id": 51562330,
+                "kind": "user",
+                "last_modified": "2025-06-12T20:52:01Z",
+                "last_name": "",
+                "permalink": "kehlanimusic",
+                "permalink_url": "https://soundcloud.com/kehlanimusic",
+                "uri": "https://api.soundcloud.com/users/soundcloud%3Ausers%3A51562330",
+                "urn": "soundcloud:users:51562330",
+                "username": "Kehlani",
+                "verified": true,
+                "city": "Oakland, CA",
+                "country_code": "US",
+                "badges": {
+                  "pro": false,
+                  "creator_mid_tier": false,
+                  "pro_unlimited": true,
+                  "verified": true
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:51562330",
+                "station_permalink": "artist-stations:51562330"
+              }
+            },
+            {
+              "artwork_url": "https://i1.sndcdn.com/artworks-KUHS6q3Bsaxp-0-large.jpg",
+              "caption": null,
+              "commentable": true,
+              "comment_count": 17,
+              "created_at": "2026-04-22T00:35:10Z",
+              "description": null,
+              "downloadable": false,
+              "download_count": 0,
+              "duration": 257101,
+              "full_duration": 257055,
+              "embeddable_by": "all",
+              "genre": "R&B",
+              "has_downloads_left": false,
+              "id": 2306954489,
+              "kind": "track",
+              "label_name": "TSNMI / Atlantic",
+              "last_modified": "2026-05-12T15:56:21Z",
+              "license": "all-rights-reserved",
+              "likes_count": 1405,
+              "permalink": "unlearn",
+              "permalink_url": "https://soundcloud.com/kehlanimusic/unlearn",
+              "playback_count": 35815,
+              "public": true,
+              "publisher_metadata": {
+                "id": 2306954489,
+                "urn": "soundcloud:tracks:2306954489",
+                "artist": "Kehlani",
+                "album_title": "Kehlani",
+                "contains_music": true,
+                "upc_or_ean": "075679576071",
+                "isrc": "USAT22601417",
+                "explicit": false,
+                "p_line": "℗ 2026 Atlantic Records Group LLC",
+                "p_line_for_display": "℗ 2026 Atlantic Records Group LLC",
+                "c_line": "© 2026 Atlantic Records Group LLC",
+                "c_line_for_display": "© 2026 Atlantic Records Group LLC",
+                "release_title": "Unlearn"
+              },
+              "purchase_title": null,
+              "purchase_url": null,
+              "release_date": "2026-04-23T00:00:00Z",
+              "reposts_count": 24,
+              "secret_token": null,
+              "sharing": "public",
+              "state": "finished",
+              "streamable": true,
+              "tag_list": "",
+              "title": "Unlearn",
+              "uri": "https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306954489",
+              "urn": "soundcloud:tracks:2306954489",
+              "user_id": 51562330,
+              "visuals": null,
+              "waveform_url": "https://wave.sndcdn.com/0i9U0KpR1roL_m.json",
+              "display_date": "2026-04-24T04:00:00Z",
+              "media": {
+                "transcodings": [
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/644dae9b-3019-455b-8172-5d56ee14b997/stream/cbc-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/644dae9b-3019-455b-8172-5d56ee14b997/stream/ctr-encrypted-hls",
+                    "preset": "aac_160k",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/7b45ddc1-8740-49b9-ac27-207516d2267d/stream/cbc-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/7b45ddc1-8740-49b9-ac27-207516d2267d/stream/ctr-encrypted-hls",
+                    "preset": "aac_96k",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                    },
+                    "quality": "lq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/f1efa76e-4d57-4569-bd64-d04a1fb97ab1/stream/cbc-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "cbc-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/f1efa76e-4d57-4569-bd64-d04a1fb97ab1/stream/ctr-encrypted-hls",
+                    "preset": "abr_sq",
+                    "duration": 257101,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "ctr-encrypted-hls",
+                      "mime_type": "audio/mpegurl"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": false
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/32d17648-288b-4b0b-8c83-7494e1a0be14/stream/hls",
+                    "preset": "mp3_1_0",
+                    "duration": 257055,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "hls",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  },
+                  {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306954489/32d17648-288b-4b0b-8c83-7494e1a0be14/stream/progressive",
+                    "preset": "mp3_1_0",
+                    "duration": 257055,
+                    "snipped": false,
+                    "format": {
+                      "protocol": "progressive",
+                      "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq",
+                    "is_legacy_transcoding": true
+                  }
+                ]
+              },
+              "station_urn": "soundcloud:system-playlists:track-stations:2306954489",
+              "station_permalink": "track-stations:2306954489",
+              "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJVUyIsInN1YiI6IiIsInJpZCI6IjdiNmY2MmZjLWU1NzItNGUxNy1hM2M5LTRmNjM0ZTc0ZDg0NCIsImlhdCI6MTc3ODc4NTE1OH0.7962MHveXBM0wgWdUcHqU2UuiIWk1RP7hIjoZ1Aq9qk",
+              "monetization_model": "AD_SUPPORTED",
+              "policy": "MONETIZE",
+              "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-4pU1zic9ZyyDdF4G-dF6LHA-large.jpg",
+                "first_name": "",
+                "followers_count": 842155,
+                "full_name": "",
+                "id": 51562330,
+                "kind": "user",
+                "last_modified": "2025-06-12T20:52:01Z",
+                "last_name": "",
+                "permalink": "kehlanimusic",
+                "permalink_url": "https://soundcloud.com/kehlanimusic",
+                "uri": "https://api.soundcloud.com/users/soundcloud%3Ausers%3A51562330",
+                "urn": "soundcloud:users:51562330",
+                "username": "Kehlani",
+                "verified": true,
+                "city": "Oakland, CA",
+                "country_code": "US",
+                "badges": {
+                  "pro": false,
+                  "creator_mid_tier": false,
+                  "pro_unlimited": true,
+                  "verified": true
+                },
+                "station_urn": "soundcloud:system-playlists:artist-stations:51562330",
+                "station_permalink": "artist-stations:51562330"
+              }
+            },
+          ],
+          "cursor": "2026-04-23T00:00:00.000Z,tracks,00000000002319251642"
+        }
+      },
+      {
+        name: "Track",
+        method: "GET",
+        description: "Gets detailed information about a SoundCloud track/song by ID.",
+        fullDescription:
+          "Fetches detailed information about a SoundCloud track/song by ID. Returns track title, plays, likes, reposts, comments, artwork, artist, and other SoundCloud metadata.",
+        path: "/v1/soundcloud/track",
+        params: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "SoundCloud track ID.",
+            placeholder: 2306956232,
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997863208,
+          "artwork_url": "https://i1.sndcdn.com/artworks-RCKR3Fvp7iD1-0-large.jpg",
+          "caption": null,
+          "commentable": true,
+          "comment_count": 19,
+          "created_at": "2026-04-22T00:39:25Z",
+          "description": null,
+          "downloadable": false,
+          "download_count": 0,
+          "duration": 179351,
+          "full_duration": 179305,
+          "embeddable_by": "all",
+          "genre": "R&B",
+          "has_downloads_left": false,
+          "id": 2306956232,
+          "kind": "track",
+          "label_name": "TSNMI / Atlantic",
+          "last_modified": "2026-05-12T16:04:50Z",
+          "license": "all-rights-reserved",
+          "likes_count": 1365,
+          "permalink": "lights-on-feat-big-sean",
+          "permalink_url": "https://soundcloud.com/kehlanimusic/lights-on-feat-big-sean",
+          "playback_count": 28693,
+          "public": true,
+          "publisher_metadata": {
+            "id": 2306956232,
+            "urn": "soundcloud:tracks:2306956232",
+            "artist": "Kehlani",
+            "album_title": "Kehlani",
+            "contains_music": true,
+            "upc_or_ean": "075679576071",
+            "isrc": "USAT22601414",
+            "explicit": true,
+            "p_line": "℗ 2026 Atlantic Records Group LLC",
+            "p_line_for_display": "℗ 2026 Atlantic Records Group LLC",
+            "c_line": "© 2026 Atlantic Records Group LLC",
+            "c_line_for_display": "© 2026 Atlantic Records Group LLC",
+            "release_title": "Lights On (feat. Big Sean)"
+          },
+          "purchase_title": null,
+          "purchase_url": null,
+          "release_date": "2026-04-23T00:00:00Z",
+          "reposts_count": 26,
+          "secret_token": null,
+          "sharing": "public",
+          "state": "finished",
+          "streamable": true,
+          "tag_list": "",
+          "title": "Lights On (feat. Big Sean)",
+          "uri": "https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306956232",
+          "urn": "soundcloud:tracks:2306956232",
+          "user_id": 51562330,
+          "visuals": null,
+          "waveform_url": "https://wave.sndcdn.com/Ht1YwfedlhaJ_m.json",
+          "display_date": "2026-04-24T04:00:00Z",
+          "media": {
+            "transcodings": [
+              {
+                "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/647fe3ae-d331-425e-86fa-7c72b98e56f7/stream/cbc-encrypted-hls",
+                "preset": "aac_160k",
+                "duration": 179351,
+                "snipped": false,
+                "format": {
+                  "protocol": "cbc-encrypted-hls",
+                  "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                },
+                "quality": "sq",
+                "is_legacy_transcoding": false
+              },
+              {
+                "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:2306956232/647fe3ae-d331-425e-86fa-7c72b98e56f7/stream/ctr-encrypted-hls",
+                "preset": "aac_160k",
+                "duration": 179351,
+                "snipped": false,
+                "format": {
+                  "protocol": "ctr-encrypted-hls",
+                  "mime_type": "audio/mp4; codecs=\"mp4a.40.2\""
+                },
+                "quality": "sq",
+                "is_legacy_transcoding": false
+              },
+            ]
+          },
+          "station_urn": "soundcloud:system-playlists:track-stations:2306956232",
+          "station_permalink": "track-stations:2306956232",
+          "track_authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJVUyIsInN1YiI6IiIsInJpZCI6Ijg1MDA3ODQyLTNiZjAtNGZhMC05MTI2LTU2MWRhNDQ0NjM2OCIsImlhdCI6MTc3ODc4NTMwMH0.2Kmr2C3p_1LcmPVD0MqutZ_5-D_PQYcC08z4Yd_mcbw",
+          "monetization_model": "AD_SUPPORTED",
+          "policy": "MONETIZE",
+          "user": {
+            "avatar_url": "https://i1.sndcdn.com/avatars-4pU1zic9ZyyDdF4G-dF6LHA-large.jpg",
+            "first_name": "",
+            "followers_count": 842155,
+            "full_name": "",
+            "id": 51562330,
+            "kind": "user",
+            "last_modified": "2025-06-12T20:52:01Z",
+            "last_name": "",
+            "permalink": "kehlanimusic",
+            "permalink_url": "https://soundcloud.com/kehlanimusic",
+            "uri": "https://api.soundcloud.com/users/soundcloud%3Ausers%3A51562330",
+            "urn": "soundcloud:users:51562330",
+            "username": "Kehlani",
+            "verified": true,
+            "city": "Oakland, CA",
+            "country_code": "US",
+            "badges": {
+              "pro": false,
+              "creator_mid_tier": false,
+              "pro_unlimited": true,
+              "verified": true
+            },
+            "station_urn": "soundcloud:system-playlists:artist-stations:51562330",
+            "station_permalink": "artist-stations:51562330"
+          }
+        }
+      },
+    ],
+  },
+  {
     id: "kick",
     name: "Kick",
     description: "Scrape Kick clips",
@@ -14162,11 +30147,139 @@ export const apis = [
         description: "How many credits you have left",
         fullDescription:
           "Returns the number of API credits remaining on your Scrape Creators account. The response contains a single creditCount field with your current balance.",
-        path: "/v1/credit-balance",
+        path: "/v1/account/credit-balance",
         params: [],
         sampleResponse: {
           creditCount: 333,
         },
+      },
+      {
+        name: "Get request history",
+        method: "GET",
+        description: "View your recent API request history",
+        fullDescription:
+          "Returns a paginated list of your API requests, including the endpoint called, status code, credits used, and timestamp. Useful for debugging and monitoring your API usage. Supports filtering by endpoint name and status code.",
+        path: "/v1/account/get-api-usage",
+        params: [
+          {
+            name: "page",
+            type: "string",
+            required: false,
+            description: "Page number for pagination (max 100)",
+            placeholder: "1",
+          },
+          {
+            name: "endpoint",
+            type: "string",
+            required: false,
+            description: "Filter by endpoint name (partial match)",
+            placeholder: "/v1/tiktok/profile",
+          },
+          {
+            name: "statusCode",
+            type: "string",
+            required: false,
+            description: "Filter by HTTP status code",
+            placeholder: "200",
+          },
+        ],
+        sampleResponse: [
+          {
+            id: "00000000-0000-0000-0000-000000000000",
+            endpoint: "/v1/tiktok/profile?handle=stoolpresidente",
+            status_code: 200,
+            duration_ms: 762,
+            success: true,
+            response_time: "2026-04-15T11:21:31.513+00:00",
+            request_time: "2026-04-15T11:21:30.754+00:00",
+            request_payload: { handle: "stoolpresidente" },
+            http_method: "GET",
+            created_at: "2026-04-15T11:22:10.556302+00:00",
+            duration_secs: 1,
+            credits: 1,
+          },
+          {
+            id: "00000000-0000-0000-0000-000000000001",
+            endpoint: "/v3/tiktok/profile/videos?handle=mimisusuuu",
+            status_code: 200,
+            duration_ms: 2791,
+            success: true,
+            response_time: "2026-04-15T09:21:53.592+00:00",
+            request_time: "2026-04-15T09:21:50.805+00:00",
+            request_payload: { handle: "mimisusuuu" },
+            http_method: "GET",
+            created_at: "2026-04-15T09:22:12.448575+00:00",
+            duration_secs: 3,
+            credits: 1,
+          },
+        ],
+      },
+      {
+        name: "Get daily usage",
+        method: "GET",
+        description: "Get your daily credit and request counts",
+        fullDescription:
+          "Returns aggregated daily usage statistics for the last 30 days, including total credits consumed and number of requests per day.",
+        path: "/v1/account/get-daily-usage-count",
+        params: [],
+        sampleResponse: [
+          {
+            usage_date: "2026-04-14T16:00:00.000Z",
+            total_credits: "47",
+            request_count: "47",
+          },
+          {
+            usage_date: "2026-04-13T16:00:00.000Z",
+            total_credits: "9",
+            request_count: "9",
+          },
+          {
+            usage_date: "2026-04-12T16:00:00.000Z",
+            total_credits: "40",
+            request_count: "4",
+          },
+        ],
+      },
+      {
+        name: "Get most used routes",
+        method: "GET",
+        description: "See which endpoints you use the most",
+        fullDescription:
+          "Returns your top 20 most called API endpoints ranked by call count, along with total credits consumed per endpoint. Defaults to the last 24 hours. Supports custom time ranges up to 1 year.",
+        path: "/v1/account/get-most-used-routes",
+        params: [
+          {
+            name: "start_time",
+            type: "string",
+            required: false,
+            description: "Start of time range (ISO 8601 format)",
+            placeholder: "2025-04-01T00:00:00.000Z",
+          },
+          {
+            name: "end_time",
+            type: "string",
+            required: false,
+            description: "End of time range (ISO 8601 format)",
+            placeholder: "2025-04-15T23:59:59.000Z",
+          },
+        ],
+        sampleResponse: [
+          {
+            base_endpoint: "/v1/tiktok/profile",
+            call_count: "45",
+            total_credits: "45",
+          },
+          {
+            base_endpoint: "/v3/tiktok/profile/videos",
+            call_count: "11",
+            total_credits: "11",
+          },
+          {
+            base_endpoint: "/v2/tiktok/video",
+            call_count: "4",
+            total_credits: "40",
+          },
+        ],
       },
     ],
   },

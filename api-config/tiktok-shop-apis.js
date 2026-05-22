@@ -1,4 +1,4 @@
-export const tiktokShopApis =   {
+export const tiktokShopApis = {
   id: "tiktok-shop",
   name: "TikTok Shop",
   description: "Everything about TikTok Shop",
@@ -367,7 +367,7 @@ export const tiktokShopApis =   {
       method: "GET",
       description:
         "Get the details of a TikTok Shop Product! Get the exact amount of stock the product has, related tiktok videos promoting the product, and more!",
-      fullDescription: "Fetches full details for a specific TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product).",
+      fullDescription: "Fetches full details for a specific TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). Related videos are only available in the US region.",
       path: "/v1/tiktok/product",
       params: [
         {
@@ -377,14 +377,6 @@ export const tiktokShopApis =   {
           description: "The URL of the product to get details for.",
           placeholder:
             "https://www.tiktok.com/shop/pdp/goli-ashwagandha-gummies-with-vitamin-d-ksm-66-vegan-non-gmo/1729587769570529799",
-        },
-        {
-          name: "get_related_videos",
-          required: false,
-          type: "string",
-          description:
-            "Whether to get related videos for the product. These are affiliate videos promoting the product.",
-          placeholder: "false",
         },
         {
           name: "region",
@@ -768,6 +760,13 @@ export const tiktokShopApis =   {
           placeholder: "1731578642912612516",
         },
         {
+          name: "region",
+          description: "The region of the product. This is *very* important.",
+          type: "string",
+          required: false,
+          placeholder: "US",
+        },
+        {
           name: "page",
           description: "The page number of the reviews",
           type: "number",
@@ -906,148 +905,148 @@ export const tiktokShopApis =   {
         }
       }
     },
-    // {
-    //   name: "User Showcase",
-    //   method: "GET",
-    //   description: "Gets public user's showcase products",
-    //   fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details.",
-    //   path: "/v1/tiktok/user/showcase",
-    //   params: [
-    //     {
-    //       name: "handle",
-    //       type: "string",
-    //       description: "The handle of the user",
-    //       required: true,
-    //       placeholder: "mrtiktokreviews",
-    //     },
-    //     {
-    //       name: "region",
-    //       type: "string",
-    //       description: "Region to put the proxy in",
-    //       required: false,
-    //       placeholder: "US",
-    //     },
-    //     {
-    //       name: "cursor",
-    //       type: "string",
-    //       description: "The cursor to the next page of products",
-    //       required: false,
-    //       placeholder: "21",
-    //     }
-    //   ],
-    //   sampleResponse: {
-    //     "success": true,
-    //     "credits_remaining": 49999721933,
-    //     "products": [
-    //       {
-    //         "product_id": "1732210666230419545",
-    //         "title": "Be Bodywise Hair Growth Roll-On Serum | New Year New You Edition | 3% Rosemary, 3% Redensyl, 2% AnaGain | Precision Scalp Applicator | Paraben/Sulphate-Free | Non-Oily | DHT-Care Botanicals | 50ml",
-    //         "image": {
-    //           "height": 500,
-    //           "width": 500,
-    //           "uri": "tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4",
-    //           "url_list": [
-    //             "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398",
-    //             "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398"
-    //           ]
-    //         },
-    //         "product_price_info": {
-    //           "sku_id": "1732210669134516313",
-    //           "symbol_position": 1,
-    //           "show_currency_space": false,
-    //           "currency_show_mode": 1,
-    //           "currency_name": "USD",
-    //           "currency_symbol": "$",
-    //           "sale_price_decimal": "46.58",
-    //           "origin_price_decimal": "53",
-    //           "sale_price_format": "46.58",
-    //           "origin_price_format": "53.00",
-    //           "discount_format": "12%",
-    //           "discount_decimal": "0.12",
-    //           "single_product_price_format": "46.58",
-    //           "single_product_price_decimal": "46.58",
-    //           "sale_price_integer_part_format": "46",
-    //           "sale_price_decimal_part_format": "58",
-    //           "decimal_point_symbol": ".",
-    //           "promotion_deduction_details": {
-    //             "seller_subtotal_deduction": "6.42",
-    //             "seller_subtotal_deduction_decimal": "6.42"
-    //           }
-    //         },
-    //         "rate_info": {
-    //           "score": 4.5,
-    //           "review_count": 326
-    //         },
-    //         "sold_info": {
-    //           "sold_count": 5457
-    //         },
-    //         "seller_info": {
-    //           "seller_id": "7495572938346760281"
-    //         },
-    //         "seo_url": {
-    //           "updated_at": null,
-    //           "canonical_url": "https://www.tiktok.com/shop/pdp/1732210666230419545",
-    //           "slug": "be-bodywise-hair-growth-roll-on-serum-new-year-new-you-edition-3-rosemary-3-redensyl-2-anagain-precision-scalp-applicator-paraben-sulphate-free-non-oily-dht-care-botanicals-50ml",
-    //           "type": 2,
-    //           "version": 2
-    //         }
-    //       },
-    //       {
-    //         "product_id": "1729499864890250680",
-    //         "title": "Nello Superbalance Hormonal Support Drink Mix, 20 Travel Packets, SRI-81 Shatavari, Myo-Inositol, Rhodiola Rosea, Vitamin C, Magnesium, Theobromine, Vitamin B6/C",
-    //         "image": {
-    //           "height": 500,
-    //           "width": 500,
-    //           "uri": "tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf",
-    //           "url_list": [
-    //             "https://p16-oec-general-useast8.ttcdn-us.com/tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398",
-    //             "https://p19-oec-general-useast8.ttcdn-us.com/tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398"
-    //           ]
-    //         },
-    //         "product_price_info": {
-    //           "sku_id": "1729499867243648440",
-    //           "symbol_position": 1,
-    //           "show_currency_space": false,
-    //           "currency_show_mode": 1,
-    //           "currency_name": "USD",
-    //           "currency_symbol": "$",
-    //           "sale_price_decimal": "31.99",
-    //           "origin_price_decimal": "59.99",
-    //           "sale_price_format": "31.99",
-    //           "origin_price_format": "59.99",
-    //           "discount_format": "47%",
-    //           "discount_decimal": "0.47",
-    //           "single_product_price_format": "31.99",
-    //           "single_product_price_decimal": "31.99",
-    //           "sale_price_integer_part_format": "31",
-    //           "sale_price_decimal_part_format": "99",
-    //           "decimal_point_symbol": ".",
-    //           "promotion_deduction_details": {
-    //             "seller_subtotal_deduction": "28.00",
-    //             "seller_subtotal_deduction_decimal": "28.00"
-    //           }
-    //         },
-    //         "rate_info": {
-    //           "score": 4.6,
-    //           "review_count": 54
-    //         },
-    //         "sold_info": {
-    //           "sold_count": 6808
-    //         },
-    //         "seller_info": {
-    //           "seller_id": "7495315412032719288"
-    //         },
-    //         "seo_url": {
-    //           "updated_at": null,
-    //           "canonical_url": "https://www.tiktok.com/shop/pdp/1729499864890250680",
-    //           "slug": "nello-superbalance-hormonal-support-drink-mix-20-travel-packets-sri-81-shatavari-myo-inositol-rhodiola-rosea-vitamin-c-magnesium-theobromine-vitamin-b6-c",
-    //           "type": 2,
-    //           "version": 2
-    //         }
-    //       }
-    //     ],
-    //     "cursor": "41"
-    //   }
-    // }
+    {
+      name: "User Showcase",
+      method: "GET",
+      description: "Gets public user's showcase products",
+      fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details. Use POST request if pagination is cutting off too early. Just send the query params in the body.",
+      path: "/v1/tiktok/user/showcase",
+      params: [
+        {
+          name: "handle",
+          type: "string",
+          description: "The handle of the user",
+          required: true,
+          placeholder: "mrtiktokreviews",
+        },
+        {
+          name: "region",
+          type: "string",
+          description: "Region to put the proxy in",
+          required: false,
+          placeholder: "US",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          description: "The cursor to the next page of products",
+          required: false,
+          placeholder: "21",
+        }
+      ],
+      sampleResponse: {
+        "success": true,
+        "credits_remaining": 49999721933,
+        "products": [
+          {
+            "product_id": "1732210666230419545",
+            "title": "Be Bodywise Hair Growth Roll-On Serum | New Year New You Edition | 3% Rosemary, 3% Redensyl, 2% AnaGain | Precision Scalp Applicator | Paraben/Sulphate-Free | Non-Oily | DHT-Care Botanicals | 50ml",
+            "image": {
+              "height": 500,
+              "width": 500,
+              "uri": "tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4",
+              "url_list": [
+                "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398",
+                "https://p19-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/b4088e56fc3140799ab2e52674339db4~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398"
+              ]
+            },
+            "product_price_info": {
+              "sku_id": "1732210669134516313",
+              "symbol_position": 1,
+              "show_currency_space": false,
+              "currency_show_mode": 1,
+              "currency_name": "USD",
+              "currency_symbol": "$",
+              "sale_price_decimal": "46.58",
+              "origin_price_decimal": "53",
+              "sale_price_format": "46.58",
+              "origin_price_format": "53.00",
+              "discount_format": "12%",
+              "discount_decimal": "0.12",
+              "single_product_price_format": "46.58",
+              "single_product_price_decimal": "46.58",
+              "sale_price_integer_part_format": "46",
+              "sale_price_decimal_part_format": "58",
+              "decimal_point_symbol": ".",
+              "promotion_deduction_details": {
+                "seller_subtotal_deduction": "6.42",
+                "seller_subtotal_deduction_decimal": "6.42"
+              }
+            },
+            "rate_info": {
+              "score": 4.5,
+              "review_count": 326
+            },
+            "sold_info": {
+              "sold_count": 5457
+            },
+            "seller_info": {
+              "seller_id": "7495572938346760281"
+            },
+            "seo_url": {
+              "updated_at": null,
+              "canonical_url": "https://www.tiktok.com/shop/pdp/1732210666230419545",
+              "slug": "be-bodywise-hair-growth-roll-on-serum-new-year-new-you-edition-3-rosemary-3-redensyl-2-anagain-precision-scalp-applicator-paraben-sulphate-free-non-oily-dht-care-botanicals-50ml",
+              "type": 2,
+              "version": 2
+            }
+          },
+          {
+            "product_id": "1729499864890250680",
+            "title": "Nello Superbalance Hormonal Support Drink Mix, 20 Travel Packets, SRI-81 Shatavari, Myo-Inositol, Rhodiola Rosea, Vitamin C, Magnesium, Theobromine, Vitamin B6/C",
+            "image": {
+              "height": 500,
+              "width": 500,
+              "uri": "tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf",
+              "url_list": [
+                "https://p16-oec-general-useast8.ttcdn-us.com/tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398",
+                "https://p19-oec-general-useast8.ttcdn-us.com/tos-useast8-i-rt0ujvrtvp-tx2/5f8ea7d0fc53439599d7dbc7052f9bcf~tplv-fhlh96nyum-crop-webp:500:500.webp?dr=12190&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398"
+              ]
+            },
+            "product_price_info": {
+              "sku_id": "1729499867243648440",
+              "symbol_position": 1,
+              "show_currency_space": false,
+              "currency_show_mode": 1,
+              "currency_name": "USD",
+              "currency_symbol": "$",
+              "sale_price_decimal": "31.99",
+              "origin_price_decimal": "59.99",
+              "sale_price_format": "31.99",
+              "origin_price_format": "59.99",
+              "discount_format": "47%",
+              "discount_decimal": "0.47",
+              "single_product_price_format": "31.99",
+              "single_product_price_decimal": "31.99",
+              "sale_price_integer_part_format": "31",
+              "sale_price_decimal_part_format": "99",
+              "decimal_point_symbol": ".",
+              "promotion_deduction_details": {
+                "seller_subtotal_deduction": "28.00",
+                "seller_subtotal_deduction_decimal": "28.00"
+              }
+            },
+            "rate_info": {
+              "score": 4.6,
+              "review_count": 54
+            },
+            "sold_info": {
+              "sold_count": 6808
+            },
+            "seller_info": {
+              "seller_id": "7495315412032719288"
+            },
+            "seo_url": {
+              "updated_at": null,
+              "canonical_url": "https://www.tiktok.com/shop/pdp/1729499864890250680",
+              "slug": "nello-superbalance-hormonal-support-drink-mix-20-travel-packets-sri-81-shatavari-myo-inositol-rhodiola-rosea-vitamin-c-magnesium-theobromine-vitamin-b6-c",
+              "type": 2,
+              "version": 2
+            }
+          }
+        ],
+        "cursor": "eyJwcm9kdWN0....."
+      }
+    }
   ],
 };
