@@ -29065,17 +29065,17 @@ export const apis = [
       {
         name: "Track",
         method: "GET",
-        description: "Gets detailed information about a SoundCloud track/song by ID.",
+        description: "Gets detailed information about a SoundCloud track/song by URL.",
         fullDescription:
-          "Fetches detailed information about a SoundCloud track/song by ID. Returns track title, plays, likes, reposts, comments, artwork, artist, and other SoundCloud metadata.",
+          "Fetches detailed information about a SoundCloud track/song by URL. Returns track title, plays, likes, reposts, comments, artwork, artist, and other SoundCloud metadata.",
         path: "/v1/soundcloud/track",
         params: [
           {
-            name: "id",
-            type: "number",
+            name: "url",
+            type: "string",
             required: true,
-            description: "SoundCloud track ID.",
-            placeholder: 2306956232,
+            description: "SoundCloud track URL.",
+            placeholder: "https://soundcloud.com/kehlanimusic/lights-on-feat-big-sean",
           },
         ],
         sampleResponse: {
