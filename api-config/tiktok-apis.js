@@ -3754,8 +3754,8 @@ export const tiktokBaseApis = {
     {
       name: "Video Info",
       method: "GET",
-      description: "Scrapes data from a TikTok video",
-      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` (download URLs including no-watermark), `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`.",
+      description: "Scrapes data from a TikTok video. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false.",
+      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video.",
       path: "/v2/tiktok/video",
       params: [
         {
@@ -3805,7 +3805,8 @@ export const tiktokBaseApis = {
         },
         {
           path: "aweme_detail.video.download_no_watermark_addr.url_list[0]",
-          description: "The URL of the video",
+          description:
+            "No-watermark video URL when TikTok returns one. If this field is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead.",
         },
         {
           path: "digg_count",
