@@ -492,6 +492,70 @@ export const instagramBaseApis = {
       ],
     },
     {
+      name: "Trending Reels",
+      method: "GET",
+      description:
+        "Get trending reels from Instagram. Call this endpoint again to get new-ish results. There can be duplicates because this uses Instagram's public instagram.com/reels page, and that is how the page behaves too.",
+      fullDescription:
+        "Fetches trending reels from Instagram's public instagram.com/reels page. Instagram only gives a small batch at a time and the results can overlap, so call this endpoint over and over when you want more. Each call should return new-ish results, but expect some duplicates because that is how Instagram's reels page behaves too. Returns `reels`, an array of reel objects with shortcode, URL, caption, media URLs, engagement counts when Instagram exposes them, and user info.",
+      path: "/v1/instagram/reels/trending",
+      params: [],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        data: {
+          reels: [
+            {
+              id: "3659267353687104516",
+              pk: "3659267353687104516",
+              shortcode: "DYt13O8gLoE",
+              url: "https://www.instagram.com/reel/DYt13O8gLoE/",
+              caption: "Funny clip from today",
+              taken_at: "2026-01-02T18:32:11.000Z",
+              media_type: 2,
+              product_type: "clips",
+              video_url: "https://scontent.cdninstagram.com/o1/v/t16/f2/m86/example.mp4",
+              video_versions: [
+                {
+                  type: 101,
+                  width: 720,
+                  height: 1280,
+                  url: "https://scontent.cdninstagram.com/o1/v/t16/f2/m86/example.mp4",
+                },
+              ],
+              image_url: "https://scontent.cdninstagram.com/v/t51.2885-15/example.jpg",
+              image_versions2: {
+                candidates: [
+                  {
+                    width: 720,
+                    height: 1280,
+                    url: "https://scontent.cdninstagram.com/v/t51.2885-15/example.jpg",
+                  },
+                ],
+              },
+              original_width: 720,
+              original_height: 1280,
+              has_audio: true,
+              like_count: 12345,
+              comment_count: 123,
+              play_count: 456789,
+              ig_play_count: 456789,
+              clips_metadata: {},
+              user: {
+                id: "123456789",
+                pk: "123456789",
+                username: "creator",
+                full_name: "Creator",
+                profile_pic_url: "https://scontent.cdninstagram.com/v/t51.2885-19/example.jpg",
+                is_verified: true,
+                is_private: false,
+              },
+            },
+          ],
+        },
+      },
+    },
+    {
       name: "Basic Profile",
       method: "GET",
       description: "Get a basic profile by user id.",
