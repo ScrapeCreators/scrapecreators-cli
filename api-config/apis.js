@@ -174,6 +174,190 @@ export const apis = [
         ],
       },
       {
+        name: "Channel Playlists",
+        method: "GET",
+        description:
+          "Get playlists from a YouTube channel. Can pass channelId or handle.",
+        fullDescription:
+          "Fetches playlists from a YouTube channel's Playlists tab, including playlist ID, title, thumbnail, video count, channel info, playlist URL, and a continuationToken when YouTube has more results. Pass a handle or channelId for the first page, then pass continuationToken to page through more playlists.",
+        path: "/v1/youtube/channel/playlists",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          playlists: [
+            {
+              type: "playlist",
+              id: "PLoSWVnSA9vG8hI-SUpAimvYJrPh-PRRvp",
+              title: "If You Survive, You Win",
+              thumbnail:
+                "https://i.ytimg.com/vi/tnTPaLOaHz8/hqdefault.jpg",
+              playlistUrl:
+                "https://www.youtube.com/playlist?list=PLoSWVnSA9vG8hI-SUpAimvYJrPh-PRRvp",
+              videoId: "tnTPaLOaHz8",
+              videoUrl: "https://www.youtube.com/watch?v=tnTPaLOaHz8",
+              videoCount: 4,
+              channel: {
+                id: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+                title: "MrBeast",
+                handle: "MrBeast",
+                channelUrl: "https://www.youtube.com/@MrBeast",
+              },
+            },
+          ],
+          continuationToken: "4qmFsgLlFhIYV....",
+        },
+        params: [
+          {
+            name: "channelId",
+            type: "string",
+            description: "YouTube channel ID",
+            placeholder: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          },
+          {
+            name: "handle",
+            type: "string",
+            description: "YouTube channel handle",
+            placeholder: "MrBeast",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token to get more playlists. Get 'continuationToken' from previous response.",
+            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
+          },
+        ],
+      },
+      {
+        name: "Channel Lives",
+        method: "GET",
+        description:
+          "Get live streams and past streams from a YouTube channel. Can pass channelId or handle.",
+        fullDescription:
+          "Fetches live streams and past streams from a YouTube channel's Live tab, including title, URL, thumbnail, view count, publish time, duration, and a continuationToken when YouTube has more results. Pass a handle or channelId for the first page, then pass continuationToken to page through more lives.",
+        path: "/v1/youtube/channel/lives",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          lives: [
+            {
+              type: "live",
+              id: "JpVtso3S9rM",
+              url: "https://www.youtube.com/watch?v=JpVtso3S9rM",
+              title: "IShowSpeed Live Stream",
+              thumbnail:
+                "https://i.ytimg.com/vi/JpVtso3S9rM/hqdefault.jpg",
+              channel: {
+                id: null,
+                title: null,
+                handle: null,
+                thumbnail: null,
+              },
+              viewCountText: "1.2M views",
+              viewCountInt: 1200000,
+              publishedTimeText: "Streamed 2 days ago",
+              lengthText: "2:14:52",
+              lengthSeconds: 8092,
+              badges: [],
+            },
+          ],
+          continuationToken: "4qmFsgLlFhIYV....",
+        },
+        params: [
+          {
+            name: "channelId",
+            type: "string",
+            description: "YouTube channel ID",
+            placeholder: "UCWsDFcIhY2DBi3GB5uykGXA",
+          },
+          {
+            name: "handle",
+            type: "string",
+            description: "YouTube channel handle",
+            placeholder: "IShowSpeed",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token to get more lives. Get 'continuationToken' from previous response.",
+            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
+          },
+        ],
+      },
+      {
+        name: "Channel Community Posts",
+        method: "GET",
+        description:
+          "Get community posts from a YouTube channel. Can pass channelId or handle.",
+        fullDescription:
+          "Fetches community posts from a YouTube channel's Posts tab, including post ID, URL, content, images, attached video, like count, publish time, channel info, and a continuationToken when YouTube has more results. Pass a handle or channelId for the first page, then pass continuationToken to page through more posts.",
+        path: "/v1/youtube/channel/community-posts",
+        paginationField: "continuationToken",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          posts: [
+            {
+              id: "UgkxfMvMnSnV3Ww9HwAY2wFGmVevmhRaYAYO",
+              url: "https://www.youtube.com/post/UgkxfMvMnSnV3Ww9HwAY2wFGmVevmhRaYAYO",
+              channel: {
+                id: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+                title: "MrBeast",
+                url: "https://www.youtube.com/@MrBeast",
+                handle: "MrBeast",
+              },
+              content: "New video is live",
+              image: "https://yt3.ggpht.com/example-image=s640-c-fcrop64",
+              images: ["https://yt3.ggpht.com/example-image=s640-c-fcrop64"],
+              likeCountText: "250K",
+              likeCount: 250000,
+              publishedTimeText: "2 days ago",
+              publishedTime: "2026-05-24T12:00:00.000Z",
+              video: {
+                id: "tnTPaLOaHz8",
+                title: "If You Survive, You Win",
+                thumbnail:
+                  "https://i.ytimg.com/vi/tnTPaLOaHz8/hqdefault.jpg",
+                url: "https://www.youtube.com/watch?v=tnTPaLOaHz8",
+                viewCountText: "10M views",
+                viewCountInt: 10000000,
+                publishedTimeText: "2 days ago",
+                lengthText: "18:42",
+                lengthSeconds: 1122,
+              },
+            },
+          ],
+          continuationToken: "4qmFsgLlFhIYV....",
+        },
+        params: [
+          {
+            name: "channelId",
+            type: "string",
+            description: "YouTube channel ID",
+            placeholder: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          },
+          {
+            name: "handle",
+            type: "string",
+            description: "YouTube channel handle",
+            placeholder: "MrBeast",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Continuation token to get more community posts. Get 'continuationToken' from previous response.",
+            placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
+          },
+        ],
+      },
+      {
         name: "Channel Shorts",
         method: "GET",
         description:
