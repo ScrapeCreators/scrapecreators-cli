@@ -186,7 +186,7 @@ export const tiktokShopApis = {
       method: "GET",
       description:
         "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results.",
-      fullDescription: "Lists all products from a specific TikTok Shop store by its URL. Returns an array of product objects each with `title`, `cover` images, `url`, `price` info, `sold_count`, `review_count`, and `rating`. Paginate with `cursor` from the previous response; filter by region.",
+      fullDescription: "Lists all products from a specific TikTok Shop store by its URL. Returns an array of product objects each with `title`, `cover` images, `url`, `price` info, `sold_count`, `review_count`, and `rating`. Paginate with `cursor` from the previous response; filter by region; use `sort_by=top` for best-selling products or `sort_by=new_releases` for newest products.",
       path: "/v1/tiktok/shop/products",
       params: [
         {
@@ -204,6 +204,15 @@ export const tiktokShopApis = {
           description:
             "Cursor parameter from the previous response to retrieve the next page of products. Omit for the first page.",
           placeholder: "",
+        },
+        {
+          name: "sort_by",
+          type: "select",
+          required: false,
+          options: ["top", "new_releases"],
+          placeholder: "top",
+          description:
+            "Sort products by best-selling items (`top`) or newest products (`new_releases`). Defaults to `top`.",
         },
         {
           name: "region",
