@@ -9771,6 +9771,45 @@ export const apis = [
       //   ],
       // },
       {
+        name: "Post Transcript",
+        method: "GET",
+        description: "Get the transcript from a Reddit video post",
+        fullDescription:
+          "Gets the transcript from a Reddit video post or direct v.redd.it URL when Reddit exposes a VTT caption file. Returns the raw WebVTT in raw_vtt plus a parsed plain-text transcript. If Reddit does not expose captions for the video, transcript is null and transcriptNotAvailable is true.",
+        path: "/v1/reddit/post/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Reddit post URL or direct v.redd.it video URL",
+            placeholder:
+              "https://www.reddit.com/r/youseeingthisshit/comments/1oiu9xm/football_nostalgiasaints_punter_head_coach_cant/",
+          },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description: "2 letter language code. Defaults to en.",
+            placeholder: "en",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          url: "https://www.reddit.com/r/youseeingthisshit/comments/1oiu9xm/football_nostalgiasaints_punter_head_coach_cant/",
+          post_id: "1oiu9xm",
+          video_id: "eflpgc6r0zxf1",
+          caption_url: "https://v.redd.it/eflpgc6r0zxf1/wh_ben_en.vtt",
+          language: "en",
+          raw_vtt:
+            "WEBVTT\n\n00:00.000 --> 00:00.300\n<u>stop</u> on third down and now Barnhart I\nhanging\n\n00:00.300 --> 00:00.560\nstop <u>on</u> third down and now Barnhart I\nhanging",
+          transcript:
+            "stop on third down and now Barnhart I hanging spiraling punts touch back Barnhart could not pull it up short of the end zone...",
+          transcriptNotAvailable: false,
+        },
+      },
+      {
         name: "Search",
         method: "GET",
         description: "Search Reddit for posts",
