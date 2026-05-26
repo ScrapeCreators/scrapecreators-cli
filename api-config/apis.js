@@ -2624,6 +2624,32 @@ export const apis = [
           ],
         },
       },
+      {
+        name: "Post Transcript",
+        method: "GET",
+        description: "Get the transcript from a LinkedIn post video when LinkedIn exposes one.",
+        fullDescription:
+          "Fetches the transcript from a LinkedIn post video when LinkedIn exposes one publicly. Returns null with transcriptNotAvailable when the post has no transcript, and only deducts credits when a transcript is returned.",
+        path: "/v1/linkedin/post/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The URL of the LinkedIn post to get the transcript from",
+            required: true,
+            placeholder:
+              "https://www.linkedin.com/posts/gemini-35-flash-is-a-step-forward-for-google-ugcPost-7465082215316525056-MHBd/",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          url: "https://www.linkedin.com/posts/artificial-analysis_gemini-35-flash-is-a-step-forward-for-google-activity-7465082408409870337-4Pm-",
+          transcript:
+            "Hey, my name is Declan Jackson. I am a member of technical staff here at Artificial Analysis and I'm going to do a quick chat through the recent release of Gemini 3.5 Flash...",
+          transcriptNotAvailable: false,
+        },
+      },
     ],
   },
   {
