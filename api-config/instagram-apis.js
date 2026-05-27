@@ -3450,6 +3450,378 @@ export const instagramBaseApis = {
     //   },
     // },
     {
+      name: "Search Hashtag Posts",
+      method: "GET",
+      description:
+        "Search for public Instagram posts by hashtag. Uses Google Search to find indexed posts/reels, then scrapes the public Instagram pages. This avoids Instagram login-gated search and only uses public data.",
+      fullDescription:
+        "Finds public Instagram posts for a hashtag using Google Search, then returns post details such as caption, play count when available, like count, comment count, owner, and post time. Results depend on what Google has indexed, so this is best-effort and not a complete Instagram-native hashtag search. Pass media_type=reels if you only want reels. Use date_posted for recent posts and pass the returned cursor to fetch the next page.",
+      path: "/v1/instagram/search/hashtag",
+      params: [
+        {
+          name: "hashtag",
+          type: "string",
+          required: true,
+          description: "The hashtag to search for. Include or omit the #.",
+          placeholder: "makeup",
+        },
+        {
+          name: "date_posted",
+          type: "select",
+          required: false,
+          description: "Only return Google-indexed posts found in this relative window.",
+          options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
+          placeholder: "last-week",
+        },
+        {
+          name: "media_type",
+          type: "select",
+          required: false,
+          description: "Use all to search public posts and reels, or reels to only return reels. Defaults to all.",
+          options: ["all", "reels"],
+          placeholder: "all",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description: "The cursor returned by the previous response. In this version, it is the next Google results page number.",
+          placeholder: "2",
+        },
+      ],
+      sampleResponse: {
+        "success": true,
+        "credits_remaining": 49997308058,
+        "hashtag": "funnydogs",
+        "media_type": "all",
+        "posts": [
+          {
+            "id": "3714950709444987377",
+            "__typename": "XDTGraphVideo",
+            "shortcode": "DOOJ_zSjcnx",
+            "url": "https://www.instagram.com/reel/DOOJ_zSjcnx/",
+            "caption": "Well we tried to be subtle…  #funnydogs #funny #whiteboxer #australianshepherd",
+            "thumbnail_src": "https://scontent-ord5-2.cdninstagram.com/v/t51.82787-15/542212527_18130644664455761_8262846918103190683_n.jpg?stp=c0.509.1312.1312a_dst-jpg_e35_s640x640_sh2.08_tt6&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=eV6SPEh2O88Q7kNvwHcNeFx&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af6BLCF7O_laTkSuoqn5Ebg8ZWg57JkaXtBAb6nH0KapPg&oe=6A1D1BB2&_nc_sid=d885a2",
+            "display_url": "https://scontent-ord5-2.cdninstagram.com/v/t51.82787-15/542212527_18130644664455761_8262846918103190683_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=eV6SPEh2O88Q7kNvwHcNeFx&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af6TdnB6cfe_BkRBRYP65isRGJfDrp2evUQY9O_ReUHv2g&oe=6A1D1BB2&_nc_sid=d885a2",
+            "video_url": "https://scontent-ord5-2.cdninstagram.com/o1/v/t2/f2/m86/AQNG_gCzevxl8xiNB2lVRlcV8c3o3r2ZyeLeWfaY4eaHdyRX3_Z1mty2jrHuH5Z66vTC5SXrhmpdG5re9MNyf1jCtWVyPKAWQFQ037o.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_ohc=ByTiQjuOr9wQ7kNvwGpBh0x&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTEyMDQ3OTIyMDA0MTUwMSwiYXNzZXRfYWdlX2RheXMiOjI2NCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjY1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=638842146c84456b&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC80QTQ2OURBNUJBQTE1RjdFODZFRjQxRThCOUU1RTNBOV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83NDQ4NjQwMTg0MjI1MjdfODI5Mjc2OTQ2ODc2ODI3MDk4OC5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmupyc3rzE_QMVAigCQzMsF0BQbul41P30GBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&_nc_ss=7a22e&_nc_zt=28&oh=00_Af6Z6PbM9b2RWG7EdCufc8MOp-pcmhJu3EMKtd_pzJaopw&oe=6A193955",
+            "has_audio": false,
+            "accessibility_caption": null,
+            "video_view_count": 148581,
+            "video_play_count": 593055,
+            "product_type": "clips",
+            "video_duration": 65.733,
+            "clips_music_attribution_info": {
+              "artist_name": "_layla_the_boxer",
+              "song_name": "Original audio",
+              "uses_original_audio": true,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "1303301604923923"
+            },
+            "is_video": true,
+            "owner": {
+              "id": "13582495760",
+              "username": "_layla_the_boxer",
+              "is_verified": true,
+              "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.2885-19/420493539_1460561894498614_4791883467164866946_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=aeHo4Q_mApIQ7kNvwERao4Z&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af4Fxb_M04AcFcB7JVo3PYiMVir3WS0vIloaPKB0igyV_g&oe=6A1D1119&_nc_sid=d885a2",
+              "full_name": "Layla the Boxer",
+              "is_private": false,
+              "is_unpublished": false,
+              "follower_count": 1369176,
+              "post_count": 1184
+            },
+            "taken_at": "2025-09-05T12:51:42.000Z",
+            "is_ad": false,
+            "like_count": 35854,
+            "is_affiliate": false,
+            "is_paid_partnership": false,
+            "location": null,
+            "comment_count": 1263,
+            "comments": [
+              {
+                "id": "18099897668494530",
+                "text": "😂😅🤣😍❤️🥰",
+                "owner": {
+                  "id": "70821489119",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.2885-19/466368394_545365701466258_2087161965910224562_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=JxQ38FoXdhsQ7kNvwH3PKC0&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af5bZb_HVbD8jFTK8i271c6IoeUyGR3iiKL-YVd-tFY_Yw&oe=6A1D05C8&_nc_sid=d885a2",
+                  "username": "jesshman66"
+                },
+                "like_count": 0,
+                "created_at": "2026-01-25T13:33:43.000Z"
+              },
+              {
+                "id": "18081021119192490",
+                "text": "😂😅🤣",
+                "owner": {
+                  "id": "70821489119",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.2885-19/466368394_545365701466258_2087161965910224562_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=JxQ38FoXdhsQ7kNvwH3PKC0&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af5bZb_HVbD8jFTK8i271c6IoeUyGR3iiKL-YVd-tFY_Yw&oe=6A1D05C8&_nc_sid=d885a2",
+                  "username": "jesshman66"
+                },
+                "like_count": 0,
+                "created_at": "2026-01-25T13:32:42.000Z"
+              },
+              {
+                "id": "18543588775048484",
+                "text": "Oops",
+                "owner": {
+                  "id": "61728775369",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.82787-19/632320392_17955296577063370_7249001035299888189_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=GlpxwmfgMn8Q7kNvwF0Llcb&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af4-f8o-4LU4a4maMIaYUvnugXX9bMK5SmjinstTVYGp5w&oe=6A1D2431&_nc_sid=d885a2",
+                  "username": "etpowell2023"
+                },
+                "like_count": 0,
+                "created_at": "2025-12-03T17:34:22.000Z"
+              },
+              {
+                "id": "17953613637044846",
+                "text": "😂😢❤️❤️",
+                "owner": {
+                  "id": "44453156435",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/311002550_146881921386136_8689167053168803025_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby40NjQuYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=XaBx4mMqWIwQ7kNvwEYPFt6&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af5CSI_SziSqI__klKZQanlPDEa_TfwvxDm7YHsm4SH3TA&oe=6A1D17CE&_nc_sid=d885a2",
+                  "username": "diana.bratz"
+                },
+                "like_count": 0,
+                "created_at": "2025-12-01T15:15:01.000Z"
+              },
+              {
+                "id": "18089017520306476",
+                "text": "Love that",
+                "owner": {
+                  "id": "2266437977",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-1.cdninstagram.com/v/t51.82787-19/708442229_18530758015077978_1014604784641213320_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=9d93spZzWysQ7kNvwHPCAd_&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af7c4xGuVQzHKu9mzm30Fxpglq097sUSoFMJ11-4bwv5zA&oe=6A1D05BE&_nc_sid=d885a2",
+                  "username": "judyannebing"
+                },
+                "like_count": 0,
+                "created_at": "2025-12-01T06:43:46.000Z"
+              },
+              {
+                "id": "17922343059195859",
+                "text": "😡😁😁🐾🐾🥩🥩🥩🥩",
+                "owner": {
+                  "id": "5748268152",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.2885-19/125139336_282480699788902_3594035504402272669_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=MXsjZUyfW78Q7kNvwF7-eHM&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af4MyeAhhuDbqmN4wt-xy7SN-RM1y981ROpPx9VXlUhBNg&oe=6A1D1C5C&_nc_sid=d885a2",
+                  "username": "gailtuite"
+                },
+                "like_count": 0,
+                "created_at": "2025-12-01T01:28:37.000Z"
+              },
+              {
+                "id": "18046057994470706",
+                "text": "😁😁😁🥰😍",
+                "owner": {
+                  "id": "71841640424",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/573323465_1219825463302212_7278921664109726296_n.png?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xNTAuYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=hexn_7aa4p0Q7kNvwE8FMCU&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5&oh=00_Af7hEW_phPZYl-hXJEjKwTyseZtQVOCdcds2oAwi0cQ6Cw&oe=6A1D082A&_nc_sid=d885a2",
+                  "username": "tupas.melanie"
+                },
+                "like_count": 0,
+                "created_at": "2025-11-30T20:58:17.000Z"
+              },
+              {
+                "id": "18075871864997562",
+                "text": "Too funny 😁 😂",
+                "owner": {
+                  "id": "53381022476",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/573323465_1219825463302212_7278921664109726296_n.png?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xNTAuYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=hexn_7aa4p0Q7kNvwE8FMCU&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5&oh=00_Af7hEW_phPZYl-hXJEjKwTyseZtQVOCdcds2oAwi0cQ6Cw&oe=6A1D082A&_nc_sid=d885a2",
+                  "username": "prippeyfl"
+                },
+                "like_count": 0,
+                "created_at": "2025-11-30T02:58:27.000Z"
+              },
+              {
+                "id": "18090057185305193",
+                "text": "😂",
+                "owner": {
+                  "id": "50122450806",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-2.cdninstagram.com/v/t51.2885-19/461084949_1086168772841450_7218580332697724474_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43MDguYzIifQ&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=_VjGrN_cRZ0Q7kNvwFhF-E4&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af7zFGKBNfWVXiNIFlzF8iqfUUQz3ztICAwvYHV2hX6qdg&oe=6A1D1FAC&_nc_sid=d885a2",
+                  "username": "celinelucielionbrung"
+                },
+                "like_count": 0,
+                "created_at": "2025-11-29T14:05:33.000Z"
+              },
+              {
+                "id": "17895465507359714",
+                "text": "mom. 😂",
+                "owner": {
+                  "id": "4192077711",
+                  "is_verified": false,
+                  "profile_pic_url": "https://scontent-ord5-3.cdninstagram.com/v/t51.2885-19/404902311_1943119516075270_9181257492114213009_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43MjAuYzIifQ&_nc_ht=scontent-ord5-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGAVcFN0K6MoOopK41K4dWjOeZZaT9xgOadaLiAbdnmQSVNlQgD_lz8yQLaXrtvYeY&_nc_ohc=x9zMUNHEONwQ7kNvwG7k0WF&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af5HS61BpfLdP79ugt3rbVE4G1QmiuFc8Xck0bblfBLrjQ&oe=6A1D2545&_nc_sid=d885a2",
+                  "username": "reagan_jessie2"
+                },
+                "like_count": 0,
+                "created_at": "2025-11-27T15:25:30.000Z"
+              }
+            ]
+          },
+          {
+            "id": "3872317747799018814",
+            "__typename": "XDTGraphVideo",
+            "shortcode": "DW9PHmnAE0-",
+            "url": "https://www.instagram.com/reel/DW9PHmnAE0-/",
+            "caption": "Awkward dogs 😂\n#funny #funnyvideos #dog #funnydogs #doglife",
+            "thumbnail_src": "https://scontent-mia3-3.cdninstagram.com/v/t51.82787-15/669861302_18022724897818474_8132568843415868798_n.jpg?stp=c0.420.1080.1080a_dst-jpg_e35_s640x640_sh2.08_tt6&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGLr70pzey70LQNKQXIREEyLdjnh13_PzKo938l9LAZheeL2LwLnThCM794AhgrWeU&_nc_ohc=FcIvH3o7naMQ7kNvwEFJFuX&_nc_gid=YD_Zc4FAN30v4fHL3lOgfw&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af6xUnMG6c5RcO3MFatw4mo2YAqAW2OuTYjaFnt6D9oZDg&oe=6A1D1608&_nc_sid=d885a2",
+            "display_url": "https://scontent-mia3-3.cdninstagram.com/v/t51.82787-15/669861302_18022724897818474_8132568843415868798_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gGLr70pzey70LQNKQXIREEyLdjnh13_PzKo938l9LAZheeL2LwLnThCM794AhgrWeU&_nc_ohc=FcIvH3o7naMQ7kNvwEFJFuX&_nc_gid=YD_Zc4FAN30v4fHL3lOgfw&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af55J9PHHz0ORiKhvdWH_b4xgvdBM1d7uLJTTPnthCyNyA&oe=6A1D1608&_nc_sid=d885a2",
+            "video_url": "https://scontent-mia3-3.cdninstagram.com/o1/v/t2/f2/m86/AQP-dJROb1RW6mt2HO6rqPKhUN-R0M9RSjgR90483nKJLqoM8VMl-0EDaym5Rs0T0lFFo4iSC5S5JroQMHi_LoU1Yh7MByctDUq2rHo.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_ohc=jhHcKAQGJiwQ7kNvwGmCH4u&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTgwMjI3MjQ3NjI4MTg0NzQsImFzc2V0X2FnZV9kYXlzIjo0NywidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjg1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=e040d8d00e2dc40b&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8wMzRDNzAxMEM2ODZDQUU1RUE4Q0JFMzJFRTEyMERBQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0YwNDIxOThBM0VBRDMzQTgxRDNGQzA2QUZCODNEQjhCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbU3vq10-SDQBUCKAJDMywXQFVZmZmZmZoYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=YD_Zc4FAN30v4fHL3lOgfw&_nc_ss=7a22e&_nc_zt=28&oh=00_Af4i9UTMzKBF1CWLsrCpPWFNBMny8wS91rv7XyzFvw24ng&oe=6A193ED6",
+            "has_audio": true,
+            "accessibility_caption": null,
+            "video_view_count": 770,
+            "video_play_count": 1650,
+            "product_type": "clips",
+            "video_duration": 85.419,
+            "clips_music_attribution_info": {
+              "artist_name": "bewilderbugs",
+              "song_name": "Original audio",
+              "uses_original_audio": true,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "25524731720469958"
+            },
+            "is_video": true,
+            "owner": {
+              "id": "54596594473",
+              "username": "bewilderbugs",
+              "is_verified": false,
+              "profile_pic_url": "https://scontent-mia5-1.cdninstagram.com/v/t51.2885-19/297398358_152155457469266_4433368720732893271_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44MDAuYzIifQ&_nc_ht=scontent-mia5-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gGLr70pzey70LQNKQXIREEyLdjnh13_PzKo938l9LAZheeL2LwLnThCM794AhgrWeU&_nc_ohc=z1b4i4Bosz0Q7kNvwFAePn_&_nc_gid=YD_Zc4FAN30v4fHL3lOgfw&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_Af4Tb-1lJy7GBwjeMIo7Cu7jLWkbK7KwdDuZ5tyaWTGk7w&oe=6A1D387B&_nc_sid=d885a2",
+              "full_name": "Adam Wilder",
+              "is_private": false,
+              "is_unpublished": false,
+              "follower_count": 39617,
+              "post_count": 922
+            },
+            "taken_at": "2026-04-10T15:51:47.000Z",
+            "is_ad": false,
+            "like_count": 15,
+            "is_affiliate": false,
+            "is_paid_partnership": false,
+            "location": null,
+            "comment_count": 0,
+            "comments": []
+          },
+        ],
+        "cursor": "2"
+      },
+    },
+    {
+      name: "Search Instagram Profiles",
+      method: "GET",
+      description:
+        "Find Instagram profiles by keyword using Google-indexed public Instagram pages.",
+      fullDescription:
+        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search.",
+      path: "/v1/instagram/search/profiles",
+      params: [
+        {
+          name: "query",
+          type: "string",
+          required: true,
+          description: "Bio or caption keyword/phrase to search for.",
+          placeholder: "fitness coach",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description: "The cursor returned by the previous response. In this version, it is the next Google results page number.",
+          placeholder: "2",
+        },
+      ],
+      sampleResponse: {
+        "success": true,
+        "credits_remaining": 49997308061,
+        "query": "fitness coach",
+        "profiles": [
+          {
+            "id": "188767259",
+            "username": "charliejohnsonfitness",
+            "full_name": "Worlds #1 Fitness Business Coach",
+            "biography": "DM me “PAID” \nLearn how 1,000+ Fitness Coaches use my Paid Attention System™️ as their NEW way to acquire high ticket clients\n33 clients hit $100kpcm👇",
+            "bio_links": [
+              {
+                "title": "Install the Paid Attention System™️",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fwww.7fss.com%2Fstep-1-copy%3Fel%3DIGBIOLINK%23open-popup&e=AUDL6mrGFNwwqQ5OS_ykY3196_aDgP3WevjzLFx8G7jkeMCdaQ34LYoLtaVthGp5x_sy5PqmCVr0QYah1cAfHJMPL2tvSClY",
+                "url": "https://www.7fss.com/step-1-copy?el=IGBIOLINK#open-popup",
+                "link_type": "external"
+              },
+              {
+                "title": "Lead Generation & Ads Course",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fcharlieslivetraining.com%2F7fss-4c&e=AUDamwCFqMm8XhbS-CMVGU6V7oEqK_IiadFZ10mXEVG98q1rybcqKkEz7Rs-bCVyrx9pv5BFEg96ngVx1I4pP7g9gs30CorX",
+                "url": "https://charlieslivetraining.com/7fss-4c",
+                "link_type": "external"
+              },
+              {
+                "title": "YouTube Free Business Growth Advice",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40charliejohnsonscalingsystems%3Fsi%3DRfQGu96OYQpbTosO&e=AUBi4UTAmexMCle9MsKYn2iCPa2Gg-U-PaYTnHEfmZw-DgmCP7ppJsg2xiJ4bhjIHF9laQ4OgFwVCcmrCYOTIfiLj7nIL6mx",
+                "url": "https://youtube.com/@charliejohnsonscalingsystems?si=RfQGu96OYQpbTosO",
+                "link_type": "external"
+              },
+              {
+                "title": "Charlie Johnson Show Podcast",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40thecharliejohnsonshow%3Fsi%3D7TxYof19mbSS4K_5&e=AUAv48Ar0DmQhOPr72HO3ihESYZWocrfEetekDf8GMiwbmpfZTjpubfL8ubzc10irqbR5GD8r9dWUESjugJ9ZelqNMw5SlxK",
+                "url": "https://youtube.com/@thecharliejohnsonshow?si=7TxYof19mbSS4K_5",
+                "link_type": "external"
+              },
+              {
+                "title": "Hiring Sales Closers",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fcareers.7fss.com%2Fsales-rep&e=AUDFRMnGb5opEptsuytHpWtVrNkp4G8PX0LxyJW1rclLsvT3VdE8YSbclfye4OnPvAGXGfN20ztrJLBjnUJ5dU6ap32NPk4E",
+                "url": "https://careers.7fss.com/sales-rep",
+                "link_type": "external"
+              }
+            ],
+            "external_url": "https://www.7fss.com/step-1-copy?el=IGBIOLINK",
+            "is_private": false,
+            "is_verified": true,
+            "is_business_account": true,
+            "is_professional_account": true,
+            "category_name": "Coach",
+            "profile_pic_url": "https://instagram.fdet3-1.fna.fbcdn.net/v/t51.2885-19/444225908_1202724841095492_3262096613222025830_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdet3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFTVWoQPCqNLj-erLzu1cFdO0-uazC-7j664y34QW50PvMRgi9toNMv94miQw1IPKU&_nc_ohc=5TYJtJtx0VQQ7kNvwGUcUOD&_nc_gid=jNVLQonLp3nF-24qe_urog&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4AKr0x8tmEMoxUpNl7z-oM-KqiNxXQVavhCSJSzfJCjg&oe=6A1D2C23&_nc_sid=8b3546",
+            "follower_count": 503332,
+            "following_count": 6541,
+            "media_count": 8387,
+            "url": "https://www.instagram.com/charliejohnsonfitness/",
+            "matched_from": "profile",
+            "google_title": "Worlds #1 Fitness Business Coach (@charliejohnsonfitness) - Instagram",
+            "google_description": "His name is Peter Doyle. His business does millions every single month and he's about to close the biggest capital raise of his career. He could have called ..."
+          },
+          {
+            "id": "32813649737",
+            "username": "lovelucyfit_",
+            "full_name": "Lucy Chewins | Female Online Fitness Coach",
+            "biography": "Becoming my best self while helping you become yours ✨\n@aybl LUCY10\n@myprotein LUCYFIT\n💌lhchewins@gmail.com\nBE COACHED BY ME👇🏻",
+            "bio_links": [
+              {
+                "title": "",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2FLoveLucyfit&e=AUCAXUJ-rNMByn4qXHaJm_Zn16x9N_PBJY9iaJFfuU-8m8nH9lGfGC9EqVgMg86E3SEX_5lTY_xtBpMJZu5ISMy7f54nCRDdKM6IVSthE262FJtG",
+                "url": "https://linktr.ee/LoveLucyfit",
+                "link_type": "external"
+              }
+            ],
+            "external_url": "https://linktr.ee/LoveLucyfit",
+            "is_private": false,
+            "is_verified": true,
+            "is_business_account": false,
+            "is_professional_account": true,
+            "category_name": "Fitness Trainer",
+            "profile_pic_url": "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/651052365_18092246285089738_5773251836498102340_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43MzQuYzIifQ&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gEMN4QOXdYQY327tYExsruLIlW24jq4qPZVkdJiUX4MFtcTZmpjCmrv2Y4amL_yvZa-4BzlEwz4HA8RLqsa7Ulq&_nc_ohc=nbjZEko4eSYQ7kNvwF6PZmA&_nc_gid=EfCODNA7s_IjrOk9YYk2yw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af7QsJKA-3I7v8OyykqpvFuF6Ibl--x5yZRmxFUHmn9Vrg&oe=6A1D1687&_nc_sid=8b3546",
+            "follower_count": 55350,
+            "following_count": 2800,
+            "media_count": 1744,
+            "url": "https://www.instagram.com/lovelucyfit_/",
+            "matched_from": "profile",
+            "google_title": "Lucy Chewins | Female Online Fitness Coach (@lovelucyfit_) - Instagram",
+            "google_description": "Becoming my best self while helping you become yours ✨ @aybl LUCY10 @myprotein LUCYFIT lhchewins@gmail.com. BE COACHED BY ME    . Follow. Message ..."
+          },
+        ],
+        "cursor": "2"
+      },
+    },
+    {
       name: "Search Reels",
       method: "GET",
       description:
