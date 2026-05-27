@@ -4177,7 +4177,7 @@ export const apis = [
         method: "GET",
         description: "Get the replies to a comment.",
         fullDescription: "Get the replies to a comment.",
-        path: "/v1/facebook/video/comment/replies",
+        path: "/v1/facebook/post/comment/replies",
         params: [
           {
             name: "feedback_id",
