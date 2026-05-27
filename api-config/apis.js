@@ -2572,6 +2572,227 @@ export const apis = [
         },
       },
       {
+        name: "Search Posts",
+        method: "GET",
+        description:
+          "Search for public LinkedIn posts by keyword. Uses Google Search to find indexed posts, then scrapes the public LinkedIn pages.",
+        fullDescription:
+          "Finds public LinkedIn posts, feed updates, and Pulse articles by keyword using Google Search, then returns post details such as description, author, media, images, like count, comment count, and published date when LinkedIn exposes them publicly. Results depend on what Google has indexed, so this is best-effort and not a complete LinkedIn-native search. Use date_posted for recent posts and pass the returned cursor to fetch the next page.",
+        path: "/v1/linkedin/search/posts",
+        paginationField: "cursor",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Keyword or phrase to search for in public LinkedIn posts",
+            placeholder: "ai agents",
+          },
+          {
+            name: "date_posted",
+            type: "select",
+            required: false,
+            description: "Date posted filter based on Google-indexed results",
+            options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
+            placeholder: "last-week",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "The cursor returned from the previous response",
+            placeholder: "2",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997307943,
+          "query": "ai agents",
+          "posts": [
+            {
+              "url": "https://www.linkedin.com/posts/aagupta_what-you-need-to-know-ai-agents-activity-7354600338621906944-RvXR",
+              "datePublished": "2025-07-25T19:56:02.566Z",
+              "description": "There's way too much hype about AI agents.\n\nHere's your simple guide:\n\nForget the super complex taxonomies out there. There are 4 categories of tools you should know.\n\n1. Consumer Agents\n\nThe latest LLMs, like Grok and Claude, have agents built-in. ChatGPT is rolling out the 'Agent' tool to paid plans as we speak.\n\nThese are best for:\n\n- Ad-hoc analysis\n- Quick research tasks\n- Content creation (PRDs, strategy docs)\n\n2. No-Code Agent Builders\n\nThere is a new class of tools that you must know. Tools like Zapier and Lindy offer where you can do things like connecting your Gmail to Claude.\n\nBe sure to explore these for:\n\n- Email triage\n- Competitor monitoring\n- Automated data reporting\n\n3. Developer-First Platforms\n\nAll the tools you've heard like CrewAI, Langchain, and Autogen are great frameworks for developers. Think of them as the React/Node for agents.\n\nThey're for:\n\n- Customer-facing agents\n- Deep system integrations\n- Complex, proprietary business logic\n\n4. Specialized Agent Apps\n\nTools like Cursor, Otter, and Jasper are specialized agent apps. They're supported by complex business logic to do one task really well.\n\nMy recommendations:\n\n- Coding → Cursor\n- Meetings → Otter AI\n- Research → Perplexity\n\nReady to go the layer deeper? I teamed up with AI PM at Meta Vikash Rungta to write you the web's most practical and simple guide: https://lnkd.in/eeey5Cxr\n\nPlease, let's end all the hype and talk real use cases.\n\nP.S. What agent are you using most?",
+              "media": "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/1/1753472629037?e=1780531200&v=beta&t=7UAmCkScn1TSkvHB9HxLTPoBV7wibupD2WlKSec3ork",
+              "images": [
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/1/1753472629037?e=1780531200&v=beta&t=7UAmCkScn1TSkvHB9HxLTPoBV7wibupD2WlKSec3ork",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/2/1753472629037?e=1780531200&v=beta&t=2Yu953PbJ2JQG5u72uT2mVNS3EZGzQEu3VXUSSAX6u0",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/3/1753472629037?e=1780531200&v=beta&t=vV6hVTNkxiSxVrkR9ypdCFxXmU99ZV_NYMnsSRKjfr0",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/4/1753472629037?e=1780531200&v=beta&t=37qvl1WwFdItKdaGG5IbvDRWOtRpUoVq3OlEhOtak4s",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/5/1753472629037?e=1780531200&v=beta&t=LITpMGOimLG_utrQyaeXgsVUcyC__0a1NtvyZ043Bho",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/6/1753472629037?e=1780531200&v=beta&t=OCp5v1Y_rUPssL5zetEM3yTJDwwSseHAYgCY-bZywG0",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/7/1753472629037?e=1780531200&v=beta&t=8mDA11RzDAMVqw2u25KjfhzYjwrrvzMN1dh8hnMLikY",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/8/1753472629037?e=1780531200&v=beta&t=B4SJs43v0X2qfiWYhVkKpF-Zp8joqAH--IwRLkktt2k",
+                "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/9/1753472629037?e=1780531200&v=beta&t=Cd5A__HZNLi9YO87vqV0Md6W3q1UaTvYzmisSlE4Xfg"
+              ],
+              "image": "https://media.licdn.com/dms/image/v2/D4E1FAQHAzpgC7eaKgw/feedshare-document-images_160/B4EZhDHPPEGoAs-/1/1753472629037?e=1780531200&v=beta&t=7UAmCkScn1TSkvHB9HxLTPoBV7wibupD2WlKSec3ork",
+              "author": {
+                "name": "Aakash Gupta",
+                "url": "https://www.linkedin.com/in/aagupta",
+                "image": "https://media.licdn.com/dms/image/v2/D5603AQGl7mUqMgCLRQ/profile-displayphoto-scale_200_200/B56Z3V9cKNKgAc-/0/1777411150180?e=2147483647&v=beta&t=oVB3kzDdrFGH-2pOYeziFk3m_B8fTCiH190YbTMrgoY",
+                "followers": 313422
+              },
+              "comments": [
+                {
+                  "author": "Lewin Wanzer",
+                  "text": "Thanks for sharing, Aakash. Appreciate the breakdown—but here’s the twist most are missing: the AI agent is Agent Smith.\nThe more we chase “smart tasks” without structure, the more we lose the plot. Developers are confused. “AI Architects” don’t exist. And agents are now doing things they were never cleared to do.\nWe don’t need more tools—we need orchestration, identity-bound execution, and governed outcomes. Tourque will set the standard. Until that’s the norm, it’s just hype on autopilot.",
+                  "linkedinUrl": "https://www.linkedin.com/in/lewinwanzer"
+                },
+                {
+                  "author": "Russell Anas",
+                  "text": "Been dabbling a lot in category 2 lately, no-code agent builders have really unlocked some fun and personal use cases for me.\n\nMoving beyond the typical email triage or reporting stuff, I’ve been playing around with agents that help me decide what book to read next based on past favorites, or what game to buy depending on mood + genre trends. 😅\n\nFor PMs specially, I think this is one of the most exciting categories right now, a sweet spot for quickly prototyping behavior and understanding agentic UX as well.",
+                  "linkedinUrl": "https://ae.linkedin.com/in/russellanas"
+                },
+                {
+                  "author": "Tyler Maskiewicz",
+                  "text": "Aakash Gupta - Curious where things like “AI sales agents” or chatbots land in your framework.\n\nFrom what I’ve seen as a business ops specialist, these tend to be marketed toward business leaders as standalone products: “pay us, your IT team gives API access to CRM, and voilà, you’ve got an agent in your workflow.”\n\nFeels like they straddle Specialized Agent Apps (since they’re built for a narrow use case like prospecting or triage) and Developer-First Platforms (since most require some level of backend integration to really add value).\n\nWould love to hear your take—are these just “apps with agents” or do they deserve their own bucket?",
+                  "linkedinUrl": "https://www.linkedin.com/in/tyler-maskiewicz-82311b6a"
+                },
+                {
+                  "author": "Emmanuel Johnson",
+                  "text": "🔷 Embrace simplicity.   \n🔷 Focus on practical applications for immediate results.   \n🔷 Explore no-code tools to unlock capabilities without coding expertise.   \n🔷 Leverage developer-first platforms for robust integrations and flexibility in complex workflows.   \n🔷 Investigate specialized agent apps to enhance specific tasks with streamlined efficiency.   \n \nThank you for sharing this insightful guide!",
+                  "linkedinUrl": "https://in.linkedin.com/in/emmanuel-johnson-talks"
+                },
+                {
+                  "author": "Sachin Sharma",
+                  "text": "Love how this cuts through the buzz. No jargon. Just what to use, and when. Thanks for making this simple.",
+                  "linkedinUrl": "https://in.linkedin.com/in/sachin-sharma-product-career-coach"
+                },
+                {
+                  "author": "Anant Shukla",
+                  "text": "Been exploring no-code tools lately, and connecting Gmail to an AI for email triage is such a time-saver...makes me wonder how many other workflows I could automate.",
+                  "linkedinUrl": "https://in.linkedin.com/in/anant-shukla-33a47946"
+                },
+                {
+                  "author": "Patrick Giwa, PhD",
+                  "text": "Brilliant breakdown. Agents are chatbots on energy drink. \n\nParticularly having fun with coding agents. \n\nI think there are better 'agent' note takers than OtterAI",
+                  "linkedinUrl": "https://uk.linkedin.com/in/patrickgiwa"
+                },
+                {
+                  "author": "Stephanie Nyarko PMP, CSPO, ACP",
+                  "text": "This framework simplifies understanding AI agents. Focusing on practical use cases is essential.",
+                  "linkedinUrl": "https://ca.linkedin.com/in/stephanie-nyarko"
+                },
+                {
+                  "author": "Jason Moccia",
+                  "text": "Thanks for putting this together.  There are a lot of options hitting the market now.",
+                  "linkedinUrl": "https://www.linkedin.com/in/jasonmoccia"
+                }
+              ],
+              "likeCount": 217,
+              "commentCount": 25
+            },
+            {
+              "url": "https://www.linkedin.com/posts/pavan-belagatti_here-is-a-gentle-introduction-to-ai-agents-activity-7307419830251307008-MADx",
+              "datePublished": "2025-03-17T15:17:32.783Z",
+              "description": "Here is a gentle introduction to 'AI Agents' (without any HYPE)😃\n\nAn AI agent can be understood as a computer program that can perform tasks or make decisions on its own, based on its goals and the information it receives.\n\nAn AI agent will primarily have three main components - Perception, Brain and Action.\n\nThese three components work together: the perception gathers information, the brain figures out what to do, and the action carries out the plan. This process allows AI agents to perform a wide variety of tasks, from answering questions to controlling complex systems.\n\nThe diagram illustrates the general workflow of an AI agent, which typically involves two core components: intra-execution and interaction.\n\nThe intra-execution component focuses on the processes within a single AI agent and comprises three main modules: perception, brain, and action, as dicussed above. The workflow begins with user input that goes through an input formatter tool as part of the perception module.\n\nThe input is then embedded, which is followed by reasoning and planning performed by the brain, which is where an LLM is used to analyse and deduce information and to devise strategies for specific objectives.\n\nThis results in subtasks, which are then executed by the action module, which may include calling external tools. The process iterates, moving between the brain and the action modules, until a final outcome is reached. The agent also interacts with its memory and environment.\n\nLet's take a real-life example to see how AI agents work. Let's say you need Nike shoes for running in under $500 and the color should be Blue. The AI agent would break down the user's request for Nike running shoes under $500 in blue into structured data. It would then use reasoning and planning to identify relevant shoe models, gather details, and evaluate options against the criteria. The agent would execute subtasks like querying e-commerce APIs and reviewing customer feedback, iterating between its brain and action modules until recommending the optimal shoe. Throughout, the agent would leverage its memory and environment to fulfill the user's requirements efficiently.\n\nHere is my complete guide on building AI agents using LangChain: https://lnkd.in/gfNs2S9i\n\nThis is my other article on building AI agents and chatbots using LangGraph: https://lnkd.in/g_xs-Uat\n\nThis is my article on building multi-AI agent systems: https://lnkd.in/g9J8q5hc",
+              "media": "https://media.licdn.com/dms/image/v2/D5622AQH_g2b2-xqJwg/feedshare-shrink_800/B56ZWkrnA2HQAs-/0/1742224651931?e=2147483647&v=beta&t=OP9qsGJfyDuEN5Abt0mfmFL8CR0LfT8cco9QL1ZR1rc",
+              "images": [
+                "https://media.licdn.com/dms/image/v2/D5622AQH_g2b2-xqJwg/feedshare-shrink_800/B56ZWkrnA2HQAs-/0/1742224651931?e=2147483647&v=beta&t=OP9qsGJfyDuEN5Abt0mfmFL8CR0LfT8cco9QL1ZR1rc"
+              ],
+              "image": "https://media.licdn.com/dms/image/v2/D5622AQH_g2b2-xqJwg/feedshare-shrink_800/B56ZWkrnA2HQAs-/0/1742224651931?e=2147483647&v=beta&t=OP9qsGJfyDuEN5Abt0mfmFL8CR0LfT8cco9QL1ZR1rc",
+              "author": {
+                "name": "Pavan Belagatti",
+                "url": "https://in.linkedin.com/in/pavan-belagatti",
+                "image": "https://media.licdn.com/dms/image/v2/D5603AQH-vfY8KcJFwA/profile-displayphoto-scale_200_200/B56ZwtOJYbKAAc-/0/1770285209747?e=2147483647&v=beta&t=OAKgAyBLqJvA890qY91TYo6P05lM0Y-zVZGc2ha3ZGA",
+                "followers": 103310
+              },
+              "comments": [
+                {
+                  "author": "Tahir Siddique",
+                  "text": "What a comprehensive breakdown of AI agents! The emphasis on the interplay between perception, brain, and action is crucial for understanding how these agents operate effectively. Additionally, the incorporation of LLMs for reasoning and planning showcases the advancements in AI technology. Excited to see how AI agents continue to evolve and enhance various industries. Great work!",
+                  "linkedinUrl": "https://pk.linkedin.com/in/tahir-siddique-5928a814"
+                },
+                {
+                  "author": "Deepesh Jain",
+                  "text": "This is a clear and practical breakdown of how AI agents work. The perception-brain-action model makes it easy to understand how they process information and make decisions. The real-life example of buying shoes also helps in showing how these agents function in everyday tasks. \n\nAs AI agents improve, how do you see them changing the way we interact with technology?",
+                  "linkedinUrl": "https://in.linkedin.com/in/deepesh-jain-a738286a"
+                }
+              ],
+              "likeCount": 718,
+              "commentCount": 7
+            },
+            {
+              "url": "https://www.linkedin.com/posts/jsu05_ai-agents-for-dummies-activity-7315357847985233920-OdO1",
+              "datePublished": "2025-04-08T13:00:23.706Z",
+              "description": "What are AI agents?\n\n(for dummies)\n\nAs someone with 0 technical background, I've found the best way to understand AI Agents is to build on concepts I already grasp.\n\nLevel 1️⃣ - Large Language Models\n\nLarge Language Models (LLMs) like ChatGPT are passive systems that generate outputs based on inputs but can't access external information or take autonomous actions.\n\nNote: Technically, ChatGPT is an application built on top of LLMs, but we can simplify for now.\n\nLevel 2️⃣ - AI Workflows\n\nAI Workflows combine LLMs with external tools (like calendar access or weather data). They follow rigid, predefined paths set by humans, who remain the decision-makers.\n\nLevel 3️⃣ - AI Agents\n\nHere, the LLM itself becomes the decision-maker. It autonomously reasons about problems, selects appropriate tools, and iterates until it achieves its goals.\n\nHere’s an (extremely) oversimplified example:\n\n1️⃣ ChatGPT can draft an email requesting a coffee chat, but if you ask \"When is that coffee chat?\" it fails because it has no access to your calendar.\n\n2️⃣ Give ChatGPT access to your Google Calendar and it becomes an AI workflow.\n\nIMPORTANT: ChatGPT didn't make that decision - you did.\n\n3️⃣ A workflow evolves into an AI Agent when the LLM independently (1) Reasons: \"To find the user's events, I need calendar access\" and (2) Acts: \"I'll connect to their Google Calendar API.\"\n\nCheck out the full video for a deeper breakdown with more examples!\n\n#AIagents",
+              "media": "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/1/1744024615031?e=1780531200&v=beta&t=5i6NvNuvIajrbv4iBnw0mV8UW0_GF_VgUqoqlpXSMHQ",
+              "images": [
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/1/1744024615031?e=1780531200&v=beta&t=5i6NvNuvIajrbv4iBnw0mV8UW0_GF_VgUqoqlpXSMHQ",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/2/1744024615031?e=1780531200&v=beta&t=obJDm0Oy97uyfJADetVSr_WUV0jJKOSKNr6wu9cda8M",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/3/1744024615031?e=1780531200&v=beta&t=wNW8_icM90XZ6tQ_-JNpS_gNkCeWCb8sodPv3vM1liE",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/4/1744024615031?e=1780531200&v=beta&t=YDhSG0bB6rF29o4pT3dwz6_KVrl_q2hyevPCRDc0fhI",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/5/1744024615031?e=1780531200&v=beta&t=wlnrMRPvIffHhE7IT3UDik9U5aDru_thcRMHFD0jaH4",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/6/1744024615031?e=1780531200&v=beta&t=anhOQwyeNdksyhbn6dsgWRPa7s1qwxfR4B-33hJxEEs",
+                "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/7/1744024615031?e=1780531200&v=beta&t=5CP6Ce68BAgFMG5_U4aAy9OsqnLNEOniCJPzV88qn7M"
+              ],
+              "image": "https://media.licdn.com/dms/image/v2/D561FAQEFe0kvOtJSyw/feedshare-document-images_160/B56ZYP94OXHoAo-/1/1744024615031?e=1780531200&v=beta&t=5i6NvNuvIajrbv4iBnw0mV8UW0_GF_VgUqoqlpXSMHQ",
+              "author": {
+                "name": "Jeff Su",
+                "url": "https://www.linkedin.com/in/jsu05",
+                "image": "https://media.licdn.com/dms/image/v2/D5603AQEmYEH2_P8UzA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1711179090909?e=2147483647&v=beta&t=B1VHTnZSDoHv_R2q3nJ4nnVY9MNmH1Rf6cDd0axO3jU",
+                "followers": 96017
+              },
+              "comments": [
+                {
+                  "author": "Valeria I.",
+                  "text": "I wish this will soon become common knowledge - Level 1️⃣ - Large Language Models\n\nLarge Language Models (LLMs) like ChatGPT are passive systems that generate outputs based on inputs but can't access external information or take autonomous actions.\n\nNote: Technically, ChatGPT is an application built on top of LLMs, but we can simplify for now.\n\nIt is tiring to explain to people that them adding information into ChatGPT is not equal to feeding it data.",
+                  "linkedinUrl": "https://uk.linkedin.com/in/valeria-iatan"
+                },
+                {
+                  "author": "Favour Edeko",
+                  "text": "Video's on YouTube, yeah?",
+                  "linkedinUrl": "https://ng.linkedin.com/in/favouredeko"
+                },
+                {
+                  "author": "Sophie Ravenel-Grosso CAIC™ CSM CSPO",
+                  "text": "I really like your breakdown of AI concepts for non-technical people! As an AI consultant, I'd add that AI agents are essentially what happens when we give AI systems both decision-making authority AND the ability to act on those decisions.\nThink of it as the difference between:\n. Asking a friend for advice (LLM)\n. Giving a friend a specific to-do list (Workflow)\n. Telling a friend \"Handle this for me\" and they figure out what needs doing (Agent)\nThe exciting (and challenging) part about agents is they represent that shift from AI as a tool we directly control to AI as a collaborator that can take initiative within boundaries we set. Your coffee chat example captures this perfectly - the agent doesn't just respond to commands but proactively identifies what resources it needs to solve your problem.\n\nGreat explanation that really helps demystify where this technology is heading!\n\n#AIExplained #ArtificialIntelligence #AIBasics #AITrends",
+                  "linkedinUrl": "https://www.linkedin.com/in/sophieravenelgrosso"
+                },
+                {
+                  "author": "Dean Moon",
+                  "text": "Now on to the 1M followers on LinkedIn.",
+                  "linkedinUrl": "https://au.linkedin.com/in/deanjmoon"
+                },
+                {
+                  "author": "Varun Negandhi",
+                  "text": "This post helps clarify the different levels, Jeff. For my gaming brain, it helps me understand that LLMs are NPCs (non-playable characters) that only respond when you press a button. AI agents are like friends you play multiplayer with, where they read and play the game to achieve a specific objective.",
+                  "linkedinUrl": "https://www.linkedin.com/in/vnegandhi"
+                },
+                {
+                  "author": "Karl Krauskopf",
+                  "text": "Jeff, appreciate you demystifying AI agents by building on the familiar concept of LLMs. The levels analogy is excellent.",
+                  "linkedinUrl": "https://www.linkedin.com/in/karl-krauskopf"
+                },
+                {
+                  "author": "Hosni BEN AISSA",
+                  "text": "Appreciate your simplicity, thanks for sharing your insights.",
+                  "linkedinUrl": "https://fr.linkedin.com/in/hosni-ben-aissa"
+                },
+                {
+                  "author": "Kevin Rank, MBA",
+                  "text": "I really enjoyed your video.  Great idea, and I like that it hits that sweet point.  Some where a bit above pure entry level with some meat on it, but not so far ahead that most of your audience gets left behind.\n\nBasically, you hit the Goldilocks zone on this one.  :-)",
+                  "linkedinUrl": "https://www.linkedin.com/in/kevinrank"
+                },
+                {
+                  "author": "Lia Zneimer",
+                  "text": "Okay NEEDED this. Thank you for sharing!",
+                  "linkedinUrl": "https://www.linkedin.com/in/liazneimer"
+                },
+                {
+                  "author": "Rithickroshaan Pararajasegaran",
+                  "text": "This is hands-down the clearest breakdown I’ve seen.... finally a “for dummies” that doesn’t make you feel like one. The level-up from workflow to agent clicked instantly. Love how you framed autonomy as the differentiator Jeff Su",
+                  "linkedinUrl": "https://lk.linkedin.com/in/rithickroshaan-pararajasegaran-8a7103235"
+                }
+              ],
+              "likeCount": 643,
+              "commentCount": 96
+            },
+          ],
+          "cursor": "2"
+        }
+      },
+      {
         name: "Post",
         method: "GET",
         description: "Get a Linkedin post. This can be a post or an article.",
