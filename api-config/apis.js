@@ -28873,6 +28873,140 @@ export const apis = [
           ]
         },
       },
+      {
+        name: "Search",
+        method: "GET",
+        description: "Search Spotify",
+        fullDescription:
+          "Search Spotify for tracks, artists, albums, episodes, podcasts, and audiobooks. Use type=podcasts when you need podcast ids for the podcast endpoints.",
+        path: "/v1/spotify/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Search query",
+            placeholder: "joe rogan",
+          },
+          {
+            name: "type",
+            type: "string",
+            required: false,
+            description: "Optional result type. Use one of: all, tracks, artists, albums, episodes, podcasts, audiobooks.",
+            placeholder: "podcasts",
+          },
+          {
+            name: "offset",
+            type: "number",
+            required: false,
+            description: "Result offset for pagination",
+            placeholder: "0",
+          },
+          {
+            name: "limit",
+            type: "number",
+            required: false,
+            description: "Number of results to return",
+            placeholder: "10",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997935401,
+          "query": "joe rogan",
+          "podcasts": [
+            {
+              "id": "4rOoJ6Egrf8K2IrywzwOMk",
+              "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
+              "name": "The Joe Rogan Experience",
+              "description": "The official podcast of comedian Joe Rogan."
+            }
+          ]
+        },
+      },
+      {
+        name: "Podcast",
+        method: "GET",
+        description: "Get Spotify podcast",
+        fullDescription:
+          "Retrieves detailed information about a Spotify podcast by its id or URL. Spotify calls podcasts shows internally, so Spotify podcast URLs use /show/.",
+        path: "/v1/spotify/podcast",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "4rOoJ6Egrf8K2IrywzwOMk",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997935400,
+          "id": "4rOoJ6Egrf8K2IrywzwOMk",
+          "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
+          "name": "The Joe Rogan Experience",
+          "publisher": {
+            "name": "Joe Rogan"
+          },
+          "type": "PODCAST"
+        },
+      },
+      {
+        name: "Podcast Episodes",
+        method: "GET",
+        description: "Get Spotify podcast episodes",
+        fullDescription:
+          "Returns episodes for a Spotify podcast. Pass the cursor returned by a response to get the next page.",
+        path: "/v1/spotify/podcast/episodes",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "4rOoJ6Egrf8K2IrywzwOMk",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk",
+          },
+          {
+            name: "cursor",
+            type: "number",
+            required: false,
+            description: "Cursor returned by the previous response. Omit for the first page.",
+            placeholder: "50",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49997935399,
+          "data": {
+            "id": "4rOoJ6Egrf8K2IrywzwOMk",
+            "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
+            "episodes": [
+              {
+                "id": "46MudXmYxlZldT0NIXjlb6",
+                "uri": "spotify:episode:46MudXmYxlZldT0NIXjlb6",
+                "name": "#2506 - Michelle Thaller"
+              }
+            ],
+            "cursor": 50,
+            "totalCount": 2698
+          }
+        },
+      },
     ],
   },
   {
