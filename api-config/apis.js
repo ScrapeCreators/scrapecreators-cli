@@ -5651,7 +5651,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object. If you ask for the transcipt, we will only transcribe the video if it's under 2 minutes.",
+          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
         fullDescription:
           "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body.",
         path: "/v1/facebook/adLibrary/ad",
@@ -5980,14 +5980,6 @@ export const apis = [
               "https://www.facebook.com/ads/library?id=1185617869915074",
           },
           {
-            name: "get_transcript",
-            type: "boolean",
-            required: false,
-            description:
-              "Get the transcript of the ad. Only works if the video is under 2 minutes.",
-            placeholder: "false",
-          },
-          {
             name: "trim",
             type: "boolean",
             required: false,
@@ -6001,6 +5993,48 @@ export const apis = [
             path: "adArchiveID",
             description:
               "This is the ad id. You'd think it'd be 'adid', but facebook decided to make it confusing 🤦‍♂️",
+          },
+        ],
+      },
+      {
+        name: "Ad Transcript",
+        method: "GET",
+        description:
+          "Get the transcript for a Facebook Ad Library video ad by ad ID or URL. Credits are only charged when a transcript is returned.",
+        fullDescription:
+          "Retrieves a transcript for a single Facebook Ad Library video ad by ID or URL. If Facebook exposes captions, those are used. Otherwise we try to transcribe the public video URL. Credits are only deducted when transcript is returned. If the ad has no video or no transcript is available, transcript will be null and no credit is charged.",
+        path: "/v1/facebook/adLibrary/ad/transcript",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          data: {
+            ad_id: "1020359190509080",
+            url: "https://www.facebook.com/ads/library?id=1020359190509080",
+            transcript: "Sample transcript text from the ad video...",
+            transcript_available: true,
+          },
+        },
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Facebook Ad Id",
+            placeholder: "1020359190509080",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Facebook Ad URL",
+            placeholder:
+              "https://www.facebook.com/ads/library?id=1020359190509080",
+          },
+        ],
+        responseFields: [
+          {
+            path: "data.transcript",
+            description: "Transcript text for the ad video, or null when unavailable.",
           },
         ],
       },
