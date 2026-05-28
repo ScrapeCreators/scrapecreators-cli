@@ -28886,43 +28886,1377 @@ export const apis = [
             type: "string",
             required: true,
             description: "Search query",
-            placeholder: "joe rogan",
-          },
-          {
-            name: "type",
-            type: "string",
-            required: false,
-            description: "Optional result type. Use one of: all, tracks, artists, albums, episodes, podcasts, audiobooks.",
-            placeholder: "podcasts",
-          },
-          {
-            name: "offset",
-            type: "number",
-            required: false,
-            description: "Result offset for pagination",
-            placeholder: "0",
-          },
-          {
-            name: "limit",
-            type: "number",
-            required: false,
-            description: "Number of results to return",
-            placeholder: "10",
+            placeholder: "my first million",
           },
         ],
         sampleResponse: {
           "success": true,
-          "credits_remaining": 49997935401,
-          "query": "joe rogan",
+          "credits_remaining": 49997232025,
+          "albumsV2": [
+            {
+              "id": "3Pceq8de2pHC1rddG2G88l",
+              "__typename": "Album",
+              "artists": [
+                {
+                  "profile": {
+                    "name": "The Antediluvian"
+                  },
+                  "uri": "spotify:artist:1expE9R1GqL3lGGh5HDH8t"
+                }
+              ],
+              "coverArt": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#535353",
+                    "isFallback": true
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e0230562d52a17a5892eb0958d7",
+                    "width": 300
+                  },
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d0000485130562d52a17a5892eb0958d7",
+                    "width": 64
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b27330562d52a17a5892eb0958d7",
+                    "width": 640
+                  }
+                ]
+              },
+              "date": {
+                "year": 2026
+              },
+              "isAlbumPreRelease": false,
+              "name": "My First Million (Jesse Livermore Story / Stock Operator Soundtrack)",
+              "playability": {
+                "playable": true,
+                "reason": "PLAYABLE"
+              },
+              "preReleaseEndDateTime": null,
+              "type": "SINGLE",
+              "uri": "spotify:album:3Pceq8de2pHC1rddG2G88l",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 83,
+                        "green": 83,
+                        "red": 83
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 51,
+                        "green": 51,
+                        "red": 51
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 83,
+                        "green": 83,
+                        "red": 83
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 51,
+                        "green": 51,
+                        "red": 51
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "artists": [
+            {
+              "id": "1QsfhlGvu9tLL2PSmEr8TM",
+              "__typename": "Artist",
+              "onPlatformReputationTrait": {
+                "verification": {
+                  "isVerified": true
+                }
+              },
+              "profile": {
+                "name": "Small Million"
+              },
+              "uri": "spotify:artist:1QsfhlGvu9tLL2PSmEr8TM",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 209,
+                      "green": 183,
+                      "red": 191
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 102,
+                        "green": 80,
+                        "red": 87
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 68,
+                        "green": 47,
+                        "red": 55
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 228,
+                        "green": 201,
+                        "red": 210
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 71,
+                        "green": 50,
+                        "red": 57
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 105,
+                        "green": 82,
+                        "red": 90
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 228,
+                        "green": 201,
+                        "red": 210
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 136,
+                        "green": 112,
+                        "red": 120
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 108,
+                        "green": 85,
+                        "red": 92
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              },
+              "visuals": {
+                "avatarImage": {
+                  "extractedColors": {
+                    "colorDark": {
+                      "hex": "#787088",
+                      "isFallback": false
+                    }
+                  },
+                  "sources": [
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab6761610000e5eb58f2728543287fcbd8de3e4c",
+                      "width": 640
+                    },
+                    {
+                      "height": 160,
+                      "url": "https://i.scdn.co/image/ab6761610000f17858f2728543287fcbd8de3e4c",
+                      "width": 160
+                    },
+                    {
+                      "height": 320,
+                      "url": "https://i.scdn.co/image/ab6761610000517458f2728543287fcbd8de3e4c",
+                      "width": 320
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "audiobooks": [
+            {
+              "id": "3CuDAyUZ9XSAXKAYmk7jEu",
+              "__typename": "Audiobook",
+              "accessInfo": {
+                "accessExplanation": {
+                  "__typename": "EngagementAccessExplanation"
+                },
+                "isUserMemberOfAtLeastOneGroup": false,
+                "signifier": {
+                  "text": ""
+                }
+              },
+              "authorsV2": [
+                {
+                  "name": "Steven Bartlett",
+                  "uri": "spotify:author:3McnkRBnDLs8VUFMjilc2N"
+                }
+              ],
+              "coverArt": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#404040",
+                    "isFallback": false
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab6766630000703b2f6a96457fa76c06b435fd50",
+                    "width": 64
+                  },
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab6766630000db5b2f6a96457fa76c06b435fd50",
+                    "width": 300
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab676663000022a82f6a96457fa76c06b435fd50",
+                    "width": 640
+                  }
+                ]
+              },
+              "description": "Author(s): Steven Bartlett\nNarrator(s): Steven Bartlett\n\nA galvanizing playbook for success from Steven Bartlett, one of the world’s most exciting entrepreneurs and the host of the No. 1 podcast The Diary of a CEO\"This is a must-read for anyone dreaming of doing something audacious.\" Jay Shetty\"Valuable lessons about the importance of following a different and unconventional path to power.” Robert GreeneAt the very heart of all the success and failure I've been exposed to - both my own entrepreneurial journey and through the thousands of interviews I’ve conducted on my chart-topping podcast - are a set of principles that ensure excellence.These fundamental laws underpinned my meteoric rise, and they will fuel yours too, whether you want to build something great or become someone great. The laws are rooted in psychology and behavioral science, in my own experiences, and those of the world's most successful entrepreneurs, entertainers, artists, writers, and athletes, who I’ve interviewed on my podcast.These laws will stand the test of time and will help anyone master their life and unleash their potential, no matter the field.They are the secret sauce to success.",
+              "audiobookDuration": {
+                "totalMilliseconds": 24291148
+              },
+              "isPreRelease": false,
+              "mediaType": "AUDIO",
+              "name": "The Diary of a CEO: The 33 Laws of Business and Life",
+              "preReleaseEndDateTime": {
+                "isoString": "2025-11-11T08:00:00Z"
+              },
+              "publishDate": {
+                "isoString": "2023-08-29T00:00:00Z",
+                "precision": "MINUTE"
+              },
+              "topics": [],
+              "uri": "spotify:show:3CuDAyUZ9XSAXKAYmk7jEu",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 64,
+                        "green": 64,
+                        "red": 64
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 94,
+                        "green": 94,
+                        "red": 94
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 64,
+                        "green": 64,
+                        "red": 64
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 94,
+                        "green": 94,
+                        "red": 94
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "episodes": [
+            {
+              "id": "3rvl30aWNqZbWi9dnolG3a",
+              "__typename": "Episode",
+              "contentRating": {
+                "label": "NONE"
+              },
+              "coverArt": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#484848",
+                    "isFallback": false
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                    "width": 64
+                  },
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                    "width": 300
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                    "width": 640
+                  }
+                ]
+              },
+              "description": "Get our Wealth Guide (35+ insights from top investors): https://clickhubspot.com/fvif  Episode 828: Shaan Puri ( https://x.com/ShaanVP ) and Sam Parr ( https://x.com/theSamParr ) talk to billionaire Joe Liemandt ( https://x.com/jliemandt ) about the experiment he’s put $1,000,000,000 of his own money into. — Show Notes:  (0:00) Joe, the total man? (08:09) fighting bill gates for talent (13:14) intensity (16:18) choosing hard over easy (19:00) how to be a magnet (21:34) high standards (23:29) being persuasive  (29:23) simplicity: 3 ines, 3 words  (34:41) is 2x faster really better? (36:23) making kids run a 5k (38:45) why be public now (41:01) why put $1b into the lowest roi thing? (50:03) buying SaaS companies (51:06) cloning Warren Buffett's brain (53:00) changing your brain lift (57:19) is AI going to make everyone dumb?  — Links: • Alpha School - https://alpha.school/  • 10 to 25: The Science of Motivating Young People - https://a.co/d/048Cfexh  — Check Out Sam's Stuff: • Hampton (joinhampton.com): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm — Check Out Shaan's Stuff: • Shaan's weekly email - https://www.shaanpuri.com  • Visit https://www.somewhere.com/mfm to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents. • Mercury - Need a bank for your company? Go check out Mercury (mercury.com). Shaan uses it for all of his companies! Mercury is a financial technology company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., and Evolve Bank & Trust, Members FDIC • I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out: beehiiv.com/mfm-challenge My First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano / ",
+              "duration": {
+                "totalMilliseconds": 3903344
+              },
+              "gatedEntityRelations": [],
+              "mediaTypes": ["VIDEO", "AUDIO"],
+              "name": "The 50 richest families in America are betting on this trend",
+              "playability": {
+                "reason": "PLAYABLE"
+              },
+              "playedState": {
+                "playPositionMilliseconds": 0,
+                "state": "NOT_STARTED"
+              },
+              "podcastV2": {
+                "__typename": "PodcastResponseWrapper",
+                "data": {
+                  "__typename": "Podcast",
+                  "coverArt": {
+                    "sources": [
+                      {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                        "width": 64
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                        "width": 300
+                      },
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                        "width": 640
+                      }
+                    ]
+                  },
+                  "mediaType": "MIXED",
+                  "name": "My First Million",
+                  "publisher": {
+                    "name": "Hubspot"
+                  },
+                  "uri": "spotify:show:3mliji9352UAk3XnWElnDV"
+                }
+              },
+              "releaseDate": {
+                "isoString": "2026-05-27T08:59:00Z",
+                "precision": "MINUTE"
+              },
+              "restrictions": {
+                "paywallContent": false
+              },
+              "uri": "spotify:episode:3rvl30aWNqZbWi9dnolG3a",
+              "videoPreviewThumbnail": {
+                "__typename": "VideoThumbnailImage",
+                "imagePreview": {
+                  "__typename": "ImageV2",
+                  "sources": [
+                    {
+                      "maxHeight": 720,
+                      "maxWidth": 1280,
+                      "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab000030aeae7253d400b6cde5defd1197"
+                    },
+                    {
+                      "maxHeight": 360,
+                      "maxWidth": 640,
+                      "url": "https://image-cdn-fa.spotifycdn.com/image/ab6772ab0000e0e7ae7253d400b6cde5defd1197"
+                    }
+                  ]
+                }
+              },
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "genres": [
+            {
+              "id": "0JQ5IMCbQBLABracA7Zrmn",
+              "__typename": "Genre",
+              "image": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#104848",
+                    "isFallback": false
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 274,
+                    "url": "https://t.scdn.co/images/728ed47fc1674feb95f7ac20236eb6d7.jpeg",
+                    "width": 274
+                  }
+                ]
+              },
+              "name": "Inside the AI Revolution",
+              "uri": "spotify:genre:0JQ5IMCbQBLABracA7Zrmn"
+            }
+          ],
+          "playlists": [
+            {
+              "id": "2GEFdJC5hCdUFpU1xxFUug",
+              "__typename": "Playlist",
+              "attributes": [],
+              "description": "",
+              "format": "",
+              "images": [
+                {
+                  "extractedColors": {
+                    "colorDark": {
+                      "hex": "#767676",
+                      "isFallback": false
+                    }
+                  },
+                  "sources": [
+                    {
+                      "height": null,
+                      "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c24c483f6c267f53f8625404d",
+                      "width": null
+                    }
+                  ]
+                }
+              ],
+              "name": "Start Here | My First Million",
+              "ownerV2": {
+                "__typename": "UserResponseWrapper",
+                "data": {
+                  "__typename": "User",
+                  "avatar": {
+                    "sources": [
+                      {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67757000003b829da4040165ac26081197ade4",
+                        "width": 64
+                      },
+                      {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab6775700000ee859da4040165ac26081197ade4",
+                        "width": 300
+                      }
+                    ]
+                  },
+                  "name": "HubSpot Podcast Network",
+                  "uri": "spotify:user:31i2jq7ljcu7ob5pk6w2flztsoo4",
+                  "username": "31i2jq7ljcu7ob5pk6w2flztsoo4"
+                }
+              },
+              "uri": "spotify:playlist:2GEFdJC5hCdUFpU1xxFUug",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 192,
+                      "green": 192,
+                      "red": 192
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 83,
+                        "green": 83,
+                        "red": 83
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 51,
+                        "green": 51,
+                        "red": 51
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 153,
+                        "green": 153,
+                        "red": 153
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 128,
+                        "green": 128,
+                        "red": 128
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
           "podcasts": [
             {
-              "id": "4rOoJ6Egrf8K2IrywzwOMk",
-              "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
-              "name": "The Joe Rogan Experience",
-              "description": "The official podcast of comedian Joe Rogan."
+              "id": "3mliji9352UAk3XnWElnDV",
+              "__typename": "Podcast",
+              "coverArt": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#484848",
+                    "isFallback": false
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                    "width": 64
+                  },
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                    "width": 300
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                    "width": 640
+                  }
+                ]
+              },
+              "mediaType": "MIXED",
+              "name": "My First Million",
+              "publisher": {
+                "name": "Hubspot"
+              },
+              "topics": [
+                {
+                  "__typename": "PodcastTopic",
+                  "title": "Business",
+                  "uri": "spotify:genre:0JQ5DAqbMKFK0EBNV8Wn6R"
+                }
+              ],
+              "uri": "spotify:show:3mliji9352UAk3XnWElnDV",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
             }
-          ]
-        },
+          ],
+          "topResultsV2": [
+            {
+              "id": "3mliji9352UAk3XnWElnDV",
+              "__typename": "Podcast",
+              "coverArt": {
+                "extractedColors": {
+                  "colorDark": {
+                    "hex": "#484848",
+                    "isFallback": false
+                  }
+                },
+                "sources": [
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                    "width": 64
+                  },
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                    "width": 300
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                    "width": 640
+                  }
+                ]
+              },
+              "mediaType": "MIXED",
+              "name": "My First Million",
+              "publisher": {
+                "name": "Hubspot"
+              },
+              "topics": [
+                {
+                  "__typename": "PodcastTopic",
+                  "title": "Business",
+                  "uri": "spotify:genre:0JQ5DAqbMKFK0EBNV8Wn6R"
+                }
+              ],
+              "uri": "spotify:show:3mliji9352UAk3XnWElnDV",
+              "visualIdentity": {
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "tracksV2": [
+            {
+              "__typename": "Track",
+              "albumOfTrack": {
+                "coverArt": {
+                  "extractedColors": {
+                    "colorDark": {
+                      "hex": "#C0591A",
+                      "isFallback": false
+                    }
+                  },
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0288c0b52eb38719ef4de33126",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485188c0b52eb38719ef4de33126",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27388c0b52eb38719ef4de33126",
+                      "width": 640
+                    }
+                  ]
+                },
+                "id": "0if4nypvSlgICcSKq8Xmm8",
+                "name": "Spurs & Spokes / Bull > Matador - EP",
+                "uri": "spotify:album:0if4nypvSlgICcSKq8Xmm8",
+                "visualIdentity": {
+                  "squareCoverImage": {
+                    "__typename": "VisualIdentityImage",
+                    "extractedColorSet": {
+                      "encoreBaseSetTextColor": {
+                        "alpha": 255,
+                        "blue": 113,
+                        "green": 165,
+                        "red": 255
+                      },
+                      "highContrast": {
+                        "backgroundBase": {
+                          "alpha": 255,
+                          "blue": 0,
+                          "green": 47,
+                          "red": 146
+                        },
+                        "backgroundTintedBase": {
+                          "alpha": 255,
+                          "blue": 0,
+                          "green": 6,
+                          "red": 97
+                        },
+                        "textBase": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        },
+                        "textBrightAccent": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        },
+                        "textSubdued": {
+                          "alpha": 255,
+                          "blue": 155,
+                          "green": 192,
+                          "red": 255
+                        }
+                      },
+                      "higherContrast": {
+                        "backgroundBase": {
+                          "alpha": 255,
+                          "blue": 0,
+                          "green": 7,
+                          "red": 101
+                        },
+                        "backgroundTintedBase": {
+                          "alpha": 255,
+                          "blue": 41,
+                          "green": 54,
+                          "red": 145
+                        },
+                        "textBase": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        },
+                        "textBrightAccent": {
+                          "alpha": 255,
+                          "blue": 96,
+                          "green": 215,
+                          "red": 30
+                        },
+                        "textSubdued": {
+                          "alpha": 255,
+                          "blue": 155,
+                          "green": 192,
+                          "red": 255
+                        }
+                      },
+                      "minContrast": {
+                        "backgroundBase": {
+                          "alpha": 255,
+                          "blue": 32,
+                          "green": 112,
+                          "red": 240
+                        },
+                        "backgroundTintedBase": {
+                          "alpha": 255,
+                          "blue": 0,
+                          "green": 85,
+                          "red": 210
+                        },
+                        "textBase": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        },
+                        "textBrightAccent": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        },
+                        "textSubdued": {
+                          "alpha": 255,
+                          "blue": 255,
+                          "green": 255,
+                          "red": 255
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "artists": [
+                {
+                  "profile": {
+                    "name": "Fake Problems"
+                  },
+                  "uri": "spotify:artist:3w2meNoSt1JmZaw6QZD35l"
+                }
+              ],
+              "associationsV3": {
+                "audioAssociations": {
+                  "totalCount": 0
+                },
+                "videoAssociations": {
+                  "totalCount": 0
+                }
+              },
+              "contentRating": {
+                "label": "NONE"
+              },
+              "duration": {
+                "totalMilliseconds": 162840
+              },
+              "id": "1QlYhKt1pomveBX7W3MbqL",
+              "trackMediaType": "AUDIO",
+              "name": "My First Million",
+              "playability": {
+                "playable": true,
+                "reason": "PLAYABLE"
+              },
+              "uri": "spotify:track:1QlYhKt1pomveBX7W3MbqL",
+              "visualIdentity": {
+                "sixteenByNineCoverImage": null
+              }
+            }
+          ],
+          "users": []
+        }
+
       },
       {
         name: "Podcast",
@@ -28937,26 +30271,215 @@ export const apis = [
             type: "string",
             required: false,
             description: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
-            placeholder: "4rOoJ6Egrf8K2IrywzwOMk",
+            placeholder: "3mliji9352UAk3XnWElnDV",
           },
           {
             name: "url",
             type: "string",
             required: false,
             description: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
-            placeholder: "https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk",
+            placeholder: "https://open.spotify.com/show/3mliji9352UAk3XnWElnDV",
           },
         ],
         sampleResponse: {
           "success": true,
-          "credits_remaining": 49997935400,
-          "id": "4rOoJ6Egrf8K2IrywzwOMk",
-          "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
-          "name": "The Joe Rogan Experience",
-          "publisher": {
-            "name": "Joe Rogan"
+          "credits_remaining": 49997232014,
+          "id": "3mliji9352UAk3XnWElnDV",
+          "uri": "spotify:show:3mliji9352UAk3XnWElnDV",
+          "__typename": "Podcast",
+          "accessInfo": null,
+          "consumptionOrderV2": "RECENT",
+          "contentCapabilityTrait": {
+            "rateability": {
+              "value": "RESTRICTED"
+            }
           },
-          "type": "PODCAST"
+          "contentRatingV2": {
+            "labels": [
+              "EXPLICIT"
+            ]
+          },
+          "contentType": "CONTENT_TYPE_PODCAST",
+          "coverArt": {
+            "sources": [
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                "width": 64
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                "width": 300
+              },
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                "width": 640
+              }
+            ]
+          },
+          "description": "Sam Parr and Shaan Puri brainstorm new business ideas based on trends & opportunities they see in the market. Sometimes they bring on famous guests to brainstorm with them.",
+          "episodesV2": [
+            {
+              "entity": {
+                "__typename": "EpisodeResponseWrapper",
+                "data": {
+                  "__typename": "Episode",
+                  "creator": null,
+                  "uri": "spotify:episode:3rvl30aWNqZbWi9dnolG3a"
+                }
+              }
+            }
+          ],
+          "gatedEntityRelations": [],
+          "htmlDescription": "<p>Sam Parr and Shaan Puri brainstorm new business ideas based on trends &amp; opportunities they see in the market. Sometimes they bring on famous guests to brainstorm with them.</p>",
+          "mediaType": "MIXED",
+          "musicAndTalk": false,
+          "name": "My First Million",
+          "playability": {
+            "playable": true,
+            "reason": "PLAYABLE",
+            "unplayabilityReasons": []
+          },
+          "publisher": {
+            "name": "Hubspot"
+          },
+          "rating": {
+            "averageRating": {
+              "average": 4.781243982283851,
+              "showAverage": true,
+              "totalRatings": 5193
+            },
+            "canRate": true,
+            "rating": {
+              "rating": 0
+            }
+          },
+          "saved": false,
+          "sharingInfo": {
+            "shareId": "lSCdV7bhQ7CO4dDMM691rA",
+            "shareUrl": "https://open.spotify.com/show/3mliji9352UAk3XnWElnDV?si=lSCdV7bhQ7CO4dDMM691rA"
+          },
+          "showTypes": [],
+          "topics": [
+            {
+              "__typename": "PodcastTopic",
+              "title": "Business",
+              "uri": "spotify:genre:0JQ5DAqbMKFK0EBNV8Wn6R"
+            }
+          ],
+          "trailerV2": null,
+          "visualIdentity": {
+            "sixteenByNineCoverImage": null,
+            "squareCoverImage": {
+              "__typename": "VisualIdentityImage",
+              "extractedColorSet": {
+                "encoreBaseSetTextColor": {
+                  "alpha": 255,
+                  "blue": 187,
+                  "green": 187,
+                  "red": 187
+                },
+                "highContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 72,
+                    "green": 72,
+                    "red": 72
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 33,
+                    "green": 33,
+                    "red": 33
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 205,
+                    "green": 205,
+                    "red": 205
+                  }
+                },
+                "higherContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 53,
+                    "green": 53,
+                    "red": 53
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 86,
+                    "green": 86,
+                    "red": 86
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 96,
+                    "green": 215,
+                    "red": 30
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 205,
+                    "green": 205,
+                    "red": 205
+                  }
+                },
+                "minContrast": {
+                  "backgroundBase": {
+                    "alpha": 255,
+                    "blue": 72,
+                    "green": 72,
+                    "red": 72
+                  },
+                  "backgroundTintedBase": {
+                    "alpha": 255,
+                    "blue": 33,
+                    "green": 33,
+                    "red": 33
+                  },
+                  "textBase": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textBrightAccent": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  },
+                  "textSubdued": {
+                    "alpha": 255,
+                    "blue": 255,
+                    "green": 255,
+                    "red": 255
+                  }
+                }
+              }
+            }
+          }
         },
       },
       {
@@ -28991,20 +30514,254 @@ export const apis = [
         ],
         sampleResponse: {
           "success": true,
-          "credits_remaining": 49997935399,
-          "data": {
-            "id": "4rOoJ6Egrf8K2IrywzwOMk",
-            "uri": "spotify:show:4rOoJ6Egrf8K2IrywzwOMk",
-            "episodes": [
-              {
-                "id": "46MudXmYxlZldT0NIXjlb6",
-                "uri": "spotify:episode:46MudXmYxlZldT0NIXjlb6",
-                "name": "#2506 - Michelle Thaller"
+          "credits_remaining": 49997232013,
+          "id": "3mliji9352UAk3XnWElnDV",
+          "uri": "spotify:show:3mliji9352UAk3XnWElnDV",
+          "episodes": [
+            {
+              "__typename": "Episode",
+              "accessInfo": null,
+              "audio": [
+                {
+                  "url": "https://p.scdn.co/mp3-preview/2cd8dd37b64a10c1f7cfc194172cca5887006cd3"
+                },
+                {
+                  "url": "https://p.scdn.co/mp3-preview/355b5462db930fcbc646d2b341fcd1c5f70c7887"
+                },
+                {
+                  "url": "https://p.scdn.co/mp3-preview/9a3bff176266805e57359bdf3be22f3fdaefd002"
+                },
+                {
+                  "url": "https://p.scdn.co/mp3-preview/440df88850326534507851664a04baef29978e00"
+                },
+                {
+                  "url": "https://p.scdn.co/mp3-preview/c9622e174f73438a8023f5e346a4f73f9cffa62b"
+                },
+                {
+                  "url": "https://p.scdn.co/mp3-preview/8514de569586ff1603a52d75a223b3daf7b43d1a"
+                }
+              ],
+              "contentInformation": null,
+              "contentRating": {
+                "label": "NONE"
+              },
+              "contentRatingsV2": null,
+              "contents": [],
+              "coverArt": {
+                "sources": [
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                    "width": 64
+                  },
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                    "width": 300
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                    "width": 640
+                  }
+                ]
+              },
+              "creator": null,
+              "description": "Get our Wealth Guide (35+ insights from top investors): https://clickhubspot.com/fvif  Episode 828: Shaan Puri ( https://x.com/ShaanVP ) and Sam Parr ( https://x.com/theSamParr ) talk to billionaire Joe Liemandt ( https://x.com/jliemandt ) about the experiment he’s put $1,000,000,000 of his own money into. — Show Notes:  (0:00) Joe, the total man? (08:09) fighting bill gates for talent (13:14) intensity (16:18) choosing hard over easy (19:00) how to be a magnet (21:34) high standards (23:29) being persuasive  (29:23) simplicity: 3 ines, 3 words  (34:41) is 2x faster really better? (36:23) making kids run a 5k (38:45) why be public now (41:01) why put $1b into the lowest roi thing? (50:03) buying SaaS companies (51:06) cloning Warren Buffett's brain (53:00) changing your brain lift (57:19) is AI going to make everyone dumb?  — Links: • Alpha School - https://alpha.school/  • 10 to 25: The Science of Motivating Young People - https://a.co/d/048Cfexh  — Check Out Sam's Stuff: • Hampton (joinhampton.com): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm — Check Out Shaan's Stuff: • Shaan's weekly email - https://www.shaanpuri.com  • Visit https://www.somewhere.com/mfm to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents. • Mercury - Need a bank for your company? Go check out Mercury (mercury.com). Shaan uses it for all of his companies! Mercury is a financial technology company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., and Evolve Bank & Trust, Members FDIC • I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out: beehiiv.com/mfm-challenge My First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano / ",
+              "duration": {
+                "totalMilliseconds": 3903344
+              },
+              "gatedEntityRelations": [],
+              "htmlDescription": "<p>Get our Wealth Guide (35&#43; insights from top investors):<a href=\"https://clickhubspot.com/fvif\" rel=\"nofollow\"> https://clickhubspot.com/fvif</a></p><br/><p><br /></p><br/><p>Episode 828: Shaan Puri ( <a href=\"https://x.com/ShaanVP\" rel=\"nofollow\">https://x.com/ShaanVP</a> ) and Sam Parr ( <a href=\"https://x.com/theSamParr\" rel=\"nofollow\">https://x.com/theSamParr</a> ) talk to billionaire Joe Liemandt ( <a href=\"https://x.com/jliemandt\" rel=\"nofollow\">https://x.com/jliemandt</a> ) about the experiment he’s put $1,000,000,000 of his own money into.</p><br/><p>—</p><br/><p>Show Notes: </p><br/><p>(0:00) Joe, the total man?</p><br/><p>(08:09) fighting bill gates for talent</p><br/><p>(13:14) intensity</p><br/><p>(16:18) choosing hard over easy</p><br/><p>(19:00) how to be a magnet</p><br/><p>(21:34) high standards</p><br/><p>(23:29) being persuasive </p><br/><p>(29:23) simplicity: 3 ines, 3 words </p><br/><p>(34:41) is 2x faster really better?</p><br/><p>(36:23) making kids run a 5k</p><br/><p>(38:45) why be public now</p><br/><p>(41:01) why put $1b into the lowest roi thing?</p><br/><p>(50:03) buying SaaS companies</p><br/><p>(51:06) cloning Warren Buffett&#39;s brain</p><br/><p>(53:00) changing your brain lift</p><br/><p>(57:19) is AI going to make everyone dumb?</p><br/><p><br /></p><br/><p>—</p><br/><p>Links:</p><br/><p>• Alpha School - <a href=\"https://alpha.school/\" rel=\"nofollow\">https://alpha.school/</a> </p><br/><p>• 10 to 25: The Science of Motivating Young People - <a href=\"https://a.co/d/048Cfexh\" rel=\"nofollow\">https://a.co/d/048Cfexh</a> </p><br/><p>—</p><br/><p>Check Out Sam&#39;s Stuff:</p><br/><p>• Hampton (joinhampton.com): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm</p><br/><p>—</p><br/><p>Check Out Shaan&#39;s Stuff:</p><br/><p>• Shaan&#39;s weekly email - <a href=\"https://www.shaanpuri.com\" rel=\"nofollow\">https://www.shaanpuri.com</a> </p><br/><p>• Visit <a href=\"https://www.somewhere.com/mfm\" rel=\"nofollow\">https://www.somewhere.com/mfm</a> to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents.</p><br/><p>• Mercury - Need a bank for your company? Go check out Mercury (mercury.com). Shaan uses it for all of his companies!</p><br/><p>Mercury is a financial technology company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., and Evolve Bank &amp; Trust, Members FDIC</p><br/><p>• I run all my newsletters on Beehiiv and you should too &#43; we&#39;re giving away $10k to our favorite newsletter, check it out:</p><br/><p>beehiiv.com/mfm-challenge</p><br/><p>My First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano /</p><br/><p><br /></p>",
+              "id": "3rvl30aWNqZbWi9dnolG3a",
+              "mediaTypes": ["AUDIO", "VIDEO"],
+              "name": "The 50 richest families in America are betting on this trend",
+              "playability": {
+                "playable": true,
+                "reason": "PLAYABLE",
+                "unplayabilityReasons": []
+              },
+              "playedState": {
+                "playPositionMilliseconds": 0,
+                "state": "NOT_STARTED"
+              },
+              "podcastV2": {
+                "__typename": "Podcast",
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab6765630000f68d35af1b9c3ee719329f85f229",
+                      "width": 64
+                    },
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67656300005f1f35af1b9c3ee719329f85f229",
+                      "width": 300
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab6765630000ba8a35af1b9c3ee719329f85f229",
+                      "width": 640
+                    }
+                  ]
+                },
+                "name": "My First Million",
+                "showTypes": [],
+                "trailerV2": null,
+                "uri": "spotify:show:3mliji9352UAk3XnWElnDV",
+                "accessInfo": null
+              },
+              "previewPlayback": {
+                "audioPreview": {
+                  "cdnUrl": "https://p.scdn.co/mp3-preview/b6e83bb5e3142367e192e45865e7c64cb2f39483.mp3"
+                }
+              },
+              "releaseDate": {
+                "isoString": "2026-05-27T08:59:00Z",
+                "precision": "MINUTE"
+              },
+              "restrictions": {
+                "paywallContent": false
+              },
+              "segments": null,
+              "sharingInfo": {
+                "shareId": "-xrq7hW_Qn2886yuMzLkyg",
+                "shareUrl": "https://open.spotify.com/episode/3rvl30aWNqZbWi9dnolG3a?si=-xrq7hW_Qn2886yuMzLkyg"
+              },
+              "transcripts": [],
+              "type": "PODCAST_EPISODE",
+              "uri": "spotify:episode:3rvl30aWNqZbWi9dnolG3a",
+              "visualIdentity": {
+                "sixteenByNineCoverImage": {
+                  "image": {
+                    "__typename": "ImageV2",
+                    "sources": [
+                      {
+                        "maxHeight": 720,
+                        "maxWidth": 1280,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab6772ab000030aeae7253d400b6cde5defd1197"
+                      },
+                      {
+                        "maxHeight": 360,
+                        "maxWidth": 640,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab6772ab0000e0e7ae7253d400b6cde5defd1197"
+                      }
+                    ]
+                  }
+                },
+                "squareCoverImage": {
+                  "__typename": "VisualIdentityImage",
+                  "extractedColorSet": {
+                    "encoreBaseSetTextColor": {
+                      "alpha": 255,
+                      "blue": 187,
+                      "green": 187,
+                      "red": 187
+                    },
+                    "highContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "higherContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 53,
+                        "green": 53,
+                        "red": 53
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 86,
+                        "green": 86,
+                        "red": 86
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 96,
+                        "green": 215,
+                        "red": 30
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 205,
+                        "green": 205,
+                        "red": 205
+                      }
+                    },
+                    "minContrast": {
+                      "backgroundBase": {
+                        "alpha": 255,
+                        "blue": 72,
+                        "green": 72,
+                        "red": 72
+                      },
+                      "backgroundTintedBase": {
+                        "alpha": 255,
+                        "blue": 33,
+                        "green": 33,
+                        "red": 33
+                      },
+                      "textBase": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textBrightAccent": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      },
+                      "textSubdued": {
+                        "alpha": 255,
+                        "blue": 255,
+                        "green": 255,
+                        "red": 255
+                      }
+                    }
+                  }
+                }
               }
-            ],
-            "cursor": 50,
-            "totalCount": 2698
-          }
+            }
+          ],
+          "cursor": 50,
+          "totalCount": 868
         },
       },
     ],
