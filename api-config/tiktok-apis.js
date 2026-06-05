@@ -7,15 +7,22 @@ export const tiktokBaseApis = {
       name: "Profile",
       method: "GET",
       description: "Scrapes a public TikTok profile",
-      fullDescription: "Fetches public profile data for a TikTok user by their handle — useful for looking up a creator's identity, bio, and account stats. Returns a `user` object (display name, avatar URLs, bio/signature, verification status, bio link) and a `stats` object (followerCount, followingCount, heartCount/total likes, videoCount). This only returns profile metadata, not the user's actual videos or followers list.",
+      fullDescription: "Fetches public profile data for a TikTok user by their handle or user_id — useful for looking up a creator's identity, bio, and account stats. Returns a `user` object (display name, avatar URLs, bio/signature, verification status, bio link) and a `stats` object (followerCount, followingCount, heartCount/total likes, videoCount). This only returns profile metadata, not the user's actual videos or followers list.",
       path: "/v1/tiktok/profile",
       params: [
         {
           name: "handle",
           type: "string",
-          required: true,
-          description: "TikTok handle",
+          required: false,
+          description: "TikTok handle. You can pass handle or user_id.",
           placeholder: "stoolpresidente",
+        },
+        {
+          name: "user_id",
+          type: "string",
+          required: false,
+          description: "TikTok user id.",
+          placeholder: "6659752019493208069",
         },
       ],
       sampleResponse: {
