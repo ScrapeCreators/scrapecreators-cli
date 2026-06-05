@@ -7057,9 +7057,9 @@ export const apis = [
         name: "Advertiser Search",
         method: "GET",
         description:
-          "Search the Google Ad Transparency Library for advertisers to get their advertiser id",
+          "Search the Google Ad Transparency Library for advertisers to get their advertiser id. Pass region for non-US advertisers, like AU or CA.",
         fullDescription:
-          "Searches the Google Ad Transparency Library for advertisers by name. Returns a list of matching advertisers with their name, advertiser_id, and region, plus a list of associated website domains. Use the returned advertiser_id to look up a company's ads.",
+          "Searches the Google Ad Transparency Library for advertisers by name. Returns a list of matching advertisers with their name, advertiser_id, and region, plus a list of associated website domains. Use the returned advertiser_id to look up a company's ads. Defaults to US when region is not passed, so pass a 2-letter country code like AU or CA when searching for advertisers in another region.",
         path: "/v1/google/adLibrary/advertisers/search",
         params: [
           {
@@ -7068,6 +7068,14 @@ export const apis = [
             required: true,
             description: "The query to search for",
             placeholder: "lululemon",
+          },
+          {
+            name: "region",
+            type: "string",
+            required: false,
+            description:
+              "2-letter country code to search in. Defaults to US when omitted.",
+            placeholder: "AU",
           },
         ],
         sampleResponse: {
