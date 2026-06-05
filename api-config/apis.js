@@ -16937,6 +16937,7 @@ export const apis = [
         sampleResponse: {
           "success": true,
           "credits_remaining": 49998219840,
+          "popularity": 79,
           "__typename": "Artist",
           "discography": {
             "albums": [
@@ -21744,6 +21745,7 @@ export const apis = [
         sampleResponse: {
           "success": true,
           "credits_remaining": 49997935404,
+          "popularity": 75,
           "__typename": "Track",
           "associationsV3": {
             "audioAssociations": [],
@@ -28187,6 +28189,7 @@ export const apis = [
         sampleResponse: {
           "success": true,
           "credits_remaining": 49997935402,
+          "popularity": 14,
           "id": "0pgrg7phBbnwGJ2HBEl9EG",
           "uri": "spotify:album:0pgrg7phBbnwGJ2HBEl9EG",
           "__typename": "Album",
