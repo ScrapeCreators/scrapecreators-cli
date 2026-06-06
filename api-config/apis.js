@@ -16936,19 +16936,18 @@ export const apis = [
         ],
         sampleResponse: {
           "success": true,
-          "credits_remaining": 49998219840,
-          "popularity": 79,
+          "credits_remaining": 49996588524,
           "__typename": "Artist",
           "discography": {
             "albums": [
               {
                 "copyright": [
                   {
-                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "text": "© 2026 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "text": "℗ 2026 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -16956,317 +16955,52 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02a958d093e94944dd0e7258b2",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851a958d093e94944dd0e7258b2",
+                      "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273a958d093e94944dd0e7258b2",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 5,
-                  "month": 9,
+                  "day": 24,
+                  "month": 4,
                   "precision": "DAY",
-                  "year": 2025
+                  "year": 2026
                 },
-                "id": "2KrREEyHxkdFGYAd1DmMdS",
-                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
-                "name": "SWAG II",
+                "id": "2xkYTmqjear3lSGydIn7wh",
+                "label": "TSNMI / Atlantic",
+                "name": "Kehlani",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "qFHryKZOR8WHlZqyx0JtIQ",
-                  "shareUrl": "https://open.spotify.com/album/2KrREEyHxkdFGYAd1DmMdS?si=qFHryKZOR8WHlZqyx0JtIQ"
-                },
-                "tracks": {
-                  "totalCount": 44
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:2KrREEyHxkdFGYAd1DmMdS"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 11,
-                  "month": 7,
-                  "precision": "DAY",
-                  "year": 2025
-                },
-                "id": "5vD5M5VW62LL78Ko8x0CVZ",
-                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
-                "name": "SWAG",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "YCy74K5fTcyN-dPYAviwiw",
-                  "shareUrl": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ?si=YCy74K5fTcyN-dPYAviwiw"
-                },
-                "tracks": {
-                  "totalCount": 21
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e020cad1d28e91209690bdfb907",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048510cad1d28e91209690bdfb907",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2730cad1d28e91209690bdfb907",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 8,
-                  "month": 10,
-                  "precision": "DAY",
-                  "year": 2021
-                },
-                "id": "3uPnO1aZBwMgWK1DI5zve9",
-                "label": "RBMG/Def Jam",
-                "name": "Justice (The Complete Edition)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "faoqqiq6SYuGTtzRDgMKgg",
-                  "shareUrl": "https://open.spotify.com/album/3uPnO1aZBwMgWK1DI5zve9?si=faoqqiq6SYuGTtzRDgMKgg"
-                },
-                "tracks": {
-                  "totalCount": 25
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:3uPnO1aZBwMgWK1DI5zve9"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02a01fed49fe3a84a9919cef29",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851a01fed49fe3a84a9919cef29",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273a01fed49fe3a84a9919cef29",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 26,
-                  "month": 3,
-                  "precision": "DAY",
-                  "year": 2021
-                },
-                "id": "6mzpIm84OXCBxw6Tuhp1OA",
-                "label": "RBMG/Def Jam",
-                "name": "Justice (Triple Chucks Deluxe)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "6EgEpOxwRD-_Z6nB8NLbCg",
-                  "shareUrl": "https://open.spotify.com/album/6mzpIm84OXCBxw6Tuhp1OA?si=6EgEpOxwRD-_Z6nB8NLbCg"
-                },
-                "tracks": {
-                  "totalCount": 22
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6mzpIm84OXCBxw6Tuhp1OA"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 19,
-                  "month": 3,
-                  "precision": "DAY",
-                  "year": 2021
-                },
-                "id": "5dGWwsZ9iB2Xc3UKR0gif2",
-                "label": "RBMG/Def Jam",
-                "name": "Justice",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "nEiKnceATWyDuqMsBNL0Tw",
-                  "shareUrl": "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2?si=nEiKnceATWyDuqMsBNL0Tw"
-                },
-                "tracks": {
-                  "totalCount": 16
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e027fe4a82a08c4f0decbeddbc6",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048517fe4a82a08c4f0decbeddbc6",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2737fe4a82a08c4f0decbeddbc6",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 14,
-                  "month": 2,
-                  "precision": "DAY",
-                  "year": 2020
-                },
-                "id": "63iWSELt9V1kV6RSMxN7Ii",
-                "label": "RBMG/Def Jam",
-                "name": "Changes",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "vHiLtwaZSg-ybKBg5dKqwQ",
-                  "shareUrl": "https://open.spotify.com/album/63iWSELt9V1kV6RSMxN7Ii?si=vHiLtwaZSg-ybKBg5dKqwQ"
+                  "shareId": "U8dlM5bqR9-6k0v2R2AZXA",
+                  "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=U8dlM5bqR9-6k0v2R2AZXA"
                 },
                 "tracks": {
                   "totalCount": 17
                 },
                 "type": "ALBUM",
-                "uri": "spotify:album:63iWSELt9V1kV6RSMxN7Ii"
+                "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh"
               },
               {
                 "copyright": [
                   {
-                    "text": "© 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "text": "© 2026 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "text": "℗ 2026 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -17274,849 +17008,52 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02487cf85e240954e14e6a18b9",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de",
+                      "url": "https://i.scdn.co/image/ab67616d00004851487cf85e240954e14e6a18b9",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 13,
-                  "month": 11,
-                  "precision": "DAY",
-                  "year": 2015
-                },
-                "id": "6Fr2rQkZ383FcMqFyT7yPr",
-                "label": "RBMG/Def Jam",
-                "name": "Purpose (Deluxe)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "JRDkApy6QCyl4myZ8gzrbw",
-                  "shareUrl": "https://open.spotify.com/album/6Fr2rQkZ383FcMqFyT7yPr?si=JRDkApy6QCyl4myZ8gzrbw"
-                },
-                "tracks": {
-                  "totalCount": 19
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 13,
-                  "month": 5,
-                  "precision": "DAY",
-                  "year": 2014
-                },
-                "id": "1rknZw4cyL9NInAqSwc8AA",
-                "label": "RBMG/Def Jam",
-                "name": "Journals",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "01SJEZcoRs-CGtnZDwy_XA",
-                  "shareUrl": "https://open.spotify.com/album/1rknZw4cyL9NInAqSwc8AA?si=01SJEZcoRs-CGtnZDwy_XA"
-                },
-                "tracks": {
-                  "totalCount": 16
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2013 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2013 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0247a09610fbdadcba48b8fa9e",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485147a09610fbdadcba48b8fa9e",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27347a09610fbdadcba48b8fa9e",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 1,
-                  "month": 1,
-                  "precision": "DAY",
-                  "year": 2013
-                },
-                "id": "1RMfz6rbIyrQYChfcCoiJ4",
-                "label": "RBMG/Def Jam",
-                "name": "Believe Acoustic",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "bNXL7GjGTIaOAbv-EAEjCw",
-                  "shareUrl": "https://open.spotify.com/album/1RMfz6rbIyrQYChfcCoiJ4?si=bNXL7GjGTIaOAbv-EAEjCw"
-                },
-                "tracks": {
-                  "totalCount": 11
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1RMfz6rbIyrQYChfcCoiJ4"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2012 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2012 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e026c20c4638a558132ba95bc39",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048516c20c4638a558132ba95bc39",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2736c20c4638a558132ba95bc39",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 15,
-                  "month": 6,
-                  "precision": "DAY",
-                  "year": 2012
-                },
-                "id": "70f70xLCpH7wHaVvB2oZT9",
-                "label": "RBMG/Def Jam",
-                "name": "Believe (Deluxe Edition)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "X0pc2NXISrqOCEx6Yrwhfg",
-                  "shareUrl": "https://open.spotify.com/album/70f70xLCpH7wHaVvB2oZT9?si=X0pc2NXISrqOCEx6Yrwhfg"
-                },
-                "tracks": {
-                  "totalCount": 17
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:70f70xLCpH7wHaVvB2oZT9"
-              }
-            ],
-            "compilations": [],
-            "latest": null,
-            "popularReleasesAlbums": [
-              {
-                "copyright": [
-                  {
-                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 11,
-                  "month": 7,
-                  "precision": "DAY",
-                  "year": 2025
-                },
-                "id": "5vD5M5VW62LL78Ko8x0CVZ",
-                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
-                "name": "SWAG",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "6RjT1v-oQYubnPs8d_n1hQ",
-                  "shareUrl": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ?si=6RjT1v-oQYubnPs8d_n1hQ"
-                },
-                "tracks": {
-                  "totalCount": 21
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2015 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 13,
-                  "month": 11,
-                  "precision": "DAY",
-                  "year": 2015
-                },
-                "id": "6Fr2rQkZ383FcMqFyT7yPr",
-                "label": "RBMG/Def Jam",
-                "name": "Purpose (Deluxe)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "Fm5lMLsKQpq05nsvqBNSIQ",
-                  "shareUrl": "https://open.spotify.com/album/6Fr2rQkZ383FcMqFyT7yPr?si=Fm5lMLsKQpq05nsvqBNSIQ"
-                },
-                "tracks": {
-                  "totalCount": 19
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2012 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2012 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851f1d02a6cec967f8b6b78f76e",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273f1d02a6cec967f8b6b78f76e",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 1,
-                  "month": 1,
-                  "precision": "DAY",
-                  "year": 2012
-                },
-                "id": "5cxMa6oLINJzmZ8lF7wWQN",
-                "label": "RBMG/Def Jam",
-                "name": "Believe",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "x0M5cPR9TA68q1bWu245hw",
-                  "shareUrl": "https://open.spotify.com/album/5cxMa6oLINJzmZ8lF7wWQN?si=x0M5cPR9TA68q1bWu245hw"
-                },
-                "tracks": {
-                  "totalCount": 13
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5cxMa6oLINJzmZ8lF7wWQN"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2010 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2010 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02629dc9e2e3bc20bbd7d92e4a",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851629dc9e2e3bc20bbd7d92e4a",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 1,
-                  "month": 1,
-                  "precision": "DAY",
-                  "year": 2010
-                },
-                "id": "3BmcYMh0KYsimWL6p2gPa9",
-                "label": "RBMG/Def Jam",
-                "name": "My World 2.0",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "yCyUfzfUQt6jrT8Bt8X0NQ",
-                  "shareUrl": "https://open.spotify.com/album/3BmcYMh0KYsimWL6p2gPa9?si=yCyUfzfUQt6jrT8Bt8X0NQ"
-                },
-                "tracks": {
-                  "totalCount": 10
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:3BmcYMh0KYsimWL6p2gPa9"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2025 ILH Production Co. LLC, under exclusive license to Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02a958d093e94944dd0e7258b2",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851a958d093e94944dd0e7258b2",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273a958d093e94944dd0e7258b2",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 5,
-                  "month": 9,
-                  "precision": "DAY",
-                  "year": 2025
-                },
-                "id": "2KrREEyHxkdFGYAd1DmMdS",
-                "label": "JRC Entertainment, LLC / ILH Production Co. LLC / Def Jam Recordings",
-                "name": "SWAG II",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "qD62_RFBQTS8fzkvvgfa6Q",
-                  "shareUrl": "https://open.spotify.com/album/2KrREEyHxkdFGYAd1DmMdS?si=qD62_RFBQTS8fzkvvgfa6Q"
-                },
-                "tracks": {
-                  "totalCount": 44
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:2KrREEyHxkdFGYAd1DmMdS"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2017 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 13,
-                  "month": 5,
-                  "precision": "DAY",
-                  "year": 2014
-                },
-                "id": "1rknZw4cyL9NInAqSwc8AA",
-                "label": "RBMG/Def Jam",
-                "name": "Journals",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "bhLXChFkQNKjwaRzcdNOoQ",
-                  "shareUrl": "https://open.spotify.com/album/1rknZw4cyL9NInAqSwc8AA?si=bhLXChFkQNKjwaRzcdNOoQ"
-                },
-                "tracks": {
-                  "totalCount": 16
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2021 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 19,
-                  "month": 3,
-                  "precision": "DAY",
-                  "year": 2021
-                },
-                "id": "5dGWwsZ9iB2Xc3UKR0gif2",
-                "label": "RBMG/Def Jam",
-                "name": "Justice",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "iILDhENDSMGWPC_6V7b8sg",
-                  "shareUrl": "https://open.spotify.com/album/5dGWwsZ9iB2Xc3UKR0gif2?si=iILDhENDSMGWPC_6V7b8sg"
-                },
-                "tracks": {
-                  "totalCount": 16
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2012 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2012 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e026c20c4638a558132ba95bc39",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048516c20c4638a558132ba95bc39",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2736c20c4638a558132ba95bc39",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 15,
-                  "month": 6,
-                  "precision": "DAY",
-                  "year": 2012
-                },
-                "id": "70f70xLCpH7wHaVvB2oZT9",
-                "label": "RBMG/Def Jam",
-                "name": "Believe (Deluxe Edition)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "5iR9Q-METXGB4-vyM-HhlA",
-                  "shareUrl": "https://open.spotify.com/album/70f70xLCpH7wHaVvB2oZT9?si=5iR9Q-METXGB4-vyM-HhlA"
-                },
-                "tracks": {
-                  "totalCount": 17
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:70f70xLCpH7wHaVvB2oZT9"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2009 The Island Def Jam Music Group",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2009 The Island Def Jam Music Group",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e027c3bb9f74a98f60bdda6c9a7",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048517c3bb9f74a98f60bdda6c9a7",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2737c3bb9f74a98f60bdda6c9a7",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 1,
-                  "month": 1,
-                  "precision": "DAY",
-                  "year": 2009
-                },
-                "id": "1rG5TDs3jYh6OU753I54CI",
-                "label": "RBMG/Def Jam",
-                "name": "My World",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "f1CQwb7NQZCkvyYSx_z_XA",
-                  "shareUrl": "https://open.spotify.com/album/1rG5TDs3jYh6OU753I54CI?si=f1CQwb7NQZCkvyYSx_z_XA"
-                },
-                "tracks": {
-                  "totalCount": 7
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1rG5TDs3jYh6OU753I54CI"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "© 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "C"
-                  },
-                  {
-                    "text": "℗ 2020 Def Jam Recordings, a division of UMG Recordings, Inc.",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e027fe4a82a08c4f0decbeddbc6",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048517fe4a82a08c4f0decbeddbc6",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2737fe4a82a08c4f0decbeddbc6",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 14,
-                  "month": 2,
-                  "precision": "DAY",
-                  "year": 2020
-                },
-                "id": "63iWSELt9V1kV6RSMxN7Ii",
-                "label": "RBMG/Def Jam",
-                "name": "Changes",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "wuVOYOA4Rfi0DgGbvSrfdw",
-                  "shareUrl": "https://open.spotify.com/album/63iWSELt9V1kV6RSMxN7Ii?si=wuVOYOA4Rfi0DgGbvSrfdw"
-                },
-                "tracks": {
-                  "totalCount": 17
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:63iWSELt9V1kV6RSMxN7Ii"
-              }
-            ],
-            "singles": [
-              {
-                "copyright": [
-                  {
-                    "text": "(P) 2023 Top Dawg Entertainment, under exclusive license to RCA Records",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e028ac04014f5db1daf4eb3731f",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048518ac04014f5db1daf4eb3731f",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2738ac04014f5db1daf4eb3731f",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "day": 15,
-                  "month": 9,
-                  "precision": "DAY",
-                  "year": 2023
-                },
-                "id": "0bQ8NyqdTKKQpZHYhZqCUU",
-                "label": "Top Dawg Entertainment/RCA Records",
-                "name": "Snooze (Acoustic) (feat. Justin Bieber)",
-                "playability": {
-                  "playable": true,
-                  "reason": "PLAYABLE"
-                },
-                "sharingInfo": {
-                  "shareId": "EG0uHMctSBORqQ9TRaSP7w",
-                  "shareUrl": "https://open.spotify.com/album/0bQ8NyqdTKKQpZHYhZqCUU?si=EG0uHMctSBORqQ9TRaSP7w"
-                },
-                "tracks": {
-                  "totalCount": 1
-                },
-                "type": "SINGLE",
-                "uri": "spotify:album:0bQ8NyqdTKKQpZHYhZqCUU"
-              },
-              {
-                "copyright": [
-                  {
-                    "text": "Cactus Jack, © 2023 Atlantic Records Group LLC",
-                    "type": "C"
-                  },
-                  {
-                    "text": "Cactus Jack, ℗ 2023 Atlantic Records Group LLC",
-                    "type": "P"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02e1d245c283dcb2d94a42e323",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851e1d245c283dcb2d94a42e323",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273e1d245c283dcb2d94a42e323",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273487cf85e240954e14e6a18b9",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
                   "day": 23,
-                  "month": 2,
+                  "month": 4,
                   "precision": "DAY",
-                  "year": 2023
+                  "year": 2026
                 },
-                "id": "3UeapbH1wFSnDjCjraZMQ2",
-                "label": "Cactus Jack / Atlantic",
-                "name": "Private Landing (feat. Justin Bieber & Future)",
+                "id": "5IAfvzdgSu25KAnerb6YsJ",
+                "label": "TSNMI / Atlantic",
+                "name": "Kehlani (Uncut Edition)",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "09pUw8DJSOSUhY9_LYxGcA",
-                  "shareUrl": "https://open.spotify.com/album/3UeapbH1wFSnDjCjraZMQ2?si=09pUw8DJSOSUhY9_LYxGcA"
+                  "shareId": "SOnRf_LhT3W-7VJ-nrmU3g",
+                  "shareUrl": "https://open.spotify.com/album/5IAfvzdgSu25KAnerb6YsJ?si=SOnRf_LhT3W-7VJ-nrmU3g"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 27
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:3UeapbH1wFSnDjCjraZMQ2"
+                "type": "ALBUM",
+                "uri": "spotify:album:5IAfvzdgSu25KAnerb6YsJ"
               },
               {
                 "copyright": [
                   {
-                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "TSNMI / Atlantic, © 2024 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "TSNMI / Atlantic, ℗ 2024 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -18124,52 +17061,52 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e022344fbe49cc161ab95c2ab3c",
+                      "url": "https://i.scdn.co/image/ab67616d00001e028b47a06f31b5b694c4759fc3",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048512344fbe49cc161ab95c2ab3c",
+                      "url": "https://i.scdn.co/image/ab67616d000048518b47a06f31b5b694c4759fc3",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2732344fbe49cc161ab95c2ab3c",
+                      "url": "https://i.scdn.co/image/ab67616d0000b2738b47a06f31b5b694c4759fc3",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 30,
+                  "day": 28,
                   "month": 8,
                   "precision": "DAY",
-                  "year": 2022
+                  "year": 2024
                 },
-                "id": "3Dukyn15RlALh1JDtQRqO0",
-                "label": "Justin Bieber 2021 PS/ Def Jam",
-                "name": "Beautiful Love (Free Fire)",
+                "id": "6BtMJG0J0QnXIiGRCMgkxA",
+                "label": "TSNMI / Atlantic",
+                "name": "While We Wait 2",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "XBSmUdOpSBSoAhX727R1pw",
-                  "shareUrl": "https://open.spotify.com/album/3Dukyn15RlALh1JDtQRqO0?si=XBSmUdOpSBSoAhX727R1pw"
+                  "shareId": "AVBy4qM6SUewxbsQ9jvgXQ",
+                  "shareUrl": "https://open.spotify.com/album/6BtMJG0J0QnXIiGRCMgkxA?si=AVBy4qM6SUewxbsQ9jvgXQ"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 14
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:3Dukyn15RlALh1JDtQRqO0"
+                "type": "ALBUM",
+                "uri": "spotify:album:6BtMJG0J0QnXIiGRCMgkxA"
               },
               {
                 "copyright": [
                   {
-                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "TSNMI/Atlantic, © 2024 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "TSNMI/Atlantic, ℗ 2024 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -18177,17 +17114,70 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0277f7f8553ace10f4d9347872",
+                      "url": "https://i.scdn.co/image/ab67616d00001e020346bdd9ed84ff9fd226e8b4",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485177f7f8553ace10f4d9347872",
+                      "url": "https://i.scdn.co/image/ab67616d000048510346bdd9ed84ff9fd226e8b4",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27377f7f8553ace10f4d9347872",
+                      "url": "https://i.scdn.co/image/ab67616d0000b2730346bdd9ed84ff9fd226e8b4",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 21,
+                  "month": 6,
+                  "precision": "DAY",
+                  "year": 2024
+                },
+                "id": "6GF5uzX2s0GsS4eGlM4h3m",
+                "label": "TSNMI / Atlantic",
+                "name": "CRASH",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "qgylVaLmQrCiYudRlsuN5g",
+                  "shareUrl": "https://open.spotify.com/album/6GF5uzX2s0GsS4eGlM4h3m?si=qgylVaLmQrCiYudRlsuN5g"
+                },
+                "tracks": {
+                  "totalCount": 13
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6GF5uzX2s0GsS4eGlM4h3m"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "TSNMI/Atlantic, © 2022 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "TSNMI/Atlantic, ℗ 2022 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02cd318840ba8784421377b5a0",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851cd318840ba8784421377b5a0",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273cd318840ba8784421377b5a0",
                       "width": 640
                     }
                   ]
@@ -18198,31 +17188,31 @@ export const apis = [
                   "precision": "DAY",
                   "year": 2022
                 },
-                "id": "2luYA3MBCKI7SfK3K0U3xf",
-                "label": "Justin Bieber 2021 PS/ Def Jam",
-                "name": "Honest",
+                "id": "2WfV3cpI2BUuIxMISh9nqF",
+                "label": "TSNMI / Atlantic",
+                "name": "blue water road",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "CTTePWuRSluBXEOyaw6ulQ",
-                  "shareUrl": "https://open.spotify.com/album/2luYA3MBCKI7SfK3K0U3xf?si=CTTePWuRSluBXEOyaw6ulQ"
+                  "shareId": "nNPSfnCTSWCVH5bGILn2gg",
+                  "shareUrl": "https://open.spotify.com/album/2WfV3cpI2BUuIxMISh9nqF?si=nNPSfnCTSWCVH5bGILn2gg"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 13
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:2luYA3MBCKI7SfK3K0U3xf"
+                "type": "ALBUM",
+                "uri": "spotify:album:2WfV3cpI2BUuIxMISh9nqF"
               },
               {
                 "copyright": [
                   {
-                    "text": "© 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "© 2020 TSNMI / Atlantic Recording Corporation",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2022 ILH Production Co. LLC, under exclusive license to Def Jam Recordings/Universal Records, a division of UMG Recordings, Inc.",
+                    "text": "℗ 2020 TSNMI / Atlantic Recording Corporation",
                     "type": "P"
                   }
                 ],
@@ -18230,43 +17220,202 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02afcb0119a3b9f9f7fcb6fecc",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ae10ed5541f3fd9fd339b711",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851afcb0119a3b9f9f7fcb6fecc",
+                      "url": "https://i.scdn.co/image/ab67616d00004851ae10ed5541f3fd9fd339b711",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273afcb0119a3b9f9f7fcb6fecc",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ae10ed5541f3fd9fd339b711",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 8,
+                  "month": 5,
+                  "precision": "DAY",
+                  "year": 2020
+                },
+                "id": "6ROLwnmW9pOioLned0DaP3",
+                "label": "TSNMI / Atlantic",
+                "name": "It Was Good Until It Wasn't",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "62TnIl58QLO_eyo4CXyomA",
+                  "shareUrl": "https://open.spotify.com/album/6ROLwnmW9pOioLned0DaP3?si=62TnIl58QLO_eyo4CXyomA"
+                },
+                "tracks": {
+                  "totalCount": 15
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6ROLwnmW9pOioLned0DaP3"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2019 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2019 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 22,
+                  "month": 2,
+                  "precision": "DAY",
+                  "year": 2019
+                },
+                "id": "73ZvpuYhKDr2FW4vlPsTpW",
+                "label": "TSNMI / Atlantic",
+                "name": "While We Wait",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "0YUYxyuBR-qhawqB91Lc2w",
+                  "shareUrl": "https://open.spotify.com/album/73ZvpuYhKDr2FW4vlPsTpW?si=0YUYxyuBR-qhawqB91Lc2w"
+                },
+                "tracks": {
+                  "totalCount": 9
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2017 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2017 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
                   "day": 27,
-                  "month": 4,
+                  "month": 1,
                   "precision": "DAY",
-                  "year": 2022
+                  "year": 2017
                 },
-                "id": "06aEQhiev6dMRsPbSQ2cFC",
-                "label": "Justin Bieber 2021 PS/ Def Jam",
-                "name": "I Feel Funny",
+                "id": "32jei6omhyLZDCg8Ijvoym",
+                "label": "TSNMI / Atlantic",
+                "name": "SweetSexySavage (Deluxe)",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "Vn1Bi12zQTeNvWHFo-kkKQ",
-                  "shareUrl": "https://open.spotify.com/album/06aEQhiev6dMRsPbSQ2cFC?si=Vn1Bi12zQTeNvWHFo-kkKQ"
+                  "shareId": "jgODWYSnS6Ghvg3YnZDldg",
+                  "shareUrl": "https://open.spotify.com/album/32jei6omhyLZDCg8Ijvoym?si=jgODWYSnS6Ghvg3YnZDldg"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 19
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:06aEQhiev6dMRsPbSQ2cFC"
+                "type": "ALBUM",
+                "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "2015",
+                    "type": "C"
+                  },
+                  {
+                    "text": "2015",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0210e3ed6f6ee10390058f681a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485110e3ed6f6ee10390058f681a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27310e3ed6f6ee10390058f681a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 28,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2015
+                },
+                "id": "3JFEZqTae3svhW8226cnNL",
+                "label": "P2015",
+                "name": "You Should Be Here",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "0j2rAnl2Q_yE5Ec4pgPmDw",
+                  "shareUrl": "https://open.spotify.com/album/3JFEZqTae3svhW8226cnNL?si=0j2rAnl2Q_yE5Ec4pgPmDw"
+                },
+                "tracks": {
+                  "totalCount": 14
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3JFEZqTae3svhW8226cnNL"
               },
               {
                 "copyright": [
@@ -18283,52 +17432,108 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0259eeddf546a5298dd24b6ab2",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d86aeb6beeac5c0bbc25691e",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485159eeddf546a5298dd24b6ab2",
+                      "url": "https://i.scdn.co/image/ab67616d00004851d86aeb6beeac5c0bbc25691e",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27359eeddf546a5298dd24b6ab2",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d86aeb6beeac5c0bbc25691e",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 30,
-                  "month": 3,
+                  "day": 26,
+                  "month": 8,
                   "precision": "DAY",
-                  "year": 2022
+                  "year": 2014
                 },
-                "id": "3vnJxSrVldmInhRwtcUG89",
+                "id": "0Z4zmV6ITJ6PUjCmAsHxdE",
                 "label": "TSNMI / Atlantic",
-                "name": "up at night (feat. justin bieber)",
+                "name": "Cloud 19",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "ULjENfn7TVCtS16eLoi9sA",
-                  "shareUrl": "https://open.spotify.com/album/3vnJxSrVldmInhRwtcUG89?si=ULjENfn7TVCtS16eLoi9sA"
+                  "shareId": "AUnhnLFcTkSSsuCErxuf0w",
+                  "shareUrl": "https://open.spotify.com/album/0Z4zmV6ITJ6PUjCmAsHxdE?si=AUnhnLFcTkSSsuCErxuf0w"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 7
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:3vnJxSrVldmInhRwtcUG89"
+                "type": "ALBUM",
+                "uri": "spotify:album:0Z4zmV6ITJ6PUjCmAsHxdE"
+              }
+            ],
+            "compilations": [],
+            "latest": {
+              "copyright": [
+                {
+                  "text": "© 2026 Atlantic Records Group LLC",
+                  "type": "C"
+                },
+                {
+                  "text": "℗ 2026 Atlantic Records Group LLC",
+                  "type": "P"
+                }
+              ],
+              "coverArt": {
+                "sources": [
+                  {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                    "width": 300
+                  },
+                  {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                    "width": 64
+                  },
+                  {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                    "width": 640
+                  }
+                ]
               },
+              "date": {
+                "day": 24,
+                "month": 4,
+                "precision": "DAY",
+                "year": 2026
+              },
+              "id": "2xkYTmqjear3lSGydIn7wh",
+              "label": "TSNMI / Atlantic",
+              "name": "Kehlani",
+              "playability": {
+                "playable": true,
+                "reason": "PLAYABLE"
+              },
+              "sharingInfo": {
+                "shareId": "T_Af2soBSuGDSt2oVHDtKg",
+                "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=T_Af2soBSuGDSt2oVHDtKg"
+              },
+              "tracks": {
+                "totalCount": 17
+              },
+              "type": "ALBUM",
+              "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh"
+            },
+            "popularReleasesAlbums": [
               {
                 "copyright": [
                   {
-                    "text": "© 2022 KeyQaad / Sire Records",
+                    "text": "© 2026 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2022 KeyQaad / Sire Records",
+                    "text": "℗ 2026 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -18336,48 +17541,52 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02e0e5c444b9713f8622d74e2f",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851e0e5c444b9713f8622d74e2f",
+                      "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273e0e5c444b9713f8622d74e2f",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 3,
-                  "month": 3,
+                  "day": 24,
+                  "month": 4,
                   "precision": "DAY",
-                  "year": 2022
+                  "year": 2026
                 },
-                "id": "0fGPQwybhz88QkKXZpfkwj",
-                "label": "KeyQaad/Sire Records",
-                "name": "attention (with Justin Bieber)",
+                "id": "2xkYTmqjear3lSGydIn7wh",
+                "label": "TSNMI / Atlantic",
+                "name": "Kehlani",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "Yj0CU-JJSO20ujaUXRDrYQ",
-                  "shareUrl": "https://open.spotify.com/album/0fGPQwybhz88QkKXZpfkwj?si=Yj0CU-JJSO20ujaUXRDrYQ"
+                  "shareId": "9oSy6lB1SlqNi7vkqsNWeQ",
+                  "shareUrl": "https://open.spotify.com/album/2xkYTmqjear3lSGydIn7wh?si=9oSy6lB1SlqNi7vkqsNWeQ"
                 },
                 "tracks": {
-                  "totalCount": 1
+                  "totalCount": 17
                 },
-                "type": "SINGLE",
-                "uri": "spotify:album:0fGPQwybhz88QkKXZpfkwj"
+                "type": "ALBUM",
+                "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh"
               },
               {
                 "copyright": [
                   {
-                    "text": "(P) 2021 RCA Records, a division of Sony Music Entertainment",
+                    "text": "© 2020 TSNMI / Atlantic Recording Corporation",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2020 TSNMI / Atlantic Recording Corporation",
                     "type": "P"
                   }
                 ],
@@ -18385,52 +17594,478 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02b47a1986745eae746c0d8bb6",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ae10ed5541f3fd9fd339b711",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851b47a1986745eae746c0d8bb6",
+                      "url": "https://i.scdn.co/image/ab67616d00004851ae10ed5541f3fd9fd339b711",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273b47a1986745eae746c0d8bb6",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ae10ed5541f3fd9fd339b711",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 18,
+                  "day": 8,
+                  "month": 5,
+                  "precision": "DAY",
+                  "year": 2020
+                },
+                "id": "6ROLwnmW9pOioLned0DaP3",
+                "label": "TSNMI / Atlantic",
+                "name": "It Was Good Until It Wasn't",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "N1eCGtmDRlKSdfldHvjWBg",
+                  "shareUrl": "https://open.spotify.com/album/6ROLwnmW9pOioLned0DaP3?si=N1eCGtmDRlKSdfldHvjWBg"
+                },
+                "tracks": {
+                  "totalCount": 15
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6ROLwnmW9pOioLned0DaP3"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2019 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2019 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 22,
+                  "month": 2,
+                  "precision": "DAY",
+                  "year": 2019
+                },
+                "id": "73ZvpuYhKDr2FW4vlPsTpW",
+                "label": "TSNMI / Atlantic",
+                "name": "While We Wait",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "n7iAwL5TSg-mjIRQkBAI0Q",
+                  "shareUrl": "https://open.spotify.com/album/73ZvpuYhKDr2FW4vlPsTpW?si=n7iAwL5TSg-mjIRQkBAI0Q"
+                },
+                "tracks": {
+                  "totalCount": 9
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02487cf85e240954e14e6a18b9",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851487cf85e240954e14e6a18b9",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273487cf85e240954e14e6a18b9",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "5IAfvzdgSu25KAnerb6YsJ",
+                "label": "TSNMI / Atlantic",
+                "name": "Kehlani (Uncut Edition)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "9SuYUaE-SJSGL6bWMWmdVQ",
+                  "shareUrl": "https://open.spotify.com/album/5IAfvzdgSu25KAnerb6YsJ?si=9SuYUaE-SJSGL6bWMWmdVQ"
+                },
+                "tracks": {
+                  "totalCount": 27
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5IAfvzdgSu25KAnerb6YsJ"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "TSNMI/Atlantic, © 2022 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "TSNMI/Atlantic, ℗ 2022 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02cd318840ba8784421377b5a0",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851cd318840ba8784421377b5a0",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273cd318840ba8784421377b5a0",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 29,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2022
+                },
+                "id": "2WfV3cpI2BUuIxMISh9nqF",
+                "label": "TSNMI / Atlantic",
+                "name": "blue water road",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "IW9C10MfRSS_FhUb0-tTyQ",
+                  "shareUrl": "https://open.spotify.com/album/2WfV3cpI2BUuIxMISh9nqF?si=IW9C10MfRSS_FhUb0-tTyQ"
+                },
+                "tracks": {
+                  "totalCount": 13
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2WfV3cpI2BUuIxMISh9nqF"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0259ac898bca5c93f5f21bf7b5",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485159ac898bca5c93f5f21bf7b5",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27359ac898bca5c93f5f21bf7b5",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 22,
+                  "month": 12,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "7a3yNq3BIyDEYPguafVKDf",
+                "label": "TSNMI / Atlantic",
+                "name": "Folded - A COLORS SHOW",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "P7BzVhNFSJOvZAo3WLgziw",
+                  "shareUrl": "https://open.spotify.com/album/7a3yNq3BIyDEYPguafVKDf?si=P7BzVhNFSJOvZAo3WLgziw"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:7a3yNq3BIyDEYPguafVKDf"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 HUGEL, under exclusive license to Universal Music GmbH",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 HUGEL, under exclusive license to Universal Music GmbH",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e028a11d115df8366eff0d0f126",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048518a11d115df8366eff0d0f126",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2738a11d115df8366eff0d0f126",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 2,
+                  "month": 5,
+                  "precision": "DAY",
+                  "year": 2025
+                },
+                "id": "6CjFvd1Oj0cljGm226jCvH",
+                "label": "Intercord",
+                "name": "Think Of Me",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "1Pwsy7DTT469zF1MeB_bsA",
+                  "shareUrl": "https://open.spotify.com/album/6CjFvd1Oj0cljGm226jCvH?si=1Pwsy7DTT469zF1MeB_bsA"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:6CjFvd1Oj0cljGm226jCvH"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2024 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2024 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0211931c4d211ac9a27b6747e0",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485111931c4d211ac9a27b6747e0",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27311931c4d211ac9a27b6747e0",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 4,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2024
+                },
+                "id": "062urW4KS66GPlEHIueefz",
+                "label": "Atlantic Records",
+                "name": "After Hours",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "tdNgXDelQUSDIPkdw3IArw",
+                  "shareUrl": "https://open.spotify.com/album/062urW4KS66GPlEHIueefz?si=tdNgXDelQUSDIPkdw3IArw"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:062urW4KS66GPlEHIueefz"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2017 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2017 TSNMI / Atlantic Recording Corporation for the United States and WEA International for the world outside of the United States",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 27,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2017
+                },
+                "id": "32jei6omhyLZDCg8Ijvoym",
+                "label": "TSNMI / Atlantic",
+                "name": "SweetSexySavage (Deluxe)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "F8AFvQkzTzq-9OvWEJWp8w",
+                  "shareUrl": "https://open.spotify.com/album/32jei6omhyLZDCg8Ijvoym?si=F8AFvQkzTzq-9OvWEJWp8w"
+                },
+                "tracks": {
+                  "totalCount": 19
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e1de233e335f2c8d8d1d4299",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851e1de233e335f2c8d8d1d4299",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e1de233e335f2c8d8d1d4299",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 7,
                   "month": 11,
                   "precision": "DAY",
-                  "year": 2021
+                  "year": 2025
                 },
-                "id": "5a7wDuklvlrH9LOZmt8zpy",
-                "label": "TrapSoul/RCA Records",
-                "name": "lonely christmas (feat. Justin Bieber & Poo Bear)",
+                "id": "4FdvzXXXWgv3YxkUuW2307",
+                "label": "TSNMI / Atlantic",
+                "name": "Out The Window",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "tUj7qKLdQh2JQJn-IBRBew",
-                  "shareUrl": "https://open.spotify.com/album/5a7wDuklvlrH9LOZmt8zpy?si=tUj7qKLdQh2JQJn-IBRBew"
+                  "shareId": "tsAYFvRVRIKLF_GdeG36Tw",
+                  "shareUrl": "https://open.spotify.com/album/4FdvzXXXWgv3YxkUuW2307?si=tsAYFvRVRIKLF_GdeG36Tw"
                 },
                 "tracks": {
                   "totalCount": 1
                 },
                 "type": "SINGLE",
-                "uri": "spotify:album:5a7wDuklvlrH9LOZmt8zpy"
-              },
+                "uri": "spotify:album:4FdvzXXXWgv3YxkUuW2307"
+              }
+            ],
+            "singles": [
               {
                 "copyright": [
                   {
-                    "text": "© 2021 OWSLA/Atlantic Recording Corporation",
+                    "text": "© 2026 Atlantic Records Group LLC",
                     "type": "C"
                   },
                   {
-                    "text": "℗ 2021 OWSLA/Atlantic Recording Corporation",
+                    "text": "℗ 2026 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -18438,48 +18073,52 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e021593c4b938926dce4250d71d",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02b12f0dbd960ab2e252b64a95",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048511593c4b938926dce4250d71d",
+                      "url": "https://i.scdn.co/image/ab67616d00004851b12f0dbd960ab2e252b64a95",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2731593c4b938926dce4250d71d",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273b12f0dbd960ab2e252b64a95",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 20,
-                  "month": 8,
+                  "day": 23,
+                  "month": 4,
                   "precision": "DAY",
-                  "year": 2021
+                  "year": 2026
                 },
-                "id": "76HLs4wSTOuCNwcGl4dycr",
-                "label": "OWSLA/Atlantic",
-                "name": "Don’t Go (with Justin Bieber & Don Toliver)",
+                "id": "4OIEqxUAhJ3fxEVqf5L9GB",
+                "label": "TSNMI / Atlantic",
+                "name": "Sweet Nuthins (feat. Leon Thomas)",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "k496Z7_iRxCiE0zE7AX4rg",
-                  "shareUrl": "https://open.spotify.com/album/76HLs4wSTOuCNwcGl4dycr?si=k496Z7_iRxCiE0zE7AX4rg"
+                  "shareId": "PpIIKS6USVmF7q85N6prqw",
+                  "shareUrl": "https://open.spotify.com/album/4OIEqxUAhJ3fxEVqf5L9GB?si=PpIIKS6USVmF7q85N6prqw"
                 },
                 "tracks": {
                   "totalCount": 1
                 },
                 "type": "SINGLE",
-                "uri": "spotify:album:76HLs4wSTOuCNwcGl4dycr"
+                "uri": "spotify:album:4OIEqxUAhJ3fxEVqf5L9GB"
               },
               {
                 "copyright": [
                   {
-                    "text": "(P) 2021 Starboy Entertainment Ltd., under exclusive license to RCA Records",
+                    "text": "© 2025 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 Atlantic Records Group LLC",
                     "type": "P"
                   }
                 ],
@@ -18487,43 +18126,467 @@ export const apis = [
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02b8193a73e58b9e483ca3834b",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02e141aeb817014aa694b26d37",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851b8193a73e58b9e483ca3834b",
+                      "url": "https://i.scdn.co/image/ab67616d00004851e141aeb817014aa694b26d37",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273b8193a73e58b9e483ca3834b",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273e141aeb817014aa694b26d37",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "day": 13,
-                  "month": 8,
+                  "day": 23,
+                  "month": 4,
                   "precision": "DAY",
-                  "year": 2021
+                  "year": 2026
                 },
-                "id": "0Rn8NAh8NnoaCOt8r8Tc3e",
-                "label": "Starboy/RCA Records",
-                "name": "Essence (feat. Justin Bieber & Tems)",
+                "id": "0OvlUHck9j75lQlCMuihBA",
+                "label": "TSNMI / Atlantic",
+                "name": "Shoulda Never (feat. USHER)",
                 "playability": {
                   "playable": true,
                   "reason": "PLAYABLE"
                 },
                 "sharingInfo": {
-                  "shareId": "t8e2_-guR5C-5F8Sdif5mQ",
-                  "shareUrl": "https://open.spotify.com/album/0Rn8NAh8NnoaCOt8r8Tc3e?si=t8e2_-guR5C-5F8Sdif5mQ"
+                  "shareId": "Ss0W2bEbTbetFx_KXBwFSQ",
+                  "shareUrl": "https://open.spotify.com/album/0OvlUHck9j75lQlCMuihBA?si=Ss0W2bEbTbetFx_KXBwFSQ"
                 },
                 "tracks": {
                   "totalCount": 1
                 },
                 "type": "SINGLE",
-                "uri": "spotify:album:0Rn8NAh8NnoaCOt8r8Tc3e"
+                "uri": "spotify:album:0OvlUHck9j75lQlCMuihBA"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0287713080274236a0f1e4b30c",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485187713080274236a0f1e4b30c",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27387713080274236a0f1e4b30c",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "4xGIbSnqkqLeYKvMCSX8QG",
+                "label": "TSNMI / Atlantic",
+                "name": "Pocket (feat. Cardi B)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "2cxGUPmMSaCe68n6cm6dTg",
+                  "shareUrl": "https://open.spotify.com/album/4xGIbSnqkqLeYKvMCSX8QG?si=2cxGUPmMSaCe68n6cm6dTg"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:4xGIbSnqkqLeYKvMCSX8QG"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02029190c4de0256b493b933cc",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851029190c4de0256b493b933cc",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273029190c4de0256b493b933cc",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "7KiE06K1XOFkiyZLGuFaQV",
+                "label": "TSNMI / Atlantic",
+                "name": "No Such Thing (feat. Clipse)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "hm9KrCSbRruLXDy5Ks2MGw",
+                  "shareUrl": "https://open.spotify.com/album/7KiE06K1XOFkiyZLGuFaQV?si=hm9KrCSbRruLXDy5Ks2MGw"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:7KiE06K1XOFkiyZLGuFaQV"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0217d0677ce58675002ceba866",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485117d0677ce58675002ceba866",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27317d0677ce58675002ceba866",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "6KX8HwnLauq6zMyiSd2Z8m",
+                "label": "TSNMI / Atlantic",
+                "name": "Lights On (feat. Big Sean)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "0hHhf0GNREKuR_1BjZtv3g",
+                  "shareUrl": "https://open.spotify.com/album/6KX8HwnLauq6zMyiSd2Z8m?si=0hHhf0GNREKuR_1BjZtv3g"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:6KX8HwnLauq6zMyiSd2Z8m"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027bc9c2d7e09f577ee6301a22",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517bc9c2d7e09f577ee6301a22",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737bc9c2d7e09f577ee6301a22",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "5Rp34zZ3GYa6zALFJYxapH",
+                "label": "TSNMI / Atlantic",
+                "name": "I Need You (feat. Brandy)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "xMUrAqAcQP-nNkxqXXkjaQ",
+                  "shareUrl": "https://open.spotify.com/album/5Rp34zZ3GYa6zALFJYxapH?si=xMUrAqAcQP-nNkxqXXkjaQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:5Rp34zZ3GYa6zALFJYxapH"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027cac3975cb963c6579a07370",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517cac3975cb963c6579a07370",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737cac3975cb963c6579a07370",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "396mEYcPHwOlbizdf9Jlhv",
+                "label": "TSNMI / Atlantic",
+                "name": "Call Me Back (feat. T-Pain & Lil Jon)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "Ym6q_BWdTOOcuLKFkFma2w",
+                  "shareUrl": "https://open.spotify.com/album/396mEYcPHwOlbizdf9Jlhv?si=Ym6q_BWdTOOcuLKFkFma2w"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:396mEYcPHwOlbizdf9Jlhv"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e028a2bc577e479255396db12a1",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048518a2bc577e479255396db12a1",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2738a2bc577e479255396db12a1",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 23,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "3uRyegM0lXJwIR14dhkdNa",
+                "label": "TSNMI / Atlantic",
+                "name": "Anotha Luva (feat. Lil Wayne)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "IY8J8VtFTFSZBiBiiqiLfw",
+                  "shareUrl": "https://open.spotify.com/album/3uRyegM0lXJwIR14dhkdNa?si=IY8J8VtFTFSZBiBiiqiLfw"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:3uRyegM0lXJwIR14dhkdNa"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2026 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2026 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e028b7e552f354fff5d90bb55dd",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048518b7e552f354fff5d90bb55dd",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2738b7e552f354fff5d90bb55dd",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 10,
+                  "month": 4,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "3yb1H4Mf6annZTGWpmAoCW",
+                "label": "TSNMI / Atlantic",
+                "name": "Back and Forth (feat. Missy Elliott)",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "Io3kmN2AQXC3nRsDhwVvNQ",
+                  "shareUrl": "https://open.spotify.com/album/3yb1H4Mf6annZTGWpmAoCW?si=Io3kmN2AQXC3nRsDhwVvNQ"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:3yb1H4Mf6annZTGWpmAoCW"
+              },
+              {
+                "copyright": [
+                  {
+                    "text": "© 2025 Atlantic Records Group LLC",
+                    "type": "C"
+                  },
+                  {
+                    "text": "℗ 2025 Atlantic Records Group LLC",
+                    "type": "P"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0207691d4d5bea3dd5b9b6338e",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485107691d4d5bea3dd5b9b6338e",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27307691d4d5bea3dd5b9b6338e",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "day": 7,
+                  "month": 1,
+                  "precision": "DAY",
+                  "year": 2026
+                },
+                "id": "64AUAPx8kVRTuBO16NDUWN",
+                "label": "TSNMI / Atlantic",
+                "name": "Folded (Live) - Spotify Live Room",
+                "playability": {
+                  "playable": true,
+                  "reason": "PLAYABLE"
+                },
+                "sharingInfo": {
+                  "shareId": "BqzT8MpERrKa9kUm9F24_w",
+                  "shareUrl": "https://open.spotify.com/album/64AUAPx8kVRTuBO16NDUWN?si=BqzT8MpERrKa9kUm9F24_w"
+                },
+                "tracks": {
+                  "totalCount": 1
+                },
+                "type": "SINGLE",
+                "uri": "spotify:album:64AUAPx8kVRTuBO16NDUWN"
               }
             ],
             "topTracks": [
@@ -18533,30 +18596,24 @@ export const apis = [
                     "coverArt": {
                       "sources": [
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02f1d02a6cec967f8b6b78f76e"
+                          "url": "https://i.scdn.co/image/ab67616d00001e02d9233d03f5434d9dd46c9fd6"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00004851f1d02a6cec967f8b6b78f76e"
+                          "url": "https://i.scdn.co/image/ab67616d00004851d9233d03f5434d9dd46c9fd6"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273f1d02a6cec967f8b6b78f76e"
+                          "url": "https://i.scdn.co/image/ab67616d0000b273d9233d03f5434d9dd46c9fd6"
                         }
                       ]
                     },
-                    "uri": "spotify:album:5cxMa6oLINJzmZ8lF7wWQN"
+                    "uri": "spotify:album:5KS0QmxwUmSPsolg9VaSAU"
                   },
                   "artists": [
                     {
                       "profile": {
-                        "name": "Justin Bieber"
+                        "name": "Kehlani"
                       },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    },
-                    {
-                      "profile": {
-                        "name": "Nicki Minaj"
-                      },
-                      "uri": "spotify:artist:0hCNtLu0JehylgoiP8L4Gh"
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
                     }
                   ],
                   "associationsV3": {
@@ -18569,18 +18626,19 @@ export const apis = [
                   },
                   "discNumber": 1,
                   "duration": {
-                    "totalMilliseconds": 227986
+                    "totalMilliseconds": 237928
                   },
-                  "id": "6QFCMUUq1T2Vf5sFUXcuQ7",
-                  "name": "Beauty And A Beat",
+                  "id": "6sTlzpJaFGkFQ4BNccmbW9",
+                  "name": "Folded",
                   "playability": {
                     "playable": true,
                     "reason": "PLAYABLE"
                   },
-                  "playcount": 1697221016,
-                  "uri": "spotify:track:6QFCMUUq1T2Vf5sFUXcuQ7"
+                  "playcount": 493498588,
+                  "uri": "spotify:track:6sTlzpJaFGkFQ4BNccmbW9",
+                  "popularity": 79
                 },
-                "uid": "cba4fecbb5d3e62feedb"
+                "uid": "a838730591ee5251ecfd"
               },
               {
                 "track": {
@@ -18588,342 +18646,24 @@ export const apis = [
                     "coverArt": {
                       "sources": [
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d00001e0278394761781d70751fc8d931"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d0000485178394761781d70751fc8d931"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d0000b27378394761781d70751fc8d931"
                         }
                       ]
                     },
-                    "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+                    "uri": "spotify:album:32jei6omhyLZDCg8Ijvoym"
                   },
                   "artists": [
                     {
                       "profile": {
-                        "name": "Justin Bieber"
+                        "name": "Kehlani"
                       },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 0
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 176453
-                  },
-                  "id": "5BZsQlgw21vDOAjoqkNgKb",
-                  "name": "DAISIES",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 742205089,
-                  "uri": "spotify:track:5BZsQlgw21vDOAjoqkNgKb"
-                },
-                "uid": "38074ac621c87c3c48a0"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e0258ae8fddecbd2630005409c9"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000485158ae8fddecbd2630005409c9"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b27358ae8fddecbd2630005409c9"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:1rknZw4cyL9NInAqSwc8AA"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    },
-                    {
-                      "profile": {
-                        "name": "Chance the Rapper"
-                      },
-                      "uri": "spotify:artist:1anyVhU62p31KFi8MEzkbf"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 1
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 248133
-                  },
-                  "id": "3JsydWaf2Ev4ehaLUjj3SY",
-                  "name": "Confident",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 1187946292,
-                  "uri": "spotify:track:3JsydWaf2Ev4ehaLUjj3SY"
-                },
-                "uid": "f7c45e2ca935ba7ed6c3"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02629dc9e2e3bc20bbd7d92e4a"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00004851629dc9e2e3bc20bbd7d92e4a"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273629dc9e2e3bc20bbd7d92e4a"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:3BmcYMh0KYsimWL6p2gPa9"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    },
-                    {
-                      "profile": {
-                        "name": "Ludacris"
-                      },
-                      "uri": "spotify:artist:3ipn9JLAPI5GUEo4y4jcoi"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 1
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 214240
-                  },
-                  "id": "6epn3r7S14KUqlReYr77hA",
-                  "name": "Baby",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 1568960415,
-                  "uri": "spotify:track:6epn3r7S14KUqlReYr77hA"
-                },
-                "uid": "36c3214a4388f9ec86ee"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 0
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 200786
-                  },
-                  "id": "09CtPGIpYB4BrO8qb1RGsF",
-                  "name": "Sorry",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 2895856420,
-                  "uri": "spotify:track:09CtPGIpYB4BrO8qb1RGsF"
-                },
-                "uid": "e5b52a3da00f8c729148"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02f46b9d202509a8f7384b90de"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00004851f46b9d202509a8f7384b90de"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:6Fr2rQkZ383FcMqFyT7yPr"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 0
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 233720
-                  },
-                  "id": "50kpGaPAhYJ3sGmk6vplg0",
-                  "name": "Love Yourself",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 3192991036,
-                  "uri": "spotify:track:50kpGaPAhYJ3sGmk6vplg0"
-                },
-                "uid": "5b2b3c27909e781340cf"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02ca8d656fa57db4cce117f53b"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00004851ca8d656fa57db4cce117f53b"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273ca8d656fa57db4cce117f53b"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:6DOZI2LfBRYHRhZV21LrOu"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "Sean Kingston"
-                      },
-                      "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr"
-                    },
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
-                    }
-                  ],
-                  "associationsV3": {
-                    "videoAssociations": {
-                      "totalCount": 1
-                    }
-                  },
-                  "contentRating": {
-                    "label": "NONE"
-                  },
-                  "discNumber": 1,
-                  "duration": {
-                    "totalMilliseconds": 201973
-                  },
-                  "id": "4Yaw2PmyOETOnEM3TCf98I",
-                  "name": "Eenie Meenie - Radio Version",
-                  "playability": {
-                    "playable": true,
-                    "reason": "PLAYABLE"
-                  },
-                  "playcount": 1079181671,
-                  "uri": "spotify:track:4Yaw2PmyOETOnEM3TCf98I"
-                },
-                "uid": "01543377bcf81f3d0761"
-              },
-              {
-                "track": {
-                  "albumOfTrack": {
-                    "coverArt": {
-                      "sources": [
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02b4d59e6fa7e5e7cbc57ac33a"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d00004851b4d59e6fa7e5e7cbc57ac33a"
-                        },
-                        {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273b4d59e6fa7e5e7cbc57ac33a"
-                        }
-                      ]
-                    },
-                    "uri": "spotify:album:576UTio7xgY7YUxrHMzxeI"
-                  },
-                  "artists": [
-                    {
-                      "profile": {
-                        "name": "The Kid LAROI"
-                      },
-                      "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
-                    },
-                    {
-                      "profile": {
-                        "name": "Justin Bieber"
-                      },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
                     }
                   ],
                   "associationsV3": {
@@ -18936,18 +18676,19 @@ export const apis = [
                   },
                   "discNumber": 1,
                   "duration": {
-                    "totalMilliseconds": 141805
+                    "totalMilliseconds": 177773
                   },
-                  "id": "567e29TDzLwZwfDuEpGTwo",
-                  "name": "STAY (with Justin Bieber)",
+                  "id": "5cw9s2zGrbny2M2p3WRmGm",
+                  "name": "Gangsta",
                   "playability": {
                     "playable": true,
                     "reason": "PLAYABLE"
                   },
-                  "playcount": 3904947519,
-                  "uri": "spotify:track:567e29TDzLwZwfDuEpGTwo"
+                  "playcount": 645279868,
+                  "uri": "spotify:track:5cw9s2zGrbny2M2p3WRmGm",
+                  "popularity": 66
                 },
-                "uid": "98717d1b14bf26cf1a4b"
+                "uid": "ca889a1880a569cee3a9"
               },
               {
                 "track": {
@@ -18955,24 +18696,24 @@ export const apis = [
                     "coverArt": {
                       "sources": [
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d00001e02133dc7b29a0209a3c12eaa2b"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00004851d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d00004851133dc7b29a0209a3c12eaa2b"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273d65c4773bc5061fd27facc5b"
+                          "url": "https://i.scdn.co/image/ab67616d0000b273133dc7b29a0209a3c12eaa2b"
                         }
                       ]
                     },
-                    "uri": "spotify:album:5vD5M5VW62LL78Ko8x0CVZ"
+                    "uri": "spotify:album:2MRNLEYm9SB0HBrJEU8L32"
                   },
                   "artists": [
                     {
                       "profile": {
-                        "name": "Justin Bieber"
+                        "name": "Kehlani"
                       },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
                     }
                   ],
                   "associationsV3": {
@@ -18985,18 +18726,19 @@ export const apis = [
                   },
                   "discNumber": 1,
                   "duration": {
-                    "totalMilliseconds": 163866
+                    "totalMilliseconds": 202414
                   },
-                  "id": "29iva9idM6rFCPUlu7Rhxl",
-                  "name": "YUKON",
+                  "id": "4ChomJf8z16E6Zw4EoioYY",
+                  "name": "After Hours",
                   "playability": {
                     "playable": true,
                     "reason": "PLAYABLE"
                   },
-                  "playcount": 365730927,
-                  "uri": "spotify:track:29iva9idM6rFCPUlu7Rhxl"
+                  "playcount": 251938928,
+                  "uri": "spotify:track:4ChomJf8z16E6Zw4EoioYY",
+                  "popularity": 76
                 },
-                "uid": "6fa5ce996a2c7247b56d"
+                "uid": "82c3e6be760b1e749010"
               },
               {
                 "track": {
@@ -19004,24 +18746,304 @@ export const apis = [
                     "coverArt": {
                       "sources": [
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00001e02e6f407c7f3a0ec98845e4431"
+                          "url": "https://i.scdn.co/image/ab67616d00001e02f882c60f16e308b5e51fbccf"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d00004851e6f407c7f3a0ec98845e4431"
+                          "url": "https://i.scdn.co/image/ab67616d00004851f882c60f16e308b5e51fbccf"
                         },
                         {
-                          "url": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431"
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f882c60f16e308b5e51fbccf"
                         }
                       ]
                     },
-                    "uri": "spotify:album:5dGWwsZ9iB2Xc3UKR0gif2"
+                    "uri": "spotify:album:73ZvpuYhKDr2FW4vlPsTpW"
                   },
                   "artists": [
                     {
                       "profile": {
-                        "name": "Justin Bieber"
+                        "name": "Kehlani"
                       },
-                      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    },
+                    {
+                      "profile": {
+                        "name": "Ty Dolla $ign"
+                      },
+                      "uri": "spotify:artist:7c0XG5cIJTrrAgEC3ULPiq"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "EXPLICIT"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 201787
+                  },
+                  "id": "6ZRuF2n1CQxyxxAAWsKJOy",
+                  "name": "Nights Like This (feat. Ty Dolla $ign)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 744714260,
+                  "uri": "spotify:track:6ZRuF2n1CQxyxxAAWsKJOy",
+                  "popularity": 77
+                },
+                "uid": "4be2ca257f381d908566"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273487cf85e240954e14e6a18b9"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5IAfvzdgSu25KAnerb6YsJ"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    },
+                    {
+                      "profile": {
+                        "name": "USHER"
+                      },
+                      "uri": "spotify:artist:23zg3TcAtWQy7J6upgbUnj"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "EXPLICIT"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 186112
+                  },
+                  "id": "3NBBUedTNWVACWLVR5HCwf",
+                  "name": "Shoulda Never (feat. USHER)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 11869923,
+                  "uri": "spotify:track:3NBBUedTNWVACWLVR5HCwf",
+                  "popularity": 65
+                },
+                "uid": "fb2427cc81ea1e663f8d"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02fcc36f9c0515e6e7faa2030b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851fcc36f9c0515e6e7faa2030b"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273fcc36f9c0515e6e7faa2030b"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5PO2cqkBjAUOSHdxSDJOL4"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "G-Eazy"
+                      },
+                      "uri": "spotify:artist:02kJSzxNuaWGqwubyUba0Z"
+                    },
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 225525
+                  },
+                  "id": "1Eck97uRMlprKOOJN9oO1E",
+                  "name": "Good Life (with G-Eazy & Kehlani)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 475010959,
+                  "uri": "spotify:track:1Eck97uRMlprKOOJN9oO1E",
+                  "popularity": 62
+                },
+                "uid": "427784a3dc8b6dde39d8"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273487cf85e240954e14e6a18b9"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5IAfvzdgSu25KAnerb6YsJ"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 1
+                    }
+                  },
+                  "contentRating": {
+                    "label": "EXPLICIT"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 256615
+                  },
+                  "id": "1WJjatHZ4HRU7U1MUUsJmF",
+                  "name": "Out The Window",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 39797080,
+                  "uri": "spotify:track:1WJjatHZ4HRU7U1MUUsJmF",
+                  "popularity": 60
+                },
+                "uid": "e14c572e5ebe05ed9697"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851487cf85e240954e14e6a18b9"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273487cf85e240954e14e6a18b9"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5IAfvzdgSu25KAnerb6YsJ"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    },
+                    {
+                      "profile": {
+                        "name": "Lil Wayne"
+                      },
+                      "uri": "spotify:artist:55Aa2cqylxrFIXC767Z865"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "EXPLICIT"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 241927
+                  },
+                  "id": "5LuC5blFEx19VaKVDDOPRZ",
+                  "name": "Anotha Luva (feat. Lil Wayne)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 6839659,
+                  "uri": "spotify:track:5LuC5blFEx19VaKVDDOPRZ",
+                  "popularity": 60
+                },
+                "uid": "f6576a5e5ae4005728c5"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02897f73256b9128a9d70eaf66"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851897f73256b9128a9d70eaf66"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273897f73256b9128a9d70eaf66"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:0mZIUXje90JtHxPNzWsJNR"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "Charlie Puth"
+                      },
+                      "uri": "spotify:artist:6VuMaDnrHyPL1p4EHjYLi7"
+                    },
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
                     }
                   ],
                   "associationsV3": {
@@ -19034,27 +19056,224 @@ export const apis = [
                   },
                   "discNumber": 1,
                   "duration": {
-                    "totalMilliseconds": 153190
+                    "totalMilliseconds": 180493
                   },
-                  "id": "6I3mqTwhRpn34SLVafSH7G",
-                  "name": "Ghost",
+                  "id": "1lsBTdE6MGsKeZCD6llNu7",
+                  "name": "Done for Me (feat. Kehlani)",
                   "playability": {
                     "playable": true,
                     "reason": "PLAYABLE"
                   },
-                  "playcount": 2260573976,
-                  "uri": "spotify:track:6I3mqTwhRpn34SLVafSH7G"
+                  "playcount": 360108475,
+                  "uri": "spotify:track:1lsBTdE6MGsKeZCD6llNu7",
+                  "popularity": 73
                 },
-                "uid": "f211bbd5840e78cee105"
+                "uid": "93ebd13ec1e509bbb28c"
+              },
+              {
+                "track": {
+                  "albumOfTrack": {
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e0240804dba7b99de3125438c71"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000485140804dba7b99de3125438c71"
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b27340804dba7b99de3125438c71"
+                        }
+                      ]
+                    },
+                    "uri": "spotify:album:5qUp79PAejWMSXh0l04Zy9"
+                  },
+                  "artists": [
+                    {
+                      "profile": {
+                        "name": "GIVĒON"
+                      },
+                      "uri": "spotify:artist:4fxd5Ee7UefO4CUXgwJ7IP"
+                    },
+                    {
+                      "profile": {
+                        "name": "Kehlani"
+                      },
+                      "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX"
+                    }
+                  ],
+                  "associationsV3": {
+                    "videoAssociations": {
+                      "totalCount": 0
+                    }
+                  },
+                  "contentRating": {
+                    "label": "NONE"
+                  },
+                  "discNumber": 1,
+                  "duration": {
+                    "totalMilliseconds": 183990
+                  },
+                  "id": "1IOzlMpIx4oLxo88nNbd1u",
+                  "name": "SAVE SOME FOR ME (feat. Kehlani)",
+                  "playability": {
+                    "playable": true,
+                    "reason": "PLAYABLE"
+                  },
+                  "playcount": 3859731,
+                  "uri": "spotify:track:1IOzlMpIx4oLxo88nNbd1u",
+                  "popularity": 73
+                },
+                "uid": "24c72170859f7a5753d9"
               }
             ]
           },
           "goods": {
-            "concerts": [],
+            "concerts": [
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Las Vegas",
+                  "name": "LIV Nightclub Las Vegas"
+                },
+                "startDateIsoString": "2026-06-19T22:30-07:00",
+                "title": "Kehlani",
+                "uri": "spotify:concert:4Qygm81hJ84WfQdINSGPp2"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Montréal",
+                  "name": "Parc Jean-Drapeau"
+                },
+                "startDateIsoString": "2026-07-31T13:00-04:00",
+                "title": "Kehlani",
+                "uri": "spotify:concert:4B2ESAWRCoA4lm6K7PcLIa"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": true,
+                "location": {
+                  "city": "Montreal",
+                  "name": "Parc Jean Drapeau"
+                },
+                "startDateIsoString": "2026-07-31T14:00-04:00",
+                "title": "Osheaga 2026 - Vendredi",
+                "uri": "spotify:concert:785JAFrXBuMY5HuOhYozM0"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Minneapolis",
+                  "name": "Armory"
+                },
+                "startDateIsoString": "2026-08-06T18:30-05:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:3neCrLuiMzWu25lsVyQTgy"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Milwaukee",
+                  "name": "Landmark Credit Union Live"
+                },
+                "startDateIsoString": "2026-08-07T18:30-05:00",
+                "title": "Kehlani, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:53JSzgs4xD8cTVuOaIRfuG"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Chicago",
+                  "name": "Huntington Bank Pavilion at Northerly Island"
+                },
+                "startDateIsoString": "2026-08-09T18:30-05:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:27C7TkMTRDuRfNU1i3NjTr"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Indianapolis",
+                  "name": "Everwise Amphitheater at White River State Park"
+                },
+                "startDateIsoString": "2026-08-10T18:30-04:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:4AKaocwvHl5MTT7MUubz0R"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Sterling Heights",
+                  "name": "Michigan Lottery Amphitheatre at Freedom Hill"
+                },
+                "startDateIsoString": "2026-08-13T18:30-04:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:4s6VAa48PMtbmW8cAheKan"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Cuyahoga Falls",
+                  "name": "Blossom Music Center"
+                },
+                "startDateIsoString": "2026-08-14T18:30-04:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:6DTcRcBopK63kiZ044QycV"
+              },
+              {
+                "__typename": "ConcertV2",
+                "festival": false,
+                "location": {
+                  "city": "Toronto",
+                  "name": "RBC Amphitheatre"
+                },
+                "startDateIsoString": "2026-08-16T18:30-04:00",
+                "title": "Kehlani, Durand Bernarr, Isaia Huron, TheARTI$t",
+                "uri": "spotify:concert:2bWi0NXO3SMqNzrMjFN0Wt"
+              }
+            ],
             "merch": []
           },
-          "headerImage": null,
-          "id": "1uNFoZAHBGtllmzznpCI3s",
+          "headerImage": {
+            "__typename": "ImageV2",
+            "sources": [
+              {
+                "maxHeight": 640,
+                "maxWidth": 1494,
+                "url": "https://image-cdn-fa.spotifycdn.com/image/ab676186000001945388724675d387b1c00995c0"
+              },
+              {
+                "maxHeight": 1080,
+                "maxWidth": 1920,
+                "url": "https://i2o.scdn.co/image/ab676186000016675388724675d387b1c00995c0"
+              },
+              {
+                "maxHeight": 1080,
+                "maxWidth": 1920,
+                "url": "https://i2o.scdn.co/image/ab676186000016675388724675d387b1c00995c0"
+              },
+              {
+                "maxHeight": 641,
+                "maxWidth": 1495,
+                "url": "https://image-cdn-fa.spotifycdn.com/image/ab67618600009d805388724675d387b1c00995c0"
+              },
+              {
+                "maxHeight": 1140,
+                "maxWidth": 2660,
+                "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761860000eab15388724675d387b1c00995c0"
+              }
+            ]
+          },
+          "id": "0cGUm45nv7Z6M6qdXYQGTX",
           "onPlatformReputationTrait": {
             "verification": {
               "isRegistered": true,
@@ -19064,284 +19283,155 @@ export const apis = [
           "preRelease": null,
           "profile": {
             "biography": {
-              "text": "Since his emergence in 2008, Justin Bieber has quietly worked towards delivering a career-defining artistic statement with his 2025 seventh full-length album, SWAG via Def Jam Recordings. Beyond writing songs and performing, he co-produced the LP which is a 21-track opus evocative of his evolution, yet indicative of the signature spirit millions of fans first fell in love with. \n\nUp to this point, he has smashed countless records, captivated crowds globally and led 21st century pop music and culture as both the preeminent entertainer of his generation and a peerless boundary-pushing creative force. From humble beginnings in Ontario, Canada, the Los Angeles-based singer, songwriter, and producer has elevated to one of the best-selling artists in history, moving over 150 million albums worldwide, generating nearly 200 billion streams, and scoring an astonishing 5 RIAA Diamond certifications. Speaking to his versatility, he has also delivered cross-generational hits in genres as diverse as pop, electronic, hip-hop, R&amp;B, Latin, and more. With SWAG, he continues an unbelievable journey as an era-defining superstar whose influence is unstoppable and unparalleled.",
+              "text": "Without sugarcoating or softening a word, the Bay Area-born two-time GRAMMY® Award-nominated multiplatinum songstress will drop a hard truth in one breath and flip a middle finger in the next. Either way, she finds a way to consistently relate without filter. Kehlani’s 2015 breakout mixtape You Should Be Here received a GRAMMY® nod in the category of “Best Urban Contemporary Album.” She contributed to the soundtracks for Suicide Squad and The Fate of the Furious and guested on Cardi B’s “Ring,” Kyle’s “PLAYINWITME,” and Justin Bieber’s “Get Me,” to name a few. By 2020, she picked up three gold solo singles—&quot;You Should Be Here,” “Honey,” and “Distraction,” for which she received her second GRAMMY® nomination for Best R&amp;B performance. In addition, four platinum singles—“Gangsta,” “The Way” [feat. Chance the Rapper], “CRZY,” and “Nights Like This” [feat. Ty Dolla $ign] and streams in the billions. Not to mention, Billboard Women In Music honored her with the “Rule Breaker Award”.  In the aftermath of 2019’s chart-topping While We Wait mixtape, everything changed. She became a mom. As such, parenthood left an indelible imprint on her second full-length, It Was Good Until It Wasn’t. The album is described by Kehlani as her most mature body of work, featuring songs based on her own real experiences including “Toxic” and “Everybody Business.” In the end, you’ll know exactly what’s on Kehlani’s mind, heart, and soul.",
               "type": "AUTOBIOGRAPHY"
             },
             "externalLinks": [
               {
                 "name": "FACEBOOK",
-                "url": "https://facebook.com/JustinBieber"
+                "url": "https://facebook.com/Kehlanimusic"
               },
               {
                 "name": "INSTAGRAM",
-                "url": "https://instagram.com/lilbieber"
+                "url": "https://instagram.com/kehlani"
               },
               {
                 "name": "TWITTER",
-                "url": "https://twitter.com/justinbieber"
+                "url": "https://twitter.com/kehlani"
               },
               {
                 "name": "WIKIPEDIA",
-                "url": "https://en.wikipedia.org/wiki/Justin_Bieber"
+                "url": "https://en.wikipedia.org/wiki/Kehlani"
               }
             ],
-            "name": "Justin Bieber",
-            "pinnedItem": null,
+            "name": "Kehlani",
+            "pinnedItem": {
+              "backgroundImageV2": {
+                "__typename": "ImageV2",
+                "sources": [
+                  {
+                    "url": "https://image-cdn-fa.spotifycdn.com/image/ab6761700000591033fb379e5ab59969bd6dfd0b"
+                  }
+                ]
+              },
+              "comment": "New Kehlani album is out now! ",
+              "itemV2": {
+                "__typename": "AlbumResponseWrapper",
+                "data": {
+                  "__typename": "Album",
+                  "coverArt": {
+                    "sources": [
+                      {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02d4ffe3d4cddee37b9fd6ffcd",
+                        "width": 300
+                      },
+                      {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851d4ffe3d4cddee37b9fd6ffcd",
+                        "width": 64
+                      },
+                      {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273d4ffe3d4cddee37b9fd6ffcd",
+                        "width": 640
+                      }
+                    ]
+                  },
+                  "name": "Kehlani",
+                  "preReleaseEndDateTime": {
+                    "isoString": "2026-04-24T04:00:00Z"
+                  },
+                  "type": "ALBUM",
+                  "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh"
+                }
+              },
+              "subtitle": "Album • New Release",
+              "thumbnailImage": {
+                "sources": [
+                  {
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d000075a0d4ffe3d4cddee37b9fd6ffcd"
+                  },
+                  {
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d000090d5d4ffe3d4cddee37b9fd6ffcd"
+                  },
+                  {
+                    "url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d0000ab87d4ffe3d4cddee37b9fd6ffcd"
+                  }
+                ]
+              },
+              "title": "Kehlani",
+              "type": "ALBUM",
+              "uri": "spotify:album:2xkYTmqjear3lSGydIn7wh"
+            },
             "playlistsV2": [
               {
                 "__typename": "Playlist",
-                "description": "",
+                "description": "Kehlani the album, out now  🫀!  Tap the ⨁ to be the first to hear new Kehlani songs as soon as they're released.",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8401cf9723007f75a5a3981fd2",
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c4ab1888352d5c1333ee7acfb",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "HOLD ON, It’s almost tour time",
+                "name": "Kehlani - Kehlani",
                 "ownerV2": {
                   "__typename": "User",
-                  "name": "Def Jam Recordings"
+                  "name": "Topsify Radio"
                 },
-                "uri": "spotify:playlist:3vMOKpI3RkxWAJhgbZ9zTa"
+                "uri": "spotify:playlist:5dQQwjCOKTSK69NFkwnqeT"
               },
               {
                 "__typename": "Playlist",
-                "description": "stay motivated and healthy. work out to these ones. ",
+                "description": "SETLIST TBA: Get ready for Kehlani's 2026 World Tour with her recent setlist and new album !  🎵Updated after every show 🎵Kehlani Tour Setlist 2026",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72cf8195e779e5ea9488e78ffa3",
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c56f9a13022e719e07524a185",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "Workout with Justin Bieber",
+                "name": "Kehlani Setlist - World Tour 2026",
                 "ownerV2": {
                   "__typename": "User",
-                  "name": "Justin Bieber"
+                  "name": "The Setlist"
                 },
-                "uri": "spotify:playlist:1eMxaLfIyAU41IVGQJdh9l"
+                "uri": "spotify:playlist:3FYR5UFpWRR2penXukZKU7"
               },
               {
                 "__typename": "Playlist",
-                "description": "the songs you guys are listening to the most this week. ",
+                "description": "blue water road out now !!",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c352577874f33ab0afa03e0e6",
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8439a8cc1415c4ab0d91094632",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "Hottest This Week",
+                "name": "Kehlani - blue water road",
                 "ownerV2": {
                   "__typename": "User",
-                  "name": "Justin Bieber"
+                  "name": "Kehlani"
                 },
-                "uri": "spotify:playlist:4vYuFrlJ76NiVN0817taWY"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "let's hang, chill vibes only.",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca82d47bb2fbcbd041bc94f2a",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Chill with Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:072rNWumoHrWsPKjJrtKNM"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "take it easy. ",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c76382576321f678061bb9c79",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Relax with Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:4kMs4OpwtS0Pk4Zvbd0j7z"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "This one's for you. major feels. ",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8420cdb4ebd58c1f0a21cf74d7",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Major Feels with Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:7HxdpF1tOKEAMHN6VrDbQU"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "the soundtrack to your morning walk.",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c6c93efb886d77fb76b027d58",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Morning Walk with Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:6hyrXQfDpm7ufIA3JMuHIA"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "stay focused and stay home everyone. ",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72cf3cc1bfc7304b87bb7ea41de",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "At Home with Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:6WKQdo3KO03cYanX0hTsa4"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84ff1016e806a51c7540f5298e",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Best Of: Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Def Jam Recordings"
-                },
-                "uri": "spotify:playlist:2z2Qiy21PhjYWGBP2FVZBI"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "made a playlist for a dance party.",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da841c03ac2140abd8ab78a9327d",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Dance with Justin Bieber ",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Justin Bieber"
-                },
-                "uri": "spotify:playlist:32sIremAO5gTpGy4JjLzB0"
+                "uri": "spotify:playlist:4hRlti8R6tNcnjoOrCpu1b"
               }
             ]
           },
           "relatedContent": {
             "appearsOn": [
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "USHER"
-                    },
-                    "uri": "spotify:artist:23zg3TcAtWQy7J6upgbUnj"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0286b0c9728ad3ed338eaeea79",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485186b0c9728ad3ed338eaeea79",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27386b0c9728ad3ed338eaeea79",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2010
-                },
-                "id": "6A1F3Fkq5dYeYYNkXflcTX",
-                "name": "Raymond v Raymond (Expanded Edition)",
-                "sharingInfo": {
-                  "shareId": "ts7JGA91SfS-gAxRJpgtyw",
-                  "shareUrl": "https://open.spotify.com/album/6A1F3Fkq5dYeYYNkXflcTX?si=ts7JGA91SfS-gAxRJpgtyw"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6A1F3Fkq5dYeYYNkXflcTX"
-              },
               {
                 "artists": [
                   {
@@ -19376,8 +19466,8 @@ export const apis = [
                 "id": "5s0rmjP8XOPhP6HhqOhuyC",
                 "name": "Stoney (Deluxe)",
                 "sharingInfo": {
-                  "shareId": "7Evzja36SSyzjJNRxKv13w",
-                  "shareUrl": "https://open.spotify.com/album/5s0rmjP8XOPhP6HhqOhuyC?si=7Evzja36SSyzjJNRxKv13w"
+                  "shareId": "Akg8JnIwT8aiRr33zjf_kQ",
+                  "shareUrl": "https://open.spotify.com/album/5s0rmjP8XOPhP6HhqOhuyC?si=Akg8JnIwT8aiRr33zjf_kQ"
                 },
                 "type": "ALBUM",
                 "uri": "spotify:album:5s0rmjP8XOPhP6HhqOhuyC"
@@ -19416,8 +19506,8 @@ export const apis = [
                 "id": "2TbtBmA00IP0P1GpUqIaXS",
                 "name": "Stoney (Deluxe)",
                 "sharingInfo": {
-                  "shareId": "5sMpMZxkTD6p5A97MhO8-g",
-                  "shareUrl": "https://open.spotify.com/album/2TbtBmA00IP0P1GpUqIaXS?si=5sMpMZxkTD6p5A97MhO8-g"
+                  "shareId": "43o19-zWSrGFVDHyId_JoQ",
+                  "shareUrl": "https://open.spotify.com/album/2TbtBmA00IP0P1GpUqIaXS?si=43o19-zWSrGFVDHyId_JoQ"
                 },
                 "type": "ALBUM",
                 "uri": "spotify:album:2TbtBmA00IP0P1GpUqIaXS"
@@ -19426,1026 +19516,26 @@ export const apis = [
                 "artists": [
                   {
                     "profile": {
-                      "name": "The Kid LAROI"
+                      "name": "Charlie Puth"
                     },
-                    "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+                    "uri": "spotify:artist:6VuMaDnrHyPL1p4EHjYLi7"
                   }
                 ],
                 "coverArt": {
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02b4d59e6fa7e5e7cbc57ac33a",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02897f73256b9128a9d70eaf66",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851b4d59e6fa7e5e7cbc57ac33a",
+                      "url": "https://i.scdn.co/image/ab67616d00004851897f73256b9128a9d70eaf66",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273b4d59e6fa7e5e7cbc57ac33a",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "576UTio7xgY7YUxrHMzxeI",
-                "name": "F*CK LOVE 3+: OVER YOU",
-                "sharingInfo": {
-                  "shareId": "2UhnWikvT5S-XqVAuAhAmA",
-                  "shareUrl": "https://open.spotify.com/album/576UTio7xgY7YUxrHMzxeI?si=2UhnWikvT5S-XqVAuAhAmA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:576UTio7xgY7YUxrHMzxeI"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "The Kid LAROI"
-                    },
-                    "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e027cf3e7a4688e521d8948b9f0",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048517cf3e7a4688e521d8948b9f0",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2737cf3e7a4688e521d8948b9f0",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "4NYDjLwVArqXrxnFWnRITq",
-                "name": "F*CK LOVE 3+: OVER YOU",
-                "sharingInfo": {
-                  "shareId": "yu0WE3dSRQaD-HfrTTz15A",
-                  "shareUrl": "https://open.spotify.com/album/4NYDjLwVArqXrxnFWnRITq?si=yu0WE3dSRQaD-HfrTTz15A"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:4NYDjLwVArqXrxnFWnRITq"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Don Toliver"
-                    },
-                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02307323fa550564b0201b1d76",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851307323fa550564b0201b1d76",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273307323fa550564b0201b1d76",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2023
-                },
-                "id": "2Q2TRdT994vTzGE3Grmmht",
-                "name": "Love Sick (Deluxe)",
-                "sharingInfo": {
-                  "shareId": "iHCutcIYSlms9Vw_cQvAVA",
-                  "shareUrl": "https://open.spotify.com/album/2Q2TRdT994vTzGE3Grmmht?si=iHCutcIYSlms9Vw_cQvAVA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:2Q2TRdT994vTzGE3Grmmht"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Travis Scott"
-                    },
-                    "uri": "spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02d3b5affd8824b4ed301b7137",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851d3b5affd8824b4ed301b7137",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273d3b5affd8824b4ed301b7137",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2015
-                },
-                "id": "4PWBTB6NYSKQwfo79I3prg",
-                "name": "Rodeo",
-                "sharingInfo": {
-                  "shareId": "YOf__DojRweVRx5G9vr6eg",
-                  "shareUrl": "https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg?si=YOf__DojRweVRx5G9vr6eg"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:4PWBTB6NYSKQwfo79I3prg"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Travis Scott"
-                    },
-                    "uri": "spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02c35028b71cb08aa7af4cc095",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851c35028b71cb08aa7af4cc095",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273c35028b71cb08aa7af4cc095",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2015
-                },
-                "id": "7EGY16IWSHpPdoWazUyL9R",
-                "name": "Rodeo",
-                "sharingInfo": {
-                  "shareId": "J4XKfA-QSBemdWKlZDjBJQ",
-                  "shareUrl": "https://open.spotify.com/album/7EGY16IWSHpPdoWazUyL9R?si=J4XKfA-QSBemdWKlZDjBJQ"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:7EGY16IWSHpPdoWazUyL9R"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Chris Brown"
-                    },
-                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e020a1d20ec09cab4bb17a36aab",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048510a1d20ec09cab4bb17a36aab",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2730a1d20ec09cab4bb17a36aab",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2011
-                },
-                "id": "6df0qvkMXoyHGt9J8cujZb",
-                "name": "F.A.M.E. (Expanded Edition)",
-                "sharingInfo": {
-                  "shareId": "3W8B9em_Qt-opiL-rTur0g",
-                  "shareUrl": "https://open.spotify.com/album/6df0qvkMXoyHGt9J8cujZb?si=3W8B9em_Qt-opiL-rTur0g"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6df0qvkMXoyHGt9J8cujZb"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Luis Fonsi"
-                    },
-                    "uri": "spotify:artist:4V8Sr092TqfHkfAA5fXXqG"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02ef0d4234e1a645740f77d59c",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851ef0d4234e1a645740f77d59c",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273ef0d4234e1a645740f77d59c",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "5C0YLr4OoRGFDaqdMQmkeH",
-                "name": "VIDA",
-                "sharingInfo": {
-                  "shareId": "AEhW9KeIQ0eroqcci-thxA",
-                  "shareUrl": "https://open.spotify.com/album/5C0YLr4OoRGFDaqdMQmkeH?si=AEhW9KeIQ0eroqcci-thxA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5C0YLr4OoRGFDaqdMQmkeH"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Jack Ü"
-                    },
-                    "uri": "spotify:artist:1HxJeLhIuegM3KgvPn8sTa"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0257fc4730e06c9ab20c1e073b",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485157fc4730e06c9ab20c1e073b",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27357fc4730e06c9ab20c1e073b",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2015
-                },
-                "id": "6bfkwBrGYKJFk6Z4QVyjxd",
-                "name": "Skrillex and Diplo present Jack Ü",
-                "sharingInfo": {
-                  "shareId": "LO175zicQCG3kVhG80ekfQ",
-                  "shareUrl": "https://open.spotify.com/album/6bfkwBrGYKJFk6Z4QVyjxd?si=LO175zicQCG3kVhG80ekfQ"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6bfkwBrGYKJFk6Z4QVyjxd"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Juice WRLD"
-                    },
-                    "uri": "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e027459992b444de38842b9bee7",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048517459992b444de38842b9bee7",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2737459992b444de38842b9bee7",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2022
-                },
-                "id": "1typPCwqyXMfFpvDZAyKew",
-                "name": "Fighting Demons (Deluxe)",
-                "sharingInfo": {
-                  "shareId": "kDa76mB1QEGvWlL6iIPCmA",
-                  "shareUrl": "https://open.spotify.com/album/1typPCwqyXMfFpvDZAyKew?si=kDa76mB1QEGvWlL6iIPCmA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1typPCwqyXMfFpvDZAyKew"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Juice WRLD"
-                    },
-                    "uri": "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02592ac7d5d3cdc03c3987722c",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851592ac7d5d3cdc03c3987722c",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273592ac7d5d3cdc03c3987722c",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2022
-                },
-                "id": "7hDMgGXdy0x8hDbtOHIS5j",
-                "name": "Fighting Demons (Deluxe)",
-                "sharingInfo": {
-                  "shareId": "jCiWMhBRQUOqYaoNhI1gqw",
-                  "shareUrl": "https://open.spotify.com/album/7hDMgGXdy0x8hDbtOHIS5j?si=jCiWMhBRQUOqYaoNhI1gqw"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:7hDMgGXdy0x8hDbtOHIS5j"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Chris Brown"
-                    },
-                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0248f69a441c575fa5926a0831",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485148f69a441c575fa5926a0831",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27348f69a441c575fa5926a0831",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "3okhA6w5uau6ZNhnVpwVww",
-                "name": "Indigo (Extended)",
-                "sharingInfo": {
-                  "shareId": "uIadry1vSW6QIgyymi7tZg",
-                  "shareUrl": "https://open.spotify.com/album/3okhA6w5uau6ZNhnVpwVww?si=uIadry1vSW6QIgyymi7tZg"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:3okhA6w5uau6ZNhnVpwVww"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Chris Brown"
-                    },
-                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e022e2fbbe59117bb0005eb3c2e",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048512e2fbbe59117bb0005eb3c2e",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2732e2fbbe59117bb0005eb3c2e",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "2rICHwivbZlmMnzEDmGNXX",
-                "name": "Indigo (Extended)",
-                "sharingInfo": {
-                  "shareId": "xPWn-sdETE69n-A8sPBX2g",
-                  "shareUrl": "https://open.spotify.com/album/2rICHwivbZlmMnzEDmGNXX?si=xPWn-sdETE69n-A8sPBX2g"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:2rICHwivbZlmMnzEDmGNXX"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Chris Brown"
-                    },
-                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e020bf1b932009c0bff47b8cb86",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048510bf1b932009c0bff47b8cb86",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2730bf1b932009c0bff47b8cb86",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "1BfLzaTFI5qKsAAk0Ae6aV",
-                "name": "Indigo",
-                "sharingInfo": {
-                  "shareId": "Yc4eDlu7RfipnKIv7SilYQ",
-                  "shareUrl": "https://open.spotify.com/album/1BfLzaTFI5qKsAAk0Ae6aV?si=Yc4eDlu7RfipnKIv7SilYQ"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1BfLzaTFI5qKsAAk0Ae6aV"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Chris Brown"
-                    },
-                    "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02190ffb1d9b91e447e111fad5",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851190ffb1d9b91e447e111fad5",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273190ffb1d9b91e447e111fad5",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "1BI2aGRYFZgQGmSWuh9jpO",
-                "name": "Indigo",
-                "sharingInfo": {
-                  "shareId": "MWQ9YiK7TtqDMlN82J5Oyg",
-                  "shareUrl": "https://open.spotify.com/album/1BI2aGRYFZgQGmSWuh9jpO?si=MWQ9YiK7TtqDMlN82J5Oyg"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1BI2aGRYFZgQGmSWuh9jpO"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Ed Sheeran"
-                    },
-                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02f528fc2d5d8b26e4e3413715",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851f528fc2d5d8b26e4e3413715",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273f528fc2d5d8b26e4e3413715",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "3oIFxDIo2fwuk4lwCmFZCx",
-                "name": "No.6 Collaborations Project",
-                "sharingInfo": {
-                  "shareId": "1DgGm-f3R762_cofPE3eFw",
-                  "shareUrl": "https://open.spotify.com/album/3oIFxDIo2fwuk4lwCmFZCx?si=1DgGm-f3R762_cofPE3eFw"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:3oIFxDIo2fwuk4lwCmFZCx"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Ed Sheeran"
-                    },
-                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02816b328df5fbcebe53cf6c6f",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851816b328df5fbcebe53cf6c6f",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273816b328df5fbcebe53cf6c6f",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2019
-                },
-                "id": "5oUZ9TEZR3wOdvqzowuNwl",
-                "name": "No.6 Collaborations Project",
-                "sharingInfo": {
-                  "shareId": "FfSn9kmWQwmEbgzUSuWrEw",
-                  "shareUrl": "https://open.spotify.com/album/5oUZ9TEZR3wOdvqzowuNwl?si=FfSn9kmWQwmEbgzUSuWrEw"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5oUZ9TEZR3wOdvqzowuNwl"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Don Toliver"
-                    },
-                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e026d5a148417ab9b8a43041c1f",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048516d5a148417ab9b8a43041c1f",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2736d5a148417ab9b8a43041c1f",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2023
-                },
-                "id": "26z5llzd194mcCZHADWd6k",
-                "name": "Love Sick",
-                "sharingInfo": {
-                  "shareId": "rb_BlA65S2aejycGEXmnyA",
-                  "shareUrl": "https://open.spotify.com/album/26z5llzd194mcCZHADWd6k?si=rb_BlA65S2aejycGEXmnyA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:26z5llzd194mcCZHADWd6k"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Don Toliver"
-                    },
-                    "uri": "spotify:artist:4Gso3d4CscCijv0lmajZWs"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0205e2f064852fb0febd17225f",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485105e2f064852fb0febd17225f",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27305e2f064852fb0febd17225f",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2023
-                },
-                "id": "6Xnrf8JvckhoADFcePUNyq",
-                "name": "Love Sick",
-                "sharingInfo": {
-                  "shareId": "3jFNWkFTSRKU66vlFyc2TA",
-                  "shareUrl": "https://open.spotify.com/album/6Xnrf8JvckhoADFcePUNyq?si=3jFNWkFTSRKU66vlFyc2TA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:6Xnrf8JvckhoADFcePUNyq"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Migos"
-                    },
-                    "uri": "spotify:artist:6oMuImdp5ZcFhWP0ESe6mG"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02f89d00155b6a066650e5460d",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851f89d00155b6a066650e5460d",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273f89d00155b6a066650e5460d",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "3uyOwJu4r3yroAkFywNFM3",
-                "name": "Culture III",
-                "sharingInfo": {
-                  "shareId": "RpM6mmuHRA-HV0gm8hIUOQ",
-                  "shareUrl": "https://open.spotify.com/album/3uyOwJu4r3yroAkFywNFM3?si=RpM6mmuHRA-HV0gm8hIUOQ"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:3uyOwJu4r3yroAkFywNFM3"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Migos"
-                    },
-                    "uri": "spotify:artist:6oMuImdp5ZcFhWP0ESe6mG"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0217dd1257a14cb98d6ae491be",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485117dd1257a14cb98d6ae491be",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27317dd1257a14cb98d6ae491be",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "1lteSAPdfkjYq3lc494VXG",
-                "name": "Culture III",
-                "sharingInfo": {
-                  "shareId": "CSEy0xM7Rh67uxjpzZ-J9Q",
-                  "shareUrl": "https://open.spotify.com/album/1lteSAPdfkjYq3lc494VXG?si=CSEy0xM7Rh67uxjpzZ-J9Q"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:1lteSAPdfkjYq3lc494VXG"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "OMAH LAY"
-                    },
-                    "uri": "spotify:artist:5yOvAmpIR7hVxiS6Ls5DPO"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0215ceaa196b94c1f61db08d7b",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485115ceaa196b94c1f61db08d7b",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27315ceaa196b94c1f61db08d7b",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2022
-                },
-                "id": "5NLjxx8nRy9ooUmgpOvfem",
-                "name": "Boy Alone",
-                "sharingInfo": {
-                  "shareId": "91sC31oNRA-hFNz-Dl-pCA",
-                  "shareUrl": "https://open.spotify.com/album/5NLjxx8nRy9ooUmgpOvfem?si=91sC31oNRA-hFNz-Dl-pCA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5NLjxx8nRy9ooUmgpOvfem"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "OMAH LAY"
-                    },
-                    "uri": "spotify:artist:5yOvAmpIR7hVxiS6Ls5DPO"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02d247511725a4363a6b10b5f7",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851d247511725a4363a6b10b5f7",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273d247511725a4363a6b10b5f7",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2022
-                },
-                "id": "673wWns8iuEBeBLRAQU68A",
-                "name": "Boy Alone",
-                "sharingInfo": {
-                  "shareId": "wDamx9wSSZSvFjHRZY8mMw",
-                  "shareUrl": "https://open.spotify.com/album/673wWns8iuEBeBLRAQU68A?si=wDamx9wSSZSvFjHRZY8mMw"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:673wWns8iuEBeBLRAQU68A"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "DJ Khaled"
-                    },
-                    "uri": "spotify:artist:0QHgL1lAIqAw0HtD7YldmP"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02dcd4d70294f17175991ba1bb",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851dcd4d70294f17175991ba1bb",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273dcd4d70294f17175991ba1bb",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "5kE2OAuUYGBqqzscqgBXXf",
-                "name": "KHALED KHALED",
-                "sharingInfo": {
-                  "shareId": "YIVR8nswSQi7lOVOMJFnlg",
-                  "shareUrl": "https://open.spotify.com/album/5kE2OAuUYGBqqzscqgBXXf?si=YIVR8nswSQi7lOVOMJFnlg"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:5kE2OAuUYGBqqzscqgBXXf"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "DJ Khaled"
-                    },
-                    "uri": "spotify:artist:0QHgL1lAIqAw0HtD7YldmP"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e025d3a6961133df697e744ac36",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d000048515d3a6961133df697e744ac36",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b2735d3a6961133df697e744ac36",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2021
-                },
-                "id": "7nJ9oJt1X7kZXmFa7lgkgf",
-                "name": "KHALED KHALED",
-                "sharingInfo": {
-                  "shareId": "8ro4N3wlRMmg5QJNa-3pgA",
-                  "shareUrl": "https://open.spotify.com/album/7nJ9oJt1X7kZXmFa7lgkgf?si=8ro4N3wlRMmg5QJNa-3pgA"
-                },
-                "type": "ALBUM",
-                "uri": "spotify:album:7nJ9oJt1X7kZXmFa7lgkgf"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "Sean Kingston"
-                    },
-                    "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e02ca8d656fa57db4cce117f53b",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d00004851ca8d656fa57db4cce117f53b",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b273ca8d656fa57db4cce117f53b",
-                      "width": 640
-                    }
-                  ]
-                },
-                "date": {
-                  "year": 2020
-                },
-                "id": "6DOZI2LfBRYHRhZV21LrOu",
-                "name": "Eenie Meenie EP",
-                "sharingInfo": {
-                  "shareId": "ERmp24b0QGyVwA87ZweXyg",
-                  "shareUrl": "https://open.spotify.com/album/6DOZI2LfBRYHRhZV21LrOu?si=ERmp24b0QGyVwA87ZweXyg"
-                },
-                "type": "EP",
-                "uri": "spotify:album:6DOZI2LfBRYHRhZV21LrOu"
-              },
-              {
-                "artists": [
-                  {
-                    "profile": {
-                      "name": "David Guetta"
-                    },
-                    "uri": "spotify:artist:1Cs0zKBU1kc0i8ypK3B9ai"
-                  }
-                ],
-                "coverArt": {
-                  "sources": [
-                    {
-                      "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0278970ae7a1d564a7ba00fe39",
-                      "width": 300
-                    },
-                    {
-                      "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485178970ae7a1d564a7ba00fe39",
-                      "width": 64
-                    },
-                    {
-                      "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27378970ae7a1d564a7ba00fe39",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273897f73256b9128a9d70eaf66",
                       "width": 640
                     }
                   ]
@@ -20453,79 +19543,199 @@ export const apis = [
                 "date": {
                   "year": 2018
                 },
-                "id": "0GJU424RiEyYQTLbZcHVA7",
-                "name": "7: Anniversary Edition",
+                "id": "0mZIUXje90JtHxPNzWsJNR",
+                "name": "Voicenotes",
                 "sharingInfo": {
-                  "shareId": "G63t-kIgS8GJ6caAvNR4Xg",
-                  "shareUrl": "https://open.spotify.com/album/0GJU424RiEyYQTLbZcHVA7?si=G63t-kIgS8GJ6caAvNR4Xg"
+                  "shareId": "0svP6Vs_Rjq5DbBuL0vmrA",
+                  "shareUrl": "https://open.spotify.com/album/0mZIUXje90JtHxPNzWsJNR?si=0svP6Vs_Rjq5DbBuL0vmrA"
                 },
                 "type": "ALBUM",
-                "uri": "spotify:album:0GJU424RiEyYQTLbZcHVA7"
+                "uri": "spotify:album:0mZIUXje90JtHxPNzWsJNR"
               },
               {
                 "artists": [
                   {
                     "profile": {
-                      "name": "Ed Sheeran"
+                      "name": "Cardi B"
                     },
-                    "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
                   }
                 ],
                 "coverArt": {
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0262407726ee053c7d89aeff9a",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02a0caffda54afd0a65995bbab",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485162407726ee053c7d89aeff9a",
+                      "url": "https://i.scdn.co/image/ab67616d00004851a0caffda54afd0a65995bbab",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27362407726ee053c7d89aeff9a",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273a0caffda54afd0a65995bbab",
                       "width": 640
                     }
                   ]
                 },
                 "date": {
-                  "year": 2024
+                  "year": 2018
                 },
-                "id": "5xD1PSd5c5APDM0SdkkqnH",
-                "name": "+-=÷× (Tour Collection)",
+                "id": "4KdtEKjY3Gi0mKiSdy96ML",
+                "name": "Invasion of Privacy",
                 "sharingInfo": {
-                  "shareId": "2KzQ__IsQTKi3ie2_bZevw",
-                  "shareUrl": "https://open.spotify.com/album/5xD1PSd5c5APDM0SdkkqnH?si=2KzQ__IsQTKi3ie2_bZevw"
+                  "shareId": "0mskNuliRG29W7qrdjmVXQ",
+                  "shareUrl": "https://open.spotify.com/album/4KdtEKjY3Gi0mKiSdy96ML?si=0mskNuliRG29W7qrdjmVXQ"
                 },
                 "type": "ALBUM",
-                "uri": "spotify:album:5xD1PSd5c5APDM0SdkkqnH"
+                "uri": "spotify:album:4KdtEKjY3Gi0mKiSdy96ML"
               },
               {
                 "artists": [
                   {
                     "profile": {
-                      "name": "Shawn Mendes"
+                      "name": "Cardi B"
                     },
-                    "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr"
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
                   }
                 ],
                 "coverArt": {
                   "sources": [
                     {
                       "height": 300,
-                      "url": "https://i.scdn.co/image/ab67616d00001e0237a5a19e52f8260b3b158e55",
+                      "url": "https://i.scdn.co/image/ab67616d00001e02aa451cc44a4ac5ffb88ee848",
                       "width": 300
                     },
                     {
                       "height": 64,
-                      "url": "https://i.scdn.co/image/ab67616d0000485137a5a19e52f8260b3b158e55",
+                      "url": "https://i.scdn.co/image/ab67616d00004851aa451cc44a4ac5ffb88ee848",
                       "width": 64
                     },
                     {
                       "height": 640,
-                      "url": "https://i.scdn.co/image/ab67616d0000b27337a5a19e52f8260b3b158e55",
+                      "url": "https://i.scdn.co/image/ab67616d0000b273aa451cc44a4ac5ffb88ee848",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2018
+                },
+                "id": "4sDAyYEMhD2YyREWKxj3aD",
+                "name": "Invasion of Privacy",
+                "sharingInfo": {
+                  "shareId": "JAclH3C6QpqmR7FfIZtF_g",
+                  "shareUrl": "https://open.spotify.com/album/4sDAyYEMhD2YyREWKxj3aD?si=JAclH3C6QpqmR7FfIZtF_g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:4sDAyYEMhD2YyREWKxj3aD"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Zara Larsson"
+                    },
+                    "uri": "spotify:artist:1Xylc3o4UrD53lo9CvFvVg"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d20dd1327b269aa6af1fab69",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d20dd1327b269aa6af1fab69",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d20dd1327b269aa6af1fab69",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2026
+                },
+                "id": "4WMcRlbt7NvpKrrqO8ykQf",
+                "name": "Midnight Sun: Girls Trip",
+                "sharingInfo": {
+                  "shareId": "1THWStdHS_yo41C00CsCXw",
+                  "shareUrl": "https://open.spotify.com/album/4WMcRlbt7NvpKrrqO8ykQf?si=1THWStdHS_yo41C00CsCXw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:4WMcRlbt7NvpKrrqO8ykQf"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Zara Larsson"
+                    },
+                    "uri": "spotify:artist:1Xylc3o4UrD53lo9CvFvVg"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02a31ab0f3ab14e04bae830d40",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851a31ab0f3ab14e04bae830d40",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273a31ab0f3ab14e04bae830d40",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2026
+                },
+                "id": "3SJU0Tncb0yXItHnxRWzY6",
+                "name": "Midnight Sun: Girls Trip",
+                "sharingInfo": {
+                  "shareId": "hcs0WXiFSCO2W4ruL_VoWw",
+                  "shareUrl": "https://open.spotify.com/album/3SJU0Tncb0yXItHnxRWzY6?si=hcs0WXiFSCO2W4ruL_VoWw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3SJU0Tncb0yXItHnxRWzY6"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Justin Bieber"
+                    },
+                    "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e027fe4a82a08c4f0decbeddbc6",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048517fe4a82a08c4f0decbeddbc6",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2737fe4a82a08c4f0decbeddbc6",
                       "width": 640
                     }
                   ]
@@ -20533,14 +19743,974 @@ export const apis = [
                 "date": {
                   "year": 2020
                 },
-                "id": "3Lp4JKk2ZgNkybMRS3eZR5",
-                "name": "Wonder",
+                "id": "63iWSELt9V1kV6RSMxN7Ii",
+                "name": "Changes",
                 "sharingInfo": {
-                  "shareId": "JHkqh0C5SBKmeIFveAaQtg",
-                  "shareUrl": "https://open.spotify.com/album/3Lp4JKk2ZgNkybMRS3eZR5?si=JHkqh0C5SBKmeIFveAaQtg"
+                  "shareId": "l9pNvigTSnuY9Yp7oRcBHw",
+                  "shareUrl": "https://open.spotify.com/album/63iWSELt9V1kV6RSMxN7Ii?si=l9pNvigTSnuY9Yp7oRcBHw"
                 },
                 "type": "ALBUM",
-                "uri": "spotify:album:3Lp4JKk2ZgNkybMRS3eZR5"
+                "uri": "spotify:album:63iWSELt9V1kV6RSMxN7Ii"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "GIVĒON"
+                    },
+                    "uri": "spotify:artist:4fxd5Ee7UefO4CUXgwJ7IP"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0240804dba7b99de3125438c71",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485140804dba7b99de3125438c71",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27340804dba7b99de3125438c71",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2026
+                },
+                "id": "5qUp79PAejWMSXh0l04Zy9",
+                "name": "BELOVED: ACT II",
+                "sharingInfo": {
+                  "shareId": "1Hf120zlQgm0llum4EkP5w",
+                  "shareUrl": "https://open.spotify.com/album/5qUp79PAejWMSXh0l04Zy9?si=1Hf120zlQgm0llum4EkP5w"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5qUp79PAejWMSXh0l04Zy9"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Calvin Harris"
+                    },
+                    "uri": "spotify:artist:7CajNmpbOovFoOoasH2HaY"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e024d3fa5ce7ba599f4fd7803ef",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048514d3fa5ce7ba599f4fd7803ef",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2734d3fa5ce7ba599f4fd7803ef",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "2HaqChIDc5go3qxVunBDK0",
+                "name": "Funk Wav Bounces Vol.1",
+                "sharingInfo": {
+                  "shareId": "nNJ_5kVsTC2l3hc_m7uw6g",
+                  "shareUrl": "https://open.spotify.com/album/2HaqChIDc5go3qxVunBDK0?si=nNJ_5kVsTC2l3hc_m7uw6g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2HaqChIDc5go3qxVunBDK0"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "ZAYN"
+                    },
+                    "uri": "spotify:artist:5ZsFI1h6hIdQRw2ti0hz81"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02b4c42ba7470503094d5a1c5a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851b4c42ba7470503094d5a1c5a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273b4c42ba7470503094d5a1c5a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2016
+                },
+                "id": "5amj9zNeZ3B2EdpBgXrOZ0",
+                "name": "Mind Of Mine (Deluxe Edition)",
+                "sharingInfo": {
+                  "shareId": "LYHK9_-hQRSJuv94WLC8vQ",
+                  "shareUrl": "https://open.spotify.com/album/5amj9zNeZ3B2EdpBgXrOZ0?si=LYHK9_-hQRSJuv94WLC8vQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:5amj9zNeZ3B2EdpBgXrOZ0"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "G-Eazy"
+                    },
+                    "uri": "spotify:artist:02kJSzxNuaWGqwubyUba0Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02046527a9c176f7c2916f3530",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851046527a9c176f7c2916f3530",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273046527a9c176f7c2916f3530",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "1VAc77UvK5wj8ZSWCo3V2b",
+                "name": "The Beautiful & Damned",
+                "sharingInfo": {
+                  "shareId": "RlzqShGEQpGXu37BDBXGxw",
+                  "shareUrl": "https://open.spotify.com/album/1VAc77UvK5wj8ZSWCo3V2b?si=RlzqShGEQpGXu37BDBXGxw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1VAc77UvK5wj8ZSWCo3V2b"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "G-Eazy"
+                    },
+                    "uri": "spotify:artist:02kJSzxNuaWGqwubyUba0Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ccffe569ec8303d13c23c7c4",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851ccffe569ec8303d13c23c7c4",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ccffe569ec8303d13c23c7c4",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "6Q9oWSLNgNd5WStqiPopBO",
+                "name": "The Beautiful & Damned",
+                "sharingInfo": {
+                  "shareId": "m9h06YWPShih7nOUi010OQ",
+                  "shareUrl": "https://open.spotify.com/album/6Q9oWSLNgNd5WStqiPopBO?si=m9h06YWPShih7nOUi010OQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6Q9oWSLNgNd5WStqiPopBO"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "G-Eazy"
+                    },
+                    "uri": "spotify:artist:02kJSzxNuaWGqwubyUba0Z"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02bf34660a2cc3f4d83966b1e7",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851bf34660a2cc3f4d83966b1e7",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273bf34660a2cc3f4d83966b1e7",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2015
+                },
+                "id": "09Q3WwGYsQe5ognkvVkmCu",
+                "name": "When It's Dark Out",
+                "sharingInfo": {
+                  "shareId": "AxKLthCSR4WNt5L9KiG_1g",
+                  "shareUrl": "https://open.spotify.com/album/09Q3WwGYsQe5ognkvVkmCu?si=AxKLthCSR4WNt5L9KiG_1g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:09Q3WwGYsQe5ognkvVkmCu"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Cardi B"
+                    },
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02967b09b0309b97afc0b6ee1d",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851967b09b0309b97afc0b6ee1d",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273967b09b0309b97afc0b6ee1d",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "0qJL6xmheW2HD1H0SWCxRh",
+                "name": "AM I THE DRAMA? (Ultimate Edition)",
+                "sharingInfo": {
+                  "shareId": "AEhWJneZT0SweFNMgjYg5g",
+                  "shareUrl": "https://open.spotify.com/album/0qJL6xmheW2HD1H0SWCxRh?si=AEhWJneZT0SweFNMgjYg5g"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:0qJL6xmheW2HD1H0SWCxRh"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Cardi B"
+                    },
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02762cb4007f96ee44852f263e",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851762cb4007f96ee44852f263e",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273762cb4007f96ee44852f263e",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "68qkDEJOnNepRvHL1SkVDi",
+                "name": "AM I THE DRAMA? (Beat Edition)",
+                "sharingInfo": {
+                  "shareId": "ExBO5xQDSzKjiwULOrR2Ug",
+                  "shareUrl": "https://open.spotify.com/album/68qkDEJOnNepRvHL1SkVDi?si=ExBO5xQDSzKjiwULOrR2Ug"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:68qkDEJOnNepRvHL1SkVDi"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Cardi B"
+                    },
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02bfa7453e9fd971876f356966",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851bfa7453e9fd971876f356966",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273bfa7453e9fd971876f356966",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "6jJet5d0EvJNNzw5aHLqb4",
+                "name": "AM I THE DRAMA? (Beat Edition)",
+                "sharingInfo": {
+                  "shareId": "KoyuLFDESsuIaa8wANUntw",
+                  "shareUrl": "https://open.spotify.com/album/6jJet5d0EvJNNzw5aHLqb4?si=KoyuLFDESsuIaa8wANUntw"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6jJet5d0EvJNNzw5aHLqb4"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Cardi B"
+                    },
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e024449c12628ef639dd6500c4a",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048514449c12628ef639dd6500c4a",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2734449c12628ef639dd6500c4a",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "1LsNb6mVitbLZCxnRsbCDJ",
+                "name": "AM I THE DRAMA?",
+                "sharingInfo": {
+                  "shareId": "acO0xafVTs2xkvhVceYiyA",
+                  "shareUrl": "https://open.spotify.com/album/1LsNb6mVitbLZCxnRsbCDJ?si=acO0xafVTs2xkvhVceYiyA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1LsNb6mVitbLZCxnRsbCDJ"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Cardi B"
+                    },
+                    "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0200be986943b146f0aaf83359",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485100be986943b146f0aaf83359",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27300be986943b146f0aaf83359",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "3Jgxxgs9WbgRrvTaY9YFN8",
+                "name": "AM I THE DRAMA?",
+                "sharingInfo": {
+                  "shareId": "T7pMI7e7QgCyJK5KvxS2mg",
+                  "shareUrl": "https://open.spotify.com/album/3Jgxxgs9WbgRrvTaY9YFN8?si=T7pMI7e7QgCyJK5KvxS2mg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:3Jgxxgs9WbgRrvTaY9YFN8"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Various Artists"
+                    },
+                    "uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02cb4ec52c48a6b071ed2ab6bc",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851cb4ec52c48a6b071ed2ab6bc",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273cb4ec52c48a6b071ed2ab6bc",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2016
+                },
+                "id": "5rOHrnrRomvSJhQLGVtfJ8",
+                "name": "Suicide Squad: The Album",
+                "sharingInfo": {
+                  "shareId": "Dcv4CNsGQZ6qnCK9Gm7wiQ",
+                  "shareUrl": "https://open.spotify.com/album/5rOHrnrRomvSJhQLGVtfJ8?si=Dcv4CNsGQZ6qnCK9Gm7wiQ"
+                },
+                "type": "COMPILATION",
+                "uri": "spotify:album:5rOHrnrRomvSJhQLGVtfJ8"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "kwn"
+                    },
+                    "uri": "spotify:artist:2KnhnL8zuqLhIhGk601fsb"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0292c81988695e83c2dd87a6b3",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485192c81988695e83c2dd87a6b3",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27392c81988695e83c2dd87a6b3",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2025
+                },
+                "id": "60cNc5CdvVCTEF5A6FRhFN",
+                "name": "with all due respect",
+                "sharingInfo": {
+                  "shareId": "92H8lZDyRbecufzhj9el7w",
+                  "shareUrl": "https://open.spotify.com/album/60cNc5CdvVCTEF5A6FRhFN?si=92H8lZDyRbecufzhj9el7w"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:60cNc5CdvVCTEF5A6FRhFN"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Burna Boy"
+                    },
+                    "uri": "spotify:artist:3wcj11K77LjEY1PkEazffa"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d98e997eaad5f503b9e1f2f2",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d98e997eaad5f503b9e1f2f2",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d98e997eaad5f503b9e1f2f2",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "6kgDkAupBVRSqbJPUaTJwQ",
+                "name": "Love, Damini",
+                "sharingInfo": {
+                  "shareId": "hnj34VhARvSH7v42g9LPaA",
+                  "shareUrl": "https://open.spotify.com/album/6kgDkAupBVRSqbJPUaTJwQ?si=hnj34VhARvSH7v42g9LPaA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:6kgDkAupBVRSqbJPUaTJwQ"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Burna Boy"
+                    },
+                    "uri": "spotify:artist:3wcj11K77LjEY1PkEazffa"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0221315ced0015f33e514be031",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485121315ced0015f33e514be031",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27321315ced0015f33e514be031",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "53s3xfNBbh5Z0Xv9IXjvi4",
+                "name": "Love, Damini",
+                "sharingInfo": {
+                  "shareId": "cKMG3kblTtG--oJcC-o-5Q",
+                  "shareUrl": "https://open.spotify.com/album/53s3xfNBbh5Z0Xv9IXjvi4?si=cKMG3kblTtG--oJcC-o-5Q"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:53s3xfNBbh5Z0Xv9IXjvi4"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Eminem"
+                    },
+                    "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02dee6b58d35215322626b5701",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851dee6b58d35215322626b5701",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273dee6b58d35215322626b5701",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "0U6ldwLBEMkwgfQRY4V6D2",
+                "name": "Revival",
+                "sharingInfo": {
+                  "shareId": "Zl7c6mJDR3q5c_cKA18q3Q",
+                  "shareUrl": "https://open.spotify.com/album/0U6ldwLBEMkwgfQRY4V6D2?si=Zl7c6mJDR3q5c_cKA18q3Q"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:0U6ldwLBEMkwgfQRY4V6D2"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Eminem"
+                    },
+                    "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e0216c053fa6e639a75ae4d62f4",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d0000485116c053fa6e639a75ae4d62f4",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b27316c053fa6e639a75ae4d62f4",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "7cwcyW39NGUAiukHc1MOFD",
+                "name": "Revival",
+                "sharingInfo": {
+                  "shareId": "4guZHhiCTZWWbCIXoihbeA",
+                  "shareUrl": "https://open.spotify.com/album/7cwcyW39NGUAiukHc1MOFD?si=4guZHhiCTZWWbCIXoihbeA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:7cwcyW39NGUAiukHc1MOFD"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Eminem"
+                    },
+                    "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02009dc7b4e062efa9614bb9b4",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851009dc7b4e062efa9614bb9b4",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273009dc7b4e062efa9614bb9b4",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "02BQFiWcFYKb5iJIKVpPap",
+                "name": "Revival",
+                "sharingInfo": {
+                  "shareId": "m2sCMkQ5RN61LRLvCTWK-Q",
+                  "shareUrl": "https://open.spotify.com/album/02BQFiWcFYKb5iJIKVpPap?si=m2sCMkQ5RN61LRLvCTWK-Q"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:02BQFiWcFYKb5iJIKVpPap"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Eminem"
+                    },
+                    "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02d868999ff695d4c59b715bcc",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851d868999ff695d4c59b715bcc",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273d868999ff695d4c59b715bcc",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2017
+                },
+                "id": "2mzSjECCtpaHI9GEt5lbkP",
+                "name": "Revival",
+                "sharingInfo": {
+                  "shareId": "keLWMsalTWy5Y-seNJXLGQ",
+                  "shareUrl": "https://open.spotify.com/album/2mzSjECCtpaHI9GEt5lbkP?si=keLWMsalTWy5Y-seNJXLGQ"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2mzSjECCtpaHI9GEt5lbkP"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "YoungBoy Never Broke Again"
+                    },
+                    "uri": "spotify:artist:7wlFDEWiM5OoIAt8RSli8b"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02ff5fcadfab14ea1675a40dc8",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851ff5fcadfab14ea1675a40dc8",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273ff5fcadfab14ea1675a40dc8",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "1ZCsPUZ7j9dTqjhU2I36tw",
+                "name": "The Last Slimeto",
+                "sharingInfo": {
+                  "shareId": "sCvdXOV9SO6l_Xor1_8hYg",
+                  "shareUrl": "https://open.spotify.com/album/1ZCsPUZ7j9dTqjhU2I36tw?si=sCvdXOV9SO6l_Xor1_8hYg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1ZCsPUZ7j9dTqjhU2I36tw"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "YoungBoy Never Broke Again"
+                    },
+                    "uri": "spotify:artist:7wlFDEWiM5OoIAt8RSli8b"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f3b81b06fef378a199f3fb63",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f3b81b06fef378a199f3fb63",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f3b81b06fef378a199f3fb63",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2022
+                },
+                "id": "1JTRJtlrBA3cODrwPVgZHM",
+                "name": "The Last Slimeto",
+                "sharingInfo": {
+                  "shareId": "YBTc47hoScOpGJRFYawHxg",
+                  "shareUrl": "https://open.spotify.com/album/1JTRJtlrBA3cODrwPVgZHM?si=YBTc47hoScOpGJRFYawHxg"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:1JTRJtlrBA3cODrwPVgZHM"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "YK Osiris"
+                    },
+                    "uri": "spotify:artist:7meyrw7Or5DwteYxDJrkCM"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e020c0b9bba977d63617c4957e3",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048510c0b9bba977d63617c4957e3",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2730c0b9bba977d63617c4957e3",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "52iN0AN48yBH5pF6C65ZmI",
+                "name": "The Golden Child",
+                "sharingInfo": {
+                  "shareId": "KLkyujrQRva8Pneji470yA",
+                  "shareUrl": "https://open.spotify.com/album/52iN0AN48yBH5pF6C65ZmI?si=KLkyujrQRva8Pneji470yA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:52iN0AN48yBH5pF6C65ZmI"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "YK Osiris"
+                    },
+                    "uri": "spotify:artist:7meyrw7Or5DwteYxDJrkCM"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e021f84ad965e19bd4fc83cce08",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d000048511f84ad965e19bd4fc83cce08",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b2731f84ad965e19bd4fc83cce08",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2019
+                },
+                "id": "2YbugwMMdpxLocEHbA6Vps",
+                "name": "The Golden Child",
+                "sharingInfo": {
+                  "shareId": "dbaMouqbSi-r90wW8LUZwA",
+                  "shareUrl": "https://open.spotify.com/album/2YbugwMMdpxLocEHbA6Vps?si=dbaMouqbSi-r90wW8LUZwA"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:2YbugwMMdpxLocEHbA6Vps"
+              },
+              {
+                "artists": [
+                  {
+                    "profile": {
+                      "name": "Pink Sweat$"
+                    },
+                    "uri": "spotify:artist:1W7FNibLa0O0b572tB2w7t"
+                  }
+                ],
+                "coverArt": {
+                  "sources": [
+                    {
+                      "height": 300,
+                      "url": "https://i.scdn.co/image/ab67616d00001e02f5ff54479607d276eaad3e61",
+                      "width": 300
+                    },
+                    {
+                      "height": 64,
+                      "url": "https://i.scdn.co/image/ab67616d00004851f5ff54479607d276eaad3e61",
+                      "width": 64
+                    },
+                    {
+                      "height": 640,
+                      "url": "https://i.scdn.co/image/ab67616d0000b273f5ff54479607d276eaad3e61",
+                      "width": 640
+                    }
+                  ]
+                },
+                "date": {
+                  "year": 2021
+                },
+                "id": "21iLTKX2O7LTHijlyXsbG1",
+                "name": "PINK PLANET",
+                "sharingInfo": {
+                  "shareId": "B031OsfxQ_ixwvxxpmloww",
+                  "shareUrl": "https://open.spotify.com/album/21iLTKX2O7LTHijlyXsbG1?si=B031OsfxQ_ixwvxxpmloww"
+                },
+                "type": "ALBUM",
+                "uri": "spotify:album:21iLTKX2O7LTHijlyXsbG1"
               }
             ],
             "discoveredOnV2": [
@@ -20551,296 +20721,18 @@ export const apis = [
                 "__typename": "GenericError"
               },
               {
-                "__typename": "Playlist",
-                "description": "",
-                "id": "37i9dQZF1DXc2aPBXGmXrt",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f000000021da8a6c4b1647a5c33e8a5b3",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "This Is Justin Bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DXc2aPBXGmXrt"
-              },
-              {
                 "__typename": "GenericError"
               },
               {
                 "__typename": "Playlist",
-                "description": "Setlist coachella 2026",
-                "id": "0p1rufOAkl56vCKAswiQI2",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84b8b4aafe4028ef3e6ae55e8b",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "JUSTIN BIEBER COACHELLA 2026 (SETLIST)",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "fasbmusic"
-                },
-                "uri": "spotify:playlist:0p1rufOAkl56vCKAswiQI2"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "",
-                "id": "4zqz1Qqgtvn28RswuS7zMT",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca3883d453c915416ae5eb2dd",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "best old jb songs",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "court:)"
-                },
-                "uri": "spotify:playlist:4zqz1Qqgtvn28RswuS7zMT"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "all justin bieber songs, including colaborations, in choronological order - big belieber here",
-                "id": "2ZISS32D1Ry8Aev9YPiJM4",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72ca99a8d81d59b8acd85abb03e",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "justin bieber - all songs",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "mireiaamartii"
-                },
-                "uri": "spotify:playlist:2ZISS32D1Ry8Aev9YPiJM4"
-              },
-              {
-                "__typename": "GenericError"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "",
-                "id": "6inBX31Rb6E8jxsHNoecSP",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 640
-                      },
-                      {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 300
-                      },
-                      {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02ca8d656fa57db4cce117f53bab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 60
-                      }
-                    ]
-                  }
-                ],
-                "name": "Justin Bieber oldies🥺‼️",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "farah🧚🏻‍♀️"
-                },
-                "uri": "spotify:playlist:6inBX31Rb6E8jxsHNoecSP"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "Your daily update of the most played tracks right now - Global.",
-                "id": "37i9dQZEVXbMDoHDwVN2tF",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Top 50 - Global",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZEVXbMDoHDwVN2tF"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "",
-                "id": "4Vzcb4Ma0C7lVh8BPe82c0",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 640
-                      },
-                      {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 300
-                      },
-                      {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d00001e021f7011c99b78c661fbd9e236ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e02f1d02a6cec967f8b6b78f76e",
-                        "width": 60
-                      }
-                    ]
-                  }
-                ],
-                "name": "Bieberchella",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "S1thlorddd"
-                },
-                "uri": "spotify:playlist:4Vzcb4Ma0C7lVh8BPe82c0"
-              },
-              {
-                "__typename": "GenericError"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "A mega mix of 75 favorites from the last few years! ",
-                "id": "37i9dQZF1DXbYM3nMM0oPk",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f00000002ce3e4d2cf82be0252be48478",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Mega Hit Mix",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DXbYM3nMM0oPk"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "it's not clocking to you that he's standing on business, is it? (Cover: Justin Bieber)",
-                "id": "3FxqCKNmp8J6so3EQW4RMt",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca55a1209f00a06efac0f4f6b",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Justin Bieber: Best Of The Best",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Best Of The Best"
-                },
-                "uri": "spotify:playlist:3FxqCKNmp8J6so3EQW4RMt"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "epoca que o mundo era um lugar melhor",
-                "id": "7Cm8ks6mZfUDOj2PHVgPDc",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca0702f130fed1278c6d99803",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "só as antigas do justin bieber",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "justinaaa"
-                },
-                "uri": "spotify:playlist:7Cm8ks6mZfUDOj2PHVgPDc"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "",
-                "id": "1yHliym9EvW5ItgECTmDUv",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
-                        "width": 640
-                      },
-                      {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
-                        "width": 300
-                      },
-                      {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d00001e0208e30ab6a058429303d75876ab67616d00001e027c3bb9f74a98f60bdda6c9a7ab67616d00001e028e6551a2944764bc8e33a960ab67616d00001e02e6f407c7f3a0ec98845e4431",
-                        "width": 60
-                      }
-                    ]
-                  }
-                ],
-                "name": "Justine Bieber Playlist",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "paw"
-                },
-                "uri": "spotify:playlist:1yHliym9EvW5ItgECTmDUv"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "The hottest 50. Cover: Tame Impala & JENNIE",
+                "description": "The hottest 50. Cover: Ariana Grande",
                 "id": "37i9dQZF1DXcBWIGoYBM5M",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f00000002b96a3bfea7beae76bb9c4195",
+                        "url": "https://i.scdn.co/image/ab67706f000000028c9dc68bd893f9232ac4ec29",
                         "width": null
                       }
                     ]
@@ -20854,236 +20746,301 @@ export const apis = [
                 "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
               },
               {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
                 "__typename": "Playlist",
-                "description": "Your daily update of the most played tracks right now - Philippines.",
-                "id": "37i9dQZEVXbNBz9cRCSFkY",
+                "description": "This is Kehlani. The essential tracks, all in one playlist.",
+                "id": "37i9dQZF1DZ06evO039Pyg",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://charts-images.scdn.co/assets/locale_en/regional/daily/region_ph_default.jpg",
+                        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/thisisv3/0cGUm45nv7Z6M6qdXYQGTX/en",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "Top 50 - Philippines",
+                "name": "This Is Kehlani",
                 "ownerV2": {
                   "__typename": "User",
                   "name": "Spotify"
                 },
-                "uri": "spotify:playlist:37i9dQZEVXbNBz9cRCSFkY"
+                "uri": "spotify:playlist:37i9dQZF1DZ06evO039Pyg"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "GenericError"
               },
               {
                 "__typename": "Playlist",
-                "description": "",
-                "id": "0Q6tQ2xlSIWL1WuoT8Yfmm",
+                "description": "Where R&B lives. Cover: Kehlani",
+                "id": "37i9dQZF1DX4SBhb3fqCJd",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c5329caacaf6bf03a55248fa7",
+                        "url": "https://i.scdn.co/image/ab67706f000000024ffa4f23798dc7bd8a3e4d3c",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "justin bieber prime ",
+                "name": "RNB X",
                 "ownerV2": {
                   "__typename": "User",
-                  "name": "melxna.lk"
+                  "name": "Spotify"
                 },
-                "uri": "spotify:playlist:0Q6tQ2xlSIWL1WuoT8Yfmm"
+                "uri": "spotify:playlist:37i9dQZF1DX4SBhb3fqCJd"
               },
               {
                 "__typename": "Playlist",
-                "description": "",
-                "id": "42O61YLcFLpWpD1VVKdjQS",
+                "description": "best RNB songs of 2026 most popular trending today chill rnb music viral top 100 hottest pop rap mix latest neo soul sexy adult contemporary",
+                "id": "3We3LenpVndqS3rUCP0MeY",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "url": "https://mosaic.scdn.co/640/ab67616d00001e02985ee0c2df0f785e5f3e2178ab67616d00001e02ce5bc87f637b46ad01831fc4ab67616d00001e02d65c4773bc5061fd27facc5bab67616d00001e02dca9a648e27c1e8d6dedf31c",
                         "width": 640
                       },
                       {
                         "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "url": "https://mosaic.scdn.co/300/ab67616d00001e02985ee0c2df0f785e5f3e2178ab67616d00001e02ce5bc87f637b46ad01831fc4ab67616d00001e02d65c4773bc5061fd27facc5bab67616d00001e02dca9a648e27c1e8d6dedf31c",
                         "width": 300
                       },
                       {
                         "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d00001e02150735e299793260f515b194ab67616d00001e02629dc9e2e3bc20bbd7d92e4aab67616d00001e02aed1660585c1e3c9ffb50b6aab67616d00001e02f46b9d202509a8f7384b90de",
+                        "url": "https://mosaic.scdn.co/60/ab67616d00001e02985ee0c2df0f785e5f3e2178ab67616d00001e02ce5bc87f637b46ad01831fc4ab67616d00001e02d65c4773bc5061fd27facc5bab67616d00001e02dca9a648e27c1e8d6dedf31c",
                         "width": 60
                       }
                     ]
                   }
                 ],
-                "name": "TEMAZOS JUSTIN BIEBER",
+                "name": "R&B 2026 🔥 New R&B Hits / Top RnB Songs",
                 "ownerV2": {
                   "__typename": "User",
-                  "name": "Sara.Rangel"
+                  "name": "Fox"
                 },
-                "uri": "spotify:playlist:42O61YLcFLpWpD1VVKdjQS"
+                "uri": "spotify:playlist:3We3LenpVndqS3rUCP0MeY"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Best tracks from the world of OPM and pop. Cover: Ariana Grande",
+                "id": "37i9dQZF1DXcZQSjptOQtk",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002288030756152f2795a24a205",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Hot Hits Philippines",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXcZQSjptOQtk"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Current favorites and exciting new music. Cover: Zara Larsson",
+                "id": "37i9dQZF1DXcRXFNfZr7Tp",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000022f7fc6a2bc9d8cca05b4f359",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "just hits",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXcRXFNfZr7Tp"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Best songs from Wish.",
+                "id": "77iBXD3TD0pGEHxOD1lkEH",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000da846e33a5b4d218c83eabde6efe",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "WISH 107.5 PLAYLIST 2026",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Lancelot Dulac"
+                },
+                "uri": "spotify:playlist:77iBXD3TD0pGEHxOD1lkEH"
+              },
+              {
+                "__typename": "GenericError"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The UK's biggest playlist. Cover: F3miii",
+                "id": "37i9dQZF1DWY4lFlS4Pnso",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002ae9a9b96f0416f514ba92ed2",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Hot Hits UK",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DWY4lFlS4Pnso"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "HITS 2026 🔥 All of today's top chart hits and hot new releases from around the world. Hit ♡ to hear the biggest new songs first! Cover: Bruno Mars",
+                "id": "5iwkYfnHAGMEFLiHFFGnP4",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8480ff79d686b0f1f5a45b7d7b",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "HITS 2026 - Today's Top Songs",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Topsify"
+                },
+                "uri": "spotify:playlist:5iwkYfnHAGMEFLiHFFGnP4"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Bedroom songs w Chase Atlantic, Chris Grey, Dark Romance, The Weeknd, Artemas, Dutch Melrose, Jutes, Arctic Monkeys, Ex Habit, Omido, ",
+                "id": "0mQbGXAlmsI3T2Vyfa0IVd",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84ce7bb495a5a6f704edc6a701",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Sex Playlist 👅💦Hottest Bedroom Music🔞 (Isabel LaRosa, Montell Fish, Two feet, The Neighbourhood",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Omido"
+                },
+                "uri": "spotify:playlist:0mQbGXAlmsI3T2Vyfa0IVd"
               }
             ],
             "featuringV2": [
               {
                 "__typename": "Playlist",
-                "description": "",
-                "id": "37i9dQZF1DXc2aPBXGmXrt",
+                "description": "This is Kehlani. The essential tracks, all in one playlist.",
+                "id": "37i9dQZF1DZ06evO039Pyg",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f000000021da8a6c4b1647a5c33e8a5b3",
+                        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/thisisv3/0cGUm45nv7Z6M6qdXYQGTX/en",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "This Is Justin Bieber",
+                "name": "This Is Kehlani",
                 "ownerV2": {
                   "__typename": "User",
                   "name": "Spotify"
                 },
-                "uri": "spotify:playlist:37i9dQZF1DXc2aPBXGmXrt"
+                "uri": "spotify:playlist:37i9dQZF1DZ06evO039Pyg"
               },
               {
                 "__typename": "Playlist",
-                "description": "With One Direction, Maroon 5, Bruno Mars and more",
-                "id": "37i9dQZF1E4umBm15jdpM7",
+                "description": "With Mariah the Scientist, kwn, GIVĒON and more",
+                "id": "37i9dQZF1E4DPtC1kA8Lj3",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/1uNFoZAHBGtllmzznpCI3s/en",
+                        "url": "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0cGUm45nv7Z6M6qdXYQGTX/en",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "Justin Bieber Radio",
+                "name": "Kehlani Radio",
                 "ownerV2": {
                   "__typename": "User",
                   "name": "Spotify"
                 },
-                "uri": "spotify:playlist:37i9dQZF1E4umBm15jdpM7"
+                "uri": "spotify:playlist:37i9dQZF1E4DPtC1kA8Lj3"
               },
               {
                 "__typename": "Playlist",
-                "description": "The hottest 50. Cover: Tame Impala & JENNIE",
-                "id": "37i9dQZF1DXcBWIGoYBM5M",
+                "description": "Where R&B lives. Cover: Kehlani",
+                "id": "37i9dQZF1DX4SBhb3fqCJd",
                 "images": [
                   {
                     "sources": [
                       {
                         "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f00000002b96a3bfea7beae76bb9c4195",
+                        "url": "https://i.scdn.co/image/ab67706f000000024ffa4f23798dc7bd8a3e4d3c",
                         "width": null
                       }
                     ]
                   }
                 ],
-                "name": "Today’s Top Hits",
+                "name": "RNB X",
                 "ownerV2": {
                   "__typename": "User",
                   "name": "Spotify"
                 },
-                "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "A mega mix of 75 favorites from the last few years! ",
-                "id": "37i9dQZF1DXbYM3nMM0oPk",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f00000002ce3e4d2cf82be0252be48478",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Mega Hit Mix",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DXbYM3nMM0oPk"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "The hottest tracks in the United States. Cover: Noah Kahan",
-                "id": "37i9dQZF1DX0kbJZpiYdZl",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f000000027ac1293c127259d858d2c190",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Hot Hits USA",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DX0kbJZpiYdZl"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "Get your beast mode on!",
-                "id": "37i9dQZF1DX76Wlfdnj7AP",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f00000002f367481f06b565250cc7b139",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Beast Mode",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DX76Wlfdnj7AP"
-              },
-              {
-                "__typename": "Playlist",
-                "description": "Get happy with today's dose of feel-good songs!",
-                "id": "37i9dQZF1DX3rxVfibe1L0",
-                "images": [
-                  {
-                    "sources": [
-                      {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706f000000028191cc41d8585df6170b3e5e",
-                        "width": null
-                      }
-                    ]
-                  }
-                ],
-                "name": "Mood Booster",
-                "ownerV2": {
-                  "__typename": "User",
-                  "name": "Spotify"
-                },
-                "uri": "spotify:playlist:37i9dQZF1DX3rxVfibe1L0"
+                "uri": "spotify:playlist:37i9dQZF1DX4SBhb3fqCJd"
               },
               {
                 "__typename": "Playlist",
@@ -21106,31 +21063,119 @@ export const apis = [
                   "name": "Spotify"
                 },
                 "uri": "spotify:playlist:37i9dQZF1DX5Ejj0EkURtP"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "summer has landed",
+                "id": "37i9dQZF1DX9nkam6FKfgM",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002d961a4a0ca8fe37146bc2292",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Summer Pop",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DX9nkam6FKfgM"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Current favorites and exciting new music. Cover: Zara Larsson",
+                "id": "37i9dQZF1DXcRXFNfZr7Tp",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f000000022f7fc6a2bc9d8cca05b4f359",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "just hits",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DXcRXFNfZr7Tp"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "The hottest tracks of today ft. Don Toliver, Kehlani, Drake and more.",
+                "id": "37i9dQZF1DWYs83FtTMQFw",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002d4f871e4f1935eb63ecf403d",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Hot Rhythmic",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DWYs83FtTMQFw"
+              },
+              {
+                "__typename": "Playlist",
+                "description": "Something cute for baddies doing their hair and make-up.",
+                "id": "37i9dQZF1DWWp9JrEQN7W1",
+                "images": [
+                  {
+                    "sources": [
+                      {
+                        "height": null,
+                        "url": "https://i.scdn.co/image/ab67706f00000002fe4e25c8069497bb74127269",
+                        "width": null
+                      }
+                    ]
+                  }
+                ],
+                "name": "Getting Ready 💋",
+                "ownerV2": {
+                  "__typename": "User",
+                  "name": "Spotify"
+                },
+                "uri": "spotify:playlist:37i9dQZF1DWWp9JrEQN7W1"
               }
             ],
             "relatedArtists": [
               {
-                "id": "0du5cEVh5yTK9QJze8zA0C",
+                "id": "7HkdQ0gt53LP4zmHsL0nap",
                 "profile": {
-                  "name": "Bruno Mars"
+                  "name": "Ella Mai"
                 },
-                "uri": "spotify:artist:0du5cEVh5yTK9QJze8zA0C",
+                "uri": "spotify:artist:7HkdQ0gt53LP4zmHsL0nap",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebc7688aad1bf03986934d7e26",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb5d6ed813fc2c93765152ff7e",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178c7688aad1bf03986934d7e26",
+                        "url": "https://i.scdn.co/image/ab6761610000f1785d6ed813fc2c93765152ff7e",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174c7688aad1bf03986934d7e26",
+                        "url": "https://i.scdn.co/image/ab676161000051745d6ed813fc2c93765152ff7e",
                         "width": 320
                       }
                     ]
@@ -21138,27 +21183,27 @@ export const apis = [
                 }
               },
               {
-                "id": "66CXWjxzNUsdJxJ2JdwvnR",
+                "id": "7bXgB6jMjp9ATFy66eO08Z",
                 "profile": {
-                  "name": "Ariana Grande"
+                  "name": "Chris Brown"
                 },
-                "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR",
+                "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb766397ec42a573a53eb5fb87",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb913ab85302df0ddfb77131e9",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178766397ec42a573a53eb5fb87",
+                        "url": "https://i.scdn.co/image/ab6761610000f178913ab85302df0ddfb77131e9",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174766397ec42a573a53eb5fb87",
+                        "url": "https://i.scdn.co/image/ab67616100005174913ab85302df0ddfb77131e9",
                         "width": 320
                       }
                     ]
@@ -21166,27 +21211,27 @@ export const apis = [
                 }
               },
               {
-                "id": "5pKCCKE2ajJHZ9KAiaK11H",
+                "id": "0nnBZ8FXWjG9wZgM2cpfeb",
                 "profile": {
-                  "name": "Rihanna"
+                  "name": "Leon Thomas"
                 },
-                "uri": "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H",
+                "uri": "spotify:artist:0nnBZ8FXWjG9wZgM2cpfeb",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebcb565a8e684e3be458d329ac",
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebc6c4f4aaf40ebee92b8a8228",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178cb565a8e684e3be458d329ac",
+                        "url": "https://i.scdn.co/image/ab6761610000f178c6c4f4aaf40ebee92b8a8228",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174cb565a8e684e3be458d329ac",
+                        "url": "https://i.scdn.co/image/ab67616100005174c6c4f4aaf40ebee92b8a8228",
                         "width": 320
                       }
                     ]
@@ -21194,27 +21239,27 @@ export const apis = [
                 }
               },
               {
-                "id": "6S0dmVVn4udvppDhZIWxCr",
+                "id": "4fxd5Ee7UefO4CUXgwJ7IP",
                 "profile": {
-                  "name": "Sean Kingston"
+                  "name": "GIVĒON"
                 },
-                "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr",
+                "uri": "spotify:artist:4fxd5Ee7UefO4CUXgwJ7IP",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebee205e5029a04bd0460e16e4",
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebe357870455bc56f7ef4147f8",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178ee205e5029a04bd0460e16e4",
+                        "url": "https://i.scdn.co/image/ab6761610000f178e357870455bc56f7ef4147f8",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174ee205e5029a04bd0460e16e4",
+                        "url": "https://i.scdn.co/image/ab67616100005174e357870455bc56f7ef4147f8",
                         "width": 320
                       }
                     ]
@@ -21222,27 +21267,27 @@ export const apis = [
                 }
               },
               {
-                "id": "04gDigrS5kc9YWfZHwBETP",
+                "id": "7tjVFCxJdwT4NdrTmjyjQ6",
                 "profile": {
-                  "name": "Maroon 5"
+                  "name": "Muni Long"
                 },
-                "uri": "spotify:artist:04gDigrS5kc9YWfZHwBETP",
+                "uri": "spotify:artist:7tjVFCxJdwT4NdrTmjyjQ6",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebf8349dfb619a7f842242de77",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb37c11c7e11e87dd22bdc65a4",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178f8349dfb619a7f842242de77",
+                        "url": "https://i.scdn.co/image/ab6761610000f17837c11c7e11e87dd22bdc65a4",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174f8349dfb619a7f842242de77",
+                        "url": "https://i.scdn.co/image/ab6761610000517437c11c7e11e87dd22bdc65a4",
                         "width": 320
                       }
                     ]
@@ -21250,27 +21295,27 @@ export const apis = [
                 }
               },
               {
-                "id": "2tIP7SsRs7vjIcLrU85W8J",
+                "id": "67nwj3Y5sZQLl72VNUHEYE",
                 "profile": {
-                  "name": "The Kid LAROI"
+                  "name": "Wale"
                 },
-                "uri": "spotify:artist:2tIP7SsRs7vjIcLrU85W8J",
+                "uri": "spotify:artist:67nwj3Y5sZQLl72VNUHEYE",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb8ae6a1046094624d95b115cb",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb273bdadffd7138dcbd7b79c3",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f1788ae6a1046094624d95b115cb",
+                        "url": "https://i.scdn.co/image/ab6761610000f178273bdadffd7138dcbd7b79c3",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab676161000051748ae6a1046094624d95b115cb",
+                        "url": "https://i.scdn.co/image/ab67616100005174273bdadffd7138dcbd7b79c3",
                         "width": 320
                       }
                     ]
@@ -21278,27 +21323,27 @@ export const apis = [
                 }
               },
               {
-                "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+                "id": "57LYzLEk2LcFghVwuWbcuS",
                 "profile": {
-                  "name": "The Weeknd"
+                  "name": "Summer Walker"
                 },
-                "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ",
+                "uri": "spotify:artist:57LYzLEk2LcFghVwuWbcuS",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebc1719ac9e6a75c1c25835018",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb7dccb6280ed3402110d43ce3",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178c1719ac9e6a75c1c25835018",
+                        "url": "https://i.scdn.co/image/ab6761610000f1787dccb6280ed3402110d43ce3",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174c1719ac9e6a75c1c25835018",
+                        "url": "https://i.scdn.co/image/ab676161000051747dccb6280ed3402110d43ce3",
                         "width": 320
                       }
                     ]
@@ -21306,27 +21351,27 @@ export const apis = [
                 }
               },
               {
-                "id": "6VuMaDnrHyPL1p4EHjYLi7",
+                "id": "4DHLoiIqFYYFjH09WduvFd",
                 "profile": {
-                  "name": "Charlie Puth"
+                  "name": "Coco Jones"
                 },
-                "uri": "spotify:artist:6VuMaDnrHyPL1p4EHjYLi7",
+                "uri": "spotify:artist:4DHLoiIqFYYFjH09WduvFd",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb6721f541fb123145d4cb3ace",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb555c76ee52786dccb288e3f9",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f1786721f541fb123145d4cb3ace",
+                        "url": "https://i.scdn.co/image/ab6761610000f178555c76ee52786dccb288e3f9",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab676161000051746721f541fb123145d4cb3ace",
+                        "url": "https://i.scdn.co/image/ab67616100005174555c76ee52786dccb288e3f9",
                         "width": 320
                       }
                     ]
@@ -21334,27 +21379,27 @@ export const apis = [
                 }
               },
               {
-                "id": "6jJ0s89eD6GaHleKKya26X",
+                "id": "7tYKF4w9nC0nq9CsPZTHyP",
                 "profile": {
-                  "name": "Katy Perry"
+                  "name": "SZA"
                 },
-                "uri": "spotify:artist:6jJ0s89eD6GaHleKKya26X",
+                "uri": "spotify:artist:7tYKF4w9nC0nq9CsPZTHyP",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb4be5330bd48527f9dd620663",
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebfd0a9fb6c252a3ba44079acf",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f1784be5330bd48527f9dd620663",
+                        "url": "https://i.scdn.co/image/ab6761610000f178fd0a9fb6c252a3ba44079acf",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab676161000051744be5330bd48527f9dd620663",
+                        "url": "https://i.scdn.co/image/ab67616100005174fd0a9fb6c252a3ba44079acf",
                         "width": 320
                       }
                     ]
@@ -21362,27 +21407,27 @@ export const apis = [
                 }
               },
               {
-                "id": "1Xylc3o4UrD53lo9CvFvVg",
+                "id": "687cZJR45JO7jhk1LHIbgq",
                 "profile": {
-                  "name": "Zara Larsson"
+                  "name": "Tems"
                 },
-                "uri": "spotify:artist:1Xylc3o4UrD53lo9CvFvVg",
+                "uri": "spotify:artist:687cZJR45JO7jhk1LHIbgq",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebd519a7e349541cba8f85e965",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb22d7d6f8981c7a27bf68a382",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178d519a7e349541cba8f85e965",
+                        "url": "https://i.scdn.co/image/ab6761610000f17822d7d6f8981c7a27bf68a382",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174d519a7e349541cba8f85e965",
+                        "url": "https://i.scdn.co/image/ab6761610000517422d7d6f8981c7a27bf68a382",
                         "width": 320
                       }
                     ]
@@ -21390,27 +21435,27 @@ export const apis = [
                 }
               },
               {
-                "id": "5CiGnKThu5ctn9pBxv7DGa",
+                "id": "7HO5fOXE4gh3lzZn64tX2E",
                 "profile": {
-                  "name": "benny blanco"
+                  "name": "Mariah the Scientist"
                 },
-                "uri": "spotify:artist:5CiGnKThu5ctn9pBxv7DGa",
+                "uri": "spotify:artist:7HO5fOXE4gh3lzZn64tX2E",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb9e339e423b680759b0006a63",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb6e0ad52899974a169ab69c88",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f1789e339e423b680759b0006a63",
+                        "url": "https://i.scdn.co/image/ab6761610000f1786e0ad52899974a169ab69c88",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab676161000051749e339e423b680759b0006a63",
+                        "url": "https://i.scdn.co/image/ab676161000051746e0ad52899974a169ab69c88",
                         "width": 320
                       }
                     ]
@@ -21418,27 +21463,27 @@ export const apis = [
                 }
               },
               {
-                "id": "5ZsFI1h6hIdQRw2ti0hz81",
+                "id": "2KnhnL8zuqLhIhGk601fsb",
                 "profile": {
-                  "name": "ZAYN"
+                  "name": "kwn"
                 },
-                "uri": "spotify:artist:5ZsFI1h6hIdQRw2ti0hz81",
+                "uri": "spotify:artist:2KnhnL8zuqLhIhGk601fsb",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb830845d2fa6c5c7874176951",
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebc3bfed5430b154e0a1b209f8",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178830845d2fa6c5c7874176951",
+                        "url": "https://i.scdn.co/image/ab6761610000f178c3bfed5430b154e0a1b209f8",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174830845d2fa6c5c7874176951",
+                        "url": "https://i.scdn.co/image/ab67616100005174c3bfed5430b154e0a1b209f8",
                         "width": 320
                       }
                     ]
@@ -21446,27 +21491,27 @@ export const apis = [
                 }
               },
               {
-                "id": "540vIaP2JwjQb9dm3aArA4",
+                "id": "3SozjO3Lat463tQICI9LcE",
                 "profile": {
-                  "name": "DJ Snake"
+                  "name": "Tyla"
                 },
-                "uri": "spotify:artist:540vIaP2JwjQb9dm3aArA4",
+                "uri": "spotify:artist:3SozjO3Lat463tQICI9LcE",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb175df1a8848d8ff67c6d5600",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb69719e4164b893213a525d25",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178175df1a8848d8ff67c6d5600",
+                        "url": "https://i.scdn.co/image/ab6761610000f17869719e4164b893213a525d25",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174175df1a8848d8ff67c6d5600",
+                        "url": "https://i.scdn.co/image/ab6761610000517469719e4164b893213a525d25",
                         "width": 320
                       }
                     ]
@@ -21474,27 +21519,27 @@ export const apis = [
                 }
               },
               {
-                "id": "7n2wHs1TKAczGzO7Dd2rGr",
+                "id": "3MdXrJWsbVzdn6fe5JYkSQ",
                 "profile": {
-                  "name": "Shawn Mendes"
+                  "name": "Latto"
                 },
-                "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr",
+                "uri": "spotify:artist:3MdXrJWsbVzdn6fe5JYkSQ",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb58b4b9419486550f6fda0535",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb2d805d9a367bdad2096ab817",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f17858b4b9419486550f6fda0535",
+                        "url": "https://i.scdn.co/image/ab6761610000f1782d805d9a367bdad2096ab817",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab6761610000517458b4b9419486550f6fda0535",
+                        "url": "https://i.scdn.co/image/ab676161000051742d805d9a367bdad2096ab817",
                         "width": 320
                       }
                     ]
@@ -21502,27 +21547,27 @@ export const apis = [
                 }
               },
               {
-                "id": "31TPClRtHm23RisEBtV3X7",
+                "id": "6ucHomyCWjxmvbyqAAbSci",
                 "profile": {
-                  "name": "Justin Timberlake"
+                  "name": "SAILORR"
                 },
-                "uri": "spotify:artist:31TPClRtHm23RisEBtV3X7",
+                "uri": "spotify:artist:6ucHomyCWjxmvbyqAAbSci",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb7a5cfe2597665a3d160e805e",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb7225fa0852ab119726d088dd",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f1787a5cfe2597665a3d160e805e",
+                        "url": "https://i.scdn.co/image/ab6761610000f1787225fa0852ab119726d088dd",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab676161000051747a5cfe2597665a3d160e805e",
+                        "url": "https://i.scdn.co/image/ab676161000051747225fa0852ab119726d088dd",
                         "width": 320
                       }
                     ]
@@ -21530,27 +21575,27 @@ export const apis = [
                 }
               },
               {
-                "id": "0C8ZW7ezQVs4URX5aX7Kqx",
+                "id": "0s4kXsjYeH0S1xRyVGN4NO",
                 "profile": {
-                  "name": "Selena Gomez"
+                  "name": "FLO"
                 },
-                "uri": "spotify:artist:0C8ZW7ezQVs4URX5aX7Kqx",
+                "uri": "spotify:artist:0s4kXsjYeH0S1xRyVGN4NO",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5eb815e520e3ce7fe210046ba66",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb85729f18eb0edf40d80dc18a",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178815e520e3ce7fe210046ba66",
+                        "url": "https://i.scdn.co/image/ab6761610000f17885729f18eb0edf40d80dc18a",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174815e520e3ce7fe210046ba66",
+                        "url": "https://i.scdn.co/image/ab6761610000517485729f18eb0edf40d80dc18a",
                         "width": 320
                       }
                     ]
@@ -21558,27 +21603,27 @@ export const apis = [
                 }
               },
               {
-                "id": "6eUKZXaKkcviH0Ku9w2n3V",
+                "id": "4IVAbR2w4JJNJDDRFP3E83",
                 "profile": {
-                  "name": "Ed Sheeran"
+                  "name": "6LACK"
                 },
-                "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+                "uri": "spotify:artist:4IVAbR2w4JJNJDDRFP3E83",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebd55c95ad400aed87da52daec",
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebdb404c3ed5634b2db2926ddf",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178d55c95ad400aed87da52daec",
+                        "url": "https://i.scdn.co/image/ab6761610000f178db404c3ed5634b2db2926ddf",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174d55c95ad400aed87da52daec",
+                        "url": "https://i.scdn.co/image/ab67616100005174db404c3ed5634b2db2926ddf",
                         "width": 320
                       }
                     ]
@@ -21586,27 +21631,27 @@ export const apis = [
                 }
               },
               {
-                "id": "21E3waRsmPlU7jZsS13rcj",
+                "id": "360IAlyVv4PCEVjgyMZrxK",
                 "profile": {
-                  "name": "Ne-Yo"
+                  "name": "Miguel"
                 },
-                "uri": "spotify:artist:21E3waRsmPlU7jZsS13rcj",
+                "uri": "spotify:artist:360IAlyVv4PCEVjgyMZrxK",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebca118e3822061f7b7f6bc537",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb35e36c368fdcd26aba296bd1",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178ca118e3822061f7b7f6bc537",
+                        "url": "https://i.scdn.co/image/ab6761610000f17835e36c368fdcd26aba296bd1",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174ca118e3822061f7b7f6bc537",
+                        "url": "https://i.scdn.co/image/ab6761610000517435e36c368fdcd26aba296bd1",
                         "width": 320
                       }
                     ]
@@ -21614,27 +21659,27 @@ export const apis = [
                 }
               },
               {
-                "id": "5ndkK3dpZLKtBklKjxNQwT",
+                "id": "3Y7RZ31TRPVadSFVy1o8os",
                 "profile": {
-                  "name": "B.o.B"
+                  "name": "H.E.R."
                 },
-                "uri": "spotify:artist:5ndkK3dpZLKtBklKjxNQwT",
+                "uri": "spotify:artist:3Y7RZ31TRPVadSFVy1o8os",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebc9a97fba42e640d955fedf46",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb417db49cde3ed1c5a65e3514",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178c9a97fba42e640d955fedf46",
+                        "url": "https://i.scdn.co/image/ab6761610000f178417db49cde3ed1c5a65e3514",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174c9a97fba42e640d955fedf46",
+                        "url": "https://i.scdn.co/image/ab67616100005174417db49cde3ed1c5a65e3514",
                         "width": 320
                       }
                     ]
@@ -21642,27 +21687,27 @@ export const apis = [
                 }
               },
               {
-                "id": "06HL4z0CvFAxyc27GXpf02",
+                "id": "7c0XG5cIJTrrAgEC3ULPiq",
                 "profile": {
-                  "name": "Taylor Swift"
+                  "name": "Ty Dolla $ign"
                 },
-                "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02",
+                "uri": "spotify:artist:7c0XG5cIJTrrAgEC3ULPiq",
                 "visuals": {
                   "avatarImage": {
                     "sources": [
                       {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/ab6761610000e5ebe2e8e7ff002a4afda1c7147e",
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb4ef6e245168c33922bc6df1a",
                         "width": 640
                       },
                       {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/ab6761610000f178e2e8e7ff002a4afda1c7147e",
+                        "url": "https://i.scdn.co/image/ab6761610000f1784ef6e245168c33922bc6df1a",
                         "width": 160
                       },
                       {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/ab67616100005174e2e8e7ff002a4afda1c7147e",
+                        "url": "https://i.scdn.co/image/ab676161000051744ef6e245168c33922bc6df1a",
                         "width": 320
                       }
                     ]
@@ -21674,49 +21719,50 @@ export const apis = [
           "relatedMusicVideos": [],
           "saved": false,
           "sharingInfo": {
-            "shareId": "-KWAMHoLQA2Rwc3vmQCaBA",
-            "shareUrl": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s?si=-KWAMHoLQA2Rwc3vmQCaBA"
+            "shareId": "XG-mh-ZuSdK7Cl_zcnEAQA",
+            "shareUrl": "https://open.spotify.com/artist/0cGUm45nv7Z6M6qdXYQGTX?si=XG-mh-ZuSdK7Cl_zcnEAQA"
           },
           "stats": {
-            "followers": 89982015,
-            "monthlyListeners": 140381301,
+            "followers": 9462413,
+            "monthlyListeners": 28333760,
             "topCities": [
               {
                 "city": "London",
                 "country": "GB",
-                "numberOfListeners": 2181813,
+                "numberOfListeners": 518632,
                 "region": "ENG"
-              },
-              {
-                "city": "São Paulo",
-                "country": "BR",
-                "numberOfListeners": 1918165,
-                "region": "SP"
-              },
-              {
-                "city": "Jakarta",
-                "country": "ID",
-                "numberOfListeners": 1629882,
-                "region": "JK"
-              },
-              {
-                "city": "Mexico City",
-                "country": "MX",
-                "numberOfListeners": 1497826,
-                "region": "CMX"
               },
               {
                 "city": "Quezon City",
                 "country": "PH",
-                "numberOfListeners": 1427546,
+                "numberOfListeners": 358308,
                 "region": "00"
+              },
+              {
+                "city": "Sydney",
+                "country": "AU",
+                "numberOfListeners": 349807,
+                "region": "NSW"
+              },
+              {
+                "city": "Los Angeles",
+                "country": "US",
+                "numberOfListeners": 334294,
+                "region": "CA"
+              },
+              {
+                "city": "São Paulo",
+                "country": "BR",
+                "numberOfListeners": 310890,
+                "region": "SP"
               }
             ],
-            "worldRank": 1
+            "worldRank": 256
           },
           "unmappedMusicVideos": [],
-          "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s",
-          "watchFeedEntrypoint": null
+          "uri": "spotify:artist:0cGUm45nv7Z6M6qdXYQGTX",
+          "watchFeedEntrypoint": null,
+          "popularity": 79
         },
       },
       {
