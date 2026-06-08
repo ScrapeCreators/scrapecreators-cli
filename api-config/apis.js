@@ -8,7 +8,6 @@ export const apis = [
   tiktokBaseApis,
   tiktokShopApis,
   instagramBaseApis,
-  kwaiApis,
   {
     id: "youtube",
     name: "YouTube",
@@ -31652,6 +31651,7 @@ export const apis = [
       },
     ],
   },
+  kwaiApis,
   {
     id: "kick",
     name: "Kick",
