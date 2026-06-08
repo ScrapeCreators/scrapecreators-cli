@@ -2,11 +2,13 @@ import { tiktokBaseApis } from "./tiktok-apis.js";
 import { tiktokShopApis } from "./tiktok-shop-apis.js";
 import { instagramBaseApis } from "./instagram-apis.js";
 import { githubApis } from "./github-apis.js";
+import { kwaiApis } from "./kwai-apis.js";
 
 export const apis = [
   tiktokBaseApis,
   tiktokShopApis,
   instagramBaseApis,
+  kwaiApis,
   {
     id: "youtube",
     name: "YouTube",
