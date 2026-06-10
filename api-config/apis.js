@@ -165,6 +165,14 @@ export const apis = [
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
           {
+            name: "is_paid_promotions",
+            type: "string",
+            required: false,
+            description:
+              "Set to 'true' to search YouTube's public paid product placement / sponsorship / endorsement search surface. This returns normal YouTube videos where the creator declared paid promotion. Cannot be combined with filter, uploadDate, sortBy, type, duration, or includeExtras.",
+            placeholder: "false",
+          },
+          {
             name: "includeExtras",
             type: "string",
             required: false,
@@ -730,12 +738,69 @@ export const apis = [
         },
       },
       {
+        name: "Video Sponsors",
+        method: "GET",
+        description: "Experimental: Find suspected sponsors/promoted brands for a YouTube video. This is inferred from public evidence, not an official YouTube sponsor field. Feedback welcome: support@scrapecreators.com",
+        fullDescription:
+          "Experimental endpoint. Checks a YouTube video for the paid-promotion disclosure and infers likely sponsors/promoted brands from the public description, description links, promo-code text, and transcript. YouTube tells us that a video contains paid promotion, but it does not always tell us the sponsor directly, so this endpoint returns suspected sponsors with confidence and evidence. This is inferred, not an official YouTube sponsor field. Feedback welcome: support@scrapecreators.com",
+        path: "/v1/youtube/video/sponsors",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "YouTube video or short URL",
+            placeholder: "https://www.youtube.com/watch?v=AVO0ifle-OU",
+          },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description: "2 letter language code used for transcript lookup, ie 'en', 'es', 'fr' etc.",
+            placeholder: "en",
+          },
+        ],
+        sampleResponse: {
+          video: {
+            id: "AVO0ifle-OU",
+            url: "https://www.youtube.com/watch?v=AVO0ifle-OU",
+            title: "Why You Should Meal Prep Like A Restaurant",
+            channel: {
+              id: "UC3vQEjRhwgH2HAOBKwLjxNA",
+              url: "https://www.youtube.com/@letsKWOOWK",
+              handle: "letsKWOOWK",
+              title: "KWOOWK",
+            },
+            isPaidPromotion: true,
+          },
+          suspectedSponsors: [
+            {
+              name: "Betterhelp",
+              website: "betterhelp.com",
+              confidence: "medium",
+              evidence: [
+                {
+                  source: "description_link",
+                  text: "If you're struggling, consider therapy with our sponsor BetterHelp. Click https://betterhelp.com/KWOOWK for a 10% discount...",
+                },
+              ],
+            },
+          ],
+          sponsorDetection: {
+            status: "found",
+            methods: ["paid promotion badge", "description", "description links", "transcript"],
+            transcriptAvailable: true,
+            note: "Sponsors are inferred from public description, links, promo-code text, and transcript evidence.",
+          },
+        },
+      },
+      {
         name: "Search",
         method: "GET",
         description:
           "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc. Video explaining the response format: https://www.tella.tv/video/explaining-youtube-search-results-payload-353a",
         fullDescription:
-          "Searches YouTube by keyword query and returns matching videos, channels, playlists, shorts, shelves, and live streams. Each video result includes title, URL, thumbnail, view count (views), publish date, duration, channel info, and badges. Supports filtering by upload date, sorting by relevance or popularity, and paginating with continuationToken.",
+          "Searches YouTube by keyword query and returns matching videos, channels, playlists, shorts, shelves, and live streams. Each video result includes title, URL, thumbnail, view count (views), publish date, duration, channel info, and badges. Supports filtering by upload date, sorting by relevance or popularity, and paginating with continuationToken. Set is_paid_promotions=true to search YouTube videos with the paid product placement / sponsorship disclosure.",
         path: "/v1/youtube/search",
         paginationField: "continuationToken",
         sampleResponse: {
