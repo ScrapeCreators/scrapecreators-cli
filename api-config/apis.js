@@ -6813,6 +6813,28 @@ export const apis = [
             placeholder: "2025-08-11",
           },
           {
+            name: "platform",
+            type: "select",
+            required: false,
+            description: "Platform to search for.",
+            options: [
+              "google_maps",
+              "google_play",
+              "google_search",
+              "google_shopping",
+              "youtube",
+            ],
+            placeholder: "youtube",
+          },
+          {
+            name: "format",
+            type: "select",
+            required: false,
+            description: "Ad format to search for.",
+            options: ["text", "image", "video"],
+            placeholder: "video",
+          },
+          {
             name: "get_ad_details",
             type: "string",
             required: false,
