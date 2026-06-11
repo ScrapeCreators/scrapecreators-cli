@@ -6818,6 +6818,674 @@ export const apis = [
     ],
   },
   {
+    id: "tiktokAdLibrary",
+    name: "TikTok Ad Library",
+    description: "Scrape the TikTok Ad Library",
+    endpoints: [
+      {
+        name: "Ad Library Search",
+        method: "GET",
+        description: "Search TikTok Creative Center Top Ads by region, period, and keyword.",
+        fullDescription:
+          "Searches TikTok Creative Center Top Ads, the ad library page at ads.tiktok.com/business/creativecenter/inspiration/topads. Supports US and other 2-letter regions, period filters, sorting, keyword search, and cursor pagination. Returns TikTok's public top ad material objects, including ad title, metrics, video info, landing page, and pagination.",
+        path: "/v1/tiktok/ad-library/search",
+        params: [
+          {
+            name: "region",
+            type: "select",
+            required: false,
+            description: "Country code. Defaults to US.",
+            options: ["DZ", "AR", "AU", "AT", "AZ", "BH", "BD", "BY", "BE", "BO", "BR", "BG", "KH", "CA", "CL", "CO", "CR", "HR", "CY", "CZ", "DK", "DO", "EC", "EG", "EE", "FI", "FR", "DE", "GR", "GT", "JO", "HU", "ID", "IQ", "IE", "IL", "IT", "JP", "KZ", "KE", "KW", "LV", "LB", "MY", "MX", "MA", "NL", "NZ", "NG", "NO", "OM", "PK", "PA", "PY", "PE", "PH", "PL", "PT", "PR", "QA", "LT", "RO", "SA", "RS", "SG", "SK", "SI", "ZA", "KR", "ES", "LK", "SE", "CH", "TW", "TH", "TR", "AE", "GB", "US", "UY", "VN"],
+            placeholder: "US",
+          },
+          {
+            name: "period",
+            type: "select",
+            required: false,
+            description: "Time window for Top Ads.",
+            options: ["7", "30", "180"],
+            placeholder: "30",
+          },
+          {
+            name: "query",
+            type: "string",
+            required: false,
+            description: "Optional keyword to search ad titles/content.",
+            placeholder: "spotify",
+          },
+          {
+            name: "order_by",
+            type: "select",
+            required: false,
+            description: "Sort metric. Defaults to for_you.",
+            options: ["for_you", "impression", "play_2s_rate", "play_6s_rate", "cvr", "ctr", "like"],
+            placeholder: "for_you",
+          },
+          {
+            name: "industry",
+            type: "select",
+            required: false,
+            description: "Industry filter.",
+            options: ["apparel_accessories", "appliances", "apps", "baby_kids_maternity", "beauty_personal_care", "business_services", "ecommerce_non_app", "education", "financial_services", "food_beverage", "games", "health", "home_improvement", "household_products", "life_services", "news_entertainment", "pets", "sports_outdoor", "tech_electronics", "travel", "vehicle_transportation"],
+            placeholder: "beauty_personal_care",
+          },
+          {
+            name: "objective",
+            type: "select",
+            required: false,
+            description: "Campaign objective filter.",
+            options: ["app_installs", "conversions", "lead_generation", "product_sales", "reach", "traffic", "video_views"],
+            placeholder: "traffic",
+          },
+          {
+            name: "duration",
+            type: "select",
+            required: false,
+            description: "Video duration filter.",
+            options: ["under_10s", "10_20s", "20_30s", "30_40s", "40_50s", "over_50s"],
+            placeholder: "under_10s",
+          },
+          {
+            name: "likes",
+            type: "select",
+            required: false,
+            description: "Likes percentile filter.",
+            options: ["top_1_20", "top_21_40", "top_41_60", "top_61_80", "top_81_100"],
+            placeholder: "top_1_20",
+          },
+          {
+            name: "ad_format",
+            type: "select",
+            required: false,
+            description: "Ad format filter.",
+            options: ["spark_ads", "non_spark_ads"],
+            placeholder: "spark_ads",
+          },
+          {
+            name: "ad_language",
+            type: "select",
+            required: false,
+            description: "Ad language filter.",
+            options: ["en", "es", "ar", "vi", "th", "de", "id", "pt", "fr", "ms", "nl", "ja", "it", "ro", "zh-Hant", "ko"],
+            placeholder: "en",
+          },
+          {
+            name: "cursor",
+            type: "number",
+            required: false,
+            description: "Page number to fetch. Use the cursor returned from the previous response, like 3 for page 3.",
+            placeholder: "3",
+          },
+          {
+            name: "limit",
+            type: "number",
+            required: false,
+            description: "Number of ads to return, max 50. Defaults to 20.",
+            placeholder: "20",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49996315011,
+          "query": "",
+          "region": "US",
+          "period": 30,
+          "ads": [
+            {
+              "ad_title": "I thought this was a gimmick until I tried it! A wrinkled shirt, one button, and a few minutes later... ready to wear. Tap the link in bio and see why everyone’s talking about Bellairon before it sells out. @Bellairon LLC ",
+              "brand_name": "",
+              "cost": 1,
+              "ctr": 0.5,
+              "favorite": false,
+              "id": "7646829987799334920",
+              "industry_key": "label_22108000000",
+              "is_search": true,
+              "like": 92,
+              "objective_key": "campaign_objective_reach",
+              "video_info": {
+                "vid": "v12044gd0000d8erq07og65h1cq991gg",
+                "duration": 89.767,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-maliva-p-0068c799-us/oIbqBdvfEAiFpgvAOgrQHCF5R0mkDDLiEfvQDS~tplv-noop.image?dr=18692&refresh_token=2ac068a9&x-expires=1781231816&x-signature=hLbBkguntM4oX9tgdnKMMDYixAA%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my2&VideoID=v12044gd0000d8erq07og65h1cq991gg",
+                "video_url": {
+                  "540p": "https://v16m-default.tiktokcdn.com/64e64ad32f68588eee511da0114f0f2e/6a2b70c8/video/tos/maliva/tos-maliva-ve-0068c799-us/oIN2GPIRgHAUBHOeNfLk2HBSERoJeIALGC3jAE/?a=0&bti=NTU4QDM1NGA%3D&&bt=315&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=Omk6ZWQ7Nzc7OGY8PGVnOkBpajQ8Zms5cjN1OzMzZzczNEBgNDAzXl9hXjMxLzEvXjFiYSNkNm4uMmQ0bmJhLS1kMS9zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00090000",
+                  "720p": "https://v16m-default.tiktokcdn.com/4ee4e5763b088d7d77e4a9f4fce502b6/6a2b70c8/video/tos/maliva/tos-maliva-ve-0068c799-us/ooEipQa9HbhJ4ChzASIngUPhBAdXiABIvxU2E/?a=0&bti=NTU4QDM1NGA%3D&&bt=877&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=ZTg3OTQ0NTQzZGVpNWg6NkBpajQ8Zms5cjN1OzMzZzczNEBhNC0yMDViNi8xLV9hX2AuYSNkNm4uMmQ0bmJhLS1kMS9zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00090000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            },
+            {
+              "ad_title": "True Heroes go ALL IN or nothing. See yourself at the top!",
+              "brand_name": "",
+              "cost": 0,
+              "ctr": 0.29,
+              "favorite": false,
+              "id": "7640089122220736530",
+              "industry_key": "label_25100000000",
+              "is_search": true,
+              "like": 1115,
+              "objective_key": "campaign_objective_conversion",
+              "video_info": {
+                "vid": "v10033g50000d8jbia7og65q0198frmg",
+                "duration": 105.003,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/o8jPFEKAAIYhaBUQ6CM5tAZiBiKaaAuSi7Hzm~tplv-noop.image?dr=18692&refresh_token=3750a204&x-expires=1781231832&x-signature=RfXRGuG8N6d69HxYz2Z9XUKgdWU%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my2&VideoID=v10033g50000d8jbia7og65q0198frmg",
+                "video_url": {
+                  "1080p": "https://v16m-default.tiktokcdn.com/3dad0efc22921436631456d0eb262abc/6a2b70d8/video/tos/alisg/tos-alisg-ve-0051c001-sg/oEPIgOBQUJpQBtqKOFyFDfEMODsYfUAzNhBAIQ/?a=0&bti=NTU4QDM1NGA%3D&&bt=2989&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=OzU3NTU5ZTxlaDs0NmRoaEBpanU7NHQ5cmRlOzMzODYzNEBjMjBhYl5eXy0xMjY0L2MtYSNqYzYtMmQ0ZmdhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00088000",
+                  "360p": "https://v16m-default.tiktokcdn.com/6c204fed990c1083f8bbd68b500b660e/6a2b70d8/video/tos/alisg/tos-alisg-ve-0051c001-sg/oUYBAIDIFOzFBQOkIN1KABPDUsJQIQgfgqyOeE/?a=0&bti=NTU4QDM1NGA%3D&&bt=551&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=aDs3ZDRmNzM5OGg3NWZmOEBpanU7NHQ5cmRlOzMzODYzNEBgMS80NTAuXjQxXmBeYmNhYSNqYzYtMmQ0ZmdhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00088000",
+                  "480p": "https://v16m-default.tiktokcdn.com/c4a6191ed579f76eaf7b6a6611966b3b/6a2b70d8/video/tos/alisg/tos-alisg-ve-0051c001-sg/okAEI5qKBEgFlH2AAniQo8mC5AfH1KAIiAwHBA/?a=0&bti=NTU4QDM1NGA%3D&&bt=780&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=ODRmZWk6NzU1NDU4OWQ3NUBpanU7NHQ5cmRlOzMzODYzNEAwNDAwNS4xXl8xMDZiYTMyYSNqYzYtMmQ0ZmdhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00088000",
+                  "540p": "https://v16m-default.tiktokcdn.com/07591ee6ce0fc4ca315a41f1d87ee420/6a2b70d8/video/tos/alisg/tos-alisg-ve-0051c001-sg/oI2EoHAi5CI5ANF1AKQEmIHiqfs8qZBoABlAwn/?a=0&bti=NTU4QDM1NGA%3D&&bt=1063&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=ODZmPDQ5ZjY2NTw7NzQzOkBpanU7NHQ5cmRlOzMzODYzNEAuXmFjX2NhNjAxM140MzRiYSNqYzYtMmQ0ZmdhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00088000",
+                  "720p": "https://v16m-default.tiktokcdn.com/1404645b61626339c2e1d4c6df4ebb12/6a2b70d8/video/tos/alisg/tos-alisg-ve-0051c001-sg/okYmBiwEIK1QnHBHEAHu5oiSHAlWIAf52RAxAC/?a=0&bti=NTU4QDM1NGA%3D&&bt=1460&ft=cApXJCz7ThWHK-z9LGZmo0P&mime_type=video_mp4&rc=aDs5O2lpNTg0Mzc2NGc8N0BpanU7NHQ5cmRlOzMzODYzNEA2YGNhYmMuXjIxLWBfMV9eYSNqYzYtMmQ0ZmdhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043527C18C959B9A8CF584D398&btag=e00088000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            },
+          ],
+          "pagination": {
+            "has_more": true,
+            "page": 1,
+            "size": 20,
+            "total_count": 326
+          },
+          "total": 326,
+          "has_more": true,
+          "cursor": 2
+        },
+      },
+      {
+        name: "Ad Library Ad",
+        method: "GET",
+        description: "Gets details for a TikTok Creative Center Top Ad.",
+        fullDescription:
+          "Fetches one TikTok Creative Center Top Ad by material/ad ID or URL. Uses the same Creative Center data behind pages like ads.tiktok.com/business/creativecenter/topads/{id}/pc/en, including title, metrics, video info, landing page, country codes, objective, industry, source, the Creative Center URL, summary/analysis, interactive time analysis graph data, and recommended-for-you ads when TikTok provides them.",
+        path: "/v1/tiktok/ad-library/ad",
+        params: [
+          {
+            name: "ad_id",
+            type: "string",
+            required: true,
+            description: "TikTok Top Ads material/ad ID, or a Top Ads detail URL.",
+            placeholder: "7642386438915309575",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 49996315006,
+          "ad_title": "I thought this was a gimmick until I tried it! A wrinkled shirt, one button, and a few minutes later... ready to wear. Tap the link in bio and see why everyone’s talking about Bellairon before it sells out. @Bellairon LLC ",
+          "brand_name": "",
+          "comment": 1,
+          "cost": 1,
+          "country_code": ["TR", "US"],
+          "ctr": 0.5,
+          "favorite": false,
+          "has_summary": false,
+          "highlight_text": "",
+          "id": "7646829987799334920",
+          "industry_key": "label_22108000000",
+          "is_search": false,
+          "keyword_list": null,
+          "landing_page": "https://www.amazon.com/dp/B0DRTC8XBW?ref=cm_sw_r_cso_wa_apin_dp_71W8F02XC4M4QZRQ5RQN&ref_=cm_sw_r_cso_wa_apin_dp_71W8F02XC4M4QZRQ5RQN&social_share=cm_sw_r_cso_wa_apin_dp_71W8F02XC4M4QZRQ5RQN&oas=true&utm_source=tiktok&utm_medium=paid&utm_id=__CAMPAIGN_ID__&utm_campaign=__CAMPAIGN_NAME__",
+          "like": 92,
+          "objective_key": "campaign_objective_reach",
+          "objectives": [
+            {
+              "label": "campaign_objective_reach",
+              "value": 5
+            }
+          ],
+          "pattern_label": [],
+          "share": 1,
+          "source": "Others",
+          "source_key": 73,
+          "video_info": {
+            "vid": "v12044gd0000d8erq07og65h1cq991gg",
+            "duration": 89.767,
+            "cover": "https://p16-common-sign.tiktokcdn.com/tos-maliva-p-0068c799-us/oIbqBdvfEAiFpgvAOgrQHCF5R0mkDDLiEfvQDS~tplv-noop.image?dr=18692&refresh_token=2cdb79e2&x-expires=1781231880&x-signature=W%2BBTq1VGRRaNnIuMGUpWWSgmOoo%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v12044gd0000d8erq07og65h1cq991gg",
+            "video_url": {
+              "540p": "https://v16m-default.tiktokcdn.com/3e7ec770348dbc627fc02ea1e8417c25/6a2b7108/video/tos/maliva/tos-maliva-ve-0068c799-us/oIN2GPIRgHAUBHOeNfLk2HBSERoJeIALGC3jAE/?a=0&bti=NTU4QDM1NGA%3D&&bt=315&ft=cApXJCz7ThWHKnz9LGZmo0P&mime_type=video_mp4&rc=Omk6ZWQ7Nzc7OGY8PGVnOkBpajQ8Zms5cjN1OzMzZzczNEBgNDAzXl9hXjMxLzEvXjFiYSNkNm4uMmQ0bmJhLS1kMS9zcw%3D%3D&vvpl=1&l=20260612043631BE40574FD5FFAA863321&btag=e00090000",
+              "720p": "https://v16m-default.tiktokcdn.com/9f16ea869602069b9fdad27dc113cb48/6a2b7108/video/tos/maliva/tos-maliva-ve-0068c799-us/ooEipQa9HbhJ4ChzASIngUPhBAdXiABIvxU2E/?a=0&bti=NTU4QDM1NGA%3D&&bt=877&ft=cApXJCz7ThWHKnz9LGZmo0P&mime_type=video_mp4&rc=ZTg3OTQ0NTQzZGVpNWg6NkBpajQ8Zms5cjN1OzMzZzczNEBhNC0yMDViNi8xLV9hX2AuYSNkNm4uMmQ0bmJhLS1kMS9zcw%3D%3D&vvpl=1&l=20260612043631BE40574FD5FFAA863321&btag=e00090000"
+            },
+            "width": 720,
+            "height": 1280
+          },
+          "voice_over": false,
+          "creative_center_url": "https://ads.tiktok.com/business/creativecenter/topads/7646829987799334920/pc/en",
+          "detail_analysis": null,
+          "interactive_time_analysis": {
+            "ctr": {
+              "metric": "retain_ctr",
+              "analysis": [
+                {
+                  "second": 0,
+                  "value": 0.048321828136158054
+                },
+                {
+                  "second": 1,
+                  "value": 1
+                },
+                {
+                  "second": 2,
+                  "value": 0.49464413234944066
+                },
+                {
+                  "second": 3,
+                  "value": 0.4746488931206856
+                },
+                {
+                  "second": 4,
+                  "value": 0.5448702689835754
+                },
+                {
+                  "second": 5,
+                  "value": 0.26803142109021666
+                },
+                {
+                  "second": 6,
+                  "value": 0.08521780528445608
+                },
+                {
+                  "second": 7,
+                  "value": 0.20614139490597477
+                },
+                {
+                  "second": 8,
+                  "value": 0
+                },
+                {
+                  "second": 9,
+                  "value": 0.13234944060937873
+                },
+                {
+                  "second": 10,
+                  "value": 0
+                },
+                {
+                  "second": 11,
+                  "value": 0
+                },
+                {
+                  "second": 12,
+                  "value": 0.1685313020709355
+                },
+                {
+                  "second": 13,
+                  "value": 0.17900499880980722
+                },
+                {
+                  "second": 14,
+                  "value": 0
+                },
+                {
+                  "second": 15,
+                  "value": 0.19947631516305642
+                },
+                {
+                  "second": 16,
+                  "value": 0
+                },
+                {
+                  "second": 17,
+                  "value": 0
+                },
+                {
+                  "second": 18,
+                  "value": 0
+                },
+                {
+                  "second": 19,
+                  "value": 0
+                },
+                {
+                  "second": 20,
+                  "value": 0.23613425374910738
+                },
+                {
+                  "second": 21,
+                  "value": 0.4848845512973102
+                },
+                {
+                  "second": 22,
+                  "value": 0
+                },
+                {
+                  "second": 23,
+                  "value": 0
+                },
+                {
+                  "second": 24,
+                  "value": 0
+                }
+              ],
+              "duration": 91,
+              "highlight": [1, 4, 21],
+              "percentile": 0.99
+            },
+            "cvr": {
+              "metric": "retain_cvr",
+              "analysis": [
+                {
+                  "second": 0,
+                  "value": 0
+                },
+                {
+                  "second": 1,
+                  "value": 0
+                },
+                {
+                  "second": 2,
+                  "value": 0
+                },
+                {
+                  "second": 3,
+                  "value": 0
+                },
+                {
+                  "second": 4,
+                  "value": 0
+                }
+              ],
+              "duration": 91,
+              "highlight": [],
+              "percentile": 0.99
+            },
+            "clicks": {
+              "metric": "click_cnt",
+              "analysis": [
+                {
+                  "second": 0,
+                  "value": 0.2631578947368421
+                },
+                {
+                  "second": 1,
+                  "value": 1
+                },
+                {
+                  "second": 2,
+                  "value": 0.15789473684210525
+                },
+                {
+                  "second": 3,
+                  "value": 0.08187134502923976
+                },
+                {
+                  "second": 4,
+                  "value": 0.06432748538011696
+                },
+                {
+                  "second": 5,
+                  "value": 0.023391812865497075
+                },
+                {
+                  "second": 6,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 7,
+                  "value": 0.011695906432748537
+                },
+                {
+                  "second": 8,
+                  "value": 0
+                },
+                {
+                  "second": 9,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 10,
+                  "value": 0
+                },
+                {
+                  "second": 11,
+                  "value": 0
+                },
+                {
+                  "second": 12,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 13,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 14,
+                  "value": 0
+                },
+                {
+                  "second": 15,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 16,
+                  "value": 0
+                },
+                {
+                  "second": 17,
+                  "value": 0
+                },
+                {
+                  "second": 18,
+                  "value": 0
+                },
+                {
+                  "second": 19,
+                  "value": 0
+                },
+                {
+                  "second": 20,
+                  "value": 0.005847953216374269
+                },
+                {
+                  "second": 21,
+                  "value": 0.011695906432748537
+                },
+                {
+                  "second": 22,
+                  "value": 0
+                }
+              ],
+              "duration": 91,
+              "highlight": [1, 7, 21],
+              "percentile": 0.99
+            },
+            "conversion": {
+              "metric": "convert_cnt",
+              "analysis": [
+                {
+                  "second": 0,
+                  "value": 0
+                },
+                {
+                  "second": 1,
+                  "value": 0
+                },
+                {
+                  "second": 2,
+                  "value": 0
+                },
+                {
+                  "second": 3,
+                  "value": 0
+                },
+                {
+                  "second": 4,
+                  "value": 0
+                },
+                {
+                  "second": 5,
+                  "value": 0
+                },
+                {
+                  "second": 25,
+                  "value": 0
+                }
+              ],
+              "duration": 91,
+              "highlight": [],
+              "percentile": 0.99
+            },
+            "remain": {
+              "metric": "play_retain_cnt",
+              "analysis": [
+                {
+                  "second": 0,
+                  "value": 1
+                },
+                {
+                  "second": 1,
+                  "value": 0.18371980698135268
+                },
+                {
+                  "second": 2,
+                  "value": 0.05865040422871536
+                },
+                {
+                  "second": 3,
+                  "value": 0.031688281204154685
+                },
+                {
+                  "second": 4,
+                  "value": 0.021694284824382824
+                }
+              ],
+              "duration": 91,
+              "highlight": [],
+              "percentile": 0.99
+            }
+          },
+          "recommended_for_you": [
+            {
+              "ad_title": "Adımlarınıza eğlence katmaya hazır mısınız? \"Hiç böyle çorap görmüş müydünüz?\" diyoruz ve iddiamızı ortaya koyuyoruz! ​Giyimkent Outlet İndirim Çadırı'nda çorap modasına yepyeni bir boyut getirdik. Sevdiğiniz popüler kültür ve kült anime karakterlerini, kolları hareket edebilen bu özel 3 boyutlu tasarım çoraplarla tarzınıza taşıyın.  İster günlük kombinlerinize eğlenceli bir dokunuş yapın, ister arkadaşlarınıza tebessüm ettirecek harika bir hediye seçin. Videomuzdaki gibi ister halay çektirin, ister horon teptirin; seçim sizin! ​Bu benzersiz ve eğlenceli tasarım çoraplarda dev fırsat: 2 Adet Sadece 100 TL! Favori karakterleriniz tükenmeden sizleri de Esenler'deki Giyimkent Outlet indirim çadırımıza bekliyoruz. Adresimiz: Oruçreis mah. Giyimkent Caddesi No:5 Esenler/İstanbul M7 Metro Hattı Giyimkent durağı önü. Hafta içi 10:00 ile 19:00 Hafta Sonu 10:00 - 20:00 Saatleri Arasında açıktır. #alışverişfestivali #kampanya #outlet #giyimkent ",
+              "brand_name": "",
+              "cost": 0,
+              "ctr": 0.63,
+              "favorite": false,
+              "id": "7644102379697602567",
+              "industry_key": "label_22108000000",
+              "is_search": false,
+              "like": 127,
+              "objective_key": "campaign_objective_reach",
+              "video_info": {
+                "vid": "v1c044g50000d86qrfnog65v7nuvf30g",
+                "duration": 13.213,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0037/ogCtJD4GUCr8GavLIfI1jAQ9IDvNeGEAfjQgg9~tplv-noop.image?dr=18692&refresh_token=fc9b28a3&x-expires=1781231805&x-signature=zYq%2F3BQnXoM8CMFBFKDON6lhPBs%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v1c044g50000d86qrfnog65v7nuvf30g",
+                "video_url": {
+                  "720p": "https://v16m-default.tiktokcdn.com/1342656e028b133716a1e892a89e214a/6a2b70bd/video/tos/alisg/tos-alisg-pve-0037c001/os3NtUfeIHH1ALjc3Q4IWADrx9BGCBG8IEgejj/?a=0&bti=NTU4QDM1NGA%3D&&bt=837&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ZDY4NTppZjg4ZWY6Nzc2NEBpajZ5cXk5cml0OzMzODczNEAwYi41YWMwNWMxYGEyM2IyYSMtY3I0MmRrbzNhLS1kMWBzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000"
+                },
+                "width": 576,
+                "height": 1024
+              }
+            },
+            {
+              "ad_title": "O meşhur duruş Trendyol'da! W-010 yelekli takımın fiyatını görenler inanamadı. Bitmeden bak! ",
+              "brand_name": "",
+              "cost": 0,
+              "ctr": 0.55,
+              "favorite": false,
+              "id": "7637828811991810069",
+              "industry_key": "label_22108000000",
+              "is_search": false,
+              "like": 115,
+              "objective_key": "campaign_objective_traffic",
+              "video_info": {
+                "vid": "v10033g50000d7vgcfnog65lu32nt9gg",
+                "duration": 51.1,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oMIxeMAMnFDvMA1WQ3AgdAhhMGve8f0Ai2AHf9~tplv-noop.image?dr=18692&refresh_token=10c04573&x-expires=1781231843&x-signature=duleOVhUzhXr6QjZB3mFkGF%2F6CU%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v10033g50000d7vgcfnog65lu32nt9gg",
+                "video_url": {
+                  "1080p": "https://v16m-default.tiktokcdn.com/32d73d07c16e4f471e7b5d8bb918c0c3/6a2b70e3/video/tos/alisg/tos-alisg-ve-0051c001-sg/oM2FmLGUBSPePzfFmneAAcAeUigMRcRmGgCBIA/?a=0&bti=NTU4QDM1NGA%3D&&bt=3708&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=PDk0ZjZmPGY2aTNoZGk8ZEBpajxxNm85cmlqOjMzODYzNEBjXy9jL2AyNS0xNDVhY2EtYSNkcS9yMmRrYHNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e00088000",
+                  "360p": "https://v16m-default.tiktokcdn.com/a1876edb7df21fac9d98481f2143b9bb/6a2b70e3/video/tos/alisg/tos-alisg-ve-0051c001-sg/oEg7C2FnlffBmLR3zcfGQAAMABGeAPFPmRQSIg/?a=0&bti=NTU4QDM1NGA%3D&&bt=651&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=aWRlOWVpPGhpNThpPGU7M0BpajxxNm85cmlqOjMzODYzNEA0YGIzXmJjNi0xYTUuMy00YSNkcS9yMmRrYHNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e00088000",
+                  "480p": "https://v16m-default.tiktokcdn.com/b9146ce3b0343095acedca05c3b1dbfe/6a2b70e3/video/tos/alisg/tos-alisg-ve-0051c001-sg/o4FoABBf8LXYFMgAgnIGzQecRfbQAmmSGAfPR2/?a=0&bti=NTU4QDM1NGA%3D&&bt=1001&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=OWg7OTg2OzVkNTg7PDY3OkBpajxxNm85cmlqOjMzODYzNEBiYDQuLV5eNmAxLS8wLzMyYSNkcS9yMmRrYHNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e00088000",
+                  "540p": "https://v16m-default.tiktokcdn.com/23c3f5d3b8b994d3139eaadd322be6cf/6a2b70e3/video/tos/alisg/tos-alisg-ve-0051c001-sg/okiTaSTTRAM5gb0hAQFufBgDHfpgIQwEDGCvfI/?a=0&bti=NTU4QDM1NGA%3D&&bt=1378&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=aDZlNzY6ZGc2Nzk5ODg3O0BpajxxNm85cmlqOjMzODYzNEA2Ni4yYS8zNWExMy5fXy8vYSNkcS9yMmRrYHNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e00088000",
+                  "720p": "https://v16m-default.tiktokcdn.com/e4d4f3ab44663c803398debfc23dc234/6a2b70e3/video/tos/alisg/tos-alisg-ve-0051c001-sg/owgMlfBfKXi5AFAtMnmP2rAjmQA18GCMi8EeMf/?a=0&bti=NTU4QDM1NGA%3D&&bt=1998&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=Ojk4ZzU6NTY7aTUzODw7ZEBpajxxNm85cmlqOjMzODYzNEBfLzUtLjBiNTAxL2MxLWJhYSNkcS9yMmRrYHNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e00088000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            },
+            {
+              "ad_title": "5 ADET GÖMLEK 1499 TL ÜCRETSİZ ŞEFFAF KAERGO VE KAPIDA ÖDEME İMKANIYLA SATIŞTA",
+              "brand_name": "Not Mention",
+              "cost": 0,
+              "ctr": 0.69,
+              "favorite": false,
+              "id": "7638003104369262599",
+              "industry_key": "label_22108000000",
+              "is_search": false,
+              "like": 42,
+              "objective_key": "campaign_objective_conversion",
+              "video_info": {
+                "vid": "v14033g50000d85fgc7og65oen6roig0",
+                "duration": 22.617,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oEAgzCUDqBewlK4FEkzvwAI6DBtVfCBg5NQDgw~tplv-noop.image?dr=18692&refresh_token=e512f622&x-expires=1781231814&x-signature=yAU5GchbV13nDqBVB4pVb1cJOts%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v14033g50000d85fgc7og65oen6roig0",
+                "video_url": {
+                  "1080p": "https://v16m-default.tiktokcdn.com/51d1205b8401a39117202ba794525941/6a2b70c6/video/tos/alisg/tos-alisg-ve-0051c001-sg/oQAchtKPfffR2tfGypfY0ABZAYM4ADTnhiIUgo/?a=0&bti=NTU4QDM1NGA%3D&&bt=3288&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ODZmNWUzPGhlaGY5NTVoM0BpM2x1cXI5cmZpOzMzODYzNEAvMWFiYDE1NS0xMjMtMTUwYSNkbDNiMmQ0ZDJhLS1kMDFzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b8000",
+                  "360p": "https://v16m-default.tiktokcdn.com/d8f4a417a1de53ee1475ed8c9feadbc2/6a2b70c6/video/tos/alisg/tos-alisg-ve-0051c001-sg/osp2AAAYPKoyYtftgLeoXAATZMhf4fmAUti5fD/?a=0&bti=NTU4QDM1NGA%3D&&bt=541&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ZWg8aGg0OmU8ZzxoOWdnOEBpM2x1cXI5cmZpOzMzODYzNEA1YC0uMDRgNi8xMzM0LzEzYSNkbDNiMmQ0ZDJhLS1kMDFzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b8000",
+                  "480p": "https://v16m-default.tiktokcdn.com/dd5f5f235237a87d33ae0d1bc7ea0c1e/6a2b70c6/video/tos/alisg/tos-alisg-ve-0051c001-sg/oQ5PQKFpXaggU2YfDgDAINfubSTAoCXGE6Ekfv/?a=0&bti=NTU4QDM1NGA%3D&&bt=790&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ZDVpNGc4OGhlM2Y4ZGVnPEBpM2x1cXI5cmZpOzMzODYzNEAuLTRgLzRjNTQxYTY1MzMxYSNkbDNiMmQ0ZDJhLS1kMDFzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b8000",
+                  "540p": "https://v16m-default.tiktokcdn.com/d374c16cd478aabbdf5d880ab37160d0/6a2b70c6/video/tos/alisg/tos-alisg-ve-0051c001-sg/oofbgAQMpJ8Gf5rAon0fMsUR5LWKq2AfQBFwUA/?a=0&bti=NTU4QDM1NGA%3D&&bt=1055&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=MzQ5Zjs3Ozs3ZDM5aTg8OEBpM2x1cXI5cmZpOzMzODYzNEBfYWEwLjU2Xy4xMjQ2Ly8tYSNkbDNiMmQ0ZDJhLS1kMDFzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b8000",
+                  "720p": "https://v16m-default.tiktokcdn.com/aed51190bc179e4093939cc438f01338/6a2b70c6/video/tos/alisg/tos-alisg-ve-0051c001-sg/oAMQFBgAADAWUQ0oft2s5f8q0bM0GFRRfA5nJf/?a=0&bti=NTU4QDM1NGA%3D&&bt=1614&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=aDc2OGc4O2Y1Nzs0aDY7M0BpM2x1cXI5cmZpOzMzODYzNEAuYjQtXmMtNjUxYDRgMi0uYSNkbDNiMmQ0ZDJhLS1kMDFzcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b8000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            },
+            {
+              "ad_title": "4 Adet Cepoli Polo Yaka T-Shirt 1500 TL",
+              "brand_name": "",
+              "cost": 0,
+              "ctr": 0.74,
+              "favorite": false,
+              "id": "7646715882820796437",
+              "industry_key": "label_22108000000",
+              "is_search": false,
+              "like": 105,
+              "objective_key": "campaign_objective_conversion",
+              "video_info": {
+                "vid": "v10033g50000d8fa0uvog65g124in0kg",
+                "duration": 13.634,
+                "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/ocsgRBo7AEBDqgQqNuSBBXJkHEQGIDFeGAbHfD~tplv-noop.image?dr=18692&refresh_token=42d1243f&x-expires=1781231805&x-signature=0yuQi8dn6Ucayr238Aussxuerm8%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v10033g50000d8fa0uvog65g124in0kg",
+                "video_url": {
+                  "1080p": "https://v16m-default.tiktokcdn.com/23565c66c15cb9676fa863ae03beef30/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oIDBGUSCe88IGbLblhIWdkAgllAeUnDet4PQ6G/?a=0&bti=NTU4QDM1NGA%3D&&bt=415&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=Ozc3OGQ6Ozc1NzY5Ojc0NEBpajNsNWo5cnhkOzMzODYzNEAtYy0uX15iNjExMWFeMmM1YSNoazEuMmRzLWNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "360p": "https://v16m-default.tiktokcdn.com/9b50d0b68e5e8f424d39d0c1ca3f562c/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oYeBAPGGyIUzLI885geCbenW6DhalSGlAIDUFQ/?a=0&bti=NTU4QDM1NGA%3D&&bt=127&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=NDw3PDloZTNoPDc5NzU1Z0BpajNsNWo5cnhkOzMzODYzNEBfNGBhLjIvX2MxYDY0LjAuYSNoazEuMmRzLWNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "480p": "https://v16m-default.tiktokcdn.com/64521438c041873d0563174e26d30f38/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oIBL0IUUUQDfghl9CDLIA8GnGPAb8pbIQee8gS/?a=0&bti=NTU4QDM1NGA%3D&&bt=156&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ODc0PDc2NTNnaDZkNzwzaUBpajNsNWo5cnhkOzMzODYzNEAvLzMtYV8uNTMxMGFiMGIyYSNoazEuMmRzLWNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "540p": "https://v16m-default.tiktokcdn.com/2f2c01fe3dcd17b2b2425660e7c552c9/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/okgCPlBAASlG9eDbJuRb0ne8GhDL9LIUAQUI8e/?a=0&bti=NTU4QDM1NGA%3D&&bt=182&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=ZDw4ZzxkO2dkNzM6OTU7PEBpajNsNWo5cnhkOzMzODYzNEAxMF8yXjU1XzAxNTQvY15eYSNoazEuMmRzLWNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "720p": "https://v16m-default.tiktokcdn.com/7baa70f969b9d4ac75a9ca873749571c/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/okpn8DNUQIhlPeCDSLUG9G1CPIaBg8FeAAeLYb/?a=0&bti=NTU4QDM1NGA%3D&&bt=244&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=N2hnZDg5OTdlPDw5NDo0PEBpajNsNWo5cnhkOzMzODYzNEBiMV40MzBiX2MxMjFfLmA2YSNoazEuMmRzLWNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            },
+            {
+              "ad_title": "4 Adet Cepoli Polo Yaka T-Shirt 1500 TL",
+              "brand_name": "",
+              "cost": 0,
+              "ctr": 0.73,
+              "favorite": false,
+              "id": "7646715904160579605",
+              "industry_key": "label_22108000000",
+              "is_search": false,
+              "like": 76,
+              "objective_key": "campaign_objective_conversion",
+              "video_info": {
+                "vid": "v10033g50000d8fa18nog65jnsubnjc0",
+                "duration": 13.634,
+                "cover": "https://p19-common-sign.tiktokcdn.com/tos-alisg-p-0051c001-sg/oM8SQwgbCGLUfQG3DcALmPKzIeolUFICnDFOeA~tplv-noop.image?dr=18692&refresh_token=6e525bb1&x-expires=1781231805&x-signature=hf06OsNvYbq67o8Fpu0rJD4w1Dk%3D&t=9276707c&ps=14f1eb3e&shp=9e36835a&shcp=317596d8&idc=my&VideoID=v10033g50000d8fa18nog65jnsubnjc0",
+                "video_url": {
+                  "1080p": "https://v16m-default.tiktokcdn.com/0f6e12b06199e2a0d76d5e32f1407346/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oAgQZlr6QRqGgZPCmetM8Deb8nAWTQSA76lUIe/?a=0&bti=NTU4QDM1NGA%3D&&bt=374&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=Z2ZkODZkNDU4NzQ3OTc7N0BpM21ldm05cjtkOzMzODYzNEBhMzFfYi0xNTQxXy8wMjUyYSNga3JrMmRrLmNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "360p": "https://v16m-default.tiktokcdn.com/340c3ce7666b561533e6e23902e2a6ca/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/o8mebSetUQg5GUDqlCPWPg8QIZMGRjArnA826e/?a=0&bti=NTU4QDM1NGA%3D&&bt=129&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=aTw2OmY5ZTQzaWQ0Z2U3M0BpM21ldm05cjtkOzMzODYzNEBiNC5iMi4vXjYxL18uLV8yYSNga3JrMmRrLmNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "480p": "https://v16m-default.tiktokcdn.com/7bb0fe7578656fca22492c4de8d2feb5/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oYLn8qIeQQmZmjWDSlUGeM6CPIiegrx8AARWob/?a=0&bti=NTU4QDM1NGA%3D&&bt=156&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=NmQzNzloZDU3MzY8aTtlOEBpM21ldm05cjtkOzMzODYzNEBgYi4tNjBiXzIxNF4xY2MzYSNga3JrMmRrLmNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "540p": "https://v16m-default.tiktokcdn.com/7300bbefcb6c3d80c3c1f03f3f843dba/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oIRrcnMnQWA8IlCPeJQgklGlDqSp8bZeUe6AAm/?a=0&bti=NTU4QDM1NGA%3D&&bt=180&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=NWdnOGlmZmk6ZWk8M2VpNEBpM21ldm05cjtkOzMzODYzNEAyNl9gXjMvXi4xYzYtYy0wYSNga3JrMmRrLmNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000",
+                  "720p": "https://v16m-default.tiktokcdn.com/3be4a466e5d7e2684099a0f7535d979d/6a2b70bd/video/tos/alisg/tos-alisg-ve-0051c001-sg/oAMmene8bUQRYgDOCZMer8WSZ6KPAAqQR6lXIG/?a=0&bti=NTU4QDM1NGA%3D&&bt=232&ft=cApXJCz7ThWHanz9LGZmo0P&mime_type=video_mp4&rc=OmU2Z2hkZztmPGVmOTU3N0BpM21ldm05cjtkOzMzODYzNEBgYjYtMzAyNTUxX19jMS0wYSNga3JrMmRrLmNhLS1kMC1zcw%3D%3D&vvpl=1&l=20260612043632D3452D043274878B2384&btag=e000b0000"
+                },
+                "width": 720,
+                "height": 1280
+              }
+            }
+          ]
+        },
+      },
+    ],
+  },
+  {
     id: "googleAdLibrary",
     name: "Google Ad Library",
     description:
