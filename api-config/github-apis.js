@@ -195,6 +195,67 @@ export const githubApis = {
       },
     },
     {
+      name: "Pull Requests",
+      method: "GET",
+      description:
+        "Get public pull requests authored by a GitHub user. Filter by created date with since and until.",
+      fullDescription:
+        "Searches public GitHub pull requests authored by a user using GitHub's public search index. Pass username, handle, or url. Optional since and until filters use YYYY-MM-DD created dates. Results include the PR title, repo, state, created_at, and url, sorted by newest created first.",
+      path: "/v1/github/user/pull-requests",
+      params: [
+        {
+          name: "handle",
+          type: "string",
+          required: true,
+          placeholder: "torvalds",
+          description: "GitHub username/handle of the user you want pull requests for",
+        },
+        {
+          name: "since",
+          type: "string",
+          required: false,
+          description: "Only return pull requests created on or after this date. Use YYYY-MM-DD.",
+          placeholder: "2024-01-01",
+        },
+        {
+          name: "until",
+          type: "string",
+          required: false,
+          description: "Only return pull requests created on or before this date. Use YYYY-MM-DD.",
+          placeholder: "2024-12-31",
+        },
+        {
+          name: "cursor",
+          type: "number",
+          required: false,
+          description: "Cursor from the previous response. Defaults to 1.",
+          placeholder: 1,
+        },
+      ],
+      sampleResponse: {
+        "success": true,
+        "credits_remaining": 100,
+        "pull_requests": [
+          {
+            "title": "Garmin: Report correct local time offset",
+            "repo": "subsurface/libdc",
+            "state": "closed",
+            "created_at": "2024-12-26T20:13:25Z",
+            "url": "https://github.com/subsurface/libdc/pull/69"
+          },
+          {
+            "title": "Add support for odd-sized SHA256 objects",
+            "repo": "git/git",
+            "state": "closed",
+            "created_at": "2024-08-12T17:05:24Z",
+            "url": "https://github.com/git/git/pull/1772"
+          }
+        ],
+        "cursor": 2,
+        "has_more": false
+      },
+    },
+    {
       name: "Activity",
       method: "GET",
       description:
