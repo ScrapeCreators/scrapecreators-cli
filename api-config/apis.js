@@ -2949,7 +2949,7 @@ export const apis = [
         method: "GET",
         description: "Get public Facebook profile information",
         fullDescription:
-          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true.",
+          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. If Facebook shows an 18+ or private content gate, the response is still 200 and includes isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false.",
         path: "/v1/facebook/profile",
         sampleResponse: {
           success: true,
@@ -3072,6 +3072,7 @@ export const apis = [
             },
           ],
           id: "100088017857524",
+          isPrivate: false,
           name: "Mantraindian",
           url: "https://www.facebook.com/mantraindianfolsom",
           gender: "UNKNOWN",
@@ -3128,6 +3129,26 @@ export const apis = [
           ratingCount: null,
           likeCount: 3224,
           followerCount: 3200,
+        },
+        privateResponse: {
+          success: true,
+          credits_remaining: 100,
+          url: "https://www.facebook.com/VinnysDriveBar/",
+          account_status: "private",
+          isPrivate: true,
+          message: "Profile is private",
+        },
+        errorResponseExamples: {
+          404: {
+            success: true,
+            credits_remaining: 100,
+            data: {
+              url: "https://www.facebook.com/TatnuckDrivingRangeandIceCream/",
+              accountDoesNotExist: true,
+              isPrivate: false,
+              message: "Account doesn't exist",
+            },
+          },
         },
         params: [
           {
