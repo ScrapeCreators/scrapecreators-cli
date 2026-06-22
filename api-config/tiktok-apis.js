@@ -5543,7 +5543,7 @@ export const tiktokBaseApis = {
       },
     },
     {
-      name: "TikTok Live",
+      name: "Live",
       method: "GET",
       description: "Scrapes a TikTok user's live stream",
       fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities).",
@@ -5662,7 +5662,7 @@ export const tiktokBaseApis = {
       },
     },
     {
-      name: "TikTok Live Info",
+      name: "Live Info",
       method: "GET",
       description: "Gets info for a TikTok live room, including like count.",
       fullDescription:
