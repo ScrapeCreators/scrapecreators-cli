@@ -5662,6 +5662,45 @@ export const tiktokBaseApis = {
       },
     },
     {
+      name: "TikTok Live Info",
+      method: "GET",
+      description: "Gets info for a TikTok live room, including like count.",
+      fullDescription:
+        "Gets curated room-level info for a TikTok live using TokAPI's live info endpoint. Use `/v1/tiktok/user/live` first to find the `room_id`. If you only have a TikTok handle and need the user's numeric id, use `/v1/tiktok/profile` first to get `user.id`. This endpoint is separate from `/v1/tiktok/user/live` because it uses a different upstream call and returns a smaller response with the most relevant fields: `room_id`, `like_count`, `viewer_count`, `status`, `title`, `cover_url`, and `owner`.",
+      path: "/v1/tiktok/live",
+      params: [
+        {
+          name: "room_id",
+          type: "string",
+          required: true,
+          description:
+            "TikTok live room id. Get this from `/v1/tiktok/user/live` in `liveRoomUserInfo.roomId` or `liveRoom.id` when the user is live.",
+          placeholder: "7523685855395842871",
+        },
+        {
+          name: "user_id",
+          type: "string",
+          required: true,
+          description:
+            "TikTok numeric user id for the live owner. Get this from `/v1/tiktok/profile` in `user.id`.",
+          placeholder: "6742945285876515845",
+        },
+      ],
+      sampleResponse: {
+        room_id: "7523685855395842871",
+        like_count: 4317,
+        viewer_count: 268,
+        status: "live",
+        title: "6'13 Grateful Streamer",
+        cover_url: "https://p16-webcast.tiktokcdn-us.com/webcast/cover.jpeg",
+        owner: {
+          id: "6742945285876515845",
+          username: "thejustalex",
+          display_name: "JustAlex",
+        },
+      },
+    },
+    {
       name: "Comments",
       method: "GET",
       description: "Scrapes comments from a TikTok video",
