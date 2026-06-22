@@ -5102,9 +5102,9 @@ export const apis = [
       {
         name: "Marketplace Item",
         method: "GET",
-        description: "Get a Facebook Marketplace item",
+        description: "Get a Facebook Marketplace item, including rental listing_date_text and availability_text when Facebook exposes them.",
         fullDescription:
-          "Fetches details for a Facebook Marketplace item by item id or Marketplace item URL, including title, description, price, location, condition, photos, seller, and availability flags.",
+          "Fetches details for a Facebook Marketplace item by item id or Marketplace item URL, including title, description, price, location, condition, photos, seller, and availability flags. Rental listings can include listing_date_text and availability_text from Facebook's Marketplace GraphQL response, for example 'Listed over a week ago' and 'Available now'. creation_time can still be null when Facebook does not expose an exact timestamp.",
         path: "/v1/facebook/marketplace/item",
         params: [
           {
@@ -5130,6 +5130,8 @@ export const apis = [
           "title": "Specialized Hardrock GSX - Super Clean Vintage Restomod - INCLUDES FREE TUNE UP",
           "description": "Was going to hang on to this one bc I absolutely love how it looks, but the 20” frame is just bit too large for me. Riders over 6’ would be comfy on this one. Currently in a 3x7 set up with an XT derailleur at the rear. Looks great in person. Come ride it!  These never last long. \n\nCASH ONLY, PLEASE. NEAR 183/BRAKER.  \n\n$380 OBO. \n\nKey points:\n\n- Maxxis DTH tires (26”)\n- Shimano Deore XT rear derailleur \n- Shimano front derailleur\n- vintage Specialized steel frame (20”)\n- vintage Sakae triple crankset (170mm)\n- vintage Sakae SR Custom handlebar\n- vintage Suntour stem shifter\n- vintage Shimano brakes\n- Specialized Avatar 143 saddle\n- new chain\n- fresh cables\n- fresh housing\n- fresh grease and lube\n- fresh lube in cable housings\n- fresh handlebar tape\n- drive train cleaned and lubed\n- derailluers adjusted and fine tuned\n- brakes adjusted and fine tuned\n- deep cleaning/detail\n- frame polished\n- frame waxed\n- INCLUDES ONE FREE TUNE UP\n",
           "creation_time": "2026-05-15T16:57:39.000Z",
+          "listing_date_text": null,
+          "availability_text": null,
           "location_text": "Austin, TX",
           "location": {
             "latitude": 30.401916503906,
