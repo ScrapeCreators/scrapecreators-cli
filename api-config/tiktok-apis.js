@@ -10761,6 +10761,96 @@ export const tiktokBaseApis = {
       ],
     },
     {
+      name: "Search Suggestions",
+      method: "GET",
+      description: "Gets TikTok autocomplete search suggestions for a query.",
+      fullDescription:
+        "Gets the autocomplete suggestions TikTok shows while someone is typing in search. Returns `suggestions`, a clean array of suggested search terms and the most useful metadata for each suggestion.",
+      path: "/v1/tiktok/search/suggestions",
+      sampleResponse: {
+        success: true,
+        credits_remaining: 49995926120,
+        suggestions: [
+          {
+            text: "dogs cute",
+            position: 0,
+            language: "en",
+            score: 0.011535803,
+          },
+          {
+            text: "Dogs In Snow",
+            position: 1,
+            language: "en",
+            score: 0.0013200018,
+          },
+          {
+            text: "dogs season",
+            position: 2,
+            language: "en",
+            score: 0.0013042383,
+          },
+          {
+            text: "dogs with kids",
+            position: 3,
+            language: "en",
+            score: 0.0012028236,
+          },
+          {
+            text: "dogs protecting owners",
+            position: 4,
+            language: "en",
+            score: 0.0008062465,
+          },
+          {
+            text: "dogseven",
+            position: 5,
+            language: "en",
+            score: 0.0011085697,
+          },
+          {
+            text: "Dogs Video",
+            position: 6,
+            language: "en",
+            score: 0.003553978,
+          },
+          {
+            text: "dogs edit",
+            position: 7,
+            language: "en",
+            score: 0.0014429367,
+          },
+          {
+            text: "dogs funny videos",
+            position: 8,
+            language: "en",
+            score: 0.0039043615,
+          },
+          {
+            text: "dogs eating foods",
+            position: 9,
+            language: "en",
+            score: 0.001083838,
+          },
+        ],
+      },
+      params: [
+        {
+          name: "query",
+          type: "string",
+          required: true,
+          description: "Search query to get suggestions for",
+          placeholder: "dogs",
+        },
+        {
+          name: "region",
+          type: "string",
+          required: false,
+          description: "Region code for suggestions",
+          placeholder: "US",
+        },
+      ],
+    },
+    {
       name: "Search by Hashtag",
       method: "GET",
       description: "Scrapes TikTok videos by hashtag. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
