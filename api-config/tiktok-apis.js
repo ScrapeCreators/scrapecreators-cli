@@ -223,8 +223,8 @@ export const tiktokBaseApis = {
           name: "region",
           type: "string",
           required: false,
-          placeholder: "US",
-          description: "Region (Country) you want the proxy in. Defaults to US.",
+          placeholder: "GB",
+          description: "Region (Country) you want the proxy in. Defaults to GB.",
         },
         {
           name: "trim",
