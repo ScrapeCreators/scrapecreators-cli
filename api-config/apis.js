@@ -576,10 +576,19 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get complete information about a video or short.",
+          "Get complete information about a video or short. Age-restricted videos return 403 because we only use the public logged-out YouTube source.",
         fullDescription:
-          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader.",
+          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source.",
         path: "/v1/youtube/video",
+        errorResponseExamples: {
+          403: {
+            success: false,
+            credits_remaining: 100,
+            error: "forbidden",
+            errorStatus: 403,
+            message: "This video is age restricted",
+          },
+        },
         sampleResponse: {
           success: true,
           credits_remaining: 33851527,
