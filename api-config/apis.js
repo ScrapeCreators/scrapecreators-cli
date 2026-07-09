@@ -6857,9 +6857,9 @@ export const apis = [
       {
         name: "Ad Library Search",
         method: "GET",
-        description: "Search TikTok Creative Center Top Ads by region, period, and keyword.",
+        description: "Search TikTok Creative Center Top Ads, or search TikTok public Ads Library by advertiser name.",
         fullDescription:
-          "Searches TikTok Creative Center Top Ads, the ad library page at ads.tiktok.com/business/creativecenter/inspiration/topads. Supports US and other 2-letter regions, period filters, sorting, keyword search, and cursor pagination. Returns TikTok's public top ad material objects, including ad title, metrics, video info, landing page, and pagination.",
+          "Searches TikTok Creative Center Top Ads by default. Pass advertiser_name to search TikTok's public Ads Library by advertiser name instead. Supports cursor pagination for both modes.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
@@ -6884,6 +6884,13 @@ export const apis = [
             required: false,
             description: "Optional keyword to search ad titles/content.",
             placeholder: "spotify",
+          },
+          {
+            name: "advertiser_name",
+            type: "string",
+            required: false,
+            description: "Search the public TikTok Ads Library by advertiser name. When this is passed, the endpoint uses library.tiktok.com/ads instead of Creative Center Top Ads.",
+            placeholder: "Mimesis Inc.",
           },
           {
             name: "order_by",
