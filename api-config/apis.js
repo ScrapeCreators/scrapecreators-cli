@@ -17702,6 +17702,202 @@ export const apis = [
     ],
   },
   {
+    id: "apple-music",
+    name: "Apple Music",
+    description: "Scrape Apple Music artists, songs, albums, and search results",
+    endpoints: [
+      {
+        name: "Artist",
+        method: "GET",
+        description: "Get Apple Music artist",
+        fullDescription:
+          "Retrieves public Apple Music artist details, including artwork, editorial notes, top songs, albums, music videos, playlists, and related sections.",
+        path: "/v1/apple-music/artist",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Apple Music artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "159260351",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Apple Music artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://music.apple.com/us/artist/taylor-swift/159260351",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49996588524,
+          data: {
+            id: "159260351",
+            kind: "artist",
+            name: "Taylor Swift",
+            url: "https://music.apple.com/us/artist/taylor-swift/159260351",
+            artwork: {
+              url: "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/70/30/3b/example/1200x1200bb.jpg",
+              width: 5998,
+              height: 5998,
+            },
+            editorial_notes: "The country world feigned surprise when Taylor Swift formally embraced pop...",
+            top_songs: [
+              {
+                id: "1833328840",
+                kind: "song",
+                title: "The Fate of Ophelia",
+                artist_name: "Taylor Swift",
+                url: "https://music.apple.com/us/album/the-fate-of-ophelia/1833328839?i=1833328840",
+                duration_ms: 226000,
+              },
+            ],
+            albums: [
+              {
+                id: "1468058165",
+                kind: "album",
+                title: "Lover",
+                subtitle: "Taylor Swift",
+                track_count: 18,
+                url: "https://music.apple.com/us/album/lover/1468058165",
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: "Album",
+        method: "GET",
+        description: "Get Apple Music album",
+        fullDescription:
+          "Retrieves public Apple Music album details, including title, artist, artwork, release info, tracks, and more by the artist.",
+        path: "/v1/apple-music/album",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Apple Music album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "1468058165",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Apple Music album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://music.apple.com/us/album/lover/1468058165",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49996588523,
+          data: {
+            id: "1468058165",
+            kind: "album",
+            title: "Lover",
+            artist_name: "Taylor Swift",
+            artist_url: "https://music.apple.com/us/artist/taylor-swift/159260351",
+            url: "https://music.apple.com/us/album/lover/1468058165",
+            track_count: 18,
+            release_info: "August 23, 2019\n18 songs, 1 hour 1 minute\n℗ 2019 Taylor Swift",
+            tracks: [
+              {
+                id: "1468058169",
+                kind: "song",
+                title: "I Forgot That You Existed",
+                duration_ms: 170651,
+                track_number: 1,
+                album_id: "1468058165",
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: "Track",
+        method: "GET",
+        description: "Get Apple Music track",
+        fullDescription:
+          "Retrieves public Apple Music song details by id or URL. Album track URLs with an i= song id are supported.",
+        path: "/v1/apple-music/track",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Apple Music song id. Some songs have standalone song URLs; for album tracks, use the url parameter.",
+            placeholder: "1833328840",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Apple Music song URL or album track URL.",
+            placeholder: "https://music.apple.com/us/album/lover/1468058165?i=1468058169",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49996588522,
+          data: {
+            id: "1468058169",
+            kind: "song",
+            title: "I Forgot That You Existed",
+            album: null,
+            url: "https://music.apple.com/us/album/i-forgot-that-you-existed/1468058165?i=1468058169",
+            duration_ms: 170651,
+            track_number: 1,
+            artist_name: null,
+            explicit: false,
+          },
+        },
+      },
+      {
+        name: "Search",
+        method: "GET",
+        description: "Search Apple Music",
+        fullDescription:
+          "Searches Apple Music and returns public result sections for artists, albums, songs, playlists, stations, and music videos. Use type=song, album, artist, playlist, or all.",
+        path: "/v1/apple-music/search",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Search query",
+            placeholder: "taylor swift",
+          },
+          {
+            name: "type",
+            type: "string",
+            required: false,
+            description: "Result type to return. Use all, song, album, artist, playlist, station, music_video, or radio_episode.",
+            placeholder: "song",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49996588521,
+          data: {
+            query: "taylor swift",
+            type: "song",
+            results: [
+              {
+                id: "1833328840",
+                kind: "song",
+                title: "The Fate of Ophelia",
+                artist_name: "Taylor Swift",
+                url: "https://music.apple.com/us/album/the-fate-of-ophelia/1833328839?i=1833328840",
+                duration_ms: 226000,
+              },
+            ],
+          },
+        },
+      },
+    ],
+  },
+  {
     id: "spotify",
     name: "Spotify",
     description: "Scrape Spotify artists, songs, and albums",
