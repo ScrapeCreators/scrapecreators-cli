@@ -32722,7 +32722,7 @@ export const apis = [
   {
     id: "snapchat",
     name: "Snapchat",
-    description: "Scrape Snapchat user profiles and thier stories",
+    description: "Scrape Snapchat user profiles and their stories",
     endpoints: [
       {
         name: "User Profile",
@@ -33077,6 +33077,120 @@ export const apis = [
             required: true,
             description: "Snapchat username",
             placeholder: "zane",
+          },
+        ],
+      },
+      {
+        name: "Spotlight by Link",
+        method: "GET",
+        description: "Get Snapchat Spotlight video data by URL",
+        fullDescription:
+          "Fetches public data for a Snapchat Spotlight video by URL. Returns the snap id, description, creator, engagement counts, thumbnail, and content URL when Snapchat exposes them publicly.",
+        path: "/v1/snapchat/spotlight",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49997863208,
+          spotlight: {
+            snapId:
+              "W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+            storyId:
+              "W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+            description:
+              "This is genuinely heartbreaking 💔 #relationship#funny#brainrot",
+            llmTitle: null,
+            llmDescription: null,
+            viewCount: 251845,
+            shareCount: 3807,
+            commentCount: 803,
+            engagementStats: {
+              viewCount: 251845,
+              shareCount: 3807,
+              commentCount: 803,
+              boostCount: 16203,
+              recommendCount: 2670,
+            },
+            creator: {
+              $case: "personCreator",
+              personCreator: {
+                username: "lilah4823",
+                url: "https://www.snapchat.com/@lilah4823",
+                name: "lilah",
+                followerCount: "0",
+                websiteUrl: "",
+              },
+            },
+            durationMs: 56939,
+            width: 540,
+            height: 960,
+            uploadDateMs: 1782915537473,
+            thumbnailUrl:
+              "https://cf-st.sc-cdn.net/d/TXqor3n6nwYvf2nDyAVlN.256.IRZXSOY?mo=GkcaDRoAGgAyAQRIA1AuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+            contentUrl:
+              "https://cf-st.sc-cdn.net/d/TXqor3n6nwYvf2nDyAVlN.1034.IRZXSOY?mo=GkAaDRoAGgAyAQRIA1AuYAGiAS4IiggSHAoaIAFKEQoMY0Y9R0RFR0M5OU8uEPQDWgMQsz8iCxIAKgdJUlpYU09Z&uc=46",
+            raw: {},
+          },
+          linkPreview: {},
+          pageMetadata: {},
+          videoMetadata: {},
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Snapchat Spotlight URL.",
+            placeholder:
+              "https://www.snapchat.com/@lilah4823/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+          },
+        ],
+      },
+      {
+        name: "Spotlight Comments by Link",
+        method: "GET",
+        description: "Get comments from a Snapchat Spotlight URL",
+        fullDescription:
+          "Fetches public comments from Snapchat's Spotlight comments API by URL. Returns the snap id, comments, a cursor for the next page, and hasMore. Pass the returned cursor back as the cursor param to load more comments.",
+        path: "/v1/snapchat/spotlight/comments",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49997863207,
+          snapId:
+            "W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+          comments: [
+            {
+              replyText:
+                "Guys who can't even read a paragraph are hilarious 😭 get yourself a better man",
+              replyPosterDisplayName: "🎸Callie✌️",
+              replyTimestampMs: "1782948905027",
+              threadedReplyCount: 152,
+              reactCounts: [
+                {
+                  reactTypeId: 1,
+                  reactCount: 829,
+                },
+              ],
+            },
+          ],
+          cursor:
+            "CpMCEpACQ3NjQkNnZ0tBbkp6RWdJSUJBb05DZ0owY3hJSENLZjA1TW55TXhLbkFXb1hjMzVrWld4MFlTMW1iM0pqWlMxdVlXMDFMWEJ5YjJSeWl3RUxFaEJUY0c5MGJHbG5hSFJTWlhCc2FXVnpJanRYTjE5RlJHeFlWMVJDYVZoQlJVVnVhVTV2VFZCM1FVRlpXVEp3ZGxwdVpEQmFXRlp0UVZvNFptZEhPSEJCV2pobVppMWZTVUZCUVVGQlVRd0xFaEJUY0c5MGJHbG5hSFJTWlhCc2FXVnpJaVJpWkRKaU1XSTNNeTAzWkRCa0xUUXlOV010T0dKbU1DMDBNVFU1T0RneU1XSTRNekVNR0FBZ0FRPT0SgwISgAJDcjBCQ2cwS0FuUnpFZ2NJNi1LODhmUXpFcWNCYWhkemZtUmxiSFJoTFdadmNtTmxMVzVoYlRVdGNISnZaSEtMQVFzU0VGTndiM1JzYVdkb2RGSmxjR3hwWlhNaU8xYzNYMFZFYkZoWFZFSnBXRUZGUlc1cFRtOU5VSGRCUVZsWk1uQjJXbTVrTUZwWVZtMUJXamhtWjBjNGNFRmFPR1ptTFY5SlFVRkJRVUZSREFzU0VGTndiM1JzYVdkb2RGSmxjR3hwWlhNaUpEYzFNbVZqWWpObUxUSmhZMkV0TkdVM1l5MDVaakF6TFdZNFpUVm1ZVEZrTmpVNVlnd1lBQ0FC",
+          hasMore: true,
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Snapchat Spotlight URL.",
+            placeholder:
+              "https://www.snapchat.com/@lilah4823/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Pagination cursor from the previous response.",
+            placeholder:
+              "CpMCEpACQ3NjQkNnZ0tBbkp6RWdJSUJBb05DZ0owY3hJSENLZjA1TW55...",
           },
         ],
       },
