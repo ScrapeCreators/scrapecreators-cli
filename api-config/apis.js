@@ -6959,7 +6959,7 @@ export const apis = [
             name: "limit",
             type: "number",
             required: false,
-            description: "Number of ads to return, max 50. Defaults to 20.",
+            description: "Number of ads to return, max 20. Defaults to 20.",
             placeholder: "20",
           },
         ],
