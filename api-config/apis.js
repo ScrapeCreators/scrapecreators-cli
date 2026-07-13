@@ -6955,13 +6955,6 @@ export const apis = [
             description: "Page number to fetch. Use the cursor returned from the previous response, like 3 for page 3.",
             placeholder: "3",
           },
-          {
-            name: "limit",
-            type: "number",
-            required: false,
-            description: "Number of ads to return, max 20. Defaults to 20.",
-            placeholder: "20",
-          },
         ],
         sampleResponse: {
           "success": true,
