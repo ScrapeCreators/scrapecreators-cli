@@ -184,8 +184,8 @@ export const tiktokBaseApis = {
       name: "Profile Videos",
       method: "GET",
       description:
-        "Scrapes videos from a TikTok profile. Pass cursor to get more videos.",
-      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response.",
+        "Scrapes videos from a TikTok profile. Pass cursor to get more videos. If a profile should have videos but returns none, try `region=US` or another relevant region.",
+      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response. If a profile should have videos but returns none, try `region=US` or another relevant two-letter country code.",
       path: "/v3/tiktok/profile/videos",
       paginationField: "max_cursor",
       params: [
@@ -224,7 +224,8 @@ export const tiktokBaseApis = {
           type: "string",
           required: false,
           placeholder: "GB",
-          description: "Region (Country) you want the proxy in. Defaults to GB.",
+          description:
+            "Region (country) for the proxy. Defaults to GB. If a profile should have videos but returns none, try US or another relevant two-letter country code.",
         },
         {
           name: "trim",
