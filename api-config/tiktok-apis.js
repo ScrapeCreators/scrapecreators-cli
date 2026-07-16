@@ -16006,6 +16006,7 @@ export const tiktokBaseApis = {
     //     ],
     //   },
     // },
+    /* Retired July 16, 2026: TikTok no longer makes this data available.
     {
       name: "Get popular hashtags",
       method: "GET",
@@ -16177,6 +16178,7 @@ export const tiktokBaseApis = {
         },
       },
     },
+    */
     {
       name: "Get Song Details",
       method: "GET",
