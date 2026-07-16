@@ -7027,17 +7027,17 @@ export const apis = [
       {
         name: "Ad Library Ad",
         method: "GET",
-        description: "Gets details for a TikTok Creative Center Top Ad.",
+        description: "Gets details for a TikTok ad from either Creative Center Top Ads or TikTok's public Ads Library.",
         fullDescription:
-          "Fetches one TikTok Creative Center Top Ad by material/ad ID or URL. Uses the same Creative Center data behind pages like ads.tiktok.com/business/creativecenter/topads/{id}/pc/en, including title, metrics, video info, landing page, country codes, objective, industry, source, the Creative Center URL, summary/analysis, interactive time analysis graph data, and recommended-for-you ads when TikTok provides them.",
+          "Fetches one TikTok ad by ID or URL. It first checks Creative Center Top Ads (ads.tiktok.com), then TikTok's public transparency Ads Library (library.tiktok.com) when the ID is not a Top Ads material. Both sources return the same response shape. Fields TikTok does not expose for a public Ads Library ad are null, empty, or false as appropriate.",
         path: "/v1/tiktok/ad-library/ad",
         params: [
           {
             name: "ad_id",
             type: "string",
             required: true,
-            description: "TikTok Top Ads material/ad ID, or a Top Ads detail URL.",
-            placeholder: "7642386438915309575",
+            description: "Creative Center Top Ads material ID or URL, or a public Ads Library ad ID or library.tiktok.com detail URL.",
+            placeholder: "1869335220395266",
           },
         ],
         sampleResponse: {
