@@ -2958,7 +2958,7 @@ export const apis = [
         method: "GET",
         description: "Get public Facebook profile information",
         fullDescription:
-          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. If Facebook shows an 18+ or private content gate, the response is still 200 and includes isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false.",
+          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. If Facebook shows an 18+ content gate, the response is still 200 with account_status: \"age-restricted\" and isPrivate: true. If Facebook shows a private content gate, the response is still 200 with account_status: \"private\" and isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false. Set include_gated_profile=true to also return limited public fields (such as id, name, category, likeCount, profilePicSmall, and links) when a profile is gated or age-restricted. This option only affects gated/age-restricted profiles — public profiles still return the normal full response.",
         path: "/v1/facebook/profile",
         sampleResponse: {
           success: true,
@@ -3147,6 +3147,33 @@ export const apis = [
           isPrivate: true,
           message: "Profile is private",
         },
+        ageRestrictedResponse: {
+          success: true,
+          credits_remaining: 100,
+          url: "https://www.facebook.com/profile.php?id=999244349946937",
+          account_status: "age-restricted",
+          isPrivate: true,
+          message: "Profile is age restricted",
+        },
+        gatedProfileResponse: {
+          success: true,
+          credits_remaining: 298984,
+          id: "1581499185460975",
+          name: "Galopim Livros",
+          url: "https://www.facebook.com/livrosgalopim/",
+          profilePicSmall:
+            "https://scontent-phl2-1.xx.fbcdn.net/v/t39.30808-1/459791315_1253431156111407_5370275117423562096_n.jpg?stp=dst-jpg_p200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=418b77&_nc_ohc=Pi3YpShkQiYQ7kNvwEYPNxb&_nc_oc=AdrjmBEW-EsVxhFGkvcfpAoKyqM65UHc9gnY6PsWlNZdu2_nIx1mc6tK9SAVVvNgUYg&_nc_zt=24&_nc_ht=scontent-phl2-1.xx&_nc_gid=aEVhmS9KLeHxBKf28_0baA&_nc_ss=7f289&oh=00_AQBmzIQzEFDGjobJ0GwIzhko6nFrshbjeDFEUKLwK_bQIg&oe=6A652D51",
+          category: "Bookstore",
+          links: ["https://www.instagram.com/livros_galopim/"],
+          likeCount: 16576,
+          pageAlias: "livrosgalopim",
+          verification: "NOT_VERIFIED",
+          entityType: "PERSON_PROFILE",
+          igUsername: "livros_galopim",
+          igFollowerCount: 657,
+          igVerification: false,
+          pageIsDeleted: false,
+        },
         errorResponseExamples: {
           404: {
             success: true,
@@ -3172,6 +3199,14 @@ export const apis = [
             type: "string",
             required: false,
             description: "Get the business's hours",
+            placeholder: "true",
+          },
+          {
+            name: "include_gated_profile",
+            type: "string",
+            required: false,
+            description:
+              "When true, returns limited public fields for gated or age-restricted profiles. Ignored for normal public profiles — those still return the full response.",
             placeholder: "true",
           },
         ],
