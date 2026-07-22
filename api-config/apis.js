@@ -34256,3 +34256,61 @@ export const apis = [
     ],
   },
 ];
+
+// mirrors CACHEABLE_ROUTES in the api's responseCache.js — keep in sync.
+const CACHEABLE_PATHS = new Set([
+  "/v2/instagram/media/transcript",
+  "/v1/instagram/profile",
+  "/v1/instagram/basic-profile",
+  "/v1/instagram/post",
+  "/v2/instagram/post",
+  "/v3/instagram/post",
+  "/v1/tiktok/profile",
+  "/v2/tiktok/video",
+  "/v1/facebook/adLibrary/ad",
+  "/v1/facebook/adLibrary/ad/transcript",
+  "/v1/facebook/post",
+  "/v1/facebook/post/transcript",
+  "/v1/facebook/profile",
+  "/v1/youtube/channel",
+  "/v1/youtube/video",
+  "/v1/youtube/video/transcript",
+  "/v1/google/ad",
+  "/v1/threads/post",
+  "/v1/threads/profile",
+  "/v1/twitter/profile",
+  "/v1/twitter/tweet",
+  "/v1/twitter/tweet/transcript",
+  "/v1/pinterest/pin",
+  "/v1/komi",
+  "/v1/linkbio",
+  "/v1/linkme",
+  "/v1/linktree",
+  "/v1/pillar",
+  "/v1/twitch/clip",
+  "/v1/twitch/profile",
+  "/v1/reddit/subreddit",
+  "/v1/reddit/subreddit/details",
+  "/v1/reddit/ad",
+  "/v1/reddit/post/transcript",
+]);
+
+const CACHE_MAX_AGE_PARAM = {
+  name: "cache_max_age",
+  type: "select",
+  required: false,
+  description:
+    "Serve a cached response if we have one newer than this max age. Cache hits are FREE (0 credits) and return \"cached\": true. If the cached copy is older (or missing), we scrape live at the normal cost. See the Caching page for details.",
+  options: ["1d", "3d", "7d", "14d", "30d"],
+  placeholder: "7d",
+};
+
+// appended here (instead of per endpoint) so the docs, openapi spec, and
+// synced copies all pick it up from one list.
+for (const api of apis) {
+  for (const endpoint of api.endpoints) {
+    if (CACHEABLE_PATHS.has(endpoint.path)) {
+      endpoint.params = [...(endpoint.params || []), { ...CACHE_MAX_AGE_PARAM }];
+    }
+  }
+}
