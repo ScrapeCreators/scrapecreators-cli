@@ -34300,7 +34300,7 @@ const CACHE_MAX_AGE_PARAM = {
   type: "select",
   required: false,
   description:
-    "Serve a cached response if we have one newer than this max age. Cache hits are FREE (0 credits) and return \"cached\": true. If the cached copy is older (or missing), we scrape live at the normal cost. See the Caching page for details.",
+    "If we have a response in the cache that is this many days old or newer, return the cached response (0 credits). Otherwise, scrape a live result (1 credit). [See the Caching page for details.](https://docs.scrapecreators.com/caching)",
   options: ["1d", "3d", "7d", "14d", "30d"],
   placeholder: "7d",
 };
