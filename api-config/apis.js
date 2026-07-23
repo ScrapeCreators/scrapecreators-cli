@@ -34300,17 +34300,61 @@ const CACHE_MAX_AGE_PARAM = {
   type: "select",
   required: false,
   description:
-    "If we have a response in the cache that is this many days old or newer, return the cached response (0 credits). Otherwise, scrape a live result (1 credit). [See the Caching page for details.](https://docs.scrapecreators.com/caching)",
+    "If we have a response in the cache that is this many days old or newer, return the cached response (0 credits, with \"cached\": true and a \"cached_at\" timestamp). Otherwise, scrape a live result (1 credit). [See the Caching page for details.](https://docs.scrapecreators.com/caching)",
   options: ["1d", "3d", "7d", "14d", "30d"],
   placeholder: "7d",
 };
 
-// appended here (instead of per endpoint) so the docs, openapi spec, and
-// synced copies all pick it up from one list.
+// envelope fields the api adds to every response body.
+const SAMPLE_CREDITS_REMAINING = 1000000;
+const SAMPLE_CACHED_AT = "2026-07-20T14:32:11.000Z";
+
+const isPlainObject = (value) =>
+  value !== null && typeof value === "object" && !Array.isArray(value);
+
+// prepends success/credits_remaining/credits_charged to a 200 sample.
+// values already present in the sample win; arrays are left untouched.
+const withEnvelope = (sample, creditsCharged) =>
+  isPlainObject(sample)
+    ? {
+        success: true,
+        credits_remaining: SAMPLE_CREDITS_REMAINING,
+        credits_charged: creditsCharged,
+        ...sample,
+      }
+    : sample;
+
+// applied here (instead of per endpoint) so the docs, openapi spec, and
+// synced copies all pick everything up from one place.
 for (const api of apis) {
   for (const endpoint of api.endpoints) {
+    const creditsCharged =
+      typeof endpoint.credits === "number" ? endpoint.credits : 1;
+
+    endpoint.sampleResponse = withEnvelope(endpoint.sampleResponse, creditsCharged);
+    for (const variant of [
+      "trimmedResponse",
+      "privateResponse",
+      "ageRestrictedResponse",
+      "gatedProfileResponse",
+    ]) {
+      if (endpoint[variant]) {
+        endpoint[variant] = withEnvelope(endpoint[variant], creditsCharged);
+      }
+    }
+
     if (CACHEABLE_PATHS.has(endpoint.path)) {
       endpoint.params = [...(endpoint.params || []), { ...CACHE_MAX_AGE_PARAM }];
+      // "200 (cached)" tab: same data, free, plus cached markers at the end
+      // (mirrors where the api appends them).
+      if (isPlainObject(endpoint.sampleResponse)) {
+        endpoint.cachedResponse = {
+          ...endpoint.sampleResponse,
+          credits_charged: 0,
+          cached: true,
+          cached_at: SAMPLE_CACHED_AT,
+        };
+      }
     }
   }
 }
