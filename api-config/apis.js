@@ -4644,6 +4644,85 @@ export const apis = [
         },
       },
       {
+        name: "Facebook Group Info",
+        method: "GET",
+        description: "Get the public About-page information for a Facebook group.",
+        fullDescription:
+          "Fetches the public information shown on a Facebook group's About page, including its description, privacy and visibility, member and activity counts, categories, administrators and moderators when Facebook exposes them, group history, and rules. Provide either url or group_id.",
+        path: "/v1/facebook/group",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            description: "The Facebook group URL. Group sub-page URLs such as /about work too.",
+            required: false,
+            placeholder: "https://www.facebook.com/groups/366190054572553/about",
+          },
+          {
+            name: "group_id",
+            type: "string",
+            description: "The numeric Facebook group ID. Provide this instead of url if you already have it.",
+            required: false,
+            placeholder: "366190054572553",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 49999999999,
+          credits_charged: 1,
+            id: "366190054572553",
+            url: "https://www.facebook.com/groups/366190054572553",
+            name: "Python Programming",
+            description: "Let's share our knowledge on Python Programming",
+            privacy: {
+              label: "Public",
+              description: "Anyone can see who's in the group and what they post.",
+            },
+            visibility: {
+              label: "Visible",
+              description: "Anyone can find this group.",
+            },
+            categories: [
+              { id: "242504017103922", name: "Software & tech" },
+              { id: "202183377053878", name: "Engineering" },
+            ],
+            created_at: "2020-10-14T15:45:03.000Z",
+            history_summary: "Group created on October 14, 2020. Name last changed on October 16, 2020.",
+            member_count: 710386,
+            member_count_text: "710,386 total members",
+            administrator_count: 3,
+            moderator_count: 0,
+            administrators: [
+              {
+                id: "pfbid029b9bjf9rZfL4v9EHdxt1uxng857G4UqwpZjbCHySg88UYWu2XL5ivSixWhXBnZMnl",
+                name: "Nusrat Jahan",
+                url: "https://www.facebook.com/people/Nusrat-Jahan/pfbid029b9bjf9rZfL4v9EHdxt1uxng857G4UqwpZjbCHySg88UYWu2XL5ivSixWhXBnZMnl/",
+                profile_picture_url: "https://scontent.xx.fbcdn.net/example.jpg",
+              },
+            ],
+            moderators: [],
+            activity: {
+              posts_last_day: 16,
+              posts_last_month: 512,
+              new_members_text: "No new members in the last week",
+            },
+            rules: [
+              {
+                id: "366191957905696",
+                title: "Be Kind and Courteous",
+                description: "We're all in this together to create a welcoming environment. Let's treat everyone with respect.",
+              },
+            ],
+            about_info: [
+              {
+                type: "XFBPrivacyGroupsAboutInfoItem",
+                label: "Public",
+                description: "Anyone can see who's in the group and what they post.",
+              },
+            ],
+        },
+      },
+      {
         name: "Facebook Group Posts",
         method: "GET",
         description:

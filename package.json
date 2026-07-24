@@ -1,6 +1,6 @@
 {
   "name": "@scrapecreators/cli",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "description": "CLI for the ScrapeCreators API — scrape 27+ social media platforms from the terminal",
   "type": "module",
   "bin": {
