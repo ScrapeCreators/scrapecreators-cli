@@ -576,9 +576,9 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get complete information about a video or short. Age-restricted videos return 403 because we only use the public logged-out YouTube source.",
+          "Get complete information about a video or short, including YouTube's most-replayed heatmap when YouTube exposes it. most_replayed is null when the graph is not available. Age-restricted videos return 403 because we only use the public logged-out YouTube source.",
         fullDescription:
-          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source.",
+          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). Also returns related recommended videos in watchNextVideos and channel info for the uploader. When YouTube exposes its public Most replayed graph, most_replayed contains normalized graph buckets in markers and YouTube's highlighted ranges in ranges. The field is null when the graph is not available. YouTube says the graph may be unavailable when the channel has active strikes, the content is potentially inappropriate, the video is too new or has too few views, or its systems deem the video ineligible for another reason. YouTube does not publish fixed age or view-count thresholds. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source.",
         path: "/v1/youtube/video",
         errorResponseExamples: {
           403: {
@@ -589,6 +589,23 @@ export const apis = [
             message: "This video is age restricted",
           },
         },
+        responseFields: [
+          {
+            path: "most_replayed",
+            description:
+              "YouTube's public Most replayed heatmap, or null when YouTube does not show the graph for this video.",
+          },
+          {
+            path: "most_replayed.markers",
+            description:
+              "Graph buckets with startMillis, durationMillis, and intensityScoreNormalized.",
+          },
+          {
+            path: "most_replayed.ranges",
+            description:
+              "YouTube-highlighted replay ranges with visibleTimeRangeStartMillis, visibleTimeRangeEndMillis, decorationTimeMillis, and the localized label.",
+          },
+        ],
         sampleResponse: {
           success: true,
           credits_remaining: 33851527,
@@ -664,6 +681,7 @@ export const apis = [
           genre: "People & Blogs",
           durationMs: 348000,
           durationFormatted: "00:05:48",
+          most_replayed: null,
           captionTracks: [
             {
               baseUrl:
