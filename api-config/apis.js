@@ -2670,7 +2670,7 @@ export const apis = [
         description:
           "Search for public LinkedIn posts by keyword. Uses Google Search to find indexed posts, then scrapes the public LinkedIn pages.",
         fullDescription:
-          "Finds public LinkedIn posts, feed updates, and Pulse articles by keyword using Google Search, then returns post details such as description, author, media, images, like count, comment count, and published date when LinkedIn exposes them publicly. Results depend on what Google has indexed, so this is best-effort and not a complete LinkedIn-native search. Use date_posted for recent posts and pass the returned cursor to fetch the next page.",
+          "Finds public LinkedIn posts, feed updates, and Pulse articles by keyword using Google Search, then returns post details such as description, author, media, images, like count, comment count, and published date when LinkedIn exposes them publicly. Results depend on what Google has indexed, so this is best-effort and not a complete LinkedIn-native search. Use date_posted for recent posts and pass the returned cursor to fetch the next page. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
         path: "/v1/linkedin/search/posts",
         paginationField: "cursor",
         params: [
@@ -2693,7 +2693,7 @@ export const apis = [
             name: "cursor",
             type: "string",
             required: false,
-            description: "The cursor returned from the previous response",
+            description: "The cursor returned from the previous response. The maximum cursor is 11; cursor 12 or greater returns a 400 response.",
             placeholder: "2",
           },
         ],
@@ -14809,7 +14809,7 @@ export const apis = [
         method: "GET",
         description: "Search Google",
         fullDescription:
-          "Performs a Google search and returns organic results with url, title, and description for each result. Supports an optional region parameter (2-letter country code) to get localized results from a specific country.",
+          "Performs a Google search and returns organic results with url, title, and description for each result. Supports an optional region parameter (2-letter country code) to get localized results from a specific country. Pages 1 through 11 are supported; requests for page 12 or greater return a 400 response.",
         path: "/v1/google/search",
         params: [
           {
@@ -14839,7 +14839,7 @@ export const apis = [
             name: "page",
             type: "number",
             required: false,
-            description: "Page number to retrieve",
+            description: "Page number to retrieve. Must be between 1 and 11; page 12 or greater returns a 400 response.",
             placeholder: "1",
           }
         ],

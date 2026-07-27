@@ -3391,7 +3391,7 @@ export const instagramBaseApis = {
       description:
         "Search for public Instagram posts by hashtag. Uses Google Search to find indexed posts/reels, then scrapes the public Instagram pages. This avoids Instagram login-gated search and only uses public data.",
       fullDescription:
-        "Finds public Instagram posts for a hashtag using Google Search, then returns post details such as caption, play count when available, like count, comment count, owner, and post time. Results depend on what Google has indexed, so this is best-effort and not a complete Instagram-native hashtag search. Pass media_type=reels if you only want reels. Use date_posted for recent posts and pass the returned cursor to fetch the next page.",
+        "Finds public Instagram posts for a hashtag using Google Search, then returns post details such as caption, play count when available, like count, comment count, owner, and post time. Results depend on what Google has indexed, so this is best-effort and not a complete Instagram-native hashtag search. Pass media_type=reels if you only want reels. Use date_posted for recent posts and pass the returned cursor to fetch the next page. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/hashtag",
       params: [
         {
@@ -3421,7 +3421,7 @@ export const instagramBaseApis = {
           name: "cursor",
           type: "string",
           required: false,
-          description: "The cursor returned by the previous response. In this version, it is the next Google results page number.",
+          description: "The cursor returned by the previous response. It is the next Google results page number and cannot exceed 11; cursor 12 or greater returns a 400 response.",
           placeholder: "2",
         },
       ],
@@ -3650,7 +3650,7 @@ export const instagramBaseApis = {
       description:
         "Find Instagram profiles by keyword using Google-indexed public Instagram pages.",
       fullDescription:
-        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search.",
+        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/profiles",
       params: [
         {
@@ -3664,7 +3664,7 @@ export const instagramBaseApis = {
           name: "cursor",
           type: "string",
           required: false,
-          description: "The cursor returned by the previous response. In this version, it is the next Google results page number.",
+          description: "The cursor returned by the previous response. It is the next Google results page number and cannot exceed 11; cursor 12 or greater returns a 400 response.",
           placeholder: "2",
         },
       ],
@@ -3763,7 +3763,7 @@ export const instagramBaseApis = {
       description:
         "Search for reels by keyword. Uses Google Search to find reels. This is because IG puts search behind the login, and we only scrape public data",
       fullDescription:
-        "Searches for Instagram reels matching a keyword or phrase via Google Search, bypassing Instagram's login-gated search. Returns a list of reels with shortcode, caption, thumbnail, video URL, play count, like count, comment count, video duration, owner details, location, and audio attribution info. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports page-based pagination for browsing additional results.",
+        "Searches for Instagram reels matching a keyword or phrase via Google Search, bypassing Instagram's login-gated search. Returns a list of reels with shortcode, caption, thumbnail, video URL, play count, like count, comment count, video duration, owner details, location, and audio attribution info. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports page-based pagination from page 1 through 11; page 12 or greater returns a 400 response.",
       path: "/v2/instagram/reels/search",
       params: [
         {
@@ -3785,7 +3785,7 @@ export const instagramBaseApis = {
           name: "page",
           type: "number",
           required: false,
-          description: "The page number to return.",
+          description: "The page number to return. Must be between 1 and 11; page 12 or greater returns a 400 response.",
           placeholder: 1,
         },
       ],
