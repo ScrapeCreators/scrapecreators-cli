@@ -181,6 +181,73 @@ export const tiktokBaseApis = {
       },
     },
     {
+      name: "Collection Videos",
+      method: "GET",
+      description:
+        "Scrapes the videos in a public TikTok collection. Pass cursor to get more videos.",
+      fullDescription:
+        "Fetches the videos saved in a public TikTok collection, which TikTok also calls a playlist. Pass the collection URL. Returns `videos` with the full TikTok video objects, plus `has_more` and `max_cursor` for pagination. To fetch the next page, pass the previous response's `max_cursor` as `cursor`.",
+      path: "/v1/tiktok/collection/videos",
+      paginationField: "max_cursor",
+      params: [
+        {
+          name: "url",
+          type: "string",
+          required: true,
+          description: "Public TikTok collection URL",
+          placeholder:
+            "https://www.tiktok.com/@likanikaalinika/playlist/%F0%9F%96%A4%D0%A7%D0%B0%D1%81%D1%82%D0%B8-%D1%82%D0%B5%D0%BB%D0%B0%F0%9F%96%A4-6974449062670027522",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description:
+            "Cursor to get more videos. Use max_cursor from the previous response.",
+          placeholder: "4",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        collection_id: "6974449062670027522",
+        user_id: "6896921279983977474",
+        has_more: false,
+        max_cursor: 4,
+        status_code: 0,
+        videos: [
+          {
+            aweme_id: "6942902219134012673",
+            desc: "ЧАСТЬ 3. Первая любовь ❗️FLASH WARNING❗️",
+            create_time: 1616520397,
+            region: "RU",
+            author: {
+              uid: "6896921279983977474",
+              unique_id: "photalina",
+              nickname: "Alina Moldacheva",
+            },
+            statistics: {
+              aweme_id: "6942902219134012673",
+              collect_count: 257,
+              comment_count: 66,
+              digg_count: 21488,
+              play_count: 174220,
+              share_count: 12,
+            },
+            video: {
+              duration: 55633,
+              height: 960,
+              width: 540,
+            },
+            share_info: {
+              share_url:
+                "https://www.tiktok.com/@photalina/video/6942902219134012673",
+            },
+          },
+        ],
+      },
+    },
+    {
       name: "Profile Videos",
       method: "GET",
       description:
