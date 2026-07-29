@@ -186,7 +186,7 @@ export const tiktokBaseApis = {
       description:
         "Scrapes the videos in a public TikTok collection. Pass cursor to get more videos.",
       fullDescription:
-        "Fetches the videos saved in a public TikTok collection, which TikTok also calls a playlist. Pass the collection URL. Returns `videos` with the full TikTok video objects, plus `has_more` and `max_cursor` for pagination. To fetch the next page, pass the previous response's `max_cursor` as `cursor`.",
+        "Fetches the videos saved in a public TikTok collection, which TikTok also calls a playlist. Pass the collection URL. Returns `videos` using TikTok's native web video object format, including `id`, `desc`, `author`, `stats`, and `video`. To fetch the next page, pass the previous response's `max_cursor` as `cursor` when `has_more` is true.",
       path: "/v1/tiktok/collection/videos",
       paginationField: "max_cursor",
       params: [
@@ -196,7 +196,7 @@ export const tiktokBaseApis = {
           required: true,
           description: "Public TikTok collection URL",
           placeholder:
-            "https://www.tiktok.com/@likanikaalinika/playlist/%F0%9F%96%A4%D0%A7%D0%B0%D1%81%D1%82%D0%B8-%D1%82%D0%B5%D0%BB%D0%B0%F0%9F%96%A4-6974449062670027522",
+            "https://www.tiktok.com/@kibblemaster808/collection/Want-to-go-7665668414573546258",
         },
         {
           name: "cursor",
@@ -210,38 +210,44 @@ export const tiktokBaseApis = {
       sampleResponse: {
         success: true,
         credits_remaining: 100,
-        collection_id: "6974449062670027522",
-        user_id: "6896921279983977474",
+        collection_id: "7665668414573546258",
         has_more: false,
-        max_cursor: 4,
+        max_cursor: "5",
         status_code: 0,
+        status_msg: "",
         videos: [
           {
-            aweme_id: "6942902219134012673",
-            desc: "ЧАСТЬ 3. Первая любовь ❗️FLASH WARNING❗️",
-            create_time: 1616520397,
-            region: "RU",
+            AIGCDescription: "",
+            CategoryType: 116,
+            IsHDBitrate: false,
+            ShowAIGC: true,
+            anchors: [
+              {
+                description: "CapCut · Video Editor",
+                type: 54,
+              },
+            ],
             author: {
-              uid: "6896921279983977474",
-              unique_id: "photalina",
-              nickname: "Alina Moldacheva",
+              id: "7506421330087576593",
+              uniqueId: "miotravelapp",
+              nickname: "miotravelapp",
             },
-            statistics: {
-              aweme_id: "6942902219134012673",
-              collect_count: 257,
-              comment_count: 66,
-              digg_count: 21488,
-              play_count: 174220,
-              share_count: 12,
+            createTime: 1784185607,
+            desc: "How often do you reckon they think about the Roman Empire? 🐈‍⬛",
+            id: "7663018809392909588",
+            stats: {
+              collectCount: 18900,
+              commentCount: 359,
+              diggCount: 113000,
+              playCount: 865200,
+              shareCount: 15700,
             },
             video: {
-              duration: 55633,
-              height: 960,
-              width: 540,
-            },
-            share_info: {
-              share_url:
-                "https://www.tiktok.com/@photalina/video/6942902219134012673",
+              duration: 68,
+              height: 1024,
+              width: 576,
+              cover:
+                "https://p19-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oUYM7iBIKB1BL5CGgwAtAiwJEfLCFXAiX9IAEA~tplv-tiktokx-origin.image",
             },
           },
         ],
