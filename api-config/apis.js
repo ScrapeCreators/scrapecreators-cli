@@ -4746,7 +4746,7 @@ export const apis = [
         description:
           "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
         fullDescription:
-          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Supports sorting by TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, or CHRONOLOGICAL_LISTINGS, with cursor-based pagination.",
+          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination.",
         path: "/v1/facebook/group/posts",
         params: [
           {
@@ -4766,9 +4766,9 @@ export const apis = [
           {
             name: "sort_by",
             type: "select",
-            description: "How to sort the posts",
+            description: "How to sort the posts. Defaults to CHRONOLOGICAL.",
             required: false,
-            placeholder: "TOP_POSTS",
+            placeholder: "CHRONOLOGICAL",
             options: [
               "TOP_POSTS",
               "RECENT_ACTIVITY",
