@@ -3386,6 +3386,62 @@ export const instagramBaseApis = {
     //   },
     // },
     {
+      name: "Search Instagram",
+      method: "GET",
+      description:
+        "Searches Instagram's public native search with one query and returns ranked users, hashtags, places, and keyword suggestions. This is not Google-indexed discovery and does not require an Instagram login. Results are based on what Instagram returns publicly for the query. Only one page of results is available.",
+      fullDescription:
+        "Searches Instagram's public native search with one query and returns ranked users, hashtags, places, and keyword suggestions. This is not Google-indexed discovery and does not require an Instagram login. Results are based on what Instagram returns publicly for the query. Only one page of results is available.",
+      path: "/v1/instagram/search",
+      params: [
+        {
+          name: "query",
+          type: "string",
+          required: true,
+          description: "The username, hashtag, place, or keyword to search for.",
+          placeholder: "nike",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        data: {
+          query: "nike",
+          users: [
+            {
+              position: 0,
+              id: "13460080",
+              username: "nike",
+              full_name: "Nike",
+              is_verified: true,
+              profile_pic_url: "https://instagram.example.com/nike.jpg",
+            },
+          ],
+          hashtags: [
+            {
+              position: 2,
+              id: "17841562978125529",
+              name: "nikewomen",
+              media_count: 2036828,
+              search_result_subtitle: null,
+            },
+          ],
+          places: [
+            {
+              position: 51,
+              id: "715603272",
+              name: "Nike",
+              title: "Nike",
+              subtitle: "",
+              facebook_places_id: "106068296090172",
+            },
+          ],
+          keywords: [],
+          rank_token: "a6e9cded-6c3e-41be-a6b1-9fa5295a30d5",
+        },
+      },
+    },
+    {
       name: "Search Hashtag Posts",
       method: "GET",
       description:
