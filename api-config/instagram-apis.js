@@ -1374,6 +1374,57 @@ export const instagramBaseApis = {
       ],
     },
     {
+      name: "User Tagged Posts",
+      method: "GET",
+      description: "Get public Instagram posts that a user is tagged in.",
+      fullDescription:
+        "Returns up to 10 public posts per page from an Instagram user's Tagged tab. Each item is a flat post object with its shortcode, caption, media type, engagement counts, media URLs, and owner details. Keep passing the returned cursor to fetch additional pages until has_more is false.",
+      path: "/v1/instagram/user/tagged-posts",
+      paginationField: "cursor",
+      params: [
+        {
+          name: "user_id",
+          type: "string",
+          required: true,
+          description: "Numeric Instagram user ID.",
+          placeholder: "325734299",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description: "Cursor returned by the previous response.",
+          placeholder: "3953374600788032611",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 999,
+        posts: [
+          {
+            pk: "3953402310668919030",
+            code: "DbdTnSdoSD2",
+            media_type: 1,
+            caption: {
+              pk: "18139631029604360",
+              text: "You get the best of both worlds ig",
+            },
+            comment_count: 0,
+            like_count: 3,
+            view_count: null,
+            user: {
+              pk: "13320148665",
+              id: "13320148665",
+              username: "oceanecosplay",
+            },
+            url: "https://www.instagram.com/p/DbdTnSdoSD2/",
+          },
+        ],
+        cursor: "3953374600788032611",
+        has_more: true,
+      },
+    },
+    {
       name: "Reels",
       method: "GET",
       description:
