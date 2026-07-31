@@ -6271,10 +6271,12 @@ export const apis = [
       {
         name: "Search",
         method: "GET",
+        methods: ["GET", "POST"],
+        postParamsInBody: true,
         description:
-          "Search the Facebook (Meta) Ad Library By Keyword. This endpoint will tap out around 1,500 results, beacuse the cursor becomes too big for a GET request. If you need more results, call this endpoint as a POST, and pass the query params in the body.",
+          "Search the Facebook (Meta) Ad Library by keyword. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         fullDescription:
-          "Searches the Meta Ad Library by keyword and returns matching ads. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Results cap around 1,500 via GET due to cursor size limits; switch to POST method with body params for larger result sets.",
+          "Searches the Meta Ad Library by keyword and returns matching ads. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
@@ -6591,11 +6593,13 @@ export const apis = [
       {
         name: "Company Ads",
         method: "GET",
+        methods: ["GET", "POST"],
+        postParamsInBody: true,
         paginationField: "cursor",
         description:
-          "Get all the ads a company has running. If params become too large, make this a POST request and pass the params in the body.",
+          "Get all the ads a company has running. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         fullDescription:
-          "Fetches all ads currently running for a specific company from the Meta Ad Library. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination.",
+          "Fetches all ads currently running for a specific company from the Meta Ad Library. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination. Both GET and POST are supported. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/company/ads",
         youtubeId: "M_wgqCtznjM",
         codeExample:
@@ -9546,9 +9550,12 @@ export const apis = [
       {
         name: "Post Comments",
         method: "GET",
-        description: "Get comments + post information from a Reddit post",
+        methods: ["GET", "POST"],
+        postParamsInBody: true,
+        description:
+          "Get comments and post information from a Reddit post. Use GET normally. If you're paginating a large thread and the cursor becomes too large, use POST and send the same parameters in the JSON body.",
         fullDescription:
-          "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses.",
+          "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses.",
         path: "/v1/reddit/post/comments",
         params: [
           {
@@ -9563,7 +9570,7 @@ export const apis = [
             name: "cursor",
             type: "string",
             required: false,
-            description: "Cursor to get more comments, or replies.",
+            description: "Cursor returned by the previous response to get more comments or replies.",
             placeholder: "ed1lvsa,ed3fnpq,ed25l2w",
           },
           {
