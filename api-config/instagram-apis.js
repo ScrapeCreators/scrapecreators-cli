@@ -3440,9 +3440,9 @@ export const instagramBaseApis = {
       name: "Search Instagram",
       method: "GET",
       description:
-        "Searches Instagram's public native search with one query and returns ranked users, hashtags, places, and keyword suggestions. This is not Google-indexed discovery and does not require an Instagram login. Results are based on what Instagram returns publicly for the query. Only one page of results is available.",
+        "Find users, hashtags, and places with Instagram's native search. Use this for account or entity lookup; it returns one page and does not return posts.",
       fullDescription:
-        "Searches Instagram's public native search with one query and returns ranked users, hashtags, places, and keyword suggestions. This is not Google-indexed discovery and does not require an Instagram login. Results are based on what Instagram returns publicly for the query. Only one page of results is available.",
+        "Use this for Instagram-native account, hashtag, or place lookup. It returns ranked users, hashtags, places, and keyword suggestions from Instagram itself. It is not Google-indexed, does not require an Instagram login, returns one page only, and does not return posts. For an Instagram-curated topic page with posts, use /v1/instagram/search/popular. For broader profile discovery from Google-indexed bios and captions, use /v1/instagram/search/profiles.",
       path: "/v1/instagram/search",
       params: [
         {
@@ -3493,12 +3493,80 @@ export const instagramBaseApis = {
       },
     },
     {
+      name: "Popular Search",
+      method: "GET",
+      description:
+        "Explore an Instagram topic and its curated posts. Use this when you want the Popular page's generated description, sources, suggested terms, media count, and paginated posts.",
+      fullDescription:
+        "Use this to explore an Instagram topic and the posts Instagram curates for it. It scrapes the public /popular/{query} page without requiring an Instagram login. The first page returns the topic title, numeric total media count, Instagram's generated description and sources, suggested terms, posts, and an opaque cursor. Pass that cursor with the same query to fetch more posts. Later pages return query, posts, cursor, and has_more only. For an exact hashtag through Google-indexed results, use /v1/instagram/search/hashtag. For reels only, use /v2/instagram/reels/search. Each successful request costs 1 credit.",
+      path: "/v1/instagram/search/popular",
+      params: [
+        {
+          name: "query",
+          type: "string",
+          required: true,
+          description: "The Popular topic to search for.",
+          placeholder: "basketball",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description:
+            "The opaque cursor returned by the previous response. Use it with the same query to fetch the next page of posts.",
+          placeholder: "opaque-cursor-from-response",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 99,
+        credits_charged: 1,
+        query: "basketball",
+        title: "Basketball",
+        total_media_count: 8800000,
+        description: {
+          plain_text:
+            "James Naismith invented basketball in December 1891 in Springfield, Massachusetts as an indoor winter activity.",
+          source_uris: [
+            "https://en.wikipedia.org/wiki/Outline_of_basketball",
+          ],
+          linked_terms: [],
+        },
+        suggested_terms: [
+          "the tallest basketball player",
+          "thats my man basketball",
+          "jason williams basketball player",
+        ],
+        posts: [
+          {
+            id: "POLARIS_3892957342260916992",
+            shortcode: "DYGkBO3NfMA",
+            url: "https://www.instagram.com/reel/DYGkBO3NfMA/",
+            type: "reel",
+            caption: "😂😂 #meta #pov #hooper #basketball",
+            display_url: "https://instagram.example.com/basketball-cover.jpg",
+            video_url: "https://instagram.example.com/basketball-video.mp4",
+            play_count: 11993988,
+            owner: {
+              id: "17841409679275910",
+              username: "lukaceo",
+              is_verified: false,
+              profile_pic_url:
+                "https://instagram.example.com/lukaceo-profile.jpg",
+            },
+          },
+        ],
+        cursor: "opaque-cursor-from-response",
+        has_more: true,
+      },
+    },
+    {
       name: "Search Hashtag Posts",
       method: "GET",
       description:
-        "Search for public Instagram posts by hashtag. Uses Google Search to find indexed posts/reels, then scrapes the public Instagram pages. This avoids Instagram login-gated search and only uses public data.",
+        "Find Google-indexed public Instagram posts for an exact hashtag. Use this when you know the hashtag and want date filters or pagination.",
       fullDescription:
-        "Finds public Instagram posts for a hashtag using Google Search, then returns post details such as caption, play count when available, like count, comment count, owner, and post time. Results depend on what Google has indexed, so this is best-effort and not a complete Instagram-native hashtag search. Pass media_type=reels if you only want reels. Use date_posted for recent posts and pass the returned cursor to fetch the next page. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+        "Use this when you know the exact hashtag and want Google-indexed public Instagram posts or reels, optional date filters, and pagination. It returns post details such as caption, play count when available, engagement, owner, and post time. Results are best-effort and not a complete Instagram-native hashtag feed. For an Instagram-curated topic page with generated context and suggested terms, use /v1/instagram/search/popular. Pass media_type=reels to only return reels. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/hashtag",
       params: [
         {
@@ -3755,9 +3823,9 @@ export const instagramBaseApis = {
       name: "Search Instagram Profiles",
       method: "GET",
       description:
-        "Find Instagram profiles by keyword using Google-indexed public Instagram pages. For Instagram-native user search, use /v1/instagram/search instead; it does not rely on Google.",
+        "Find profiles from Google-indexed bios and captions. Use this for broader creator discovery; use /v1/instagram/search for Instagram-native account lookup.",
       fullDescription:
-        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search. For Instagram-native user search, use /v1/instagram/search instead; it does not rely on Google. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+        "Use this for broad creator discovery from keywords found in Google-indexed Instagram profile pages, bios, and post captions. Profile-page matches are marked matched_from=profile; caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and can paginate, but it is not Instagram-native or complete. For Instagram's own ranked account results, use /v1/instagram/search. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/profiles",
       params: [
         {
@@ -3868,9 +3936,9 @@ export const instagramBaseApis = {
       name: "Search Reels",
       method: "GET",
       description:
-        "Search for reels by keyword. Uses Google Search to find reels. This is because IG puts search behind the login, and we only scrape public data",
+        "Find Google-indexed Instagram reels by keyword. Use this when you only want reels and need date filters or pagination.",
       fullDescription:
-        "Searches for Instagram reels matching a keyword or phrase via Google Search, bypassing Instagram's login-gated search. Returns a list of reels with shortcode, caption, thumbnail, video URL, play count, like count, comment count, video duration, owner details, location, and audio attribution info. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports page-based pagination from page 1 through 11; page 12 or greater returns a 400 response.",
+        "Use this when you only want Google-indexed Instagram reels matching a keyword or phrase, with optional date filters and pagination. It returns reel media, engagement, owner, location, and audio details. Results are best-effort rather than a complete Instagram-native search. For Instagram-curated topic posts, use /v1/instagram/search/popular. For an exact hashtag across posts and reels, use /v1/instagram/search/hashtag. Play counts are Instagram-only and exclude cross-posted Facebook views. Pages 1 through 11 are supported; page 12 or greater returns a 400 response.",
       path: "/v2/instagram/reels/search",
       params: [
         {
