@@ -5454,7 +5454,7 @@ export const instagramBaseApis = {
       method: "GET",
       description: "Get comments from an Instagram post or reel. Not gonna lie, this is one of our most error prone endpoints. You should expect ~90% success rate.",
       fullDescription:
-        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, and commenter details such as username, user ID, verification status, and profile picture URL. Supports cursor-based pagination to load additional comment pages.",
+        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. This option always costs 15 credits because Scrape Creators makes a separate Instagram replies request for every comment in the response. It is possible that no replies are returned, but you will still be charged 15 credits because those reply lookups were performed. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages.",
       path: "/v2/instagram/post/comments",
       params: [
         {
@@ -5472,16 +5472,29 @@ export const instagramBaseApis = {
             "The cursor to get more comments. Get 'cursor' from previous response.",
           placeholder: "eyJjYWNoZWRfY29tbWVud...",
         },
+        {
+          name: "include_replies",
+          type: "boolean",
+          required: false,
+          description:
+            "Set to true to include replies for every returned comment. This always costs 15 credits because each comment requires a separate Instagram replies request. You will still be charged 15 credits if no replies are returned. This is much slower and may time out at 29 seconds.",
+          placeholder: "true",
+        },
       ],
       sampleResponse: {
         success: true,
         credits_remaining: 33929114,
+        credits_charged: 15,
         comments: [
           {
             id: "18051843701642870",
             text: '"...but who wants to know people who don\'t love animals anyway?". ❤️',
             created_at: "2025-09-16T17:03:04.000Z",
             "comment_like_count": 0,
+            "child_comment_count": 0,
+            replies: [],
+            replies_cursor: null,
+            has_more_replies: false,
             user: {
               is_verified: false,
               id: "46773599357",
@@ -5498,6 +5511,10 @@ export const instagramBaseApis = {
             text: "What a lovely lady, I'm with her who wants to know anyone who doesn't love animals ❤️👏",
             created_at: "2025-09-16T19:53:21.000Z",
             "comment_like_count": 0,
+            "child_comment_count": 0,
+            replies: [],
+            replies_cursor: null,
+            has_more_replies: false,
             user: {
               is_verified: false,
               id: "45139684051",
@@ -5511,6 +5528,61 @@ export const instagramBaseApis = {
           },
         ],
         cursor: "AQHSpoi6HyDbzYRMzrD.........",
+      },
+    },
+    {
+      name: "Comment Replies",
+      method: "GET",
+      description: "Get replies to an Instagram comment.",
+      fullDescription:
+        "Retrieves the public replies to a specific Instagram comment. Pass the post or reel URL and the parent comment's `id` from the Comments endpoint. Returns reply text, timestamps, engagement counts, parent comment ID, and user details. Paginate with `cursor` when `has_more` is true.",
+      path: "/v1/instagram/post/comment/replies",
+      paginationField: "cursor",
+      params: [
+        {
+          name: "url",
+          type: "string",
+          required: true,
+          description: "The Instagram post or reel URL",
+          placeholder: "https://www.instagram.com/reel/C8rKmYvsrck",
+        },
+        {
+          name: "comment_id",
+          type: "string",
+          required: true,
+          description: "The parent comment ID from the Comments endpoint",
+          placeholder: "18038110327814211",
+        },
+        {
+          name: "cursor",
+          type: "string",
+          required: false,
+          description: "The cursor to get more replies. Get `cursor` from the previous response.",
+          placeholder: "QVFDc29...",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        comments: [
+          {
+            id: "18277034998224667",
+            text: "@username Thanks for the reply!",
+            comment_like_count: null,
+            child_comment_count: 0,
+            created_at: "2024-06-28T06:20:32.000Z",
+            parent_comment_id: "18038110327814211",
+            user: {
+              id: "25621023419",
+              pk: "25621023419",
+              username: "username",
+              is_verified: false,
+              profile_pic_url: "https://instagram.fosu2-2.fna.fbcdn.net/....jpg",
+            },
+          },
+        ],
+        cursor: null,
+        has_more: false,
       },
     },
     // {
