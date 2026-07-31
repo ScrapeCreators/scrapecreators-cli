@@ -4,6 +4,16 @@ import { instagramBaseApis } from "./instagram-apis.js";
 import { githubApis } from "./github-apis.js";
 import { kwaiApis } from "./kwai-apis.js";
 
+const withPostVariant = (endpoint) => [
+  endpoint,
+  {
+    ...endpoint,
+    method: "POST",
+    docsPath: `${endpoint.path}/post`,
+    postParamsInBody: true,
+  },
+];
+
 export const apis = [
   tiktokBaseApis,
   tiktokShopApis,
@@ -6268,11 +6278,9 @@ export const apis = [
           },
         ],
       },
-      {
+      ...withPostVariant({
         name: "Search",
         method: "GET",
-        methods: ["GET", "POST"],
-        postParamsInBody: true,
         description:
           "Search the Facebook (Meta) Ad Library by keyword. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         fullDescription:
@@ -6589,12 +6597,10 @@ export const apis = [
             placeholder: "false",
           },
         ],
-      },
-      {
+      }),
+      ...withPostVariant({
         name: "Company Ads",
         method: "GET",
-        methods: ["GET", "POST"],
-        postParamsInBody: true,
         paginationField: "cursor",
         description:
           "Get all the ads a company has running. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
@@ -6925,7 +6931,7 @@ export const apis = [
             placeholder: "false",
           },
         ],
-      },
+      }),
       {
         name: "Search for Companies",
         method: "GET",
@@ -9547,11 +9553,9 @@ export const apis = [
             "eyJjYW5kaWRhdGVzX3JldHVybmVkIjoie1wic2VjdGlvbl8xX3BpcGVsaW5lXzBfZ2xvYmFsX21vZGlmaWVyc1wiOlwiM1wiLFwic2VjdGlvbl8xX3BpcGVsaW5lXzFfbG9jYWxfbW9kaWZpZXJzXCI6XCIzXCIsXCJzZWN0aW9uXzJfcGlwZWxpbmVfNl9zY29wZV9zd2l0Y2hlclwiOlwiMFwiLFwic2VjdGlvbl8yX3BpcGVsaW5lXzdfcG9zdF9zZWFyY2hcIjpcIjdcIn0ifQ==",
         },
       },
-      {
+      ...withPostVariant({
         name: "Post Comments",
         method: "GET",
-        methods: ["GET", "POST"],
-        postParamsInBody: true,
         description:
           "Get comments and post information from a Reddit post. Use GET normally. If you're paginating a large thread and the cursor becomes too large, use POST and send the same parameters in the JSON body.",
         fullDescription:
@@ -10732,7 +10736,7 @@ export const apis = [
             cursor: "ed1jhoi,ed1f3kw,ed1qgjh,ed1e4vd,ed1benx",
           },
         },
-      },
+      }),
       // {
       //   name: "Simple Comments",
       //   method: "GET",
