@@ -3755,9 +3755,9 @@ export const instagramBaseApis = {
       name: "Search Instagram Profiles",
       method: "GET",
       description:
-        "Find Instagram profiles by keyword using Google-indexed public Instagram pages.",
+        "Find Instagram profiles by keyword using Google-indexed public Instagram pages. For Instagram-native user search, use /v1/instagram/search instead; it does not rely on Google.",
       fullDescription:
-        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+        "Searches Google for public Instagram results matching a keyword or phrase, then returns matching public profiles. Profile-page matches are marked matched_from=profile. Reel/post caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and depends on what Google has indexed; it is not a complete native Instagram profile search. For Instagram-native user search, use /v1/instagram/search instead; it does not rely on Google. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/profiles",
       params: [
         {
