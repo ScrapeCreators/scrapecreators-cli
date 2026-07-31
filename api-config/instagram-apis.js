@@ -5479,6 +5479,7 @@ export const instagramBaseApis = {
           description:
             "Set to true to include replies for every returned comment. This always costs 15 credits because each comment requires a separate Instagram replies request. You will still be charged 15 credits if no replies are returned. This is much slower and may time out at 29 seconds.",
           placeholder: "true",
+          credits: 15,
         },
       ],
       sampleResponse: {
