@@ -5893,7 +5893,7 @@ export const apis = [
         description:
           "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
         fullDescription:
-          "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body.",
+          "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. Regulated ads may also include source-dependent aaa_info using the structure shown below. Political and social issue delivery data is normalized to location_audience and age_country_gender_reach_breakdown. Political location_audience rows include reach, and political delivery values are fractional shares, so 0.08 means 8%. Regional transparency data may use absolute reach counts. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body.",
         path: "/v1/facebook/adLibrary/ad",
         sampleResponse: {
           adid: 0,
