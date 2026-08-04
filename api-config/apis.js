@@ -730,9 +730,9 @@ export const apis = [
       {
         name: "Transcript",
         method: "GET",
-        description: "Get transcript of a video or short",
+        description: "Get publicly available captions or a transcript from a YouTube video or Short",
         fullDescription:
-          "Retrieves the captions, subtitles, or transcript of a YouTube video or short. Returns both a timestamped transcript array with start/end times and a plain-text version in transcript_only_text. Supports specifying a language code. Note: the video must be under 2 minutes for transcript extraction to work.",
+          "Retrieves the captions, subtitles, or transcript of a YouTube video or Short. Returns both a timestamped transcript array with start/end times and a plain-text version in transcript_only_text. Supports specifying a language code. There is no two-minute limit for YouTube. Long videos, including podcasts, work when YouTube exposes public captions. If no matching caption track is available, the transcript fields return null.",
         path: "/v1/youtube/video/transcript",
         params: [
           {
