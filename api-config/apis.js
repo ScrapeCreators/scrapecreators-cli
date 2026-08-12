@@ -6999,16 +6999,16 @@ export const apis = [
       {
         name: "Ad Library Search",
         method: "GET",
-        description: "Search TikTok's public Ads Library by advertiser name or keyword.",
+        description: "Search TikTok's public Ads Library by advertiser name.",
         fullDescription:
-          "Searches TikTok's public Ads Library by advertiser name or keyword. Results are global, sorted by the latest shown date, and support cursor pagination.",
+          "Searches TikTok's public Ads Library by advertiser name. The API resolves the name through TikTok's advertiser typeahead first, then searches the selected advertiser entity. Results are global, sorted by the latest shown date, and support cursor pagination.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
             name: "query",
             type: "string",
             required: true,
-            description: "Advertiser name or keyword to search for.",
+            description: "Advertiser name to search for. The API resolves it to TikTok's top advertiser match before searching.",
             placeholder: "Anysphere",
           },
           {
@@ -7025,6 +7025,13 @@ export const apis = [
           credits_charged: 1,
           source: "tiktok_public_ads_library",
           advertiser_name: "Anysphere",
+          resolved_advertiser_name: "Anysphere",
+          advertiser_matches: [
+            {
+              name: "Anysphere",
+              ids: "7617189498409025553",
+            },
+          ],
           ads: [
             {
               id: "1871655924410641",
