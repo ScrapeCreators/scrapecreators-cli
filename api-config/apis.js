@@ -29,7 +29,7 @@ export const apis = [
         description:
           "Get comprehensive channel information including stats and metadata. Can pass channelId, handle, or url.",
         fullDescription:
-          "Retrieves comprehensive YouTube channel profile data including name, avatar images, subscriber count (subscribers), total video and view counts, join date, tags, and linked social accounts like Twitter and Instagram. Accepts a channelId, handle, or full channel URL as input. Returns channel metadata such as country, email, and external store links when available.",
+          "Retrieves comprehensive YouTube channel profile data including name, avatar images, subscriber count (subscribers), total video and view counts, join date, tags, and linked social accounts like Twitter and Instagram. Accepts a channelId, handle, or full channel URL as input. Returns channel metadata such as country, email, and external store links when available. Contact fields come from the submitted public profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/youtube/channel",
         sampleResponse: {
           channelId: "UCxcTeAKWJca6XyJ37_ZoKIQ",
@@ -2986,7 +2986,7 @@ export const apis = [
         method: "GET",
         description: "Get public Facebook profile information",
         fullDescription:
-          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. If Facebook shows an 18+ content gate, the response is still 200 with account_status: \"age-restricted\" and isPrivate: true. If Facebook shows a private content gate, the response is still 200 with account_status: \"private\" and isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false. Set include_gated_profile=true to also return limited public fields (such as id, name, category, likeCount, profilePicSmall, and links) when a profile is gated or age-restricted. This option only affects gated/age-restricted profiles — public profiles still return the normal full response.",
+          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. Contact fields come from the submitted public profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL. If Facebook shows an 18+ content gate, the response is still 200 with account_status: \"age-restricted\" and isPrivate: true. If Facebook shows a private content gate, the response is still 200 with account_status: \"private\" and isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false. Set include_gated_profile=true to also return limited public fields (such as id, name, category, likeCount, profilePicSmall, and links) when a profile is gated or age-restricted. This option only affects gated/age-restricted profiles — public profiles still return the normal full response.",
         path: "/v1/facebook/profile",
         sampleResponse: {
           success: true,
@@ -33236,7 +33236,7 @@ export const apis = [
         method: "GET",
         description: "Linktree page",
         fullDescription:
-          "Scrapes a Linktree page by URL, extracting the creator's profile and all their links. Returns id, username, profilePictureUrl, description, verticals, timezone, and links — an array of link objects each with id, type, title, and url. Also includes detected social accounts (instagram, tiktok, spotify, youtube, soundcloud, apple_music) and email_address.",
+          "Scrapes a Linktree page by URL, extracting the creator's profile and all their links. Returns id, username, profilePictureUrl, description, verticals, timezone, and links — an array of link objects each with id, type, title, and url. Also includes detected social accounts (instagram, tiktok, spotify, youtube, soundcloud, apple_music) and email_address. Contact fields come from the submitted public Linktree page. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/linktree",
         params: [
           {
@@ -33401,7 +33401,7 @@ export const apis = [
         method: "GET",
         description: "Pillar page",
         fullDescription:
-          "Scrapes a Pillar page by URL, extracting the creator's profile, social links, and products. Returns id, first_name, last_name, email, location, and social accounts (tiktok, spotify, twitter, youtube, facebook, linkedin, instagram, and more). Also includes links with click counts and products with title, price, description, and image.",
+          "Scrapes a Pillar page by URL, extracting the creator's profile, social links, and products. Returns id, first_name, last_name, email, location, and social accounts (tiktok, spotify, twitter, youtube, facebook, linkedin, instagram, and more). Also includes links with click counts and products with title, price, description, and image. Contact fields come from the submitted public Pillar page. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/pillar",
         params: [
           {
@@ -33481,7 +33481,7 @@ export const apis = [
         method: "GET",
         description: "Linkbio (lnk.bio) page",
         fullDescription:
-          "Scrapes a Linkbio (lnk.bio) page by URL, extracting the creator's profile and all their links. Returns handle, id, social accounts (instagram, tiktok, youtube, twitter, whatsapp), email, website, and links — an array of link objects each with url and text.",
+          "Scrapes a Linkbio (lnk.bio) page by URL, extracting the creator's profile and all their links. Returns handle, id, social accounts (instagram, tiktok, youtube, twitter, whatsapp), email, website, and links — an array of link objects each with url and text. Contact fields come from the submitted public Linkbio page. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/linkbio",
         params: [
           {
@@ -33881,7 +33881,7 @@ export const apis = [
         method: "GET",
         description: "Get Linkme profile info by URL",
         fullDescription:
-          "Retrieves a Linkme profile by URL, including identity, social links, and contact details. Returns profile with id, firstName, username, bio, profileVisitCount, profileImage, verifiedAccount, and isAmbassador flag. Also includes infoLinks (email addresses) and webLinks, an array of categorized social platform links (Spotify, Instagram, YouTube, Twitter, Facebook, and more) each with linkValue and faceValue.",
+          "Retrieves a Linkme profile by URL, including identity, social links, and contact details. Returns profile with id, firstName, username, bio, profileVisitCount, profileImage, verifiedAccount, and isAmbassador flag. Also includes infoLinks (email addresses) and webLinks, an array of categorized social platform links (Spotify, Instagram, YouTube, Twitter, Facebook, and more) each with linkValue and faceValue. Contact fields come from the submitted public Linkme profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/linkme",
         params: [
           {
