@@ -9564,9 +9564,9 @@ export const apis = [
         name: "Post Comments",
         method: "GET",
         description:
-          "Get comments and post information from a Reddit post. Use GET normally. If you're paginating a large thread and the cursor becomes too large, use POST and send the same parameters in the JSON body.",
+          "Get comments and post information from a Reddit post. Pass one opaque cursor returned by the previous response to get the next page. Cursor batching is not supported. Use POST with the same JSON-body parameters if a cursor becomes too large for a GET URL.",
         fullDescription:
-          "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses.",
+          "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Both GET and POST are supported. Use GET for normal requests. Pass one opaque cursor exactly as returned by more.cursor or replies.more.cursor to load the next page. Cursor batching and comma-separated cursor values are not supported. If an opaque cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses.",
         path: "/v1/reddit/post/comments",
         params: [
           {
@@ -9581,8 +9581,8 @@ export const apis = [
             name: "cursor",
             type: "string",
             required: false,
-            description: "Cursor returned by the previous response to get more comments or replies.",
-            placeholder: "ed1lvsa,ed3fnpq,ed25l2w",
+            description: "One opaque cursor returned by the previous response to get more comments or replies. Do not combine multiple cursors.",
+            placeholder: "opaque_cursor_returned_by_previous_response",
           },
           {
             name: "trim",
@@ -10740,7 +10740,7 @@ export const apis = [
           ],
           more: {
             has_more: true,
-            cursor: "ed1jhoi,ed1f3kw,ed1qgjh,ed1e4vd,ed1benx",
+            cursor: "opaque_cursor_returned_by_previous_response",
           },
         },
       }),
