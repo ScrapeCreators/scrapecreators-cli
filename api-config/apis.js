@@ -6999,17 +6999,24 @@ export const apis = [
       {
         name: "Ad Library Search",
         method: "GET",
-        description: "Search TikTok's public Ads Library by advertiser name.",
+        description: "Search TikTok's public Ads Library by general query or advertiser name.",
         fullDescription:
-          "Searches TikTok's public Ads Library by advertiser name. The API resolves the name through TikTok's advertiser typeahead first, then searches the selected advertiser entity. Results are global, sorted by the latest shown date, and support cursor pagination.",
+          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity. If TikTok has no matching entity, the API falls back to TikTok's name search so inputs such as The Creator Loop still return matching ads. Provide exactly one of query or advertiser_name. Results are global, sorted by the latest shown date, and support cursor pagination.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
             name: "query",
             type: "string",
-            required: true,
-            description: "Advertiser name to search for. The API resolves it to TikTok's top advertiser match before searching.",
-            placeholder: "Anysphere",
+            required: false,
+            description: "General ad search. Provide either query or advertiser_name, not both.",
+            placeholder: "The Creator Loop",
+          },
+          {
+            name: "advertiser_name",
+            type: "string",
+            required: false,
+            description: "Advertiser name to resolve through TikTok's typeahead and search by advertiser entity. Falls back to TikTok's name search when no entity matches. Provide either advertiser_name or query, not both.",
+            placeholder: "Gymshark",
           },
           {
             name: "cursor",
@@ -7024,18 +7031,18 @@ export const apis = [
           credits_remaining: 100,
           credits_charged: 1,
           source: "tiktok_public_ads_library",
-          advertiser_name: "Anysphere",
-          resolved_advertiser_name: "Anysphere",
+          advertiser_name: "Gymshark",
+          resolved_advertiser_name: "GYMSHARK LTD",
           advertiser_matches: [
             {
-              name: "Anysphere",
-              ids: "7617189498409025553",
+              name: "GYMSHARK LTD",
+              ids: "7078923208527618049",
             },
           ],
           ads: [
             {
               id: "1871655924410641",
-              name: "Anysphere",
+              name: "GYMSHARK LTD",
               audit_status: "1",
               type: "2",
               first_shown_date: 1784937600000,
