@@ -3566,7 +3566,7 @@ export const instagramBaseApis = {
       description:
         "Find Google-indexed public Instagram posts for an exact hashtag. Use this when you know the hashtag and want date filters or pagination.",
       fullDescription:
-        "Use this when you know the exact hashtag and want Google-indexed public Instagram posts or reels, optional date filters, and pagination. It returns post details such as caption, play count when available, engagement, owner, and post time. Results are best-effort and not a complete Instagram-native hashtag feed. For an Instagram-curated topic page with generated context and suggested terms, use /v1/instagram/search/popular. Pass media_type=reels to only return reels. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+        "Use this when you know the exact hashtag and want Google-indexed public Instagram posts or reels, optional date filters, and pagination. It returns post details such as caption, engagement, owner, and post time. Results are best-effort and not a complete Instagram-native hashtag feed. For an Instagram-curated topic page with generated context and suggested terms, use /v1/instagram/search/popular. Pass media_type=reels to only return reels. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/hashtag",
       params: [
         {
@@ -3617,8 +3617,6 @@ export const instagramBaseApis = {
             "video_url": "https://scontent-ord5-2.cdninstagram.com/o1/v/t2/f2/m86/AQNG_gCzevxl8xiNB2lVRlcV8c3o3r2ZyeLeWfaY4eaHdyRX3_Z1mty2jrHuH5Z66vTC5SXrhmpdG5re9MNyf1jCtWVyPKAWQFQ037o.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_ohc=ByTiQjuOr9wQ7kNvwGpBh0x&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTEyMDQ3OTIyMDA0MTUwMSwiYXNzZXRfYWdlX2RheXMiOjI2NCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjY1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=638842146c84456b&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC80QTQ2OURBNUJBQTE1RjdFODZFRjQxRThCOUU1RTNBOV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83NDQ4NjQwMTg0MjI1MjdfODI5Mjc2OTQ2ODc2ODI3MDk4OC5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmupyc3rzE_QMVAigCQzMsF0BQbul41P30GBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&_nc_gid=tAUZdiRnIdGjcNvGfTjMvg&_nc_ss=7a22e&_nc_zt=28&oh=00_Af6Z6PbM9b2RWG7EdCufc8MOp-pcmhJu3EMKtd_pzJaopw&oe=6A193955",
             "has_audio": false,
             "accessibility_caption": null,
-            "video_view_count": 148581,
-            "video_play_count": 593055,
             "product_type": "clips",
             "video_duration": 65.733,
             "clips_music_attribution_info": {
@@ -3782,8 +3780,6 @@ export const instagramBaseApis = {
             "video_url": "https://scontent-mia3-3.cdninstagram.com/o1/v/t2/f2/m86/AQP-dJROb1RW6mt2HO6rqPKhUN-R0M9RSjgR90483nKJLqoM8VMl-0EDaym5Rs0T0lFFo4iSC5S5JroQMHi_LoU1Yh7MByctDUq2rHo.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_ohc=jhHcKAQGJiwQ7kNvwGmCH4u&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTgwMjI3MjQ3NjI4MTg0NzQsImFzc2V0X2FnZV9kYXlzIjo0NywidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjg1LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=e040d8d00e2dc40b&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8wMzRDNzAxMEM2ODZDQUU1RUE4Q0JFMzJFRTEyMERBQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0YwNDIxOThBM0VBRDMzQTgxRDNGQzA2QUZCODNEQjhCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbU3vq10-SDQBUCKAJDMywXQFVZmZmZmZoYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&_nc_gid=YD_Zc4FAN30v4fHL3lOgfw&_nc_ss=7a22e&_nc_zt=28&oh=00_Af4i9UTMzKBF1CWLsrCpPWFNBMny8wS91rv7XyzFvw24ng&oe=6A193ED6",
             "has_audio": true,
             "accessibility_caption": null,
-            "video_view_count": 770,
-            "video_play_count": 1650,
             "product_type": "clips",
             "video_duration": 85.419,
             "clips_music_attribution_info": {
@@ -3938,7 +3934,7 @@ export const instagramBaseApis = {
       description:
         "Find Google-indexed Instagram reels by keyword. Use this when you only want reels and need date filters or pagination.",
       fullDescription:
-        "Use this when you only want Google-indexed Instagram reels matching a keyword or phrase, with optional date filters and pagination. It returns reel media, engagement, owner, location, and audio details. Results are best-effort rather than a complete Instagram-native search. For Instagram-curated topic posts, use /v1/instagram/search/popular. For an exact hashtag across posts and reels, use /v1/instagram/search/hashtag. Play counts are Instagram-only and exclude cross-posted Facebook views. Pages 1 through 11 are supported; page 12 or greater returns a 400 response.",
+        "Use this when you only want Google-indexed Instagram reels matching a keyword or phrase, with optional date filters and pagination. It returns reel media, engagement, owner, location, and audio details. Results are best-effort rather than a complete Instagram-native search. For Instagram-curated topic posts, use /v1/instagram/search/popular. For an exact hashtag across posts and reels, use /v1/instagram/search/hashtag. Pages 1 through 11 are supported; page 12 or greater returns a 400 response.",
       path: "/v2/instagram/reels/search",
       params: [
         {
@@ -3983,8 +3979,6 @@ export const instagramBaseApis = {
               "https://scontent-sjc3-1.cdninstagram.com/o1/v/t2/f2/m86/AQPtJA5EnMaKK-MNttf3RtYeQCVd-RvC7-juqeJiRkM3tKOkES_-1_ejsPDHgHGZ-xl4in8i3l38K12FlyUWKsieKzs2fGzo1GYOYJI.mp4?_nc_cat=105&_nc_sid=5e9851&_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_ohc=YBLRFw3fFXcQ7kNvwGKHSNS&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6Nzg4NjQ4MjQzNTUwNjIxLCJhc3NldF9hZ2VfZGF5cyI6MTA1LCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6NzUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=8331fe48c9c9d742&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC85NjQ3MjM4QTg3QjMzMzVCNEVBNDI2NEUzRTIyRTNBRV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRGFlcnlEbFRCTkhBbXdGQUk1d0lORGFpWEk3YnFfRUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmuubGpq_R5gIVAigCQzMsF0BS7MzMzMzNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&_nc_gid=rIrCBBTCedpkbi2BFdOeJA&_nc_zt=28&oh=00_Afnoz52f0MquXCMwfTVoxg7ArrUBU0IM-BhI13EbDc8qKg&oe=695618AE",
             has_audio: false,
             accessibility_caption: null,
-            video_view_count: 21808,
-            video_play_count: 46018,
             product_type: "clips",
             video_duration: 75.7,
             clips_music_attribution_info: {
@@ -4157,8 +4151,6 @@ export const instagramBaseApis = {
               "https://instagram.fjau2-1.fna.fbcdn.net/o1/v/t2/f2/m86/AQMGznAPGhcSD2V0mwaf-FG2EZJ2y8OO0-NaXzzePzZsktazCSmUBKiRUMQwRCs4f3hajvZe9J0kqn6tMNEoZkqIa3_3VORgBKZTaFY.mp4?_nc_cat=103&_nc_oc=AdlOjWBrhYJ5_tH_G0NgrsGmMwladCYG_uKMlWZpc3XjffSG1-N1Ql8PB5bibwJ1ghM&_nc_sid=5e9851&_nc_ht=instagram.fjau2-1.fna.fbcdn.net&_nc_ohc=uji5XQuEMl4Q7kNvwHXgBf0&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNTc2LmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6NzA4OTMwMTEyMDExMDc2LCJhc3NldF9hZ2VfZGF5cyI6NywidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjc3LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=c8400c88801d2050&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9ENDQ2OEIwRjVCQUY0NjdFMkUxMkM5RjhERDdERTBBMV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HTlRSQXlUa2s5S3AxTThFQUh0NzhBU1gwZW9LYnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmiO3595SxwgIVAigCQzMsF0BTSp--dsi0GBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&_nc_gid=aUx3RrOXcjBr2cA8SlA4sQ&_nc_zt=28&oh=00_AfmLbRxcBwEdb3HYqfUn-rjQvS8bP26kMKK5fRC9ePBVAQ&oe=69563678",
             has_audio: true,
             accessibility_caption: null,
-            video_view_count: 1437,
-            video_play_count: 2905,
             product_type: "clips",
             video_duration: 77.166,
             clips_music_attribution_info: {
@@ -4311,8 +4303,6 @@ export const instagramBaseApis = {
               "https://scontent-sjc6-1.cdninstagram.com/o1/v/t2/f2/m86/AQONqqxKabff9BZRO7uaH5BXwMh8BXSlRwnMcLRLe5oqcqYkeSKi0MxuMJ8HZRDkT2y36sOu5bmYPEg8-CczNflliC4uhmdf1gElZ8Y.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-sjc6-1.cdninstagram.com&_nc_ohc=3-ncb8NjkgEQ7kNvwHkyBCh&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTkxNjY3MjEzNTc3ODE0MiwiYXNzZXRfYWdlX2RheXMiOjExNSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjU5LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=49d2cb7a8533f053&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9ERDQxQjIwMzUxMTg0RjAxNjI5NDQ2QTI5RUE5NTA4OF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRFRiWWlBai0yOXZXX0lEQUIzUkxUVTZwbnNaYnFfRUFBQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmvL3unIDN5wYVAigCQzMsF0BNt2yLQ5WBGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&_nc_gid=K2ngcS-IqRjRHUvD236sDQ&_nc_zt=28&oh=00_Afny6XlXH8a5lIeV7vyIgobLzhbCJOd3KcMZ-DYexwOUyg&oe=69562279",
             has_audio: true,
             accessibility_caption: null,
-            video_view_count: 110684,
-            video_play_count: 271876,
             product_type: "clips",
             video_duration: 59.433,
             clips_music_attribution_info: {
