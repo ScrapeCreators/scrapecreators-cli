@@ -5620,7 +5620,7 @@ export const tiktokBaseApis = {
       name: "Live",
       method: "GET",
       description: "Scrapes a TikTok user's live stream",
-      fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities).",
+      fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Use the top-level `is_live` boolean instead of checking TikTok's numeric status values yourself. Also returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities).",
       path: "/v1/tiktok/user/live",
       params: [
         {
@@ -5633,6 +5633,7 @@ export const tiktokBaseApis = {
       ],
       sampleResponse: {
         success: true,
+        is_live: true,
         liveRoomUserInfo: {
           avatarLarger:
             "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/b169e9223700dc8d20d327510eb47f94~tplv-tiktokx-cropcenter:1080:1080.webp?dr=9640&refresh_token=c39a7259&x-expires=1751918400&x-signature=2Q%2F13wVO%2F%2F5OFBDinwMuULyBINc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=fdd36af4&idc=useast5",
