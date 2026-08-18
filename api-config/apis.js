@@ -2986,7 +2986,7 @@ export const apis = [
         method: "GET",
         description: "Get public Facebook profile information",
         fullDescription:
-          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, and followerCount. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. Contact fields come from the submitted public profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL. If Facebook shows an 18+ content gate, the response is still 200 with account_status: \"age-restricted\" and isPrivate: true. If Facebook shows a private content gate, the response is still 200 with account_status: \"private\" and isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false. Set include_gated_profile=true to also return limited public fields (such as id, name, category, likeCount, profilePicSmall, and links) when a profile is gated or age-restricted. This option only affects gated/age-restricted profiles — public profiles still return the normal full response.",
+          "Retrieves public Facebook page details including category, address, email, phone, website, services, priceRange, rating, likeCount, talkingAboutCount, and followerCount. talkingAboutCount is nullable and only returned when Facebook exposes it publicly. Also returns adLibrary status with the page's ad activity and pageId. Optionally includes businessHours when get_business_hours is set to true. Contact fields come from the submitted public profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL. If Facebook shows an 18+ content gate, the response is still 200 with account_status: \"age-restricted\" and isPrivate: true. If Facebook shows a private content gate, the response is still 200 with account_status: \"private\" and isPrivate: true. If the page is not found, the response is 404 with accountDoesNotExist: true and isPrivate: false. Set include_gated_profile=true to also return limited public fields (such as id, name, category, likeCount, profilePicSmall, and links) when a profile is gated or age-restricted. This option only affects gated/age-restricted profiles — public profiles still return the normal full response.",
         path: "/v1/facebook/profile",
         sampleResponse: {
           success: true,
@@ -3165,6 +3165,7 @@ export const apis = [
           rating: "Not yet rated (1 review)",
           ratingCount: null,
           likeCount: 3224,
+          talkingAboutCount: 418,
           followerCount: 3200,
         },
         privateResponse: {
