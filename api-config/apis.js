@@ -6331,7 +6331,7 @@ export const apis = [
         description:
           "Search the Facebook (Meta) Ad Library by keyword. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         fullDescription:
-          "Searches the Meta Ad Library by keyword and returns matching ads. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
+          "Searches the Meta Ad Library by keyword and returns matching ads. Supports filtering by language with a 2-letter code such as EN or ES. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/search/ads",
         sampleResponse: {
           searchResults: [
@@ -6586,6 +6586,14 @@ export const apis = [
             description:
               "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
             placeholder: "ALL",
+          },
+          {
+            name: "language",
+            type: "string",
+            required: false,
+            description:
+              "Language to filter ads on. Needs to be a 2 letter language code, such as EN, ES, or FR.",
+            placeholder: "EN",
           },
           {
             name: "status",
