@@ -1204,6 +1204,52 @@ export const apis = [
         ],
       },
       {
+        name: "Search Typeahead",
+        method: "GET",
+        description:
+          "Get the live autocomplete suggestions shown in YouTube's search dropdown.",
+        fullDescription:
+          "Returns the live search suggestions YouTube displays while a user types. Each result includes the suggested text and whether it is a normal query or a channel. When YouTube returns a channel suggestion, the response also includes its public channel ID, handle, name, and thumbnail.",
+        path: "/v1/youtube/search/typeahead",
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          data: {
+            query: "mr beast",
+            suggestions: [
+              {
+                text: "mrbeast",
+                type: "channel",
+                channel: {
+                  id: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+                  handle: "@MrBeast",
+                  name: "MrBeast",
+                  thumbnailUrl:
+                    "https://yt3.googleusercontent.com/example=s88-c-k-c0x00ffffff-no-rj",
+                },
+              },
+              {
+                text: "mr beast give me some money",
+                type: "query",
+              },
+              {
+                text: "mrbeast gaming",
+                type: "query",
+              },
+            ],
+          },
+        },
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Partial or complete YouTube search query",
+            placeholder: "mr beast",
+          },
+        ],
+      },
+      {
         name: "Search by Hashtag",
         method: "GET",
         description:
