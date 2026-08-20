@@ -1,7 +1,7 @@
 {
   "name": "@scrapecreators/cli",
   "version": "1.0.76",
-  "description": "CLI for the ScrapeCreators API — scrape 27+ social media platforms from the terminal",
+  "description": "CLI for the ScrapeCreators API \u2014 scrape 27+ social media platforms from the terminal",
   "type": "module",
   "bin": {
     "scrapecreators": "bin/scrapecreators.js"
@@ -44,5 +44,8 @@
   "license": "MIT",
   "devDependencies": {
     "vitest": "^4.1.4"
+  },
+  "overrides": {
+    "fast-uri": "4.1.2"
   }
 }
