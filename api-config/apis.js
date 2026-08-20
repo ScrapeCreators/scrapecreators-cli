@@ -7056,7 +7056,7 @@ export const apis = [
         method: "GET",
         description: "Search TikTok's public Ads Library by general query or advertiser name.",
         fullDescription:
-          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity. If TikTok has no matching entity, the API falls back to TikTok's name search so inputs such as The Creator Loop still return matching ads. Provide exactly one of query or advertiser_name. Results are global, sorted by the latest shown date, and support cursor pagination.",
+          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity. If TikTok has no matching entity, the API falls back to TikTok's name search so inputs such as The Creator Loop still return matching ads. Provide exactly one of query or advertiser_name. Results are global, sorted by the latest shown date, support cursor pagination, and include a public TikTok Ads Library URL for each ad.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
@@ -7097,6 +7097,7 @@ export const apis = [
           ads: [
             {
               id: "1871655924410641",
+              url: "https://library.tiktok.com/ads/detail/?ad_id=1871655924410641",
               name: "GYMSHARK LTD",
               audit_status: "1",
               type: "2",
@@ -7121,6 +7122,12 @@ export const apis = [
           has_more: true,
           cursor: "opaque cursor for the next page",
         },
+        responseFields: [
+          {
+            path: "ads[].url",
+            description: "Public TikTok Ads Library detail page for the ad.",
+          },
+        ],
       },
       {
         name: "Ad Library Ad",
