@@ -18005,7 +18005,7 @@ export const apis = [
   {
     id: "spotify",
     name: "Spotify",
-    description: "Scrape Spotify artists, songs, and albums",
+    description: "Scrape Spotify artists, songs, albums, playlists, and podcasts",
     endpoints: [
       {
         name: "Artist",
@@ -30024,6 +30024,89 @@ export const apis = [
               }
             }
           ]
+        },
+      },
+      {
+        name: "Playlist",
+        method: "GET",
+        description: "Get a Spotify playlist and its tracks",
+        fullDescription:
+          "Retrieves public Spotify playlist metadata and up to 50 tracks by playlist id or URL. For playlists with more tracks, pass the returned cursor into the next request until cursor is null.",
+        path: "/v1/spotify/playlist",
+        params: [
+          {
+            name: "id",
+            type: "string",
+            required: false,
+            description: "Spotify playlist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            placeholder: "37i9dQZF1DX4UtSsGT1Sbe",
+          },
+          {
+            name: "url",
+            type: "string",
+            required: false,
+            description: "Spotify playlist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            placeholder: "https://open.spotify.com/playlist/37i9dQZF1DX4UtSsGT1Sbe",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Cursor returned by the previous response. Omit it for the first page.",
+            placeholder: "50",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 100,
+          "id": "37i9dQZF1DX4UtSsGT1Sbe",
+          "uri": "spotify:playlist:37i9dQZF1DX4UtSsGT1Sbe",
+          "__typename": "Playlist",
+          "description": "The biggest songs of the 1980s. Cover: Madonna",
+          "followers": 12016730,
+          "images": [
+            {
+              "sources": [
+                {
+                  "height": null,
+                  "url": "https://i.scdn.co/image/ab67706f00000002fb8e01f2c022ab1a32e2c5a0",
+                  "width": null,
+                },
+              ],
+            },
+          ],
+          "name": "All Out 80s",
+          "ownerV2": {
+            "__typename": "User",
+            "name": "Spotify",
+            "uri": "spotify:user:spotify",
+            "username": "spotify",
+          },
+          "tracks": [
+            {
+              "id": "6r8k1vznHrzlEKYxL4dZEe",
+              "uri": "spotify:track:6r8k1vznHrzlEKYxL4dZEe",
+              "name": "La Isla Bonita",
+              "albumOfTrack": {
+                "name": "True Blue",
+                "uri": "spotify:album:6fmnT17jc2Sc69q3nza1eD",
+              },
+              "artists": [
+                {
+                  "profile": {
+                    "name": "Madonna",
+                  },
+                  "uri": "spotify:artist:6tbjWDEIzxoDsBA1FuhfPW",
+                },
+              ],
+              "duration": {
+                "totalMilliseconds": 242733,
+              },
+              "playcount": 785646615,
+            },
+          ],
+          "cursor": 50,
+          "totalCount": 150,
         },
       },
       {
