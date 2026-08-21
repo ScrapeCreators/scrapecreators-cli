@@ -9635,6 +9635,52 @@ export const apis = [
             "eyJjYW5kaWRhdGVzX3JldHVybmVkIjoie1wic2VjdGlvbl8xX3BpcGVsaW5lXzBfZ2xvYmFsX21vZGlmaWVyc1wiOlwiM1wiLFwic2VjdGlvbl8xX3BpcGVsaW5lXzFfbG9jYWxfbW9kaWZpZXJzXCI6XCIzXCIsXCJzZWN0aW9uXzJfcGlwZWxpbmVfNl9zY29wZV9zd2l0Y2hlclwiOlwiMFwiLFwic2VjdGlvbl8yX3BpcGVsaW5lXzdfcG9zdF9zZWFyY2hcIjpcIjdcIn0ifQ==",
         },
       },
+      {
+        name: "Post",
+        method: "GET",
+        description: "Get information from a Reddit post without comments",
+        fullDescription:
+          "Retrieves public Reddit post details by URL without fetching or returning comments. Returns the text post body in selftext when present, plus the title, author, subreddit, score, upvote ratio, comment count, timestamps, permalink, and post flags. Accepts canonical Reddit post URLs and Reddit mobile share URLs.",
+        path: "/v1/reddit/post",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Reddit post URL",
+            placeholder:
+              "https://www.reddit.com/r/webscraping/comments/1q6pxwn/just_started_web_scraping_is_this_a_good_start/",
+          },
+        ],
+        sampleResponse: {
+          id: "1q6pxwn",
+          author: "franik33",
+          author_fullname: "t2_16xbknfp71",
+          subreddit: "webscraping",
+          title: "Just Started Web Scraping — Is This a Good Start?",
+          selftext:
+            "Hi everyone, I started getting into web scraping about 3–4 days ago. I already have some solid experience with Python, and my first scraping project was a public website. I managed to collect around 7,000 records and everything worked as expected. I’m curious whether this is considered a decent start for someone new to scraping, or if it’s fairly basic stuff.Also, I’d like to hear honest opinions: is web scraping still worth investing time in today (for projects, automation, or monetization), or is it becoming a waste of time due to market saturation and restrictions? Any real-world experiences or insights would be appreciated. Thanks in advance.",
+          downs: 0,
+          name: "t3_1q6pxwn",
+          upvote_ratio: 0.9230769230769231,
+          ups: 33,
+          total_awards_received: 0,
+          score: 33,
+          created: 1767816090,
+          created_utc: 1767816090,
+          created_at_iso: "2026-01-07T20:01:30.000Z",
+          num_comments: 53,
+          url: "https://www.reddit.com/r/webscraping/comments/1q6pxwn/just_started_web_scraping_is_this_a_good_start/",
+          permalink:
+            "/r/webscraping/comments/1q6pxwn/just_started_web_scraping_is_this_a_good_start/",
+          subreddit_subscribers: null,
+          is_video: false,
+          archived: true,
+          locked: false,
+          over_18: false,
+          spoiler: false,
+        },
+      },
       ...withPostVariant({
         name: "Post Comments",
         method: "GET",
