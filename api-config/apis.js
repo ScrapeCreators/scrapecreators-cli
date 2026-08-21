@@ -3,6 +3,7 @@ import { tiktokShopApis } from "./tiktok-shop-apis.js";
 import { instagramBaseApis } from "./instagram-apis.js";
 import { githubApis } from "./github-apis.js";
 import { kwaiApis } from "./kwai-apis.js";
+import { telegramApis } from "./telegram-apis.js";
 
 const withPostVariant = (endpoint) => [
   endpoint,
@@ -18,6 +19,7 @@ export const apis = [
   tiktokBaseApis,
   tiktokShopApis,
   instagramBaseApis,
+  telegramApis,
   {
     id: "youtube",
     name: "YouTube",
@@ -34499,6 +34501,9 @@ const CACHEABLE_PATHS = new Set([
   "/v1/reddit/subreddit/details",
   "/v1/reddit/ad",
   "/v1/reddit/post/transcript",
+  "/v1/telegram/channel",
+  "/v1/telegram/channel/posts",
+  "/v1/telegram/post",
 ]);
 
 const CACHE_MAX_AGE_PARAM = {
