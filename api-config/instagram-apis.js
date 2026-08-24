@@ -574,12 +574,20 @@ export const instagramBaseApis = {
     {
       name: "Posts",
       method: "GET",
-      description: "Get a persons public posts (which includes reels). *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
+      description: "Get a persons public posts (which includes reels). The published time is returned in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp is still available in `items[].taken_at`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
       fullDescription:
-        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, and tagged users. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline.",
+        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline.",
       path: "/v2/instagram/user/posts",
       paginationField: "next_max_id",
       responseFields: [
+        {
+          path: "items[0].created_at",
+          description: "Human-readable published time in ISO 8601 UTC format.",
+        },
+        {
+          path: "items[0].taken_at",
+          description: "Original published time as a Unix timestamp in seconds.",
+        },
         {
           path: "items[0].video_versions[0].url",
           description: "If the post is video, this is the URL of the video",
@@ -620,6 +628,7 @@ export const instagramBaseApis = {
             has_privately_liked: false,
             filter_type: 0,
             taken_at: 1743438570,
+            created_at: "2025-03-31T16:29:30.000Z",
             usertags: {
               in: [
                 {
@@ -1428,9 +1437,9 @@ export const instagramBaseApis = {
       name: "Reels",
       method: "GET",
       description:
-        "Get all public reels from a profile. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
+        "Get all public reels from a profile. The published time is returned in `items[].media.created_at` as an ISO 8601 UTC date. With `trim=true`, use `items[].created_at`. The original Unix timestamp remains available as `taken_at`. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
       fullDescription:
-        "Returns a paginated list of a user's public Instagram reels (short-form videos). Each reel includes its shortcode, play count, like count, comment count, video versions with download URLs, thumbnail image, and owner info. Note that reel captions are not returned by this endpoint. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via max_id; providing a user_id instead of a handle yields faster responses.",
+        "Returns a paginated list of a user's public Instagram reels (short-form videos). Each reel includes its shortcode, play count, like count, comment count, video versions with download URLs, thumbnail image, owner info, and the published time in `items[].media.created_at` as an ISO 8601 UTC date. With `trim=true`, use `items[].created_at`. The original Unix timestamp remains available as `taken_at`. Note that reel captions are not returned by this endpoint. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via max_id; providing a user_id instead of a handle yields faster responses.",
       path: "/v1/instagram/user/reels",
       paginationField: "max_id",
       sampleResponse: {
@@ -1438,6 +1447,7 @@ export const instagramBaseApis = {
           {
             media: {
               taken_at: 1736294201,
+              created_at: "2025-01-07T23:56:41.000Z",
               pk: "3540614075954356349",
               id: "3540614075954356349_2700692569",
               fbid: "17882057793200056",
@@ -1795,6 +1805,7 @@ export const instagramBaseApis = {
             id: "3641924023820356866_21393171",
             code: "DKKtpqaxg0C",
             taken_at: 1748371310,
+            created_at: "2025-05-27T18:41:50.000Z",
             caption: {
               bit_flags: 0,
               created_at: 1748371312,
@@ -2031,6 +2042,16 @@ export const instagramBaseApis = {
       },
       responseFields: [
         {
+          path: "items[0].media.created_at",
+          description:
+            "Human-readable published time in ISO 8601 UTC format. With trim=true, use items[0].created_at.",
+        },
+        {
+          path: "items[0].media.taken_at",
+          description:
+            "Original published time as a Unix timestamp in seconds. With trim=true, use items[0].taken_at.",
+        },
+        {
           path: "items[0].media.play_count",
           description: "This is views for the reel.",
         },
@@ -2078,11 +2099,19 @@ export const instagramBaseApis = {
       name: "Post/Reel Info",
       method: "GET",
       description:
-        "Retrieve public post/reel details. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
+        "Retrieve public post/reel details. The published time is returned in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
       fullDescription:
-        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, and carousel sidecar children when applicable. Play counts are Instagram-only views and exclude cross-posted Facebook views.",
+        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views.",
       path: "/v1/instagram/post",
       responseFields: [
+        {
+          path: "data.xdt_shortcode_media.created_at",
+          description: "Human-readable published time in ISO 8601 UTC format.",
+        },
+        {
+          path: "data.xdt_shortcode_media.taken_at_timestamp",
+          description: "Original published time as a Unix timestamp in seconds.",
+        },
         {
           path: "data.xdt_shortcode_media.video_url",
           description: "If the post is video, this is the URL of the video",
@@ -2262,6 +2291,7 @@ export const instagramBaseApis = {
             },
             comments_disabled: false,
             commenting_disabled_for_viewer: false,
+            created_at: "2025-02-10T18:00:35.000Z",
             taken_at_timestamp: 1739210435,
             edge_media_preview_like: { count: 153, edges: [] },
             edge_media_to_sponsor_user: { edges: [] },
