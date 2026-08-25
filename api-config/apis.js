@@ -11049,9 +11049,9 @@ export const apis = [
       {
         name: "Search",
         method: "GET",
-        description: "Search Reddit for posts",
+        description: "Search Reddit for posts or comments",
         fullDescription:
-          "Searches across all of Reddit for posts matching a query. Each post includes title, author, selftext, subreddit, score, ups, upvote_ratio, num_comments, created_utc, url, permalink, and is_video. Supports sort (relevance, new, top, comment_count), timeframe filtering, pagination via the after token, and a trim parameter for lighter responses.",
+          "Searches across all of Reddit for posts or comments matching a query. Set filter to posts (the default) or comments. Post results include title, author, selftext, subreddit, score, ups, upvote_ratio, num_comments, created_utc, url, permalink, and is_video. Comment results include the matching body, author, votes, timestamps, comment URL, parent relationship, and post/subreddit context. Comment searches support relevance, new, and top sorting. Timeframe filtering applies to post searches. Pagination uses the after token, and trim returns a lighter response.",
         path: "/v1/reddit/search",
         paginationField: "after",
         params: [
@@ -11062,10 +11062,19 @@ export const apis = [
             description: "Search query",
           },
           {
+            name: "filter",
+            type: "select",
+            required: false,
+            description: "Search posts or comments",
+            placeholder: "posts",
+            options: ["posts", "comments"],
+          },
+          {
             name: "sort",
             type: "select",
             required: false,
-            description: "Sort by",
+            description:
+              "Sort by. Comment search supports relevance, new, and top; comment_count is for post search only.",
             placeholder: "relevance",
             options: ["relevance", "new", "top", "comment_count"],
           },
@@ -11073,7 +11082,7 @@ export const apis = [
             name: "timeframe",
             type: "select",
             required: false,
-            description: "Timeframe",
+            description: "Post search timeframe",
             placeholder: "all",
             options: ["all", "day", "week", "month", "year"],
           },
