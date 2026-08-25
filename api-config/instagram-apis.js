@@ -3978,9 +3978,9 @@ export const instagramBaseApis = {
           name: "date_posted",
           type: "select",
           required: false,
-          description: "Date posted",
-          options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
-          placeholder: "last-hour",
+          description: "Google-indexed date window. Recent hour/day filters are not supported because Google does not index Instagram reels reliably enough in those windows.",
+          options: ["last-week", "last-month", "last-year"],
+          placeholder: "last-week",
         },
         {
           name: "page",
