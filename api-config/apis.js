@@ -33442,6 +33442,152 @@ export const apis = [
     ],
   },
   {
+    id: "creator-tools",
+    name: "Creator Tools",
+    description: "Tools for finding and analyzing creator profiles",
+    endpoints: [
+      {
+        name: "Find Social Profiles",
+        method: "GET",
+        description:
+          "Enter a creator's handle from one social media platform and get all of their social profiles.",
+        fullDescription:
+          "Accepts a supported platform and creator handle, validates both using platform-specific rules, and constructs the canonical source profile URL internally. URLs are not accepted as handles. Supported platforms are Instagram, TikTok, YouTube, X/Twitter, and Facebook; X is accepted as an alias for Twitter. YouTube accepts handles and 24-character channel IDs. The endpoint returns social profiles explicitly linked from the source profile and expands recognized link-in-bio pages. It also re-scrapes up to three supported profiles explicitly linked by the source and follows up to three unique public website URLs declared by the source or those trusted profiles for one page, while preserving each declared path and query. Generic service-provider landing pages reached through parked or unconfigured branded-domain redirects are ignored so the provider's own footer links are not attributed to the creator. It also checks whether the same handle exists on the other supported platforms. All attempted same-handle URLs are returned in same_handle_candidate_urls even when they cannot be verified strongly enough for profiles. Same-handle accounts are included in profiles only when corroborated by a shared owner-controlled website or a reciprocal profile link; matching handles and display names alone are not identity proof. same_handle_match records supporting name evidence at 0.75 confidence, while shared_website and website_link use 0.9. A bounded Google search discovers alternate handles, but Google results are never returned without verification. At most two candidates per other supported platform, up to four total, are re-scraped through that platform's profile scraper. The endpoint may also follow up to two unique recognized link-in-bio URLs declared by the re-scraped Google candidates. The global two-page cap is applied after candidates whose returned handles do not match their Google URLs are rejected. Optional profile probes and page fetches make one attempt and receive the shared enrichment abort signal. A reciprocal source-profile link found there verifies the candidate, and the page's explicit cross-platform profiles can then expand the verified identity graph. Google URLs that re-scrape to the same returned platform handle are deduplicated. A different-handle candidate is accepted only when it links back to the source profile, or when its normalized display name matches and it declares the same owner-controlled public website; common multi-tenant profile and storefront hosts are excluded from shared-website identity evidence. Google discovery uses google_search_match at 0.6, exact names use display_name_match at 0.75, reciprocal links use 0.95, and cross-platform social links explicitly declared by a verified candidate use verified_profile_link at 0.95. Source-linked URLs and failures are returned in source_linked_profile_urls and failed_source_linked_profile_urls. Google candidate URLs, candidate-declared link-in-bio URLs, verified URLs, and failures are returned in google_candidate_urls, google_candidate_link_in_bio_urls, verified_google_candidate_urls, failed_google_candidate_urls, and failed_google_candidate_link_in_bio_urls. Results are deterministic and do not use AI. Mixed or unreachable enrichment results are reported through partial and the matching failure fields. If every declared link-in-bio page fails and no other enrichment finds a profile, the request returns an uncharged 503. A successful live lookup costs 1 credit.",
+        path: "/v1/find-social-profiles",
+        params: [
+          {
+            name: "platform",
+            type: "select",
+            required: true,
+            description: "Source social platform",
+            options: [
+              "instagram",
+              "tiktok",
+              "youtube",
+              "x",
+              "twitter",
+              "facebook",
+            ],
+            placeholder: "instagram",
+          },
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            description:
+              "Creator handle without a profile URL. A leading @ is optional.",
+            placeholder: "creator",
+          },
+        ],
+        sampleResponse: {
+          source: {
+            platform: "instagram",
+            handle: "creator",
+            url: "https://www.instagram.com/creator",
+          },
+          profiles: [
+            {
+              platform: "instagram",
+              handle: "creator",
+              url: "https://www.instagram.com/creator",
+              confidence: 1,
+              evidence: [
+                "source_profile",
+                "link_in_bio",
+                "verified_profile_link",
+              ],
+            },
+            {
+              platform: "youtube",
+              handle: "creator",
+              url: "https://www.youtube.com/@creator",
+              confidence: 0.9,
+              evidence: [
+                "same_handle_match",
+                "shared_website",
+                "website_link",
+              ],
+            },
+            {
+              platform: "tiktok",
+              handle: "creator",
+              url: "https://www.tiktok.com/@creator",
+              confidence: 1,
+              evidence: ["link_in_bio"],
+            },
+            {
+              platform: "facebook",
+              handle: "creator-page",
+              url: "https://www.facebook.com/creator-page",
+              confidence: 0.95,
+              evidence: [
+                "google_search_match",
+                "display_name_match",
+                "reciprocal_profile_link",
+              ],
+            },
+            {
+              platform: "linkedin",
+              handle: "creator",
+              url: "https://www.linkedin.com/in/creator",
+              confidence: 0.95,
+              evidence: ["verified_profile_link"],
+            },
+          ],
+          link_in_bio_urls: ["https://linktr.ee/creator"],
+          expanded_website_urls: ["https://creator.com/"],
+          source_linked_profile_urls: ["https://x.com/creator"],
+          failed_source_linked_profile_urls: [],
+          same_handle_candidate_urls: [
+            "https://www.tiktok.com/@creator",
+            "https://www.youtube.com/@creator",
+          ],
+          partial: false,
+          failed_link_in_bio_urls: [],
+          failed_website_urls: [],
+          same_handle_search_partial: false,
+          google_search_used: true,
+          google_search_failed: false,
+          google_candidate_urls: [
+            "https://www.facebook.com/creator-page",
+          ],
+          google_candidate_link_in_bio_urls: [
+            "https://linktr.ee/creator",
+          ],
+          failed_google_candidate_link_in_bio_urls: [],
+          verified_google_candidate_urls: [
+            "https://www.facebook.com/creator-page",
+          ],
+          failed_google_candidate_urls: [],
+          google_verification_partial: false,
+        },
+      },
+      {
+        name: "Get Age and Gender",
+        method: "GET",
+        description:
+          "Get age and gender of creator. This uses AI to analyze the profile image. *The profile photo must have a clear face to get an accurate result.*",
+        fullDescription:
+          "Uses AI to analyze a creator's profile photo and estimate their age and gender. Returns ageRange with low and high bounds, gender, and a confidence score for the gender prediction. The profile photo must contain a clear, visible face for accurate results.",
+        path: "/v1/detect-age-gender",
+        sampleResponse: {
+          ageRange: { low: 23, high: 29 },
+          gender: "Male",
+          confidence: { gender: 82.51082611083984 },
+        },
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "URL to users social profile",
+            placeholder: "https://twitter.com/levelsio",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "linktree",
     name: "Linktree",
     description: "Scrape Linktree pages",
@@ -33906,36 +34052,6 @@ export const apis = [
           ],
           pageToken: "amzn1.ideas.1S28M0V6I8FUU_0_2025-09-03T01:17:37.837Z",
         },
-      },
-    ],
-  },
-  {
-    id: "age-and-gender",
-    name: "Age and Gender",
-    description: "Get age and gender of creator",
-    endpoints: [
-      {
-        name: "Get Age and Gender",
-        method: "GET",
-        description:
-          "Get age and gender of creator. This uses AI to analyze the profile image. *The profile photo must have a clear face to get an accurate result.*",
-        fullDescription:
-          "Uses AI to analyze a creator's profile photo and estimate their age and gender. Returns ageRange with low and high bounds, gender, and a confidence score for the gender prediction. The profile photo must contain a clear, visible face for accurate results.",
-        path: "/v1/detect-age-gender",
-        sampleResponse: {
-          ageRange: { low: 23, high: 29 },
-          gender: "Male",
-          confidence: { gender: 82.51082611083984 },
-        },
-        params: [
-          {
-            name: "url",
-            type: "string",
-            required: true,
-            description: "URL to users social profile",
-            placeholder: "https://twitter.com/levelsio",
-          },
-        ],
       },
     ],
   },
