@@ -12030,7 +12030,7 @@ export const apis = [
         method: "GET",
         description: "Get Truth Social post",
         fullDescription:
-          "Fetches a single Truth Social post by URL, returning text, id, created_at, url, content, account details, media_attachments, card link previews, replies_count, reblogs_count, and favourites_count. Only posts from prominent public figures (e.g., Trump, Vance) are accessible without authentication.",
+          "Fetches a single Truth Social post by URL, returning text, id, created_at, url, content, account details, media_attachments, card link previews, replies_count, reblogs_count, and favourites_count. Set download_media=true to download attached images or video and return permanent Supabase URLs. Only posts from prominent public figures (e.g., Trump, Vance) are accessible without authentication.",
         path: "/v1/truthsocial/post",
         params: [
           {
@@ -12040,6 +12040,15 @@ export const apis = [
             description: "Truth Social post URL",
             placeholder:
               "https://truthsocial.com/@realDonaldTrump/posts/114315219437063160",
+          },
+          {
+            name: "download_media",
+            type: "boolean",
+            required: false,
+            description:
+              "Set to true to download the attached video/images and get back permanent Supabase URLs. Costs 10 credits if media is found, 1 credit otherwise.",
+            placeholder: false,
+            credits: 10,
           },
         ],
         sampleResponse: {
