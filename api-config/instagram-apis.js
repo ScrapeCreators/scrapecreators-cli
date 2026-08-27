@@ -2101,7 +2101,7 @@ export const instagramBaseApis = {
       description:
         "Retrieve public post/reel details. The published time is returned in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
       fullDescription:
-        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views.",
+        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views. Set `include_play_count=false` to omit the play count and skip its additional fetch for a faster response.",
       path: "/v1/instagram/post",
       responseFields: [
         {
@@ -2118,7 +2118,7 @@ export const instagramBaseApis = {
         },
         {
           path: "data.xdt_shortcode_media.video_play_count",
-          description: "Views (only for reels)",
+          description: "Views (only for reels). Omitted when `include_play_count=false`.",
         },
         {
           path: "data.xdt_shortcode_media.edge_media_preview_like.count",
@@ -2721,6 +2721,13 @@ export const instagramBaseApis = {
           description: "Set to true to download the video/images and get back permanent Supabase URLs. Costs 10 credits if media is found, 1 credit otherwise.",
           placeholder: false,
           credits: 10,
+        },
+        {
+          name: "include_play_count",
+          type: "boolean",
+          required: false,
+          description: "Set to false to omit `video_play_count` and skip its additional fetch for a faster response. Defaults to true.",
+          placeholder: true,
         },
       ],
     },
