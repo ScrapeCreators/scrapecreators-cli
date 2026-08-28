@@ -20,7 +20,7 @@ npx @scrapecreators/cli tiktok profile --handle charlidamelio --api-key YOUR_KEY
 
 ## Quick Start
 
-1. Get your API key at [app.scrapecreators.com](https://app.scrapecreators.com)
+1. Get your API key at [app.scrapecreators.com](https://app.scrapecreators.com), or [sign up with GitHub](#sign-up-with-github-device-flow)
 
 2. Authenticate:
 
@@ -53,6 +53,44 @@ Three ways to authenticate, in priority order:
 > **Security note:** The `--api-key` flag is visible in shell history and process lists. For persistent use, prefer `scrapecreators auth login` or the environment variable. In CI/automated pipelines, always use the environment variable.
 
 Get your API key at [app.scrapecreators.com](https://app.scrapecreators.com).
+
+### Sign up with GitHub (device flow)
+
+New users can sign up with GitHub from a terminal or agent without creating a password. The GitHub path includes 10,000 free API calls and does not require a credit card. It uses GitHub's device flow, so the user authorizes with a short code instead of sharing GitHub credentials with the CLI or agent.
+
+This is separate from the `gh` CLI. Do not read or send a local `gh auth token`.
+
+1. Start the device flow:
+
+```bash
+curl -sS -X POST "https://api.scrapecreators.com/v1/github/device/code" \
+  -H "content-type: application/json" \
+  -d '{}'
+```
+
+The response includes `device_code`, `user_code`, `verification_uri`, `interval`, and `expires_in`. Open `verification_uri` (normally `https://github.com/login/device`) and enter the short `user_code`.
+
+2. Poll for authorization, waiting at least the returned `interval` between requests:
+
+```bash
+curl -sS -X POST "https://api.scrapecreators.com/v1/github/device/token" \
+  -H "content-type: application/json" \
+  -d '{"device_code":"YOUR_DEVICE_CODE"}'
+```
+
+Keep polling while authorization is pending. If the response says `slow_down`, increase the interval. Stop on `expired_token` or `access_denied`. A completed authorization returns `access_token`.
+
+3. Exchange that access token for the ScrapeCreators API key:
+
+```bash
+ACCESS_TOKEN="value returned by the token endpoint"
+curl -sS "https://api.scrapecreators.com/v1/github/device/profile" \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+```
+
+The response includes `api_key`. Save it with `scrapecreators auth login`, or set it as `SCRAPECREATORS_API_KEY` in the process that runs the CLI.
+
+**For agents:** ask before opening the GitHub page. Show the user only `user_code` and `verification_uri`; keep `device_code`, `access_token`, and `api_key` out of chat and logs. Persist the API key securely, then verify it with `scrapecreators balance` before claiming signup succeeded. If GitHub authorizes but the profile response has no `api_key`, the GitHub account may already be linked; have the user sign in at [app.scrapecreators.com](https://app.scrapecreators.com) to retrieve the existing key.
 
 ## Usage
 
