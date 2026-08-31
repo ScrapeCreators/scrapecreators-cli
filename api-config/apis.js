@@ -1148,7 +1148,8 @@ export const apis = [
             name: "query",
             type: "string",
             required: true,
-            description: "Search query",
+            description:
+              'Search query. For stricter title matching, use YouTube\'s intitle: operator, for example intitle:"Foursquare Swarm". Quoted queries by themselves may still be broadened by YouTube when no fresh exact matches are available.',
           },
           {
             name: "uploadDate",
