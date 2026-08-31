@@ -9,7 +9,7 @@ export const instagramBaseApis = {
       description:
         "Gets public Instagram profile data, recent posts, and related accounts",
       fullDescription:
-        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators.",
+        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts.",
       path: "/v1/instagram/profile",
       responseFields: [
         {
@@ -490,6 +490,41 @@ export const instagramBaseApis = {
           placeholder: false,
         },
       ],
+    },
+    {
+      name: "Profile Post Count",
+      method: "GET",
+      description: "Gets the total number of posts on an Instagram profile",
+      fullDescription:
+        "Returns the total post count shown on a public Instagram profile. Use this endpoint when Profile returns media_count as null or edge_owner_to_timeline_media.count contains only the current batch size. This endpoint makes a separate Instagram profile-page request so it does not add latency to the main Profile endpoint. Instagram does not expose this metadata for every profile; unavailable counts return an error without deducting a credit.",
+      path: "/v1/instagram/profile/post-count",
+      responseFields: [
+        {
+          path: "data.handle",
+          description: "Instagram handle",
+        },
+        {
+          path: "data.media_count",
+          description: "Total number of posts shown on the profile",
+        },
+      ],
+      params: [
+        {
+          name: "handle",
+          type: "string",
+          required: true,
+          placeholder: "lifestyleperfume",
+          description: "Instagram handle",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        data: {
+          handle: "lifestyleperfume",
+          media_count: 2774,
+        },
+      },
     },
     {
       name: "Basic Profile",
