@@ -492,41 +492,6 @@ export const instagramBaseApis = {
       ],
     },
     {
-      name: "Profile Post Count",
-      method: "GET",
-      description: "Gets the total number of posts on an Instagram profile",
-      fullDescription:
-        "Returns the total post count shown on a public Instagram profile. Use this endpoint when Profile returns media_count as null or edge_owner_to_timeline_media.count contains only the current batch size. This endpoint makes a separate Instagram profile-page request so it does not add latency to the main Profile endpoint. Instagram does not expose this metadata for every profile; unavailable counts return an error without deducting a credit.",
-      path: "/v1/instagram/profile/post-count",
-      responseFields: [
-        {
-          path: "data.handle",
-          description: "Instagram handle",
-        },
-        {
-          path: "data.media_count",
-          description: "Total number of posts shown on the profile",
-        },
-      ],
-      params: [
-        {
-          name: "handle",
-          type: "string",
-          required: true,
-          placeholder: "lifestyleperfume",
-          description: "Instagram handle",
-        },
-      ],
-      sampleResponse: {
-        success: true,
-        credits_remaining: 100,
-        data: {
-          handle: "lifestyleperfume",
-          media_count: 2774,
-        },
-      },
-    },
-    {
       name: "Basic Profile",
       method: "GET",
       description: "Get a basic profile by user id.",
@@ -6837,6 +6802,41 @@ export const instagramBaseApis = {
         is_added_to_main_grid: false,
         is_archived: false,
         is_fit_green: true,
+      },
+    },
+    {
+      name: "Profile Post Count",
+      method: "GET",
+      description: "Gets the total number of posts on an Instagram profile",
+      fullDescription:
+        "Returns the total post count shown on a public Instagram profile. Use this endpoint when Profile returns media_count as null or edge_owner_to_timeline_media.count contains only the current batch size. This endpoint makes a separate Instagram profile-page request so it does not add latency to the main Profile endpoint. Instagram does not expose this metadata for every profile; unavailable counts return an error without deducting a credit.",
+      path: "/v1/instagram/profile/post-count",
+      responseFields: [
+        {
+          path: "data.handle",
+          description: "Instagram handle",
+        },
+        {
+          path: "data.media_count",
+          description: "Total number of posts shown on the profile",
+        },
+      ],
+      params: [
+        {
+          name: "handle",
+          type: "string",
+          required: true,
+          placeholder: "lifestyleperfume",
+          description: "Instagram handle",
+        },
+      ],
+      sampleResponse: {
+        success: true,
+        credits_remaining: 100,
+        data: {
+          handle: "lifestyleperfume",
+          media_count: 2774,
+        },
       },
     },
     {
