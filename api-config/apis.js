@@ -5070,7 +5070,7 @@ export const apis = [
         method: "GET",
         description: "Search Facebook Marketplace listings",
         fullDescription:
-          "Searches Facebook Marketplace listings by keyword and lat/lng. Supports pagination with the returned cursor. Pass the cursor value back as-is. When sort_by is creation_time_descend, Facebook can still return slightly different ordering between identical requests. For alerting/new-item workflows, scrape multiple pages and dedupe by listing id instead of relying on page 1 item order being identical every run.",
+          "Searches Facebook Marketplace listings by keyword and lat/lng. Pass category_id to restrict results to the numeric Facebook Marketplace category ID returned on listing results. Supports pagination with the returned cursor. Pass the cursor value back as-is. When sort_by is creation_time_descend, Facebook can still return slightly different ordering between identical requests. For alerting/new-item workflows, scrape multiple pages and dedupe by listing id instead of relying on page 1 item order being identical every run.",
         path: "/v1/facebook/marketplace/search",
         params: [
           {
@@ -5079,6 +5079,13 @@ export const apis = [
             description: "Search keyword",
             required: true,
             placeholder: "bike",
+          },
+          {
+            name: "category_id",
+            type: "string",
+            description: "Numeric Facebook Marketplace category ID. Listing results include this value as category_id.",
+            required: false,
+            placeholder: "1658310421102081",
           },
           {
             name: "lat",
