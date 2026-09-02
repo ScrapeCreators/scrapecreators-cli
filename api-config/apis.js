@@ -33877,7 +33877,7 @@ export const apis = [
         description:
           "Get products and other details from a creator's Amazon Shop page",
         fullDescription:
-          "Scrapes a creator's Amazon Shop page by URL, returning their storefront profile and product collections. Returns avatar, name, description, socials, and lists with title and itemCount. Also includes trendingPicks with price and discount, curations with title and postCount, and a pageToken for pagination.",
+          "Scrapes a creator's Amazon Shop page by URL, returning their storefront profile and product collections. Returns avatar, name, description, socials, and lists with title and itemCount. Also includes trendingPicks with price and discount, curations with title and postCount, and a pageToken. Pass that pageToken back with the same URL to retrieve the next page; video pages return videos with an id, title, thumbnail, and attached ASINs.",
         path: "/v1/amazon/shop",
         params: [
           {
@@ -33886,6 +33886,14 @@ export const apis = [
             required: true,
             description: "URL to Amazon Shop page",
             placeholder: "https://www.amazon.com/shop/sydneydelrey",
+          },
+          {
+            name: "pageToken",
+            type: "string",
+            required: false,
+            description:
+              "Page token returned by a previous response for the same shop URL",
+            placeholder: "amzn1.vse.video...",
           },
         ],
         sampleResponse: {
