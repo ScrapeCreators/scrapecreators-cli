@@ -12,8 +12,8 @@ export function run(argv) {
 
   program
     .name("scrapecreators")
-    .description("CLI for the ScrapeCreators API — scrape 27+ social media platforms")
-    .version("1.0.0")
+    .description("CLI for the ScrapeCreators API — use 180+ endpoints across 30+ platforms")
+    .version("1.0.28")
     .option("--api-key <key>", "API key (overrides env and config)")
     .option("--format <format>", "output format: json, table, csv, markdown", "auto")
     .option("--json", "shorthand for compact JSON (default)")
