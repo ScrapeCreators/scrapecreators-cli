@@ -46,8 +46,8 @@ jobs:
             exit 1
           fi
 
-      - name: upgrade npm
-        run: npm install -g npm@latest
+      - name: install npm 11
+        run: npm install -g npm@11
 
       - name: install dependencies
         run: npm ci
