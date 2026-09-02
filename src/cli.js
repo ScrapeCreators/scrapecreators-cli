@@ -1,4 +1,5 @@
 import { Command } from "commander";
+import { readFileSync } from "node:fs";
 import { registerApiCommands } from "./command-registry.js";
 import { authLogin, authStatus, authLogout } from "./commands/auth.js";
 import { configSet, configGet, configList } from "./commands/config.js";
@@ -7,13 +8,17 @@ import { listCommand } from "./commands/list.js";
 import { agentAddCommand } from "./commands/agent.js";
 import { runInteractive } from "./interactive.js";
 
+const { version } = JSON.parse(
+  readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+);
+
 export function run(argv) {
   const program = new Command();
 
   program
     .name("scrapecreators")
     .description("CLI for the ScrapeCreators API — use 180+ endpoints across 30+ platforms")
-    .version("1.0.28")
+    .version(version)
     .option("--api-key <key>", "API key (overrides env and config)")
     .option("--format <format>", "output format: json, table, csv, markdown", "auto")
     .option("--json", "shorthand for compact JSON (default)")
