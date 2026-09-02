@@ -1,8 +1,8 @@
 # ScrapeCreators CLI
 
-CLI for the [ScrapeCreators API](https://scrapecreators.com) — scrape 27+ social media platforms from the terminal or as an MCP server for AI agents.
+CLI for the [ScrapeCreators API](https://scrapecreators.com) — use 180+ endpoints across 30+ platforms from the terminal or as an MCP server for AI agents.
 
-110+ endpoints. One command.
+180+ endpoints. One command.
 
 [Documentation](https://docs.scrapecreators.com/) | [OpenAPI Spec](https://docs.scrapecreators.com/openapi.json) | [Get API Key](https://app.scrapecreators.com)
 
@@ -123,7 +123,7 @@ scrapecreators instagram reels-search --query "dogs"
 scrapecreators reddit search --query "best programming languages"
 ```
 
-For the full list of 110+ endpoints across 27+ platforms, see the [API documentation](https://docs.scrapecreators.com/) or the [OpenAPI spec](https://docs.scrapecreators.com/openapi.json).
+For the full list of 180+ endpoints across 30+ platforms, see the [API documentation](https://docs.scrapecreators.com/) or the [OpenAPI spec](https://docs.scrapecreators.com/openapi.json).
 
 ### Discover Endpoints
 
@@ -214,7 +214,7 @@ All status messages (spinners, warnings) go to **stderr**. Data goes to **stdout
 
 ## AI Agent Integration
 
-The CLI is designed agent-first. All 110+ endpoints are also available as an [MCP server](https://api.scrapecreators.com/mcp) — no CLI installation required for agents.
+The CLI is designed agent-first. All 180+ endpoints are also available as an [MCP server](https://api.scrapecreators.com/mcp) — no CLI installation required for agents.
 
 ### MCP Server
 
