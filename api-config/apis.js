@@ -8057,7 +8057,7 @@ export const apis = [
         method: "GET",
         description: "Search the LinkedIn Ad Library",
         fullDescription:
-          "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Supports pagination via paginationToken.",
+          "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Custom date filtering requires both startDate and endDate. LinkedIn accepts dates from the date one year ago through yesterday. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. Supports pagination via paginationToken.",
         path: "/v1/linkedin/ads/search",
         sampleResponse: {
           success: true,
@@ -8157,15 +8157,17 @@ export const apis = [
             name: "startDate",
             type: "string",
             required: false,
-            description: "Start date to search for. Format: YYYY-MM-DD",
-            placeholder: "2024-01-01",
+            description:
+              "Start date in YYYY-MM-DD format. Must be used with endDate and cannot be earlier than the date one year ago.",
+            placeholder: "2026-01-01",
           },
           {
             name: "endDate",
             type: "string",
             required: false,
-            description: "End date to search for. Format: YYYY-MM-DD",
-            placeholder: "2024-01-10",
+            description:
+              "End date in YYYY-MM-DD format. Must be used with startDate and cannot be today or a future date.",
+            placeholder: "2026-09-01",
           },
           {
             name: "paginationToken",
@@ -8181,7 +8183,7 @@ export const apis = [
         method: "GET",
         description: "Get the details for an ad",
         fullDescription:
-          "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate.",
+          "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page.",
         path: "/v1/linkedin/ad",
         params: [
           {
@@ -33877,7 +33879,7 @@ export const apis = [
         description:
           "Get products and other details from a creator's Amazon Shop page",
         fullDescription:
-          "Scrapes a creator's Amazon Shop page by URL, returning their storefront profile and product collections. Returns avatar, name, description, socials, and lists with title and itemCount. Also includes trendingPicks with price and discount, curations with title and postCount, and a pageToken. Pass that pageToken back with the same URL to retrieve the next page; video pages return videos with an id, title, thumbnail, and attached ASINs.",
+          "Scrapes a creator's Amazon Shop page by URL, returning their storefront profile and product collections. The initial request also returns videos already embedded on the storefront page without requiring a pageToken. Videos include an id, title, thumbnail, and attached ASINs. Pass each returned pageToken back unchanged with the same shop URL. A paginated page can contain lists, videos, or both. Tokens are opaque: known values can begin with amzn1.ideas, amzn1.vse.video, or amzn1.shoppablemedia, but clients should not infer the response type from the prefix.",
         path: "/v1/amazon/shop",
         params: [
           {
@@ -33892,7 +33894,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Page token returned by a previous response for the same shop URL",
+              "Opaque page token returned by a previous response for the same shop URL. Pass it back unchanged and do not infer the response type from its prefix. A page can contain lists, videos, or both.",
             placeholder: "amzn1.vse.video...",
           },
         ],
@@ -33928,6 +33930,15 @@ export const apis = [
               image:
                 "https://m.media-amazon.com/images/G/01/Influencer/full_bleed_pin_2x.png",
               url: "https://www.amazon.com/shop/sydneydelrey/list/3PDR5YVGLMWCO",
+            },
+          ],
+          videos: [
+            {
+              id: "013f01b238c94b4f9fb63f7a35783f26",
+              title: "So quick and simple - keep your bike from getting stolen thi",
+              thumbnail:
+                "https://m.media-amazon.com/images/I/81XrHZDkc7L._AC_._SX500_SCLZZZZZZZ_.jpg",
+              asins: ["B0B1ZJZRPB"],
             },
           ],
           trendingPicks: [
@@ -34006,7 +34017,7 @@ export const apis = [
               url: "https://www.amazon.com/shop/sydneydelrey/curation/b74328f3-11ce-4a55-a844-40f6aff6e467",
             },
           ],
-          pageToken: "amzn1.ideas.1S28M0V6I8FUU_0_2025-09-03T01:17:37.837Z",
+          pageToken: "amzn1.vse.video.0f005889de9b46f6b2499537e3ff03b0_0_2026-08-04T00:46:51.887Z",
         },
       },
     ],
