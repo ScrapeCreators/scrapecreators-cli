@@ -376,7 +376,7 @@ export const tiktokShopApis = {
       method: "GET",
       description:
         "Get the details of a TikTok Shop Product. This endpoint currently supports US TikTok Shop products only.",
-      fullDescription: "Fetches full details for a specific US TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts), and `product_detail_review` (product_rating, review_count, sample reviews); also returns `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). This endpoint currently supports the US region only.",
+      fullDescription: "Fetches full details for a specific US TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts plus TikTok's `sku_name` and `gtin` when available), and `product_detail_review` (product_rating, review_count, sample reviews). `gtin` contains `gtin_type` and `gtin_code`, or is null when TikTok does not provide a barcode. The response also includes `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). This endpoint currently supports the US region only.",
       path: "/v1/tiktok/product",
       params: [
         {
@@ -523,6 +523,8 @@ export const tiktokShopApis = {
           skus: [
             {
               sku_id: "1730384306561520216",
+              sku_name: null,
+              gtin: null,
               sku_sale_props: [
                 {
                   prop_id: "100000",
