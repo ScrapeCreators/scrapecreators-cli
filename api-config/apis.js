@@ -7078,7 +7078,7 @@ export const apis = [
         method: "GET",
         description: "Search TikTok's public Ads Library by general query or advertiser name.",
         fullDescription:
-          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity. If TikTok has no matching entity, the API falls back to TikTok's name search so inputs such as The Creator Loop still return matching ads. Provide exactly one of query or advertiser_name. Results are global, sorted by the latest shown date, support cursor pagination, and include a public TikTok Ads Library URL for each ad.",
+          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity and return adv_biz_ids on each ad. You can pass adv_biz_ids with advertiser_name to pin the exact advertiser shown in TikTok's See all ads link. TikTok requires the name with the ID and ignores an ID-only search, so provide exactly one of query or advertiser_name. If TikTok has no matching advertiser entity, the API falls back to TikTok's name search. Results are global, sorted by the latest shown date, support cursor pagination, and include a public TikTok Ads Library URL for each ad.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
@@ -7094,6 +7094,13 @@ export const apis = [
             required: false,
             description: "Advertiser name to resolve through TikTok's typeahead and search by advertiser entity. Falls back to TikTok's name search when no entity matches. Provide either advertiser_name or query, not both.",
             placeholder: "Gymshark",
+          },
+          {
+            name: "adv_biz_ids",
+            type: "string",
+            required: false,
+            description: "TikTok advertiser business ID from a See all ads link. Use it with advertiser_name to pin the exact advertiser. Required companion: advertiser_name; ID-only searches return 400 because TikTok ignores the ID without the name.",
+            placeholder: "7078923208527618049",
           },
           {
             name: "cursor",
@@ -7121,6 +7128,7 @@ export const apis = [
               id: "1871655924410641",
               url: "https://library.tiktok.com/ads/detail/?ad_id=1871655924410641",
               name: "GYMSHARK LTD",
+              adv_biz_ids: "7078923208527618049",
               audit_status: "1",
               type: "2",
               first_shown_date: 1784937600000,
@@ -7148,6 +7156,10 @@ export const apis = [
           {
             path: "ads[].url",
             description: "Public TikTok Ads Library detail page for the ad.",
+          },
+          {
+            path: "ads[].adv_biz_ids",
+            description: "TikTok advertiser business ID for advertiser-entity searches. Null when TikTok does not resolve an advertiser entity.",
           },
         ],
       },
