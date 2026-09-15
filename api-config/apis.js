@@ -4239,7 +4239,7 @@ export const apis = [
         method: "GET",
         description: "Get a public Facebook post or reel by url. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
+          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
         path: "/v1/facebook/post",
         params: [
           {
@@ -4281,6 +4281,7 @@ export const apis = [
           author: {
             id: "100000076236457",
             name: "Matt West",
+            handle: "matt.west.184",
             is_verified: true,
             url: "https://www.facebook.com/matt.west.184",
             image:
