@@ -382,9 +382,9 @@ export const apis = [
         name: "Channel Shorts",
         method: "GET",
         description:
-          "Get the shorts from a channel. If you need more details about the short like description, publish date, etc, you'll need to use the 'Video/Short Details' endpoint.",
+          "Get Shorts from a channel. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings.",
         fullDescription:
-          "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, and description. Supports sorting by newest or popular, and use the continuationToken to page through all results. Returns data in the shorts array.",
+          "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, description, and publish date. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings. Supports sorting by newest or popular; use the continuationToken to page through all results. Returns data in the shorts array.",
         path: "/v1/youtube/channel/shorts",
         paginationField: "continuationToken",
         sampleResponse: {
