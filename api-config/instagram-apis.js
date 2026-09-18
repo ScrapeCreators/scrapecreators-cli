@@ -3479,7 +3479,7 @@ export const instagramBaseApis = {
       description:
         "Find users, hashtags, and places with Instagram's native search. Use this for account or entity lookup; it returns one page and does not return posts.",
       fullDescription:
-        "Use this for Instagram-native account, hashtag, or place lookup. It returns ranked users, hashtags, places, and keyword suggestions from Instagram itself. It is not Google-indexed, does not require an Instagram login, returns one page only, and does not return posts. For an Instagram-curated topic page with posts, use /v1/instagram/search/popular. For broader profile discovery from Google-indexed bios and captions, use /v1/instagram/search/profiles.",
+        "Use this for Instagram-native account, hashtag, or place lookup. It returns ranked users, hashtags, places, and keyword suggestions from Instagram itself. It is not Google-indexed, does not require an Instagram login, returns one page only, and does not return posts. For an Instagram-curated topic page with posts, use /v1/instagram/search/popular. For the same native account results in a profile-only response, use /v1/instagram/search/profiles.",
       path: "/v1/instagram/search",
       params: [
         {
@@ -3856,113 +3856,47 @@ export const instagramBaseApis = {
       name: "Search Instagram Profiles",
       method: "GET",
       description:
-        "Find profiles from Google-indexed bios and captions. Use this for broader creator discovery; use /v1/instagram/search for Instagram-native account lookup.",
+        "Find Instagram's native ranked profile results without Google search.",
       fullDescription:
-        "Use this for broad creator discovery from keywords found in Google-indexed Instagram profile pages, bios, and post captions. Profile-page matches are marked matched_from=profile; caption matches are enriched into the creator profile and marked matched_from=caption. This is best-effort and can paginate, but it is not Instagram-native or complete. For Instagram's own ranked account results, use /v1/instagram/search. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+        "Use this for Instagram-native profile lookup. It returns one ranked page of up to 10 accounts directly from Instagram, then performs bounded best-effort enrichment to preserve the previous profile fields such as biography, bio links, account flags, and follower/following/media counts. If one enrichment fails or times out, the native ID, username, full name, verification status, profile photo, and URL remain available while missing detail fields are null or empty. It does not search Google-indexed bios or captions, Google title/description fields are null, and pagination is not supported. For users, hashtags, places, and keyword suggestions together, use /v1/instagram/search.",
       path: "/v1/instagram/search/profiles",
       params: [
         {
           name: "query",
           type: "string",
           required: true,
-          description: "Bio or caption keyword/phrase to search for.",
+          description: "The profile name or username to search for.",
           placeholder: "fitness coach",
-        },
-        {
-          name: "cursor",
-          type: "string",
-          required: false,
-          description: "The cursor returned by the previous response. It is the next Google results page number and cannot exceed 11; cursor 12 or greater returns a 400 response.",
-          placeholder: "2",
         },
       ],
       sampleResponse: {
         "success": true,
         "credits_remaining": 49997308061,
-        "query": "fitness coach",
+        "query": "hormozi",
         "profiles": [
           {
-            "id": "188767259",
-            "username": "charliejohnsonfitness",
-            "full_name": "Worlds #1 Fitness Business Coach",
-            "biography": "DM me “PAID” \nLearn how 1,000+ Fitness Coaches use my Paid Attention System™️ as their NEW way to acquire high ticket clients\n33 clients hit $100kpcm👇",
-            "bio_links": [
-              {
-                "title": "Install the Paid Attention System™️",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fwww.7fss.com%2Fstep-1-copy%3Fel%3DIGBIOLINK%23open-popup&e=AUDL6mrGFNwwqQ5OS_ykY3196_aDgP3WevjzLFx8G7jkeMCdaQ34LYoLtaVthGp5x_sy5PqmCVr0QYah1cAfHJMPL2tvSClY",
-                "url": "https://www.7fss.com/step-1-copy?el=IGBIOLINK#open-popup",
-                "link_type": "external"
-              },
-              {
-                "title": "Lead Generation & Ads Course",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fcharlieslivetraining.com%2F7fss-4c&e=AUDamwCFqMm8XhbS-CMVGU6V7oEqK_IiadFZ10mXEVG98q1rybcqKkEz7Rs-bCVyrx9pv5BFEg96ngVx1I4pP7g9gs30CorX",
-                "url": "https://charlieslivetraining.com/7fss-4c",
-                "link_type": "external"
-              },
-              {
-                "title": "YouTube Free Business Growth Advice",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40charliejohnsonscalingsystems%3Fsi%3DRfQGu96OYQpbTosO&e=AUBi4UTAmexMCle9MsKYn2iCPa2Gg-U-PaYTnHEfmZw-DgmCP7ppJsg2xiJ4bhjIHF9laQ4OgFwVCcmrCYOTIfiLj7nIL6mx",
-                "url": "https://youtube.com/@charliejohnsonscalingsystems?si=RfQGu96OYQpbTosO",
-                "link_type": "external"
-              },
-              {
-                "title": "Charlie Johnson Show Podcast",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40thecharliejohnsonshow%3Fsi%3D7TxYof19mbSS4K_5&e=AUAv48Ar0DmQhOPr72HO3ihESYZWocrfEetekDf8GMiwbmpfZTjpubfL8ubzc10irqbR5GD8r9dWUESjugJ9ZelqNMw5SlxK",
-                "url": "https://youtube.com/@thecharliejohnsonshow?si=7TxYof19mbSS4K_5",
-                "link_type": "external"
-              },
-              {
-                "title": "Hiring Sales Closers",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fcareers.7fss.com%2Fsales-rep&e=AUDFRMnGb5opEptsuytHpWtVrNkp4G8PX0LxyJW1rclLsvT3VdE8YSbclfye4OnPvAGXGfN20ztrJLBjnUJ5dU6ap32NPk4E",
-                "url": "https://careers.7fss.com/sales-rep",
-                "link_type": "external"
-              }
-            ],
-            "external_url": "https://www.7fss.com/step-1-copy?el=IGBIOLINK",
-            "is_private": false,
+            "id": "7547682342",
+            "username": "hormozi",
+            "full_name": "Alex Hormozi",
+            "biography": null,
+            "bio_links": [],
+            "external_url": null,
+            "is_private": null,
             "is_verified": true,
-            "is_business_account": true,
-            "is_professional_account": true,
-            "category_name": "Coach",
-            "profile_pic_url": "https://instagram.fdet3-1.fna.fbcdn.net/v/t51.2885-19/444225908_1202724841095492_3262096613222025830_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fdet3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFTVWoQPCqNLj-erLzu1cFdO0-uazC-7j664y34QW50PvMRgi9toNMv94miQw1IPKU&_nc_ohc=5TYJtJtx0VQQ7kNvwGUcUOD&_nc_gid=jNVLQonLp3nF-24qe_urog&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4AKr0x8tmEMoxUpNl7z-oM-KqiNxXQVavhCSJSzfJCjg&oe=6A1D2C23&_nc_sid=8b3546",
-            "follower_count": 503332,
-            "following_count": 6541,
-            "media_count": 8387,
-            "url": "https://www.instagram.com/charliejohnsonfitness/",
+            "is_business_account": null,
+            "is_professional_account": null,
+            "category_name": null,
+            "profile_pic_url": "https://scontent.cdninstagram.com/v/t51.82787-19/example.jpg",
+            "follower_count": null,
+            "following_count": null,
+            "media_count": null,
+            "url": "https://www.instagram.com/hormozi/",
             "matched_from": "profile",
-            "google_title": "Worlds #1 Fitness Business Coach (@charliejohnsonfitness) - Instagram",
-            "google_description": "His name is Peter Doyle. His business does millions every single month and he's about to close the biggest capital raise of his career. He could have called ..."
-          },
-          {
-            "id": "32813649737",
-            "username": "lovelucyfit_",
-            "full_name": "Lucy Chewins | Female Online Fitness Coach",
-            "biography": "Becoming my best self while helping you become yours ✨\n@aybl LUCY10\n@myprotein LUCYFIT\n💌lhchewins@gmail.com\nBE COACHED BY ME👇🏻",
-            "bio_links": [
-              {
-                "title": "",
-                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2FLoveLucyfit&e=AUCAXUJ-rNMByn4qXHaJm_Zn16x9N_PBJY9iaJFfuU-8m8nH9lGfGC9EqVgMg86E3SEX_5lTY_xtBpMJZu5ISMy7f54nCRDdKM6IVSthE262FJtG",
-                "url": "https://linktr.ee/LoveLucyfit",
-                "link_type": "external"
-              }
-            ],
-            "external_url": "https://linktr.ee/LoveLucyfit",
-            "is_private": false,
-            "is_verified": true,
-            "is_business_account": false,
-            "is_professional_account": true,
-            "category_name": "Fitness Trainer",
-            "profile_pic_url": "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/651052365_18092246285089738_5773251836498102340_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43MzQuYzIifQ&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gEMN4QOXdYQY327tYExsruLIlW24jq4qPZVkdJiUX4MFtcTZmpjCmrv2Y4amL_yvZa-4BzlEwz4HA8RLqsa7Ulq&_nc_ohc=nbjZEko4eSYQ7kNvwF6PZmA&_nc_gid=EfCODNA7s_IjrOk9YYk2yw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af7QsJKA-3I7v8OyykqpvFuF6Ibl--x5yZRmxFUHmn9Vrg&oe=6A1D1687&_nc_sid=8b3546",
-            "follower_count": 55350,
-            "following_count": 2800,
-            "media_count": 1744,
-            "url": "https://www.instagram.com/lovelucyfit_/",
-            "matched_from": "profile",
-            "google_title": "Lucy Chewins | Female Online Fitness Coach (@lovelucyfit_) - Instagram",
-            "google_description": "Becoming my best self while helping you become yours ✨ @aybl LUCY10 @myprotein LUCYFIT lhchewins@gmail.com. BE COACHED BY ME    . Follow. Message ..."
+            "google_title": null,
+            "google_description": null
           },
         ],
-        "cursor": "2"
+        "cursor": null
       },
     },
     {
