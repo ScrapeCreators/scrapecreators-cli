@@ -3858,7 +3858,7 @@ export const instagramBaseApis = {
       description:
         "Find Instagram's native ranked profile results without Google search.",
       fullDescription:
-        "Use this for Instagram-native profile lookup. It returns one ranked page of up to 10 accounts directly from Instagram, then performs bounded best-effort enrichment to preserve the previous profile fields such as biography, bio links, account flags, and follower/following/media counts. If one enrichment fails or times out, the native ID, username, full name, verification status, profile photo, and URL remain available while missing detail fields are null or empty. It does not search Google-indexed bios or captions, Google title/description fields are null, and pagination is not supported. For users, hashtags, places, and keyword suggestions together, use /v1/instagram/search.",
+        "Use this for Instagram-native profile lookup. It returns every account in Instagram's first ranked native result set, then performs bounded best-effort enrichment for the first 10 accounts to preserve the previous profile fields such as biography, bio links, account flags, and follower/following/media counts. Results after the first 10 retain native ID, username, full name, verification status, profile photo, and URL, while unavailable detail fields are null or empty. It does not search Google-indexed bios or captions, Google title/description fields are null, and pagination is not supported. For users, hashtags, places, and keyword suggestions together, use /v1/instagram/search.",
       path: "/v1/instagram/search/profiles",
       params: [
         {
