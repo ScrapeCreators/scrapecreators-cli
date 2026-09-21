@@ -23,7 +23,24 @@ export async function readBodyWithLimit(res) {
   return Buffer.concat(chunks).toString("utf-8");
 }
 
+// Minimum spacing between outgoing requests to avoid unbounded/unthrottled
+// bursts against the ScrapeCreators API (CWE-770).
+const MIN_REQUEST_INTERVAL_MS = 100;
+let nextAvailableSlot = 0;
+
+async function throttleRequest() {
+  const now = Date.now();
+  const scheduledAt = Math.max(now, nextAvailableSlot);
+  nextAvailableSlot = scheduledAt + MIN_REQUEST_INTERVAL_MS;
+  const wait = scheduledAt - now;
+  if (wait > 0) {
+    await new Promise((resolve) => setTimeout(resolve, wait));
+  }
+}
+
 export async function callApi(apiKey, method, path, params = {}) {
+  await throttleRequest();
+
   const url = new URL(`${API_BASE}${path}`);
 
   if (method === "GET" && params) {
