@@ -7922,7 +7922,7 @@ export const apis = [
         description:
           "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
         fullDescription:
-          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
+          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes spend data, spend contains the currency plus lower and upper amount bounds; otherwise it is null. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
         params: [
           {
@@ -7944,6 +7944,11 @@ export const apis = [
           overallImpressions: {
             min: null,
             max: null,
+          },
+          spend: {
+            currency: "USD",
+            lower: "5000",
+            upper: "6000",
           },
           creativeRegions: [
             {
