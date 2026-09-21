@@ -33302,44 +33302,45 @@ export const apis = [
         path: "/v1/snapchat/spotlight",
         sampleResponse: {
           success: true,
-          credits_remaining: 49997863208,
+          credits_remaining: 100,
           spotlight: {
             snapId:
-              "W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+              "W7_EDlXWTBiXAEEniNoMPwAAYb3djZ3FqY2VhAZXDhShdAZXDhPWfAAAAAQ",
             storyId:
-              "W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
-            description:
-              "This is genuinely heartbreaking 💔 #relationship#funny#brainrot",
-            llmTitle: null,
-            llmDescription: null,
-            viewCount: 251845,
-            shareCount: 3807,
-            commentCount: 803,
+              "W7_EDlXWTBiXAEEniNoMPwAAYb3djZ3FqY2VhAZXDhShdAZXDhPWfAAAAAQ",
+            description: "You are my favorite notification!😄❤️",
+            llmTitle:
+              "Jack Scalise's 'Disturb Me' Challenge: How to Get Noticed Online",
+            llmDescription:
+              "This short-form content features Jack Scalise, a popular social media personality, inviting his audience to participate in a trending 'disturb me' challenge.",
+            viewCount: 359935,
+            shareCount: 35057,
+            commentCount: 636,
             engagementStats: {
-              viewCount: 251845,
-              shareCount: 3807,
-              commentCount: 803,
-              boostCount: 16203,
-              recommendCount: 2670,
+              viewCount: 359935,
+              shareCount: 35057,
+              commentCount: 636,
+              boostCount: 35666,
+              recommendCount: 1842,
             },
             creator: {
               $case: "personCreator",
               personCreator: {
-                username: "lilah4823",
-                url: "https://www.snapchat.com/@lilah4823",
-                name: "lilah",
+                username: "jack.scalise",
+                url: "https://www.snapchat.com/@jack.scalise",
+                name: "Jack Scalise",
                 followerCount: "0",
                 websiteUrl: "",
               },
             },
-            durationMs: 56939,
+            durationMs: 11200,
             width: 540,
             height: 960,
-            uploadDateMs: 1782915537473,
+            uploadDateMs: 1742742025631,
             thumbnailUrl:
-              "https://cf-st.sc-cdn.net/d/TXqor3n6nwYvf2nDyAVlN.256.IRZXSOY?mo=GkcaDRoAGgAyAQRIA1AuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+              "https://cf-st.sc-cdn.net/d/xL5FK70SP9np2rtr6jkMt.256.IRZXSOY?mo=GkMaCTIBBEgCUC5gAVoQRGZMYXJnZVRodW1ibmFpbKIBEAiAAiILEgAqB0lSWlhTT1miARAImgoiCxIAKgdJUlpYU09Z&uc=46",
             contentUrl:
-              "https://cf-st.sc-cdn.net/d/TXqor3n6nwYvf2nDyAVlN.1034.IRZXSOY?mo=GkAaDRoAGgAyAQRIA1AuYAGiAS4IiggSHAoaIAFKEQoMY0Y9R0RFR0M5OU8uEPQDWgMQsz8iCxIAKgdJUlpYU09Z&uc=46",
+              "https://cf-st.sc-cdn.net/d/xL5FK70SP9np2rtr6jkMt.27.IRZXSOY?mo=Gk8aCTIBBEgCUC5gAVoQU3BvdGxpZ2h0U2hhcmluZ6IBKwgbEhoKGAjssDMgAUoOCglJICIpKB4jKSEQ9ANoAiILEgAqB0lSWlhTT1mQA8BX&uc=46",
             raw: {},
           },
           linkPreview: {},
@@ -33353,7 +33354,7 @@ export const apis = [
             required: true,
             description: "Snapchat Spotlight URL.",
             placeholder:
-              "https://www.snapchat.com/@lilah4823/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYY2pvZnd0ZXVmAZ8fgG8pAZ8ff-_IAAAAAQ",
+              "https://www.snapchat.com/@jack.scalise/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYb3djZ3FqY2VhAZXDhShdAZXDhPWfAAAAAQ",
           },
         ],
       },
