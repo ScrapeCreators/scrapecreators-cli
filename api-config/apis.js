@@ -14822,7 +14822,7 @@ export const apis = [
             type: "string",
             required: true,
             description: "Search query",
-            placeholder: "austen allred",
+            placeholder: "news",
           },
           {
             name: "region",
