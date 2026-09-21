@@ -7922,7 +7922,7 @@ export const apis = [
         description:
           "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
         fullDescription:
-          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes spend data, spend contains the currency plus lower and upper amount bounds; otherwise it is null. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
+          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
         params: [
           {
@@ -7942,13 +7942,54 @@ export const apis = [
           lastShown: "2025-06-18T18:09:00.000Z",
           format: "text",
           overallImpressions: {
-            min: null,
-            max: null,
+            min: "250000",
+            max: "300000",
           },
           spend: {
             currency: "USD",
             lower: "5000",
             upper: "6000",
+          },
+          targeting: {
+            age: {
+              included: [
+                "25-34",
+                "35-44",
+                "45-54",
+                "55-64",
+                "65+",
+                "unknown",
+              ],
+              excluded: ["18-24"],
+            },
+            gender: {
+              included: ["unknown", "male", "female"],
+              excluded: [],
+            },
+            location: {
+              included: [
+                {
+                  criterionId: "1015229",
+                  name: "West Palm Beach",
+                  fullName: "West Palm Beach, Florida, United States",
+                  countryCodes: ["US"],
+                },
+                {
+                  criterionId: "1015158",
+                  name: "Palm Beach",
+                  fullName: "Palm Beach, Florida, United States",
+                  countryCodes: ["US"],
+                },
+                {
+                  criterionId: "200548",
+                  name: "West Palm Beach-Ft. Pierce FL",
+                  fullName:
+                    "West Palm Beach-Ft. Pierce FL, Florida, United States",
+                  countryCodes: ["US"],
+                },
+              ],
+              excluded: [],
+            },
           },
           creativeRegions: [
             {
