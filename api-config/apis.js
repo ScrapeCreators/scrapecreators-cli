@@ -12586,9 +12586,9 @@ export const apis = [
         name: "Post",
         method: "GET",
         description:
-          "Get a post by url. Also returns comments and related posts.",
+          "Get a post by url. Also returns comments, author continuations, and related posts.",
         fullDescription:
-          "Fetches a single Threads post by URL, returning the post's caption, like_count, view_counts, reshare_count, direct_reply_count, image_versions2, and taken_at. Also includes comments and related_posts arrays. Supports a trim option for lighter responses.",
+          "Fetches a single Threads post by URL, returning the post's caption, like_count, view_counts, reshare_count, direct_reply_count, image_versions2, text_post_app_info, and taken_at. Also includes comments, threadItems, and relatedPosts arrays. threadItems contains public continuation posts by the original author and stays separate from comments. Supports a trim option for lighter responses.",
         path: "/v1/threads/post",
         params: [
           {
@@ -12835,6 +12835,7 @@ export const apis = [
               like_and_view_counts_disabled: false,
             },
           ],
+          threadItems: [],
           relatedPosts: [
             {
               id: "3608818157045893190_63438622220",
@@ -12997,6 +12998,7 @@ export const apis = [
               },
             },
           ],
+          threadItems: [],
           relatedPosts: [
             {
               id: "3658572865166656590_63453315755",
