@@ -16684,6 +16684,43 @@ export const apis = [
         },
       },
       {
+        name: "Clip Transcript",
+        method: "GET",
+        description: "Get the transcript from a Twitch clip",
+        fullDescription:
+          "Gets a transcript from a public Twitch clip. The endpoint checks Twitch's native captions first. Set use_ai_as_fallback to true to use AI transcription only when native captions are unavailable. Native transcripts cost 1 credit, AI transcripts cost 10 credits, and no credits are charged when no transcript is found. transcript_source is native, ai, or null.",
+        path: "/v1/twitch/clip/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Twitch clip URL",
+            placeholder:
+              "https://clips.twitch.tv/WrongMagnificentTomatoCorgiDerp-C720OEMqocSPbrqA",
+          },
+          {
+            name: "use_ai_as_fallback",
+            type: "boolean",
+            required: false,
+            description:
+              "Use AI transcription only when native captions are unavailable. Costs 10 credits when an AI transcript is returned. Defaults to false.",
+            placeholder: false,
+            credits: 10,
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 99,
+          credits_charged: 1,
+          id: "161412440",
+          url: "https://www.twitch.tv/mish/clip/WrongMagnificentTomatoCorgiDerp-C720OEMqocSPbrqA",
+          transcript:
+            "Gigi's, Gigi's. Oh, it's a spirit. I don't want to play anymore. I should have gone to pee...",
+          transcript_source: "native",
+        },
+      },
+      {
         name: "Clip",
         method: "GET",
         description: "Get Twitch clip",
@@ -32908,6 +32945,42 @@ export const apis = [
     name: "Kick",
     description: "Scrape Kick clips",
     endpoints: [
+      {
+        name: "Clip Transcript",
+        method: "GET",
+        description: "Get the transcript from a Kick clip",
+        fullDescription:
+          "Gets a transcript from a public Kick clip. The endpoint checks Kick's native captions first. Set use_ai_as_fallback to true to use AI transcription only when native captions are unavailable. Native transcripts cost 1 credit, AI transcripts cost 10 credits, and no credits are charged when no transcript is found. transcript_source is native, ai, or null.",
+        path: "/v1/kick/clip/transcript",
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "Kick clip URL",
+            placeholder:
+              "https://kick.com/fuzzyzvr/clips/clip_01M35J4DGERS1WE12H82WW0JBB",
+          },
+          {
+            name: "use_ai_as_fallback",
+            type: "boolean",
+            required: false,
+            description:
+              "Use AI transcription only when native captions are unavailable. Costs 10 credits when an AI transcript is returned. Defaults to false.",
+            placeholder: false,
+            credits: 10,
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          credits_charged: 0,
+          id: "clip_01M35J4DGERS1WE12H82WW0JBB",
+          url: "https://kick.com/fuzzyzvr/clips/clip_01M35J4DGERS1WE12H82WW0JBB",
+          transcript: null,
+          transcript_source: null,
+        },
+      },
       {
         name: "Clip",
         method: "GET",
