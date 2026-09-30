@@ -5071,7 +5071,7 @@ export const apis = [
         method: "GET",
         description: "Search Facebook Marketplace listings",
         fullDescription:
-          "Searches Facebook Marketplace listings by keyword and lat/lng. Each listing includes creation_time as an ISO 8601 UTC timestamp when Facebook exposes an exact listing timestamp, plus listing_date_text when available; either field can be null. Pass category_id to restrict results to the numeric Facebook Marketplace category ID returned on listing results. Supports pagination with the returned cursor. Pass the cursor value back as-is. When sort_by is creation_time_descend, Facebook can still return slightly different ordering between identical requests. For alerting/new-item workflows, scrape multiple pages and dedupe by listing id instead of relying on page 1 item order being identical every run.",
+          "Searches Facebook Marketplace listings by keyword and lat/lng. Each page contains up to 24 listings. Each listing includes creation_time as an ISO 8601 UTC timestamp when Facebook exposes an exact listing timestamp, plus listing_date_text when available; either field can be null. Pass category_id to restrict results to the numeric Facebook Marketplace category ID returned on listing results. Supports pagination with the returned cursor. Pass the cursor value back as-is. The sort and date filters use the same values as Facebook's Marketplace UI. creation_time_descend usually orders the first pages newest first, but Facebook can insert newer listings on later cursor pages. date_listed uses Facebook's calendar-day buckets, so last_24_hours can include listings from the prior calendar day rather than enforcing an exact rolling 24-hour cutoff. For alerting/new-item workflows, continue paging while has_next_page is true and dedupe by listing id.",
         path: "/v1/facebook/marketplace/search",
         params: [
           {
@@ -5124,17 +5124,10 @@ export const apis = [
             placeholder: "500",
           },
           {
-            name: "count",
-            type: "number",
-            description: "Number of listings to return",
-            required: false,
-            placeholder: "24",
-          },
-          {
             name: "sort_by",
             type: "select",
             description:
-              "Sort order",
+              "Facebook Marketplace sort option. creation_time_descend usually orders the first pages newest first, but Facebook can insert newer listings on later cursor pages.",
             required: false,
             placeholder: "creation_time_descend",
             options: [
@@ -5173,7 +5166,7 @@ export const apis = [
           {
             name: "date_listed",
             type: "select",
-            description: "Date listed filter",
+            description: "Facebook Marketplace date filter. Uses the same calendar-day buckets as the UI, so last_24_hours can include listings from the prior calendar day.",
             required: false,
             placeholder: "7",
             options: [
