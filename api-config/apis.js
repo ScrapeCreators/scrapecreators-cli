@@ -2955,7 +2955,7 @@ export const apis = [
         method: "GET",
         description: "Get a Linkedin post. This can be a post or an article.",
         fullDescription:
-          "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. Also includes related articles from the same author in moreArticles.",
+          "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. For public feed posts, activityUrn and contentUrn expose LinkedIn's public activity and underlying share or ugcPost URNs when present; either can be null when LinkedIn does not expose it. Also includes related articles from the same author in moreArticles.",
         path: "/v1/linkedin/post",
         params: [
           {
@@ -2969,6 +2969,8 @@ export const apis = [
         ],
         sampleResponse: {
           success: true,
+          activityUrn: null,
+          contentUrn: null,
           url: "https://www.linkedin.com/pulse/being-father-has-made-me-better-leader-vice-versa-austen-allred",
           name: "Being a Father Has Made me a Better Leader, and Vice Versa",
           headline:
