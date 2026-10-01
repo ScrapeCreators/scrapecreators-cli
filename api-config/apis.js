@@ -608,6 +608,21 @@ export const apis = [
               "Boolean. True when YouTube marks the video as including paid promotion; otherwise false.",
           },
           {
+            path: "audioTracks",
+            description:
+              "Available audio tracks from the same public player response, deduplicated by id. Each track includes id, displayName, audioIsDefault, and isAutoDubbed. Empty when YouTube does not expose audio-track metadata. Does not require an extra lookup or cost additional credits.",
+          },
+          {
+            path: "audioTracks[].isAutoDubbed",
+            description:
+              "YouTube's auto-dub flag for this audio track: true or false when explicitly provided, otherwise null. A video can contain both original and dubbed tracks, so this is not a video-level flag. Null does not mean false.",
+          },
+          {
+            path: "audioTracks[].audioIsDefault",
+            description:
+              "Whether YouTube marks this audio track as the default in the fetched player response, or null when unspecified. The default can be a dub and is not necessarily the original audio.",
+          },
+          {
             path: "most_replayed",
             description:
               "YouTube's public Most replayed heatmap, or null when YouTube does not show the graph for this video.",
@@ -755,7 +770,7 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "2 letter language code, ie 'en', 'es', 'fr' etc. If the transcript is not available in the language you specify, the transcript will be null.",
+              "Language code, ie 'en', 'es', 'fr' or 'en-US'. Overrides the default track selection. If omitted, prefers captions matching the original spoken language when YouTube identifies the original audio. If that metadata is unavailable or ambiguous, prefers an auto-generated caption, otherwise the first caption track. If the requested or identified original language has no matching captions, the transcript will be null and no credits are charged.",
             placeholder: "en",
           },
         ],
