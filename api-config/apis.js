@@ -770,8 +770,15 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Language code, ie 'en', 'es', 'fr' or 'en-US'. Overrides the default track selection. If omitted, prefers captions matching the original spoken language when YouTube identifies the original audio. If that metadata is unavailable or ambiguous, prefers an auto-generated caption, otherwise the first caption track. If the requested or identified original language has no matching captions, the transcript will be null and no credits are charged.",
+              "Language code, ie 'en', 'es', 'fr' or 'en-US'. Overrides the default track selection unless original_audio=true. If omitted, prefers captions matching the original spoken language when YouTube identifies the original audio. If that metadata is unavailable or ambiguous, prefers an auto-generated caption, otherwise the first caption track. If the requested or identified original language has no matching captions, the transcript will be null and no credits are charged.",
             placeholder: "en",
+          },
+          {
+            name: "original_audio",
+            type: "boolean",
+            required: false,
+            description: "Set to true to return captions only in the original spoken language identified by YouTube. Takes precedence over language. If the original audio cannot be reliably identified or has no matching captions, transcript, transcript_only_text, and language are null and no credits are charged. No extra lookup or credit cost; a returned transcript costs the usual 1 credit. Omit or set to false for the existing default selection.",
+            placeholder: "true",
           },
         ],
         sampleResponse: {
