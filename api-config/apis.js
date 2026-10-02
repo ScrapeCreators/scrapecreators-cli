@@ -2014,7 +2014,7 @@ export const apis = [
         method: "GET",
         description: "Gets all top level comments for a Rumble video by URL.",
         fullDescription:
-          "Gets all top level comments for a Rumble video by URL. Returns comment text, author, createdAt, createdAtText, likeCount, dislikeCount, and replyCount when comment bodies are public.",
+          "Gets all top level comments for a Rumble video by URL. Returns comment text, author, createdAt, createdAtText, likeCount, dislikeCount, and replyCount when comment bodies are public. If Rumble requires sign-in to view the comments, this endpoint returns HTTP 403 with error `forbidden` and does not charge credits. This is different from a public video with no comments, which returns a successful empty comments array.\n\nSign-in-required response example:\n```json\n{\n  \"success\": false,\n  \"credits_remaining\": 100,\n  \"credits_charged\": 0,\n  \"error\": \"forbidden\",\n  \"errorStatus\": 403,\n  \"message\": \"Rumble requires you to sign in to view this video's comments\"\n}\n```",
         path: "/v1/rumble/video/comments",
         params: [
           {
