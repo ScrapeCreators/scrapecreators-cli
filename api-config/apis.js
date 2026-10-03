@@ -3,6 +3,7 @@ import { tiktokShopApis } from "./tiktok-shop-apis.js";
 import { instagramBaseApis } from "./instagram-apis.js";
 import { githubApis } from "./github-apis.js";
 import { kwaiApis } from "./kwai-apis.js";
+import { cosmosApis } from "./cosmos-apis.js";
 import { telegramApis } from "./telegram-apis.js";
 
 const withPostVariant = (endpoint) => [
@@ -20,6 +21,7 @@ export const apis = [
   tiktokShopApis,
   instagramBaseApis,
   telegramApis,
+  cosmosApis,
   {
     id: "youtube",
     name: "YouTube",
