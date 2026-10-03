@@ -20,8 +20,6 @@ export const apis = [
   tiktokBaseApis,
   tiktokShopApis,
   instagramBaseApis,
-  telegramApis,
-  cosmosApis,
   {
     id: "youtube",
     name: "YouTube",
@@ -33550,6 +33548,8 @@ export const apis = [
       },
     ],
   },
+  telegramApis,
+  cosmosApis,
   {
     id: "creator-tools",
     name: "Creator Tools",
