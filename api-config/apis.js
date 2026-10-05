@@ -3443,6 +3443,127 @@ export const apis = [
         },
       },
       {
+        name: "Search Videos",
+        method: "GET",
+        description:
+          "Search public Facebook videos and Reels by keyword using Facebook's native video search. This does not search general text or photo posts. Each successful search page costs 1 credit, including searches with no matches.",
+        fullDescription:
+          "Searches Facebook's native public video search without a logged-in account and returns matching videos and Reels. This is not Google-indexed discovery or general Facebook text/photo-post search. Results follow Facebook's ranking and public availability, so coverage and ordering are not exhaustive or guaranteed. Requests can take several seconds; use a client timeout of at least 30 seconds. Temporary Facebook restrictions or upstream timeouts can return an uncharged error. Pass the returned cursor with the same query for the next page, and stop when cursor is null or has_more is false. Each successful search page costs 1 credit, including searches with no matches. Validation errors and upstream failures are not charged.",
+        path: "/v1/facebook/search/videos",
+        paginationField: "cursor",
+        credits: {
+          type: "fixed",
+          cost: 1,
+        },
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "The keyword or phrase to search for",
+            placeholder: "ai agents",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description:
+              "The opaque cursor returned by the previous response. Keep the query unchanged when paginating. Stop when cursor is null or has_more is false.",
+            placeholder: "eyJ...",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "query": "dogs",
+          "videos": [
+            {
+              "id": "1972139093484105",
+              "url": "https://www.facebook.com/reel/1972139093484105/",
+              "title": "Extremely strong dogs 🦍",
+              "description": "You shouldn't underestimate the strength of your large dogs 🦍#dog #bigdog #dogs #jozodogs #pet",
+              "author": {
+                "id": "100071029295578",
+                "name": "Jozo Dogs",
+                "url": "https://www.facebook.com/jozodogs"
+              },
+              "creation_time": null,
+              "publish_time": null,
+              "relative_time_text": "Sep 5 · 89K views",
+              "duration_ms": null,
+              "duration_text": "0:17",
+              "thumbnail_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/797452339_4437994959794452_2679783842489764932_n.jpg?stp=c0.83.206.115a_dst-jpg_p206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e3495b&_nc_ohc=xtv7jwiwuNQQ7kNvwEbj3vl&_nc_oc=AdoHeYyJmQ9f55LFZDTEnu_GlPQudlYYT5BGRCkZQvvXVaxUz4VgCyShthnifB9vaMs&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=r5QqvHq8oDddJgzN0OeHGw&_nc_ss=79180&oh=00_AQPGWtsD2mkz5PUZN7u9xH2PnLYfdYpmq2TeyIpwXdC3tA&oe=6AC8E5A4"
+            },
+            {
+              "id": "1218486163512401",
+              "url": "https://www.facebook.com/reel/1218486163512401/",
+              "title": null,
+              "description": null,
+              "author": {
+                "id": "61584767065991",
+                "name": "Funny dogs",
+                "url": null
+              },
+              "creation_time": 1765836166,
+              "publish_time": 1765836166,
+              "relative_time_text": null,
+              "duration_ms": 10100,
+              "duration_text": null,
+              "thumbnail_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/595752725_833643522984354_1476671407824669607_n.jpg?stp=dst-jpg_tt6&cstp=mx720x1280&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=Gt-Bfv36hO0Q7kNvwF2Mc3V&_nc_oc=AdrQK_tAXcssFaTl7-GJBARVwN9_CRHQNV6NObjE0mVcWngxzYYON3bwT4-He8uSrn4&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=r5QqvHq8oDddJgzN0OeHGw&_nc_ss=79180&oh=00_AQNs56UHkQSL7eL-I-rIPAvU9iZtTzTP54X40XnNr5O-1Q&oe=6AC9024C"
+            }
+          ],
+          "cursor": "eyJ...",
+          "has_more": true
+        },
+        responseFields: [
+          {
+            "path": "videos",
+            "description": "The public videos and Reels in this native search page. Page size and order are determined by Facebook."
+          },
+          {
+            "path": "videos[].id",
+            "description": "The public Facebook video ID, returned as a string."
+          },
+          {
+            "path": "videos[].url",
+            "description": "The public Facebook video or Reel URL."
+          },
+          {
+            "path": "videos[].author",
+            "description": "Public author ID, name and URL when Facebook exposes them."
+          },
+          {
+            "path": "videos[].creation_time",
+            "description": "The native creation time as Unix seconds, or null when it is unavailable."
+          },
+          {
+            "path": "videos[].publish_time",
+            "description": "The native video publish time as Unix seconds, or null when it is unavailable."
+          },
+          {
+            "path": "videos[].relative_time_text",
+            "description": "Facebook's display text, which may include a date or view count. It is not a normalized timestamp."
+          },
+          {
+            "path": "videos[].duration_ms",
+            "description": "Video duration in milliseconds when the native result exposes it; otherwise null."
+          },
+          {
+            "path": "videos[].duration_text",
+            "description": "Facebook's formatted duration when it is exposed instead of a numeric duration; otherwise null."
+          },
+          {
+            "path": "cursor",
+            "description": "The opaque next-page cursor. Keep the query unchanged. The example cursor is abbreviated; use the full cursor from your real response."
+          },
+          {
+            "path": "has_more",
+            "description": "Whether Facebook returned a next page. Stop when this is false or cursor is null."
+          }
+        ],
+      },
+      {
         name: "Profile Photos",
         method: "GET",
         description:
