@@ -8451,6 +8451,63 @@ export const apis = [
     description: "Get Twitter profiles, tweets, followers and more",
     endpoints: [
       {
+        name: "Search Posts",
+        method: "GET",
+        description:
+          "Search public X/Twitter posts by keyword using Google-indexed results, then fetch the post details without a logged-in X account.",
+        fullDescription:
+          "Finds public X/Twitter post URLs through Google Search, then returns their details using the same public post scraper as /v1/twitter/tweet. This is Google-indexed discovery, not native X search: coverage is incomplete, recent posts can be missing, and results are ranked by Google rather than newest first. Deleted, protected, or inaccessible posts are omitted. Each post uses the existing tweet response fields, including rest_id, legacy.full_text, legacy.created_at, engagement counts, author and media when available, plus a canonical url. Pass the returned cursor for the next Google page; cursors range from 1 through 11 and null means pagination has ended. The same post may appear on different pages. Each successful page costs 1 credit, including empty results; validation errors and upstream failures are not charged. Replaying cursor=null is uncharged. Allow at least 30 seconds for your client timeout.",
+        path: "/v1/twitter/search/posts",
+        credits: {
+          type: "fixed",
+          cost: 1,
+          description: "1 credit per successful page, including empty results. Failed requests and terminal cursor replays are not charged.",
+        },
+        paginationField: "cursor",
+        params: [
+          {
+            name: "query",
+            type: "string",
+            required: true,
+            description: "Keyword or phrase to search for in Google-indexed public X/Twitter posts",
+            placeholder: "ai agents",
+          },
+          {
+            name: "cursor",
+            type: "string",
+            required: false,
+            description: "Pass the cursor returned by the previous response. Supported page cursors are 1 through 11. A null response cursor means there are no more pages.",
+            placeholder: "2",
+          },
+        ],
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "query": "ai agents",
+          "posts": [
+            {
+              "rest_id": "2105732089685348719",
+              "url": "https://x.com/code_rams/status/2105732089685348719",
+              "views": {
+                "count": "780",
+                "state": "EnabledWithCount"
+              },
+              "legacy": {
+                "created_at": "Thu Oct 01 18:50:27 +0000 2026",
+                "full_text": "AI agents are checking your pricing page before your buyers do. Your analytics never shows it.\n\nHere's how to catch them and fix it:\n\n(Analysed and learned from my products)\n\n1. open your analytics or server logs and pull the last 30 days\n\n2. filter by user agent: GPTBot, https://t.co/HO75r0e5Am",
+                "favorite_count": 11,
+                "retweet_count": 0,
+                "reply_count": 4,
+                "quote_count": 0,
+                "bookmark_count": 7
+              }
+            }
+          ],
+          "cursor": "2"
+        },
+      },
+      {
         name: "Profile",
         method: "GET",
         description:
