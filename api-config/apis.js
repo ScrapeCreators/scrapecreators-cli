@@ -1585,10 +1585,11 @@ export const apis = [
       {
         name: "Playlist",
         method: "GET",
-        description: "Get the videos of a YouTube playlist",
+        description: "Get a paginated list of videos in a YouTube playlist",
         fullDescription:
-          "Retrieves all videos in a YouTube playlist, including the playlist title, owner info, total video count, and each video's title, URL, thumbnail, duration, and channel. Accepts the playlist ID found in the 'list' URL parameter.",
+          "Retrieves a page of videos in a YouTube playlist, including each video's title, URL, thumbnail, duration, and channel. Accepts the playlist ID found in the 'list' URL parameter. The first page includes title, owner, and totalVideos. Later pages return videos and continuationToken without playlist metadata. Pass the previous response's continuationToken to get the next page. Stop when continuationToken is null. Each page costs 1 credit.",
         path: "/v1/youtube/playlist",
+        paginationField: "continuationToken",
         params: [
           {
             name: "playlist_id",
@@ -1597,6 +1598,36 @@ export const apis = [
               "The ID of the YouTube playlist. In the YouTube URL it will be the 'list' parameter.",
             required: true,
             placeholder: "PLP32wGpgzmIlInfgKVFfCwVsxgGqZNIiS",
+          },
+          {
+            name: "continuationToken",
+            type: "string",
+            required: false,
+            description:
+              "Token from the previous response to get the next page. Omit for the first page. Stop when the returned continuationToken is null.",
+            placeholder: "",
+          },
+        ],
+        responseFields: [
+          {
+            path: "title",
+            description: "Playlist title. Only returned on the first page.",
+          },
+          {
+            path: "owner",
+            description: "Playlist owner. Only returned on the first page.",
+          },
+          {
+            path: "totalVideos",
+            description: "Total playlist video count. Only returned on the first page.",
+          },
+          {
+            path: "videos",
+            description: "Videos on the current page.",
+          },
+          {
+            path: "continuationToken",
+            description: "Token for the next page, or null when there are no more pages.",
           },
         ],
         sampleResponse: {
@@ -1639,6 +1670,7 @@ export const apis = [
               },
             },
           ],
+          continuationToken: null,
         },
       },
       {
