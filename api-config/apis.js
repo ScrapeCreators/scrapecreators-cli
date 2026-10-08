@@ -2708,15 +2708,15 @@ export const apis = [
       {
         name: "Company Posts",
         method: "GET",
-        description: "Get a LinkedIn company posts. Can only get 7 pages total (LinkedIn limitation)",
+        description: "Get posts from a LinkedIn company or school page using a /company/ or /school/ URL. Can only get 7 pages total (LinkedIn limitation)",
         fullDescription:
-          "Retrieves paginated posts from a LinkedIn company page, including each post's URL, ID, publication date, and full text content. Supports page-based pagination up to a maximum of 7 pages due to a LinkedIn platform limitation.",
+          "Retrieves paginated posts from a LinkedIn company or school page, including each post's URL, ID, publication date, and full text content. Accepts /company/ and /school/ URLs, such as https://www.linkedin.com/school/oxfordsbs/ for Oxford Saïd Business School. Supports page-based pagination up to a maximum of 7 pages due to a LinkedIn platform limitation.",
         path: "/v1/linkedin/company/posts",
         params: [
           {
             name: "url",
             type: "string",
-            description: "The URL of the LinkedIn company page to get",
+            description: "The LinkedIn company (/company/) or school (/school/) page URL, for example https://www.linkedin.com/school/oxfordsbs/",
             required: true,
             placeholder: "https://linkedin.com/company/shopify",
           },
