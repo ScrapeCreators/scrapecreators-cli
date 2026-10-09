@@ -301,6 +301,14 @@ export const tiktokBaseApis = {
             "Country code passed to the profile-feed source. Defaults to US. If a profile should have videos but returns none, try another relevant two-letter country code. Changing this value does not guarantee that region-restricted posts will appear.",
         },
         {
+          name: "include_pinned",
+          type: "boolean",
+          required: false,
+          placeholder: "true",
+          description:
+            "Whether to include pinned posts. Defaults to true. Set to false to exclude posts marked as pinned, including with trim=true. Keep this value unchanged while paginating. Filtering can produce shorter or empty pages; follow has_more and max_cursor. Successful pages still cost 1 credit, including empty results.",
+        },
+        {
           name: "trim",
           type: "boolean",
           required: false,
