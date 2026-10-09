@@ -296,9 +296,9 @@ export const tiktokBaseApis = {
           name: "region",
           type: "string",
           required: false,
-          placeholder: "GB",
+          placeholder: "US",
           description:
-            "Region (country) for the proxy. Defaults to GB. If a profile should have videos but returns none, try US or another relevant two-letter country code.",
+            "Country code passed to the profile-feed source. Defaults to US. If a profile should have videos but returns none, try another relevant two-letter country code. Changing this value does not guarantee that region-restricted posts will appear.",
         },
         {
           name: "trim",
