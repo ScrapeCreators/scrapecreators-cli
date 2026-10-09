@@ -1,7 +1,7 @@
 {
   "name": "@scrapecreators/cli",
-  "version": "1.0.59",
-  "description": "CLI for the ScrapeCreators API — use 180+ endpoints across 30+ platforms from the terminal",
+  "version": "1.0.60",
+  "description": "CLI for the ScrapeCreators API \u2014 use 180+ endpoints across 30+ platforms from the terminal",
   "type": "module",
   "bin": {
     "scrapecreators": "bin/scrapecreators.js"
@@ -20,7 +20,7 @@
     "ora": "8.2.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.3"
   },
   "files": [
     "bin/",

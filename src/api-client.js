@@ -23,7 +23,7 @@ export async function readBodyWithLimit(res) {
   return Buffer.concat(chunks).toString("utf-8");
 }
 
-export async function callApi(apiKey, method, path, params = {}) {
+export async function callApi(apiKey, method, path, params = {}, { signal, fetchImpl = globalThis.fetch } = {}) {
   const url = new URL(`${API_BASE}${path}`);
 
   if (method === "GET" && params) {
@@ -47,10 +47,12 @@ export async function callApi(apiKey, method, path, params = {}) {
     options.body = JSON.stringify(params);
   }
 
-  options.signal = AbortSignal.timeout(60_000);
+  options.signal = signal ? AbortSignal.any([signal, AbortSignal.timeout(60_000)]) : AbortSignal.timeout(60_000);
+  // Do not forward API credentials to a redirect target.
+  options.redirect = "error";
 
   const start = Date.now();
-  const res = await fetch(url.toString(), options);
+  const res = await fetchImpl(url.toString(), options);
   const elapsed = Date.now() - start;
   const text = await readBodyWithLimit(res);
 

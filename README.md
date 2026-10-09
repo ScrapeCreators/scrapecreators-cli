@@ -20,9 +20,7 @@ npx @scrapecreators/cli tiktok profile --handle charlidamelio --api-key YOUR_KEY
 
 ## Quick Start
 
-1. Get your API key at [app.scrapecreators.com](https://app.scrapecreators.com), or [sign up with GitHub](#sign-up-with-github-device-flow)
-
-2. Authenticate:
+1. Sign in or create an account with Google, Microsoft, GitHub, or an existing API key:
 
 ```bash
 scrapecreators auth login
@@ -56,41 +54,47 @@ Get your API key at [app.scrapecreators.com](https://app.scrapecreators.com).
 
 ### Sign up with GitHub (device flow)
 
-New users can sign up with GitHub from a terminal or agent without creating a password. The GitHub path includes 10,000 free API calls and does not require a credit card. It uses GitHub's device flow, so the user authorizes with a short code instead of sharing GitHub credentials with the CLI or agent.
-
-This is separate from the `gh` CLI. Do not read or send a local `gh auth token`.
-
-1. Start the device flow:
+Run:
 
 ```bash
-curl -sS -X POST "https://api.scrapecreators.com/v1/github/device/code" \
-  -H "content-type: application/json" \
-  -d '{}'
+scrapecreators auth login --provider github
 ```
 
-The response includes `device_code`, `user_code`, `verification_uri`, `interval`, and `expires_in`. Open `verification_uri` (normally `https://github.com/login/device`) and enter the short `user_code`.
+The CLI opens GitHub. Enter the code shown in your terminal, authorize with the
+GitHub account you want to use, then return to your terminal. The CLI handles
+polling, account creation, active-key retrieval, validation, and secure storage.
+You never need to make API calls or copy access tokens.
 
-2. Poll for authorization, waiting at least the returned `interval` between requests:
+New GitHub accounts receive 10,000 free API calls with no credit card. Existing
+accounts retain their balance. You can then sign in on the website using the
+same GitHub account. This is separate from the `gh` CLI; never read or forward
+`gh auth token`.
+
+### Guided signup and login
 
 ```bash
-curl -sS -X POST "https://api.scrapecreators.com/v1/github/device/token" \
-  -H "content-type: application/json" \
-  -d '{"device_code":"YOUR_DEVICE_CODE"}'
+scrapecreators auth login
+# Google / Microsoft / GitHub / Use an existing API key
+scrapecreators auth signup                 # same guided flow
+scrapecreators auth login --provider google
+scrapecreators auth login --provider microsoft
+scrapecreators auth login --provider api-key
 ```
 
-Keep polling while authorization is pending. If the response says `slow_down`, increase the interval. Stop on `expired_token` or `access_denied`. A completed authorization returns `access_token`.
+Google and Microsoft open a ScrapeCreators approval page. Enter the short code
+shown in your terminal and approve with the selected provider. If Microsoft asks
+you to verify your email, follow the email link, then return to that approval
+page and choose **I've verified my email**.
 
-3. Exchange that access token for the ScrapeCreators API key:
+For a remote terminal, add `--no-browser` and open the printed link on your own
+computer. Keep the command running while you authorize; cancel with Ctrl+C.
+Without an interactive terminal, specify `--provider`. For an existing API key
+in CI, set `SCRAPECREATORS_API_KEY` and use `--provider api-key`.
 
-```bash
-ACCESS_TOKEN="value returned by the token endpoint"
-curl -sS "https://api.scrapecreators.com/v1/github/device/profile" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
-```
-
-The response includes `api_key`. Save it with `scrapecreators auth login`, or set it as `SCRAPECREATORS_API_KEY` in the process that runs the CLI.
-
-**For agents:** ask before opening the GitHub page. Show the user only `user_code` and `verification_uri`; keep `device_code`, `access_token`, and `api_key` out of chat and logs. Persist the API key securely, then verify it with `scrapecreators balance` before claiming signup succeeded. If GitHub authorizes but the profile response has no `api_key`, the GitHub account may already be linked; have the user sign in at [app.scrapecreators.com](https://app.scrapecreators.com) to retrieve the existing key.
+The CLI validates your key before saving it in an owner-only local config file.
+It does not display device secrets, access tokens, or API keys. Agents must ask
+before starting account signup or opening a browser. Node.js 20.3 or newer is
+required.
 
 ## Usage
 
@@ -154,7 +158,7 @@ Walks you through: pick platform -> pick action -> fill params -> execute.
 |---------|-------------|
 | `scrapecreators <platform> <action>` | Call any API endpoint |
 | `scrapecreators list [platform]` | List available platforms or endpoints |
-| `scrapecreators auth login` | Set your API key (interactive) |
+| `scrapecreators auth login` | Sign in or sign up with a provider, or use an existing API key |
 | `scrapecreators auth status` | Show current auth status |
 | `scrapecreators auth logout` | Remove stored API key |
 | `scrapecreators balance` | Check credit balance |

@@ -19,18 +19,24 @@ Single-sentence summary: one CLI to extract public data from 27+ social media pl
 3. **Docs:** Full API documentation at https://docs.scrapecreators.com/
 4. **OpenAPI Spec:** https://docs.scrapecreators.com/openapi.json
 
-### GitHub signup when no API key exists
+### Signup when no API key exists
 
-ScrapeCreators supports GitHub device signup with 10,000 free API calls and no credit card. This is separate from the local `gh` CLI. Never read or forward `gh auth token`.
+Ask the user which provider they want and for consent before starting signup or
+opening their browser. Run the native CLI; do not give users manual API calls:
 
-1. Ask for consent before opening a browser or starting signup.
-2. `POST https://api.scrapecreators.com/v1/github/device/code` with `{}` as JSON.
-3. Show the returned `user_code` and `verification_uri` to the user. Keep `device_code` private.
-4. Poll `POST https://api.scrapecreators.com/v1/github/device/token` with `{"device_code":"..."}`, honoring the returned `interval`. Continue on `authorization_pending`, increase the interval on `slow_down`, and stop on timeout, `expired_token`, or `access_denied`.
-5. After the token response returns `access_token`, call `GET https://api.scrapecreators.com/v1/github/device/profile` with a Bearer authorization header containing that access token.
-6. Keep the returned `api_key` out of chat and logs. Store it as `SCRAPECREATORS_API_KEY` for the CLI process, then run `scrapecreators balance`. Do not claim signup succeeded until that check passes.
+```bash
+scrapecreators auth login --provider github
+# or --provider google / --provider microsoft
+```
 
-If GitHub authorizes but the profile response has no `api_key`, the account may already be linked. Ask the user to sign in at https://app.scrapecreators.com and retrieve the existing key. The complete human-facing curl walkthrough is in README.md under **Sign up with GitHub (device flow)**.
+Show only the authorization URL and short user code. Keep the command running
+while the user authorizes. The CLI polls, provisions an account if needed,
+retrieves an active key, validates it, and stores it securely. Never read or
+forward `gh auth token`, device secrets, access tokens, or API keys. Use
+`--no-browser` for a remote terminal. Microsoft may require email verification;
+the user returns to the same approval page afterward. Signup is not complete
+until the CLI reports successful authentication. Do not manually call the
+underlying device endpoints or instruct a customer to do so.
 
 ## Command pattern
 
@@ -46,7 +52,7 @@ scrapecreators <platform> <action> [--params] [--flags]
 | `scrapecreators list` | List all available platforms |
 | `scrapecreators list <platform>` | List endpoints for a specific platform |
 | `scrapecreators balance` | Check credit balance |
-| `scrapecreators auth login` | Set API key (interactive) |
+| `scrapecreators auth login` | Sign in or sign up (interactive provider menu) |
 | `scrapecreators auth status` | Show current auth status |
 | `scrapecreators auth logout` | Remove stored API key |
 | `scrapecreators config set <key> <value>` | Set a config value |
