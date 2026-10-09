@@ -257,8 +257,8 @@ export const tiktokBaseApis = {
       name: "Profile Videos",
       method: "GET",
       description:
-        "Scrapes videos from a TikTok profile. Pass cursor to get more videos. If a profile should have videos but returns none, try `region=US` or another relevant region.",
-      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response. If a profile should have videos but returns none, try `region=US` or another relevant two-letter country code.",
+        "Scrapes posts from a TikTok profile. TikTok can omit individual posts even after full pagination; region selection does not guarantee complete coverage. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response, keeping the same `region` and `sort_by` throughout a cursor chain. Known limitation: this feed is not an exhaustive inventory of a creator's public posts. TikTok's web page, single-post lookup, comments, and profile feed use different public sources and request contexts; a post may be retrievable through one and unavailable or missing through another. A missing feed item does not prove deletion, and a returned item does not guarantee browser playback in your country. Try the creator's country with a two-letter `region` code, restarting pagination when changing it, but country selection does not guarantee completeness. Repeated requests for the same page can also return different item sets. For campaign tracking, retain submitted post URLs/IDs and refresh them with `/v2/tiktok/video` rather than relying only on feed discovery. Retry a suspect page within a bounded budget and deduplicate by `aweme_id`; do not merge cursors from separate responses. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v3/tiktok/profile/videos",
       paginationField: "max_cursor",
       params: [
@@ -3835,8 +3835,8 @@ export const tiktokBaseApis = {
     {
       name: "Video Info",
       method: "GET",
-      description: "Scrapes data from a TikTok video. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false.",
-      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video.",
+      description: "Scrapes a public TikTok video or photo/slideshow. Availability can differ from the web page and profile feed; a not-found response alone does not prove deletion. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false. [Availability guide](https://docs.scrapecreators.com/tiktok-post-availability).",
+      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video. Also accepts photo/slideshow URLs and returns `image_post_info` when available. Availability is source-specific: a TikTok web page can be blocked in your country while this endpoint still retrieves public metadata, and a post can be missing from the profile feed while this endpoint succeeds. A `404 not_found` means the post could not be retrieved through the endpoint's available public sources; it does not by itself prove global deletion. Keep the last known campaign record and retry later with a relevant `region` rather than marking a post deleted from a single failure. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v2/tiktok/video",
       params: [
         {
@@ -3845,7 +3845,7 @@ export const tiktokBaseApis = {
             "https://www.tiktok.com/@randomspamvideos25/video/7251387037834595630",
           type: "string",
           required: true,
-          description: "TikTok video URL",
+          description: "TikTok video or photo/slideshow URL",
         },
         {
           name: "get_transcript",
@@ -3859,7 +3859,7 @@ export const tiktokBaseApis = {
           type: "string",
           required: false,
           description:
-            "Region of the proxy. Sometimes you'll need to specify the region if you're not getting a response. Commonly for videos from the Phillipines, in which case you'd use 'PH'. Use 2 letter country codes like US, GB, FR, etc",
+            "Two-letter country code passed to the primary post source. Defaults to US. Try the creator's country if a post is unavailable. This does not guarantee a matching browser/proxy country or complete retrieval; the fallback source does not receive this parameter.",
           placeholder: "US",
         },
         {
@@ -5778,8 +5778,8 @@ export const tiktokBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Scrapes comments from a TikTok video",
-      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response.",
+      description: "Scrapes comments from public TikTok videos and photo/slideshow posts. An empty page does not prove the post has no comments globally. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response. Public photo/slideshow posts are supported as well as videos. Comments use a separate TikTok public web source, so successful single-post metadata retrieval does not guarantee readable comments. An empty terminal page does not by itself prove the post has no comments globally or was deleted. This endpoint does not expose a country-selection parameter. Use the returned cursor and stop when `end_of_pagination=true`. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v1/tiktok/video/comments",
       paginationField: "cursor",
       params: [
