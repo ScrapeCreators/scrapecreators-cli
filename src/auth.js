@@ -1,4 +1,5 @@
 import config from "./config.js";
+import { chmodSync } from "node:fs";
 
 export function resolveApiKey(opts = {}) {
   if (opts.apiKey) return opts.apiKey;
@@ -10,6 +11,8 @@ export function resolveApiKey(opts = {}) {
 
 export function storeApiKey(key) {
   config.set("apiKey", key);
+  // Conf replaces the file atomically; enforce permissions on the newly saved file too.
+  chmodSync(config.path, 0o600);
 }
 
 export function clearApiKey() {

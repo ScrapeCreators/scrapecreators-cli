@@ -1,6 +1,7 @@
 import * as prompts from "@clack/prompts";
 import chalk from "chalk";
-import { resolveApiKey, storeApiKey } from "./auth.js";
+import { resolveApiKey } from "./auth.js";
+import { authLogin } from "./commands/auth.js";
 import { callApi } from "./api-client.js";
 import { printResult } from "./output.js";
 import { getPlatformMap } from "./command-registry.js";
@@ -10,20 +11,10 @@ export async function runInteractive(globalOpts) {
 
   let apiKey = resolveApiKey(globalOpts);
   if (!apiKey) {
-    const key = await prompts.text({
-      message: "Enter your API key to get started",
-      placeholder: "paste from https://app.scrapecreators.com",
-      validate: (v) => (v.length < 5 ? "Too short" : undefined),
-    });
-
-    if (prompts.isCancel(key)) {
-      prompts.cancel("Cancelled.");
-      return;
-    }
-
-    storeApiKey(key);
-    apiKey = key;
-    console.log(chalk.green("  API key saved.\n"));
+    // First run uses the same guided signup/login menu instead of demanding a key.
+    if (!(await authLogin())) return;
+    apiKey = resolveApiKey(globalOpts);
+    if (!apiKey) { prompts.cancel("Authentication did not return an API key."); return; }
   }
 
   const platforms = getPlatformMap();

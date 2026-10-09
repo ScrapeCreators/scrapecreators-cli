@@ -1,4 +1,4 @@
-import { Command } from "commander";
+import { Command, Option } from "commander";
 import { readFileSync } from "node:fs";
 import { registerApiCommands } from "./command-registry.js";
 import { authLogin, authStatus, authLogout } from "./commands/auth.js";
@@ -35,7 +35,13 @@ export function run(argv) {
 
   // --- auth ---
   const authCmd = program.command("auth").description("manage authentication");
-  authCmd.command("login").description("set your API key").action(() => authLogin());
+  authCmd.command("login")
+    .alias("signup")
+    .description("sign in or sign up with a provider, or use an existing API key")
+    .addOption(new Option("--provider <provider>", "google|microsoft|github|api-key (required without a terminal)")
+      .choices(["google", "microsoft", "github", "api-key"]))
+    .option("--no-browser", "print the authorization URL without opening a browser")
+    .action((options) => authLogin(options));
   authCmd.command("status").description("show current auth status").action(() => authStatus());
   authCmd.command("logout").description("remove stored API key").action(() => authLogout());
 

@@ -3,6 +3,7 @@ import { chmodSync } from "fs";
 
 const config = new Conf({
   projectName: "scrapecreators",
+  configFileMode: 0o600,
   schema: {
     apiKey: { type: "string", default: "" },
     defaultFormat: {
