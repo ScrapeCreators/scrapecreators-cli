@@ -5414,64 +5414,83 @@ export const instagramBaseApis = {
       name: "Trending Reels",
       method: "GET",
       description:
-        "Get trending reels from Instagram. Call this endpoint again to get new-ish results. There can be duplicates because this uses Instagram's public instagram.com/reels page, and that is how the page behaves too.",
+        "Get recent popular Instagram reels published within the last seven days. Results are deduplicated within each response and can repeat across calls.",
       fullDescription:
-        "Fetches trending reels from Instagram's public instagram.com/reels page. Instagram only gives a small batch at a time and the results can overlap, so call this endpoint over and over when you want more. Each call should return new-ish results, but expect some duplicates because that is how Instagram's reels page behaves too. Returns `reels`, an array of reel objects with shortcode, URL, caption, media URLs, engagement counts when Instagram exposes them, and user info.",
+        "Discovers reels through Instagram's public Popular pages and current featured topics, with pagination handled internally. Each reel's actual publication timestamp is checked: posts older than seven days, posts with unavailable dates, and unavailable posts are excluded. Results are deduplicated within each response and ordered by available play counts. This is recent popular-Reels discovery, not Instagram's official global trending ranking or a measure of view growth. Returns up to 12 reels, and repeated calls can overlap. Returns `reels` with shortcode, URL, caption, publication date, media URLs, available engagement counts, and user info. Missing engagement counts may be null. Successful requests cost one credit; if Instagram supplies too few verified recent reels, the endpoint returns an uncharged 503 rather than including older posts.",
       path: "/v1/instagram/reels/trending",
       params: [],
       sampleResponse: {
-        success: true,
-        credits_remaining: 100,
-        data: {
-          reels: [
-            {
-              id: "3659267353687104516",
-              pk: "3659267353687104516",
-              shortcode: "DYt13O8gLoE",
-              url: "https://www.instagram.com/reel/DYt13O8gLoE/",
-              caption: "Funny clip from today",
-              taken_at: "2026-01-02T18:32:11.000Z",
-              media_type: 2,
-              product_type: "clips",
-              video_url: "https://scontent.cdninstagram.com/o1/v/t16/f2/m86/example.mp4",
-              video_versions: [
+        "success": true,
+        "credits_remaining": 99,
+        "credits_charged": 1,
+        "reels": [
+          {
+            "id": "4000819054877393649",
+            "pk": "4000819054877393649",
+            "shortcode": "DeFw7uwlMLx",
+            "url": "https://www.instagram.com/reel/DeFw7uwlMLx/",
+            "caption": "Impatiently waiting for #UFC335...\n\nThe countdown is on to @CharlesDoBronxs vs @DiegoLopesMMA\n\n[ LIVE DEC 12 on @ParamountPlus ]",
+            "taken_at": "2026-10-04T23:00:03.000Z",
+            "media_type": 2,
+            "product_type": "clips",
+            "video_url": "https://scontent.cdninstagram.com/example.mp4",
+            "video_versions": [
+              {
+                "type": 101,
+                "url": "https://scontent.cdninstagram.com/example.mp4"
+              }
+            ],
+            "image_url": "https://scontent.cdninstagram.com/example.jpg",
+            "image_versions2": {
+              "additional_candidates": {
+                "first_frame": {
+                  "url": "https://scontent.cdninstagram.com/example.jpg"
+                }
+              },
+              "candidates": [
                 {
-                  type: 101,
-                  width: 720,
-                  height: 1280,
-                  url: "https://scontent.cdninstagram.com/o1/v/t16/f2/m86/example.mp4",
-                },
-              ],
-              image_url: "https://scontent.cdninstagram.com/v/t51.2885-15/example.jpg",
-              image_versions2: {
-                candidates: [
-                  {
-                    width: 720,
-                    height: 1280,
-                    url: "https://scontent.cdninstagram.com/v/t51.2885-15/example.jpg",
-                  },
-                ],
-              },
-              original_width: 720,
-              original_height: 1280,
-              has_audio: true,
-              like_count: 12345,
-              comment_count: 123,
-              play_count: 456789,
-              ig_play_count: 456789,
-              clips_metadata: {},
-              user: {
-                id: "123456789",
-                pk: "123456789",
-                username: "creator",
-                full_name: "Creator",
-                profile_pic_url: "https://scontent.cdninstagram.com/v/t51.2885-19/example.jpg",
-                is_verified: true,
-                is_private: false,
-              },
+                  "url": "https://scontent.cdninstagram.com/example.jpg",
+                  "height": 1920,
+                  "width": 1080
+                }
+              ]
             },
-          ],
-        },
+            "original_width": 1080,
+            "original_height": 1920,
+            "has_audio": true,
+            "like_count": 423127,
+            "comment_count": 1623,
+            "play_count": 5112349,
+            "ig_play_count": null,
+            "clips_metadata": {
+              "music_info": null,
+              "original_sound_info": {
+                "audio_asset_id": "28770083305965221",
+                "original_audio_title": "Original audio",
+                "ig_artist": {
+                  "username": "ufc",
+                  "id": "22832340"
+                },
+                "is_explicit": false,
+                "should_mute_audio": false,
+                "consumption_info": {
+                  "should_mute_audio_reason": "",
+                  "is_trending_in_clips": false
+                },
+                "audio_filter_infos": null
+              }
+            },
+            "user": {
+              "id": "17841401450200356",
+              "pk": "22832340",
+              "username": "ufc",
+              "full_name": "UFC",
+              "profile_pic_url": "https://scontent.cdninstagram.com/example.jpg",
+              "is_verified": true,
+              "is_private": false
+            }
+          }
+        ]
       },
     },
     // {
