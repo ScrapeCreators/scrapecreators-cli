@@ -8092,7 +8092,7 @@ export const apis = [
         description:
           "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
         fullDescription:
-          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. Returns creativeRegions, regionStats with per-region impression data, and variations with destinationUrl, headline, description, and imageUrl. Text extraction uses OCR, so accuracy may vary.",
+          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. regionStats and platformImpressions use lower and upper impression bounds. Variations are best-effort, omit unparseable entries, and have creative-type-dependent fields; image creatives can expose an images array. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
         params: [
           {
@@ -8173,26 +8173,26 @@ export const apis = [
               regionName: "United States",
               firstShown: null,
               lastShown: "2025-06-18T05:00:00.000Z",
-              impressions: {},
-              platformImpressions: [],
+              impressions: {
+                lower: "1000",
+                upper: "4999",
+              },
+              platformImpressions: [
+                {
+                  platform: "Google Search",
+                  impressions: {
+                    lower: "100",
+                    upper: "999",
+                  },
+                },
+              ],
             },
           ],
           variations: [
             {
-              destinationUrl: "shop.lululemon.com/gifts-for-all",
-              headline: "lululemonⓇ Official Site - Best Birthday Gifts",
-              description:
-                "Find The Perfect Gifts At lululemon . We Have You Covered . Shop Online For Your Gifts . Birthday Gifts For Everyone ...",
-              allText:
-                "Sponsored Ω lululemon shop.lululemon.com/gifts-for-all lululemonⓇ Official Site - Best Birthday Gifts Find The Perfect Gifts At lululemon . We Have You Covered . Shop Online For Your Gifts . Birthday Gifts For Everyone ...",
-              imageUrl:
+              images: [
                 "https://tpc.googlesyndication.com/archive/simgad/2201045439314643090",
-            },
-            {
-              destinationUrl: "shop.lululemon.com",
-              headline: "Work Pants, But Stretchy",
-              description:
-                "Move In Lightweight, Comfortable Work Pants That Take Your Day In New Directions.",
+              ],
             },
           ],
         },
