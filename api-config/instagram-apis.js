@@ -1,3 +1,10 @@
+import {
+  AI_TRANSCRIPTION_PRICING,
+  AI_TRANSCRIPTION_RUNTIME,
+  AI_TRANSCRIPTION_CREDITS,
+  AI_DURATION_FIELDS,
+  ALLOW_LONG_TRANSCRIPTION_PARAM,
+} from "./ai-transcription-docs.js";
 export const instagramBaseApis = {
   id: "instagram",
   name: "Instagram",
@@ -2735,11 +2742,14 @@ export const instagramBaseApis = {
       name: "Transcript",
       method: "GET",
       description:
-        "Get the transcript of an Instagram post or reel. This is a little slow since I run it through an AI. You can only get a transcript if the video is under 2 minutes. You should get results in 10-30 seconds. If no one is spreaking it should return null. Since some posts are carousel, it will return a transcript for each item in the carousel.",
+        `Get an AI transcript of an Instagram post or reel. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
       fullDescription:
-        "Generates an AI-powered speech-to-text transcription for an Instagram video post or reel. The video must be under 2 minutes long. Returns a transcripts array with each item's shortcode and transcribed text; carousel posts produce one transcript per video slide. Expect 10-30 second response times, and null when no speech is detected.",
+        `Generates AI speech-to-text for an Instagram video post or reel. Returns a transcripts array containing each video's id, shortcode, and text; no speech can produce null entries. ${AI_TRANSCRIPTION_PRICING} For carousels, default pricing stays flat 1 credit per request. With allow_long_transcription=true, sum 10 * ceil(duration_seconds / 60) for each successfully transcribed video, rather than rounding the combined duration; images and empty video transcripts have no AI fee. ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v2/instagram/media/transcript",
+      credits: AI_TRANSCRIPTION_CREDITS,
+      responseFields: AI_DURATION_FIELDS,
       params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
           name: "url",
           type: "string",

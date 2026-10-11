@@ -1,3 +1,10 @@
+import {
+  AI_TRANSCRIPTION_PRICING,
+  AI_TRANSCRIPTION_RUNTIME,
+  NATIVE_OR_AI_CREDITS,
+  AI_DURATION_FIELDS,
+  ALLOW_LONG_TRANSCRIPTION_PARAM,
+} from "./ai-transcription-docs.js";
 export const tiktokBaseApis = {
   id: "tiktok",
   name: "TikTok",
@@ -3844,7 +3851,7 @@ export const tiktokBaseApis = {
       name: "Video Info",
       method: "GET",
       description: "Scrapes a public TikTok video or photo/slideshow. Availability can differ from the web page and profile feed; a not-found response alone does not prove deletion. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false. [Availability guide](https://docs.scrapecreators.com/tiktok-post-availability).",
-      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video. Also accepts photo/slideshow URLs and returns `image_post_info` when available. Availability is source-specific: a TikTok web page can be blocked in your country while this endpoint still retrieves public metadata, and a post can be missing from the profile feed while this endpoint succeeds. A `404 not_found` means the post could not be retrieved through the endpoint's available public sources; it does not by itself prove global deletion. Keep the last known campaign record and retry later with a relevant `region` rather than marking a post deleted from a single failure. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video. Also accepts photo/slideshow URLs and returns `image_post_info` when available. Availability is source-specific: a TikTok web page can be blocked in your country while this endpoint still retrieves public metadata, and a post can be missing from the profile feed while this endpoint succeeds. A `404 not_found` means the post could not be retrieved through the endpoint's available public sources; it does not by itself prove global deletion. Keep the last known campaign record and retry later with a relevant `region` rather than marking a post deleted from a single failure. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability)." + " " + 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.',
       path: "/v2/tiktok/video",
       params: [
         {
@@ -3859,7 +3866,7 @@ export const tiktokBaseApis = {
           name: "get_transcript",
           type: "boolean",
           required: false,
-          description: "Get transcript of the video",
+          description: 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.',
           placeholder: false,
         },
         {
@@ -5587,10 +5594,13 @@ export const tiktokBaseApis = {
     {
       name: "Transcript",
       method: "GET",
-      description: "Scrapes transcript from a TikTok video",
-      fullDescription: "Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns `id`, `url`, and `transcript` as a WEBVTT-formatted string with timestamped text segments. Existing transcripts work for videos of any length. Only the optional AI fallback is limited to videos up to 2 minutes and costs an additional 10 credits when `use_ai_as_fallback=true`.",
+      description: `Get native captions or an opted-in AI transcript from a TikTok video. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+      fullDescription: `Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns id, url, and transcript (native captions are WEBVTT-formatted; AI fallback returns text). Native transcripts cost 1 credit only when returned, with no fixed length limit; no transcript costs 0 credits. AI fallback is opt-in via use_ai_as_fallback=true and is used only when native captions are unavailable. ${AI_TRANSCRIPTION_PRICING} This dedicated transcript route charges the AI rate instead of adding a native-caption fee. ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v1/tiktok/video/transcript",
+      credits: NATIVE_OR_AI_CREDITS,
+      responseFields: AI_DURATION_FIELDS,
       params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
           name: "url",
           type: "string",
@@ -5612,9 +5622,8 @@ export const tiktokBaseApis = {
           type: "string",
           required: false,
           description:
-            "Set to 'true' to use AI when an existing transcript is not found. The AI fallback supports videos up to 2 minutes and costs 10 credits; existing transcripts have no length limit.",
+            `Set to 'true' to use paid AI only when existing captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
           placeholder: "false",
-          credits: 10,
         },
       ],
       sampleResponse: {

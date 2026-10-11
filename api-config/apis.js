@@ -1,3 +1,11 @@
+import {
+  AI_TRANSCRIPTION_PRICING,
+  AI_TRANSCRIPTION_RUNTIME,
+  NATIVE_OR_AI_CREDITS,
+  DETAIL_TRANSCRIPTION_NOTICE,
+  AI_DURATION_FIELDS,
+  ALLOW_LONG_TRANSCRIPTION_PARAM,
+} from "./ai-transcription-docs.js";
 import { tiktokBaseApis } from "./tiktok-apis.js";
 import { tiktokShopApis } from "./tiktok-shop-apis.js";
 import { instagramBaseApis } from "./instagram-apis.js";
@@ -755,7 +763,7 @@ export const apis = [
         method: "GET",
         description: "Get publicly available captions or a transcript from a YouTube video or Short",
         fullDescription:
-          "Retrieves publicly available captions, subtitles, or transcripts from a YouTube video or Short. Returns both a timestamped transcript array with start/end times and a plain-text version in transcript_only_text. Supports specifying a language code. Videos of any length are supported when YouTube exposes public captions. This endpoint does not use the two-minute AI transcription fallback. If no matching caption track is available, the transcript fields return null.",
+          "Retrieves publicly available captions, subtitles, or transcripts from a YouTube video or Short. Returns both a timestamped transcript array with start/end times and a plain-text version in transcript_only_text. Supports specifying a language code. Videos of any length are supported when YouTube exposes public captions. This endpoint does not use AI transcription. A returned transcript costs 1 credit; missing captions cost 0 credits. If no matching caption track is available, the transcript fields return null.",
         path: "/v1/youtube/video/transcript",
         params: [
           {
@@ -2021,7 +2029,7 @@ export const apis = [
         method: "GET",
         description: "Gets a Rumble video's transcript when captions are available.",
         fullDescription:
-          "Gets a Rumble video's transcript when captions are available. If Rumble does not expose captions for the video, transcript will be null and you will not be charged.",
+          "Gets a Rumble video's transcript when captions are available. If Rumble does not expose captions for the video, transcript will be null and you will not be charged. Returned native captions cost 1 credit; empty transcripts and errors cost 0 credits. This endpoint does not use AI transcription.",
         path: "/v1/rumble/video/transcript",
         params: [
           {
@@ -3064,7 +3072,7 @@ export const apis = [
         method: "GET",
         description: "Get the transcript from a LinkedIn post video when LinkedIn exposes one.",
         fullDescription:
-          "Fetches the transcript from a LinkedIn post video when LinkedIn exposes one publicly. Returns null with transcriptNotAvailable when the post has no transcript, and only deducts credits when a transcript is returned.",
+          "Fetches the transcript from a LinkedIn post video when LinkedIn exposes one publicly. Returns null with transcriptNotAvailable when the post has no transcript, and only deducts credits when a transcript is returned. Returned native captions cost 1 credit; empty transcripts and errors cost 0 credits. This endpoint does not use AI transcription.",
         path: "/v1/linkedin/post/transcript",
         params: [
           {
@@ -4416,9 +4424,17 @@ export const apis = [
         method: "GET",
         description: "Get a public Facebook post or reel by url. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters.",
+          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/post",
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
+          {
+            name: "get_transcript",
+            type: "boolean",
+            required: false,
+            description: DETAIL_TRANSCRIPTION_NOTICE,
+            placeholder: false,
+          },
           {
             name: "url",
             type: "string",
@@ -4477,10 +4493,12 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          "Get the transcript of a Facebook post. Can be a post or reel. You can only get a transcript if the video is under 2 minutes.",
+          `Get native captions or an AI transcript of a Facebook video post or reel. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         fullDescription:
-          "Extracts the transcript text from a Facebook video post or reel. Returns the transcript as a single text string with line breaks. Only works on videos under 2 minutes in length.",
+          `Returns the transcript text for a Facebook video post or reel. Existing transcripts or native captions are used first and cost 1 credit only when returned. Otherwise the public video is transcribed using AI. No transcript costs 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/facebook/post/transcript",
+        credits: NATIVE_OR_AI_CREDITS,
+        responseFields: AI_DURATION_FIELDS,
         sampleResponse: {
           "success": true,
           "credits_remaining": 49999939403,
@@ -4488,6 +4506,7 @@ export const apis = [
         },
         placeholder: "https://www.facebook.com/reel/810660362052380q",
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
             name: "url",
             type: "string",
@@ -6133,7 +6152,7 @@ export const apis = [
         description:
           "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
         fullDescription:
-          "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. Regulated ads may also include source-dependent aaa_info using the structure shown below. Political and social issue delivery data is normalized to location_audience and age_country_gender_reach_breakdown. Political location_audience rows include reach, and political delivery values are fractional shares, so 0.08 means 8%. Regional transparency data may use absolute reach counts. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body.",
+          "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. Regulated ads may also include source-dependent aaa_info using the structure shown below. Political and social issue delivery data is normalized to location_audience and age_country_gender_reach_breakdown. Political location_audience rows include reach, and political delivery values are fractional shares, so 0.08 means 8%. Regional transparency data may use absolute reach counts. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/adLibrary/ad",
         sampleResponse: {
           adid: 0,
@@ -6444,6 +6463,14 @@ export const apis = [
           aaa_info: null,
         },
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
+          {
+            name: "get_transcript",
+            type: "boolean",
+            required: false,
+            description: DETAIL_TRANSCRIPTION_NOTICE,
+            placeholder: false,
+          },
           {
             name: "id",
             type: "string",
@@ -6480,10 +6507,11 @@ export const apis = [
         name: "Ad Transcript",
         method: "GET",
         description:
-          "Get the transcript for a Facebook Ad Library video ad by ad ID or URL. Credits are only charged when a transcript is returned.",
+          `Get native captions or an AI transcript for a Facebook Ad Library video ad by ID or URL. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         fullDescription:
-          "Retrieves a transcript for a single Facebook Ad Library video ad by ID or URL. If Facebook exposes captions, those are used. Otherwise we try to transcribe the public video URL. Credits are only deducted when transcript is returned. If the ad has no video or no transcript is available, transcript will be null and no credit is charged.",
+          `Retrieves a transcript for a Facebook Ad Library video ad by ID or URL. Returned native captions cost 1 credit. Otherwise the public video URL is transcribed with AI. If the ad has no video or no transcript is available, transcript is null and the charge is 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/facebook/adLibrary/ad/transcript",
+        credits: NATIVE_OR_AI_CREDITS,
         sampleResponse: {
           success: true,
           credits_remaining: 100,
@@ -6495,6 +6523,7 @@ export const apis = [
           },
         },
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
             name: "id",
             type: "string",
@@ -6516,6 +6545,7 @@ export const apis = [
             path: "data.transcript",
             description: "Transcript text for the ad video, or null when unavailable.",
           },
+          ...AI_DURATION_FIELDS,
         ],
       },
       ...withPostVariant({
@@ -9234,11 +9264,14 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          "Get the transcript of a video tweet. Unfortunately this is a little slow because I'm using AI to get the transcript",
+          `Get an AI transcript from a video tweet. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         fullDescription:
-          "Extracts the transcript from a Twitter video tweet using AI-powered transcription. The video must be under 2 minutes long. Returns a success flag and the full transcript text. This endpoint is slower than others due to the AI processing step.",
+          `Extracts an AI transcript from a Twitter video tweet. This route uses AI transcription, not native captions. Returns a success flag and transcript text. No transcript costs 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/twitter/tweet/transcript",
+        credits: NATIVE_OR_AI_CREDITS,
+        responseFields: AI_DURATION_FIELDS,
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
             name: "url",
             type: "string",
@@ -11244,7 +11277,7 @@ export const apis = [
         method: "GET",
         description: "Get the transcript from a Reddit video post",
         fullDescription:
-          "Gets the transcript from a Reddit video post or direct v.redd.it URL when Reddit exposes a VTT caption file. Returns the raw WebVTT in raw_vtt plus a parsed plain-text transcript. If Reddit does not expose captions for the video, transcript is null and transcriptNotAvailable is true.",
+          "Gets the transcript from a Reddit video post or direct v.redd.it URL when Reddit exposes a VTT caption file. Returns the raw WebVTT in raw_vtt plus a parsed plain-text transcript. If Reddit does not expose captions for the video, transcript is null and transcriptNotAvailable is true. Returned native captions cost 1 credit; empty transcripts and errors cost 0 credits. This endpoint does not use AI transcription.",
         path: "/v1/reddit/post/transcript",
         params: [
           {
@@ -16913,11 +16946,14 @@ export const apis = [
       {
         name: "Clip Transcript",
         method: "GET",
-        description: "Get the transcript from a Twitch clip",
+        description: `Get native captions or an opted-in AI transcript from a Twitch clip. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         fullDescription:
-          "Gets a transcript from a public Twitch clip. The endpoint checks Twitch's native captions first. Set use_ai_as_fallback to true to use AI transcription only when native captions are unavailable. Native transcripts cost 1 credit, AI transcripts cost 10 credits, and no credits are charged when no transcript is found. transcript_source is native, ai, or null.",
+          `Gets a transcript from a public Twitch clip. Checks native captions first; returned native captions cost 1 credit. Set use_ai_as_fallback=true to opt into paid AI only when captions are unavailable. No transcript costs 0 credits. transcript_source is native, ai, or null. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/twitch/clip/transcript",
+        credits: NATIVE_OR_AI_CREDITS,
+        responseFields: AI_DURATION_FIELDS,
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
             name: "url",
             type: "string",
@@ -16931,9 +16967,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Use AI transcription only when native captions are unavailable. Costs 10 credits when an AI transcript is returned. Defaults to false.",
+              `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
             placeholder: false,
-            credits: 10,
           },
         ],
         sampleResponse: {
@@ -33175,11 +33210,14 @@ export const apis = [
       {
         name: "Clip Transcript",
         method: "GET",
-        description: "Get the transcript from a Kick clip",
+        description: `Get native captions or an opted-in AI transcript from a Kick clip. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         fullDescription:
-          "Gets a transcript from a public Kick clip. The endpoint checks Kick's native captions first. Set use_ai_as_fallback to true to use AI transcription only when native captions are unavailable. Native transcripts cost 1 credit, AI transcripts cost 10 credits, and no credits are charged when no transcript is found. transcript_source is native, ai, or null.",
+          `Gets a transcript from a public Kick clip. Checks native captions first; returned native captions cost 1 credit. Set use_ai_as_fallback=true to opt into paid AI only when captions are unavailable. No transcript costs 0 credits. transcript_source is native, ai, or null. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/kick/clip/transcript",
+        credits: NATIVE_OR_AI_CREDITS,
+        responseFields: AI_DURATION_FIELDS,
         params: [
+          ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
             name: "url",
             type: "string",
@@ -33193,9 +33231,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Use AI transcription only when native captions are unavailable. Costs 10 credits when an AI transcript is returned. Defaults to false.",
+              `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
             placeholder: false,
-            credits: 10,
           },
         ],
         sampleResponse: {
@@ -34991,7 +35028,7 @@ const withEnvelope = (sample, creditsCharged) =>
     ? {
         success: true,
         credits_remaining: SAMPLE_CREDITS_REMAINING,
-        credits_charged: creditsCharged,
+        ...(creditsCharged === undefined ? {} : { credits_charged: creditsCharged }),
         ...sample,
       }
     : sample;
@@ -35001,7 +35038,9 @@ const withEnvelope = (sample, creditsCharged) =>
 for (const api of apis) {
   for (const endpoint of api.endpoints) {
     const creditsCharged =
-      typeof endpoint.credits === "number" ? endpoint.credits : 1;
+      endpoint.credits?.type === "variable"
+        ? undefined
+        : typeof endpoint.credits === "number" ? endpoint.credits : (endpoint.credits?.cost ?? 1);
 
     endpoint.sampleResponse = withEnvelope(endpoint.sampleResponse, creditsCharged);
     for (const variant of [
@@ -35016,12 +35055,14 @@ for (const api of apis) {
     }
 
     if (CACHEABLE_PATHS.has(endpoint.path)) {
-      const creditLabel = `${creditsCharged} ${creditsCharged === 1 ? "credit" : "credits"}`;
+      const creditLabel = endpoint.credits?.type === "variable"
+        ? endpoint.credits.description
+        : `${creditsCharged} ${creditsCharged === 1 ? "credit" : "credits"}`;
       endpoint.params = [
         ...(endpoint.params || []),
         {
           ...CACHE_MAX_AGE_PARAM,
-          description: `If we have a response in the cache that is this many days old or newer, return the cached response (0 credits, with "cached": true and a "cached_at" timestamp). Otherwise, scrape a live result (${creditLabel}). [See the Caching page for details.](https://docs.scrapecreators.com/caching)`,
+          description: `If we have a response in the cache that is this many days old or newer, return the cached response (0 credits, with "cached": true and a "cached_at" timestamp). Otherwise, scrape a live result (${creditLabel}${endpoint.params?.some((param) => param.name === "get_transcript") && endpoint.params?.some((param) => param.name === "allow_long_transcription") ? "; default short AI is included; allow_long_transcription=true adds 10 credits per started minute to the existing base cost" : ""}). [See the Caching page for details.](https://docs.scrapecreators.com/caching)`,
         },
       ];
       // "200 (cached)" tab: same data, free, plus cached markers at the end
