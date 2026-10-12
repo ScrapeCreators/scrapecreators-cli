@@ -33920,6 +33920,113 @@ export const apis = [
         },
       },
       {
+        name: "Find Creator Emails",
+        method: "GET",
+        description:
+          "Enter a creator's platform and handle to find publicly listed email addresses on their profiles, linked bio pages, and websites. Costs 10 credits per live lookup, even when no email is found. Cached results are free.",
+        fullDescription:
+          "Accepts a supported platform and creator handle, using the same verified social-profile discovery flow as Find Social Profiles. Supported starting platforms are Instagram, TikTok, YouTube, X/Twitter, and Facebook. A leading @ is optional; YouTube also accepts channel IDs. Scans publicly listed profile bios and contact links, recognized link-in-bio pages, and a bounded set of creator-declared public website pages. Other accounts are scanned only when explicitly linked or verified through reciprocal profile links or shared owner-controlled websites. Returns deduplicated email addresses with available public source URLs and source types. URLs from internal-only sources are omitted from email provenance and scan diagnostics; an email found only through those sources has an empty sources array. Partial and limited-scan flags still reflect the complete scan. Addresses may belong to the creator, their management, or a booking contact; the endpoint does not guess addresses or verify mailbox deliverability. Login-only contact details and private account data are not accessed. A successful lookup with no publicly listed email returns an empty emails array. Optional failed or timed-out scans are reported with partial results and diagnostics, so an empty partial result is not proof that no address exists. Live lookups cost 10 credits, including successful empty results. Cache hits cost 0 credits. Missing or invalid inputs, missing source profiles, and failed lookups are not charged. Multi-source discovery can take several seconds and may time out; retry failed requests rather than treating them as no-email results. Contact fields come from public creator pages. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
+        path: "/v1/find-creator-emails",
+        credits: 10,
+        sampleResponse: {
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 10,
+          "source": {
+            "platform": "instagram",
+            "handle": "miguelangeles",
+            "url": "https://www.instagram.com/miguelangeles"
+          },
+          "emails": [
+            {
+              "email": "booking@amsbooking.fr",
+              "sources": [
+                {
+                  "url": "https://www.instagram.com/miguelangeles",
+                  "type": "social_profile"
+                }
+              ]
+            },
+            {
+              "email": "mgmt@irlangel.com",
+              "sources": [
+                {
+                  "url": "https://www.instagram.com/miguelangeles",
+                  "type": "social_profile"
+                },
+                {
+                  "url": "https://www.youtube.com/@miguelangeles",
+                  "type": "social_profile"
+                }
+              ]
+            },
+            {
+              "email": "miguel@irlangel.com",
+              "sources": [
+                {
+                  "url": "https://x.com/irlmiguel",
+                  "type": "social_profile"
+                },
+                {
+                  "url": "https://linktr.ee/miguelangeles",
+                  "type": "link_in_bio"
+                }
+              ]
+            }
+          ],
+          "scanned_profile_urls": [
+            "https://www.instagram.com/miguelangeles",
+            "https://www.youtube.com/@miguelangeles",
+            "https://www.tiktok.com/@irlangel",
+            "https://x.com/irlmiguel"
+          ],
+          "failed_email_scan_urls": [],
+          "email_scan_limited": true,
+          "link_in_bio_urls": [],
+          "expanded_website_urls": [
+            "https://irlangel.com/"
+          ],
+          "partial": true,
+          "failed_link_in_bio_urls": [],
+          "failed_website_urls": [],
+          "source_linked_profile_urls": [],
+          "failed_source_linked_profile_urls": [],
+          "same_handle_candidate_urls": [
+            "https://www.tiktok.com/@miguelangeles",
+            "https://www.youtube.com/@miguelangeles",
+            "https://x.com/miguelangeles",
+            "https://www.facebook.com/miguelangeles"
+          ],
+          "same_handle_search_partial": false,
+          "google_search_used": true,
+          "google_search_failed": false,
+          "google_candidate_urls": [],
+          "google_candidate_link_in_bio_urls": [],
+          "failed_google_candidate_link_in_bio_urls": [],
+          "verified_google_candidate_urls": [],
+          "failed_google_candidate_urls": [],
+          "google_verification_partial": false
+        },
+        params: [
+          {
+            name: "platform",
+            type: "select",
+            required: true,
+            description: "Source social platform",
+            options: ["instagram", "tiktok", "youtube", "x", "twitter", "facebook"],
+            placeholder: "instagram",
+          },
+          {
+            name: "handle",
+            type: "string",
+            required: true,
+            description:
+              "Creator handle without a profile URL. A leading @ is optional.",
+            placeholder: "miguelangeles",
+          },
+        ],
+      },
+      {
         name: "Get Age and Gender",
         method: "GET",
         description:
@@ -34984,6 +35091,7 @@ const CACHEABLE_PATHS = new Set([
   "/v1/youtube/video/transcript",
   "/v1/google/ad",
   "/v1/find-social-profiles",
+  "/v1/find-creator-emails",
   "/v1/threads/post",
   "/v1/threads/profile",
   "/v1/twitter/profile",
