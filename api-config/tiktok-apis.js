@@ -5795,9 +5795,14 @@ export const tiktokBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Scrapes comments from public TikTok videos and photo/slideshow posts. An empty page does not prove the post has no comments globally. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
-      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response. Public photo/slideshow posts are supported as well as videos. Comments use a separate TikTok public web source, so successful single-post metadata retrieval does not guarantee readable comments. An empty terminal page does not by itself prove the post has no comments globally or was deleted. This endpoint does not expose a country-selection parameter. Use the returned cursor and stop when `end_of_pagination=true`. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      description: "Scrapes comments from public TikTok videos and photo/slideshow posts. Pages with comments cost 1 credit; empty pages cost 0 credits. An empty page does not prove the post has no comments globally. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response. Public photo/slideshow posts are supported as well as videos. Comments use a separate TikTok public web source, so successful single-post metadata retrieval does not guarantee readable comments. An empty terminal page does not by itself prove the post has no comments globally or was deleted. This endpoint does not expose a country-selection parameter. Use the returned cursor and stop when `end_of_pagination=true`. Pages that return comments cost 1 credit; successful empty pages cost 0 credits, including the first page, later pages, and trim=true responses. Replaying a terminal null cursor also costs 0 credits. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v1/tiktok/video/comments",
+      credits: {
+        type: "variable",
+        cost: 1,
+        description: "1 credit per page with comments; 0 credits for empty pages",
+      },
       paginationField: "cursor",
       params: [
         {
