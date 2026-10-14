@@ -14,11 +14,26 @@ export const instagramBaseApis = {
       name: "Profile",
       method: "GET",
       description:
-        "Gets public Instagram profile data, recent posts, and related accounts",
+        "Gets public Instagram profile data, recent posts, and related accounts. Check message as well as the HTTP status: private, restricted, and missing-account placeholders can return HTTP 200. A restriction or login prompt alone does not confirm an age limit. See the response field explanations below.",
       fullDescription:
-        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts.",
+        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. For GET handle requests, check message as well as the HTTP status and success. Profile is private means Instagram returned is_private=true. Profile is restricted means the public profile reports posts or reels but its public timeline returned no items; this does not confirm an age limit. Account doesn't exist means the handle lookup returned no matching account; it does not prove the account was deleted. These three placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. Profile is unavailable on Instagram returns HTTP 404, success=false, error=not_found, and errorStatus=404 without charging credits; it does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. means an upstream lookup failed, not a confirmed account restriction, and is not charged. This endpoint does not return a dedicated age-verification message or a minimum-age value. Do not label a generic login prompt, restriction, or 404 as age-restricted without explicit age-verification evidence.",
       path: "/v1/instagram/profile",
       responseFields: [
+        {
+          path: "message",
+          description:
+            "For GET handle requests: 'Profile is private' means Instagram returned is_private=true. 'Profile is restricted' means the public profile reports posts or reels but its public timeline returned no items; it is not proof of an age limit. 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. These three placeholders return HTTP 200 with success=true and userId=null. 'Profile is unavailable on Instagram' returns HTTP 404 and does not identify why the profile is unavailable. HTTP 500 with 'Shoot, IG is blocking us. Try again and it should work.' is an upstream failure, not a confirmed restriction. There is no dedicated age-verification message or minimum-age value; a generic login prompt alone does not confirm age gating.",
+        },
+        {
+          path: "errorStatus",
+          description:
+            "The JSON error status is separate from the HTTP status. Private, restricted, and missing-account placeholders have error='not_found' and errorStatus=404 even though GET returns HTTP 200 and success=true. Check message and userId too; HTTP 200 alone does not mean profile data was retrieved.",
+        },
+        {
+          path: "credits_charged",
+          description:
+            "Private, restricted, and missing-account HTTP-200 placeholders cost one credit. The confirmed-unavailable HTTP 404 and upstream HTTP 500 responses cost zero credits.",
+        },
         {
           path: "data.user.edge_followed_by.count",
           description: "Followers count",
