@@ -3363,9 +3363,9 @@ export const apis = [
         name: "Profile Reels",
         method: "GET",
         description:
-          "Get a public Facebook page's reels. Returns 10 reels at a time. Need 'next_page_id' and 'cursor' to paginate.",
+          "Get a public Facebook page's reels, up to 10 at a time. view_count is the public Reels badge converted to a number and may be rounded. For available engagement metrics and more precise views, make a separate /v1/facebook/post request for each reel URL. Need 'next_page_id' and 'cursor' to paginate.",
         fullDescription:
-          "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. Pagination requires passing both next_page_id and cursor from the previous response.",
+          "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, post_id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. view_count comes from Facebook's public Reels badge (play_count_reduced), converted to a number; abbreviated values such as 27K become 27000, not an exact count. This list does not include like_count, reaction_counts, comment_count, share_count, or an is_pinned flag. Do not infer pinning from the order of returned reels. For available engagement metrics and a more precise view_count when Facebook exposes it, call /v1/facebook/post separately with each reel's returned url. There is no batch detail parameter on this endpoint. The detail view_count can still be null or lower than the public Reels badge. Pagination requires passing both next_page_id and cursor from the previous response.",
         path: "/v1/facebook/profile/reels",
         paginationField: "cursor",
         params: [
@@ -4422,9 +4422,9 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a public Facebook post or reel by url. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
+        description: "Get a public Facebook post or reel by url. Use one request per reel for available engagement metrics and more precise views when Facebook exposes them; exact views are not guaranteed. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters." + " " + DETAIL_TRANSCRIPTION_NOTICE,
+          "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/post",
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
