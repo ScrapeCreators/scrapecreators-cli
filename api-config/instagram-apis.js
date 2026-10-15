@@ -14,25 +14,43 @@ export const instagramBaseApis = {
       name: "Profile",
       method: "GET",
       description:
-        "Gets public Instagram profile data, recent posts, and related accounts. Check message as well as the HTTP status: private, restricted, and missing-account placeholders can return HTTP 200. A restriction or login prompt alone does not confirm an age limit. See the response field explanations below.",
+        "Gets public Instagram profile data, recent posts, and related accounts. An explicit Instagram age gate returns HTTP 403, age_restricted=true, and 'Profile is age restricted' without charging credits. Check message as well as the HTTP status: some account-access placeholders return HTTP 200. See the response field explanations below.",
       fullDescription:
-        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. For GET handle requests, check message as well as the HTTP status and success. Profile is private means Instagram returned is_private=true. Profile is restricted means the public profile reports posts or reels but its public timeline returned no items; this does not confirm an age limit. Account doesn't exist means the handle lookup returned no matching account; it does not prove the account was deleted. These three placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. Profile is unavailable on Instagram returns HTTP 404, success=false, error=not_found, and errorStatus=404 without charging credits; it does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. means an upstream lookup failed, not a confirmed account restriction, and is not charged. This endpoint does not return a dedicated age-verification message or a minimum-age value. Do not label a generic login prompt, restriction, or 404 as age-restricted without explicit age-verification evidence.",
+        "Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. An explicit rendered age gate (for example, You must be 21 years old or over to see this profile. Log in to continue.) returns HTTP 403, success=false, age_restricted=true, error=forbidden, errorStatus=403, and message=Profile is age restricted, without charging credits. This means Instagram identified an existing profile but requires an age-verified login to view it; we do not bypass the gate. It applies to GET, trimmed GET, and POST handle requests. The age_restricted field is omitted when age gating has not been explicitly confirmed; its absence is not proof that the account has no age limit. For GET handle requests, Profile is private means Instagram returned is_private=true. Account doesn't exist means the handle lookup returned no matching account, not confirmed deletion. A legacy Profile is restricted placeholder means the profile reports content but its public timeline returned no items. These placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. An explicitly rendered generic audience restriction returns HTTP 404 with Profile is restricted and zero credits charged; it does not confirm an age limit. Profile is unavailable on Instagram also returns an uncharged HTTP 404 and does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. is an uncharged upstream failure, not a confirmed account restriction. Do not label generic login prompts or unavailable responses as age-restricted.",
       path: "/v1/instagram/profile",
+      errorResponseExamples: {
+        403: {
+          success: false,
+          credits_remaining: 100,
+          credits_charged: 0,
+          handle: "budlight",
+          userId: null,
+          age_restricted: true,
+          error: "forbidden",
+          errorStatus: 403,
+          message: "Profile is age restricted",
+        },
+      },
       responseFields: [
+        {
+          path: "age_restricted",
+          description:
+            "Boolean true only when Instagram explicitly renders an age-verification gate for the requested profile. Returns HTTP 403 with 'Profile is age restricted' and zero credits charged, including trimmed GET and POST handle requests. The profile exists, but we cannot retrieve its age-gated content. Omitted for other responses; absence does not prove that no age limit exists.",
+        },
         {
           path: "message",
           description:
-            "For GET handle requests: 'Profile is private' means Instagram returned is_private=true. 'Profile is restricted' means the public profile reports posts or reels but its public timeline returned no items; it is not proof of an age limit. 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. These three placeholders return HTTP 200 with success=true and userId=null. 'Profile is unavailable on Instagram' returns HTTP 404 and does not identify why the profile is unavailable. HTTP 500 with 'Shoot, IG is blocking us. Try again and it should work.' is an upstream failure, not a confirmed restriction. There is no dedicated age-verification message or minimum-age value; a generic login prompt alone does not confirm age gating.",
+            "'Profile is age restricted' means Instagram explicitly rendered an age gate and returns HTTP 403 with age_restricted=true. For GET handle requests, 'Profile is private' means Instagram returned is_private=true; 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. 'Profile is restricted' can be a legacy HTTP-200 empty-timeline placeholder or an explicit HTTP-404 audience restriction; neither confirms age gating. GET placeholders return success=true and userId=null even though no profile data is returned. 'Profile is unavailable on Instagram' is an HTTP 404 without a confirmed cause. 'Shoot, IG is blocking us. Try again and it should work.' is an upstream HTTP 500, not a confirmed restriction.",
         },
         {
           path: "errorStatus",
           description:
-            "The JSON error status is separate from the HTTP status. Private, restricted, and missing-account placeholders have error='not_found' and errorStatus=404 even though GET returns HTTP 200 and success=true. Check message and userId too; HTTP 200 alone does not mean profile data was retrieved.",
+            "The JSON error status is separate from the HTTP status. Confirmed age gates return error='forbidden' and HTTP/errorStatus=403. Private, legacy restricted, and missing-account placeholders have error='not_found' and errorStatus=404 even though GET returns HTTP 200 and success=true. Check message and userId too; HTTP 200 alone does not mean profile data was retrieved.",
         },
         {
           path: "credits_charged",
           description:
-            "Private, restricted, and missing-account HTTP-200 placeholders cost one credit. The confirmed-unavailable HTTP 404 and upstream HTTP 500 responses cost zero credits.",
+            "Private, legacy restricted, and missing-account HTTP-200 placeholders cost one credit. Confirmed age-gated HTTP 403, explicit audience-restricted or unavailable HTTP 404, and upstream HTTP 500 responses cost zero credits.",
         },
         {
           path: "data.user.edge_followed_by.count",
