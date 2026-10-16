@@ -13,6 +13,7 @@ import { githubApis } from "./github-apis.js";
 import { kwaiApis } from "./kwai-apis.js";
 import { cosmosApis } from "./cosmos-apis.js";
 import { telegramApis } from "./telegram-apis.js";
+import { LINKEDIN_AD_MEDIA_DESCRIPTION, linkedinAdMediaResponseFields } from "./linkedin-ad-media.js";
 
 const withPostVariant = (endpoint) => [
   endpoint,
@@ -8320,73 +8321,117 @@ export const apis = [
       {
         name: "Search Ads",
         method: "GET",
-        description: "Search the LinkedIn Ad Library",
+        description: "Search the LinkedIn Ad Library with native media variants where available. LinkedIn may expose only one image or thumbnail size.",
         fullDescription:
-          "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Custom date filtering requires both startDate and endDate. LinkedIn accepts dates from the date one year ago through yesterday. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. Supports pagination via paginationToken.",
+          "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Custom date filtering requires both startDate and endDate. LinkedIn accepts dates from the date one year ago through yesterday. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. Supports pagination via paginationToken. Search results keep a consistent field set when detail hydration fails, with null or empty defaults for unavailable fields. " + LINKEDIN_AD_MEDIA_DESCRIPTION,
         path: "/v1/linkedin/ads/search",
+        responseFields: linkedinAdMediaResponseFields("ads[]."),
         sampleResponse: {
-          success: true,
-          ads: [
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "ads": [
             {
-              id: "823975056",
-              description:
-                "The countdown has begun – grab your discounted tickets now for #FabConEurope in Vienna!\nJoin us for an unforgettable experience filled with deep learning, expert insights, and top-tier networking opportunities.\n\nRegister today and be part of the future of innovation: http://msft.it/6043sMFt3 \n\n#MicrosoftFabric",
-              headline: null,
-              poster: "Microsoft",
-              posterTitle: "Promoted",
-              promotedBy: null,
-              targeting: {
-                language: "Targeting includes English",
-                location: "Targeting includes Netherlands",
-                company: "Exclusion targeting applied",
-              },
-              image:
-                "https://media.licdn.com/dms/image/v2/D5610AQH8f223ANJdoQ/image-shrink_1280/B56ZiDa0MFHkAQ-/0/1754551502346?e=2147483647&v=beta&t=ZuZ0zUs1KInS8ysVO7FxzmlzxHP9B_JX2b6kdMU8GT4",
-              video: null,
-              carouselImages: [],
-              adType: "Single Image Ad",
-              advertiser: "Microsoft",
-              advertiserLinkedinPage: "https://www.linkedin.com/company/1035",
-              cta: null,
-              destinationUrl:
-                "http://msft.it/6043sMFt3?trk=ad_library_ad_preview_headline_content",
-              adDuration: "Ran from Aug 10, 2025 to Aug 10, 2025",
-              startDate: "2025-08-10T05:00:00.000Z",
-              endDate: "2025-08-10T05:00:00.000Z",
-              totalImpressions: "< 1k",
-              impressionsByCountry: [],
+              "id": "1629532086",
+              "description": "Offensive security for Insurance Brokers, TPAs, MGAs and Carriers.\n\nGet a full audit-grade NYDFS or SOC2 PDF report within 48 hours.",
+              "headline": "Meet us at Booth 3240",
+              "poster": "CodeAnt AI",
+              "posterTitle": null,
+              "promotedBy": null,
+              "targeting": {},
+              "image": null,
+              "video": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+              "preRollVideo": null,
+              "organicVideo": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+              "preRollAdvertiser": null,
+              "carouselImages": [],
+              "url": "https://www.linkedin.com/ad-library/detail/1629532086",
+              "adType": "Video Ad",
+              "creativeType": "SPONSORED_VIDEO",
+              "advertiser": "CodeAnt AI",
+              "advertiserLinkedinPage": "https://www.linkedin.com/company/96582348",
+              "advertiserLogo": "https://media.licdn.com/dms/image/v2/D560BAQGncbvGj9h-YA/company-logo_100_100/company-logo_100_100/0/1700642866542/codeant_ai_logo?e=1793836800&v=beta&t=m3Yqh1eMA4FSBoIhNZzLkOQO8FLl84sq6rMUXuYaqXA",
+              "cta": "Join",
+              "sponsoredMessageSender": null,
+              "sponsoredMessageSenderAvatar": null,
+              "sponsoredMessageButtons": [],
+              "destinationUrl": null,
+              "landingPage": null,
+              "adDuration": "",
+              "startDate": null,
+              "endDate": null,
+              "totalImpressions": null,
+              "impressionsByCountry": [],
+              "imageSources": [],
+              "videoSources": [
+                {
+                  "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+                  "type": "video/mp4",
+                  "bitrate": 124294
+                },
+                {
+                  "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/progressive-servable-video/B56aDdqz26GoAc-/0/1790425383612?e=2147483647&v=beta&t=jLeuwEhS8XvYQ5FIqWJml09AkU54C5XXO9A_aY9fCwc",
+                  "type": "video/mp4",
+                  "bitrate": 10360657
+                },
+                {
+                  "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-720p-30fp-crf28/B56aDdqz26GoCI-/0/1790425385064?e=2147483647&v=beta&t=nGHquMqqYvnMF0jR0H-7y6U4HhxFLO2AYpKxDCokYBU",
+                  "type": "video/mp4",
+                  "bitrate": 378442
+                },
+                {
+                  "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-640p-30fp-crf28/B56aDdqz26GoBs-/0/1790425384967?e=2147483647&v=beta&t=Y8PX1J2nczCeLu_x4D2VbBJ3mI4Yb20DxAZ0yyOSu3E",
+                  "type": "video/mp4",
+                  "bitrate": 281999
+                }
+              ],
+              "thumbnailSources": [
+                "https://media.licdn.com/dms/image/v2/D5610AQHhFKchr0EgUA/videocover-high/B56aDdqz26GoBM-/0/1790425384196?e=2147483647&v=beta&t=f4890gDBvRXts6rJzik-j7iF8aDV6XOLTyaT10Bdkyg"
+              ],
+              "preRollVideoSources": []
             },
             {
-              id: "756473943",
-              description:
-                "Tailor your language with Microsoft 365 Copilot Chat so your message connects with any audience.",
-              headline:
-                "Speak to your audience with Microsoft 365 Copilot Chat.",
-              poster: "Microsoft 365",
-              posterTitle: "Promoted",
-              promotedBy: null,
-              targeting: {},
-              image: null,
-              video:
-                "https://dms.licdn.com/playlist/vid/v2/D4D10AQFRXuUWwLFasQ/mp4-720p-30fp-crf28/B4DZiFJPraHYCQ-/0/1754580468019/SRTs_Copilot_Linkedin-Theme2-15s_USA_1080x1080_VIP_SubTheme2E_COMM-EN_NA_Standard_SQV_TCN_NA_1mp4?e=2147483647&v=beta&t=O5kDsmtaT10Gp-tWI_-_gDmBXZyN02Qd2BJR_j5f5tY",
-              carouselImages: [],
-              adType: "Video Ad",
-              advertiser: "Microsoft 365",
-              advertiserLinkedinPage:
-                "https://www.linkedin.com/company/3509299",
-              cta: "Learn more",
-              destinationUrl:
-                "https://ad.doubleclick.net/ddm/trackclk/N572608.271051LINKEDIN/B33660529.424033181;dc_trk_aid=616963828;dc_trk_cid=237340786;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=$%7BGDPR%7D;gdpr_consent=$%7BGDPR_CONSENT_755%7D;gpp=$%7BGPP_STRING_755%7D;gpp_sid=$%7BGPP_SID%7D;ltd=;dc_tdv=1?trk=ad_library_ad_preview_headline_content",
-              adDuration: "",
-              startDate: null,
-              endDate: null,
-              totalImpressions: null,
-              impressionsByCountry: [],
-            },
+              "id": "1637580796",
+              "description": "Your code, cloud and team changed since your last pentest. Your auditor needs a report on today's environment.",
+              "headline": "Renewing PCI? Get a pentest report in 3 weeks",
+              "poster": "CodeAnt AI",
+              "posterTitle": null,
+              "promotedBy": null,
+              "targeting": {},
+              "image": "https://media.licdn.com/dms/image/v2/D5610AQFFRKthq08ivA/image-shrink_1280/B56aEaDZDNJcAc-/0/1791438459516/PCI-02png?e=2147483647&v=beta&t=VwX-vpFnz2szja2-UG5od2DYftS6aqGswIF3Dtbz0gY",
+              "video": null,
+              "preRollVideo": null,
+              "organicVideo": null,
+              "preRollAdvertiser": null,
+              "carouselImages": [],
+              "url": "https://www.linkedin.com/ad-library/detail/1637580796",
+              "adType": "Single Image Ad",
+              "creativeType": "SPONSORED_STATUS_UPDATE",
+              "advertiser": "CodeAnt AI",
+              "advertiserLinkedinPage": "https://www.linkedin.com/company/96582348",
+              "advertiserLogo": "https://media.licdn.com/dms/image/v2/D560BAQGncbvGj9h-YA/company-logo_100_100/company-logo_100_100/0/1700642866542/codeant_ai_logo?e=1793836800&v=beta&t=m3Yqh1eMA4FSBoIhNZzLkOQO8FLl84sq6rMUXuYaqXA",
+              "cta": "Learn more",
+              "sponsoredMessageSender": null,
+              "sponsoredMessageSenderAvatar": null,
+              "sponsoredMessageButtons": [],
+              "destinationUrl": null,
+              "landingPage": null,
+              "adDuration": "",
+              "startDate": null,
+              "endDate": null,
+              "totalImpressions": null,
+              "impressionsByCountry": [],
+              "imageSources": [
+                "https://media.licdn.com/dms/image/v2/D5610AQFFRKthq08ivA/image-shrink_1280/B56aEaDZDNJcAc-/0/1791438459516/PCI-02png?e=2147483647&v=beta&t=VwX-vpFnz2szja2-UG5od2DYftS6aqGswIF3Dtbz0gY"
+              ],
+              "videoSources": [],
+              "thumbnailSources": [],
+              "preRollVideoSources": []
+            }
           ],
-          paginationToken: "756412693-1754569518292",
-          isLastPage: false,
-          totalAds: 8699,
+          "paginationToken": "1587449116-1788316404963",
+          "isLastPage": false,
+          "totalAds": 258
         },
         params: [
           {
@@ -8446,10 +8491,11 @@ export const apis = [
       {
         name: "Ad Details",
         method: "GET",
-        description: "Get the details for an ad",
+        description: "Get ad details and native media variants where available. LinkedIn may expose only one image or thumbnail size.",
         fullDescription:
-          "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page.",
+          "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. " + LINKEDIN_AD_MEDIA_DESCRIPTION,
         path: "/v1/linkedin/ad",
+        responseFields: linkedinAdMediaResponseFields(),
         params: [
           {
             name: "url",
@@ -8460,49 +8506,64 @@ export const apis = [
           },
         ],
         sampleResponse: {
-          success: true,
-          id: "664291126",
-          description:
-            "Learn to start building an AI strategy that helps your small business automate routine tasks and keep teams focused on high-value activities.",
-          headline: "Read “The Guide to AI for Small Businesses”",
-          poster: "Salesforce",
-          posterTitle: "Promoted",
-          promotedBy: null,
-          targeting: {
-            language: "Targeting includes English",
-            location: "Targeting includes Portugal",
-            audience: "Inclusion and exclusion targeting applied",
-          },
-          image:
-            "https://media.licdn.com/dms/image/v2/D5610AQHEjQAydHWLaw/image-shrink_1280/image-shrink_1280/0/1736950502005/Ai-guide-for-smbs?e=2147483647&v=beta&t=dC-iPz1fr8piN6YutdDgKIOmRPJvFaj4Hr0g_raHZ70",
-          adType: "Single Image Ad",
-          advertiser: "Salesforce",
-          advertiserLinkedinPage: "https://www.linkedin.com/company/3185",
-          cta: null,
-          destinationUrl:
-            "https://www.salesforce.com/eu/form/small-business/ai-guide-for-smbs/?d=701ed00000CX0GfAAL&nc=701ed000007UYTMAA4&utm_source=linkedin&utm_medium=paid_social&utm_campaign=emea_pt_einsteinai_allindustries&utm_content=enterprisesmallbusiness_pp-dm-all-crx-multi-tal-linkedin-prospect-tals-esmb_701ed00000CX0GfAAL_english_ai-guide-for-smbs&trk=ad_library_ad_preview_headline_content",
-          adDuration: "Ran from Apr 1, 2025 to Apr 3, 2025",
-          startDate: "2025-04-01T00:00:00.000Z",
-          endDate: "2025-04-03T00:00:00.000Z",
-          totalImpressions: "5k-10k",
-          impressionsByCountry: [
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "id": "1629532086",
+          "description": "Offensive security for Insurance Brokers, TPAs, MGAs and Carriers.\n\nGet a full audit-grade NYDFS or SOC2 PDF report within 48 hours.",
+          "headline": "Meet us at Booth 3240",
+          "poster": "CodeAnt AI",
+          "targeting": {},
+          "image": null,
+          "video": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+          "preRollVideo": null,
+          "organicVideo": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+          "preRollAdvertiser": null,
+          "carouselImages": [],
+          "url": "https://www.linkedin.com/ad-library/detail/1629532086",
+          "adType": "Video Ad",
+          "creativeType": "SPONSORED_VIDEO",
+          "advertiser": "CodeAnt AI",
+          "advertiserLinkedinPage": "https://www.linkedin.com/company/96582348",
+          "advertiserLogo": "https://media.licdn.com/dms/image/v2/D560BAQGncbvGj9h-YA/company-logo_100_100/company-logo_100_100/0/1700642866542/codeant_ai_logo?e=1793836800&v=beta&t=m3Yqh1eMA4FSBoIhNZzLkOQO8FLl84sq6rMUXuYaqXA",
+          "cta": "Join",
+          "sponsoredMessageSender": null,
+          "sponsoredMessageSenderAvatar": null,
+          "sponsoredMessageButtons": [],
+          "destinationUrl": null,
+          "landingPage": null,
+          "adDuration": "",
+          "startDate": null,
+          "endDate": null,
+          "totalImpressions": null,
+          "impressionsByCountry": [],
+          "imageSources": [],
+          "videoSources": [
             {
-              country: "Portugal",
-              impressions: "100%",
+              "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-360p-30fp-crf28/B56aDdqz26GoCE-/0/1790425384702?e=2147483647&v=beta&t=JDvJ4pLmerMVdDjbUZskRZIeuno7_YD4b-t_y2aY_f0",
+              "type": "video/mp4",
+              "bitrate": 124294
             },
             {
-              country: "Angola",
-              impressions: "less than 1%",
+              "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/progressive-servable-video/B56aDdqz26GoAc-/0/1790425383612?e=2147483647&v=beta&t=jLeuwEhS8XvYQ5FIqWJml09AkU54C5XXO9A_aY9fCwc",
+              "type": "video/mp4",
+              "bitrate": 10360657
             },
             {
-              country: "Latvia",
-              impressions: "less than 1%",
+              "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-720p-30fp-crf28/B56aDdqz26GoCI-/0/1790425385064?e=2147483647&v=beta&t=nGHquMqqYvnMF0jR0H-7y6U4HhxFLO2AYpKxDCokYBU",
+              "type": "video/mp4",
+              "bitrate": 378442
             },
             {
-              country: "Ukraine",
-              impressions: "less than 1%",
-            },
+              "src": "https://dms.licdn.com/playlist/vid/v2/D5610AQHhFKchr0EgUA/mp4-640p-30fp-crf28/B56aDdqz26GoBs-/0/1790425384967?e=2147483647&v=beta&t=Y8PX1J2nczCeLu_x4D2VbBJ3mI4Yb20DxAZ0yyOSu3E",
+              "type": "video/mp4",
+              "bitrate": 281999
+            }
           ],
+          "thumbnailSources": [
+            "https://media.licdn.com/dms/image/v2/D5610AQHhFKchr0EgUA/videocover-high/B56aDdqz26GoBM-/0/1790425384196?e=2147483647&v=beta&t=f4890gDBvRXts6rJzik-j7iF8aDV6XOLTyaT10Bdkyg"
+          ],
+          "preRollVideoSources": []
         },
       },
     ],
