@@ -15205,7 +15205,7 @@ export const apis = [
         method: "GET",
         description: "Get Twitch profile",
         fullDescription:
-          "Retrieves a Twitch user's public profile by handle, including identity, social links, and content. Returns id, handle, displayName, description, followers count, and linked social accounts (instagram, x, tiktok). Also includes allVideos with game info, duration, and view counts, featuredClips with clip metadata and thumbnails, and similarStreamers.",
+          "Retrieves a Twitch user's public profile by handle, including identity, social links, and content. Returns id, handle, displayName, description, followers count, and linked social accounts (instagram, x, tiktok). Also includes lastBroadcast with startedAt (ISO 8601 UTC) and title, allVideos with game info, duration, and view counts, featuredClips with clip metadata and thumbnails, and similarStreamers. lastBroadcast comes from Twitch's broadcast metadata rather than saved videos, so it can remain available when a channel is offline and its saved broadcasts have expired or were never saved. lastBroadcast is null when Twitch does not provide it; startedAt and title can individually be null when unavailable.",
         path: "/v1/twitch/profile",
         params: [
           {
@@ -15222,6 +15222,10 @@ export const apis = [
           "id": "220476955",
           "isLive": true,
           "currentViewersCount": 6293,
+          "lastBroadcast": {
+            "startedAt": "2026-10-15T20:11:51.586296Z",
+            "title": "🔴LET’S HAVE FUN 🤩 + Speed Vs. Cole Palmer ⚽️🏴🥶"
+          },
           "handle": "ishowspeed",
           "stream": {},
           "displayName": "IShowSpeed",
