@@ -218,20 +218,20 @@ export const apis = [
           playlists: [
             {
               type: "playlist",
-              id: "PLoSWVnSA9vG8hI-SUpAimvYJrPh-PRRvp",
-              title: "If You Survive, You Win",
+              id: "PLYMWLvk9WbU8",
+              title: "The Diary Of A Polarizing Figure",
               thumbnail:
-                "https://i.ytimg.com/vi/tnTPaLOaHz8/hqdefault.jpg",
+                "https://i.ytimg.com/vi/gQ8QVZuDLGQ/hqdefault.jpg",
               playlistUrl:
-                "https://www.youtube.com/playlist?list=PLoSWVnSA9vG8hI-SUpAimvYJrPh-PRRvp",
-              videoId: "tnTPaLOaHz8",
-              videoUrl: "https://www.youtube.com/watch?v=tnTPaLOaHz8",
-              videoCount: 4,
+                "https://www.youtube.com/playlist?list=PLYMWLvk9WbU8",
+              videoId: "gQ8QVZuDLGQ",
+              videoUrl: "https://www.youtube.com/watch?v=gQ8QVZuDLGQ",
+              videoCount: 14,
               channel: {
-                id: "UCX6OQ3DkcsbYNE6H8uQQuVA",
-                title: "MrBeast",
-                handle: "MrBeast",
-                channelUrl: "https://www.youtube.com/@MrBeast",
+                id: "UCxcTeAKWJca6XyJ37_ZoKIQ",
+                title: "The Pat McAfee Show",
+                handle: "ThePatMcAfeeShow",
+                channelUrl: "https://www.youtube.com/@ThePatMcAfeeShow",
               },
             },
           ],
@@ -242,13 +242,13 @@ export const apis = [
             name: "channelId",
             type: "string",
             description: "YouTube channel ID",
-            placeholder: "UCX6OQ3DkcsbYNE6H8uQQuVA",
+            placeholder: "UCxcTeAKWJca6XyJ37_ZoKIQ",
           },
           {
             name: "handle",
             type: "string",
             description: "YouTube channel handle",
-            placeholder: "MrBeast",
+            placeholder: "ThePatMcAfeeShow",
           },
           {
             name: "continuationToken",
