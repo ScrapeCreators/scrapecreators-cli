@@ -9624,9 +9624,9 @@ export const apis = [
         name: "Subreddit Details",
         method: "GET",
         description:
-          "Get details about a subreddit. Pass a subreddit name or URL to the subreddit.",
+          "Get details about a subreddit. Pass a subreddit name or URL to the subreddit. Subscriber counts are not available; weekly activity counts are different metrics.",
         fullDescription:
-          "Retrieves metadata about a subreddit by name or URL. The subreddit name must be case-sensitive. Returns display_name, description, subscribers, weekly_active_users, weekly_contributions, rules, icon_img, header_img, advertiser_category, submit_text, and created_at.",
+          "Retrieves metadata about a subreddit by name or URL. The subreddit name must be case-sensitive. Returns display_name, description, weekly_active_users, weekly_contributions, rules, icon_img, header_img, advertiser_category, submit_text, and created_at. Subscriber counts are not available. weekly_active_users and weekly_contributions measure weekly activity, not total subscribers.",
         path: "/v1/reddit/subreddit/details",
         params: [
           {
@@ -9659,7 +9659,6 @@ export const apis = [
           header_img: null,
           icon_img:
             "https://styles.redditmedia.com/t5_a7wuv/styles/communityIcon_t3cspt08bl681.png?width=128&frame=1&auto=webp&s=6f7e59ccf1724bd6c8b3e0d2840c9b21297102c3",
-          subscribers: 1923642,
           advertiser_category: "",
           created_at: "2018-01-05T10:35:24.000Z",
           submit_text: "",
