@@ -1,5 +1,5 @@
 // Public wire examples, not upstream payloads. Balances and handles are illustrative.
-const uncharged = { success: false, credits_remaining: 100, credits_charged: 0 };
+const uncharged = { success: true, credits_remaining: 100, credits_charged: 0 };
 export const instagramProfileStateExamples = {
   ageRestricted: {
     ...uncharged, handle: "example_profile", userId: null, age_restricted: true,
@@ -47,21 +47,21 @@ export const instagramProfileStateEntries = [
   { name: "Explicit audience restriction", httpStatus: 404, description: "No structured age/region reason field exists. Match error=not_found and the exact message together with the HTTP status. This does not prove age gating or deletion.", response: instagramProfileStateExamples.audienceRestricted },
   { name: "Confirmed unavailable page", httpStatus: 404, description: "The cause is unknown. This body does not include handle, userId, or age_restricted, and does not prove deletion.", response: instagramProfileStateExamples.unavailable },
   { name: "Legacy private placeholder", httpStatus: 200, description: "GET and trimmed GET: one credit, success=true, but no usable profile data. POST handle requests preserve success=false instead, with the same message and one-credit cost.", response: instagramProfileStateExamples.privatePlaceholder },
-  { name: "Legacy restricted placeholder", httpStatus: 200, description: "Reported content with an empty public timeline. GET checks userId === null; POST checks data.user === null and preserves success=false. Both cost one credit. Neither confirms an age limit.", response: instagramProfileStateExamples.restrictedPlaceholder },
+  { name: "Legacy restricted placeholder", httpStatus: 200, description: "Historical restricted-result handler branch. The current metadata-first pipeline does not infer a restriction merely from an empty timeline: it retains matching metadata as a partial HTTP 200. GET checks userId === null; POST checks data.user === null and preserves success=false for that placeholder. Both placeholder branches cost one credit.", response: instagramProfileStateExamples.restrictedPlaceholder },
   { name: "Legacy missing-account placeholder", httpStatus: 200, description: "No matching account from a handle lookup, not confirmed deletion. GET preserves success=true; POST handle requests preserve success=false. Both cost one credit. The message was not globally renamed to the unavailable-page message.", response: instagramProfileStateExamples.missingPlaceholder },
 ];
 
 export const instagramPostsStateEntries = [
   { name: "Confirmed age gate", httpStatus: 403, description: "Applies to v1 and v2 user-post handle resolution. Unlike the profile endpoint, this body has no age_restricted, handle, or userId. Zero credits.", response: instagramPostsStateExamples.ageRestricted },
   { name: "Explicit restricted-profile error", httpStatus: 404, description: "The exact message is Profile is private, not Profile is restricted. No reliable age/region reason field is exposed. Zero credits.", response: instagramPostsStateExamples.restricted },
-  { name: "Confirmed unavailable profile", httpStatus: 404, description: "Unavailability does not prove deletion. Zero credits. These explicit success=false errors are separate from v2's retained legacy success=true HTTP-404 fallbacks: Posts not found, Account doesn't exist, and Profile is restricted.", response: instagramPostsStateExamples.unavailable },
+  { name: "Confirmed unavailable profile", httpStatus: 404, description: "Unavailability does not prove deletion. Zero credits. These explicit confirmed-state responses are separate from v2's retained legacy HTTP-404 fallbacks: Posts not found, Account doesn't exist, and Profile is restricted.", response: instagramPostsStateExamples.unavailable },
 ];
 
 const json = (value) => `\n\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\`\n`;
 
 export const instagramProfileStateDocs = `### Profile access response contract
 
-These are existing response contracts, not new API behavior. HTTP status, JSON field names/types, error values, message values, and credit behavior are compatibility-sensitive. We preserve them on existing endpoint versions; incompatible changes require an explicitly versioned contract and advance notice. See the [response-contract changelog](/#response-contract-changelog).
+The confirmed-state success flag is intentionally restored to true: success means we determined the profile state, not that the profile exists or its content is publicly retrievable. HTTP 403/404 and zero-credit billing remain unchanged. Actual retrieval failures remain success=false. HTTP status, JSON field names/types, error values, message values, and credit behavior are compatibility-sensitive. We preserve them on existing endpoint versions; incompatible changes require an explicitly versioned contract and advance notice. See the [response-contract changelog](/#response-contract-changelog).
 
 **Confirmed age gate — HTTP 403, zero credits.** For this profile endpoint, branch on errorStatus === 403 && age_restricted === true. The flag means Instagram explicitly rendered an age-verification gate, not a generic login prompt. It is omitted otherwise; omission does not mean false. It does not identify country/region restrictions.
 ${json(instagramProfileStateExamples.ageRestricted)}
@@ -73,17 +73,17 @@ ${json(instagramProfileStateExamples.unavailable)}
 
 Private profile:
 ${json(instagramProfileStateExamples.privatePlaceholder)}
-Reported content with an empty public timeline:
+Historical restricted-result compatibility branch (not the current empty-timeline policy):
 ${json(instagramProfileStateExamples.restrictedPlaceholder)}
 No matching account from the handle lookup (not proof of deletion):
 ${json(instagramProfileStateExamples.missingPlaceholder)}
-GET trim=true retains these state envelopes. POST handle requests retain a historical difference: these HTTP-200 placeholders have success=false instead of true; they still cost one credit. The POST restricted-placeholder condition is data.user === null, while GET uses userId === null. The explicit 403/404 responses above apply to both methods. Legacy POST userId requests use a separate compatibility path and are not covered by the handle contract.
+These legacy handler branches are retained, but the active metadata-first pipeline no longer emits the heuristic restricted result merely because the timeline is empty; it returns useful matching metadata as a partial HTTP 200 instead. GET trim=true retains the same state-envelope rules. POST handle requests retain a historical difference: these HTTP-200 placeholders have success=false instead of true; they still cost one credit. The POST restricted-placeholder condition is data.user === null, while GET uses userId === null. The explicit 403/404 responses above apply to both methods. A flag-only legacy restricted scraper result is different again: POST can pass through success=true, handle, userId=null, message=Profile is restricted, and isRestricted=true without error/errorStatus. Legacy POST userId requests use a separate compatibility path and are not covered by the handle contract.
 
 **Endpoint scope.** /v1/instagram/user/posts and /v2/instagram/user/posts also return the uncharged 403 forbidden age-gate message, but do not include age_restricted, handle, or userId in that error body. Their explicit restricted-profile 404 says Profile is private, not Profile is restricted. Do not copy this profile endpoint's envelope to /v1/instagram/post or /v1/tiktok/profile; those contracts are separate. Ambiguous upstream failures are not evidence of a missing or restricted account.`;
 
 export const instagramPostsStateDocs = `### Profile access errors
 
-This describes existing handle-resolution errors on /v1/instagram/user/posts and /v2/instagram/user/posts, not a new response change. Preserve each endpoint's response contract; see the [response-contract changelog](/#response-contract-changelog).
+These confirmed handle-resolution states on /v1/instagram/user/posts and /v2/instagram/user/posts return success=true even with HTTP 403/404. A confirmed state is a completed lookup, not a scraper failure. This approved boolean correction does not change status codes, messages, fields, or zero-credit billing. Actual retrieval failures remain success=false. Preserve each endpoint's response contract; see the [response-contract changelog](/#response-contract-changelog).
 
 A confirmed age gate returns HTTP 403 and zero credits. Unlike /v1/instagram/profile, these routes do not include age_restricted, handle, or userId in this error response:
 ${json(instagramPostsStateExamples.ageRestricted)}
@@ -91,4 +91,4 @@ An explicit restricted-profile error returns HTTP 404 and zero credits, with the
 ${json(instagramPostsStateExamples.restricted)}
 An explicitly confirmed unavailable profile returns HTTP 404 and zero credits:
 ${json(instagramPostsStateExamples.unavailable)}
-These are the explicit handle-resolution error branches, not a blanket description of every historical 404 fallback. The v2 route also retains legacy success=true HTTP-404 bodies (Posts not found, Account doesn't exist, or Profile is restricted). Do not confuse those with the explicit success=false responses above. No age-vs-region reason field is exposed. A generic login prompt does not establish age gating, and unavailability does not prove deletion. /v1/instagram/post and /v1/tiktok/profile have separate error contracts.`;
+These are the explicit handle-resolution error branches, not a blanket description of every historical 404 fallback. The v2 route also retains legacy success=true HTTP-404 bodies (Posts not found, Account doesn't exist, or Profile is restricted). They differ in fields and legacy behavior from the explicit confirmed-state responses above; success=true alone does not distinguish them. No age-vs-region reason field is exposed. A generic login prompt does not establish age gating, and unavailability does not prove deletion. /v1/instagram/post and /v1/tiktok/profile have separate error contracts.`;
