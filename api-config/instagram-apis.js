@@ -22,9 +22,9 @@ export const instagramBaseApis = {
       name: "Profile",
       method: "GET",
       description:
-        "Gets public Instagram profile data, recent posts, and related accounts. After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Older profile-pinned videos may have video_play_count=null; use /v1/instagram/post for a deeper individual-video count lookup. An explicit Instagram age gate returns HTTP 403, age_restricted=true, and 'Profile is age restricted' without charging credits. Check message as well as the HTTP status: some account-access placeholders return HTTP 200. See the response field explanations below." + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
+        "Gets public Instagram profile data, recent posts, and related accounts. After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Private profiles also return available public profile metadata in the existing data.user shape: identity, bio/links, profile photos, verification, business/category details, public contact fields when Instagram provides them, and counts, without exposing private posts. Existing status, success, error, message, and credit behavior stay unchanged. Older profile-pinned videos may have video_play_count=null; use /v1/instagram/post for a deeper individual-video count lookup. An explicit Instagram age gate returns HTTP 403, age_restricted=true, and 'Profile is age restricted' without charging credits. Check message as well as the HTTP status: some account-access placeholders return HTTP 200. See the response field explanations below." + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
       fullDescription:
-        "After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Video play counts are separate from video view counts. Profile-pinned videos may have video_play_count=null when their count is not found in a short recent-Reels scan; available pinned counts are kept and non-pinned videos require numeric plays. Use /v1/instagram/post with an individual post or reel URL for a deeper play-count lookup. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. An explicit rendered age gate (for example, You must be 21 years old or over to see this profile. Log in to continue.) returns HTTP 403, success=true, age_restricted=true, error=forbidden, errorStatus=403, and message=Profile is age restricted, without charging credits. This means Instagram identified an existing profile but requires an age-verified login to view it; we do not bypass the gate. It applies to GET, trimmed GET, and POST handle requests. The age_restricted field is omitted when age gating has not been explicitly confirmed; its absence is not proof that the account has no age limit. For GET handle requests, Profile is private means Instagram returned is_private=true. Account doesn't exist means the handle lookup returned no matching account, not confirmed deletion. The historical Profile is restricted placeholder was used for reported content with no public timeline items. Its handler compatibility branch remains, but the current metadata-first pipeline no longer infers restriction from an empty timeline alone; it retains matching metadata as a partial HTTP 200. These placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. An explicitly rendered generic audience restriction returns HTTP 404 with Profile is restricted and zero credits charged; it does not confirm an age limit. Profile is unavailable on Instagram also returns an uncharged HTTP 404 and does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. is an uncharged upstream failure, not a confirmed account restriction. Do not label generic login prompts or unavailable responses as age-restricted." + "\n\n" + instagramProfileStateDocs,
+        "After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Private profiles also return all available public profile metadata through the same existing data.user mapper: ID, username, full name, biography and bio links/entities, website/linkshim, standard/HD profile photos, verification, business/professional/category information, public contact fields when Instagram returns them, and counts, without exposing private posts. The response and unchanged status, success, error, message, and billing rules are described below. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Video play counts are separate from video view counts. Profile-pinned videos may have video_play_count=null when their count is not found in a short recent-Reels scan; available pinned counts are kept and non-pinned videos require numeric plays. Use /v1/instagram/post with an individual post or reel URL for a deeper play-count lookup. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. An explicit rendered age gate (for example, You must be 21 years old or over to see this profile. Log in to continue.) returns HTTP 403, success=true, age_restricted=true, error=forbidden, errorStatus=403, and message=Profile is age restricted, without charging credits. This means Instagram identified an existing profile but requires an age-verified login to view it; we do not bypass the gate. It applies to GET, trimmed GET, and POST handle requests. The age_restricted field is omitted when age gating has not been explicitly confirmed; its absence is not proof that the account has no age limit. For GET handle requests, Profile is private means Instagram returned is_private=true. Account doesn't exist means the handle lookup returned no matching account, not confirmed deletion. The historical Profile is restricted placeholder was used for reported content with no public timeline items. Its handler compatibility branch remains, but the current metadata-first pipeline no longer infers restriction from an empty timeline alone; it retains matching metadata as a partial HTTP 200. These placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. An explicitly rendered generic audience restriction returns HTTP 404 with Profile is restricted and zero credits charged; it does not confirm an age limit. Profile is unavailable on Instagram also returns an uncharged HTTP 404 and does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. is an uncharged upstream failure, not a confirmed account restriction. Do not label generic login prompts or unavailable responses as age-restricted." + "\n\n" + instagramProfileStateDocs,
       path: "/v1/instagram/profile",
       responseStates: instagramProfileStateEntries,
       privateResponse: instagramProfileStateExamples.privatePlaceholder,
@@ -61,7 +61,7 @@ export const instagramBaseApis = {
         {
           path: "message",
           description:
-            "'Profile is age restricted' means Instagram explicitly rendered an age gate and returns HTTP 403 with age_restricted=true. For GET handle requests, 'Profile is private' means Instagram returned is_private=true; 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. 'Profile is restricted' can be a legacy HTTP-200 restricted-result placeholder or an explicit HTTP-404 audience restriction; neither confirms age gating. The current metadata-first pipeline no longer infers a restriction from an empty timeline alone and preserves matching metadata as a partial HTTP 200. GET placeholders return success=true and userId=null even though no profile data is returned. 'Profile is unavailable on Instagram' is an HTTP 404 without a confirmed cause. 'Shoot, IG is blocking us. Try again and it should work.' is an upstream HTTP 500, not a confirmed restriction.",
+            "'Profile is age restricted' means Instagram explicitly rendered an age gate and returns HTTP 403 with age_restricted=true. For GET handle requests, 'Profile is private' means Instagram returned is_private=true; 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. 'Profile is restricted' can be a legacy HTTP-200 restricted-result placeholder or an explicit HTTP-404 audience restriction; neither confirms age gating. The current metadata-first pipeline no longer infers a restriction from an empty timeline alone and preserves matching metadata as a partial HTTP 200. GET placeholders retain success=true and userId=null. Private responses also include all available mapped public profile metadata in data.user, including identity, bio/links, photos, verification, business/category details, public contact fields when returned, and counts, but no private posts. 'Profile is unavailable on Instagram' is an HTTP 404 without a confirmed cause. 'Shoot, IG is blocking us. Try again and it should work.' is an upstream HTTP 500, not a confirmed restriction.",
         },
         {
           path: "errorStatus",
@@ -74,12 +74,139 @@ export const instagramBaseApis = {
             "Private, legacy restricted, and missing-account HTTP-200 placeholders cost one credit. Confirmed age-gated HTTP 403, explicit audience-restricted or unavailable HTTP 404, and upstream HTTP 500 responses cost zero credits.",
         },
         {
+          path: "data.user.id",
+          description:
+            "Instagram profile ID as a string, also returned for private profiles when available. Separate from the retained top-level userId=null private-state field. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.username",
+          description:
+            "Profile username, also returned for private profiles when available. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.full_name",
+          description:
+            "Profile display name, also returned for private profiles when available. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.biography",
+          description:
+            "Public biography text, also returned for private profiles when available. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.bio_links",
+          description:
+            "Public bio links in the existing mapped array shape, including link titles and URLs when returned. Also available for private profiles; retained by GET trim=true.",
+        },
+        {
+          path: "data.user.fb_profile_biolink",
+          description:
+            "Facebook bio link metadata when Instagram returns it, otherwise the existing null default. Also available for private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.biography_with_entities",
+          description:
+            "Biography text and entities in the existing mapped shape, also available for private profiles. Retained by GET trim=true; absent entities keep the existing empty-array default.",
+        },
+        {
+          path: "data.user.external_url",
+          description:
+            "Public external website, also available for private profiles when returned. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.external_url_linkshimmed",
+          description:
+            "External website linkshim URL when Instagram returns it, otherwise the existing empty-string default. Also available for private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.profile_pic_url",
+          description:
+            "Standard profile photo URL when available, including private profiles. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.profile_pic_url_hd",
+          description:
+            "HD profile photo URL using the existing public mapper and its fallbacks when available, including private profiles. Retained by GET trim=true; a distinct HD image is not guaranteed.",
+        },
+        {
+          path: "data.user.is_verified",
+          description:
+            "Verification flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.is_business_account",
+          description:
+            "Business-account flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.is_professional_account",
+          description:
+            "Professional-account flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.category_name",
+          description:
+            "Public category name when returned, including private profiles. Retained by GET trim=true; unavailable values retain the existing null default.",
+        },
+        {
+          path: "data.user.business_category_name",
+          description:
+            "Business category using the existing public mapper and category fallback when available, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.overall_category_name",
+          description:
+            "Overall category using the existing public mapper and category fallback when available, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.category_enum",
+          description:
+            "Category identifier when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.business_address_json",
+          description:
+            "Public business address fields in the existing mapped shape when Instagram returns them, including private profiles. Availability is not guaranteed; existing defaults are unchanged. Retained by GET trim=true.",
+        },
+        {
+          path: "data.user.business_contact_method",
+          description:
+            "Public business contact method when returned, including private profiles; otherwise the existing UNKNOWN default. Omitted by GET trim=true; included in full GET and POST handle responses. Contact information is not guaranteed.",
+        },
+        {
+          path: "data.user.business_email",
+          description:
+            "Public business email only when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses. No private contact information is exposed.",
+        },
+        {
+          path: "data.user.business_phone_number",
+          description:
+            "Public business phone only when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses. No private contact information is exposed.",
+        },
+        {
+          path: "data.user.should_show_category",
+          description:
+            "Category-display flag using the existing public mapper and defaults, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
+          path: "data.user.should_show_public_contacts",
+          description:
+            "Public-contact display flag using the existing public mapper and defaults, including private profiles; does not guarantee contact details are available. Omitted by GET trim=true; included in full GET and POST handle responses.",
+        },
+        {
           path: "data.user.edge_followed_by.count",
-          description: "Followers count",
+          description:
+            "Follower count. Also included for private profiles on GET and POST handle requests, including GET trim=true. For private profiles, unknown or unusable counts return null; a real 0 is preserved. POST handle requests ignore trim and remain full. No private posts are exposed.",
         },
         {
           path: "data.user.edge_follow.count",
-          description: "Following count",
+          description:
+            "Following count. Also included for private profiles on GET and POST handle requests, including GET trim=true. For private profiles, unknown or unusable counts return null; a real 0 is preserved. POST handle requests ignore trim and remain full. No private posts are exposed.",
+        },
+        {
+          path: "data.user.is_private",
+          description:
+            "Whether the profile is private. Private GET and POST handle responses include true alongside available mapped public profile metadata. Retained by GET trim=true; POST handle requests ignore trim and remain full. This does not grant access to private posts or bypass an age gate.",
         },
         {
           path: "data.user.edge_related_profiles",

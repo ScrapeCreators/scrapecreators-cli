@@ -17,6 +17,42 @@ export const instagramProfileStateExamples = {
     success: true, credits_remaining: 99, credits_charged: 1,
     handle: "example_profile", userId: null,
     error: "not_found", errorStatus: 404, message: "Profile is private",
+    data: {
+      user: {
+        id: "12345",
+        username: "example_profile",
+        full_name: "Example Profile",
+        biography: "An example profile. https://example.org/",
+        bio_links: [{
+          title: "Website", url: "https://example.org/",
+          lynx_url: "https://example.org/linkshim", link_type: "external",
+        }],
+        fb_profile_biolink: null,
+        biography_with_entities: {
+          raw_text: "An example profile. https://example.org/", entities: [],
+        },
+        external_url: "https://example.org/",
+        external_url_linkshimmed: "https://example.org/linkshim",
+        profile_pic_url: "https://example.org/profile.jpg",
+        profile_pic_url_hd: "https://example.org/profile-hd.jpg",
+        is_verified: false,
+        is_business_account: false,
+        is_professional_account: false,
+        category_name: null,
+        business_category_name: null,
+        overall_category_name: null,
+        category_enum: null,
+        business_address_json: {},
+        business_contact_method: "UNKNOWN",
+        business_email: null,
+        business_phone_number: null,
+        should_show_category: false,
+        should_show_public_contacts: false,
+        is_private: true,
+        edge_followed_by: { count: 560 },
+        edge_follow: { count: 4675 },
+      },
+    },
   },
   restrictedPlaceholder: {
     success: true, credits_remaining: 99, credits_charged: 1,
@@ -46,7 +82,7 @@ export const instagramProfileStateEntries = [
   { name: "Confirmed age gate", httpStatus: 403, description: "Branch on errorStatus === 403 && age_restricted === true. An explicit age-verification notice is required, not a generic login prompt. The flag does not identify region restrictions; omission is unknown, not false.", response: instagramProfileStateExamples.ageRestricted },
   { name: "Explicit audience restriction", httpStatus: 404, description: "No structured age/region reason field exists. Match error=not_found and the exact message together with the HTTP status. This does not prove age gating or deletion.", response: instagramProfileStateExamples.audienceRestricted },
   { name: "Confirmed unavailable page", httpStatus: 404, description: "The cause is unknown. This body does not include handle, userId, or age_restricted, and does not prove deletion.", response: instagramProfileStateExamples.unavailable },
-  { name: "Legacy private placeholder", httpStatus: 200, description: "GET and trimmed GET: one credit, success=true, but no usable profile data. POST handle requests preserve success=false instead, with the same message and one-credit cost.", response: instagramProfileStateExamples.privatePlaceholder },
+  { name: "Legacy private placeholder", httpStatus: 200, description: "Private profiles return available public profile metadata in the existing data.user shape, not private posts or raw Instagram internals. Full GET and POST handle requests use the complete public-profile user mapper; GET trim=true uses the existing public-profile trim field list. POST handle requests ignore trim and return the full mapped user. HTTP 200, one credit, GET success=true/POST success=false, userId=null, and the existing error/message stay unchanged. Unknown or unusable follower/following counts are null; real 0 is preserved.", response: instagramProfileStateExamples.privatePlaceholder },
   { name: "Legacy restricted placeholder", httpStatus: 200, description: "Historical restricted-result handler branch. The current metadata-first pipeline does not infer a restriction merely from an empty timeline: it retains matching metadata as a partial HTTP 200. GET checks userId === null; POST checks data.user === null and preserves success=false for that placeholder. Both placeholder branches cost one credit.", response: instagramProfileStateExamples.restrictedPlaceholder },
   { name: "Legacy missing-account placeholder", httpStatus: 200, description: "No matching account from a handle lookup, not confirmed deletion. GET preserves success=true; POST handle requests preserve success=false. Both cost one credit. The message was not globally renamed to the unavailable-page message.", response: instagramProfileStateExamples.missingPlaceholder },
 ];
@@ -71,7 +107,13 @@ ${json(instagramProfileStateExamples.audienceRestricted)}
 ${json(instagramProfileStateExamples.unavailable)}
 **Legacy GET placeholders — HTTP 200, one credit.** These still exist. A JSON errorStatus of 404 is not the HTTP status. HTTP 200 and success=true alone do not prove usable profile data. The three legacy messages are preserved exactly:
 
-Private profile:
+**Private profile public metadata.** Private profiles return all available public profile metadata through the existing data.user shape: ID, username, full name, biography, bio links/entities, external website/linkshim, standard/HD profile photos, verification, privacy, business/professional/category information, public contact fields when Instagram returns them, and counts. Full GET and POST handle requests use the complete existing public-profile user mapper; its fields and defaults remain unchanged except that unknown or unusable private follower/following counts are null, while a real 0 is preserved. The count paths remain data.user.edge_followed_by.count (followers) and data.user.edge_follow.count (following).
+
+GET trim=true uses the existing public-profile trim field list, retaining name, biography, bio links/entities, external_url, profile photos, privacy/verification, business/professional flags, category_name, business_address_json, and counts. Full-only fields such as external_url_linkshimmed, business_email, and business_phone_number are omitted from trimmed GET. POST handle requests ignore trim and return the full mapped user, as before.
+
+Full metadata means all mapped profile fields, not raw Instagram internals, private posts, or an age-gate bypass. Public contact information is not guaranteed; unavailable values keep the public mapper's existing defaults. Age-restricted responses are unchanged. Every preexisting top-level field is retained: HTTP 200, userId=null, error=not_found, errorStatus=404, message=Profile is private, and the one-credit charge stay unchanged. POST handle requests keep success=false instead of GET's success=true. The example below shows representative metadata fields, not the exhaustive full mapper output or the trimmed field set. The ID, name, links, photos, handle, and credit balance are synthetic; the counts 560 and 4675 are illustrative and can change.
+
+Private GET response (representative full-response metadata):
 ${json(instagramProfileStateExamples.privatePlaceholder)}
 Historical restricted-result compatibility branch (not the current empty-timeline policy):
 ${json(instagramProfileStateExamples.restrictedPlaceholder)}
