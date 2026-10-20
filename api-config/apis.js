@@ -204,6 +204,130 @@ export const apis = [
         ],
       },
       {
+        "name": "Channel Search",
+        "method": "GET",
+        "description": "Search within one YouTube channel by keyword. Returns videos, Shorts, live streams and playlists. Costs 1 credit per page, even with no matches.",
+        "fullDescription": "Search within one YouTube channel using YouTube's native channel search, not global search or local filtering of the channel's latest videos. Pass a handle with or without @ and a keyword query. Results can include videos, Shorts, live streams and playlists in separate collections. Keep the same handle and query when passing the previous response's continuationToken. Stop when continuationToken is null; passing the literal continuationToken=null returns an uncharged terminal response. Each successful page costs 1 credit, including pages with no matches; invalid requests and retrieval failures are not charged. YouTube can repeat results across pages, so deduplicate by item ID if needed. No sort, date, duration or result-count filters are supported by this endpoint. The response example is shortened from a real search; result order, counts and pagination tokens can change.",
+        "path": "/v1/youtube/channel/search",
+        "paginationField": "continuationToken",
+        "sampleResponse": {
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "videos": [
+            {
+              "type": "video",
+              "id": "_eeZQw9PBc0",
+              "url": "https://www.youtube.com/watch?v=_eeZQw9PBc0",
+              "title": "Artemis II Launches Astronauts to the Moon (Official NASA Recap)",
+              "thumbnail": "https://i.ytimg.com/vi/_eeZQw9PBc0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC59RvmXk61RYq4qq4Wv2WFDDJQcA",
+              "channel": {
+                "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+                "title": "NASA",
+                "handle": "NASA",
+                "thumbnail": "https://yt3.googleusercontent.com/eIf5fNPcIcj9ig-wZBeq4stFy1lgjWTW1nLT5dYlFkHZprZ03QBiMcbpwNMB6XSBjrSFGtAGQg=s68-c-k-c0x00ffffff-no-rj"
+              },
+              "viewCountText": "1,649,926 views",
+              "viewCountInt": 1649926,
+              "publishedTimeText": "6mo ago",
+              "publishedTime": null,
+              "lengthText": "2:24",
+              "lengthSeconds": 144,
+              "badges": [
+                "CC"
+              ]
+            }
+          ],
+          "channels": [],
+          "playlists": [
+            {
+              "type": "playlist",
+              "id": "PL2aBZuCeDwlQvNtHhNJtarm9OewQwVntv",
+              "title": "Artemis II Mission Coverage",
+              "thumbnail": "https://i.ytimg.com/vi/DYY4nnfxKbU/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAi1OCwehE4YN4-jFbe-SlII4gyyw",
+              "channel": {
+                "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+                "title": "NASA · Playlist"
+              },
+              "videoCount": "23 videos"
+            }
+          ],
+          "shorts": [
+            {
+              "type": "short",
+              "id": "vMGuObY8_sw",
+              "url": "https://www.youtube.com/watch?v=vMGuObY8_sw",
+              "title": "Relive NASA's Artemis II Launch",
+              "thumbnail": "https://i.ytimg.com/vi/vMGuObY8_sw/hq2.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGADYAQHiAQoIGBACGAY4AUAB8AEB-AG2CIACgA-KAgwIABABGHIgWyg-MA8=&rs=AOn4CLDHJ3063Ni7HpCRBtgzI6qn9OYC6g",
+              "channel": {
+                "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+                "title": "NASA",
+                "handle": "NASA",
+                "thumbnail": "https://yt3.googleusercontent.com/eIf5fNPcIcj9ig-wZBeq4stFy1lgjWTW1nLT5dYlFkHZprZ03QBiMcbpwNMB6XSBjrSFGtAGQg=s68-c-k-c0x00ffffff-no-rj"
+              },
+              "viewCountText": "2,724,313 views",
+              "viewCountInt": 2724313,
+              "publishedTimeText": "6mo ago",
+              "publishedTime": null,
+              "lengthText": "0:33",
+              "lengthSeconds": 33,
+              "badges": [
+                "CC"
+              ]
+            }
+          ],
+          "shelves": [],
+          "lives": [
+            {
+              "type": "live",
+              "id": "nfhDuOHMp0A",
+              "url": "https://www.youtube.com/watch?v=nfhDuOHMp0A",
+              "title": "NASA’s Artemis II Crew Comes Home (Official Broadcast)",
+              "thumbnail": "https://i.ytimg.com/vi/nfhDuOHMp0A/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAjOO178lfqwhZPRUo8SdcXZDfO8w",
+              "channel": {
+                "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+                "title": "NASA",
+                "handle": "NASA",
+                "thumbnail": "https://yt3.googleusercontent.com/eIf5fNPcIcj9ig-wZBeq4stFy1lgjWTW1nLT5dYlFkHZprZ03QBiMcbpwNMB6XSBjrSFGtAGQg=s68-c-k-c0x00ffffff-no-rj"
+              },
+              "viewCountText": "27,771,040 views",
+              "viewCountInt": 27771040,
+              "publishedTimeText": "Streamed 6mo ago",
+              "publishedTime": null,
+              "lengthText": "3:53:41",
+              "lengthSeconds": 14021,
+              "badges": [
+                "CC"
+              ]
+            }
+          ],
+          "continuationToken": "CONTINUATION_TOKEN_FROM_RESPONSE"
+        },
+        "params": [
+          {
+            "name": "handle",
+            "type": "string",
+            "required": true,
+            "description": "YouTube channel handle, with or without @.",
+            "placeholder": "NASA"
+          },
+          {
+            "name": "query",
+            "type": "string",
+            "required": true,
+            "description": "Keywords to search within this channel.",
+            "placeholder": "artemis"
+          },
+          {
+            "name": "continuationToken",
+            "type": "string",
+            "required": false,
+            "description": "Token from the previous response. Keep the same handle and query; stop when the token is null.",
+            "placeholder": ""
+          }
+        ]
+      },
+      {
         name: "Channel Playlists",
         method: "GET",
         description:
