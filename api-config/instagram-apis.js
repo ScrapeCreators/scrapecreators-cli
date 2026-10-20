@@ -5807,9 +5807,9 @@ export const instagramBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Get comments from an Instagram post or reel. Not gonna lie, this is one of our most error prone endpoints. You should expect ~90% success rate.",
+      description: "Get comments from an Instagram post or reel. Not gonna lie, this is one of our most error prone endpoints. You should expect ~90% success rate. Successful pages with no comments cost 0 credits, even with include_replies=true; pages with comments cost 1 credit, or 15 credits with include_replies=true. Errors are not charged.",
       fullDescription:
-        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. This option always costs 15 credits because Scrape Creators makes a separate Instagram replies request for every comment in the response. It is possible that no replies are returned, but you will still be charged 15 credits because those reply lookups were performed. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages.",
+        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. Successful pages with `comments: []` cost 0 credits, even with `include_replies=true`. Pages with comments cost 1 credit, or 15 credits with `include_replies=true`, even if no replies are returned. Errors are not charged. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages.",
       path: "/v2/instagram/post/comments",
       params: [
         {
@@ -5832,7 +5832,7 @@ export const instagramBaseApis = {
           type: "boolean",
           required: false,
           description:
-            "Set to true to include replies for every returned comment. This always costs 15 credits because each comment requires a separate Instagram replies request. You will still be charged 15 credits if no replies are returned. This is much slower and may time out at 29 seconds.",
+            "Set to true to include replies for every returned comment. Costs 15 credits when comments are returned, even if no replies are found; successful pages with no comments cost 0 credits. This is much slower and may time out at 29 seconds.",
           placeholder: "true",
           credits: 15,
         },
