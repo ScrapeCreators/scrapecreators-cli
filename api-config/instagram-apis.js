@@ -762,9 +762,9 @@ export const instagramBaseApis = {
     {
       name: "Posts",
       method: "GET",
-      description: "Get a persons public posts (which includes reels). This endpoint does not currently return the media-level `fbid` field. The published time is returned in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp is still available in `items[].taken_at`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)" + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
+      description: "Get a persons public posts (which includes reels). When Instagram supplies it, this endpoint includes the media-level `fbid` field. The published time is returned in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp is still available in `items[].taken_at`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)" + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
       fullDescription:
-        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `items[].taken_at`. This endpoint does not currently return the media-level `fbid` field. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs,
+        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. When supplied by Instagram, the media-level `fbid` is also returned. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs,
       path: "/v2/instagram/user/posts",
       responseStates: instagramPostsStateEntries,
       errorResponseExamples: {
@@ -773,6 +773,10 @@ export const instagramBaseApis = {
       },
       paginationField: "next_max_id",
       responseFields: [
+        {
+          path: "items[0].fbid",
+          description: "Facebook media ID when Instagram supplies it.",
+        },
         {
           path: "success",
           description:
@@ -802,6 +806,7 @@ export const instagramBaseApis = {
           {
             pk: "3600545900919030401",
             id: "3600545900919030401_260462810",
+            fbid: "18362930887133514",
             device_timestamp: 1743438518281933,
             caption_is_edited: false,
             strong_id__: "3600545900919030401_260462810",
