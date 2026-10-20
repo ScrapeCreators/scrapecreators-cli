@@ -8132,19 +8132,20 @@ export const apis = [
             required: true,
             description: "The url of the ad",
             placeholder:
-              "https://adstransparency.google.com/advertiser/AR01614014350098432001/creative/CR10449491775734153217",
+              "https://adstransparency.google.com/advertiser/AR07541154843046445057/creative/CR17778900238552006657",
           },
         ],
         sampleResponse: {
           success: true,
-          advertiserId: "AR01614014350098432001",
-          creativeId: "CR07443539616616939521",
-          firstShown: null,
-          lastShown: "2025-06-18T18:09:00.000Z",
-          format: "text",
+          advertiserId: "AR07541154843046445057",
+          creativeId: "CR17778900238552006657",
+          firstShown: "2026-06-05T21:52:15.000Z",
+          url: "https://adstransparency.google.com/advertiser/AR07541154843046445057/creative/CR17778900238552006657",
+          lastShown: "2026-06-24T19:04:54.000Z",
+          format: "image",
           overallImpressions: {
-            min: "250000",
-            max: "300000",
+            min: "500000",
+            max: "600000",
           },
           spend: {
             currency: "USD",
@@ -8153,43 +8154,42 @@ export const apis = [
           },
           targeting: {
             age: {
-              included: [
-                "25-34",
-                "35-44",
-                "45-54",
-                "55-64",
-                "65+",
-                "unknown",
-              ],
+              included: ["25-34", "35-44", "45-54", "55-64", "65+", "unknown"],
               excluded: ["18-24"],
             },
             gender: {
-              included: ["unknown", "male", "female"],
+              included: ["female", "male", "unknown"],
               excluded: [],
             },
             location: {
               included: [
                 {
-                  criterionId: "1015229",
-                  name: "West Palm Beach",
-                  fullName: "West Palm Beach, Florida, United States",
-                  countryCodes: ["US"],
-                },
-                {
-                  criterionId: "1015158",
-                  name: "Palm Beach",
-                  fullName: "Palm Beach, Florida, United States",
-                  countryCodes: ["US"],
-                },
-                {
-                  criterionId: "200548",
-                  name: "West Palm Beach-Ft. Pierce FL",
-                  fullName:
-                    "West Palm Beach-Ft. Pierce FL, Florida, United States",
+                  criterionId: "2840",
+                  name: "United States",
+                  fullName: "United States",
                   countryCodes: ["US"],
                 },
               ],
-              excluded: [],
+              excluded: [
+                {
+                  criterionId: "2578",
+                  name: "Norway",
+                  fullName: "Norway",
+                  countryCodes: ["NO"],
+                },
+                {
+                  criterionId: "2328",
+                  name: "Guyana",
+                  fullName: "Guyana",
+                  countryCodes: ["GY"],
+                },
+                {
+                  criterionId: "2332",
+                  name: "Haiti",
+                  fullName: "Haiti",
+                  countryCodes: ["HT"],
+                },
+              ],
             },
           },
           creativeRegions: [
@@ -8202,28 +8202,26 @@ export const apis = [
             {
               regionCode: "US",
               regionName: "United States",
-              firstShown: null,
-              lastShown: "2025-06-18T05:00:00.000Z",
+              firstShown: "2026-06-05T00:00:00.000Z",
+              lastShown: "2026-06-24T00:00:00.000Z",
               impressions: {
-                lower: "1000",
-                upper: "4999",
+                lower: "500000",
+                upper: "600000",
               },
-              platformImpressions: [
-                {
-                  platform: "Google Search",
-                  impressions: {
-                    lower: "100",
-                    upper: "999",
-                  },
-                },
-              ],
+              platformImpressions: [],
             },
           ],
           variations: [
             {
-              images: [
-                "https://tpc.googlesyndication.com/archive/simgad/2201045439314643090",
-              ],
+              destinationUrl: "shop.gop.com",
+              headline:
+                "Classic GOP Quarter - Zip Pullover | Shop American ... Classic GOP Moisture Wicking Polo Shirt XL / Red Classic GOP Hat White / White Classic GOP Quarter - Zip Pullover | Shop American ... Official Party Quarter - Zip Pullover M / GOLD Classic GOP Hat Red / White",
+              description:
+                "FORE MORE Official Party Quarter - Zip Pullover XL / US FLAG Classic GOP Hat White / Red DJT Triple Threat Hat AMERICA America Swings Right T- Shirt XL / White Browse More",
+              allText:
+                "Official GOP Shop 寬 shop.gop.com Classic GOP Quarter - Zip Pullover | Shop American ... Classic GOP Moisture Wicking Polo Shirt XL / Red Fi Classic GOP Hat White / White Classic GOP Quarter - Zip Pullover | Shop American ... Official Party Quarter - Zip Pullover M / GOLD Classic GOP Hat Red / White D FORE MORE YEARS Official Party Quarter - Zip Pullover XL / US FLAG Classic GOP Hat White / Red DJT Triple Threat Hat AMERICA RIGHT America Swings Right T- Shirt XL / White Browse More",
+              imageUrl:
+                "https://tpc.googlesyndication.com/archive/simgad/18242167605449878359",
             },
           ],
         },
