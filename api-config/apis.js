@@ -4519,10 +4519,16 @@ export const apis = [
       {
         name: "Comments",
         method: "GET",
-        description: "Get the comments of a Facebook post (or reel)",
+        description: "Get the comments of a Facebook post or reel, including image, GIF and video attachments when available.",
         fullDescription:
-          "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. Passing a feedback_id instead of a url significantly speeds up the request.",
+          "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. The attachments array contains image, GIF and video media when Facebook returns them, with type, id, url, preview_url, width and height. Text-only comments have an empty attachments array. Missing attachment values are null, and media URLs can expire. Passing a feedback_id instead of a url significantly speeds up the request.",
         path: "/v1/facebook/post/comments",
+        responseFields: [
+          {
+            path: "comments[].attachments",
+            description: "Media attached to this comment. Empty for text-only comments. Each attachment has type (image, gif, video, or unknown), id, url, preview_url, width and height. Unavailable values are null. GIF URLs point to the animation, not just its preview; media URLs can expire. No extra parameter or credit charge is needed.",
+          },
+        ],
         params: [
           {
             name: "url",
@@ -4809,9 +4815,15 @@ export const apis = [
       {
         name: "Comment Replies",
         method: "GET",
-        description: "Get the replies to a comment.",
-        fullDescription: "Get the replies to a comment.",
+        description: "Get the replies to a comment, including image, GIF and video attachments when available.",
+        fullDescription: "Get the replies to a comment with cursor-based pagination. Each reply includes an attachments array for image, GIF and video media that Facebook returns, with type, id, url, preview_url, width and height. Text-only replies have an empty attachments array. Missing attachment values are null, and media URLs can expire.",
         path: "/v1/facebook/post/comment/replies",
+        responseFields: [
+          {
+            path: "replies[].attachments",
+            description: "Media attached to this reply, with the same type, id, url, preview_url, width and height fields as comment attachments. Empty for text-only replies. Unavailable values are null; media URLs can expire. No extra parameter or credit charge is needed.",
+          },
+        ],
         params: [
           {
             name: "feedback_id",
