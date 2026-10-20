@@ -125,9 +125,8 @@ export const tiktokBaseApis = {
     {
       name: "User's Audience Demographics",
       method: "GET",
-      description:
-        "Get the audience demographics of a TikTok user. Right now you can only get the audience countries. 🚨 Costs 26 credits per request.",
-      fullDescription: "Retrieves audience demographic data for a TikTok user, showing where their followers are located by country. Returns `audienceLocations`, an array of objects each containing `country`, `countryCode`, `count`, and `percentage`. Costs 26 credits per request.",
+      description: "Get audience countries for a TikTok user. Costs 26 credits per request.",
+      fullDescription: "Retrieves audience demographic data for a TikTok user, showing where their followers are located by country. Returns `audienceLocations`, an array of objects each containing `country`, `countryCode`, `count`, and `percentage`. Costs 26 credits per request." + " " + "Get the audience demographics of a TikTok user. Right now you can only get the audience countries. 🚨 Costs 26 credits per request.",
       path: "/v1/tiktok/user/audience",
       credits: 26,
       params: [
@@ -263,9 +262,8 @@ export const tiktokBaseApis = {
     {
       name: "Profile Videos",
       method: "GET",
-      description:
-        "Scrapes posts from a TikTok profile. TikTok can omit individual posts even after full pagination; region selection does not guarantee complete coverage. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
-      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response, keeping the same `region` and `sort_by` throughout a cursor chain. Known limitation: this feed is not an exhaustive inventory of a creator's public posts. TikTok's web page, single-post lookup, comments, and profile feed use different public sources and request contexts; a post may be retrievable through one and unavailable or missing through another. A missing feed item does not prove deletion, and a returned item does not guarantee browser playback in your country. Try the creator's country with a two-letter `region` code, restarting pagination when changing it, but country selection does not guarantee completeness. Repeated requests for the same page can also return different item sets. For campaign tracking, retain submitted post URLs/IDs and refresh them with `/v2/tiktok/video` rather than relying only on feed discovery. Retry a suspect page within a bounded budget and deduplicate by `aweme_id`; do not merge cursors from separate responses. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      description: "Get posts from a TikTok profile. Posts may be missing even after full pagination; region selection does not guarantee complete coverage.",
+      fullDescription: "Fetches videos posted by a TikTok user, sortable by latest or most popular — use this to get a creator's video feed or TikToks. Returns `aweme_list`, an array of video objects each containing `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count/saves), and `video` (download URLs, duration, cover image). Paginate with `max_cursor` from the previous response, keeping the same `region` and `sort_by` throughout a cursor chain. Known limitation: this feed is not an exhaustive inventory of a creator's public posts. TikTok's web page, single-post lookup, comments, and profile feed use different public sources and request contexts; a post may be retrievable through one and unavailable or missing through another. A missing feed item does not prove deletion, and a returned item does not guarantee browser playback in your country. Try the creator's country with a two-letter `region` code, restarting pagination when changing it, but country selection does not guarantee completeness. Repeated requests for the same page can also return different item sets. For campaign tracking, retain submitted post URLs/IDs and refresh them with `/v2/tiktok/video` rather than relying only on feed discovery. Retry a suspect page within a bounded budget and deduplicate by `aweme_id`; do not merge cursors from separate responses. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability)." + " " + "Scrapes posts from a TikTok profile. TikTok can omit individual posts even after full pagination; region selection does not guarantee complete coverage. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v3/tiktok/profile/videos",
       paginationField: "max_cursor",
       params: [
@@ -304,16 +302,16 @@ export const tiktokBaseApis = {
           type: "string",
           required: false,
           placeholder: "US",
-          description:
-            "Country code passed to the profile-feed source. Defaults to US. If a profile should have videos but returns none, try another relevant two-letter country code. Changing this value does not guarantee that region-restricted posts will appear.",
+          description: "Two-letter feed country code; defaults to US. Try another relevant country if the feed is empty. Keep it unchanged while paginating; changing region does not guarantee complete coverage.",
+          fullDescription: "Country code passed to the profile-feed source. Defaults to US. If a profile should have videos but returns none, try another relevant two-letter country code. Changing this value does not guarantee that region-restricted posts will appear.",
         },
         {
           name: "include_pinned",
           type: "boolean",
           required: false,
           placeholder: "true",
-          description:
-            "Whether to include pinned posts. Defaults to true. Set to false to exclude posts marked as pinned, including with trim=true. Keep this value unchanged while paginating. Filtering can produce shorter or empty pages; follow has_more and max_cursor. Successful pages still cost 1 credit, including empty results.",
+          description: "Include pinned posts; defaults to true. false excludes them, even with trim=true. Keep unchanged while paginating. Pages may be short or empty; follow has_more and max_cursor. Successful pages cost 1 credit, even if empty.",
+          fullDescription: "Whether to include pinned posts. Defaults to true. Set to false to exclude posts marked as pinned, including with trim=true. Keep this value unchanged while paginating. Filtering can produce shorter or empty pages; follow has_more and max_cursor. Successful pages still cost 1 credit, including empty results.",
         },
         {
           name: "trim",
@@ -1994,49 +1992,45 @@ export const tiktokBaseApis = {
       },
       responseFields: [
         {
-          description:
-            "Slideshow images (you'll want all of the 'thumbnail' images",
-          path: "aweme_list[0].image_post_info.images",
+          "description": "Slideshow images (you'll want all of the 'thumbnail' images",
+          "path": "aweme_list[0].image_post_info.images"
         },
         {
-          path: "aweme_list[0].video.dynamic_cover.url_list",
-          description: "Thumbnail",
+          "path": "aweme_list[0].video.dynamic_cover.url_list",
+          "description": "Thumbnail"
         },
         {
-          path: "aweme_list[0].statistics",
-          description:
-            "All the counts for views, likes, comments, etc. will be in this key",
+          "path": "aweme_list[0].statistics",
+          "description": "All the counts for views, likes, comments, etc. will be in this key"
         },
         {
-          path: "aweme_list[0].statistics.play_count",
-          description: "Views",
+          "path": "aweme_list[0].statistics.play_count",
+          "description": "Views"
         },
         {
-          path: "aweme_list[0].statistics.digg_count",
-          description: "Likes",
+          "path": "aweme_list[0].statistics.digg_count",
+          "description": "Likes"
         },
         {
-          path: "aweme_list[0].aweme_id",
-          description:
-            "Id of the tiktok. No idea why they call it this, but aweme is a name you'll find everywhere in tiktok responses. ",
+          "path": "aweme_list[0].aweme_id",
+          "description": "Id of the tiktok. No idea why they call it this, but aweme is a name you'll find everywhere in tiktok responses. "
         },
         {
-          path: "aweme_list[0].video.play_addr.url_list",
-          description: "Video without watermark",
+          "path": "aweme_list[0].video.play_addr.url_list",
+          "description": "Video without watermark"
         },
         {
-          path: "aweme_list[0].is_ad",
-          description:
-            "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field",
+          "path": "aweme_list[0].is_ad",
+          "description": "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field"
         },
         {
-          path: "aweme_list[0].is_top",
-          description: "is_top: 1 means the tiktok is pinned",
+          "path": "aweme_list[0].is_top",
+          "description": "is_top: 1 means the tiktok is pinned"
         },
         {
-          path: "aweme_list[0].is_eligible_for_commission",
-          description: "If video is promoting an item from tiktok shop",
-        },
+          "path": "aweme_list[0].is_eligible_for_commission",
+          "description": "If video is promoting an item from tiktok shop"
+        }
       ],
     },
     // {
@@ -3850,8 +3844,8 @@ export const tiktokBaseApis = {
     {
       name: "Video Info",
       method: "GET",
-      description: "Scrapes a public TikTok video or photo/slideshow. Availability can differ from the web page and profile feed; a not-found response alone does not prove deletion. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false. [Availability guide](https://docs.scrapecreators.com/tiktok-post-availability).",
-      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video. Also accepts photo/slideshow URLs and returns `image_post_info` when available. Availability is source-specific: a TikTok web page can be blocked in your country while this endpoint still retrieves public metadata, and a post can be missing from the profile feed while this endpoint succeeds. A `404 not_found` means the post could not be retrieved through the endpoint's available public sources; it does not by itself prove global deletion. Keep the last known campaign record and retry later with a relevant `region` rather than marking a post deleted from a single failure. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability)." + " " + 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.',
+      description: "Get a public TikTok video or slideshow. Availability varies by source; not-found does not prove deletion. For no-watermark URLs, use download_no_watermark_addr, or play_addr only when has_watermark=false.",
+      fullDescription: "Fetches detailed data for a single TikTok video by URL, including its metadata, engagement stats, and optionally its transcript/captions. Returns `aweme_detail` with `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count, collect_count), `video` URLs, `author` info, and `music` info; also returns `transcript` in WEBVTT format if `get_transcript=true`. For no-watermark video URLs, use `aweme_detail.video.download_no_watermark_addr.url_list[0]` when it exists. If it is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead. If `has_watermark` is true and `download_no_watermark_addr` is missing, TikTok did not return a no-watermark URL for that video. Also accepts photo/slideshow URLs and returns `image_post_info` when available. Availability is source-specific: a TikTok web page can be blocked in your country while this endpoint still retrieves public metadata, and a post can be missing from the profile feed while this endpoint succeeds. A `404 not_found` means the post could not be retrieved through the endpoint's available public sources; it does not by itself prove global deletion. Keep the last known campaign record and retry later with a relevant `region` rather than marking a post deleted from a single failure. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability)." + " " + 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.' + " " + "Scrapes a public TikTok video or photo/slideshow. Availability can differ from the web page and profile feed; a not-found response alone does not prove deletion. For no-watermark video URLs, use `download_no_watermark_addr` when present, or `play_addr` when `has_watermark` is false. [Availability guide](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v2/tiktok/video",
       params: [
         {
@@ -3866,15 +3860,16 @@ export const tiktokBaseApis = {
           name: "get_transcript",
           type: "boolean",
           required: false,
-          description: 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.',
+          description: "Set get_transcript=true for native captions at no extra cost. Missing captions return no transcript; this route has no AI fallback. For AI fallback, use /v1/tiktok/video/transcript.",
+          fullDescription: 'Native captions are opt-in via get_transcript=true and are included in the existing base endpoint price. This detail endpoint does not use AI transcription or an AI fallback; missing captions return no transcript. For AI fallback, use /v1/tiktok/video/transcript.',
           placeholder: false,
         },
         {
           name: "region",
           type: "string",
           required: false,
-          description:
-            "Two-letter country code passed to the primary post source. Defaults to US. Try the creator's country if a post is unavailable. This does not guarantee a matching browser/proxy country or complete retrieval; the fallback source does not receive this parameter.",
+          description: "Two-letter country code for the primary source; defaults to US. Try the creator's country if unavailable. Not passed to the fallback; does not guarantee browser/proxy location or retrieval.",
+          fullDescription: "Two-letter country code passed to the primary post source. Defaults to US. Try the creator's country if a post is unavailable. This does not guarantee a matching browser/proxy country or complete retrieval; the fallback source does not receive this parameter.",
           placeholder: "US",
         },
         {
@@ -3895,25 +3890,21 @@ export const tiktokBaseApis = {
       ],
       responseFields: [
         {
-          description:
-            "Slideshow images (you'll want all of the 'thumbnail' images",
-          path: "image_post_info.images",
+          "description": "Slideshow images (you'll want all of the 'thumbnail' images",
+          "path": "image_post_info.images"
         },
         {
-          path: "aweme_detail.video.download_no_watermark_addr.url_list[0]",
-          description:
-            "No-watermark video URL when TikTok returns one. If this field is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead.",
+          "path": "aweme_detail.video.download_no_watermark_addr.url_list[0]",
+          "description": "No-watermark video URL when TikTok returns one. If this field is missing and `aweme_detail.video.has_watermark` is false, use `aweme_detail.video.play_addr.url_list[0]` instead."
         },
         {
-          path: "digg_count",
-          description:
-            'digg_count === like_count. Not sure why TikTok calls it "digg" Maybe the user diggs it?',
+          "path": "digg_count",
+          "description": "digg_count === like_count. Not sure why TikTok calls it \"digg\" Maybe the user diggs it?"
         },
         {
-          path: "is_ad",
-          description:
-            "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field",
-        },
+          "path": "is_ad",
+          "description": "Whether the tiktok is an ad. Make sure you're looking at the is_ad field and not the is_ads field"
+        }
       ],
       sampleResponse: {
         aweme_detail: {
@@ -5594,11 +5585,10 @@ export const tiktokBaseApis = {
     {
       name: "Transcript",
       method: "GET",
-      description: `Get native captions or an opted-in AI transcript from a TikTok video. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
-      fullDescription: `Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns id, url, and transcript (native captions are WEBVTT-formatted; AI fallback returns text). Native transcripts cost 1 credit only when returned, with no fixed length limit; no transcript costs 0 credits. AI fallback is opt-in via use_ai_as_fallback=true and is used only when native captions are unavailable. ${AI_TRANSCRIPTION_PRICING} This dedicated transcript route charges the AI rate instead of adding a native-caption fee. ${AI_TRANSCRIPTION_RUNTIME}`,
+      description: "Get native captions or an opt-in AI transcript from a TikTok video. Long AI transcripts may time out.",
+      fullDescription: `Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns id, url, and transcript (native captions are WEBVTT-formatted; AI fallback returns text). Native transcripts cost 1 credit only when returned, with no fixed length limit; no transcript costs 0 credits. AI fallback is opt-in via use_ai_as_fallback=true and is used only when native captions are unavailable. ${AI_TRANSCRIPTION_PRICING} This dedicated transcript route charges the AI rate instead of adding a native-caption fee. ${AI_TRANSCRIPTION_RUNTIME}` + " " + `Get native captions or an opted-in AI transcript from a TikTok video. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v1/tiktok/video/transcript",
       credits: NATIVE_OR_AI_CREDITS,
-      responseFields: AI_DURATION_FIELDS,
       params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
@@ -5613,16 +5603,16 @@ export const tiktokBaseApis = {
           name: "language",
           type: "string",
           required: false,
-          description:
-            "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh'",
+          description: "Two-letter transcript language code, such as en, es, fr, de, it, ja, ko, or zh.",
+          fullDescription: "Language of the transcript. 2 letter language code, ie 'en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh'",
           placeholder: "en",
         },
         {
           name: "use_ai_as_fallback",
           type: "string",
           required: false,
-          description:
-            `Set to 'true' to use paid AI only when existing captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+          description: "Set true to use AI only when native captions are unavailable; defaults to false. Default AI: <=120s, 1 credit. With allow_long_transcription=true, all successful AI costs 10 credits/started minute, including short videos.",
+          fullDescription: `Set to 'true' to use paid AI only when existing captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
           placeholder: "false",
         },
       ],
@@ -5765,16 +5755,16 @@ export const tiktokBaseApis = {
           name: "room_id",
           type: "string",
           required: true,
-          description:
-            "TikTok live room id. Get this from `/v1/tiktok/user/live` in `liveRoomUserInfo.roomId` or `liveRoom.id` when the user is live.",
+          description: "Live room ID from liveRoomUserInfo.roomId or liveRoom.id in /v1/tiktok/user/live when the user is live.",
+          fullDescription: "TikTok live room id. Get this from `/v1/tiktok/user/live` in `liveRoomUserInfo.roomId` or `liveRoom.id` when the user is live.",
           placeholder: "7523685855395842871",
         },
         {
           name: "user_id",
           type: "string",
           required: true,
-          description:
-            "TikTok numeric user id for the live owner. Get this from `/v1/tiktok/profile` in `user.id`.",
+          description: "Live owner's numeric user ID from user.id in /v1/tiktok/profile.",
+          fullDescription: "TikTok numeric user id for the live owner. Get this from `/v1/tiktok/profile` in `user.id`.",
           placeholder: "6742945285876515845",
         },
       ],
@@ -5795,8 +5785,8 @@ export const tiktokBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Scrapes comments from public TikTok videos and photo/slideshow posts. Pages with comments cost 1 credit; empty pages cost 0 credits. An empty page does not prove the post has no comments globally. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
-      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response. Public photo/slideshow posts are supported as well as videos. Comments use a separate TikTok public web source, so successful single-post metadata retrieval does not guarantee readable comments. An empty terminal page does not by itself prove the post has no comments globally or was deleted. This endpoint does not expose a country-selection parameter. Use the returned cursor and stop when `end_of_pagination=true`. Pages that return comments cost 1 credit; successful empty pages cost 0 credits, including the first page, later pages, and trim=true responses. Replaying a terminal null cursor also costs 0 credits. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
+      description: "Get comments on public TikTok videos or slideshows. Pages with comments cost 1 credit; empty pages cost 0. An empty page does not prove the post has no comments globally.",
+      fullDescription: "Fetches comments on a TikTok video by URL — useful for reading audience reactions, replies, and engagement. Returns `comments`, an array where each comment includes `text`, `digg_count` (likes), `reply_comment_total`, `create_time`, and a `user` object with the commenter's nickname and unique_id; also returns `total` comment count. Paginate with `cursor` from the previous response. Public photo/slideshow posts are supported as well as videos. Comments use a separate TikTok public web source, so successful single-post metadata retrieval does not guarantee readable comments. An empty terminal page does not by itself prove the post has no comments globally or was deleted. This endpoint does not expose a country-selection parameter. Use the returned cursor and stop when `end_of_pagination=true`. Pages that return comments cost 1 credit; successful empty pages cost 0 credits, including the first page, later pages, and trim=true responses. Replaying a terminal null cursor also costs 0 credits. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability)." + " " + "Scrapes comments from public TikTok videos and photo/slideshow posts. Pages with comments cost 1 credit; empty pages cost 0 credits. An empty page does not prove the post has no comments globally. [Examples and troubleshooting](https://docs.scrapecreators.com/tiktok-post-availability).",
       path: "/v1/tiktok/video/comments",
       credits: {
         type: "variable",
@@ -10950,8 +10940,8 @@ export const tiktokBaseApis = {
     {
       name: "Search by Hashtag",
       method: "GET",
-      description: "Scrapes TikTok videos by hashtag. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
-      fullDescription: "Searches for TikTok videos under a specific hashtag — useful for finding content by topic or trend. Returns `aweme_list`, an array of video objects each with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor` from the previous response. TikTok may return duplicate results.",
+      description: "Search TikTok videos by hashtag. TikTok may return duplicate results.",
+      fullDescription: "Searches for TikTok videos under a specific hashtag — useful for finding content by topic or trend. Returns `aweme_list`, an array of video objects each with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor` from the previous response. TikTok may return duplicate results." + " " + "Scrapes TikTok videos by hashtag. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
       path: "/v1/tiktok/search/hashtag",
       paginationField: "cursor",
       sampleResponse: {
@@ -12731,8 +12721,8 @@ export const tiktokBaseApis = {
           name: "region",
           type: "string",
           required: false,
-          description:
-            "Region the proxy will be set to. Note: this isn't going to grab you all tiktoks from this region, you're just setting the proxy there.",
+          description: "Proxy country, not a filter for where posts were created.",
+          fullDescription: "Region the proxy will be set to. Note: this isn't going to grab you all tiktoks from this region, you're just setting the proxy there.",
           placeholder: "US",
         },
         {
@@ -12753,16 +12743,16 @@ export const tiktokBaseApis = {
       ],
       responseFields: [
         {
-          path: "aweme_list[0].video.play_addr.url_list[0]",
-          description: "The URL of the actual video",
-        },
+          "path": "aweme_list[0].video.play_addr.url_list[0]",
+          "description": "The URL of the actual video"
+        }
       ],
     },
     {
       name: "Search by Keyword",
       method: "GET",
-      description: "Scrapes TikTok videos matching a keyword. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
-      fullDescription: "Searches for TikTok videos by keyword or phrase — the general video search across all of TikTok. Returns `search_item_list`, an array of objects each containing `aweme_info` with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor`. TikTok may return duplicate results.",
+      description: "Search TikTok videos by keyword. TikTok may return duplicate results.",
+      fullDescription: "Searches for TikTok videos by keyword or phrase — the general video search across all of TikTok. Returns `search_item_list`, an array of objects each containing `aweme_info` with `aweme_id`, `desc` (caption), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `author` details. Paginate with `cursor`. TikTok may return duplicate results." + " " + "Scrapes TikTok videos matching a keyword. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
       path: "/v1/tiktok/search/keyword",
       paginationField: "cursor",
       sampleResponse: {
@@ -14671,9 +14661,9 @@ export const tiktokBaseApis = {
       },
       responseFields: [
         {
-          path: "search_item_list[0].aweme_info.video.bit_rate[0].play_addr.url_list[0]",
-          description: "The URL of the video",
-        },
+          "path": "search_item_list[0].aweme_info.video.bit_rate[0].play_addr.url_list[0]",
+          "description": "The URL of the video"
+        }
       ],
       params: [
         {
@@ -14709,8 +14699,8 @@ export const tiktokBaseApis = {
           name: "region",
           type: "string",
           required: false,
-          description:
-            "Note, this doesn't filter the tiktoks only in a specfic region, it puts the proxy there. Use it in case you want to scrape posts only available for some country. Use 2 letter country codes like US, GB, FR, etc",
+          description: "Two-letter proxy country code, such as US, GB, or FR. May help access country-restricted posts; does not filter posts by origin.",
+          fullDescription: "Note, this doesn't filter the tiktoks only in a specfic region, it puts the proxy there. Use it in case you want to scrape posts only available for some country. Use 2 letter country codes like US, GB, FR, etc",
           placeholder: null,
         },
         {
@@ -14733,9 +14723,8 @@ export const tiktokBaseApis = {
     {
       name: "Top Search",
       method: "GET",
-      description:
-        "There is a 'Top' Search in TikTok and this is that. You can get Photo Carousels and Videos. Whereas with just the Keyword Search, you can only get Videos. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
-      fullDescription: "Searches TikTok's 'Top' results by query — returns both videos and photo carousels, unlike keyword search which only returns videos. Returns `items`, an array of objects each with `id`, `desc` (caption), `content_type` (video or photo carousel), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `images` for carousels. Paginate with `cursor`. TikTok may return duplicate results.",
+      description: "Search TikTok Top results for videos and photo carousels; keyword search returns videos only. TikTok may return duplicate results.",
+      fullDescription: "Searches TikTok's 'Top' results by query — returns both videos and photo carousels, unlike keyword search which only returns videos. Returns `items`, an array of objects each with `id`, `desc` (caption), `content_type` (video or photo carousel), `statistics` (play_count, digg_count/likes, comment_count, share_count), `video` info, and `images` for carousels. Paginate with `cursor`. TikTok may return duplicate results." + " " + "There is a 'Top' Search in TikTok and this is that. You can get Photo Carousels and Videos. Whereas with just the Keyword Search, you can only get Videos. Note: TikTok can return duplicate results for this search. Sorry about that — it looks like a TikTok-side thing, so we don't have control over it.",
       path: "/v1/tiktok/search/top",
       params: [
         {
@@ -14773,8 +14762,8 @@ export const tiktokBaseApis = {
           type: "string",
           required: false,
           placeholder: "US",
-          description:
-            "Note, this doesn't filter the tiktoks only in a specfic region, it puts the proxy there. Use it in case you want to scrape posts only available for some country. Use 2 letter country codes like US, GB, FR, etc",
+          description: "Two-letter proxy country code, such as US, GB, or FR. May help access country-restricted posts; does not filter posts by origin.",
+          fullDescription: "Note, this doesn't filter the tiktoks only in a specfic region, it puts the proxy there. Use it in case you want to scrape posts only available for some country. Use 2 letter country codes like US, GB, FR, etc",
           placeholder: null,
         },
         {
@@ -14788,10 +14777,9 @@ export const tiktokBaseApis = {
       ],
       responseFields: [
         {
-          description:
-            "Slideshow images (you'll want all of the 'thumbnail' images",
-          path: "images",
-        },
+          "description": "Slideshow images (you'll want all of the 'thumbnail' images",
+          "path": "images"
+        }
       ],
       sampleResponse: {
         "success": true,
@@ -16278,8 +16266,8 @@ export const tiktokBaseApis = {
     {
       name: "Get Song Details",
       method: "GET",
-      description: "Scraping details from the song detail",
-      fullDescription: "Fetches detailed metadata for a specific TikTok sound or song by its clipId. Returns `music_info` with `title`, `author`, `album`, `duration`, `user_count` (number of videos using this sound), `play_url`, cover art, and artist details. Use the `clipId` from a sound URL or from the popular songs endpoint.",
+      description: "Get details for a TikTok sound or song.",
+      fullDescription: "Fetches detailed metadata for a specific TikTok sound or song by its clipId. Returns `music_info` with `title`, `author`, `album`, `duration`, `user_count` (number of videos using this sound), `play_url`, cover art, and artist details. Use the `clipId` from a sound URL or from the popular songs endpoint." + " " + "Scraping details from the song detail",
       path: "/v1/tiktok/song",
       youtubeId: "YMOQjj9seaY",
       params: [
@@ -16287,16 +16275,16 @@ export const tiktokBaseApis = {
           name: "clipId",
           type: "string",
           required: true,
-          description:
-            "This is a little confusing because this isn't songId like you'd think. It is the clipId. I guess because you can clip different portions of a song 🤷‍♂️",
+          description: "TikTok sound clip ID (clipId), not songId.",
+          fullDescription: "This is a little confusing because this isn't songId like you'd think. It is the clipId. I guess because you can clip different portions of a song 🤷‍♂️",
           placeholder: "7439295283975702544",
         },
       ],
       responseFields: [
         {
-          path: "music_info.user_count",
-          description: "The number of videos using this song",
-        },
+          "path": "music_info.user_count",
+          "description": "The number of videos using this song"
+        }
       ],
       sampleResponse: {
         music_info: {
@@ -16542,8 +16530,8 @@ export const tiktokBaseApis = {
         {
           name: "clipId",
           type: "string",
-          description:
-            "This is clipId. Can be found on a url like so: https://www.tiktok.com/music/That%27s-Who-I-Praise-7370375686554782506, where 7370375686554782506 is the clipId",
+          description: "TikTok sound clip ID: the trailing number in a /music/ URL, such as 7370375686554782506.",
+          fullDescription: "This is clipId. Can be found on a url like so: https://www.tiktok.com/music/That%27s-Who-I-Praise-7370375686554782506, where 7370375686554782506 is the clipId",
           placeholder: "7439295283975702544",
         },
         {
@@ -17781,8 +17769,8 @@ export const tiktokBaseApis = {
           name: "region",
           required: true,
           type: "string",
-          description:
-            "Where you want the proxy to be. This doesn't mean that you will only see TikToks from this region, you will just see the content that isn't banned in that region.",
+          description: "Proxy country. Affects regional content availability, not where posts were created.",
+          fullDescription: "Where you want the proxy to be. This doesn't mean that you will only see TikToks from this region, you will just see the content that isn't banned in that region.",
           placeholder: "US",
         },
         {

@@ -38,7 +38,7 @@ export const apis = [
         name: "Channel Details",
         method: "GET",
         description:
-          "Get comprehensive channel information including stats and metadata. Can pass channelId, handle, or url.",
+          "Get YouTube channel details and stats by channelId, handle, or URL.",
         fullDescription:
           "Retrieves comprehensive YouTube channel profile data including name, avatar images, subscriber count (subscribers), total video and view counts, join date, tags, and linked social accounts like Twitter and Instagram. Accepts a channelId, handle, or full channel URL as input. Returns channel metadata such as country, email, and external store links when available. Contact fields come from the submitted public profile. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/youtube/channel",
@@ -102,21 +102,24 @@ export const apis = [
             name: "channelId",
             type: "string",
             description:
-              "YouTube channel ID. Can pass a channelId, handle or url",
+              "YouTube channel ID. Provide channelId, handle, or url.",
+            fullDescription: "YouTube channel ID. Can pass a channelId, handle or url",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
           },
           {
             name: "handle",
             type: "string",
             description:
-              "YouTube channel handle. Can pass a channelId, handle or url",
+              "YouTube channel handle. Provide channelId, handle, or url.",
+            fullDescription: "YouTube channel handle. Can pass a channelId, handle or url",
             placeholder: "ThePatMcAfeeShow",
           },
           {
             name: "url",
             type: "string",
             description:
-              "YouTube channel URL. Can pass a channelId, handle or url",
+              "YouTube channel URL. Provide channelId, handle, or url.",
+            fullDescription: "YouTube channel URL. Can pass a channelId, handle or url",
             placeholder: "https://www.youtube.com/@ThePatMcAfeeShow",
           },
         ],
@@ -125,7 +128,7 @@ export const apis = [
         name: "Channel Videos",
         method: "GET",
         description:
-          "Get all videos from a channel with detailed information. Can pass channelId or handle.",
+          "Get paginated videos from a YouTube channel by channelId or handle.",
         fullDescription:
           "Fetches a paginated list of videos uploaded by a YouTube channel, including each video's title, URL, thumbnail, view count (views), publish date, duration, and description. Supports sorting by latest or popular, and use the continuationToken to page through all results. Optionally include extras like like count, comment count, and descriptions for each video.",
         path: "/v1/youtube/channel-videos",
@@ -182,7 +185,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
           {
@@ -190,7 +194,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Set to 'true' to search YouTube's public paid product placement / sponsorship / endorsement search surface. This returns normal YouTube videos where the creator declared paid promotion. Cannot be combined with filter, uploadDate, sortBy, type, duration, or includeExtras.",
+              "Set true to find videos with creator-declared paid promotion. Cannot combine with filter, uploadDate, sortBy, type, duration, or includeExtras.",
+            fullDescription: "Set to 'true' to search YouTube's public paid product placement / sponsorship / endorsement search surface. This returns normal YouTube videos where the creator declared paid promotion. Cannot be combined with filter, uploadDate, sortBy, type, duration, or includeExtras.",
             placeholder: "false",
           },
           {
@@ -198,7 +203,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. Honestly, if you use this param, the error rate is higher. We might deprecate this param in the future.",
+              "Include like/comment counts and descriptions. Increases errors and may be deprecated; use /v1/youtube/video for full details.",
+            fullDescription: "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. Honestly, if you use this param, the error rate is higher. We might deprecate this param in the future.",
             placeholder: "false",
           },
         ],
@@ -379,7 +385,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more playlists. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more playlists. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
         ],
@@ -438,7 +445,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more lives. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more lives. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
         ],
@@ -506,7 +514,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more community posts. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more community posts. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
         ],
@@ -515,7 +524,7 @@ export const apis = [
         name: "Channel Shorts",
         method: "GET",
         description:
-          "Get Shorts from a channel. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings.",
+          "Get channel Shorts. publishDate is an ISO 8601 timestamp with an offset when available, otherwise null; date-only values are not returned.",
         fullDescription:
           "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, description, and publish date. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings. Supports sorting by newest or popular; use the continuationToken to page through all results. Returns data in the shorts array.",
         path: "/v1/youtube/channel/shorts",
@@ -626,13 +635,15 @@ export const apis = [
           {
             name: "handle",
             type: "string",
-            description: "Can pass channelId or handle",
+            description: "YouTube channel handle. Provide handle or channelId.",
+            fullDescription: "Can pass channelId or handle",
             placeholder: "starterstory",
           },
           {
             name: "channelId",
             type: "string",
-            description: "Can pass channelId or handle",
+            description: "YouTube channel ID. Provide channelId or handle.",
+            fullDescription: "Can pass channelId or handle",
             placeholder: "UC-9-kyTW8ZkZNDHQJ6FgpwQ",
           },
           {
@@ -647,7 +658,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
         ],
@@ -721,7 +733,7 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get complete information about a video or short. isPaidPromotion tells you whether YouTube marks the video as including paid promotion. Also includes YouTube's most-replayed heatmap when YouTube exposes it. most_replayed is null when the graph is not available. Age-restricted videos return 403 because we only use the public logged-out YouTube source. Need to download a YouTube video? We open sourced our [YouTube downloader](https://github.com/ScrapeCreators/youtube-downloader). You can use it and host it wherever you want. We don't offer a hosted YouTube downloading service because it's expensive and compute-intensive to run.",
+          "Get YouTube video or Short details, paid-promotion status and available replay heatmaps. Age-restricted videos return 403. No hosted video downloads.",
         fullDescription:
           "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). isPaidPromotion is true when YouTube marks the video as including paid promotion and false when it does not. Also returns related recommended videos in watchNextVideos and channel info for the uploader. When YouTube exposes its public Most replayed graph, most_replayed contains normalized graph buckets in markers and YouTube's highlighted ranges in ranges. The field is null when the graph is not available. YouTube says the graph may be unavailable when the channel has active strikes, the content is potentially inappropriate, the video is too new or has too few views, or its systems deem the video ineligible for another reason. YouTube does not publish fixed age or view-count thresholds. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source. Need to download a YouTube video? We open sourced our [YouTube downloader](https://github.com/ScrapeCreators/youtube-downloader). You can use it and host it wherever you want. We don't offer a hosted YouTube downloading service because it's expensive and compute-intensive to run.",
         path: "/v1/youtube/video",
@@ -734,43 +746,6 @@ export const apis = [
             message: "This video is age restricted",
           },
         },
-        responseFields: [
-          {
-            path: "isPaidPromotion",
-            description:
-              "Boolean. True when YouTube marks the video as including paid promotion; otherwise false.",
-          },
-          {
-            path: "audioTracks",
-            description:
-              "Available audio tracks from the same public player response, deduplicated by id. Each track includes id, displayName, audioIsDefault, and isAutoDubbed. Empty when YouTube does not expose audio-track metadata. Does not require an extra lookup or cost additional credits.",
-          },
-          {
-            path: "audioTracks[].isAutoDubbed",
-            description:
-              "YouTube's auto-dub flag for this audio track: true or false when explicitly provided, otherwise null. A video can contain both original and dubbed tracks, so this is not a video-level flag. Null does not mean false.",
-          },
-          {
-            path: "audioTracks[].audioIsDefault",
-            description:
-              "Whether YouTube marks this audio track as the default in the fetched player response, or null when unspecified. The default can be a dub and is not necessarily the original audio.",
-          },
-          {
-            path: "most_replayed",
-            description:
-              "YouTube's public Most replayed heatmap, or null when YouTube does not show the graph for this video.",
-          },
-          {
-            path: "most_replayed.markers",
-            description:
-              "Graph buckets with startMillis, durationMillis, and intensityScoreNormalized.",
-          },
-          {
-            path: "most_replayed.ranges",
-            description:
-              "YouTube-highlighted replay ranges with visibleTimeRangeStartMillis, visibleTimeRangeEndMillis, decorationTimeMillis, and the localized label.",
-          },
-        ],
         sampleResponse: {
           success: true,
           credits_remaining: 33851527,
@@ -878,7 +853,8 @@ export const apis = [
             name: "language",
             type: "string",
             required: false,
-            description: "Preferred response language (mapped to Accept-Language header; not guaranteed due to YouTube localization behavior). 2 letter language code, ie 'en', 'es', 'fr' etc.",
+            description: "Preferred two-letter response language, such as en, es, or fr. Sets Accept-Language; YouTube may ignore it.",
+            fullDescription: "Preferred response language (mapped to Accept-Language header; not guaranteed due to YouTube localization behavior). 2 letter language code, ie 'en', 'es', 'fr' etc.",
             placeholder: "en",
           }
         ],
@@ -903,14 +879,16 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Language code, ie 'en', 'es', 'fr' or 'en-US'. Overrides the default track selection unless original_audio=true. If omitted, prefers captions matching the original spoken language when YouTube identifies the original audio. If that metadata is unavailable or ambiguous, prefers an auto-generated caption, otherwise the first caption track. If the requested or identified original language has no matching captions, the transcript will be null and no credits are charged.",
+              "Caption language, e.g. en or en-US; original_audio=true overrides it. Omit for automatic selection. No matching requested or identified original-language captions returns null at no charge.",
+            fullDescription: "Language code, ie 'en', 'es', 'fr' or 'en-US'. Overrides the default track selection unless original_audio=true. If omitted, prefers captions matching the original spoken language when YouTube identifies the original audio. If that metadata is unavailable or ambiguous, prefers an auto-generated caption, otherwise the first caption track. If the requested or identified original language has no matching captions, the transcript will be null and no credits are charged.",
             placeholder: "en",
           },
           {
             name: "original_audio",
             type: "boolean",
             required: false,
-            description: "Set to true to return captions only in the original spoken language identified by YouTube. Takes precedence over language. If the original audio cannot be reliably identified or has no matching captions, transcript, transcript_only_text, and language are null and no credits are charged. No extra lookup or credit cost; a returned transcript costs the usual 1 credit. Omit or set to false for the existing default selection.",
+            description: "Set true for original-language captions only, overriding language. Unidentified original audio or missing captions returns null at no charge. A returned transcript costs 1 credit; no extra lookup.",
+            fullDescription: "Set to true to return captions only in the original spoken language identified by YouTube. Takes precedence over language. If the original audio cannot be reliably identified or has no matching captions, transcript, transcript_only_text, and language are null and no credits are charged. No extra lookup or credit cost; a returned transcript costs the usual 1 credit. Omit or set to false for the existing default selection.",
             placeholder: "true",
           },
         ],
@@ -940,7 +918,7 @@ export const apis = [
       {
         name: "Video Sponsors",
         method: "GET",
-        description: "Experimental: Find suspected sponsors/promoted brands for a YouTube video. This is inferred from public evidence, not an official YouTube sponsor field. Feedback welcome: support@scrapecreators.com",
+        description: "Experimental: infer possible video sponsors from public evidence, not an official YouTube sponsor field. Send feedback to support@scrapecreators.com.",
         fullDescription:
           "Experimental endpoint. Checks a YouTube video for the paid-promotion disclosure and infers likely sponsors/promoted brands from the public description, description links, promo-code text, and transcript. YouTube tells us that a video contains paid promotion, but it does not always tell us the sponsor directly, so this endpoint returns suspected sponsors with confidence and evidence. This is inferred, not an official YouTube sponsor field. Feedback welcome: support@scrapecreators.com",
         path: "/v1/youtube/video/sponsors",
@@ -956,7 +934,8 @@ export const apis = [
             name: "language",
             type: "string",
             required: false,
-            description: "2 letter language code used for transcript lookup, ie 'en', 'es', 'fr' etc.",
+            description: "Two-letter language code for transcript lookup, such as en, es, or fr.",
+            fullDescription: "2 letter language code used for transcript lookup, ie 'en', 'es', 'fr' etc.",
             placeholder: "en",
           },
         ],
@@ -998,7 +977,7 @@ export const apis = [
         name: "Search",
         method: "GET",
         description:
-          "Search YouTube and get matching videos, channels, playlists, shorts, lives, etc. Video explaining the response format: https://www.tella.tv/video/explaining-youtube-search-results-payload-353a",
+          "Search YouTube videos, channels, playlists, Shorts and live streams. [Response format video](https://www.tella.tv/video/explaining-youtube-search-results-payload-353a).",
         fullDescription:
           "Searches YouTube by keyword query and returns matching videos, channels, playlists, shorts, shelves, and live streams. Each video result includes title, URL, thumbnail, view count (views), publish date, duration, channel info, and badges. Supports filtering by upload date, sorting by relevance or popularity, and paginating with continuationToken. Set is_paid_promotions=true to search YouTube videos with the paid product placement / sponsorship disclosure.",
         path: "/v1/youtube/search",
@@ -1304,7 +1283,8 @@ export const apis = [
             type: "string",
             required: true,
             description:
-              'Search query. For stricter title matching, use YouTube\'s intitle: operator, for example intitle:"Foursquare Swarm". Quoted queries by themselves may still be broadened by YouTube when no fresh exact matches are available.',
+              "Search query. Use intitle: for stricter title matching, e.g. intitle:\"Foursquare Swarm\". YouTube may broaden quoted queries when no fresh exact matches exist.",
+            fullDescription: 'Search query. For stricter title matching, use YouTube\'s intitle: operator, for example intitle:"Foursquare Swarm". Quoted queries by themselves may still be broadened by YouTube when no fresh exact matches are available.',
           },
           {
             name: "uploadDate",
@@ -1346,7 +1326,8 @@ export const apis = [
             name: "region",
             type: "string",
             required: false,
-            description: "2 letter country code of the country to put the proxy in.",
+            description: "Two-letter country code for the proxy location.",
+            fullDescription: "2 letter country code of the country to put the proxy in.",
             placeholder: "US",
           },
           {
@@ -1354,7 +1335,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
           {
@@ -1362,7 +1344,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. *This will slow down the response slightly.*",
+              "Include like/comment counts and descriptions; slows the response. Use /v1/youtube/video for full details.",
+            fullDescription: "This will get you the like + comment count and the description. To get the full details of the video, use the /v1/youtube/video endpoint. *This will slow down the response slightly.*",
             placeholder: "false",
           },
         ],
@@ -1462,7 +1445,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more videos. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
           {
@@ -1522,7 +1506,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Continuation token to get more comments. Get 'continuationToken' from previous response.",
+              "Use continuationToken from the previous response to get the next page.",
+            fullDescription: "Continuation token to get more comments. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
           },
           {
@@ -1572,7 +1557,8 @@ export const apis = [
             type: "string",
             required: true,
             description:
-              "Continuation token for the comment replies. Use 'repliesContinuationToken' from the Comments endpoint, or 'continuationToken' from a previous replies response to paginate.",
+              "Use repliesContinuationToken from Comments, then continuationToken from each replies response to paginate.",
+            fullDescription: "Continuation token for the comment replies. Use 'repliesContinuationToken' from the Comments endpoint, or 'continuationToken' from a previous replies response to paginate.",
             placeholder: "Eg0SC2RRdzR3OVdnWGNRGAYygwEaUBIa...",
           },
         ],
@@ -1581,7 +1567,7 @@ export const apis = [
         name: "Trending Shorts",
         method: "GET",
         description:
-          "Get about 48 trending shorts. Continue hitting this to get more shorts (get new ones with each call)",
+          "Get about 48 trending Shorts per request. Repeated requests can return new Shorts.",
         fullDescription:
           "Fetches approximately 48 currently trending YouTube Shorts (viral/popular short-form videos) per call, returning each short's title, URL, thumbnail, view count (views), like count (likes), comment count, publish date, channel info, keywords, and duration. Each subsequent call returns a fresh batch of different trending shorts.",
         path: "/v1/youtube/shorts/trending",
@@ -1739,28 +1725,6 @@ export const apis = [
             description:
               "Token from the previous response to get the next page. Omit for the first page. Stop when the returned continuationToken is null.",
             placeholder: "",
-          },
-        ],
-        responseFields: [
-          {
-            path: "title",
-            description: "Playlist title. Only returned on the first page.",
-          },
-          {
-            path: "owner",
-            description: "Playlist owner. Only returned on the first page.",
-          },
-          {
-            path: "totalVideos",
-            description: "Total playlist video count. Only returned on the first page.",
-          },
-          {
-            path: "videos",
-            description: "Videos on the current page.",
-          },
-          {
-            path: "continuationToken",
-            description: "Token for the next page, or null when there are no more pages.",
           },
         ],
         sampleResponse: {
@@ -1988,14 +1952,16 @@ export const apis = [
             name: "handle",
             type: "string",
             required: false,
-            description: "Rumble channel handle. If you'd prefer to use the URL instead, use the url parameter.",
+            description: "Rumble channel handle. Provide handle or url.",
+            fullDescription: "Rumble channel handle. If you'd prefer to use the URL instead, use the url parameter.",
             placeholder: "CuteCats223",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Rumble channel URL. If you'd prefer to use the handle instead, use the handle parameter.",
+            description: "Rumble channel URL. Provide url or handle.",
+            fullDescription: "Rumble channel URL. If you'd prefer to use the handle instead, use the handle parameter.",
             placeholder: "https://rumble.com/c/CuteCats223",
           },
           {
@@ -2527,7 +2493,7 @@ export const apis = [
         name: "Person's Profile",
         method: "GET",
         description:
-          "Get a person's public profile (including recent posts) *Note this is for a persons public profile. This only returns what's publicly available, ie what you see in an incognito browser. So unfortunately LinkedIn doesn't return work history or job title publicly anymore :(",
+          "Get a public LinkedIn profile and recent posts as seen without login. Work history and job title are not publicly returned.",
         fullDescription:
           "Retrieves a person's public LinkedIn profile data, including their name, photo, location, follower count (followers), about/bio summary, recent posts, work experience, education, articles, activity feed, publications, projects, recommendations, and similar profiles. Only returns publicly available information visible in an incognito browser.",
         path: "/v1/linkedin/profile",
@@ -2700,9 +2666,9 @@ export const apis = [
         },
         responseFields: [
           {
-            path: "activity",
-            description: "Persons latest posts, shares, likes, etc.",
-          },
+            "path": "activity",
+            "description": "Persons latest posts, shares, likes, etc."
+          }
         ],
         params: [
           {
@@ -2841,7 +2807,7 @@ export const apis = [
       {
         name: "Company Posts",
         method: "GET",
-        description: "Get posts from a LinkedIn company or school page using a /company/ or /school/ URL. Can only get 7 pages total (LinkedIn limitation)",
+        description: "Get LinkedIn company or school posts by /company/ or /school/ URL. Limited to 7 pages by LinkedIn.",
         fullDescription:
           "Retrieves paginated posts from a LinkedIn company or school page, including each post's URL, ID, publication date, and full text content. Accepts /company/ and /school/ URLs, such as https://www.linkedin.com/school/oxfordsbs/ for Oxford Saïd Business School. Supports page-based pagination up to a maximum of 7 pages due to a LinkedIn platform limitation.",
         path: "/v1/linkedin/company/posts",
@@ -3140,7 +3106,7 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a Linkedin post. This can be a post or an article.",
+        description: "Get a LinkedIn post or article.",
         fullDescription:
           "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. For public feed posts, activityUrn and contentUrn expose LinkedIn's public activity and underlying share or ugcPost URNs when present; either can be null when LinkedIn does not expose it. Also includes related articles from the same author in moreArticles.",
         path: "/v1/linkedin/post",
@@ -3195,7 +3161,7 @@ export const apis = [
       {
         name: "Post Transcript",
         method: "GET",
-        description: "Get the transcript from a LinkedIn post video when LinkedIn exposes one.",
+        description: "Get a LinkedIn post video's native transcript when available.",
         fullDescription:
           "Fetches the transcript from a LinkedIn post video when LinkedIn exposes one publicly. Returns null with transcriptNotAvailable when the post has no transcript, and only deducts credits when a transcript is returned. Returned native captions cost 1 credit; empty transcripts and errors cost 0 credits. This endpoint does not use AI transcription.",
         path: "/v1/linkedin/post/transcript",
@@ -3488,7 +3454,7 @@ export const apis = [
         name: "Profile Reels",
         method: "GET",
         description:
-          "Get a public Facebook page's reels, up to 10 at a time. view_count is the public Reels badge converted to a number and may be rounded. For available engagement metrics and more precise views, make a separate /v1/facebook/post request for each reel URL. Need 'next_page_id' and 'cursor' to paginate.",
+          "Get up to 10 page Reels. view_count is a possibly rounded badge count; use /v1/facebook/post per reel for engagement and available precise views. Paginate with next_page_id and cursor.",
         fullDescription:
           "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, post_id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. view_count comes from Facebook's public Reels badge (play_count_reduced), converted to a number; abbreviated values such as 27K become 27000, not an exact count. This list does not include like_count, reaction_counts, comment_count, share_count, or an is_pinned flag. Do not infer pinning from the order of returned reels. For available engagement metrics and a more precise view_count when Facebook exposes it, call /v1/facebook/post separately with each reel's returned url. There is no batch detail parameter on this endpoint. The detail view_count can still be null or lower than the public Reels badge. Pagination requires passing both next_page_id and cursor from the previous response.",
         path: "/v1/facebook/profile/reels",
@@ -3611,7 +3577,7 @@ export const apis = [
         name: "Search Videos",
         method: "GET",
         description:
-          "Search public Facebook videos and Reels by keyword using Facebook's native video search. This does not search general text or photo posts. Each successful search page costs 1 credit, including searches with no matches.",
+          "Search public Facebook videos and Reels by keyword, not text or photo posts. Each successful page costs 1 credit, even with no matches.",
         fullDescription:
           "Searches Facebook's native public video search without a logged-in account and returns matching videos and Reels. This is not Google-indexed discovery or general Facebook text/photo-post search. Results follow Facebook's ranking and public availability, so coverage and ordering are not exhaustive or guaranteed. Requests can take several seconds; use a client timeout of at least 30 seconds. Temporary Facebook restrictions or upstream timeouts can return an uncharged error. Pass the returned cursor with the same query for the next page, and stop when cursor is null or has_more is false. Each successful search page costs 1 credit, including searches with no matches. Validation errors and upstream failures are not charged.",
         path: "/v1/facebook/search/videos",
@@ -3681,52 +3647,6 @@ export const apis = [
           "cursor": "eyJ...",
           "has_more": true
         },
-        responseFields: [
-          {
-            "path": "videos",
-            "description": "The public videos and Reels in this native search page. Page size and order are determined by Facebook."
-          },
-          {
-            "path": "videos[].id",
-            "description": "The public Facebook video ID, returned as a string."
-          },
-          {
-            "path": "videos[].url",
-            "description": "The public Facebook video or Reel URL."
-          },
-          {
-            "path": "videos[].author",
-            "description": "Public author ID, name and URL when Facebook exposes them."
-          },
-          {
-            "path": "videos[].creation_time",
-            "description": "The native creation time as Unix seconds, or null when it is unavailable."
-          },
-          {
-            "path": "videos[].publish_time",
-            "description": "The native video publish time as Unix seconds, or null when it is unavailable."
-          },
-          {
-            "path": "videos[].relative_time_text",
-            "description": "Facebook's display text, which may include a date or view count. It is not a normalized timestamp."
-          },
-          {
-            "path": "videos[].duration_ms",
-            "description": "Video duration in milliseconds when the native result exposes it; otherwise null."
-          },
-          {
-            "path": "videos[].duration_text",
-            "description": "Facebook's formatted duration when it is exposed instead of a numeric duration; otherwise null."
-          },
-          {
-            "path": "cursor",
-            "description": "The opaque next-page cursor. Keep the query unchanged. The example cursor is abbreviated; use the full cursor from your real response."
-          },
-          {
-            "path": "has_more",
-            "description": "Whether Facebook returned a next page. Stop when this is false or cursor is null."
-          }
-        ],
       },
       {
         name: "Profile Photos",
@@ -3804,7 +3724,7 @@ export const apis = [
         name: "Profile Posts",
         method: "GET",
         description:
-          "Get public Facebook profile posts. This only returns the posts you would see from an incognito browser session. You can pass a url or a pageId. pageId is faster. pageId is the id of the profile page. Only returns 3 posts at a time.",
+          "Get public Facebook profile posts visible without login, 3 per page. Provide url or pageId; pageId is faster.",
         fullDescription:
           "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Accepts either a url or pageId parameter, where pageId is faster.",
         path: "/v1/facebook/profile/posts",
@@ -4547,7 +4467,7 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a public Facebook post or reel by url. Use one request per reel for available engagement metrics and more precise views when Facebook exposes them; exact views are not guaranteed. For some reels, view_count can be null or lower than the public Reels badge. For the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match by post_id.",
+        description: "Get a public Facebook post or Reel by URL. Reel views may be null or below the badge count; exact counts are not guaranteed. For badge counts, use /v1/facebook/profile/reels and match post_id.",
         fullDescription:
           "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/post",
@@ -4557,7 +4477,8 @@ export const apis = [
             name: "get_transcript",
             type: "boolean",
             required: false,
-            description: DETAIL_TRANSCRIPTION_NOTICE,
+            description: "Set true to include a transcript. Default AI up to 2 minutes is included in the base price. allow_long_transcription=true adds 10 credits per AI minute, rounded up, even for short videos.",
+            fullDescription: DETAIL_TRANSCRIPTION_NOTICE,
             placeholder: false,
           },
           {
@@ -4618,12 +4539,11 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          `Get native captions or an AI transcript of a Facebook video post or reel. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+          "Get native captions or an AI transcript from a Facebook video or Reel. Long AI transcripts may time out.",
         fullDescription:
           `Returns the transcript text for a Facebook video post or reel. Existing transcripts or native captions are used first and cost 1 credit only when returned. Otherwise the public video is transcribed using AI. No transcript costs 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/facebook/post/transcript",
         credits: NATIVE_OR_AI_CREDITS,
-        responseFields: AI_DURATION_FIELDS,
         sampleResponse: {
           "success": true,
           "credits_remaining": 49999939403,
@@ -4647,12 +4567,6 @@ export const apis = [
         fullDescription:
           "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. The attachments array contains image, GIF, video and sticker media when Facebook returns them, with type, id, url, preview_url, width and height. Text-only comments have an empty attachments array. Missing attachment values are null, and media URLs can expire. Passing a feedback_id instead of a url significantly speeds up the request.",
         path: "/v1/facebook/post/comments",
-        responseFields: [
-          {
-            path: "comments[].attachments",
-            description: "Media attached to this comment. Empty for text-only comments. Each attachment has type (image, gif, video, sticker, or unknown), id, url, preview_url, width and height. Unavailable values are null. GIF URLs point to the animation, not just its preview; media URLs can expire. No extra parameter or credit charge is needed.",
-          },
-        ],
         params: [
           {
             name: "url",
@@ -4665,7 +4579,8 @@ export const apis = [
             name: "feedback_id",
             type: "string",
             required: false,
-            description: "Using feedback_id (instead of url) will *really* speed up the request. You can get the feedback_id when you make a request to /v1/facebook/post.",
+            description: "Use feedback_id instead of url for a faster request. Get it from /v1/facebook/post.",
+            fullDescription: "Using feedback_id (instead of url) will *really* speed up the request. You can get the feedback_id when you make a request to /v1/facebook/post.",
             placeholder: "ZmVlZGJhY2s6MTQ0NzY1NjMyMzM4Mzg0OA==",
           },
           {
@@ -4942,24 +4857,20 @@ export const apis = [
         description: "Get the replies to a comment, including image, GIF, video and sticker attachments when available.",
         fullDescription: "Get the replies to a comment with cursor-based pagination. Each reply includes an attachments array for image, GIF, video and sticker media that Facebook returns, with type, id, url, preview_url, width and height. Text-only replies have an empty attachments array. Missing attachment values are null, and media URLs can expire.",
         path: "/v1/facebook/post/comment/replies",
-        responseFields: [
-          {
-            path: "replies[].attachments",
-            description: "Media attached to this reply, with the same type, id, url, preview_url, width and height fields as comment attachments. Empty for text-only replies. Unavailable values are null; media URLs can expire. No extra parameter or credit charge is needed.",
-          },
-        ],
         params: [
           {
             name: "feedback_id",
             type: "string",
-            description: "The *feedback_id* of the comment. Be careful, this is not the comment id. You can get the feedback_id from the /v1/facebook/post/comments endpoint.",
+            description: "Comment feedback_id, not the comment ID. Get it from /v1/facebook/post/comments.",
+            fullDescription: "The *feedback_id* of the comment. Be careful, this is not the comment id. You can get the feedback_id from the /v1/facebook/post/comments endpoint.",
             required: true,
             placeholder: "ZmVlZGJhY2s6MzM3MzYxMzI5OTQ4Nzc1NV8xOTI5NTk0OTE3Njg3MTcz",
           },
           {
             name: "expansion_token",
             type: "string",
-            description: "The expansion_token of the comment. You can get the expansion_token from the /v1/facebook/post/comments endpoint.",
+            description: "Comment expansion_token from /v1/facebook/post/comments.",
+            fullDescription: "The expansion_token of the comment. You can get the expansion_token from the /v1/facebook/post/comments endpoint.",
             required: true,
             placeholder: "MjoxNzc4NjM1MDM3OgF_JaMa3kMP9RIWC....",
           },
@@ -5144,7 +5055,7 @@ export const apis = [
         name: "Facebook Group Posts",
         method: "GET",
         description:
-          "Get a public Facebook groups posts. Only can get 3 posts at a time :( (Facebook API limit)",
+          "Get public Facebook group posts, limited to 3 per page by Facebook.",
         fullDescription:
           "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination.",
         path: "/v1/facebook/group/posts",
@@ -5743,7 +5654,8 @@ export const apis = [
       {
         name: "Search Events",
         method: "GET",
-        description: "Search for events by name. You can take a look at the page from Facebook we are getting the data from [here](https://www.facebook.com/events/search/?q=dogs)",
+        description:
+          "Search public Facebook events by name. [Source page](https://www.facebook.com/events/search/?q=dogs).",
         fullDescription: "Search for events by name. You can take a look at the page from Facebook we are getting the data from [here](https://www.facebook.com/events/search/?q=dogs)",
         path: "/v1/facebook/events/search",
         params: [
@@ -5841,7 +5753,8 @@ export const apis = [
       {
         name: "Events",
         method: "GET",
-        description: "Get the events of a city. Check out this [link](https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547) for an example of where we are getting the data from.",
+        description:
+          "Get events from a city's Facebook Events page. [Example source](https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547).",
         fullDescription: "Get the events of a city. Check out this [link](https://www.facebook.com/events/explore/saint-petersburg-florida/111326725552547) for an example of where we are getting the data from.",
         path: "/v1/facebook/events",
         params: [
@@ -6287,7 +6200,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Pass the Ad ID and get back details about the ad. Be careful that if an ad has multiple versions, you're actually going to want to get the title from the 'cards' object.",
+          "Get Facebook Ad Library details by ID or URL. For ads with multiple versions, use the title in cards.",
         fullDescription:
           "Retrieves detailed information about a specific Facebook ad by its ID or URL. Returns adArchiveID, pageName, isActive, startDate, endDate, and a snapshot containing body, images, videos, display_format, link_url, and cta_text. Regulated ads may also include source-dependent aaa_info using the structure shown below. Political and social issue delivery data is normalized to location_audience and age_country_gender_reach_breakdown. Political location_audience rows include reach, and political delivery values are fractional shares, so 0.08 means 8%. Regional transparency data may use absolute reach counts. For ads with multiple versions, the ad creative is found in the snapshot.cards array rather than snapshot.body." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/adLibrary/ad",
@@ -6605,7 +6518,8 @@ export const apis = [
             name: "get_transcript",
             type: "boolean",
             required: false,
-            description: DETAIL_TRANSCRIPTION_NOTICE,
+            description: "Set true to include a transcript. Default AI up to 2 minutes is included in the base price. allow_long_transcription=true adds 10 credits per AI minute, rounded up, even for short videos.",
+            fullDescription: DETAIL_TRANSCRIPTION_NOTICE,
             placeholder: false,
           },
           {
@@ -6628,23 +6542,23 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
         responseFields: [
           {
-            path: "adArchiveID",
-            description:
-              "This is the ad id. You'd think it'd be 'adid', but facebook decided to make it confusing 🤦‍♂️",
-          },
+            "path": "adArchiveID",
+            "description": "This is the ad id. You'd think it'd be 'adid', but facebook decided to make it confusing 🤦‍♂️"
+          }
         ],
       },
       {
         name: "Ad Transcript",
         method: "GET",
         description:
-          `Get native captions or an AI transcript for a Facebook Ad Library video ad by ID or URL. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+          "Get native captions or an AI transcript from a Facebook video ad. Long AI transcripts may time out.",
         fullDescription:
           `Retrieves a transcript for a Facebook Ad Library video ad by ID or URL. Returned native captions cost 1 credit. Otherwise the public video URL is transcribed with AI. If the ad has no video or no transcript is available, transcript is null and the charge is 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/facebook/adLibrary/ad/transcript",
@@ -6679,17 +6593,16 @@ export const apis = [
         ],
         responseFields: [
           {
-            path: "data.transcript",
-            description: "Transcript text for the ad video, or null when unavailable.",
-          },
-          ...AI_DURATION_FIELDS,
+            "path": "data.transcript",
+            "description": "Transcript text for the ad video, or null when unavailable."
+          }
         ],
       },
       ...withPostVariant({
         name: "Search",
         method: "GET",
         description:
-          "Search the Facebook (Meta) Ad Library by keyword. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
+          "Search Meta Ad Library by keyword. Use GET normally; for long pagination cursors, use POST with the same parameters in the JSON body.",
         fullDescription:
           "Searches the Meta Ad Library by keyword and returns matching ads. Supports filtering by language with a 2-letter code such as EN or ES. Each result includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body text, images, videos, and cta_text. Both GET and POST are supported. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/search/ads",
@@ -6890,22 +6803,21 @@ export const apis = [
         paginationField: "cursor",
         responseFields: [
           {
-            path: "collation_id",
-            description:
-              "This is Facebook's internal ID for related ads in a campaign",
+            "path": "collation_id",
+            "description": "This is Facebook's internal ID for related ads in a campaign"
           },
           {
-            path: "collation_count",
-            description: "The number of ads in the campaign",
+            "path": "collation_count",
+            "description": "The number of ads in the campaign"
           },
           {
-            path: "is_active",
-            description: "Whether the ad is currently running",
+            "path": "is_active",
+            "description": "Whether the ad is currently running"
           },
           {
-            path: "ad_archive_id",
-            description: "The *actual* ad id",
-          },
+            "path": "ad_archive_id",
+            "description": "The *actual* ad id"
+          }
         ],
         params: [
           {
@@ -6927,7 +6839,8 @@ export const apis = [
             name: "search_type",
             type: "select",
             required: false,
-            description: "If you want to search by exact phrase or not",
+            description: "Choose exact-phrase or keyword matching.",
+            fullDescription: "If you want to search by exact phrase or not",
             options: ["keyword_unordered", "keyword_exact_phrase"],
             placeholder: "keyword_unordered",
           },
@@ -6944,7 +6857,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
+              "One two-letter country code, or ALL (default).",
+            fullDescription: "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
             placeholder: "ALL",
           },
           {
@@ -6968,7 +6882,8 @@ export const apis = [
             type: "select",
             required: false,
             description:
-              "Media type of the ad. Defaults to ALL. Meme just means the ad has text and an image. No clue why they call it meme.",
+              "Ad media type. Defaults to ALL. Meme means an image with text.",
+            fullDescription: "Media type of the ad. Defaults to ALL. Meme just means the ad has text and an image. No clue why they call it meme.",
             placeholder: "ALL",
             options: [
               "ALL",
@@ -7008,7 +6923,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -7018,7 +6934,7 @@ export const apis = [
         method: "GET",
         paginationField: "cursor",
         description:
-          "Get all the ads a company has running. Use GET for normal requests. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
+          "Get a company's running ads. Use GET normally; for long pagination cursors, use POST with the same parameters in the JSON body.",
         fullDescription:
           "Fetches all ads currently running for a specific company from the Meta Ad Library. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination. Both GET and POST are supported. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/company/ads",
@@ -7233,22 +7149,21 @@ export const apis = [
         },
         responseFields: [
           {
-            path: "collation_id",
-            description:
-              "This is Facebook's internal ID for related ads in a campaign",
+            "path": "collation_id",
+            "description": "This is Facebook's internal ID for related ads in a campaign"
           },
           {
-            path: "collation_count",
-            description: "The number of ads in the campaign",
+            "path": "collation_count",
+            "description": "The number of ads in the campaign"
           },
           {
-            path: "is_active",
-            description: "Whether the ad is currently running",
+            "path": "is_active",
+            "description": "Whether the ad is currently running"
           },
           {
-            path: "ad_archive_id",
-            description: "The *actual* ad id",
-          },
+            "path": "ad_archive_id",
+            "description": "The *actual* ad id"
+          }
         ],
         params: [
           {
@@ -7256,7 +7171,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "The companies ad library page id. You can get this with my Search For Companies Endpoint. Can either use this or companyName",
+              "Company Ad Library page ID from Search for Companies. Provide pageId or companyName.",
+            fullDescription: "The companies ad library page id. You can get this with my Search For Companies Endpoint. Can either use this or companyName",
             placeholder: "367152833370567",
           },
           {
@@ -7264,7 +7180,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "The name of the company. Can either use this or pageId",
+              "Company name. Provide companyName or pageId.",
+            fullDescription: "The name of the company. Can either use this or pageId",
             placeholder: "Lululemon",
           },
           {
@@ -7272,7 +7189,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
+              "One two-letter country code, or ALL (default).",
+            fullDescription: "This can only be one country. It has to be the 2 letter code for the country. It defaults to ALL.",
             placeholder: "ALL",
           },
           {
@@ -7288,7 +7206,8 @@ export const apis = [
             type: "select",
             required: false,
             description:
-              "Media type of the ad. Defaults to ALL. Meme refers to ads with image and text. Not sure why they call it meme.",
+              "Ad media type. Defaults to ALL. Meme means an image with text.",
+            fullDescription: "Media type of the ad. Defaults to ALL. Meme refers to ads with image and text. Not sure why they call it meme.",
             placeholder: "ALL",
             options: [
               "ALL",
@@ -7304,7 +7223,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Language to filter ads on. Needs to be 2 letter language code, ie EN, ES, FR, etc",
+              "Two-letter ad language code, such as EN, ES, or FR.",
+            fullDescription: "Language to filter ads on. Needs to be 2 letter language code, ie EN, ES, FR, etc",
             placeholder: "EN",
           },
           {
@@ -7342,7 +7262,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -7437,7 +7358,8 @@ export const apis = [
             name: "adv_biz_ids",
             type: "string",
             required: false,
-            description: "TikTok advertiser business ID from a See all ads link. Use it with advertiser_name to pin the exact advertiser. Required companion: advertiser_name; ID-only searches return 400 because TikTok ignores the ID without the name.",
+            description: "Advertiser business ID from a See all ads link. Use with advertiser_name to select the exact advertiser. ID-only searches return 400; TikTok ignores IDs without the name.",
+            fullDescription: "TikTok advertiser business ID from a See all ads link. Use it with advertiser_name to pin the exact advertiser. Required companion: advertiser_name; ID-only searches return 400 because TikTok ignores the ID without the name.",
             placeholder: "7078923208527618049",
           },
           {
@@ -7490,16 +7412,6 @@ export const apis = [
           has_more: true,
           cursor: "opaque cursor for the next page",
         },
-        responseFields: [
-          {
-            path: "ads[].url",
-            description: "Public TikTok Ads Library detail page for the ad.",
-          },
-          {
-            path: "ads[].adv_biz_ids",
-            description: "TikTok advertiser business ID for advertiser-entity searches. Null when TikTok does not resolve an advertiser entity.",
-          },
-        ],
       },
       {
         name: "Ad Library Ad",
@@ -8004,7 +7916,7 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         description:
-          "Get the ads for a company. *This only gets the public ads. Some ads you need to log in for and sadly we can't get those. Starting November 10th 2025, you will need to add get_ad_details=true to get the ad details (and will cost 25 credits). If you don't add that, only the advertiserId and creativeId from each ad will be returned (and will continue to cost just 1 credit)",
+          "Get public company ads. Default: advertiserId and creativeId only, 1 credit. Set get_ad_details=true for ad details, 25 credits. Login-only ads are unavailable.",
         fullDescription:
           "Fetches public ads for a company from the Google Ad Transparency Library by domain or advertiser_id. Each ad includes advertiserId, creativeId, format, adUrl, advertiserName, domain, firstShown, and lastShown. Costs 25 credits per request when get_ad_details=true; without it, only advertiserId and creativeId are returned at 1 credit.",
         path: "/v1/google/company/ads",
@@ -8029,7 +7941,8 @@ export const apis = [
             type: "select",
             required: false,
             description:
-              "The topic to search for. If you search for 'political', you will also need to pass a 'region', like 'US' or 'AU'",
+              "Topic to search for. Political searches also require region, such as US or AU.",
+            fullDescription: "The topic to search for. If you search for 'political', you will also need to pass a 'region', like 'US' or 'AU'",
             options: ["all", "political"],
             placeholder: "all",
           },
@@ -8081,7 +7994,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Set to true to get the ad details. Will cost 25 credits.",
+              "Set true to include ad details for 25 credits per request; otherwise IDs only for 1 credit.",
+            fullDescription: "Set to true to get the ad details. Will cost 25 credits.",
             placeholder: "false",
             credits: 25,
           },
@@ -8257,7 +8171,7 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Get the details for an ad. I'm using an OCR to get the text from the ad, so it might not be 100% accurate. If you find any errors or irregularities, please email me: support@scrapecreators.com",
+          "Get Google ad details. Ad text is extracted with OCR and may contain errors; report issues to support@scrapecreators.com.",
         fullDescription:
           "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. regionStats and platformImpressions use lower and upper impression bounds. Variations are best-effort, omit unparseable entries, and have creative-type-dependent fields; image creatives can expose an images array. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
@@ -8459,7 +8373,6 @@ export const apis = [
         fullDescription:
           "Searches the LinkedIn Ad Library by company name, keyword, or companyId with optional country and date filters. Custom date filtering requires both startDate and endDate. LinkedIn accepts dates from the date one year ago through yesterday. Each ad includes id, description, headline, adType, advertiser, targeting details, image or video URLs, totalImpressions, and impressionsByCountry. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. Supports pagination via paginationToken. Search results keep a consistent field set when detail hydration fails, with null or empty defaults for unavailable fields. " + LINKEDIN_AD_MEDIA_DESCRIPTION,
         path: "/v1/linkedin/ads/search",
-        responseFields: linkedinAdMediaResponseFields("ads[]."),
         sampleResponse: {
           "success": true,
           "credits_remaining": 100,
@@ -8629,7 +8542,6 @@ export const apis = [
         fullDescription:
           "Retrieves detailed information about a specific LinkedIn ad by URL. Returns id, description, headline, adType, advertiser, and targeting with language, location, and audience criteria. Also includes totalImpressions, impressionsByCountry, adDuration, startDate, and endDate. Date and impression fields are nullable when LinkedIn does not expose them on the public ad page. " + LINKEDIN_AD_MEDIA_DESCRIPTION,
         path: "/v1/linkedin/ad",
-        responseFields: linkedinAdMediaResponseFields(),
         params: [
           {
             name: "url",
@@ -8914,7 +8826,7 @@ export const apis = [
         name: "User Tweets",
         method: "GET",
         description:
-          "Get tweets from a user's profile. *These aren't the users latest tweets. Sadly, Twitter publicly only returns 100 of the users most popular tweets.",
+          "Get up to 100 popular tweets from a user's public profile, not their latest tweets.",
         fullDescription:
           "Fetches tweets from a Twitter user's profile by handle. Note: Twitter publicly returns only ~100 of the user's most popular tweets, not chronological or latest. Each tweet includes rest_id, full_text, views count, favorite_count, retweet_count, reply_count, bookmark_count, quote_count, created_at, media entities, and url. Supports a trim parameter for a lighter response.",
         path: "/v1/twitter/user-tweets",
@@ -9194,7 +9106,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -9450,7 +9363,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -9459,12 +9373,11 @@ export const apis = [
         name: "Transcript",
         method: "GET",
         description:
-          `Get an AI transcript from a video tweet. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+          "Get an AI transcript from a video tweet. Long videos may time out.",
         fullDescription:
           `Extracts an AI transcript from a Twitter video tweet. This route uses AI transcription, not native captions. Returns a success flag and transcript text. No transcript costs 0 credits. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/twitter/tweet/transcript",
         credits: NATIVE_OR_AI_CREDITS,
-        responseFields: AI_DURATION_FIELDS,
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
@@ -9484,7 +9397,7 @@ export const apis = [
       {
         name: "Community",
         method: "GET",
-        description: "Get the details of a Twitter(X) Community",
+        description: "Get X/Twitter Community details.",
         fullDescription:
           "Retrieves details about a Twitter/X Community by URL. Returns the community name, description, rest_id, join_policy, created_at, member_count, rules, and creator_results with the creator's profile. Also includes members_facepile_results with avatar images of recent members.",
         path: "/v1/twitter/community",
@@ -9626,7 +9539,7 @@ export const apis = [
       {
         name: "Community Tweets",
         method: "GET",
-        description: "Get the tweets from a Twitter(X) Community",
+        description: "Get tweets from an X/Twitter Community.",
         fullDescription:
           "Fetches tweets posted within a Twitter/X Community by URL. Returns an array of tweets, each with id, full_text, view_count, favorite_count, retweet_count, reply_count, bookmark_count, quote_count, created_at, and source. Each tweet includes a user object with the author's name, screen_name, avatar, followers_count, and is_blue_verified status.",
         path: "/v1/twitter/community/tweets",
@@ -9768,7 +9681,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Subreddit name. MUST be case sensitive. So 'AskReddit' not 'askreddit'.",
+              "Case-sensitive subreddit name, e.g. AskReddit, not askreddit.",
+            fullDescription: "Subreddit name. MUST be case sensitive. So 'AskReddit' not 'askreddit'.",
             placeholder: "AskReddit",
           },
           {
@@ -9926,7 +9840,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -10146,7 +10061,7 @@ export const apis = [
         name: "Post Comments",
         method: "GET",
         description:
-          "Get comments and post information from a Reddit post. Pass one opaque cursor returned by the previous response to get the next page. Cursor batching is not supported. Use POST with the same JSON-body parameters if a cursor becomes too large for a GET URL. Author flair fields are not available.",
+          "Get Reddit post details and comments. Paginate with one opaque cursor; no cursor batching. For long cursors, use POST with the same JSON-body parameters. Author flair is unavailable.",
         fullDescription:
           "Retrieves comments and post details from a Reddit post by URL. Returns the post with title, author, score, ups, upvote_ratio, num_comments, and created_utc, plus a comments array where each comment includes author, body, body_html, score, created_utc, parent_id, permalink, and nested replies. Both GET and POST are supported. Use GET for normal requests. Pass one opaque cursor exactly as returned by more.cursor or replies.more.cursor to load the next page. Cursor batching and comma-separated cursor values are not supported. If an opaque cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body. Supports cursor-based pagination for loading more comments and a trim parameter for lighter responses. Author flair fields are not available from this endpoint.",
         path: "/v1/reddit/post/comments",
@@ -10171,7 +10086,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -11397,7 +11313,8 @@ export const apis = [
             name: "language",
             type: "string",
             required: false,
-            description: "2 letter language code. Defaults to en.",
+            description: "Two-letter language code. Defaults to en.",
+            fullDescription: "2 letter language code. Defaults to en.",
             placeholder: "en",
           },
         ],
@@ -11468,7 +11385,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -11702,7 +11620,7 @@ export const apis = [
         name: "User Posts",
         method: "GET",
         description:
-          "As of 8/27/2025, Truth Social is only letting you view the public profile/posts of prominent users (like Trump and Vance), but requiring auth for everyone else. So sadly most other accounts will not work :(",
+          "Get posts from prominent public Truth Social accounts, such as Trump and Vance. Most other accounts require login and are unavailable.",
         fullDescription:
           "Fetches a paginated list of posts from a Truth Social user, returning text, id, created_at, url, content, account info, media_attachments, card link previews, replies_count, reblogs_count, and favourites_count. Supports pagination via next_max_id and a trim option for lighter responses. Only prominent public figures (e.g., Trump, Vance) are accessible without authentication.",
         path: "/v1/truthsocial/user/posts",
@@ -11720,7 +11638,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Truth Social user id. Use this for faster response times. Trumps is 107780257626128497. It is the 'id' field in the profile endpoint.",
+              "Truth Social user ID from id in the Profile response. Use it for faster requests.",
+            fullDescription: "Truth Social user id. Use this for faster response times. Trumps is 107780257626128497. It is the 'id' field in the profile endpoint.",
             placeholder: "107780257626128497",
           },
           {
@@ -11735,7 +11654,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -12688,7 +12608,7 @@ export const apis = [
         name: "Posts",
         method: "GET",
         description:
-          "Get Threads posts by user. Sadly, Threads only allows you to see the last 20-30ish posts of the user :(",
+          "Get a user's public Threads posts, limited to roughly the latest 20–30 posts.",
         fullDescription:
           "Fetches the most recent posts from a Threads user, returning id, caption text, code, like_count, reshare_count, direct_reply_count, repost_count, image_versions2, video_versions, and taken_at. Only the last 20-30 posts are publicly visible. Supports a trim option for lighter responses.",
         path: "/v1/threads/user/posts",
@@ -12705,7 +12625,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -12969,7 +12890,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -13399,7 +13321,7 @@ export const apis = [
         name: "Search by Keyword",
         method: "GET",
         description:
-          "Search for posts by keyword. Sadly Threads only publicly returns only 10 results at a time :( We can only scrape public data, so sadly this is all we can get at once. Run multiple times per day to get more results.",
+          "Search public Threads posts by keyword, up to 10 results per request. Repeat searches over time to find new results.",
         fullDescription:
           "Searches Threads for posts matching a keyword, returning up to 10 results with caption text, like_count, reshare_count, direct_reply_count, user info, and image_versions2. Supports optional start_date and end_date filters plus a trim option. Only 10 results are returned per request due to public API limitations.",
         path: "/v1/threads/search",
@@ -13430,7 +13352,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -13710,7 +13633,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Bluesky 'did'. (For some reason Bluesky calls their user ids, 'did' for whatever reason)",
+              "Bluesky user DID.",
+            fullDescription: "Bluesky 'did'. (For some reason Bluesky calls their user ids, 'did' for whatever reason)",
             placeholder: "did:plc:x7d6j54pm22ufehkes6jo4jf",
           },
         ],
@@ -13983,7 +13907,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -14213,7 +14138,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -14776,7 +14702,8 @@ export const apis = [
             type: "string",
             required: true,
             description:
-              "The username of the user to get boards for. (e.g. broadstbullycom from https://www.pinterest.com/broadstbullycom/)",
+              "Pinterest username, e.g. broadstbullycom, not a profile URL.",
+            fullDescription: "The username of the user to get boards for. (e.g. broadstbullycom from https://www.pinterest.com/broadstbullycom/)",
             placeholder: "broadstbullycom",
           },
           {
@@ -14784,7 +14711,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -14917,7 +14845,7 @@ export const apis = [
       {
         name: "Board",
         method: "GET",
-        description: "Get the pins of a pinterest board",
+        description: "Get pins from a Pinterest board.",
         fullDescription:
           "Fetches a paginated list of pins from a Pinterest board by URL, returning each pin's id, description, title, images, board info, pin_join annotations, and aggregated_pin_data. Supports pagination via cursor and a trim option for lighter responses.",
         path: "/v1/pinterest/board",
@@ -14942,7 +14870,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              "Set to true for a trimmed down version of the response",
+              "Set true for a trimmed response.",
+            fullDescription: "Set to true for a trimmed down version of the response",
             placeholder: "false",
           },
         ],
@@ -15242,7 +15171,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "2 letter country code, ie US, UK, CA, etc This will show results from that country",
+              "Two-letter country code to localize search results, such as US, UK, or CA.",
+            fullDescription: "2 letter country code, ie US, UK, CA, etc This will show results from that country",
             placeholder: "US",
           },
           {
@@ -17055,12 +16985,11 @@ export const apis = [
       {
         name: "Clip Transcript",
         method: "GET",
-        description: `Get native captions or an opted-in AI transcript from a Twitch clip. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+        description: "Get native captions from a Twitch clip. Enable use_ai_as_fallback for AI when captions are unavailable.",
         fullDescription:
           `Gets a transcript from a public Twitch clip. Checks native captions first; returned native captions cost 1 credit. Set use_ai_as_fallback=true to opt into paid AI only when captions are unavailable. No transcript costs 0 credits. transcript_source is native, ai, or null. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/twitch/clip/transcript",
         credits: NATIVE_OR_AI_CREDITS,
-        responseFields: AI_DURATION_FIELDS,
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
@@ -17076,7 +17005,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+              "Set true for AI fallback when captions are unavailable; defaults to false. Default AI up to 2 minutes: 1 credit. Paid mode bills all AI at 10 credits/minute, rounded up.",
+            fullDescription: `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
             placeholder: false,
           },
         ],
@@ -18304,14 +18234,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Apple Music artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Apple Music artist ID. Provide id or url.",
+            fullDescription: "Apple Music artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "159260351",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Apple Music artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Apple Music artist URL. Provide id or url.",
+            fullDescription: "Apple Music artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://music.apple.com/us/artist/taylor-swift/159260351",
           },
         ],
@@ -18364,14 +18296,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Apple Music album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Apple Music album ID. Provide id or url.",
+            fullDescription: "Apple Music album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "1468058165",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Apple Music album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Apple Music album URL. Provide id or url.",
+            fullDescription: "Apple Music album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://music.apple.com/us/album/lover/1468058165",
           },
         ],
@@ -18500,14 +18434,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify artist ID. Provide id or url.",
+            fullDescription: "Spotify artist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "0cGUm45nv7Z6M6qdXYQGTX",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify artist URL. Provide id or url.",
+            fullDescription: "Spotify artist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/artist/0cGUm45nv7Z6M6qdXYQGTX",
           }
         ],
@@ -23354,14 +23290,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify track id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify track ID. Provide id or url.",
+            fullDescription: "Spotify track id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "1ITJflybJsfarsUtiBvkfK",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify song URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify song URL. Provide id or url.",
+            fullDescription: "Spotify song URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/track/1ITJflybJsfarsUtiBvkfK",
           },
         ],
@@ -29798,14 +29736,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify album ID. Provide id or url.",
+            fullDescription: "Spotify album id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "0pgrg7phBbnwGJ2HBEl9EG",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify album URL. Provide id or url.",
+            fullDescription: "Spotify album URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/album/0pgrg7phBbnwGJ2HBEl9EG",
           },
         ],
@@ -30519,14 +30459,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify playlist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify playlist ID. Provide id or url.",
+            fullDescription: "Spotify playlist id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "37i9dQZF1DX4UtSsGT1Sbe",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify playlist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify playlist URL. Provide id or url.",
+            fullDescription: "Spotify playlist URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/playlist/37i9dQZF1DX4UtSsGT1Sbe",
           },
           {
@@ -31987,14 +31929,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify podcast ID. Provide id or url.",
+            fullDescription: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "3mliji9352UAk3XnWElnDV",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify podcast URL. Provide id or url.",
+            fullDescription: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/show/3mliji9352UAk3XnWElnDV",
           },
         ],
@@ -32211,14 +32155,16 @@ export const apis = [
             name: "id",
             type: "string",
             required: false,
-            description: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "Spotify podcast ID. Provide id or url.",
+            fullDescription: "Spotify podcast id. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "4rOoJ6Egrf8K2IrywzwOMk",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
+            description: "Spotify podcast URL. Provide id or url.",
+            fullDescription: "Spotify podcast URL. If you'd prefer to use the id instead, you can use the id parameter instead.",
             placeholder: "https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk",
           },
           {
@@ -32491,7 +32437,7 @@ export const apis = [
       {
         name: "Artist",
         method: "GET",
-        description: "Gets detailed information about a SoundCloud artist by its handle or URL. Returns artist metadata including id, name, followers, etc",
+        description: "Get SoundCloud artist details and follower counts by handle or URL.",
         fullDescription:
           "Fetches detailed information about a SoundCloud artist by its handle or URL. Returns artist metadata including id, name, followers, etc",
         path: "/v1/soundcloud/artist",
@@ -32500,14 +32446,16 @@ export const apis = [
             name: "handle",
             type: "string",
             required: false,
-            description: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "SoundCloud artist handle. Provide handle or url.",
+            fullDescription: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "kehlanimusic",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "SoundCloud artist URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
+            description: "SoundCloud artist URL. Provide url or handle.",
+            fullDescription: "SoundCloud artist URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
             placeholder: "https://soundcloud.com/kehlanimusic",
           },
         ],
@@ -32587,14 +32535,16 @@ export const apis = [
             name: "handle",
             type: "string",
             required: false,
-            description: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
+            description: "SoundCloud artist handle. Provide handle or url.",
+            fullDescription: "SoundCloud artist handle. If you'd prefer to use the URL instead, you can use the url parameter instead.",
             placeholder: "kehlanimusic",
           },
           {
             name: "url",
             type: "string",
             required: false,
-            description: "SoundCloud artist tracks URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
+            description: "SoundCloud artist tracks URL. Provide url or handle.",
+            fullDescription: "SoundCloud artist tracks URL. If you'd prefer to use the handle instead, you can use the handle parameter instead.",
             placeholder: "https://soundcloud.com/kehlanimusic",
           },
           {
@@ -33319,12 +33269,11 @@ export const apis = [
       {
         name: "Clip Transcript",
         method: "GET",
-        description: `Get native captions or an opted-in AI transcript from a Kick clip. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+        description: "Get native captions from a Kick clip. Enable use_ai_as_fallback for AI when captions are unavailable.",
         fullDescription:
           `Gets a transcript from a public Kick clip. Checks native captions first; returned native captions cost 1 credit. Set use_ai_as_fallback=true to opt into paid AI only when captions are unavailable. No transcript costs 0 credits. transcript_source is native, ai, or null. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
         path: "/v1/kick/clip/transcript",
         credits: NATIVE_OR_AI_CREDITS,
-        responseFields: AI_DURATION_FIELDS,
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
@@ -33340,7 +33289,8 @@ export const apis = [
             type: "boolean",
             required: false,
             description:
-              `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+              "Set true for AI fallback when captions are unavailable; defaults to false. Default AI up to 2 minutes: 1 credit. Paid mode bills all AI at 10 credits/minute, rounded up.",
+            fullDescription: `Use paid AI only when native captions are unavailable. Defaults to false. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
             placeholder: false,
           },
         ],
@@ -33915,7 +33865,7 @@ export const apis = [
         name: "Find Social Profiles",
         method: "GET",
         description:
-          "Enter a creator's handle from one social media platform and get all of their social profiles.",
+          "Find a creator's linked social profiles from a platform and handle.",
         fullDescription:
           "Accepts a supported platform and creator handle, validates both using platform-specific rules, and constructs the canonical source profile URL internally. URLs are not accepted as handles. Supported platforms are Instagram, TikTok, YouTube, X/Twitter, and Facebook; X is accepted as an alias for Twitter. YouTube accepts handles and 24-character channel IDs. The endpoint returns social profiles explicitly linked from the source profile and expands recognized link-in-bio pages. It also re-scrapes up to three supported profiles explicitly linked by the source and follows up to three unique public website URLs declared by the source or those trusted profiles for one page, while preserving each declared path and query. Generic service-provider landing pages reached through parked or unconfigured branded-domain redirects are ignored so the provider's own footer links are not attributed to the creator. It also checks whether the same handle exists on the other supported platforms. All attempted same-handle URLs are returned in same_handle_candidate_urls even when they cannot be verified strongly enough for profiles. Same-handle accounts are included in profiles only when corroborated by a shared owner-controlled website or a reciprocal profile link; matching handles and display names alone are not identity proof. same_handle_match records supporting name evidence at 0.75 confidence, while shared_website and website_link use 0.9. A bounded Google search discovers alternate handles, but Google results are never returned without verification. At most two candidates per other supported platform, up to four total, are re-scraped through that platform's profile scraper. The endpoint may also follow up to two unique recognized link-in-bio URLs declared by the re-scraped Google candidates. The global two-page cap is applied after candidates whose returned handles do not match their Google URLs are rejected. Optional profile probes and page fetches make one attempt and receive the shared enrichment abort signal. A reciprocal source-profile link found there verifies the candidate, and the page's explicit cross-platform profiles can then expand the verified identity graph. Google URLs that re-scrape to the same returned platform handle are deduplicated. A different-handle candidate is accepted only when it links back to the source profile, or when its normalized display name matches and it declares the same owner-controlled public website; common multi-tenant profile and storefront hosts are excluded from shared-website identity evidence. Google discovery uses google_search_match at 0.6, exact names use display_name_match at 0.75, reciprocal links use 0.95, and cross-platform social links explicitly declared by a verified candidate use verified_profile_link at 0.95. Source-linked URLs and failures are returned in source_linked_profile_urls and failed_source_linked_profile_urls. Google candidate URLs, candidate-declared link-in-bio URLs, verified URLs, and failures are returned in google_candidate_urls, google_candidate_link_in_bio_urls, verified_google_candidate_urls, failed_google_candidate_urls, and failed_google_candidate_link_in_bio_urls. Results are deterministic and do not use AI. Mixed or unreachable enrichment results are reported through partial and the matching failure fields. If every declared link-in-bio page fails and no other enrichment finds a profile, the request returns an uncharged 503. A successful live lookup costs 10 credits.",
         path: "/v1/find-social-profiles",
@@ -34032,7 +33982,7 @@ export const apis = [
         name: "Find Creator Emails",
         method: "GET",
         description:
-          "Enter a creator's platform and handle to find publicly listed email addresses on their profiles, linked bio pages, and websites. Live lookups cost 1 credit with no emails and 10 credits with any email, including successful partial empty results at 1 credit. An empty result is not proof that no address exists. Cache hits and failed lookups cost 0 credits.",
+          "Find public creator emails. Live: 1 credit with no emails, 10 credits with any email. Cache hits/failures: 0 credits. Empty or partial results do not prove no email exists.",
         fullDescription:
           "Accepts a supported platform and creator handle, using the same verified social-profile discovery flow as Find Social Profiles. Supported starting platforms are Instagram, TikTok, YouTube, X/Twitter, and Facebook. A leading @ is optional; YouTube also accepts channel IDs. Scans publicly listed profile bios and contact links, recognized link-in-bio pages, and a bounded set of creator-declared public website pages. Other accounts are scanned only when explicitly linked or verified through reciprocal profile links or shared owner-controlled websites. Returns deduplicated email addresses with available public source URLs and source types. URLs from internal-only sources are omitted from email provenance and scan diagnostics; an email found only through those sources has an empty sources array. Partial and limited-scan flags still reflect the complete scan. Addresses may belong to the creator, their management, or a booking contact; the endpoint does not guess addresses or verify mailbox deliverability. Login-only contact details and private account data are not accessed. A successful lookup with no publicly listed email returns an empty emails array. Optional failed or timed-out scans are reported with partial results and diagnostics, so an empty partial result is not proof that no address exists. Successful live lookups cost 1 credit when emails is empty, including successful partial empty results, and 10 credits when any email is returned. Cache hits cost 0 credits. Missing or invalid inputs, missing source profiles, and failed lookups cost 0 credits. Multi-source discovery can take several seconds and may time out; retry failed requests rather than treating them as no-email results. Contact fields come from public creator pages. To request removal of your own information from Scrape Creators results, email support@scrapecreators.com with the profile URL.",
         path: "/v1/find-creator-emails",
@@ -34143,7 +34093,7 @@ export const apis = [
         name: "Get Age and Gender",
         method: "GET",
         description:
-          "Get age and gender of creator. This uses AI to analyze the profile image. *The profile photo must have a clear face to get an accurate result.*",
+          "Estimate a creator's age and gender from their profile photo using AI. A clear face is required for an accurate result.",
         fullDescription:
           "Uses AI to analyze a creator's profile photo and estimate their age and gender. Returns ageRange with low and high bounds, gender, and a confidence score for the gender prediction. The profile photo must contain a clear, visible face for accurate results.",
         path: "/v1/detect-age-gender",
@@ -34157,7 +34107,8 @@ export const apis = [
             name: "url",
             type: "string",
             required: true,
-            description: "URL to users social profile",
+            description: "Creator's social profile URL.",
+            fullDescription: "URL to users social profile",
             placeholder: "https://twitter.com/levelsio",
           },
         ],
@@ -34657,7 +34608,7 @@ export const apis = [
       {
         name: "Get credit balance",
         method: "GET",
-        description: "How many credits you have left",
+        description: "Get your remaining credit balance.",
         fullDescription:
           "Returns the number of API credits remaining on your Scrape Creators account. The response contains a single creditCount field with your current balance.",
         path: "/v1/account/credit-balance",
@@ -35277,13 +35228,14 @@ for (const api of apis) {
 
     if (CACHEABLE_PATHS.has(endpoint.path)) {
       const creditLabel = endpoint.credits?.type === "variable"
-        ? endpoint.credits.description
+        ? (endpoint.credits.fullDescription || endpoint.credits.description)
         : `${creditsCharged} ${creditsCharged === 1 ? "credit" : "credits"}`;
       endpoint.params = [
         ...(endpoint.params || []),
         {
           ...CACHE_MAX_AGE_PARAM,
-          description: `If we have a response in the cache that is this many days old or newer, return the cached response (0 credits, with "cached": true and a "cached_at" timestamp). Otherwise, scrape a live result (${creditLabel}${endpoint.params?.some((param) => param.name === "get_transcript") && endpoint.params?.some((param) => param.name === "allow_long_transcription") ? "; default short AI is included; allow_long_transcription=true adds 10 credits per started minute to the existing base cost" : ""}). [See the Caching page for details.](https://docs.scrapecreators.com/caching)`,
+          description: "Use a cached response this old or newer for 0 credits. If none is available, fetch live at the endpoint’s normal price.",
+          fullDescription: `If we have a response in the cache that is this many days old or newer, return the cached response (0 credits, with "cached": true and a "cached_at" timestamp). Otherwise, scrape a live result (${creditLabel}${endpoint.params?.some((param) => param.name === "get_transcript") && endpoint.params?.some((param) => param.name === "allow_long_transcription") ? "; default short AI is included; allow_long_transcription=true adds 10 credits per started minute to the existing base cost" : ""}). [See the Caching page for details.](https://docs.scrapecreators.com/caching)`,
         },
       ];
       // "200 (cached)" tab: same data, free, plus cached markers at the end

@@ -6,8 +6,8 @@ export const tiktokShopApis = {
     {
       name: "Shop Search",
       method: "GET",
-      description: "Scrape TikTok Shop Products from a search!",
-      fullDescription: "Searches TikTok Shop for products matching a keyword query. Returns an array of product objects each with `title`, `cover` image, `url` (product page link), `price`, `sold_count`, `review_count`, `rating`, and `shop_name`. Paginate with `page`; filter by region.",
+      description: "Search TikTok Shop products by keyword.",
+      fullDescription: "Searches TikTok Shop for products matching a keyword query. Returns an array of product objects each with `title`, `cover` image, `url` (product page link), `price`, `sold_count`, `review_count`, `rating`, and `shop_name`. Paginate with `page`; filter by region." + " " + "Scrape TikTok Shop Products from a search!",
       path: "/v1/tiktok/shop/search",
       params: [
         {
@@ -46,8 +46,8 @@ export const tiktokShopApis = {
             "IE",
           ],
           placeholder: "US",
-          description:
-            "Region to search shop products in. Non-US TikTok Shop regions are not reliable right now and may return limited or inconsistent results. Sorry for the inconvenience.",
+          description: "Search region. Non-US regions are unreliable and may return limited or inconsistent results.",
+          fullDescription: "Region to search shop products in. Non-US TikTok Shop regions are not reliable right now and may return limited or inconsistent results. Sorry for the inconvenience.",
         },
       ],
       sampleResponse: {
@@ -184,9 +184,8 @@ export const tiktokShopApis = {
     {
       name: "Shop Products",
       method: "GET",
-      description:
-        "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results. Non-US shop catalog coverage depends on TikTok exposing that shop in the selected region.",
-      fullDescription: "Lists all products from a specific TikTok Shop store by its URL. Returns an array of product objects each with `title`, `cover` images, `url`, `price` info, `sold_count`, `review_count`, and `rating`. Paginate with `cursor` from the previous response; filter by region; use `sort_by=top` for best-selling products or `sort_by=new_releases` for newest products. Non-US shop catalog coverage depends on TikTok exposing that shop in the selected region, so some shops can return `not_found` outside the US even when they appear in shop search.",
+      description: "Get products from a TikTok Shop for 1 credit per request. Paginate with cursor. Non-US catalog availability depends on the selected region.",
+      fullDescription: "Lists all products from a specific TikTok Shop store by its URL. Returns an array of product objects each with `title`, `cover` images, `url`, `price` info, `sold_count`, `review_count`, and `rating`. Paginate with `cursor` from the previous response; filter by region; use `sort_by=top` for best-selling products or `sort_by=new_releases` for newest products. Non-US shop catalog coverage depends on TikTok exposing that shop in the selected region, so some shops can return `not_found` outside the US even when they appear in shop search." + " " + "Get the products from a TikTok Shop. This endpoint costs 1 credit per request. Use the cursor from the response to paginate through results. Non-US shop catalog coverage depends on TikTok exposing that shop in the selected region.",
       path: "/v1/tiktok/shop/products",
       params: [
         {
@@ -201,8 +200,8 @@ export const tiktokShopApis = {
           name: "cursor",
           type: "string",
           required: false,
-          description:
-            "Cursor parameter from the previous response to retrieve the next page of products. Omit for the first page.",
+          description: "Use cursor from the previous response for the next page. Omit for the first page.",
+          fullDescription: "Cursor parameter from the previous response to retrieve the next page of products. Omit for the first page.",
           placeholder: "",
         },
         {
@@ -211,8 +210,8 @@ export const tiktokShopApis = {
           required: false,
           options: ["top", "new_releases"],
           placeholder: "top",
-          description:
-            "Sort products by best-selling items (`top`) or newest products (`new_releases`). Defaults to `top`.",
+          description: "Sort by best-selling products (top) or newest products (new_releases). Defaults to top.",
+          fullDescription: "Sort products by best-selling items (`top`) or newest products (`new_releases`). Defaults to `top`.",
         },
         {
           name: "region",
@@ -236,8 +235,8 @@ export const tiktokShopApis = {
             "IE",
           ],
           placeholder: "US",
-          description:
-            "Region to get shop products from. Defaults to US if not provided. Non-US regions are not reliable right now and may return `not_found` or limited catalog data even when the shop appears in search. Sorry for the inconvenience.",
+          description: "Shop region; defaults to US. Non-US regions are unreliable and may return not_found or limited catalogs even when the shop appears in search.",
+          fullDescription: "Region to get shop products from. Defaults to US if not provided. Non-US regions are not reliable right now and may return `not_found` or limited catalog data even when the shop appears in search. Sorry for the inconvenience.",
         },
       ],
       sampleResponse: {
@@ -374,9 +373,8 @@ export const tiktokShopApis = {
     {
       name: "Product Details",
       method: "GET",
-      description:
-        "Get the details of a TikTok Shop Product. This endpoint currently supports US TikTok Shop products only.",
-      fullDescription: "Fetches full details for a specific US TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts plus TikTok's `sku_name` and `gtin` when available), and `product_detail_review` (product_rating, review_count, sample reviews). `gtin` contains `gtin_type` and `gtin_code`, or is null when TikTok does not provide a barcode. The response also includes `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). This endpoint currently supports the US region only.",
+      description: "Get details for a TikTok Shop product. US products only.",
+      fullDescription: "Fetches full details for a specific US TikTok Shop product by its URL, including stock levels and affiliate videos. Returns `product_info` with `product_base` (title, images, sold_count, price), `skus` (variants with exact `stock` counts plus TikTok's `sku_name` and `gtin` when available), and `product_detail_review` (product_rating, review_count, sample reviews). `gtin` contains `gtin_type` and `gtin_code`, or is null when TikTok does not provide a barcode. The response also includes `shop_info` (shop_name, shop_rating, followers_count) and `related_videos` (affiliate TikToks promoting the product). This endpoint currently supports the US region only." + " " + "Get the details of a TikTok Shop Product. This endpoint currently supports US TikTok Shop products only.",
       path: "/v1/tiktok/product",
       params: [
         {
@@ -391,8 +389,8 @@ export const tiktokShopApis = {
           name: "region",
           required: false,
           type: "string",
-          description:
-            "Region for the product details request. US is the reliable region right now; non-US regions should not be considered reliable and may return `bad_request` or missing product data. Sorry for the inconvenience.",
+          description: "Product region. Only US is reliable; non-US requests may return bad_request or missing product data.",
+          fullDescription: "Region for the product details request. US is the reliable region right now; non-US regions should not be considered reliable and may return `bad_request` or missing product data. Sorry for the inconvenience.",
           placeholder: "US",
         },
       ],
@@ -772,8 +770,8 @@ export const tiktokShopApis = {
         },
         {
           name: "region",
-          description:
-            "The region of the product. US is the reliable region right now; non-US regions should not be considered reliable and may return limited or inconsistent review data. Sorry for the inconvenience.",
+          description: "Product region. Only US is reliable; non-US regions may return limited or inconsistent reviews.",
+          fullDescription: "The region of the product. US is the reliable region right now; non-US regions should not be considered reliable and may return limited or inconsistent review data. Sorry for the inconvenience.",
           type: "string",
           required: false,
           placeholder: "US",
@@ -920,8 +918,8 @@ export const tiktokShopApis = {
     {
       name: "User Showcase",
       method: "GET",
-      description: "Gets public user's showcase products",
-      fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details. Use POST request if pagination is cutting off too early. Just send the query params in the body.",
+      description: "Get products from a TikTok user's public showcase.",
+      fullDescription: "Fetches products featured in a TikTok user's public showcase — the products a creator promotes on their profile. Returns an array of product objects each with title, price, images, and shop details. Use POST request if pagination is cutting off too early. Just send the query params in the body." + " " + "Gets public user's showcase products",
       path: "/v1/tiktok/user/showcase",
       params: [
         {
@@ -934,8 +932,8 @@ export const tiktokShopApis = {
         {
           name: "region",
           type: "string",
-          description:
-            "Region to put the proxy in. Non-US TikTok Shop regions are not reliable right now and may return limited or inconsistent showcase data. Sorry for the inconvenience.",
+          description: "Proxy region. Non-US regions are unreliable and may return limited or inconsistent showcase data.",
+          fullDescription: "Region to put the proxy in. Non-US TikTok Shop regions are not reliable right now and may return limited or inconsistent showcase data. Sorry for the inconvenience.",
           required: false,
           placeholder: "US",
         },

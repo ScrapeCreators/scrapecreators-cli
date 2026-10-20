@@ -22,7 +22,7 @@ export const instagramBaseApis = {
       name: "Profile",
       method: "GET",
       description:
-        "Gets public Instagram profile data, recent posts, and related accounts. After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Private profiles also return available public profile metadata in the existing data.user shape: identity, bio/links, profile photos, verification, business/category details, public contact fields when Instagram provides them, and counts, without exposing private posts. Existing status, success, error, message, and credit behavior stay unchanged. Older profile-pinned videos may have video_play_count=null; use /v1/instagram/post for a deeper individual-video count lookup. An explicit Instagram age gate returns HTTP 403, age_restricted=true, and 'Profile is age restricted' without charging credits. Check message as well as the HTTP status: some account-access placeholders return HTTP 200. See the response field explanations below." + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
+        "Get public profile details, recent posts, and related accounts. Private profiles return public details only.",
       fullDescription:
         "After recent Instagram changes, fetching creator metadata and posts requires several requests to Instagram, so this endpoint can be slower. If you only need profile details without posts, use [Basic Profile](https://docs.scrapecreators.com/v1/instagram/basic-profile) with the numeric userId for a usually faster lookup. Retrieves comprehensive public Instagram profile information including biography, bio links, follower and following counts, verification status, and profile picture URLs. Private profiles also return all available public profile metadata through the same existing data.user mapper: ID, username, full name, biography and bio links/entities, website/linkshim, standard/HD profile photos, verification, business/professional/category information, public contact fields when Instagram returns them, and counts, without exposing private posts. The response and unchanged status, success, error, message, and billing rules are described below. Also returns recent timeline posts with engagement metrics such as likes, comments, and video view counts, plus a list of related profiles. Useful for account overview, audience analysis, or discovering similar creators. Video play counts are separate from video view counts. Profile-pinned videos may have video_play_count=null when their count is not found in a short recent-Reels scan; available pinned counts are kept and non-pinned videos require numeric plays. Use /v1/instagram/post with an individual post or reel URL for a deeper play-count lookup. Instagram may return media_count as null or return only the current post batch in edge_owner_to_timeline_media.count. Use Profile Post Count when you specifically need the total number of posts. An explicit rendered age gate (for example, You must be 21 years old or over to see this profile. Log in to continue.) returns HTTP 403, success=true, age_restricted=true, error=forbidden, errorStatus=403, and message=Profile is age restricted, without charging credits. This means Instagram identified an existing profile but requires an age-verified login to view it; we do not bypass the gate. It applies to GET, trimmed GET, and POST handle requests. The age_restricted field is omitted when age gating has not been explicitly confirmed; its absence is not proof that the account has no age limit. For GET handle requests, Profile is private means Instagram returned is_private=true. Account doesn't exist means the handle lookup returned no matching account, not confirmed deletion. The historical Profile is restricted placeholder was used for reported content with no public timeline items. Its handler compatibility branch remains, but the current metadata-first pipeline no longer infers restriction from an empty timeline alone; it retains matching metadata as a partial HTTP 200. These placeholders return HTTP 200, success=true, error=not_found, errorStatus=404, and userId=null, and cost one credit. An explicitly rendered generic audience restriction returns HTTP 404 with Profile is restricted and zero credits charged; it does not confirm an age limit. Profile is unavailable on Instagram also returns an uncharged HTTP 404 and does not identify privacy, deletion, or age gating. HTTP 500 with Shoot, IG is blocking us. Try again and it should work. is an uncharged upstream failure, not a confirmed account restriction. Do not label generic login prompts or unavailable responses as age-restricted." + "\n\n" + instagramProfileStateDocs,
       path: "/v1/instagram/profile",
@@ -44,175 +44,17 @@ export const instagramBaseApis = {
       },
       responseFields: [
         {
-          path: "success",
-          description:
-            "Confirmed age-gated HTTP 403 and restricted/unavailable HTTP 404 responses return true: the profile state was successfully determined, even though no public content is returned. This does not mean the profile exists or is accessible. Actual upstream retrieval failures return false. The separate legacy HTTP-200 GET/POST placeholder conventions below are unchanged.",
+          "path": "data.user.edge_followed_by.count",
+          "description": "Followers count"
         },
         {
-          path: "data.user.edge_owner_to_timeline_media.edges[].node.video_play_count",
-          description:
-            "True video play count, separate from video_view_count. Profile-pinned videos can return null when their count is not found in the short recent-Reels lookup; available pinned counts are retained. Non-pinned videos require a numeric play count. For an older pinned video's play count, call /v1/instagram/post with its post or reel URL; that endpoint retains the deeper history lookup. Applies to full and trimmed profile responses.",
+          "path": "data.user.edge_follow.count",
+          "description": "Following count"
         },
         {
-          path: "age_restricted",
-          description:
-            "Boolean true only when Instagram explicitly renders an age-verification gate for the requested profile. Returns HTTP 403 with 'Profile is age restricted' and zero credits charged, including trimmed GET and POST handle requests. The profile exists, but we cannot retrieve its age-gated content. Omitted for other responses; absence does not prove that no age limit exists.",
-        },
-        {
-          path: "message",
-          description:
-            "'Profile is age restricted' means Instagram explicitly rendered an age gate and returns HTTP 403 with age_restricted=true. For GET handle requests, 'Profile is private' means Instagram returned is_private=true; 'Account doesn't exist' means the handle lookup returned no matching account, not confirmed deletion. 'Profile is restricted' can be a legacy HTTP-200 restricted-result placeholder or an explicit HTTP-404 audience restriction; neither confirms age gating. The current metadata-first pipeline no longer infers a restriction from an empty timeline alone and preserves matching metadata as a partial HTTP 200. GET placeholders retain success=true and userId=null. Private responses also include all available mapped public profile metadata in data.user, including identity, bio/links, photos, verification, business/category details, public contact fields when returned, and counts, but no private posts. 'Profile is unavailable on Instagram' is an HTTP 404 without a confirmed cause. 'Shoot, IG is blocking us. Try again and it should work.' is an upstream HTTP 500, not a confirmed restriction.",
-        },
-        {
-          path: "errorStatus",
-          description:
-            "The JSON error status is separate from the HTTP status. Confirmed age gates return error='forbidden' and HTTP/errorStatus=403. Private, legacy restricted, and missing-account placeholders have error='not_found' and errorStatus=404 even though GET returns HTTP 200 and success=true. Check message and userId too; HTTP 200 alone does not mean profile data was retrieved.",
-        },
-        {
-          path: "credits_charged",
-          description:
-            "Private, legacy restricted, and missing-account HTTP-200 placeholders cost one credit. Confirmed age-gated HTTP 403, explicit audience-restricted or unavailable HTTP 404, and upstream HTTP 500 responses cost zero credits.",
-        },
-        {
-          path: "data.user.id",
-          description:
-            "Instagram profile ID as a string, also returned for private profiles when available. Separate from the retained top-level userId=null private-state field. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.username",
-          description:
-            "Profile username, also returned for private profiles when available. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.full_name",
-          description:
-            "Profile display name, also returned for private profiles when available. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.biography",
-          description:
-            "Public biography text, also returned for private profiles when available. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.bio_links",
-          description:
-            "Public bio links in the existing mapped array shape, including link titles and URLs when returned. Also available for private profiles; retained by GET trim=true.",
-        },
-        {
-          path: "data.user.fb_profile_biolink",
-          description:
-            "Facebook bio link metadata when Instagram returns it, otherwise the existing null default. Also available for private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.biography_with_entities",
-          description:
-            "Biography text and entities in the existing mapped shape, also available for private profiles. Retained by GET trim=true; absent entities keep the existing empty-array default.",
-        },
-        {
-          path: "data.user.external_url",
-          description:
-            "Public external website, also available for private profiles when returned. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.external_url_linkshimmed",
-          description:
-            "External website linkshim URL when Instagram returns it, otherwise the existing empty-string default. Also available for private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.profile_pic_url",
-          description:
-            "Standard profile photo URL when available, including private profiles. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.profile_pic_url_hd",
-          description:
-            "HD profile photo URL using the existing public mapper and its fallbacks when available, including private profiles. Retained by GET trim=true; a distinct HD image is not guaranteed.",
-        },
-        {
-          path: "data.user.is_verified",
-          description:
-            "Verification flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.is_business_account",
-          description:
-            "Business-account flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.is_professional_account",
-          description:
-            "Professional-account flag using the existing public mapper and defaults, including private profiles. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.category_name",
-          description:
-            "Public category name when returned, including private profiles. Retained by GET trim=true; unavailable values retain the existing null default.",
-        },
-        {
-          path: "data.user.business_category_name",
-          description:
-            "Business category using the existing public mapper and category fallback when available, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.overall_category_name",
-          description:
-            "Overall category using the existing public mapper and category fallback when available, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.category_enum",
-          description:
-            "Category identifier when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.business_address_json",
-          description:
-            "Public business address fields in the existing mapped shape when Instagram returns them, including private profiles. Availability is not guaranteed; existing defaults are unchanged. Retained by GET trim=true.",
-        },
-        {
-          path: "data.user.business_contact_method",
-          description:
-            "Public business contact method when returned, including private profiles; otherwise the existing UNKNOWN default. Omitted by GET trim=true; included in full GET and POST handle responses. Contact information is not guaranteed.",
-        },
-        {
-          path: "data.user.business_email",
-          description:
-            "Public business email only when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses. No private contact information is exposed.",
-        },
-        {
-          path: "data.user.business_phone_number",
-          description:
-            "Public business phone only when Instagram returns it, including private profiles; otherwise the existing null default. Omitted by GET trim=true; included in full GET and POST handle responses. No private contact information is exposed.",
-        },
-        {
-          path: "data.user.should_show_category",
-          description:
-            "Category-display flag using the existing public mapper and defaults, including private profiles. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.should_show_public_contacts",
-          description:
-            "Public-contact display flag using the existing public mapper and defaults, including private profiles; does not guarantee contact details are available. Omitted by GET trim=true; included in full GET and POST handle responses.",
-        },
-        {
-          path: "data.user.edge_followed_by.count",
-          description:
-            "Follower count. Also included for private profiles on GET and POST handle requests, including GET trim=true. For private profiles, unknown or unusable counts return null; a real 0 is preserved. POST handle requests ignore trim and remain full. No private posts are exposed.",
-        },
-        {
-          path: "data.user.edge_follow.count",
-          description:
-            "Following count. Also included for private profiles on GET and POST handle requests, including GET trim=true. For private profiles, unknown or unusable counts return null; a real 0 is preserved. POST handle requests ignore trim and remain full. No private posts are exposed.",
-        },
-        {
-          path: "data.user.is_private",
-          description:
-            "Whether the profile is private. Private GET and POST handle responses include true alongside available mapped public profile metadata. Retained by GET trim=true; POST handle requests ignore trim and remain full. This does not grant access to private posts or bypass an age gate.",
-        },
-        {
-          path: "data.user.edge_related_profiles",
-          description:
-            "Related profiles. This does not show up for every account. It depends on what public data Instagram chooses to return, so we are at their mercy here.",
-        },
+          "path": "data.user.edge_related_profiles",
+          "description": "Related profiles. This does not show up for every account. It depends on what public data Instagram chooses to return, so we are at their mercy here."
+        }
       ],
       sampleResponse: {
         success: true,
@@ -674,7 +516,8 @@ export const instagramBaseApis = {
           name: "trim",
           type: "boolean",
           required: false,
-          description: "Set to true to get a trimmed response",
+          description: "Set to true for a trimmed response.",
+          fullDescription: "Set to true to get a trimmed response",
           placeholder: false,
         },
       ],
@@ -682,7 +525,7 @@ export const instagramBaseApis = {
     {
       name: "Basic Profile",
       method: "GET",
-      description: "Gets Instagram profile details without posts. Use this for a usually faster lookup than Profile when you already have the numeric userId.",
+      description: "Get profile details without posts using a numeric userId. Usually faster than Profile.",
       fullDescription:
         "Fetches a lightweight Instagram profile summary by user ID, returning username, full name, biography, profile picture URL, verification status, follower count, following count, media count, and account privacy and type. Ideal for quick lookups or enrichment when you already have the numeric user ID. Use this when speed matters and you do not need posts. It skips the post-fetching and enrichment calls made by [Profile](https://docs.scrapecreators.com/v1/instagram/profile), so it is usually faster. Response times can vary.",
       path: "/v1/instagram/basic-profile",
@@ -691,7 +534,8 @@ export const instagramBaseApis = {
           name: "userId",
           type: "string",
           required: false,
-          description: "Instagram user id",
+          description: "Numeric Instagram user ID.",
+          fullDescription: "Instagram user id",
           placeholder: "314216",
         },
       ],
@@ -762,9 +606,9 @@ export const instagramBaseApis = {
     {
       name: "Posts",
       method: "GET",
-      description: "Get a persons public posts (which includes reels). When Instagram supplies it, this endpoint includes the media-level `fbid` field. The published time is returned in `items[].created_at` as an ISO 8601 UTC date. The original Unix timestamp is still available in `items[].taken_at`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)" + " Access-response examples below distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
+      description: "Get public posts and reels with pagination. Play counts may be inaccurate and exclude Facebook views. Check access-response messages, not just HTTP status.",
       fullDescription:
-        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. When supplied by Instagram, the media-level `fbid` is also returned. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs,
+        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. When supplied by Instagram, the media-level `fbid` is also returned. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs + "\n\n" + "Play counts can sometimes be inaccurate. Access-response examples distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
       path: "/v2/instagram/user/posts",
       responseStates: instagramPostsStateEntries,
       errorResponseExamples: {
@@ -774,26 +618,9 @@ export const instagramBaseApis = {
       paginationField: "next_max_id",
       responseFields: [
         {
-          path: "items[0].fbid",
-          description: "Facebook media ID when Instagram supplies it.",
-        },
-        {
-          path: "success",
-          description:
-            "True for explicitly confirmed profile age-gate HTTP 403 and restricted/unavailable HTTP 404 results: the profile state was determined successfully. Status codes, exact error/message fields, and zero credits charged remain unchanged. Actual upstream retrieval failures remain false. The age_restricted field is not included by this endpoint.",
-        },
-        {
-          path: "items[0].created_at",
-          description: "Human-readable published time in ISO 8601 UTC format.",
-        },
-        {
-          path: "items[0].taken_at",
-          description: "Original published time as a Unix timestamp in seconds.",
-        },
-        {
-          path: "items[0].video_versions[0].url",
-          description: "If the post is video, this is the URL of the video",
-        },
+          "path": "items[0].video_versions[0].url",
+          "description": "If the post is video, this is the URL of the video"
+        }
       ],
       sampleResponse: {
         profile_grid_items: null,
@@ -1573,13 +1400,15 @@ export const instagramBaseApis = {
           name: "next_max_id",
           type: "string",
           required: false,
-          description: "Cursor to get next page of results.",
+          description: "Pass next_max_id from the previous response for the next page.",
+          fullDescription: "Cursor to get next page of results.",
         },
         {
           name: "trim",
           type: "boolean",
           required: false,
-          description: "Set to true to get a trimmed response",
+          description: "Set to true for a trimmed response.",
+          fullDescription: "Set to true to get a trimmed response",
           placeholder: false,
         },
       ],
@@ -1587,7 +1416,7 @@ export const instagramBaseApis = {
     {
       name: "User Tagged Posts",
       method: "GET",
-      description: "Get public Instagram posts that a user is tagged in.",
+      description: "Get public posts that tag an Instagram user.",
       fullDescription:
         "Returns up to 10 public posts per page from an Instagram user's Tagged tab. Each item is a flat post object with its shortcode, caption, media type, engagement counts, media URLs, and owner details. Keep passing the returned cursor to fetch additional pages until has_more is false.",
       path: "/v1/instagram/user/tagged-posts",
@@ -1639,9 +1468,9 @@ export const instagramBaseApis = {
       name: "Reels",
       method: "GET",
       description:
-        "Get all public reels from a profile. The published time is returned in `items[].media.created_at` as an ISO 8601 UTC date. With `trim=true`, use `items[].created_at`. The original Unix timestamp remains available as `taken_at`. Can provide a user_id or handle, but for faster response times, use user_id. This won't include pinned reels right now. And I'm not sure why, but it looks like IG doesn't return the description of the reel on this endpoint :( You'll have to use the post detail endpoint to get that. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
+        "Get public reels by user_id or handle. Pinned reels and captions are excluded. Play counts may be inaccurate and exclude Facebook views. Use Post for captions.",
       fullDescription:
-        "Returns a paginated list of a user's public Instagram reels (short-form videos). Each reel includes its shortcode, play count, like count, comment count, video versions with download URLs, thumbnail image, owner info, and the published time in `items[].media.created_at` as an ISO 8601 UTC date. With `trim=true`, use `items[].created_at`. The original Unix timestamp remains available as `taken_at`. Note that reel captions are not returned by this endpoint. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via max_id; providing a user_id instead of a handle yields faster responses.",
+        "Returns a paginated list of a user's public Instagram reels (short-form videos). Each reel includes its shortcode, play count, like count, comment count, video versions with download URLs, thumbnail image, owner info, and the published time in `items[].media.created_at` as an ISO 8601 UTC date. With `trim=true`, use `items[].created_at`. The original Unix timestamp remains available as `taken_at`. Note that reel captions are not returned by this endpoint. Play counts are Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via max_id; providing a user_id instead of a handle yields faster responses." + "\n\n" + "Pinned reels are not included. Use the post detail endpoint to get reel captions. Play counts can sometimes be inaccurate.",
       path: "/v1/instagram/user/reels",
       paginationField: "max_id",
       sampleResponse: {
@@ -2244,23 +2073,13 @@ export const instagramBaseApis = {
       },
       responseFields: [
         {
-          path: "items[0].media.created_at",
-          description:
-            "Human-readable published time in ISO 8601 UTC format. With trim=true, use items[0].created_at.",
+          "path": "items[0].media.play_count",
+          "description": "This is views for the reel."
         },
         {
-          path: "items[0].media.taken_at",
-          description:
-            "Original published time as a Unix timestamp in seconds. With trim=true, use items[0].taken_at.",
-        },
-        {
-          path: "items[0].media.play_count",
-          description: "This is views for the reel.",
-        },
-        {
-          path: "items[0].media.video_versions[0].url",
-          description: "The URL of the video",
-        },
+          "path": "items[0].media.video_versions[0].url",
+          "description": "The URL of the video"
+        }
       ],
       params: [
         {
@@ -2268,7 +2087,8 @@ export const instagramBaseApis = {
           type: "string",
           required: false,
           description:
-            "Instagram user id. Use this for faster response times.",
+            "Numeric Instagram user ID; faster than using a handle.",
+          fullDescription: "Instagram user id. Use this for faster response times.",
           placeholder: "2700692569",
         },
         {
@@ -2276,7 +2096,8 @@ export const instagramBaseApis = {
           type: "string",
           required: false,
           description:
-            "Instagram handle. Use user_id for faster response times.",
+            "Instagram handle; use user_id for faster responses.",
+          fullDescription: "Instagram handle. Use user_id for faster response times.",
           placeholder: "jane",
         },
         {
@@ -2284,7 +2105,8 @@ export const instagramBaseApis = {
           type: "string",
           required: false,
           description:
-            "Max id to get more reels. Get 'max_id' from previous response.",
+            "Pass max_id from the previous response for the next page.",
+          fullDescription: "Max id to get more reels. Get 'max_id' from previous response.",
           placeholder: "QVFCVzNnS2lI...==",
         },
         {
@@ -2292,7 +2114,8 @@ export const instagramBaseApis = {
           type: "boolean",
           required: false,
           description:
-            "Set to true for a trimmed down version of the response",
+            "Set to true for a trimmed response.",
+          fullDescription: "Set to true for a trimmed down version of the response",
           placeholder: "false",
         },
       ],
@@ -2301,40 +2124,31 @@ export const instagramBaseApis = {
       name: "Post/Reel Info",
       method: "GET",
       description:
-        "Retrieve public post/reel details. The published time is returned in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. *Play counts can sometimes be inaccurate* Play counts are Instagram-only. When a Reel is also cross-posted to Facebook, Instagram (behind login) shows you the combined IG + FB views. But this API will only return the Instagram views. [Read about it on Reddit](https://www.reddit.com/r/InstagramMarketing/comments/1cu2dge/whats_the_point_of_having_facebook_views_on/)",
+        "Get public post or reel details. Play counts may be inaccurate and exclude Facebook views.",
       fullDescription:
-        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views. Set `include_play_count=false` to omit the play count and skip its additional fetch for a faster response.",
+        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views. Set `include_play_count=false` to omit the play count and skip its additional fetch for a faster response." + "\n\n" + "Play counts can sometimes be inaccurate.",
       path: "/v1/instagram/post",
       responseFields: [
         {
-          path: "data.xdt_shortcode_media.created_at",
-          description: "Human-readable published time in ISO 8601 UTC format.",
+          "path": "data.xdt_shortcode_media.video_url",
+          "description": "If the post is video, this is the URL of the video"
         },
         {
-          path: "data.xdt_shortcode_media.taken_at_timestamp",
-          description: "Original published time as a Unix timestamp in seconds.",
+          "path": "data.xdt_shortcode_media.video_play_count",
+          "description": "Views (only for reels)"
         },
         {
-          path: "data.xdt_shortcode_media.video_url",
-          description: "If the post is video, this is the URL of the video",
+          "path": "data.xdt_shortcode_media.edge_media_preview_like.count",
+          "description": "Likes"
         },
         {
-          path: "data.xdt_shortcode_media.video_play_count",
-          description: "Views (only for reels). Omitted when `include_play_count=false`.",
+          "path": "data.xdt_shortcode_media.edge_media_to_parent_comment",
+          "description": "Comments"
         },
         {
-          path: "data.xdt_shortcode_media.edge_media_preview_like.count",
-          description: "Likes",
-        },
-        {
-          path: "data.xdt_shortcode_media.edge_media_to_parent_comment",
-          description: "Comments",
-        },
-        {
-          path: "data.xdt_shortcode_media.edge_sidecar_to_children",
-          description:
-            "If there is an image carousel, these will be the images",
-        },
+          "path": "data.xdt_shortcode_media.edge_sidecar_to_children",
+          "description": "If there is an image carousel, these will be the images"
+        }
       ],
       sampleResponse: {
         data: {
@@ -2906,21 +2720,24 @@ export const instagramBaseApis = {
           name: "region",
           type: "string",
           required: false,
-          description: "2 letter country code to set the proxy in",
+          description: "Two-letter country code for the proxy location.",
+          fullDescription: "2 letter country code to set the proxy in",
           placeholder: "US",
         },
         {
           name: "trim",
           type: "boolean",
           required: false,
-          description: "Set to true to get a trimmed response",
+          description: "Set to true for a trimmed response.",
+          fullDescription: "Set to true to get a trimmed response",
           placeholder: false,
         },
         {
           name: "download_media",
           type: "boolean",
           required: false,
-          description: "Set to true to download the video/images and get back permanent Supabase URLs. Costs 10 credits if media is found, 1 credit otherwise.",
+          description: "Set to true for permanent Supabase video/image URLs. Costs 10 credits if media is found, 1 credit otherwise.",
+          fullDescription: "Set to true to download the video/images and get back permanent Supabase URLs. Costs 10 credits if media is found, 1 credit otherwise.",
           placeholder: false,
           credits: 10,
         },
@@ -2928,7 +2745,8 @@ export const instagramBaseApis = {
           name: "include_play_count",
           type: "boolean",
           required: false,
-          description: "Set to false to omit `video_play_count` and skip its additional fetch for a faster response. Defaults to true.",
+          description: "Set to false to omit video_play_count for a faster response. Defaults to true.",
+          fullDescription: "Set to false to omit `video_play_count` and skip its additional fetch for a faster response. Defaults to true.",
           placeholder: true,
         },
       ],
@@ -2937,12 +2755,11 @@ export const instagramBaseApis = {
       name: "Transcript",
       method: "GET",
       description:
-        `Get an AI transcript of an Instagram post or reel. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+        "Get AI transcripts for videos in an Instagram post or reel. Long videos may time out.",
       fullDescription:
         `Generates AI speech-to-text for an Instagram video post or reel. Returns a transcripts array containing each video's id, shortcode, and text; no speech can produce null entries. ${AI_TRANSCRIPTION_PRICING} For carousels, default pricing stays flat 1 credit per request. With allow_long_transcription=true, sum 10 * ceil(duration_seconds / 60) for each successfully transcribed video, rather than rounding the combined duration; images and empty video transcripts have no AI fee. ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v2/instagram/media/transcript",
       credits: AI_TRANSCRIPTION_CREDITS,
-      responseFields: AI_DURATION_FIELDS,
       params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
@@ -3682,7 +3499,7 @@ export const instagramBaseApis = {
       name: "Search Instagram",
       method: "GET",
       description:
-        "Find users, hashtags, and places with Instagram's native search. Use this for account or entity lookup; it returns one page and does not return posts.",
+        "Find users, hashtags, and places with Instagram search. Returns one page, without posts.",
       fullDescription:
         "Use this for Instagram-native account, hashtag, or place lookup. It returns ranked users, hashtags, places, and keyword suggestions from Instagram itself. It is not Google-indexed, does not require an Instagram login, returns one page only, and does not return posts. For an Instagram-curated topic page with posts, use /v1/instagram/search/popular. For the same native account results in a profile-only response, use /v1/instagram/search/profiles.",
       path: "/v1/instagram/search",
@@ -3691,7 +3508,8 @@ export const instagramBaseApis = {
           name: "query",
           type: "string",
           required: true,
-          description: "The username, hashtag, place, or keyword to search for.",
+          description: "Username, hashtag, place, or keyword to search for.",
+          fullDescription: "The username, hashtag, place, or keyword to search for.",
           placeholder: "nike",
         },
       ],
@@ -3738,7 +3556,7 @@ export const instagramBaseApis = {
       name: "Popular Search",
       method: "GET",
       description:
-        "Explore an Instagram topic and its curated posts. Use this when you want the Popular page's generated description, sources, suggested terms, media count, and paginated posts.",
+        "Explore an Instagram topic with its description, sources, suggested terms, media count, and paginated posts.",
       fullDescription:
         "Use this to explore an Instagram topic and the posts Instagram curates for it. It scrapes the public /popular/{query} page without requiring an Instagram login. The first page returns the topic title, numeric total media count, Instagram's generated description and sources, suggested terms, posts, and an opaque cursor. Pass that cursor with the same query to fetch more posts. Later pages return query, posts, cursor, and has_more only. For an exact hashtag through Google-indexed results, use /v1/instagram/search/hashtag. For reels only, use /v2/instagram/reels/search. Each successful request costs 1 credit.",
       path: "/v1/instagram/search/popular",
@@ -3747,7 +3565,8 @@ export const instagramBaseApis = {
           name: "query",
           type: "string",
           required: true,
-          description: "The Popular topic to search for.",
+          description: "Topic to search for.",
+          fullDescription: "The Popular topic to search for.",
           placeholder: "basketball",
         },
         {
@@ -3755,7 +3574,8 @@ export const instagramBaseApis = {
           type: "string",
           required: false,
           description:
-            "The opaque cursor returned by the previous response. Use it with the same query to fetch the next page of posts.",
+            "Pass the previous response's cursor with the same query for the next page.",
+          fullDescription: "The opaque cursor returned by the previous response. Use it with the same query to fetch the next page of posts.",
           placeholder: "opaque-cursor-from-response",
         },
       ],
@@ -3806,7 +3626,7 @@ export const instagramBaseApis = {
       name: "Search Hashtag Posts",
       method: "GET",
       description:
-        "Find Google-indexed public Instagram posts for an exact hashtag. Use this when you know the hashtag and want date filters or pagination.",
+        "Find Google-indexed public posts by exact hashtag, with date filters and pagination. Results are best-effort, not a complete hashtag feed.",
       fullDescription:
         "Use this when you know the exact hashtag and want Google-indexed public Instagram posts or reels, optional date filters, and pagination. It returns post details such as caption, engagement, owner, and post time. Results are best-effort and not a complete Instagram-native hashtag feed. For an Instagram-curated topic page with generated context and suggested terms, use /v1/instagram/search/popular. Pass media_type=reels to only return reels. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
       path: "/v1/instagram/search/hashtag",
@@ -3815,14 +3635,16 @@ export const instagramBaseApis = {
           name: "hashtag",
           type: "string",
           required: true,
-          description: "The hashtag to search for. Include or omit the #.",
+          description: "Hashtag to search for, with or without #.",
+          fullDescription: "The hashtag to search for. Include or omit the #.",
           placeholder: "makeup",
         },
         {
           name: "date_posted",
           type: "select",
           required: false,
-          description: "Only return Google-indexed posts found in this relative window.",
+          description: "Date window for Google-indexed posts.",
+          fullDescription: "Only return Google-indexed posts found in this relative window.",
           options: ["last-hour", "last-day", "last-week", "last-month", "last-year"],
           placeholder: "last-week",
         },
@@ -3830,7 +3652,8 @@ export const instagramBaseApis = {
           name: "media_type",
           type: "select",
           required: false,
-          description: "Use all to search public posts and reels, or reels to only return reels. Defaults to all.",
+          description: "Use all for posts and reels, or reels for reels only. Defaults to all.",
+          fullDescription: "Use all to search public posts and reels, or reels to only return reels. Defaults to all.",
           options: ["all", "reels"],
           placeholder: "all",
         },
@@ -3838,7 +3661,8 @@ export const instagramBaseApis = {
           name: "cursor",
           type: "string",
           required: false,
-          description: "The cursor returned by the previous response. It is the next Google results page number and cannot exceed 11; cursor 12 or greater returns a 400 response.",
+          description: "Next Google results page number from the previous response. Maximum 11; 12 or greater returns HTTP 400.",
+          fullDescription: "The cursor returned by the previous response. It is the next Google results page number and cannot exceed 11; cursor 12 or greater returns a 400 response.",
           placeholder: "2",
         },
       ],
@@ -4061,7 +3885,7 @@ export const instagramBaseApis = {
       name: "Search Instagram Profiles",
       method: "GET",
       description:
-        "Find Instagram's native ranked profile results without Google search.",
+        "Find ranked profiles with Instagram search, without Google. No pagination; extra details for the first 10 results are best-effort.",
       fullDescription:
         "Use this for Instagram-native profile lookup. It returns every account in Instagram's first ranked native result set, then performs bounded best-effort enrichment for the first 10 accounts to preserve the previous profile fields such as biography, bio links, account flags, and follower/following/media counts. Results after the first 10 retain native ID, username, full name, verification status, profile photo, and URL, while unavailable detail fields are null or empty. It does not search Google-indexed bios or captions, Google title/description fields are null, and pagination is not supported. For users, hashtags, places, and keyword suggestions together, use /v1/instagram/search.",
       path: "/v1/instagram/search/profiles",
@@ -4070,7 +3894,8 @@ export const instagramBaseApis = {
           name: "query",
           type: "string",
           required: true,
-          description: "The profile name or username to search for.",
+          description: "Profile name or username to search for.",
+          fullDescription: "The profile name or username to search for.",
           placeholder: "fitness coach",
         },
       ],
@@ -4108,7 +3933,7 @@ export const instagramBaseApis = {
       name: "Search Reels",
       method: "GET",
       description:
-        "Find Google-indexed Instagram reels by keyword. Use this when you only want reels and need date filters or pagination.",
+        "Find Google-indexed reels by keyword, with date filters and pagination. Results are best-effort, not a complete Instagram search.",
       fullDescription:
         "Use this when you only want Google-indexed Instagram reels matching a keyword or phrase, with optional date filters and pagination. It returns reel media, engagement, owner, location, and audio details. Results are best-effort rather than a complete Instagram-native search. For Instagram-curated topic posts, use /v1/instagram/search/popular. For an exact hashtag across posts and reels, use /v1/instagram/search/hashtag. Pages 1 through 11 are supported; page 12 or greater returns a 400 response.",
       path: "/v2/instagram/reels/search",
@@ -4117,14 +3942,16 @@ export const instagramBaseApis = {
           name: "query",
           type: "string",
           required: true,
-          description: "The keyword to search for",
+          description: "Keyword to search for.",
+          fullDescription: "The keyword to search for",
           placeholder: "dogs",
         },
         {
           name: "date_posted",
           type: "select",
           required: false,
-          description: "Google-indexed date window. Recent hour/day filters are not supported because Google does not index Instagram reels reliably enough in those windows.",
+          description: "Google-indexed date window. Hour/day filters are unsupported because indexing is unreliable for those windows.",
+          fullDescription: "Google-indexed date window. Recent hour/day filters are not supported because Google does not index Instagram reels reliably enough in those windows.",
           options: ["last-week", "last-month", "last-year"],
           placeholder: "last-week",
         },
@@ -4132,7 +3959,8 @@ export const instagramBaseApis = {
           name: "page",
           type: "number",
           required: false,
-          description: "The page number to return. Must be between 1 and 11; page 12 or greater returns a 400 response.",
+          description: "Page number, from 1 to 11. Page 12 or greater returns HTTP 400.",
+          fullDescription: "The page number to return. Must be between 1 and 11; page 12 or greater returns a 400 response.",
           placeholder: 1,
         },
       ],
@@ -4610,7 +4438,7 @@ export const instagramBaseApis = {
       name: "Get Reels By Audio Id",
       method: "GET",
       description:
-        "Get public Instagram reels associated with an audio id.",
+        "Get public reels associated with an Instagram audio ID.",
       fullDescription:
         "Fetches the reels Instagram exposes for an audio page like instagram.com/reels/audio/{audio_id}/. Pass the audio_id from that URL. Use cursor from the previous response to request the next page when Instagram returns one.",
       path: "/v1/instagram/audio/reels",
@@ -4619,14 +4447,16 @@ export const instagramBaseApis = {
           name: "audio_id",
           type: "string",
           required: true,
-          description: "The audio id from the Instagram audio page URL.",
+          description: "Audio ID from the Instagram audio page URL.",
+          fullDescription: "The audio id from the Instagram audio page URL.",
           placeholder: "1392969992841787",
         },
         {
           name: "cursor",
           type: "string",
           required: false,
-          description: "Pagination cursor returned by Instagram from the previous response.",
+          description: "Pass the previous response's cursor for the next page.",
+          fullDescription: "Pagination cursor returned by Instagram from the previous response.",
           placeholder: "Gsbyq-aju4eF02y...",
         },
       ],
@@ -5619,7 +5449,7 @@ export const instagramBaseApis = {
       name: "Trending Reels",
       method: "GET",
       description:
-        "Get recent popular Instagram reels published within the last seven days. Results are deduplicated within each response and can repeat across calls.",
+        "Get popular reels from the last seven days, not an official global ranking. Results can repeat across calls; too few verified recent reels cause an uncharged 503.",
       fullDescription:
         "Discovers reels through Instagram's public Popular pages and current featured topics, with pagination handled internally. Each reel's actual publication timestamp is checked: posts older than seven days, posts with unavailable dates, and unavailable posts are excluded. Results are deduplicated within each response and ordered by available play counts. This is recent popular-Reels discovery, not Instagram's official global trending ranking or a measure of view growth. Returns up to 12 reels, and repeated calls can overlap. Returns `reels` with shortcode, URL, caption, publication date, media URLs, available engagement counts, and user info. Missing engagement counts may be null. Successful requests cost one credit; if Instagram supplies too few verified recent reels, the endpoint returns an uncharged 503 rather than including older posts.",
       path: "/v1/instagram/reels/trending",
@@ -5812,16 +5642,17 @@ export const instagramBaseApis = {
     {
       name: "Comments",
       method: "GET",
-      description: "Get comments from an Instagram post or reel. Not gonna lie, this is one of our most error prone endpoints. You should expect ~90% success rate. Successful pages with no comments cost 0 credits, even with include_replies=true; pages with comments cost 1 credit, or 15 credits with include_replies=true. Errors are not charged.",
+      description: "Get post or reel comments; expect about 90% success. Pages with comments cost 1 credit, or 15 with include_replies=true. Empty pages and errors cost 0 credits.",
       fullDescription:
-        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. Successful pages with `comments: []` cost 0 credits, even with `include_replies=true`. Pages with comments cost 1 credit, or 15 credits with `include_replies=true`, even if no replies are returned. Errors are not charged. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages.",
+        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. Successful pages with `comments: []` cost 0 credits, even with `include_replies=true`. Pages with comments cost 1 credit, or 15 credits with `include_replies=true`, even if no replies are returned. Errors are not charged. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages." + "\n\n" + "You should expect ~90% success rate.",
       path: "/v2/instagram/post/comments",
       params: [
         {
           name: "url",
           type: "string",
           required: true,
-          description: "The URL of the post or reel to get comments from",
+          description: "Instagram post or reel URL.",
+          fullDescription: "The URL of the post or reel to get comments from",
           placeholder: "https://www.instagram.com/reel/DOq6eV6iIgD",
         },
         {
@@ -5829,7 +5660,8 @@ export const instagramBaseApis = {
           type: "string",
           required: false,
           description:
-            "The cursor to get more comments. Get 'cursor' from previous response.",
+            "Pass the previous response's cursor for more comments.",
+          fullDescription: "The cursor to get more comments. Get 'cursor' from previous response.",
           placeholder: "eyJjYWNoZWRfY29tbWVud...",
         },
         {
@@ -5837,7 +5669,8 @@ export const instagramBaseApis = {
           type: "boolean",
           required: false,
           description:
-            "Set to true to include replies for every returned comment. Costs 15 credits when comments are returned, even if no replies are found; successful pages with no comments cost 0 credits. This is much slower and may time out at 29 seconds.",
+            "Include replies for each comment. Costs 15 credits if comments are returned, even without replies; empty pages cost 0. Slower and may time out at 29 seconds.",
+          fullDescription: "Set to true to include replies for every returned comment. Costs 15 credits when comments are returned, even if no replies are found; successful pages with no comments cost 0 credits. This is much slower and may time out at 29 seconds.",
           placeholder: "true",
           credits: 15,
         },
@@ -5904,21 +5737,24 @@ export const instagramBaseApis = {
           name: "url",
           type: "string",
           required: true,
-          description: "The Instagram post or reel URL",
+          description: "Instagram post or reel URL.",
+          fullDescription: "The Instagram post or reel URL",
           placeholder: "https://www.instagram.com/reel/C8rKmYvsrck",
         },
         {
           name: "comment_id",
           type: "string",
           required: true,
-          description: "The parent comment ID from the Comments endpoint",
+          description: "Parent comment ID from the Comments endpoint.",
+          fullDescription: "The parent comment ID from the Comments endpoint",
           placeholder: "18038110327814211",
         },
         {
           name: "cursor",
           type: "string",
           required: false,
-          description: "The cursor to get more replies. Get `cursor` from the previous response.",
+          description: "Pass the previous response's cursor for more replies.",
+          fullDescription: "The cursor to get more replies. Get `cursor` from the previous response.",
           placeholder: "QVFDc29...",
         },
       ],
@@ -6696,7 +6532,7 @@ export const instagramBaseApis = {
     {
       name: "Story Highlights",
       method: "GET",
-      description: "Get story highlights from an Instagram user",
+      description: "Get an Instagram user's story highlights.",
       fullDescription:
         "Lists all story highlight albums for an Instagram user. Each highlight includes its ID, title, cover thumbnail URL, and owner info with username and profile picture. Accepts either a user_id or handle; providing user_id yields faster responses.",
       path: "/v1/instagram/user/highlights",
@@ -6728,14 +6564,16 @@ export const instagramBaseApis = {
         {
           name: "user_id",
           type: "string",
-          description: "Instagram user id. Use for faster response times.",
+          description: "Numeric Instagram user ID; faster than using a handle.",
+          fullDescription: "Instagram user id. Use for faster response times.",
           placeholder: "2700692569",
         },
         {
           name: "handle",
           type: "string",
           description:
-            "Instagram handle. Use user_id for faster response times.",
+            "Instagram handle; use user_id for faster responses.",
+          fullDescription: "Instagram handle. Use user_id for faster response times.",
           placeholder: "jane",
         },
       ],
@@ -6743,7 +6581,7 @@ export const instagramBaseApis = {
     {
       name: "Highlights Details",
       method: "GET",
-      description: "Get details about a specific highlight",
+      description: "Get a story highlight's details and stories.",
       fullDescription:
         "Fetches the full contents of a specific Instagram story highlight album by its ID. Returns the highlight's cover image, title, user info, and an items array containing each story with its media type, image or video URLs, dimensions, timestamp, and sticker/interactive element data. Useful for archiving or analyzing individual highlight reels.",
       path: "/v1/instagram/user/highlight/detail",
@@ -6751,7 +6589,8 @@ export const instagramBaseApis = {
         {
           name: "id",
           type: "string",
-          description: "The ID of the highlight to get details for",
+          description: "Story highlight ID.",
+          fullDescription: "The ID of the highlight to get details for",
           placeholder: "18067016518767507",
         },
       ],
@@ -6965,26 +6804,10 @@ export const instagramBaseApis = {
     {
       name: "Profile Post Count",
       method: "GET",
-      description: "Gets the post count shown on an Instagram profile",
+      description: "Get a profile's post count. Estimates require allow_estimated=true; otherwise estimate-only results return an uncharged 422.",
       fullDescription:
         "Returns the post count shown on a public Instagram profile. Use this endpoint when Profile returns media_count as null or edge_owner_to_timeline_media.count contains only the current batch size. This endpoint makes a separate Instagram profile-page request so it does not add latency to the main Profile endpoint. Full values such as 12,345 Posts return the exact integer with is_estimated set to false. For profiles with more than 10,000 posts, Instagram may expose only a compact value such as 12K Posts or 1.2M Posts. Set allow_estimated=true to return the scaled integer with is_estimated set to true. Estimated counts are opt-in: when allow_estimated is omitted or false, the endpoint returns an uncharged 422 response explaining that exact precision is unavailable. If Instagram omits the count entirely, the endpoint returns an error without deducting a credit.",
       path: "/v1/instagram/profile/post-count",
-      responseFields: [
-        {
-          path: "handle",
-          description: "Instagram handle",
-        },
-        {
-          path: "media_count",
-          description:
-            "Exact post count when is_estimated is false; scaled compact count when true",
-        },
-        {
-          path: "is_estimated",
-          description:
-            "Whether media_count was scaled from an abbreviated Instagram value such as 12K or 1.2M",
-        },
-      ],
       params: [
         {
           name: "handle",
@@ -6999,7 +6822,8 @@ export const instagramBaseApis = {
           required: false,
           placeholder: false,
           description:
-            "Set to true to return scaled estimates when Instagram abbreviates counts for profiles with more than 10,000 posts. Defaults to false; false or omitted returns an uncharged 422 when only an estimate is available.",
+            "Set to true to accept scaled estimates for abbreviated counts above 10,000 posts. Defaults to false; estimate-only results then return an uncharged 422.",
+          fullDescription: "Set to true to return scaled estimates when Instagram abbreviates counts for profiles with more than 10,000 posts. Defaults to false; false or omitted returns an uncharged 422 when only an estimate is available.",
         },
       ],
       sampleResponse: {
@@ -7014,7 +6838,7 @@ export const instagramBaseApis = {
     {
       name: "Embed HTML",
       method: "GET",
-      description: "Get the HTML embed for a user's profile",
+      description: "Get the HTML embed for an Instagram profile.",
       fullDescription:
         "Returns the raw HTML embed snippet for an Instagram user's profile widget. The response contains a single html string that can be inserted into a webpage to render an embeddable Instagram profile card. Requires the user's handle as input.",
       path: "/v1/instagram/user/embed",
