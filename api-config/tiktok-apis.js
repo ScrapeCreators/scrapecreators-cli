@@ -5635,10 +5635,18 @@ export const tiktokBaseApis = {
     {
       name: "Live",
       method: "GET",
-      description: "Checks a TikTok user's live stream. Profiles with confirmed audience controls return 403 and cost 0 credits.",
-      fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Use the top-level `is_live` boolean instead of checking TikTok's numeric status values yourself. Also returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities). If TikTok confirms that the creator enabled audience controls, returns HTTP 403 with TikTok's login warning instead of a successful empty room. These 403 responses cost 0 credits. A real viewer count of zero is not treated as a restriction.",
+      description: "Checks TikTok live status and room details. 200 is_live:true/false costs 1 credit, including offline/no-stream accounts. Unavailable accounts: 404; audience controls: 403; retrieval failures: 500. Errors cost 0 credits; never infer offline.",
+      fullDescription: "Checks a TikTok user's live status and retrieves available live room details. First checks the account with the same profile lookup used by /v1/tiktok/profile; this does not add a second API credit charge. Active streams return HTTP 200 with is_live: true; an existing account that is offline or has no current stream returns HTTP 200 with is_live: false. Both successful states cost 1 credit, including offline/no-stream accounts. Unavailable accounts: HTTP 404 when TikTok confirms the account is not found or unavailable. Audience controls: HTTP 403 when TikTok confirms the creator enabled them, with TikTok's login warning. Retrieval failures: HTTP 500 when the live check fails. Errors cost 0 credits (credits_charged: 0); never infer offline from an error. A failed check is not evidence that the account is offline, and having no current stream is not an account-not-found error. Use the top-level `is_live` boolean instead of checking TikTok's numeric status values yourself. Available details include `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities). When no room exists, `liveRoom` is omitted rather than filled with invented room data. Ended-room details remain when TikTok supplies them. A real viewer count of zero is not treated as a restriction.",
       path: "/v1/tiktok/user/live",
       errorResponseExamples: {
+        404: {
+          success: false,
+          credits_remaining: 100,
+          credits_charged: 0,
+          error: "not_found",
+          errorStatus: 404,
+          message: "TikTok account not found or unavailable.",
+        },
         403: {
           success: false,
           credits_remaining: 100,
