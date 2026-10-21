@@ -6541,10 +6541,33 @@ export const instagramBaseApis = {
     {
       name: "Story Highlights",
       method: "GET",
-      description: "Get an Instagram user's story highlights.",
+      description: "Get an Instagram user's story highlights. Handle lookup can return an uncharged 403 for age restrictions or 404 for restricted or unavailable profiles.",
       fullDescription:
-        "Lists all story highlight albums for an Instagram user. Each highlight includes its ID, title, cover thumbnail URL, and owner info with username and profile picture. Accepts either a user_id or handle; providing user_id yields faster responses.",
+        "Lists all story highlight albums for an Instagram user. Each highlight includes its ID, title, cover thumbnail URL, and owner info with username and profile picture. Accepts either a user_id or handle; providing user_id yields faster responses. If Instagram explicitly blocks handle lookup, age restrictions return HTTP 403 with message 'Profile is age restricted'; restricted profiles return HTTP 404 with message 'Profile is restricted'; confirmed unavailable profiles return HTTP 404 with message 'Profile is unavailable on Instagram'. These responses keep success: true to indicate a confirmed profile state, include an error field, and charge no credits. Check the HTTP status and error field, not success alone.",
       path: "/v1/instagram/user/highlights",
+      errorResponseExamples: {
+        403: {
+          success: true,
+          credits_remaining: 100,
+          credits_charged: 0,
+          handle: "example_profile",
+          userId: null,
+          age_restricted: true,
+          error: "forbidden",
+          errorStatus: 403,
+          message: "Profile is age restricted",
+        },
+        404: {
+          success: true,
+          credits_remaining: 100,
+          credits_charged: 0,
+          handle: "example_profile",
+          userId: null,
+          error: "not_found",
+          errorStatus: 404,
+          message: "Profile is restricted",
+        },
+      },
       sampleResponse: {
         success: true,
         highlights: [
