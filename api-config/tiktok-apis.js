@@ -5626,9 +5626,19 @@ export const tiktokBaseApis = {
     {
       name: "Live",
       method: "GET",
-      description: "Scrapes a TikTok user's live stream",
-      fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Use the top-level `is_live` boolean instead of checking TikTok's numeric status values yourself. Also returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities).",
+      description: "Checks a TikTok user's live stream. Profiles with confirmed audience controls return 403 and cost 0 credits.",
+      fullDescription: "Checks if a TikTok user is currently live streaming and retrieves their live room details. Use the top-level `is_live` boolean instead of checking TikTok's numeric status values yourself. Also returns `liveRoomUserInfo` (nickname, avatar, followerCount, roomId) and `liveRoom` (title, startTime, status, `liveRoomStats` with enterCount and userCount, plus `streamData` with playback URLs in multiple qualities). If TikTok confirms that the creator enabled audience controls, returns HTTP 403 with TikTok's login warning instead of a successful empty room. These 403 responses cost 0 credits. A real viewer count of zero is not treated as a restriction.",
       path: "/v1/tiktok/user/live",
+      errorResponseExamples: {
+        403: {
+          success: false,
+          credits_remaining: 100,
+          credits_charged: 0,
+          error: "forbidden",
+          errorStatus: 403,
+          message: "This creator turned on audience controls. Log in to make the most of your TikTok experience.",
+        },
+      },
       params: [
         {
           name: "handle",
@@ -5746,10 +5756,20 @@ export const tiktokBaseApis = {
     {
       name: "Live Info",
       method: "GET",
-      description: "Gets info for a TikTok live room, including like count.",
+      description: "Gets info for a TikTok live room, including like count. Returns 403 at no charge when TikTok refuses access to the room.",
       fullDescription:
-        "Gets curated room-level info for a TikTok live using TokAPI's live info endpoint. Use `/v1/tiktok/user/live` first to find the `room_id`. If you only have a TikTok handle and need the user's numeric id, use `/v1/tiktok/profile` first to get `user.id`. This endpoint is separate from `/v1/tiktok/user/live` because it uses a different upstream call and returns a smaller response with the most relevant fields: `room_id`, `like_count`, `viewer_count`, `status`, `title`, `cover_url`, and `owner`.",
+        "Gets curated room-level info for a TikTok live from TikTok's public live-room source. Use `/v1/tiktok/user/live` first to find the `room_id`. If you only have a TikTok handle and need the user's numeric id, use `/v1/tiktok/profile` first to get `user.id`. This endpoint is separate from `/v1/tiktok/user/live` because it uses a different upstream call and returns a smaller response with the most relevant fields: `room_id`, `like_count`, `viewer_count`, `status`, `title`, `cover_url`, and `owner`. TikTok's room-access refusal returns HTTP 403 with no credit charge. The creator may have enabled audience controls; this response does not mean the profile was deleted. Other upstream failures remain errors rather than successful empty rooms.",
       path: "/v1/tiktok/live",
+      errorResponseExamples: {
+        403: {
+          success: false,
+          credits_remaining: 100,
+          credits_charged: 0,
+          error: "forbidden",
+          errorStatus: 403,
+          message: "TikTok is not allowing access to this live room. The creator may have enabled audience controls.",
+        },
+      },
       params: [
         {
           name: "room_id",
