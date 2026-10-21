@@ -3456,7 +3456,7 @@ export const apis = [
         description:
           "Get up to 10 page Reels. view_count is a possibly rounded badge count; use /v1/facebook/post per reel for engagement and available precise views. Paginate with next_page_id and cursor.",
         fullDescription:
-          "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, post_id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. view_count comes from Facebook's public Reels badge (play_count_reduced), converted to a number; abbreviated values such as 27K become 27000, not an exact count. This list does not include like_count, reaction_counts, comment_count, share_count, or an is_pinned flag. Do not infer pinning from the order of returned reels. For available engagement metrics and a more precise view_count when Facebook exposes it, call /v1/facebook/post separately with each reel's returned url. There is no batch detail parameter on this endpoint. The detail view_count can still be null or lower than the public Reels badge. Pagination requires passing both next_page_id and cursor from the previous response.",
+          "Fetches up to 10 reels per request from a public Facebook page. Each reel includes id, post_id, url, view_count, description, creation_time, video_url, thumbnail, play_time_in_ms, and music details. view_count comes from Facebook's public Reels badge (play_count_reduced), converted to a number; abbreviated values such as 27K become 27000, not an exact count. This list does not include like_count, reaction_counts, comment_count, share_count, or an is_pinned flag. Do not infer pinning from the order of returned reels. For available engagement metrics and a more precise view_count when Facebook exposes it, call /v1/facebook/post separately with each reel's returned url. There is no batch detail parameter on this endpoint. The detail view_count can still be null or lower than the public Reels badge. Pagination requires passing both next_page_id and cursor from the previous response. reels[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
         path: "/v1/facebook/profile/reels",
         paginationField: "cursor",
         params: [
@@ -3488,6 +3488,7 @@ export const apis = [
           reels: [
             {
               id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMTE0MjM1OTIwNjY0NDA4",
+              is_paid_partnership: null,
               post_id: "1203161005161463",
               creation_time: "2025-09-13T20:51:28.000Z",
               url: "https://www.facebook.com/reel/1114235920664408",
@@ -3516,6 +3517,7 @@ export const apis = [
             },
             {
               id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMzM0ODczOTA4MjU2Nzgz",
+              is_paid_partnership: null,
               post_id: "1201508031993427",
               creation_time: "2025-09-11T21:21:58.000Z",
               url: "https://www.facebook.com/reel/1334873908256783",
@@ -3542,6 +3544,7 @@ export const apis = [
             },
             {
               id: "UzpfSTEwMDA2NDAyNzI0Mjg0OTpWSzoxMTU4OTM1MzAyODY3ODc0",
+              is_paid_partnership: null,
               post_id: "1201500718660825",
               creation_time: "2025-09-11T21:07:08.000Z",
               url: "https://www.facebook.com/reel/1158935302867874",
@@ -3579,7 +3582,7 @@ export const apis = [
         description:
           "Search public Facebook videos and Reels by keyword, not text or photo posts. Each successful page costs 1 credit, even with no matches.",
         fullDescription:
-          "Searches Facebook's native public video search without a logged-in account and returns matching videos and Reels. This is not Google-indexed discovery or general Facebook text/photo-post search. Results follow Facebook's ranking and public availability, so coverage and ordering are not exhaustive or guaranteed. Requests can take several seconds; use a client timeout of at least 30 seconds. Temporary Facebook restrictions or upstream timeouts can return an uncharged error. Pass the returned cursor with the same query for the next page, and stop when cursor is null or has_more is false. Each successful search page costs 1 credit, including searches with no matches. Validation errors and upstream failures are not charged.",
+          "Searches Facebook's native public video search without a logged-in account and returns matching videos and Reels. This is not Google-indexed discovery or general Facebook text/photo-post search. Results follow Facebook's ranking and public availability, so coverage and ordering are not exhaustive or guaranteed. Requests can take several seconds; use a client timeout of at least 30 seconds. Temporary Facebook restrictions or upstream timeouts can return an uncharged error. Pass the returned cursor with the same query for the next page, and stop when cursor is null or has_more is false. Each successful search page costs 1 credit, including searches with no matches. Validation errors and upstream failures are not charged. videos[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
         path: "/v1/facebook/search/videos",
         paginationField: "cursor",
         credits: {
@@ -3611,6 +3614,7 @@ export const apis = [
           "videos": [
             {
               "id": "1972139093484105",
+              "is_paid_partnership": null,
               "url": "https://www.facebook.com/reel/1972139093484105/",
               "title": "Extremely strong dogs 🦍",
               "description": "You shouldn't underestimate the strength of your large dogs 🦍#dog #bigdog #dogs #jozodogs #pet",
@@ -3628,6 +3632,7 @@ export const apis = [
             },
             {
               "id": "1218486163512401",
+              "is_paid_partnership": null,
               "url": "https://www.facebook.com/reel/1218486163512401/",
               "title": null,
               "description": null,
@@ -3726,7 +3731,7 @@ export const apis = [
         description:
           "Get public Facebook profile posts visible without login, 3 per page. Provide url or pageId; pageId is faster.",
         fullDescription:
-          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Accepts either a url or pageId parameter, where pageId is faster.",
+          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Accepts either a url or pageId parameter, where pageId is faster. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
         path: "/v1/facebook/profile/posts",
         paginationField: "cursor",
         params: [
@@ -3754,6 +3759,7 @@ export const apis = [
           posts: [
             {
               id: "1204545088344463",
+              is_paid_partnership: null,
               text: "I've had such a blast doing the No One Left Behind Challenge this year! Join me this Friday Dec 20 @ 5PM MST to learn about next month's challenge! https://subto.sjv.io/3Jk9Py",
               url: "https://www.facebook.com/reel/486651220706068/",
               permalink: "https://www.facebook.com/reel/486651220706068/",
@@ -3791,6 +3797,7 @@ export const apis = [
             },
             {
               id: "1177973017668337",
+              is_paid_partnership: null,
               text: "Getting into real estate isn't easy. But you know what makes it easier? \n\nHaving a team of people working TOGETHER to get their deals!\n\nJoin the NOLB Challenge - Nov 17th-19th to see a full walkthrough on how to get your first deal!\n\nReserve your spot here: NOLBChallenge.com",
               url: "https://www.facebook.com/reel/1548769829113168/",
               permalink: "https://www.facebook.com/reel/1548769829113168/",
@@ -3828,6 +3835,7 @@ export const apis = [
             },
             {
               id: "1866425187502168",
+              is_paid_partnership: null,
               text: "Pace Morby is joined Jared Morrison on this episode of Get Creative, a young entrepreneur in the SubTo community who has been learning the ropes from Pace and recently decided to make the leap into Real Estate full time.",
               url: "https://www.facebook.com/pacemorby/videos/1866425187502168/",
               permalink:
@@ -4469,7 +4477,7 @@ export const apis = [
         method: "GET",
         description: "Get a public Facebook post or Reel by URL. Reel views may be null or below the badge count; exact counts are not guaranteed. For badge counts, use /v1/facebook/profile/reels and match post_id.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters." + " " + DETAIL_TRANSCRIPTION_NOTICE,
+          "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters. is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/post",
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
@@ -4493,6 +4501,7 @@ export const apis = [
           success: true,
           credits_remaining: 48026,
           post_id: "25118307061088489",
+          is_paid_partnership: null,
           like_count: 2095,
           comment_count: 48,
           share_count: 133,
@@ -5057,7 +5066,7 @@ export const apis = [
         description:
           "Get public Facebook group posts, limited to 3 per page by Facebook.",
         fullDescription:
-          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination.",
+          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
         path: "/v1/facebook/group/posts",
         params: [
           {
@@ -5100,6 +5109,7 @@ export const apis = [
           posts: [
             {
               id: "1286289372828481",
+              is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1286289372828481/",
               permalink:
@@ -5149,6 +5159,7 @@ export const apis = [
             },
             {
               id: "1280901910033894",
+              is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1280901910033894/",
               permalink:
@@ -5198,6 +5209,7 @@ export const apis = [
             },
             {
               id: "1286064029517682",
+              is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1286064029517682/",
               permalink:
