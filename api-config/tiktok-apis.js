@@ -5585,10 +5585,18 @@ export const tiktokBaseApis = {
     {
       name: "Transcript",
       method: "GET",
-      description: "Get native captions or an opt-in AI transcript from a TikTok video. Long AI transcripts may time out.",
-      fullDescription: `Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns id, url, and transcript (native captions are WEBVTT-formatted; AI fallback returns text). Native transcripts cost 1 credit only when returned, with no fixed length limit; no transcript costs 0 credits. AI fallback is opt-in via use_ai_as_fallback=true and is used only when native captions are unavailable. ${AI_TRANSCRIPTION_PRICING} This dedicated transcript route charges the AI rate instead of adding a native-caption fee. ${AI_TRANSCRIPTION_RUNTIME}` + " " + `Get native captions or an opted-in AI transcript from a TikTok video. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
+      description: "Get native captions or an opt-in AI transcript with timestamp segments from a TikTok video. Long AI transcripts may time out.",
+      fullDescription: `Extracts existing transcripts, captions, or subtitles from a TikTok video by URL. Returns id, url, and transcript (native captions are WEBVTT-formatted; AI fallback returns text). Also includes top-level transcript_with_timestamp: an array of {start: number, end: number, text: string} sentence/phrase segments from native captions or AI, or null when speech or timing is unavailable. Times are seconds relative to the video. AI timings are approximate, not word-perfect. The existing transcript remains the exact raw WEBVTT string for native captions and a plain string for AI fallback. No new parameter is required, and pricing is unchanged. Native transcripts cost 1 credit only when returned, with no fixed length limit; no transcript costs 0 credits. AI fallback is opt-in via use_ai_as_fallback=true and is used only when native captions are unavailable. ${AI_TRANSCRIPTION_PRICING} This dedicated transcript route charges the AI rate instead of adding a native-caption fee. ${AI_TRANSCRIPTION_RUNTIME}` + " " + `Get native captions or an opted-in AI transcript from a TikTok video. ${AI_TRANSCRIPTION_PRICING} ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v1/tiktok/video/transcript",
       credits: NATIVE_OR_AI_CREDITS,
+      responseFields: [
+        {
+          path: "transcript_with_timestamp",
+          name: "transcript_with_timestamp",
+          type: "array",
+          description: "Always included: native or AI sentence/phrase segments with numeric start/end in seconds relative to the video and string text, or null when speech or timing is unavailable. AI timings are approximate, not word-perfect.",
+        },
+      ],
       params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
@@ -5619,6 +5627,7 @@ export const tiktokBaseApis = {
       sampleResponse: {
         id: "7499229683859426602",
         url: "https://www.tiktok.com/@stoolpresidente/video/7499229683859426602",
+        transcript_with_timestamp: null,
         transcript:
           "WEBVTT\n\n\n00:00:00.120 --> 00:00:01.840\nAlright, pizza review time.\n\n00:00:01.841 --> 00:00:03.761\nSal's Pizza Factory. Oh,\n\n00:00:03.762 --> 00:00:05.721\nit's Fucking Corn. We're in Charlotte.\n\n00:00:05.722 --> 00:00:07.861\nAlright man, any chance I can get a real quick picture?\n\n00:00:07.920 --> 00:00:10.040\nShaq or Dwight Howard? I gotta pick one.\\n",
       },

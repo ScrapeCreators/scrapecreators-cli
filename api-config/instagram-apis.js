@@ -2755,11 +2755,19 @@ export const instagramBaseApis = {
       name: "Transcript",
       method: "GET",
       description:
-        "Get AI transcripts for videos in an Instagram post or reel. Long videos may time out.",
+        "Get AI transcripts with timestamp segments for videos in an Instagram post or reel. Long videos may time out.",
       fullDescription:
-        `Generates AI speech-to-text for an Instagram video post or reel. Returns a transcripts array containing each video's id, shortcode, and text; no speech can produce null entries. ${AI_TRANSCRIPTION_PRICING} For carousels, default pricing stays flat 1 credit per request. With allow_long_transcription=true, sum 10 * ceil(duration_seconds / 60) for each successfully transcribed video, rather than rounding the combined duration; images and empty video transcripts have no AI fee. ${AI_TRANSCRIPTION_RUNTIME}`,
+        `Generates AI speech-to-text for an Instagram video post or reel. Returns a transcripts array containing each video's id, shortcode, and text; no speech can produce null entries. Each result also includes transcripts[].transcript_with_timestamp: an array of {start: number, end: number, text: string} sentence/phrase segments, or null when speech or timing is unavailable. Times are seconds relative to each individual video, not the combined carousel. AI timings are approximate, not word-perfect. The existing text remains plain text. No new parameter is required, and pricing is unchanged. ${AI_TRANSCRIPTION_PRICING} For carousels, default pricing stays flat 1 credit per request. With allow_long_transcription=true, sum 10 * ceil(duration_seconds / 60) for each successfully transcribed video, rather than rounding the combined duration; images and empty video transcripts have no AI fee. ${AI_TRANSCRIPTION_RUNTIME}`,
       path: "/v2/instagram/media/transcript",
       credits: AI_TRANSCRIPTION_CREDITS,
+      responseFields: [
+        {
+          path: "transcripts[].transcript_with_timestamp",
+          name: "transcripts[].transcript_with_timestamp",
+          type: "array",
+          description: "Always included: sentence/phrase segments with numeric start/end in seconds relative to each video and string text, or null when speech or timing is unavailable. AI timings are approximate, not word-perfect.",
+        },
+      ],
       params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
         {
@@ -2776,6 +2784,7 @@ export const instagramBaseApis = {
             id: "3597267389859272809",
             shortcode: "DHsD6HGqJhp",
             text: "Let's fry up the perfect bunzel. Beautiful.  Everybody, shh. The perfect bunzel. Let me show you my bunzel. When it comes down to bunzel, we make it the crispiest, get the crunch. Heaven.",
+            transcript_with_timestamp: null,
           },
         ],
       },
