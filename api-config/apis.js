@@ -4476,10 +4476,22 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a public Facebook post or Reel by URL. Reel views may be null or below the badge count; exact counts are not guaranteed. For badge counts, use /v1/facebook/profile/reels and match post_id.",
+        description: "Get a public Facebook post or Reel, with shared_post_id and shared_post_url when exposed. Reel views may be null or below the badge; for badge counts, use /v1/facebook/profile/reels and match post_id. Exact views are not guaranteed.",
         fullDescription:
-          "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters. is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship." + " " + DETAIL_TRANSCRIPTION_NOTICE,
+          "Retrieves a single public Facebook post or reel by URL. Use one request per reel, passing its returned /reel/ URL from /v1/facebook/profile/reels, to retrieve available like_count, reaction_counts, comment_count, share_count, and a more precise view_count when Facebook exposes it. This endpoint accepts a single URL, not a batch; exact views are not guaranteed. Returns post_id, like_count, comment_count, share_count, view_count, description, creation_time, and author details, including the author handle when Facebook exposes a vanity profile URL. For some reels, Facebook does not expose the same view count on the individual post page that it shows on the profile Reels grid. This value can be null or lower than the public Reels badge. If you need the public Reel badge count, call /v1/facebook/profile/reels with the author URL and match the reel by post_id. For video posts, includes video sd_url, hd_url, thumbnail, and length_in_second. Optionally fetches comments and transcript via get_comments and get_transcript parameters. is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship. shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media." + " " + DETAIL_TRANSCRIPTION_NOTICE,
         path: "/v1/facebook/post",
+        responseFields: [
+          {
+            path: "shared_post_id",
+            description: "ID of the post being shared, or null when the reference is unavailable. The requested post keeps its own identity.",
+            fullDescription: "shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media.",
+          },
+          {
+            path: "shared_post_url",
+            description: "URL of the post being shared, or null when the reference is unavailable. The requested post keeps its own identity.",
+            fullDescription: "shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media.",
+          },
+        ],
         params: [
           ALLOW_LONG_TRANSCRIPTION_PARAM,
           {
@@ -4502,6 +4514,8 @@ export const apis = [
           success: true,
           credits_remaining: 48026,
           post_id: "25118307061088489",
+          shared_post_id: null,
+          shared_post_url: null,
           is_paid_partnership: null,
           like_count: 2095,
           comment_count: 48,
@@ -5065,10 +5079,22 @@ export const apis = [
         name: "Facebook Group Posts",
         method: "GET",
         description:
-          "Get public Facebook group posts, limited to 3 per page by Facebook.",
+          "Get public Facebook group posts, with shared_post_id and shared_post_url when exposed. Facebook limits results to 3 per page.",
         fullDescription:
-          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
+          "Fetches posts from a public Facebook group, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails, and topComments. Results are chronological by default. Supports TOP_POSTS, RECENT_ACTIVITY, CHRONOLOGICAL, and CHRONOLOGICAL_LISTINGS with cursor-based pagination. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship. shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media.",
         path: "/v1/facebook/group/posts",
+        responseFields: [
+          {
+            path: "posts[].shared_post_id",
+            description: "ID of the post being shared, or null when the reference is unavailable. The requested post keeps its own identity.",
+            fullDescription: "shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media.",
+          },
+          {
+            path: "posts[].shared_post_url",
+            description: "URL of the post being shared, or null when the reference is unavailable. The requested post keeps its own identity.",
+            fullDescription: "shared_post_id and shared_post_url identify the immediate post being shared when Facebook exposes it; both are nullable strings and are null when the reference is unavailable. Null does not prove the post is not a share. Existing id, post_id, and url values remain unchanged. The original is not automatically fetched, and these fields add no additional upstream requests. Call /v1/facebook/post with shared_post_url separately to retrieve the original's available media.",
+          },
+        ],
         params: [
           {
             name: "url",
@@ -5110,6 +5136,8 @@ export const apis = [
           posts: [
             {
               id: "1286289372828481",
+              shared_post_id: null,
+          shared_post_url: null,
               is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1286289372828481/",
@@ -5160,6 +5188,8 @@ export const apis = [
             },
             {
               id: "1280901910033894",
+              shared_post_id: null,
+          shared_post_url: null,
               is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1280901910033894/",
@@ -5210,6 +5240,8 @@ export const apis = [
             },
             {
               id: "1286064029517682",
+              shared_post_id: null,
+          shared_post_url: null,
               is_paid_partnership: null,
               text: null,
               url: "https://www.facebook.com/groups/742354120555345/permalink/1286064029517682/",
