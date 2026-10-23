@@ -3730,9 +3730,9 @@ export const apis = [
         name: "Profile Posts",
         method: "GET",
         description:
-          "Get public Facebook profile posts visible without login, 3 per page. Provide url or pageId; pageId is faster.",
+          "Get public Facebook profile posts visible without login, 3 per page, with available link previews and video details. Provide url or pageId; pageId is faster.",
         fullDescription:
-          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Accepts either a url or pageId parameter, where pageId is faster. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
+          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Link shares can include link_attachment with url, title, description, source, and image_url; unavailable preview fields are null. Mixed photo/video posts retain their images and story url, with available video media in videoDetails and a video permalink. Accepts either a url or pageId parameter, where pageId is faster. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
         path: "/v1/facebook/profile/posts",
         paginationField: "cursor",
         params: [
