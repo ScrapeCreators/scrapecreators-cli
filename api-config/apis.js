@@ -13,6 +13,7 @@ import { githubApis } from "./github-apis.js";
 import { kwaiApis } from "./kwai-apis.js";
 import { cosmosApis } from "./cosmos-apis.js";
 import { telegramApis } from "./telegram-apis.js";
+import { orderEndpointParams } from "./parameter-order.js";
 import { LINKEDIN_AD_MEDIA_DESCRIPTION, linkedinAdMediaResponseFields } from "./linkedin-ad-media.js";
 
 const withPostVariant = (endpoint) => [
@@ -35261,5 +35262,9 @@ for (const api of apis) {
         };
       }
     }
+    // One presentation order for docs, playground, examples and machine exports.
+    // Run after injected cache options; POST variants inherit the same param list
+    // ordering but keep their existing JSON-body location.
+    if (endpoint.params) endpoint.params = orderEndpointParams(endpoint);
   }
 }

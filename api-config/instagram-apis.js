@@ -2119,6 +2119,15 @@ export const instagramBaseApis = {
           placeholder: "QVFCVzNnS2lI...==",
         },
         {
+          name: "require_play_counts",
+          type: "boolean",
+          required: false,
+          default: false,
+          placeholder: false,
+          description: "Require play_count on returned reels; 0 is valid. Missing counts return an uncharged error. [Why counts can be missing](https://scrapecreators.com/blog/instagram-play-counts-missing).",
+          fullDescription: "Only the literal query value 'true' enables this check. It requires a numeric, nonnegative play_count on every returned Reel, in both full responses (items[].media.play_count) and trim=true responses (items[].play_count); a real 0 is valid. A missing, null, nonnumeric or negative play_count returns HTTP 503 without charging credits instead of a paid partial success. It does not require ig_play_count or view counts. With the default false, counts remain best-effort: usable reels are still billable even with missing play counts. This checks presence and numeric validity; it does not guarantee count accuracy or agreement with Instagram Insights. Retrying does not guarantee that Instagram will return the missing counts. [Why counts can be missing](https://scrapecreators.com/blog/instagram-play-counts-missing).",
+        },
+        {
           name: "trim",
           type: "boolean",
           required: false,
