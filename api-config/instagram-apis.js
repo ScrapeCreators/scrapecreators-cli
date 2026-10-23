@@ -1404,6 +1404,15 @@ export const instagramBaseApis = {
           fullDescription: "Cursor to get next page of results.",
         },
         {
+          name: "require_play_counts",
+          type: "boolean",
+          required: false,
+          default: false,
+          placeholder: false,
+          description: "Set true to require play_count on returned videos (0 is valid). Missing counts return an uncharged error. [Why counts can be missing](https://scrapecreators.com/blog/instagram-play-counts-missing).",
+          fullDescription: "Only the literal query value 'true' enables this check. It requires play_count on each returned video post; a real 0 is valid. It does not require ig_play_count or view counts, or counts on photos. If a required play_count is missing or null, the request returns an error without charging credits instead of a paid partial success. With the default false, counts remain best-effort: usable posts are still billable even with missing play counts. Retrying does not guarantee that Instagram will return the missing counts. [Why counts can be missing](https://scrapecreators.com/blog/instagram-play-counts-missing).",
+        },
+        {
           name: "trim",
           type: "boolean",
           required: false,
