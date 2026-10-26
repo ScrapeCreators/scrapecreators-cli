@@ -15,6 +15,11 @@ import { cosmosApis } from "./cosmos-apis.js";
 import { telegramApis } from "./telegram-apis.js";
 import { orderEndpointParams } from "./parameter-order.js";
 import { LINKEDIN_AD_MEDIA_DESCRIPTION, linkedinAdMediaResponseFields } from "./linkedin-ad-media.js";
+import {
+  marketplaceBrowseCategories,
+  marketplaceCategoryDescription,
+  marketplaceCategoryFullDescription,
+} from "./facebook-marketplace-categories.js";
 
 const withPostVariant = (endpoint) => [
   endpoint,
@@ -5360,20 +5365,23 @@ export const apis = [
         method: "GET",
         description: "Search Facebook Marketplace listings",
         fullDescription:
-          "Searches Facebook Marketplace listings by keyword and lat/lng. Each page contains up to 24 listings. Each listing includes creation_time as an ISO 8601 UTC timestamp when Facebook exposes an exact listing timestamp, plus listing_date_text when available; either field can be null. Pass category_id to restrict results to the numeric Facebook Marketplace category ID returned on listing results. Supports pagination with the returned cursor. Pass the cursor value back as-is. The sort and date filters use the same values as Facebook's Marketplace UI. creation_time_descend usually orders the first pages newest first, but Facebook can insert newer listings on later cursor pages. date_listed uses Facebook's calendar-day buckets, so last_24_hours can include listings from the prior calendar day rather than enforcing an exact rolling 24-hour cutoff. For alerting/new-item workflows, continue paging while has_next_page is true and dedupe by listing id.",
+          "Search Facebook Marketplace by keyword or browse a supported category without query. lat and lng are required. See category_id for allowed IDs. Pages usually contain about 24 listings and cost 1 credit, including empty filtered pages. Follow cursor as-is while has_next_page is true, keep inputs unchanged, and dedupe by listing id; keyword and category-only cursors cannot be mixed. Category-only date_listed, availability, and delivery_method filters apply to listing cards; condition requires a keyword. creation_time_descend is not strictly newest-first, and last_24_hours uses calendar days, not a rolling cutoff. creation_time (ISO 8601 UTC) and listing_date_text can be null.",
         path: "/v1/facebook/marketplace/search",
         params: [
           {
             name: "query",
             type: "string",
-            description: "Search keyword",
-            required: true,
+            description: "Search keyword. Required unless category_id is provided.",
+            required: false,
             placeholder: "bike",
           },
           {
             name: "category_id",
             type: "string",
-            description: "Numeric Facebook Marketplace category ID. Listing results include this value as category_id.",
+            description: marketplaceCategoryDescription,
+            fullDescription: marketplaceCategoryFullDescription,
+            allowedValuesLabel: "Allowed IDs for keyword-free browsing",
+            allowedValues: marketplaceBrowseCategories,
             required: false,
             placeholder: "1658310421102081",
           },
