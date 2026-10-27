@@ -134,9 +134,9 @@ export const apis = [
         name: "Channel Videos",
         method: "GET",
         description:
-          "Get paginated videos from a YouTube channel by channelId or handle.",
+          "Get paginated videos from a YouTube channel by channelId or handle. Paid-promotion filtering is not supported; use /v1/youtube/video and its isPaidPromotion field for each video's status.",
         fullDescription:
-          "Fetches a paginated list of videos uploaded by a YouTube channel, including each video's title, URL, thumbnail, view count (views), publish date, duration, and description. Supports sorting by latest or popular, and use the continuationToken to page through all results. Optionally include extras like like count, comment count, and descriptions for each video.",
+          "Fetches a paginated list of videos uploaded by a YouTube channel, including each video's title, URL, thumbnail, view count (views), publish date, duration, and description. Supports sorting by latest or popular, and use the continuationToken to page through all results. Optionally include extras like like count, comment count, and descriptions for each video. Paid-promotion filtering is not supported on this endpoint. Use /v1/youtube/video and read isPaidPromotion to check each video's paid-promotion status.",
         path: "/v1/youtube/channel-videos",
         paginationField: "continuationToken",
         sampleResponse: {
@@ -194,15 +194,6 @@ export const apis = [
               "Use continuationToken from the previous response to get the next page.",
             fullDescription: "Continuation token to get more videos. Get 'continuationToken' from previous response.",
             placeholder: "4qmFsgKrCBIYVUNkRkpXVWE0M3NtUm00SXBIQnB",
-          },
-          {
-            name: "is_paid_promotions",
-            type: "string",
-            required: false,
-            description:
-              "Set true to find videos with creator-declared paid promotion. Cannot combine with filter, uploadDate, sortBy, type, duration, or includeExtras.",
-            fullDescription: "Set to 'true' to search YouTube's public paid product placement / sponsorship / endorsement search surface. This returns normal YouTube videos where the creator declared paid promotion. Cannot be combined with filter, uploadDate, sortBy, type, duration, or includeExtras.",
-            placeholder: "false",
           },
           {
             name: "includeExtras",
