@@ -730,9 +730,9 @@ export const apis = [
         name: "Video/Short Details",
         method: "GET",
         description:
-          "Get YouTube video or Short details, paid-promotion status and available replay heatmaps. Age-restricted videos return 403. No hosted video downloads.",
+          "Get YouTube video or Short details, description cards, AI disclosures, owner/uploader identities, paid-promotion status and replay heatmaps. Age-restricted videos return 403. No hosted video downloads.",
         fullDescription:
-          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). isPaidPromotion is true when YouTube marks the video as including paid promotion and false when it does not. Also returns related recommended videos in watchNextVideos and channel info for the uploader. When YouTube exposes its public Most replayed graph, most_replayed contains normalized graph buckets in markers and YouTube's highlighted ranges in ranges. The field is null when the graph is not available. YouTube says the graph may be unavailable when the channel has active strikes, the content is potentially inappropriate, the video is too new or has too few views, or its systems deem the video ineligible for another reason. YouTube does not publish fixed age or view-count thresholds. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source. Need to download a YouTube video? We open sourced our [YouTube downloader](https://github.com/ScrapeCreators/youtube-downloader). You can use it and host it wherever you want. We don't offer a hosted YouTube downloading service because it's expensive and compute-intensive to run.",
+          "Fetches full details for a YouTube video or short, including title, description, thumbnail, view count (views), like count (likes), comment count, publish date, duration, genre, keywords, chapters, collaborators, and available caption tracks (subtitles/captions). isPaidPromotion is true when YouTube marks the video as including paid promotion and false when it does not. Also returns related recommended videos in watchNextVideos. The legacy channel object is unchanged for compatibility and can mix uploader and artist identities on merged music channels; use uploader for the uploading channel and ownerByline for the channel displayed under the video. ownerByline includes native badge styles and subscriberCountText as YouTube displays it, not an exact subscriber count. descriptionCards contains Music, Games, People mentioned and podcast cards from the structured description. Each card has section, title, subtitle, secondarySubtitle, image, videoId, channelId, playlistId and musicCredits. Missing card fields are null; People mentioned cards can have no linked channel. musicCredits is null when absent, otherwise it includes song, artist, album, writers, licensedToYouTubeBy and the preserved rawText. Owner fields are ownerByline.channelId, name, url, subscriberCountText and badges (style and label). Uploader fields are uploader.channelId, author and url. Either identity can be null when unavailable. An empty array means the description was available with no cards; null means it was unavailable or could not be recognized. isMadeWithAI is true when YouTube exposes the Made with AI disclosure, false when a recognized description has no such disclosure, and null when unknown. This is YouTube disclosure metadata, not our own AI-content detection. Auto-dubbed audio alone does not set isMadeWithAI. aiDisclosure retains the available disclosure text; localized unrecognized disclosures remain unknown. These fields reuse the already-fetched watch page without a separate channel request. When YouTube exposes its public Most replayed graph, most_replayed contains normalized graph buckets in markers and YouTube's highlighted ranges in ranges. The field is null when the graph is not available. YouTube says the graph may be unavailable when the channel has active strikes, the content is potentially inappropriate, the video is too new or has too few views, or its systems deem the video ineligible for another reason. YouTube does not publish fixed age or view-count thresholds. Age-restricted videos return 403 with message: \"This video is age restricted\" because Scrape Creators only uses the public logged-out YouTube source. Need to download a YouTube video? We open sourced our [YouTube downloader](https://github.com/ScrapeCreators/youtube-downloader). You can use it and host it wherever you want. We don't offer a hosted YouTube downloading service because it's expensive and compute-intensive to run.",
         path: "/v1/youtube/video",
         errorResponseExamples: {
           403: {
@@ -819,6 +819,21 @@ export const apis = [
           durationMs: 348000,
           durationFormatted: "00:05:48",
           isPaidPromotion: false,
+          "descriptionCards": [],
+          "isMadeWithAI": false,
+          "aiDisclosure": "Auto-dubbed\nAudio tracks for some languages were automatically generated. Learn more",
+          "ownerByline": {
+            "channelId": "UCWH3hing1Qb4LnkRfQdxsxQ",
+            "name": "Afroballer",
+            "url": "https://www.youtube.com/@afroballer8906",
+            "subscriberCountText": "1.01K subscribers",
+            "badges": []
+          },
+          "uploader": {
+            "channelId": "UCWH3hing1Qb4LnkRfQdxsxQ",
+            "author": "Afroballer",
+            "url": "http://www.youtube.com/@afroballer8906"
+          },
           most_replayed: null,
           captionTracks: [
             {
