@@ -2883,10 +2883,37 @@ export const apis = [
         name: "Search Posts",
         method: "GET",
         description:
-          "Search for public LinkedIn posts by keyword. Uses Google Search to find indexed posts, then scrapes the public LinkedIn pages.",
+          "Search for public LinkedIn posts by keyword. Uses Google Search to find indexed posts, then scrapes the public LinkedIn pages. Comments are a public preview only, without comment pagination.",
         fullDescription:
-          "Finds public LinkedIn posts, feed updates, and Pulse articles by keyword using Google Search, then returns post details such as description, author, media, images, like count, comment count, and published date when LinkedIn exposes them publicly. Results depend on what Google has indexed, so this is best-effort and not a complete LinkedIn-native search. Use date_posted for recent posts and pass the returned cursor to fetch the next page. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response.",
+          "Finds public LinkedIn posts, feed updates, and Pulse articles by keyword using Google Search, then returns post details such as description, author, media, images, like count, comment count, and published date when LinkedIn exposes them publicly. Results depend on what Google has indexed, so this is best-effort and not a complete LinkedIn-native search. Use date_posted for recent posts and pass the returned cursor to fetch the next page. Cursors are limited to pages 1 through 11; cursor 12 or greater returns a 400 response. Inline comments are only LinkedIn's public preview, not the full comment list; comment pagination is not available. Each comment includes nullable datePublished (the exact source timestamp, never estimated from age), publishedTimeAgo (how long ago the comment was published), urn (the full comment URN), id (the comment's numeric suffix as a string), and reactionCount (the source count, including 0). Pulse article previews may expose only age and identity, with null dates and reaction counts. These fields use the already-fetched page without additional upstream requests.",
         path: "/v1/linkedin/search/posts",
+        responseFields: [
+          {
+            "path": "posts[].comments[].datePublished",
+            "type": "string | null",
+            "description": "Exact source timestamp; null when unavailable. Never estimated from relative age."
+          },
+          {
+            "path": "posts[].comments[].publishedTimeAgo",
+            "type": "string | null",
+            "description": "How long ago the comment was published, such as 1y; null when unavailable."
+          },
+          {
+            "path": "posts[].comments[].urn",
+            "type": "string | null",
+            "description": "Full LinkedIn comment URN; null when not exposed in the public preview."
+          },
+          {
+            "path": "posts[].comments[].id",
+            "type": "string | null",
+            "description": "Comment ID from the URN's numeric suffix, preserved as a string; null when unavailable."
+          },
+          {
+            "path": "posts[].comments[].reactionCount",
+            "type": "number | null",
+            "description": "Source reaction count, preserving 0; null when unavailable. Hidden optimistic counts are ignored."
+          }
+        ],
         paginationField: "cursor",
         params: [
           {
@@ -2944,47 +2971,92 @@ export const apis = [
                 {
                   "author": "Lewin Wanzer",
                   "text": "Thanks for sharing, Aakash. Appreciate the breakdown—but here’s the twist most are missing: the AI agent is Agent Smith.\nThe more we chase “smart tasks” without structure, the more we lose the plot. Developers are confused. “AI Architects” don’t exist. And agents are now doing things they were never cleared to do.\nWe don’t need more tools—we need orchestration, identity-bound execution, and governed outcomes. Tourque will set the standard. Until that’s the norm, it’s just hype on autopilot.",
-                  "linkedinUrl": "https://www.linkedin.com/in/lewinwanzer"
+                  "linkedinUrl": "https://www.linkedin.com/in/lewinwanzer",
+                  "datePublished": "2025-08-02T01:23:21.112Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7354600336214376448,7357219423591563264)",
+                  "id": "7357219423591563264",
+                  "reactionCount": 0
                 },
                 {
                   "author": "Russell Anas",
                   "text": "Been dabbling a lot in category 2 lately, no-code agent builders have really unlocked some fun and personal use cases for me.\n\nMoving beyond the typical email triage or reporting stuff, I’ve been playing around with agents that help me decide what book to read next based on past favorites, or what game to buy depending on mood + genre trends. 😅\n\nFor PMs specially, I think this is one of the most exciting categories right now, a sweet spot for quickly prototyping behavior and understanding agentic UX as well.",
-                  "linkedinUrl": "https://ae.linkedin.com/in/russellanas"
+                  "linkedinUrl": "https://ae.linkedin.com/in/russellanas",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Tyler Maskiewicz",
                   "text": "Aakash Gupta - Curious where things like “AI sales agents” or chatbots land in your framework.\n\nFrom what I’ve seen as a business ops specialist, these tend to be marketed toward business leaders as standalone products: “pay us, your IT team gives API access to CRM, and voilà, you’ve got an agent in your workflow.”\n\nFeels like they straddle Specialized Agent Apps (since they’re built for a narrow use case like prospecting or triage) and Developer-First Platforms (since most require some level of backend integration to really add value).\n\nWould love to hear your take—are these just “apps with agents” or do they deserve their own bucket?",
-                  "linkedinUrl": "https://www.linkedin.com/in/tyler-maskiewicz-82311b6a"
+                  "linkedinUrl": "https://www.linkedin.com/in/tyler-maskiewicz-82311b6a",
+                  "datePublished": "2025-08-18T17:55:53.922Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7354600336214376448,7363267412030324736)",
+                  "id": "7363267412030324736",
+                  "reactionCount": 0
                 },
                 {
                   "author": "Emmanuel Johnson",
                   "text": "🔷 Embrace simplicity.   \n🔷 Focus on practical applications for immediate results.   \n🔷 Explore no-code tools to unlock capabilities without coding expertise.   \n🔷 Leverage developer-first platforms for robust integrations and flexibility in complex workflows.   \n🔷 Investigate specialized agent apps to enhance specific tasks with streamlined efficiency.   \n \nThank you for sharing this insightful guide!",
-                  "linkedinUrl": "https://in.linkedin.com/in/emmanuel-johnson-talks"
+                  "linkedinUrl": "https://in.linkedin.com/in/emmanuel-johnson-talks",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Sachin Sharma",
                   "text": "Love how this cuts through the buzz. No jargon. Just what to use, and when. Thanks for making this simple.",
-                  "linkedinUrl": "https://in.linkedin.com/in/sachin-sharma-product-career-coach"
+                  "linkedinUrl": "https://in.linkedin.com/in/sachin-sharma-product-career-coach",
+                  "datePublished": "2025-07-26T03:39:29.527Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7354600336214376448,7354716969348026368)",
+                  "id": "7354716969348026368",
+                  "reactionCount": 1
                 },
                 {
                   "author": "Anant Shukla",
                   "text": "Been exploring no-code tools lately, and connecting Gmail to an AI for email triage is such a time-saver...makes me wonder how many other workflows I could automate.",
-                  "linkedinUrl": "https://in.linkedin.com/in/anant-shukla-33a47946"
+                  "linkedinUrl": "https://in.linkedin.com/in/anant-shukla-33a47946",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Patrick Giwa, PhD",
                   "text": "Brilliant breakdown. Agents are chatbots on energy drink. \n\nParticularly having fun with coding agents. \n\nI think there are better 'agent' note takers than OtterAI",
-                  "linkedinUrl": "https://uk.linkedin.com/in/patrickgiwa"
+                  "linkedinUrl": "https://uk.linkedin.com/in/patrickgiwa",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Stephanie Nyarko PMP, CSPO, ACP",
                   "text": "This framework simplifies understanding AI agents. Focusing on practical use cases is essential.",
-                  "linkedinUrl": "https://ca.linkedin.com/in/stephanie-nyarko"
+                  "linkedinUrl": "https://ca.linkedin.com/in/stephanie-nyarko",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Jason Moccia",
                   "text": "Thanks for putting this together.  There are a lot of options hitting the market now.",
-                  "linkedinUrl": "https://www.linkedin.com/in/jasonmoccia"
+                  "linkedinUrl": "https://www.linkedin.com/in/jasonmoccia",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 }
               ],
               "likeCount": 217,
@@ -3009,12 +3081,22 @@ export const apis = [
                 {
                   "author": "Tahir Siddique",
                   "text": "What a comprehensive breakdown of AI agents! The emphasis on the interplay between perception, brain, and action is crucial for understanding how these agents operate effectively. Additionally, the incorporation of LLMs for reasoning and planning showcases the advancements in AI technology. Excited to see how AI agents continue to evolve and enhance various industries. Great work!",
-                  "linkedinUrl": "https://pk.linkedin.com/in/tahir-siddique-5928a814"
+                  "linkedinUrl": "https://pk.linkedin.com/in/tahir-siddique-5928a814",
+                  "datePublished": "2025-03-17T17:53:05.319Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:activity:7307419830251307008,7307458973555744770)",
+                  "id": "7307458973555744770",
+                  "reactionCount": 1
                 },
                 {
                   "author": "Deepesh Jain",
                   "text": "This is a clear and practical breakdown of how AI agents work. The perception-brain-action model makes it easy to understand how they process information and make decisions. The real-life example of buying shoes also helps in showing how these agents function in everyday tasks. \n\nAs AI agents improve, how do you see them changing the way we interact with technology?",
-                  "linkedinUrl": "https://in.linkedin.com/in/deepesh-jain-a738286a"
+                  "linkedinUrl": "https://in.linkedin.com/in/deepesh-jain-a738286a",
+                  "datePublished": "2025-03-18T05:27:49.205Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:activity:7307419830251307008,7307633808445476867)",
+                  "id": "7307633808445476867",
+                  "reactionCount": 1
                 }
               ],
               "likeCount": 718,
@@ -3045,52 +3127,102 @@ export const apis = [
                 {
                   "author": "Valeria I.",
                   "text": "I wish this will soon become common knowledge - Level 1️⃣ - Large Language Models\n\nLarge Language Models (LLMs) like ChatGPT are passive systems that generate outputs based on inputs but can't access external information or take autonomous actions.\n\nNote: Technically, ChatGPT is an application built on top of LLMs, but we can simplify for now.\n\nIt is tiring to explain to people that them adding information into ChatGPT is not equal to feeding it data.",
-                  "linkedinUrl": "https://uk.linkedin.com/in/valeria-iatan"
+                  "linkedinUrl": "https://uk.linkedin.com/in/valeria-iatan",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Favour Edeko",
                   "text": "Video's on YouTube, yeah?",
-                  "linkedinUrl": "https://ng.linkedin.com/in/favouredeko"
+                  "linkedinUrl": "https://ng.linkedin.com/in/favouredeko",
+                  "datePublished": "2025-04-10T22:30:02.733Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7316225980820262913)",
+                  "id": "7316225980820262913",
+                  "reactionCount": 2
                 },
                 {
                   "author": "Sophie Ravenel-Grosso CAIC™ CSM CSPO",
                   "text": "I really like your breakdown of AI concepts for non-technical people! As an AI consultant, I'd add that AI agents are essentially what happens when we give AI systems both decision-making authority AND the ability to act on those decisions.\nThink of it as the difference between:\n. Asking a friend for advice (LLM)\n. Giving a friend a specific to-do list (Workflow)\n. Telling a friend \"Handle this for me\" and they figure out what needs doing (Agent)\nThe exciting (and challenging) part about agents is they represent that shift from AI as a tool we directly control to AI as a collaborator that can take initiative within boundaries we set. Your coffee chat example captures this perfectly - the agent doesn't just respond to commands but proactively identifies what resources it needs to solve your problem.\n\nGreat explanation that really helps demystify where this technology is heading!\n\n#AIExplained #ArtificialIntelligence #AIBasics #AITrends",
-                  "linkedinUrl": "https://www.linkedin.com/in/sophieravenelgrosso"
+                  "linkedinUrl": "https://www.linkedin.com/in/sophieravenelgrosso",
+                  "datePublished": "2025-04-08T17:16:30.724Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315422301800259585)",
+                  "id": "7315422301800259585",
+                  "reactionCount": 7
                 },
                 {
                   "author": "Dean Moon",
                   "text": "Now on to the 1M followers on LinkedIn.",
-                  "linkedinUrl": "https://au.linkedin.com/in/deanjmoon"
+                  "linkedinUrl": "https://au.linkedin.com/in/deanjmoon",
+                  "datePublished": "2025-04-08T23:12:10.011Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315511805257076739)",
+                  "id": "7315511805257076739",
+                  "reactionCount": 4
                 },
                 {
                   "author": "Varun Negandhi",
                   "text": "This post helps clarify the different levels, Jeff. For my gaming brain, it helps me understand that LLMs are NPCs (non-playable characters) that only respond when you press a button. AI agents are like friends you play multiplayer with, where they read and play the game to achieve a specific objective.",
-                  "linkedinUrl": "https://www.linkedin.com/in/vnegandhi"
+                  "linkedinUrl": "https://www.linkedin.com/in/vnegandhi",
+                  "datePublished": "2025-04-08T13:21:18.007Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315363108774899714)",
+                  "id": "7315363108774899714",
+                  "reactionCount": 7
                 },
                 {
                   "author": "Karl Krauskopf",
                   "text": "Jeff, appreciate you demystifying AI agents by building on the familiar concept of LLMs. The levels analogy is excellent.",
-                  "linkedinUrl": "https://www.linkedin.com/in/karl-krauskopf"
+                  "linkedinUrl": "https://www.linkedin.com/in/karl-krauskopf",
+                  "datePublished": "2025-04-08T20:57:52.493Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315478009577119744)",
+                  "id": "7315478009577119744",
+                  "reactionCount": 2
                 },
                 {
                   "author": "Hosni BEN AISSA",
                   "text": "Appreciate your simplicity, thanks for sharing your insights.",
-                  "linkedinUrl": "https://fr.linkedin.com/in/hosni-ben-aissa"
+                  "linkedinUrl": "https://fr.linkedin.com/in/hosni-ben-aissa",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Kevin Rank, MBA",
                   "text": "I really enjoyed your video.  Great idea, and I like that it hits that sweet point.  Some where a bit above pure entry level with some meat on it, but not so far ahead that most of your audience gets left behind.\n\nBasically, you hit the Goldilocks zone on this one.  :-)",
-                  "linkedinUrl": "https://www.linkedin.com/in/kevinrank"
+                  "linkedinUrl": "https://www.linkedin.com/in/kevinrank",
+                  "datePublished": null,
+                  "publishedTimeAgo": null,
+                  "urn": null,
+                  "id": null,
+                  "reactionCount": null
                 },
                 {
                   "author": "Lia Zneimer",
                   "text": "Okay NEEDED this. Thank you for sharing!",
-                  "linkedinUrl": "https://www.linkedin.com/in/liazneimer"
+                  "linkedinUrl": "https://www.linkedin.com/in/liazneimer",
+                  "datePublished": "2025-04-08T17:52:05.014Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315431253661437953)",
+                  "id": "7315431253661437953",
+                  "reactionCount": 2
                 },
                 {
                   "author": "Rithickroshaan Pararajasegaran",
                   "text": "This is hands-down the clearest breakdown I’ve seen.... finally a “for dummies” that doesn’t make you feel like one. The level-up from workflow to agent clicked instantly. Love how you framed autonomy as the differentiator Jeff Su",
-                  "linkedinUrl": "https://lk.linkedin.com/in/rithickroshaan-pararajasegaran-8a7103235"
+                  "linkedinUrl": "https://lk.linkedin.com/in/rithickroshaan-pararajasegaran-8a7103235",
+                  "datePublished": "2025-04-10T05:11:20.760Z",
+                  "publishedTimeAgo": "1y",
+                  "urn": "urn:li:comment:(urn:li:ugcPost:7314969666689409024,7315964583515443201)",
+                  "id": "7315964583515443201",
+                  "reactionCount": 2
                 }
               ],
               "likeCount": 643,
@@ -3103,10 +3235,37 @@ export const apis = [
       {
         name: "Post",
         method: "GET",
-        description: "Get a LinkedIn post or article.",
+        description: "Get a LinkedIn post or article. Comments are a public preview only, without comment pagination.",
         fullDescription:
-          "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. For public feed posts, activityUrn and contentUrn expose LinkedIn's public activity and underlying share or ugcPost URNs when present; either can be null when LinkedIn does not expose it. Also includes related articles from the same author in moreArticles.",
+          "Fetches a single LinkedIn post or article, returning the title, headline, full description text, author info with follower count, publication date, like count (reactions), comment count, and individual comments. For public feed posts, activityUrn and contentUrn expose LinkedIn's public activity and underlying share or ugcPost URNs when present; either can be null when LinkedIn does not expose it. Also includes related articles from the same author in moreArticles. Inline comments are only LinkedIn's public preview, not the full comment list; comment pagination is not available. Each comment includes nullable datePublished (the exact source timestamp, never estimated from age), publishedTimeAgo (how long ago the comment was published), urn (the full comment URN), id (the comment's numeric suffix as a string), and reactionCount (the source count, including 0). Pulse article previews may expose only age and identity, with null dates and reaction counts. These fields use the already-fetched page without additional upstream requests.",
         path: "/v1/linkedin/post",
+        responseFields: [
+          {
+            "path": "comments[].datePublished",
+            "type": "string | null",
+            "description": "Exact source timestamp; null when unavailable. Never estimated from relative age."
+          },
+          {
+            "path": "comments[].publishedTimeAgo",
+            "type": "string | null",
+            "description": "How long ago the comment was published, such as 1y; null when unavailable."
+          },
+          {
+            "path": "comments[].urn",
+            "type": "string | null",
+            "description": "Full LinkedIn comment URN; null when not exposed in the public preview."
+          },
+          {
+            "path": "comments[].id",
+            "type": "string | null",
+            "description": "Comment ID from the URN's numeric suffix, preserved as a string; null when unavailable."
+          },
+          {
+            "path": "comments[].reactionCount",
+            "type": "number | null",
+            "description": "Source reaction count, preserving 0; null when unavailable. Hidden optimistic counts are ignored."
+          }
+        ],
         params: [
           {
             name: "url",
@@ -3140,6 +3299,11 @@ export const apis = [
               author: "Jeremy M.",
               text: "Austen, thanks for sharing!",
               linkedinUrl: "https://uk.linkedin.com/in/jeremymurray",
+              datePublished: null,
+              publishedTimeAgo: "1y",
+              urn: "urn:li:comment:(urn:li:ugcPost:6680478363284512768,7325567567337566208)",
+              id: "7325567567337566208",
+              reactionCount: null,
             },
           ],
           moreArticles: [
