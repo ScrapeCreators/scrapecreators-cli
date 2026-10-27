@@ -1472,7 +1472,7 @@ export const apis = [
         description:
           "Get comments from a video. Can only get 1k top comments and about 7k new comments.",
         fullDescription:
-          "Fetches comments and replies from a YouTube video, including each comment's text content, author details, like count, reply count, and publish date. Supports ordering by top or newest, and paginating with continuationToken. Limited to approximately 1,000 top comments or 7,000 newest comments.",
+          "Fetches comments and replies from a YouTube video, including each comment's text content, author details, like count, reply count, and publish date. `publishedTime` is a best-effort ISO timestamp calculated from YouTube's relative label, not an exact source timestamp. Supports ordering by top or newest, and paginating with continuationToken. Limited to approximately 1,000 top comments or 7,000 newest comments.",
         path: "/v1/youtube/video/comments",
         paginationField: "continuationToken",
         sampleResponse: {
