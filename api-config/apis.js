@@ -15066,11 +15066,71 @@ export const apis = [
         },
       },
       {
+        name: "Topic",
+        method: "GET",
+        description: "Get a Pinterest topic's search-interest count, last-updated time, and refinement chips from its ideas URL.",
+        fullDescription:
+          "Retrieves a public Pinterest topic by its ideas URL, returning id, name, url, search_count, updated_at, and refinements in the normal success envelope. search_count is Pinterest's native internal_search_count; its aggregation period is unspecified, so it is not monthly search volume or a unique-person count. updated_at is Pinterest's update_time converted to ISO 8601 UTC, not the separate feed refresh time. search_count is a nonnegative integer and updated_at is a non-null ISO 8601 UTC string on success. Missing or invalid core count or timestamp metadata returns an uncharged 500 failure, not a success with null values. refinements contains the native ideas_klp_pivots chips as label, name, and absolute Pinterest url; [] means explicitly empty, while null means missing or malformed. Related-topic recommendations are not refinement chips.",
+        path: "/v1/pinterest/topic",
+        credits: 1,
+        params: [
+          {
+            name: "url",
+            type: "string",
+            required: true,
+            description: "The Pinterest ideas URL of the topic to get.",
+            placeholder: "https://www.pinterest.com/ideas/how-to-stop-leash-pulling/894604313079/",
+          },
+        ],
+        responseFields: [
+          {
+            path: "search_count",
+            type: "number",
+            description: "Pinterest's native search-interest count, a nonnegative integer on success.",
+            fullDescription: "Pinterest's internal_search_count, a nonnegative integer on success. The aggregation period is unspecified; this is not monthly search volume or a unique-person count. Missing or invalid core count metadata returns an uncharged 500 failure.",
+          },
+          {
+            path: "updated_at",
+            type: "string",
+            description: "The topic's last-updated time as a non-null ISO 8601 UTC string on success.",
+            fullDescription: "Pinterest's valid positive update_time converted to a non-null ISO 8601 UTC string on success. This backs the topic's Last updated label, not the separate feed refresh time. Missing or invalid core timestamp metadata returns an uncharged 500 failure.",
+          },
+          {
+            path: "refinements",
+            type: "array | null",
+            description: "Refinement chips with label, name, and absolute Pinterest url. [] means empty; null means unavailable.",
+            fullDescription: "Native ideas_klp_pivots chips, each containing only label (display text), name (full name), and url (absolute Pinterest URL). [] means explicitly empty; null means missing or malformed. These are not related-topic recommendations.",
+          },
+        ],
+        sampleResponse: {
+          success: true,
+          credits_remaining: 100,
+          credits_charged: 1,
+          id: "894604313079",
+          name: "how to stop leash pulling",
+          url: "https://www.pinterest.com/ideas/how-to-stop-leash-pulling/894604313079/",
+          search_count: 29,
+          updated_at: "2026-10-28T02:59:50.000Z",
+          refinements: [
+            { label: "Dog", name: "Dog Leash", url: "https://www.pinterest.com/ideas/dog-leash/920936006020/" },
+            { label: "Holder", name: "Dog Leash Holder", url: "https://www.pinterest.com/ideas/dog-leash-holder/893453821037/" },
+            { label: "Cat", name: "Cat Leash", url: "https://www.pinterest.com/ideas/cat-leash/927222536363/" },
+            { label: "Paracord Dog", name: "Paracord Dog Leash", url: "https://www.pinterest.com/ideas/paracord-dog-leash/960540634556/" },
+            { label: "Station", name: "Dog Leash Station", url: "https://www.pinterest.com/ideas/dog-leash-station/931748181393/" },
+            { label: "Aesthetic", name: "Dog Leash Aesthetic", url: "https://www.pinterest.com/ideas/dog-leash-aesthetic/928602459156/" },
+            { label: "Macrame Dog", name: "Macrame Dog Leash", url: "https://www.pinterest.com/ideas/macrame-dog-leash/941662868940/" },
+            { label: "Dog Collar", name: "Dog Collar and Leash", url: "https://www.pinterest.com/ideas/dog-collar-and-leash/920217243458/" },
+            { label: "Hands Free Dog", name: "Hands Free Dog Leash", url: "https://www.pinterest.com/ideas/hands-free-dog-leash/898498437441/" },
+            { label: "Paracord", name: "Paracord Leash", url: "https://www.pinterest.com/ideas/paracord-leash/961110346440/" },
+          ],
+        },
+      },
+      {
         name: "Board",
         method: "GET",
-        description: "Get pins from a Pinterest board.",
+        description: "Get pins from a Pinterest board. With trim=true, native save counts and keyword labels are retained when available.",
         fullDescription:
-          "Fetches a paginated list of pins from a Pinterest board by URL, returning each pin's id, description, title, images, board info, pin_join annotations, and aggregated_pin_data. Supports pagination via cursor and a trim option for lighter responses.",
+          "Fetches a paginated list of pins from a Pinterest board by URL, returning each pin's id, description, title, images, board info, pin_join annotations, and aggregated_pin_data. Supports pagination via cursor and a trim option for lighter responses. With trim=true, retains pins[].aggregated_pin_data.aggregated_stats.saves and pins[].pin_join.visual_annotation when Pinterest supplies them; these native save counts and keyword labels are not guaranteed for every pin. Only these nested leaves are retained, not the full aggregated_pin_data or pin_join objects.",
         path: "/v1/pinterest/board",
         paginationField: "cursor",
         params: [
@@ -15094,7 +15154,7 @@ export const apis = [
             required: false,
             description:
               "Set true for a trimmed response.",
-            fullDescription: "Set to true for a trimmed down version of the response",
+            fullDescription: "Set to true for a trimmed down version of the response. Retains pins[].aggregated_pin_data.aggregated_stats.saves and pins[].pin_join.visual_annotation when Pinterest supplies them; these native save counts and keyword labels are not guaranteed for every pin. Only these nested leaves are retained, not the full aggregated_pin_data or pin_join objects.",
             placeholder: "false",
           },
         ],
