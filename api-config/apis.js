@@ -8139,10 +8139,17 @@ export const apis = [
         name: "Company Ads",
         method: "GET",
         description:
-          "Get public company ads. Default: advertiserId and creativeId only, 1 credit. Set get_ad_details=true for ad details, 25 credits. Login-only ads are unavailable.",
+          "Get public company ads with dates when available (1 credit). Set get_ad_details=true for full details (25 credits). firstShown can be null in detail responses even when the default list has it.",
         fullDescription:
-          "Fetches public ads for a company from the Google Ad Transparency Library by domain or advertiser_id. Each ad includes advertiserId, creativeId, format, adUrl, advertiserName, domain, firstShown, and lastShown. Costs 25 credits per request when get_ad_details=true; without it, only advertiserId and creativeId are returned at 1 credit.",
+          "Fetches public company ads by domain or advertiser_id. The default list includes IDs, previews, and firstShown/lastShown when available, at 1 credit per request. firstShown can be null in /v1/google/ad for the same ad, so keep the list date rather than overwriting it with a null detail date. Setting get_ad_details=true uses the individual-ad source, which can also omit firstShown, and costs 25 credits per request. Login-only ads are unavailable.",
         path: "/v1/google/company/ads",
+        responseFields: [
+          {
+            path: "ads[].firstShown",
+            type: "string | null",
+            description: "First-shown date from Google's company list. /v1/google/ad can return null for the same ad, so keep this value rather than overwriting it with a null detail date.",
+          },
+        ],
         paginationField: "cursor",
         params: [
           {
@@ -8394,10 +8401,17 @@ export const apis = [
         name: "Ad Details",
         method: "GET",
         description:
-          "Get Google ad details. Ad text is extracted with OCR and may contain errors; report issues to support@scrapecreators.com.",
+          "Get Google ad details. firstShown can be null even when the company list has a date. Ad text uses OCR and may contain errors.",
         fullDescription:
-          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. regionStats and platformImpressions use lower and upper impression bounds. Variations are best-effort, omit unparseable entries, and have creative-type-dependent fields; image creatives can expose an images array. Text extraction uses OCR, so accuracy may vary.",
+          "Retrieves detailed information about a specific Google ad including advertiserId, creativeId, format, firstShown, lastShown, and overallImpressions. firstShown can be null even when /v1/google/company/ads returns a date for the same ad; keep the company-list date when this field is null. When Google publishes political-ad transparency data, spend contains the currency and amount bounds, while targeting contains included and excluded age, gender, and location criteria. Targeted locations include their Google criterion ID, display name, full name, and country codes. Optional fields are null when Google does not publish them. regionStats and platformImpressions use lower and upper impression bounds. Variations are best-effort, omit unparseable entries, and have creative-type-dependent fields; image creatives can expose an images array. Text extraction uses OCR, so accuracy may vary.",
         path: "/v1/google/ad",
+        responseFields: [
+          {
+            path: "firstShown",
+            type: "string | null",
+            description: "Can be null even when /v1/google/company/ads returns a start date for the same ad. Use the company-list date when this field is null.",
+          },
+        ],
         params: [
           {
             name: "url",
