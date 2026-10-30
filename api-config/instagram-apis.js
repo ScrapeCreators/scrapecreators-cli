@@ -6557,9 +6557,9 @@ export const instagramBaseApis = {
     {
       name: "Story Highlights",
       method: "GET",
-      description: "Get an Instagram user's story highlights. Handle lookup can return an uncharged 403 for age restrictions or 404 for restricted or unavailable profiles.",
+      description: "Get up to 10 story highlights visible without signing in. No pagination. Cropped covers are available; full-size covers are null.",
       fullDescription:
-        "Lists all story highlight albums for an Instagram user. Each highlight includes its ID, title, cover thumbnail URL, and owner info with username and profile picture. Accepts either a user_id or handle; providing user_id yields faster responses. If Instagram explicitly blocks handle lookup, age restrictions return HTTP 403 with message 'Profile is age restricted'; restricted profiles return HTTP 404 with message 'Profile is restricted'; confirmed unavailable profiles return HTTP 404 with message 'Profile is unavailable on Instagram'. These responses keep success: true to indicate a confirmed profile state, include an error field, and charge no credits. Check the HTTP status and error field, not success alone.",
+        "Returns up to 10 story highlight albums visible on Instagram without signing in. This is the available logged-out list, not a guarantee of every highlight on the account. Pagination is not available. Each highlight includes its ID, title, cropped cover URL, and owner info with username and profile picture. The full-size cover_media.thumbnail_src field is null because Instagram does not supply it; use cover_media_cropped_thumbnail.url for the available cover image. Accepts either a user_id or handle; providing user_id yields faster responses. If Instagram explicitly blocks handle lookup, age restrictions return HTTP 403 with message 'Profile is age restricted'; restricted profiles return HTTP 404 with message 'Profile is restricted'; confirmed unavailable profiles return HTTP 404 with message 'Profile is unavailable on Instagram'. These responses keep success: true to indicate a confirmed profile state, include an error field, and charge no credits. Check the HTTP status and error field, not success alone.",
       path: "/v1/instagram/user/highlights",
       errorResponseExamples: {
         403: {
@@ -6586,13 +6586,14 @@ export const instagramBaseApis = {
       },
       sampleResponse: {
         success: true,
+        credits_remaining: 100,
+        credits_charged: 1,
         highlights: [
           {
             __typename: "GraphHighlightReel",
             id: "18067016518767507",
             cover_media: {
-              thumbnail_src:
-                "https://scontent-atl3-1.cdninstagram.com/v/t51.2885-15/479737232_1405856350793820_7928432152706230890_n.jpg?stp=c0.248.640.640a_dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QFp33CnPIjTITbJL483a_ZGgbaCZ_M2CLjXKDaTtNtjnH0vMIJHdZhYlMp8pitL7H0&_nc_ohc=yQlHN7CDZ7IQ7kNvwFL7xsz&_nc_gid=_FojUPY_PyEb8t9oWJExMQ&edm=AGW0Xe4BAAAA&ccb=7-5&oh=00_AfL3lEQ_ujUci_Xg8fnjYX3nityUOfroonJnwKyr9yKWdg&oe=682184F5&_nc_sid=94fea1",
+              thumbnail_src: null,
             },
             cover_media_cropped_thumbnail: {
               url: "https://scontent-atl3-1.cdninstagram.com/v/t51.2885-15/479737232_1405856350793820_7928432152706230890_n.jpg?stp=c0.202.640.640a_dst-jpg_e15_s150x150_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QFp33CnPIjTITbJL483a_ZGgbaCZ_M2CLjXKDaTtNtjnH0vMIJHdZhYlMp8pitL7H0&_nc_ohc=yQlHN7CDZ7IQ7kNvwFL7xsz&_nc_gid=_FojUPY_PyEb8t9oWJExMQ&edm=AGW0Xe4BAAAA&ccb=7-5&oh=00_AfL4zidNtWdVh-3T2E2qOiLS4ks_Z9UbmTSFbCX3SFmbBg&oe=682184F5&_nc_sid=94fea1",
