@@ -4762,9 +4762,9 @@ export const apis = [
       {
         name: "Comments",
         method: "GET",
-        description: "Get the comments of a Facebook post or reel, including image, GIF, video and sticker attachments when available.",
+        description: "Get comments on a Facebook post or reel, with media attachments when available. The default Most relevant view can filter comments; use sort=all to request Facebook's unfiltered view.",
         fullDescription:
-          "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. The attachments array contains image, GIF, video and sticker media when Facebook returns them, with type, id, url, preview_url, width and height. Text-only comments have an empty attachments array. Missing attachment values are null, and media URLs can expire. Passing a feedback_id instead of a url significantly speeds up the request.",
+          "Fetches comments from a Facebook post or reel with cursor-based pagination. Each comment includes id, text, created_at, reply_count, reaction_count, and author details with name and profile_picture. The attachments array contains image, GIF, video and sticker media when Facebook returns them, with type, id, url, preview_url, width and height. Text-only comments have an empty attachments array. Missing attachment values are null, and media URLs can expire. Passing a feedback_id instead of a url significantly speeds up the request. The default Most relevant view (sort=most_relevant) can filter comments. Set sort=all to request Facebook's unfiltered view; this does not guarantee every counted comment is available. Keep the same sort on every cursor page. For unfiltered replies, pass the comment's fresh expansion_token from these sort=all results to /v1/facebook/post/comment/replies.",
         path: "/v1/facebook/post/comments",
         params: [
           {
@@ -4783,11 +4783,21 @@ export const apis = [
             placeholder: "ZmVlZGJhY2s6MTQ0NzY1NjMyMzM4Mzg0OA==",
           },
           {
+            name: "sort",
+            type: "select",
+            required: false,
+            description: "Comment view: most_relevant (default) or all for Facebook's unfiltered view.",
+            fullDescription: "Defaults to most_relevant, which can filter comments. Set sort=all to request Facebook's unfiltered view; this does not guarantee every counted comment is available.",
+            options: ["most_relevant", "all"],
+            default: "most_relevant",
+            placeholder: "most_relevant",
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
             description:
-              "Cursor to get more comments. Get 'cursor' from previous response.",
+              "Cursor from the previous response to get more comments. Keep the same sort on every cursor page.",
             placeholder: "MToxNzU3MTA2NzYyOgF1P1VkxpkA9Ds4...",
           },
         ],
@@ -5053,8 +5063,8 @@ export const apis = [
       {
         name: "Comment Replies",
         method: "GET",
-        description: "Get the replies to a comment, including image, GIF, video and sticker attachments when available.",
-        fullDescription: "Get the replies to a comment with cursor-based pagination. Each reply includes an attachments array for image, GIF, video and sticker media that Facebook returns, with type, id, url, preview_url, width and height. Text-only replies have an empty attachments array. Missing attachment values are null, and media URLs can expire.",
+        description: "Get replies to a comment, with media attachments when available. For unfiltered replies, use a fresh expansion_token from comments fetched with sort=all.",
+        fullDescription: "Get the replies to a comment with cursor-based pagination. Each reply includes an attachments array for image, GIF, video and sticker media that Facebook returns, with type, id, url, preview_url, width and height. Text-only replies have an empty attachments array. Missing attachment values are null, and media URLs can expire. For unfiltered replies, first fetch /v1/facebook/post/comments with sort=all, then pass the comment's feedback_id and fresh expansion_token from those results. This route does not accept sort; the token carries the comment view.",
         path: "/v1/facebook/post/comment/replies",
         params: [
           {
@@ -5068,8 +5078,8 @@ export const apis = [
           {
             name: "expansion_token",
             type: "string",
-            description: "Comment expansion_token from /v1/facebook/post/comments.",
-            fullDescription: "The expansion_token of the comment. You can get the expansion_token from the /v1/facebook/post/comments endpoint.",
+            description: "Use the comment's fresh expansion_token from /v1/facebook/post/comments with sort=all for unfiltered replies.",
+            fullDescription: "Pass the comment's complete, fresh expansion_token from /v1/facebook/post/comments with sort=all for unfiltered replies. Do not reuse a token from the Most relevant view.",
             required: true,
             placeholder: "MjoxNzc4NjM1MDM3OgF_JaMa3kMP9RIWC....",
           },
