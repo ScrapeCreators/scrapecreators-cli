@@ -7568,9 +7568,9 @@ export const apis = [
       {
         name: "Ad Library Search",
         method: "GET",
-        description: "Search TikTok's public Ads Library by general query or advertiser name.",
+        description: "Search TikTok's public Ads Library by query or advertiser, with optional inclusive last-shown date and targeting-country filters. Narrower windows can reduce pagination; results may be incomplete or duplicated.",
         fullDescription:
-          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity and return adv_biz_ids on each ad. You can pass adv_biz_ids with advertiser_name to pin the exact advertiser shown in TikTok's See all ads link. TikTok requires the name with the ID and ignores an ID-only search, so provide exactly one of query or advertiser_name. If TikTok has no matching advertiser entity, the API falls back to TikTok's name search. Results are global, sorted by the latest shown date, support cursor pagination, and include a public TikTok Ads Library URL for each ad.",
+          "Searches TikTok's public Ads Library using either query for a general search or advertiser_name for advertiser-specific results. Advertiser-name searches resolve the name through TikTok's advertiser typeahead first, then search the selected advertiser entity and return adv_biz_ids on each ad. You can pass adv_biz_ids with advertiser_name to pin the exact advertiser shown in TikTok's See all ads link. TikTok requires the name with the ID and ignores an ID-only search, so provide exactly one of query or advertiser_name. If TikTok has no matching advertiser entity, the API falls back to TikTok's name search. Results are sorted by the latest shown date, support cursor pagination, and include a public TikTok Ads Library URL for each ad. Optional start_time and end_time filter ads whose last shown date is within the inclusive interval and must be supplied together; omitting both keeps the rolling 30 days ending at the time of each request. Optional region defaults to all supported countries and filters by the ad's targeting/delivery country, not the advertiser's registration country. Narrower date windows can reduce how deep you need to paginate, but TikTok controls result availability and continuation, so the API cannot guarantee exhaustive or duplicate-free results. Repeat the same search inputs and filters with every returned cursor; a cursor does not replace query or advertiser_name, adv_biz_ids when used, or explicit start_time, end_time and region values.",
         path: "/v1/tiktok/ad-library/search",
         params: [
           {
@@ -7596,10 +7596,37 @@ export const apis = [
             placeholder: "7078923208527618049",
           },
           {
+            name: "start_time",
+            type: "integer",
+            required: false,
+            description: "Inclusive lower bound for the ad's last shown date. Supply with end_time as Unix seconds (preferred) or milliseconds; omit both for the rolling 30 days.",
+            fullDescription: "Inclusive lower bound for the ad's last shown date; end_time is the inclusive upper bound. Supply start_time and end_time together as positive base-10 safe integers, no greater than 9007199254740991, in Unix seconds (preferred) or milliseconds. Values greater than 9999999999 are interpreted as milliseconds, divided by 1000 and rounded down to seconds. start_time must be less than or equal to end_time after normalization; equal bounds are accepted. If both are omitted, the last-shown date window defaults to the rolling 30 days ending at the time of each request. A missing companion, empty value, sign, fraction, scientific notation, whitespace, date string, unsafe integer or reversed interval returns 400 bad_request.",
+            placeholder: "1790812800",
+          },
+          {
+            name: "end_time",
+            type: "integer",
+            required: false,
+            description: "Inclusive upper bound for the ad's last shown date. Supply with start_time as Unix seconds (preferred) or milliseconds; omit both for the rolling 30 days.",
+            fullDescription: "Inclusive upper bound for the ad's last shown date; start_time is the inclusive lower bound. Supply start_time and end_time together as positive base-10 safe integers, no greater than 9007199254740991, in Unix seconds (preferred) or milliseconds. Values greater than 9999999999 are interpreted as milliseconds, divided by 1000 and rounded down to seconds. start_time must be less than or equal to end_time after normalization; equal bounds are accepted. If both are omitted, the last-shown date window defaults to the rolling 30 days ending at the time of each request. A missing companion, empty value, sign, fraction, scientific notation, whitespace, date string, unsafe integer or reversed interval returns 400 bad_request.",
+            placeholder: "1793491200",
+          },
+          {
+            name: "region",
+            type: "select",
+            required: false,
+            description: "Ad targeting/delivery country, not advertiser registration country, or all (default). Values are case-insensitive; US is not supported.",
+            fullDescription: "Filter by the ad's targeting/delivery country, not the advertiser's registration country. Omitted region defaults to all supported countries, not every country worldwide. Values are case-insensitive; choose all or one of the listed country codes. US is not supported. Empty values, unsupported countries and multiple countries return 400 bad_request.",
+            default: "all",
+            placeholder: "all",
+            options: ["all", "AT", "BE", "BG", "BR", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GR", "HR", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "TR"],
+          },
+          {
             name: "cursor",
             type: "string",
             required: false,
-            description: "Opaque cursor returned from the previous response.",
+            description: "Opaque cursor from the previous response. Repeat the same search inputs, date window and region on every page.",
+            fullDescription: "Opaque cursor returned from the previous response. Repeat the same query or advertiser_name, adv_biz_ids when used, and any explicit start_time, end_time and region filters with every returned cursor. Pass the cursor unchanged; it does not replace the search inputs or filters.",
             placeholder: "cursor from previous response",
           },
         ],
