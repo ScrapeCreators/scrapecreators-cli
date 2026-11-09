@@ -13568,9 +13568,9 @@ export const apis = [
         name: "Search by Keyword",
         method: "GET",
         description:
-          "Search public Threads posts by keyword, up to 10 results per request. Repeat searches over time to find new results.",
+          "Search public Threads posts by keyword, up to 10 results per request. Repeat searches over time to find new results. Date filtering is no longer supported.",
         fullDescription:
-          "Searches Threads for posts matching a keyword, returning up to 10 results with caption text, like_count, reshare_count, direct_reply_count, user info, and image_versions2. Supports optional start_date and end_date filters plus a trim option. Only 10 results are returned per request due to public API limitations.",
+          "Searches Threads for posts matching a keyword, returning up to 10 results with caption text, like_count, reshare_count, direct_reply_count, user info, and image_versions2. Supports a trim option. Threads no longer exposes date filters publicly, so date filtering is no longer supported. Only 10 results are returned per request due to public API limitations.",
         path: "/v1/threads/search",
         params: [
           {
@@ -13579,20 +13579,6 @@ export const apis = [
             required: true,
             description: "Keyword to search for",
             placeholder: "basketball",
-          },
-          {
-            name: "start_date",
-            type: "string",
-            required: false,
-            description: "Start date to search for",
-            placeholder: "2026-01-01",
-          },
-          {
-            name: "end_date",
-            type: "string",
-            required: false,
-            description: "End date to search for",
-            placeholder: "2026-01-01",
           },
           {
             name: "trim",
