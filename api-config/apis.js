@@ -7678,7 +7678,7 @@ export const apis = [
         method: "GET",
         description: "Gets details for a TikTok ad from either Creative Center Top Ads or TikTok's public Ads Library.",
         fullDescription:
-          "Fetches one TikTok ad by ID or URL. It first checks Creative Center Top Ads (ads.tiktok.com), then TikTok's public transparency Ads Library (library.tiktok.com) when the ID is not a Top Ads material. Both sources return the same response shape. Fields TikTok does not expose for a public Ads Library ad are null, empty, or false as appropriate.",
+          "Fetches one TikTok ad by ID or URL. It first checks Creative Center Top Ads (ads.tiktok.com), then TikTok's public transparency Ads Library (library.tiktok.com) when the ID is not a Top Ads material. Both sources return the same response shape. For public Ads Library ads, country_code also uses regions from the source's Location section, landing_page can use the source download link, and estimated_audience and location contain source-provided audience ranges when available. Video fields remain null when TikTok does not expose a creative URL.",
         path: "/v1/tiktok/ad-library/ad",
         params: [
           {
