@@ -3532,9 +3532,9 @@ export const instagramBaseApis = {
       name: "Search Instagram",
       method: "GET",
       description:
-        "Find users, hashtags, and places with Instagram search. Returns one page, without posts.",
+        "Find Instagram accounts, hashtags, and places. Results may use a Google-indexed fallback; posts are not returned.",
       fullDescription:
-        "Use this for Instagram-native account, hashtag, or place lookup. It returns ranked users, hashtags, places, and keyword suggestions from Instagram itself. It is not Google-indexed, does not require an Instagram login, returns one page only, and does not return posts. For an Instagram-curated topic page with posts, use /v1/instagram/search/popular. For the same native account results in a profile-only response, use /v1/instagram/search/profiles.",
+        "This route first tries Instagram's anonymous native search. If that fails, it uses Google-indexed public results and returns source: google. Users, hashtags, places, and keyword suggestions depend on the query and available source; any of these arrays can be empty. In the Google fallback, native user IDs, verification status, and profile photos are null, and rank_token is null. The response fields are returned at the top level, not inside data. The example is a live Google-fallback response with an illustrative credit balance. It returns one page and does not return posts. For Instagram-curated topic posts, use /v1/instagram/search/popular. For profile-only results, use /v1/instagram/search/profiles.",
       path: "/v1/instagram/search",
       params: [
         {
@@ -3547,42 +3547,153 @@ export const instagramBaseApis = {
         },
       ],
       sampleResponse: {
-        success: true,
-        credits_remaining: 100,
-        data: {
-          query: "nike",
-          users: [
-            {
-              position: 0,
-              id: "13460080",
-              username: "nike",
-              full_name: "Nike",
-              is_verified: true,
-              profile_pic_url: "https://instagram.example.com/nike.jpg",
-            },
-          ],
-          hashtags: [
-            {
-              position: 2,
-              id: "17841562978125529",
-              name: "nikewomen",
-              media_count: 2036828,
-              search_result_subtitle: null,
-            },
-          ],
-          places: [
-            {
-              position: 51,
-              id: "715603272",
-              name: "Nike",
-              title: "Nike",
-              subtitle: "",
-              facebook_places_id: "106068296090172",
-            },
-          ],
-          keywords: [],
-          rank_token: "a6e9cded-6c3e-41be-a6b1-9fa5295a30d5",
-        },
+        "success": true,
+        "credits_remaining": 100,
+        "credits_charged": 1,
+        "query": "nike",
+        "users": [
+          {
+            "position": 0,
+            "id": null,
+            "username": "nike",
+            "full_name": "Nike",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nike/"
+          },
+          {
+            "position": 1,
+            "id": null,
+            "username": "nikewomen",
+            "full_name": "Nike Women",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikewomen/"
+          },
+          {
+            "position": 2,
+            "id": null,
+            "username": "nikerunning",
+            "full_name": "Nike Running",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikerunning/"
+          },
+          {
+            "position": 3,
+            "id": null,
+            "username": "nikebasketball",
+            "full_name": "Nike Basketball",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikebasketball/"
+          },
+          {
+            "position": 4,
+            "id": null,
+            "username": "nikesportswear",
+            "full_name": "nsw",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikesportswear/"
+          },
+          {
+            "position": 5,
+            "id": null,
+            "username": "nikenyc",
+            "full_name": "NikeNYC",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikenyc/"
+          },
+          {
+            "position": 6,
+            "id": null,
+            "username": "nikefootball",
+            "full_name": "Nike Football",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikefootball/"
+          },
+          {
+            "position": 7,
+            "id": null,
+            "username": "nikela",
+            "full_name": "Nike LA",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikela/"
+          },
+          {
+            "position": 8,
+            "id": null,
+            "username": "nikesb",
+            "full_name": "Nike Skateboarding",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikesb/"
+          },
+          {
+            "position": 9,
+            "id": null,
+            "username": "sneakernews",
+            "full_name": "Sneaker News",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/sneakernews/"
+          },
+          {
+            "position": 10,
+            "id": null,
+            "username": "nikegeorgetown",
+            "full_name": "Nike Georgetown",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikegeorgetown/"
+          },
+          {
+            "position": 11,
+            "id": null,
+            "username": "nikechicago",
+            "full_name": null,
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/nikechicago/"
+          },
+          {
+            "position": 13,
+            "id": null,
+            "username": "ilovewhq",
+            "full_name": "WHQ",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/ilovewhq/"
+          },
+          {
+            "position": 14,
+            "id": null,
+            "username": "official_nike_usa",
+            "full_name": "OFFICIAL NIKE USA",
+            "is_verified": null,
+            "profile_pic_url": null,
+            "url": "https://www.instagram.com/official_nike_usa/"
+          }
+        ],
+        "hashtags": [],
+        "places": [
+          {
+            "position": 12,
+            "id": "846210479",
+            "name": "Nike Outlet San Leandro on Instagram • Photos and Videos",
+            "title": "Nike Outlet San Leandro on Instagram • Photos and Videos",
+            "subtitle": null,
+            "facebook_places_id": null,
+            "url": "https://www.instagram.com/explore/locations/846210479/"
+          }
+        ],
+        "keywords": [],
+        "rank_token": null,
+        "source": "google"
       },
     },
     {
