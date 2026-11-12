@@ -14804,6 +14804,12 @@ export const tiktokBaseApis = {
           placeholder: null,
         },
         {
+          name: "trim",
+          type: "boolean",
+          required: false,
+          description: "Set to true to get a trimmed response",
+        },
+        {
           name: "cursor",
           type: "number",
           required: false,
