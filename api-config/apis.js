@@ -8270,9 +8270,9 @@ export const apis = [
             name: "cursor",
             type: "string",
             required: false,
-            description: "Cursor to paginate through results",
-            placeholder:
-              "CgoAP7znOo9RPjf%2FEhD5utgx8m75NrTTbU0AAAAAGgn8%2BJyW%2BJQK40A%3D",
+            description:
+              "Leave empty for the first request. For the next page, use the cursor from your previous response and keep the same filters.",
+            placeholder: "",
           },
         ],
         sampleResponse: {
