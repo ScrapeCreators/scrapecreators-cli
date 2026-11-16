@@ -2104,7 +2104,7 @@ export const instagramBaseApis = {
           description:
             "Numeric Instagram user ID; faster than using a handle.",
           fullDescription: "Instagram user id. Use this for faster response times.",
-          placeholder: "2700692569",
+          placeholder: "21393171",
         },
         {
           name: "handle",
