@@ -15107,7 +15107,7 @@ export const apis = [
         method: "GET",
         description: "Get a Pinterest topic's search-interest count, last-updated time, and refinement chips from its ideas URL.",
         fullDescription:
-          "Retrieves a public Pinterest topic by its ideas URL, returning id, name, url, search_count, updated_at, and refinements in the normal success envelope. search_count is Pinterest's native internal_search_count; its aggregation period is unspecified, so it is not monthly search volume or a unique-person count. updated_at is Pinterest's update_time converted to ISO 8601 UTC, not the separate feed refresh time. search_count is a nonnegative integer and updated_at is a non-null ISO 8601 UTC string on success. Missing or invalid core count or timestamp metadata returns an uncharged 500 failure, not a success with null values. refinements contains the native ideas_klp_pivots chips as label, name, and absolute Pinterest url; [] means explicitly empty, while null means missing or malformed. Related-topic recommendations are not refinement chips.",
+          "Retrieves a public Pinterest topic by its ideas URL, returning id, name, url, search_count, updated_at, and refinements in the normal success envelope. search_count is Pinterest's native internal_search_count; its aggregation period is unspecified, so it is not monthly search volume or a unique-person count. updated_at is Pinterest's update_time converted to ISO 8601 UTC, not the separate feed refresh time. search_count is a nonnegative integer, including zero; it is null only when Pinterest explicitly returns internal_search_count: null (count unavailable). updated_at is a non-null ISO 8601 UTC string on success. Missing or invalid core count metadata (except explicit null) or missing or invalid core timestamp metadata returns an uncharged 500 failure. refinements contains the native ideas_klp_pivots chips as label, name, and absolute Pinterest url; [] means explicitly empty, while null means missing or malformed. Related-topic recommendations are not refinement chips.",
         path: "/v1/pinterest/topic",
         credits: 1,
         params: [
@@ -15122,9 +15122,9 @@ export const apis = [
         responseFields: [
           {
             path: "search_count",
-            type: "number",
-            description: "Pinterest's native search-interest count, a nonnegative integer on success.",
-            fullDescription: "Pinterest's internal_search_count, a nonnegative integer on success. The aggregation period is unspecified; this is not monthly search volume or a unique-person count. Missing or invalid core count metadata returns an uncharged 500 failure.",
+            type: "number | null",
+            description: "Pinterest's native search-interest count: a nonnegative integer (including zero), or null only for explicit internal_search_count: null.",
+            fullDescription: "Pinterest's internal_search_count: a nonnegative integer, including zero; null only when Pinterest explicitly returns internal_search_count: null (count unavailable). The aggregation period is unspecified; this is not monthly search volume or a unique-person count. Missing or invalid core count metadata (except explicit null) returns an uncharged 500 failure.",
           },
           {
             path: "updated_at",
