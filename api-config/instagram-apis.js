@@ -5788,7 +5788,7 @@ export const instagramBaseApis = {
       method: "GET",
       description: "Get post or reel comments; expect about 90% success. Pages with comments cost 1 credit, or 15 with include_replies=true. Empty pages and errors cost 0 credits.",
       fullDescription:
-        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. Successful pages with `comments: []` cost 0 credits, even with `include_replies=true`. Pages with comments cost 1 credit, or 15 credits with `include_replies=true`, even if no replies are returned. Errors are not charged. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages." + "\n\n" + "You should expect ~90% success rate.",
+        "Retrieves comments on a public Instagram post or reel. Each comment includes the comment text, creation timestamp, reply count when Instagram provides it, and commenter details such as username, user ID, verification status, and profile picture URL. `child_comment_count` can be null when Instagram does not expose the count publicly. Set `include_replies=true` to fetch the first page of replies for every returned comment. This adds `replies`, `replies_cursor`, and `has_more_replies` to each comment. Successful pages with `comments: []` cost 0 credits, even with `include_replies=true`. Pages with comments cost 1 credit, or 15 credits with `include_replies=true`, even if no replies are returned. Errors are not charged. This option is much slower than a normal comments request and may time out at 29 seconds. Supports cursor-based pagination to load additional comment pages. The first page includes `comment_count`: the total including replies, or null if unavailable." + "\n\n" + "You should expect ~90% success rate.",
       path: "/v2/instagram/post/comments",
       params: [
         {
@@ -5823,6 +5823,7 @@ export const instagramBaseApis = {
         success: true,
         credits_remaining: 33929114,
         credits_charged: 15,
+        comment_count: null,
         comments: [
           {
             id: "18051843701642870",
