@@ -7167,9 +7167,9 @@ export const apis = [
         method: "GET",
         paginationField: "cursor",
         description:
-          "Get a company's running ads. Use GET normally; for long pagination cursors, use POST with the same parameters in the JSON body.",
+          "Get a company's running ads. Use pageId for accurate Page selection; companyName is a convenience lookup and may select the wrong company. For long pagination cursors, use POST with the same parameters in the JSON body.",
         fullDescription:
-          "Fetches all ads currently running for a specific company from the Meta Ad Library. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination. Both GET and POST are supported. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
+          "Fetches all ads currently running for a specific company from the Meta Ad Library. Use pageId to target the correct company. companyName is only a convenience: we look up the Page for you, which can select the wrong company and lead to inaccurate results. Each ad includes ad_archive_id, page_name, is_active, publisher_platform, and a snapshot with body, images, videos, and display_format. Supports filtering by country, media_type, date range, and language with cursor-based pagination. Both GET and POST are supported. If the cursor becomes too large after extensive pagination, use POST and send the same parameters in the JSON body.",
         path: "/v1/facebook/adLibrary/company/ads",
         youtubeId: "M_wgqCtznjM",
         codeExample:
@@ -7404,8 +7404,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Company Ad Library page ID from Search for Companies. Provide pageId or companyName.",
-            fullDescription: "The companies ad library page id. You can get this with my Search For Companies Endpoint. Can either use this or companyName",
+              "Recommended for accurate results: the intended company's Facebook Page ID. Get it from Search for Companies and verify the Page. Provide pageId or companyName.",
+            fullDescription: "The intended company's Facebook Page ID. Use pageId for accurate Page selection instead of relying on the companyName lookup. You can get it from Search for Companies; verify that the result is the company you want. Provide pageId or companyName.",
             placeholder: "367152833370567",
           },
           {
@@ -7413,8 +7413,8 @@ export const apis = [
             type: "string",
             required: false,
             description:
-              "Company name. Provide companyName or pageId.",
-            fullDescription: "The name of the company. Can either use this or pageId",
+              "Convenience lookup by company name. It may select the wrong company and return inaccurate results; use pageId to target the correct Page.",
+            fullDescription: "Company name for a convenience lookup. We look up the Page for you, but the match may not be the company you intended and can lead to inaccurate results. Use pageId to target the correct company. Provide companyName or pageId.",
             placeholder: "Lululemon",
           },
           {
