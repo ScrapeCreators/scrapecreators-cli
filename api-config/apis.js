@@ -521,9 +521,9 @@ export const apis = [
         name: "Channel Shorts",
         method: "GET",
         description:
-          "Get channel Shorts. publishDate is an ISO 8601 timestamp with an offset when available, otherwise null; date-only values are not returned.",
+          "Get channel Shorts; views can be null even when YouTube displays 'No views'. publishDate is an ISO 8601 timestamp with an offset when available, otherwise null; date-only values are not returned.",
         fullDescription:
-          "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, description, and publish date. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings. Supports sorting by newest or popular; use the continuationToken to page through all results. Returns data in the shorts array.",
+          "Retrieves a paginated list of short-form videos (Shorts) from a YouTube channel, including each short's title, URL, view count (views), likes, comments, description, and publish date. publishDate is a full ISO 8601 timestamp with an offset when YouTube exposes the exact publish time; otherwise it is null. It does not return date-only strings. Supports sorting by newest or popular; use the continuationToken to page through all results. Returns data in the shorts array. Shorts can still be returned with likes and other metadata when views are unavailable: viewCountInt is null and viewCountText may be omitted. YouTube's 'No views' display alone is not treated as a confirmed numeric zero. A numeric zero supplied by YouTube remains 0.",
         path: "/v1/youtube/channel/shorts",
         paginationField: "continuationToken",
         sampleResponse: {
