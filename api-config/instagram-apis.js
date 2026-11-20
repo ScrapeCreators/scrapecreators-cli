@@ -608,9 +608,9 @@ export const instagramBaseApis = {
     {
       name: "Posts",
       method: "GET",
-      description: "Get public posts and reels with pagination. Play counts may be inaccurate and exclude Facebook views. Check access-response messages, not just HTTP status.",
+      description: "Get public posts and reels with pagination. Play counts may be inaccurate and exclude Facebook views. Check access-response messages, not just HTTP status. `is_paid_partnership` is null when it cannot be verified.",
       fullDescription:
-        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. When supplied by Instagram, the media-level `fbid` is also returned. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs + "\n\n" + "Play counts can sometimes be inaccurate. Access-response examples distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained.",
+        "Returns a paginated feed of a user's public Instagram posts, including reels, photos, videos, and carousels. Each item includes media type, shortcode, caption text, like count, comment count, play count, video URLs, image URLs, tagged users, and the published time in `items[].created_at` as an ISO 8601 UTC date. When supplied by Instagram, the media-level `fbid` is also returned. The original Unix timestamp remains available in `items[].taken_at`. Play counts reflect Instagram-only views and exclude cross-posted Facebook views. Supports cursor-based pagination via next_max_id for scrolling through the full timeline." + "\n\n" + instagramPostsStateDocs + "\n\n" + "Play counts can sometimes be inaccurate. Access-response examples distinguish confirmed age gates, restrictions, and unavailable profiles; existing legacy responses are retained. `is_paid_partnership` is true or false when verified, or null if unavailable or its lookup fails. It is a paid-partnership disclosure, not proof that a post is currently running as an ad.",
       path: "/v2/instagram/user/posts",
       responseStates: instagramPostsStateEntries,
       errorResponseExamples: {
@@ -626,6 +626,10 @@ export const instagramBaseApis = {
         {
           "path": "items[0].play_count",
           "description": "Video play count. Use this as the main play metric."
+        },
+        {
+          "path": "items[0].boost_unavailable_reason",
+          "description": "Why Instagram considers this post ineligible for boosting, not whether an ad is running. Null means no reason was returned; it does not mean the post is not promoted."
         }
       ],
       sampleResponse: {
@@ -2094,6 +2098,10 @@ export const instagramBaseApis = {
         {
           "path": "items[0].media.video_versions[0].url",
           "description": "The URL of the video"
+        },
+        {
+          "path": "items[0].media.boost_unavailable_reason",
+          "description": "Why Instagram considers this reel ineligible for boosting, not whether an ad is running. Null means no reason was returned; it does not mean the reel is not promoted."
         }
       ],
       params: [
@@ -2148,9 +2156,9 @@ export const instagramBaseApis = {
       name: "Post/Reel Info",
       method: "GET",
       description:
-        "Get public post or reel details. Play counts may be inaccurate and exclude Facebook views.",
+        "Get public post or reel details. Play counts may be inaccurate and exclude Facebook views. `is_paid_partnership` is null when it cannot be verified.",
       fullDescription:
-        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views. Set `include_play_count=false` to omit the play count and skip its additional fetch for a faster response." + "\n\n" + "Play counts can sometimes be inaccurate.",
+        "Fetches detailed metadata for a single Instagram post or reel by shortcode or URL. Returns caption text, like count, comment count, video URL, video play count, video duration, display images, owner info, tagged users, carousel sidecar children when applicable, and the published time in `data.xdt_shortcode_media.created_at` as an ISO 8601 UTC date. The original Unix timestamp remains available in `data.xdt_shortcode_media.taken_at_timestamp`. Play counts are Instagram-only views and exclude cross-posted Facebook views. Set `include_play_count=false` to omit the play count and skip its additional fetch for a faster response." + "\n\n" + "Play counts can sometimes be inaccurate. `is_paid_partnership` is true or false when verified, or null if unavailable or its lookup fails. It is a paid-partnership disclosure, not proof that a post is currently running as an ad.",
       path: "/v1/instagram/post",
       responseFields: [
         {
