@@ -3907,8 +3907,14 @@ export const apis = [
         description:
           "Get public Facebook profile posts visible without login, 3 per page, with available link previews and video details. Provide url or pageId; pageId is faster.",
         fullDescription:
-          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Link shares can include link_attachment with url, title, description, source, and image_url; unavailable preview fields are null. Mixed photo/video posts retain their images and story url, with available video media in videoDetails and a video permalink. Accepts either a url or pageId parameter, where pageId is faster. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship.",
+          "Returns publicly visible Facebook profile posts, limited to 3 posts per page due to API limitations. Each post includes id, text, url, reactionCount, commentCount, publishTime, videoDetails with sdUrl, hdUrl, and thumbnailUrl, plus topComments. Link shares can include link_attachment with url, title, description, source, and image_url; unavailable preview fields are null. Mixed photo/video posts retain their images and story url, with available video media in videoDetails and a video permalink. Accepts either a url or pageId parameter, where pageId is faster. posts[].is_paid_partnership is a nullable boolean: true when Facebook supplies a paid-partnership label or an explicit paid branded-content relationship; null when unknown or no disclosure is supplied. It currently never returns false: a missing disclosure does not establish that a post has no sponsorship. posts[].parent_publication_time is each post's verified parent/timeline publication time as an ISO 8601 UTC string, or null when unknown. It comes from that post's own root Story timestamp only when the post ID and publisher match, not from attached media or a shared original. Existing publishTime values are unchanged. Do not infer parent time using a fixed offset. Timestamp availability does not guarantee that every post can be retrieved.",
         path: "/v1/facebook/profile/posts",
+        responseFields: [
+          {
+            path: "posts[].parent_publication_time",
+            description: "Verified parent/timeline publication time as an ISO 8601 UTC string, or null when unknown. Uses the post's own root Story timestamp with matching post ID and publisher, not attached media or a shared original. publishTime is unchanged.",
+          },
+        ],
         paginationField: "cursor",
         params: [
           {
@@ -3935,6 +3941,7 @@ export const apis = [
           posts: [
             {
               id: "1204545088344463",
+              parent_publication_time: null,
               is_paid_partnership: null,
               text: "I've had such a blast doing the No One Left Behind Challenge this year! Join me this Friday Dec 20 @ 5PM MST to learn about next month's challenge! https://subto.sjv.io/3Jk9Py",
               url: "https://www.facebook.com/reel/486651220706068/",
@@ -3973,6 +3980,7 @@ export const apis = [
             },
             {
               id: "1177973017668337",
+              parent_publication_time: null,
               is_paid_partnership: null,
               text: "Getting into real estate isn't easy. But you know what makes it easier? \n\nHaving a team of people working TOGETHER to get their deals!\n\nJoin the NOLB Challenge - Nov 17th-19th to see a full walkthrough on how to get your first deal!\n\nReserve your spot here: NOLBChallenge.com",
               url: "https://www.facebook.com/reel/1548769829113168/",
@@ -4011,6 +4019,7 @@ export const apis = [
             },
             {
               id: "1866425187502168",
+              parent_publication_time: null,
               is_paid_partnership: null,
               text: "Pace Morby is joined Jared Morrison on this episode of Get Creative, a young entrepreneur in the SubTo community who has been learning the ropes from Pace and recently decided to make the leap into Real Estate full time.",
               url: "https://www.facebook.com/pacemorby/videos/1866425187502168/",
