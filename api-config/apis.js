@@ -2895,6 +2895,76 @@ export const apis = [
         },
       },
       {
+        "name": "Search Jobs",
+        "method": "GET",
+        "description": "Search public LinkedIn jobs by keyword, location, date and company. Job type, experience and remote/hybrid/on-site filters are unavailable.",
+        "fullDescription": "Searches LinkedIn's native public guest jobs listings without login. Returns job cards, not full descriptions or application details. Job type, experience level and remote/hybrid/on-site filters are unavailable on this public source; job_type, experience_level and work_type return an uncharged 400 instead of silently ignoring them. Keyword and location matching follow LinkedIn's recommendations and may include loose or nearby matches. date_posted requests LinkedIn's rolling time filter; returned dates have day precision. One credit is charged per populated page; empty pages return 404 with jobs: [], cursor: null and no charge. Upstream failures return an uncharged 500. Keep the same query and filters when passing cursor. Page size varies; a non-null cursor is an offset to try, not a guarantee of more results. Stop on null or the terminal 404. Offsets are capped at 990; ranked results can change or overlap between requests.",
+        "path": "/v1/linkedin/search/jobs",
+        "paginationField": "cursor",
+        "params": [
+          {
+            "name": "query",
+            "type": "string",
+            "required": true,
+            "description": "Job search keyword or phrase.",
+            "placeholder": "software engineer"
+          },
+          {
+            "name": "location",
+            "type": "string",
+            "required": false,
+            "description": "City, region or country. Omit to use LinkedIn’s default location.",
+            "placeholder": "United States"
+          },
+          {
+            "name": "date_posted",
+            "type": "select",
+            "required": false,
+            "description": "Jobs posted in the last 24 hours or week. Omit for any time.",
+            "options": [
+              "last-24-hours",
+              "last-week"
+            ],
+            "placeholder": "last-week"
+          },
+          {
+            "name": "company_id",
+            "type": "string",
+            "required": false,
+            "description": "Numeric LinkedIn company ID, not a company name or URL.",
+            "placeholder": "1441"
+          },
+          {
+            "name": "cursor",
+            "type": "string",
+            "required": false,
+            "description": "Next offset returned by the previous response. Keep the same search and filters; maximum 990.",
+            "placeholder": "10"
+          }
+        ],
+        "sampleResponse": {
+          "success": true,
+          "credits_remaining": 100,
+          "credits_charged": 1,
+          "jobs": [
+            {
+              "id": "4479305237",
+              "url": "https://www.linkedin.com/jobs/view/4479305237/",
+              "title": "Software Engineer I, Fullstack (Search)",
+              "company": {
+                "name": "Affirm",
+                "url": "https://www.linkedin.com/company/affirm",
+                "logo": "https://media.licdn.com/dms/image/v2/C560BAQEHSbORvS_jKg/company-logo_100_100/company-logo_100_100/0/1630665839795/affirm_logo?e=2147483647&v=beta&t=DTdnXfvSnUdk2QDzx2pxLSTqSBNcll6e2T8YQQGRHEk"
+              },
+              "location": "Salt Lake City, UT",
+              "date_posted": "2026-11-06",
+              "posted_time_ago": "2 weeks ago"
+            }
+          ],
+          "cursor": "10"
+        }
+      },
+      {
         name: "Search Posts",
         method: "GET",
         description:
