@@ -3731,7 +3731,7 @@ export const instagramBaseApis = {
       description:
         "Explore an Instagram topic with its description, sources, suggested terms, media count, and paginated posts.",
       fullDescription:
-        "Use this to explore an Instagram topic and the posts Instagram curates for it. It scrapes the public /popular/{query} page without requiring an Instagram login. The first page returns the topic title, numeric total media count, Instagram's generated description and sources, suggested terms, posts, and an opaque cursor. Pass that cursor with the same query to fetch more posts. Later pages return query, posts, cursor, and has_more only. For an exact hashtag through Google-indexed results, use /v1/instagram/search/hashtag. For reels only, use /v2/instagram/reels/search. Each successful request costs 1 credit.",
+        "Use this to explore an Instagram topic and the posts Instagram curates for it. It scrapes the public /popular/{query} page without requiring an Instagram login. The first page returns the topic title, media count when Instagram supplies it, Instagram's generated description and sources, suggested terms, and posts. total_media_count is null when Instagram does not expose a count. When Instagram exposes pagination, the response also includes an opaque cursor; pass it with the same query to fetch more posts. Later pages return query, posts, cursor, and has_more only. For an exact hashtag through Google-indexed results, use /v1/instagram/search/hashtag. For reels only, use /v2/instagram/reels/search. Each successful request costs 1 credit.",
       path: "/v1/instagram/search/popular",
       params: [
         {
