@@ -13,6 +13,24 @@ import {
   instagramProfileStateEntries,
   instagramPostsStateEntries,
 } from "./instagram-resource-state-docs.js";
+
+const regionDescription =
+  "Two-letter country code (ASCII letters, case-insensitive), for example TH. When set, lookup attempts target only that country; Instagram may still not return the requested content. Omit it to keep the usual behavior.";
+
+const instagramRegionParam = {
+  name: "region",
+  type: "string",
+  required: false,
+  description: "Two-letter country code for the lookup location, e.g. TH.",
+  fullDescription: regionDescription,
+  placeholder: "TH",
+};
+
+const paginatedInstagramRegionParam = {
+  ...instagramRegionParam,
+  fullDescription: `${regionDescription} Keep the same region on subsequent pages.`,
+};
+
 export const instagramBaseApis = {
   id: "instagram",
   name: "Instagram",
@@ -514,6 +532,7 @@ export const instagramBaseApis = {
           placeholder: "jane",
           description: "Instagram handle",
         },
+        instagramRegionParam,
         {
           name: "trim",
           type: "boolean",
@@ -1406,6 +1425,7 @@ export const instagramBaseApis = {
           required: true,
           description: "Instagram handle",
         },
+        paginatedInstagramRegionParam,
         {
           name: "next_max_id",
           type: "string",
@@ -2123,6 +2143,7 @@ export const instagramBaseApis = {
           fullDescription: "Instagram handle. Use user_id for faster response times.",
           placeholder: "jane",
         },
+        paginatedInstagramRegionParam,
         {
           name: "max_id",
           type: "string",
