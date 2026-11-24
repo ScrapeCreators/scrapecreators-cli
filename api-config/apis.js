@@ -34969,8 +34969,9 @@ export const apis = [
         method: "GET",
         description: "View your recent API request history",
         fullDescription:
-          "Returns a paginated list of your API requests, including the endpoint called, status code, credits used, and timestamp. Useful for debugging and monitoring your API usage. Supports filtering by endpoint name and status code.",
+          "Returns a paginated list of your API requests, including the endpoint called, status code, credits used, and timestamp. Useful for debugging and monitoring your API usage. Supports filtering by endpoint name and status code. Checking request history does not deduct credits.",
         path: "/v1/account/get-api-usage",
+        credits: { type: "fixed", cost: 0 },
         params: [
           {
             name: "page",
@@ -35030,8 +35031,9 @@ export const apis = [
         method: "GET",
         description: "Get your daily credit and request counts",
         fullDescription:
-          "Returns aggregated daily usage statistics for the last 30 days, including total credits consumed and number of requests per day.",
+          "Returns aggregated daily usage statistics for the last 30 days, including total credits consumed and number of requests per day. Checking daily usage does not deduct credits.",
         path: "/v1/account/get-daily-usage-count",
+        credits: { type: "fixed", cost: 0 },
         params: [],
         sampleResponse: [
           {
@@ -35056,8 +35058,9 @@ export const apis = [
         method: "GET",
         description: "See which endpoints you use the most",
         fullDescription:
-          "Returns your top 20 most called API endpoints ranked by call count, along with total credits consumed per endpoint. Defaults to the last 24 hours. Supports custom time ranges up to 1 year.",
+          "Returns your top 20 most called API endpoints ranked by call count, along with total credits consumed per endpoint. Defaults to the last 24 hours. Supports custom time ranges up to 1 year. Checking your most used routes does not deduct credits.",
         path: "/v1/account/get-most-used-routes",
+        credits: { type: "fixed", cost: 0 },
         params: [
           {
             name: "start_time",
