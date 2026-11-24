@@ -34953,11 +34953,15 @@ export const apis = [
         method: "GET",
         description: "Get your remaining credit balance.",
         fullDescription:
-          "Returns the number of API credits remaining on your Scrape Creators account. The response contains a single creditCount field with your current balance.",
+          "Returns your remaining credits in creditCount. Checking your balance is free and does not deduct any credits.",
         path: "/v1/account/credit-balance",
+        credits: { type: "fixed", cost: 0 },
+        skipSampleEnvelope: true,
         params: [],
         sampleResponse: {
+          success: true,
           creditCount: 333,
+          message: "You have 333 credits remaining.",
         },
       },
       {
@@ -35529,7 +35533,7 @@ const CACHE_MAX_AGE_PARAM = {
   placeholder: "7d",
 };
 
-// envelope fields the api adds to every response body.
+// envelope fields the api adds to standard scrape responses.
 const SAMPLE_CREDITS_REMAINING = 1000000;
 const SAMPLE_CACHED_AT = "2026-07-20T14:32:11.000Z";
 
@@ -35557,7 +35561,9 @@ for (const api of apis) {
         ? undefined
         : typeof endpoint.credits === "number" ? endpoint.credits : (endpoint.credits?.cost ?? 1);
 
-    endpoint.sampleResponse = withEnvelope(endpoint.sampleResponse, creditsCharged);
+    if (!endpoint.skipSampleEnvelope) {
+      endpoint.sampleResponse = withEnvelope(endpoint.sampleResponse, creditsCharged);
+    }
     for (const variant of [
       "trimmedResponse",
       "privateResponse",
